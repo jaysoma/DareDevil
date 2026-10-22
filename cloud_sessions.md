@@ -37,6 +37,9 @@ the STARSS23 run: `readUtterance` reads 2-19 deg nearer 0 than GccPhat on the sa
 with exact fractional delays and no room it is within 1 deg everywhere. The pull comes with reflections. A plane-wave
 test cannot show it, so don't start there.
 
+Also read `results/dechorate/report.md` (section 2): in measured RIRs, a strong ceiling echo 2.6 ms late does not pull
+Angle2 in (it pulls GccPhat ~1 deg), yet Angle2 already leans 1-3 deg in scope with every panel absorbing.
+
 1. Reproduce it with reflections. Use image-source rooms (`pip install pyroomacoustics`) at 157 mm and at 69 mm: a
    direct path plus a floor and one wall, then a full shoebox. Sweep -60 to +60 deg. Find the smallest room that pulls
    it in.
@@ -49,6 +52,9 @@ test cannot show it, so don't start there.
 Commit the fix and `results/angle2_pull.md` (mechanism, before/after table) to a branch.
 
 ## 3. dEchorate onset and first-reflection truth
+
+DONE in Jay's 2026-10-22 session: `results/dechorate/report.md`. v2.0's RIR file below can't be read; the run used
+v1.0's `dechorate_rir_processed.hdf5` (https://zenodo.org/records/5562386). Don't start this one.
 
 Read HANDOFF.md. From https://zenodo.org/records/6576203, download `dEchorate_rirs_gzip7.hdf5`,
 `dEchorate_database.csv`, `dEchorate_echo_notes.pkl` and `main_geometry_from_echo_calibration.py` (about 4.2 GB

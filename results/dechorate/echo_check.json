@@ -1,0 +1,288 @@
+{
+ "000000": {
+  "floor": {
+   "median_db": -20.1,
+   "n": 50
+  },
+  "ceiling": {
+   "median_db": -20.3,
+   "n": 60
+  },
+  "west": {
+   "median_db": -22.4,
+   "n": 124
+  },
+  "south": {
+   "median_db": -24.1,
+   "n": 102
+  },
+  "east": {
+   "median_db": -22.8,
+   "n": 145
+  },
+  "north": {
+   "median_db": -22.5,
+   "n": 135
+  }
+ },
+ "000001": {
+  "floor": {
+   "median_db": -19.1,
+   "n": 50
+  },
+  "ceiling": {
+   "median_db": -20.2,
+   "n": 60
+  },
+  "west": {
+   "median_db": -22.3,
+   "n": 124
+  },
+  "south": {
+   "median_db": -24.7,
+   "n": 102
+  },
+  "east": {
+   "median_db": -22.9,
+   "n": 145
+  },
+  "north": {
+   "median_db": -17.7,
+   "n": 135
+  }
+ },
+ "000010": {
+  "floor": {
+   "median_db": -17.4,
+   "n": 50
+  },
+  "ceiling": {
+   "median_db": -20.1,
+   "n": 60
+  },
+  "west": {
+   "median_db": -21.5,
+   "n": 124
+  },
+  "south": {
+   "median_db": -23.2,
+   "n": 102
+  },
+  "east": {
+   "median_db": -20.6,
+   "n": 145
+  },
+  "north": {
+   "median_db": -21.6,
+   "n": 135
+  }
+ },
+ "000100": {
+  "floor": {
+   "median_db": -19.6,
+   "n": 50
+  },
+  "ceiling": {
+   "median_db": -20.1,
+   "n": 60
+  },
+  "west": {
+   "median_db": -21.3,
+   "n": 124
+  },
+  "south": {
+   "median_db": -24.2,
+   "n": 102
+  },
+  "east": {
+   "median_db": -22.4,
+   "n": 145
+  },
+  "north": {
+   "median_db": -21.3,
+   "n": 135
+  }
+ },
+ "001000": {
+  "floor": {
+   "median_db": -19.5,
+   "n": 50
+  },
+  "ceiling": {
+   "median_db": -20.1,
+   "n": 60
+  },
+  "west": {
+   "median_db": -16.9,
+   "n": 124
+  },
+  "south": {
+   "median_db": -23.7,
+   "n": 102
+  },
+  "east": {
+   "median_db": -20.5,
+   "n": 145
+  },
+  "north": {
+   "median_db": -20.8,
+   "n": 135
+  }
+ },
+ "010000": {
+  "floor": {
+   "median_db": -17.6,
+   "n": 50
+  },
+  "ceiling": {
+   "median_db": -5.6,
+   "n": 60
+  },
+  "west": {
+   "median_db": -18.4,
+   "n": 124
+  },
+  "south": {
+   "median_db": -24.5,
+   "n": 102
+  },
+  "east": {
+   "median_db": -23.3,
+   "n": 145
+  },
+  "north": {
+   "median_db": -22.3,
+   "n": 135
+  }
+ },
+ "011000": {
+  "floor": {
+   "median_db": -16.7,
+   "n": 50
+  },
+  "ceiling": {
+   "median_db": -5.6,
+   "n": 60
+  },
+  "west": {
+   "median_db": -15.1,
+   "n": 124
+  },
+  "south": {
+   "median_db": -21.6,
+   "n": 102
+  },
+  "east": {
+   "median_db": -22.4,
+   "n": 145
+  },
+  "north": {
+   "median_db": -20.0,
+   "n": 135
+  }
+ },
+ "011100": {
+  "floor": {
+   "median_db": -16.5,
+   "n": 50
+  },
+  "ceiling": {
+   "median_db": -5.6,
+   "n": 60
+  },
+  "west": {
+   "median_db": -14.5,
+   "n": 124
+  },
+  "south": {
+   "median_db": -21.5,
+   "n": 102
+  },
+  "east": {
+   "median_db": -20.0,
+   "n": 145
+  },
+  "north": {
+   "median_db": -18.7,
+   "n": 135
+  }
+ },
+ "011110": {
+  "floor": {
+   "median_db": -17.1,
+   "n": 50
+  },
+  "ceiling": {
+   "median_db": -5.6,
+   "n": 60
+  },
+  "west": {
+   "median_db": -14.1,
+   "n": 124
+  },
+  "south": {
+   "median_db": -21.8,
+   "n": 102
+  },
+  "east": {
+   "median_db": -17.5,
+   "n": 145
+  },
+  "north": {
+   "median_db": -18.9,
+   "n": 135
+  }
+ },
+ "011111": {
+  "floor": {
+   "median_db": -18.4,
+   "n": 50
+  },
+  "ceiling": {
+   "median_db": -5.6,
+   "n": 60
+  },
+  "west": {
+   "median_db": -13.5,
+   "n": 124
+  },
+  "south": {
+   "median_db": -20.9,
+   "n": 102
+  },
+  "east": {
+   "median_db": -18.4,
+   "n": 145
+  },
+  "north": {
+   "median_db": -15.8,
+   "n": 135
+  }
+ },
+ "020002": {
+  "floor": {
+   "median_db": -20.6,
+   "n": 50
+  },
+  "ceiling": {
+   "median_db": -5.1,
+   "n": 60
+  },
+  "west": {
+   "median_db": -19.8,
+   "n": 124
+  },
+  "south": {
+   "median_db": -22.1,
+   "n": 102
+  },
+  "east": {
+   "median_db": -20.3,
+   "n": 145
+  },
+  "north": {
+   "median_db": -16.1,
+   "n": 135
+  }
+ }
+}
