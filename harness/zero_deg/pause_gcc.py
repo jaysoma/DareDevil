@@ -6,6 +6,8 @@ Pauses come from the metadata (100 ms frames). Two sets:
   silence    -- no labelled event of any class in the frame, nor in the GUARD_AFTER frames before it (reverb tails of
                 the last event) nor the GUARD_BEFORE frames after it.
   speechfree -- no speech (classes 0, 1) by the same rule; other labelled events may sound.
+Frames holding ZERO_MAX or more all-zero samples are dropped: the Tampere recordings end in seconds of digital-zero
+padding, which carries no labels and would read as a +-90 deg 'peak' of an all-zero cross-spectrum.
 Each analysis frame is 1024 samples at the native 24 kHz (42.7 ms, the same span as GccPhat.mjs's 2048 at 48 kHz),
 Hann, every 512 samples, kept only when it lies wholly inside a pause. Per frame and capsule pair: the PHAT of
 L conj(R), from HP Hz (0 means from the first non-DC slice) to 8 kHz, scored over 241 delays across the pair as in
@@ -44,6 +46,7 @@ FRAME_S = 0.1
 GUARD_AFTER, GUARD_BEFORE = 3, 1      # label frames kept clear after an event ends / before one starts
 SKIP_START_S = 2.0                    # the clapper that starts each scene may sit unlabelled at the top
 SPEECH = {0, 1}
+ZERO_MAX = 32                         # Tampere files end in 1-6 s of digital zeros (padding): drop frames holding them
 R = 0.042
 CAPS = {1: (45, 35), 2: (-45, -35), 3: (135, -35), 4: (-135, 35)}
 PAIRS = list(combinations([1, 2, 3, 4], 2))
@@ -148,6 +151,8 @@ def main():
         rec = {'file': wav.stem, 'room': room, 'dur_s': round(len(x) / SR, 1)}
         for set_name, classes in (('silence', None), ('speechfree', SPEECH)):
             st = frames_in(pause_mask(rows, n_lab, classes), len(x))
+            st = st[[(x[s:s + NFFT] == 0).all(1).sum() < ZERO_MAX for s in st]] \
+                if len(st) else st
             rec[f'{set_name}_frames'] = int(len(st))
             if len(st) < 2:
                 continue
