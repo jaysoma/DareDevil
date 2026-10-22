@@ -11,6 +11,8 @@ its landmarks, where the phone sat, what he said and when, and what ODAS heard. 
   baseline, 8 pots, 8 tracks, theta-inactive 0.60). No stops and no truth went into it.
 - `tapes/<tape>/audio-input.json` -- the audio's format, length and sha256. The audio itself is not in this repo.
 
+`agent_task_truth_recovery.md` -- the brief for the agent that re-marks positions from these files.
+
 Not included: marked positions (the old stops were paired with silence-separated bursts, which merges positions that are
 named without a 3 s pause), and the radio-broadcast walk (walk-153448). Positions are meant to be re-marked from the
 transcripts' words against `truth_inputs`.
