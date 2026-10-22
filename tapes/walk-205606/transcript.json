@@ -1,0 +1,114 @@
+{
+ "name": "walk-205606",
+ "source": "Dictate/captures/geonar/walk-205606-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 90.96,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 9,
+   "text": "Okay, well, this would be the middle of the TV stand."
+  },
+  {
+   "t0": 9,
+   "t1": 13,
+   "text": "Yeah, I am standing in the middle of the TV stand."
+  },
+  {
+   "t0": 13,
+   "t1": 17,
+   "text": "I just realized something."
+  },
+  {
+   "t0": 17,
+   "t1": 27,
+   "text": "Anyway, corner of the wall to the lobby room."
+  },
+  {
+   "t0": 27,
+   "t1": 29,
+   "text": "Right, this is the corner of the wall to the lobby room."
+  },
+  {
+   "t0": 29,
+   "t1": 34,
+   "text": "That would be where I am standing right now."
+  },
+  {
+   "t0": 38,
+   "t1": 40,
+   "text": "Other edge of the door to the laundry room."
+  },
+  {
+   "t0": 40,
+   "t1": 42,
+   "text": "Yeah, it would be right now"
+  },
+  {
+   "t0": 42,
+   "t1": 46,
+   "text": "to the other edge of the door to the laundry."
+  },
+  {
+   "t0": 46,
+   "t1": 56,
+   "text": "The corner of the wall leading to the laundry."
+  },
+  {
+   "t0": 56,
+   "t1": 60,
+   "text": "Corner of the wall leading to the hallway."
+  },
+  {
+   "t0": 60,
+   "t1": 61,
+   "text": "Yeah, that's right."
+  },
+  {
+   "t0": 61,
+   "t1": 63,
+   "text": "Corner of the wall in the tutorial."
+  },
+  {
+   "t0": 63,
+   "t1": 65,
+   "text": "My goodness, that crime looks terrible."
+  },
+  {
+   "t0": 65,
+   "t1": 68,
+   "text": "Oscar, where are you?"
+  },
+  {
+   "t0": 72,
+   "t1": 76,
+   "text": "Corner intersectional."
+  },
+  {
+   "t0": 76,
+   "t1": 81,
+   "text": "Corner intersectional of the L of the part of the deceptional."
+  },
+  {
+   "t0": 81,
+   "t1": 83,
+   "text": "Bicer."
+  },
+  {
+   "t0": 83,
+   "t1": 85,
+   "text": "Bicere."
+  },
+  {
+   "t0": 85,
+   "t1": 87,
+   "text": "Bye Siri."
+  },
+  {
+   "t0": 89,
+   "t1": 91,
+   "text": "Bye Siri."
+  }
+ ]
+}

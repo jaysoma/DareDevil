@@ -1,0 +1,69 @@
+{
+ "name": "walk-233828",
+ "source": "Dictate/captures/geonar/walk-233828-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 108.31,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 16,
+   "text": "First test, I'm about 1.5 meters from the front of the phone."
+  },
+  {
+   "t0": 16,
+   "t1": 29,
+   "text": "Now I'm about maybe 3 meters."
+  },
+  {
+   "t0": 29,
+   "t1": 31,
+   "text": "Off-axis"
+  },
+  {
+   "t0": 31,
+   "t1": 46,
+   "text": "Now maybe, I don't know, like, let's say, maybe six, seven meters, six meters?"
+  },
+  {
+   "t0": 46,
+   "t1": 47,
+   "text": "Six meters?"
+  },
+  {
+   "t0": 51,
+   "t1": 58,
+   "text": "Now you five meters, six meters."
+  },
+  {
+   "t0": 58,
+   "t1": 69.12,
+   "text": "five meters different things uh flutin um b or bar et cetera"
+  },
+  {
+   "t0": 69.12,
+   "t1": 77.44,
+   "text": "there's awesome color right now oh oh it's oh it's funny like maybe maybe nine"
+  },
+  {
+   "t0": 77.44,
+   "t1": 87.84,
+   "text": "meters awesome possibly i'm just gonna talk talk and uh walker walk around on getting closer closer and closer"
+  },
+  {
+   "t0": 88,
+   "t1": 94,
+   "text": "to the phone phone is a walking, walking way now and probably about a three to a half"
+  },
+  {
+   "t0": 94,
+   "t1": 99,
+   "text": "meters, meters, this is on two meters, and now, and now, and now, and now, a meter."
+  },
+  {
+   "t0": 99,
+   "t1": 104,
+   "text": "And now, walking, walking away from the phone, from back to the back to the foot."
+  }
+ ]
+}

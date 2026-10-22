@@ -1,0 +1,54 @@
+{
+ "name": "walk-194940",
+ "source": "Dictate/captures/geonar/walk-194940-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 51.21,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 17,
+   "text": "Okay, I'm not sure if it's going to work, but this will be position one, so I'm just going to stay here a few seconds and then mark it on the page and see if it actually works."
+  },
+  {
+   "t0": 17,
+   "t1": 23,
+   "text": "This would be in line with the angled door."
+  },
+  {
+   "t0": 23,
+   "t1": 29,
+   "text": "door. This is position 2 in the middle of the couch,"
+  },
+  {
+   "t0": 29,
+   "t1": 33,
+   "text": "right against the couch, staring at the boat."
+  },
+  {
+   "t0": 33,
+   "t1": 38,
+   "text": "This is the position 3."
+  },
+  {
+   "t0": 38,
+   "t1": 42,
+   "text": "I'm at the corner of the kitchen bar."
+  },
+  {
+   "t0": 42,
+   "t1": 46,
+   "text": "And let's see if this is find the end in place."
+  },
+  {
+   "t0": 46,
+   "t1": 49,
+   "text": "Bye, Siri."
+  },
+  {
+   "t0": 49,
+   "t1": 50,
+   "text": "Bye, Siri."
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "name": "walk-195454",
+ "source": "Dictate/captures/geonar/walk-195454-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 82.99,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 10,
+   "text": "Okay, first position, I am currently at the edge of the sectional."
+  },
+  {
+   "t0": 10,
+   "t1": 14,
+   "text": "Currently the edge of the sectional, placing the phone."
+  },
+  {
+   "t0": 14,
+   "t1": 19,
+   "text": "This will be the first position."
+  },
+  {
+   "t0": 19,
+   "t1": 21,
+   "text": "This is the second position."
+  },
+  {
+   "t0": 21,
+   "t1": 23,
+   "text": "I am in line in the kitchen bar."
+  },
+  {
+   "t0": 23,
+   "t1": 29,
+   "text": "Pacing the phone, I am in the kitchen bar."
+  },
+  {
+   "t0": 29,
+   "t1": 30,
+   "text": "Third position, I am in line the kitchen bar."
+  },
+  {
+   "t0": 30,
+   "t1": 35,
+   "text": "I am in line with the dining table."
+  },
+  {
+   "t0": 35,
+   "t1": 39,
+   "text": "Yeah, I'm in the kitchen, so the acoustics are way different."
+  },
+  {
+   "t0": 43,
+   "t1": 46,
+   "text": "Fourth position, I am on the other side of the table,"
+  },
+  {
+   "t0": 46,
+   "t1": 50,
+   "text": "I'm facing the phone, directly facing the phone."
+  },
+  {
+   "t0": 50,
+   "t1": 59,
+   "text": "Fifth position, I am at the corner of the kitchen bar."
+  },
+  {
+   "t0": 59,
+   "t1": 63,
+   "text": "So at an angle of the phone, facing the phone still."
+  },
+  {
+   "t0": 63,
+   "t1": 69,
+   "text": "Facing the corner, I mean, I see all these catches."
+  },
+  {
+   "t0": 69,
+   "t1": 78,
+   "text": "And which other position, I am at the corner of the hallway into my bedroom."
+  },
+  {
+   "t0": 78,
+   "t1": 80.24,
+   "text": "Bye, sir."
+  },
+  {
+   "t0": 82.28,
+   "t1": 82.92,
+   "text": "Bye."
+  }
+ ]
+}

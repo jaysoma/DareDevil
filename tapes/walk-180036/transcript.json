@@ -1,0 +1,49 @@
+{
+ "name": "walk-180036",
+ "source": "Dictate/captures/geonar/walk-180036-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 37.09,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 7,
+   "text": "First position."
+  },
+  {
+   "t0": 7,
+   "t1": 12,
+   "text": "Second position."
+  },
+  {
+   "t0": 12,
+   "t1": 15,
+   "text": "I'm walking towards another position."
+  },
+  {
+   "t0": 15,
+   "t1": 18,
+   "text": "I'm just talking while I'm walking."
+  },
+  {
+   "t0": 18,
+   "t1": 23,
+   "text": "Third position."
+  },
+  {
+   "t0": 27,
+   "t1": 29,
+   "text": "Fourth position."
+  },
+  {
+   "t0": 29,
+   "t1": 35,
+   "text": "position. Fifth position."
+  },
+  {
+   "t0": 35,
+   "t1": 37,
+   "text": "Biserie."
+  }
+ ]
+}

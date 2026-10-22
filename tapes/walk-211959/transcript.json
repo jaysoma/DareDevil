@@ -1,0 +1,79 @@
+{
+ "name": "walk-211959",
+ "source": "Dictate/captures/geonar/walk-211959-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 110.34,
+ "segments": [
+  {
+   "t0": 2.82,
+   "t1": 7.76,
+   "text": "I'm now at the top left corner of the copy table."
+  },
+  {
+   "t0": 8.22,
+   "t1": 12.68,
+   "text": "And what I'm going to do is I'm going to measure the copy table right now."
+  },
+  {
+   "t0": 13.04,
+   "t1": 14.8,
+   "text": "And this should be into the truth page."
+  },
+  {
+   "t0": 35.44,
+   "t1": 39.06,
+   "text": "I'm now at the other corner of the coffee table."
+  },
+  {
+   "t0": 39.06,
+   "t1": 42.76,
+   "text": "Coffee table with 41 inches."
+  },
+  {
+   "t0": 52.86,
+   "t1": 56.16,
+   "text": "I'm now at the corner of the fold of the section room."
+  },
+  {
+   "t0": 56.16,
+   "t1": 56.32,
+   "text": "Coffee table."
+  },
+  {
+   "t0": 58.74,
+   "t1": 59.94,
+   "text": "Coffee table."
+  },
+  {
+   "t0": 60,
+   "t1": 63.2,
+   "text": "depth 31 inches."
+  },
+  {
+   "t0": 72.38,
+   "t1": 78.28,
+   "text": "I'm now at the glass shell to the left of the TV."
+  },
+  {
+   "t0": 82.98,
+   "t1": 86.88,
+   "text": "The diameter of glass shelves, 15 inches."
+  },
+  {
+   "t0": 98.16,
+   "t1": 104.76,
+   "text": "I'm now at the circular"
+  },
+  {
+   "t0": 104.76,
+   "t1": 108.5,
+   "text": "coffee table diameter 20 inches."
+  },
+  {
+   "t0": 108.86,
+   "t1": 109.94,
+   "text": "Bye Siri."
+  }
+ ]
+}

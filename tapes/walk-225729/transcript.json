@@ -1,0 +1,84 @@
+{
+ "name": "walk-225729",
+ "source": "Dictate/captures/geonar/walk-225729-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 83.88,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 9.68,
+   "text": "I'm not looking away away I'm being frankly the phone standing here"
+  },
+  {
+   "t0": 9.68,
+   "t1": 14.4,
+   "text": "and you're speaking correctly the frankly the phone"
+  },
+  {
+   "t0": 14.4,
+   "t1": 17.6,
+   "text": "I'm not looking away way I'm standing here speaking correctly the phone"
+  },
+  {
+   "t0": 17.6,
+   "t1": 25.6,
+   "text": "oh I should say some say say say things I'm in a very life say that"
+  },
+  {
+   "t0": 25.6,
+   "t1": 29.6,
+   "text": "that is awesome awesome for many for many reasons you really it really is"
+  },
+  {
+   "t0": 30,
+   "t1": 37,
+   "text": "Have I mentioned that that time is awesome yet?"
+  },
+  {
+   "t0": 37,
+   "t1": 40,
+   "text": "I was not looking away."
+  },
+  {
+   "t0": 40,
+   "t1": 44,
+   "text": "I should make reasons now."
+  },
+  {
+   "t0": 44,
+   "t1": 51,
+   "text": "It's because he's prepared for every single possible scenario."
+  },
+  {
+   "t0": 51,
+   "t1": 54,
+   "text": "The very poor state, he's trained for anything."
+  },
+  {
+   "t0": 54,
+   "t1": 56,
+   "text": "That's what he's awesome."
+  },
+  {
+   "t0": 60,
+   "t1": 64,
+   "text": "He outplace the enemy."
+  },
+  {
+   "t0": 64,
+   "t1": 68,
+   "text": "Before, or they even formulate a strategy."
+  },
+  {
+   "t0": 68,
+   "t1": 70,
+   "text": "He knows all stretches."
+  },
+  {
+   "t0": 70,
+   "t1": 71,
+   "text": "That's my bad hands off."
+  }
+ ]
+}

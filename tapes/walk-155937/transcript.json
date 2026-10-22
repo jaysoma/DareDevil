@@ -1,0 +1,149 @@
+{
+ "name": "walk-155937",
+ "source": "Dictate/captures/geonar/walk-155937-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 152.52,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 10,
+   "text": "I'm sitting on the couch, which is about 3.5 meters from the front of the phone."
+  },
+  {
+   "t0": 10,
+   "t1": 13,
+   "text": "I'm slightly off center."
+  },
+  {
+   "t0": 13,
+   "t1": 18,
+   "text": "I would say maybe two degrees to the left."
+  },
+  {
+   "t0": 18,
+   "t1": 22,
+   "text": "Anyway, it's currently watching TV in his room, so there should be more ambient noise,"
+  },
+  {
+   "t0": 22,
+   "t1": 29,
+   "text": "which actually is a lot closer to what like a real life situation would be."
+  },
+  {
+   "t0": 29,
+   "t1": 33,
+   "text": "I'm going to move closer to the phone."
+  },
+  {
+   "t0": 37,
+   "t1": 41,
+   "text": "I moved about one meter closer, but my elevation has changed,"
+  },
+  {
+   "t0": 41,
+   "t1": 43,
+   "text": "so I'm standing now, so that might make a difference."
+  },
+  {
+   "t0": 43,
+   "t1": 46,
+   "text": "Which also, you know, I guess that's a good test."
+  },
+  {
+   "t0": 46,
+   "t1": 51,
+   "text": "Because sit and stand, I mean, that's kind of expected in like a normal situation."
+  },
+  {
+   "t0": 55,
+   "t1": 57,
+   "text": "Now I'm about one meter from the bone."
+  },
+  {
+   "t0": 57,
+   "t1": 58,
+   "text": "Same bearing should be anyway."
+  },
+  {
+   "t0": 58,
+   "t1": 64.54,
+   "text": "be anyway still facing the phone standing here talking in like to myself oh right I"
+  },
+  {
+   "t0": 64.54,
+   "t1": 74.86,
+   "text": "shouldn't change my head to face away that's probably not a good thing now a"
+  },
+  {
+   "t0": 74.86,
+   "t1": 79.54,
+   "text": "different bearing about five meters from the phone I would say well maybe four meters"
+  },
+  {
+   "t0": 79.54,
+   "t1": 87.98,
+   "text": "from the phone about I don't know like six degrees from the center basically"
+  },
+  {
+   "t0": 88,
+   "t1": 91,
+   "text": "Basically, I'm going to go inside the kitchen anymore."
+  },
+  {
+   "t0": 91,
+   "t1": 94,
+   "text": "I'm in the board of the kitchen."
+  },
+  {
+   "t0": 98,
+   "t1": 101,
+   "text": "Now I'm sitting the couch on the other side of the phone."
+  },
+  {
+   "t0": 101,
+   "t1": 104,
+   "text": "I would say maybe 2.5 meters."
+  },
+  {
+   "t0": 104,
+   "t1": 108,
+   "text": "Amazing the phone, I don't know, like 20 degrees from the center."
+  },
+  {
+   "t0": 108,
+   "t1": 112,
+   "text": "Yeah, it's about 2.20 meters and I'm just going to talk"
+  },
+  {
+   "t0": 112,
+   "t1": 117,
+   "text": "and you have no idea what it feels like, just how silly it is."
+  },
+  {
+   "t0": 117,
+   "t1": 130.98,
+   "text": "talking by myself, you know, I almost forgot. The last position has to be the original position."
+  },
+  {
+   "t0": 130.98,
+   "t1": 138.38,
+   "text": "I was about to end the tape, actually, which probably would have completely been useless if I hadn't"
+  },
+  {
+   "t0": 138.38,
+   "t1": 145.3,
+   "text": "remembered right at the very last second. So this is me. Last position on the couch, which was the first"
+  },
+  {
+   "t0": 145.3,
+   "t1": 147.3,
+   "text": "position."
+  },
+  {
+   "t0": 147.3,
+   "t1": 149.3,
+   "text": "Thank you."
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "name": "walk-210054",
+ "source": "Dictate/captures/geonar/walk-210054-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 58.27,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 4,
+   "text": "Map the speakers in the room."
+  },
+  {
+   "t0": 8,
+   "t1": 11,
+   "text": "I guess this means I'm doing a walk, so first position."
+  },
+  {
+   "t0": 11,
+   "t1": 14,
+   "text": "Corner of the coffee table."
+  },
+  {
+   "t0": 14,
+   "t1": 17,
+   "text": "Corner of the coffee table."
+  },
+  {
+   "t0": 21,
+   "t1": 23,
+   "text": "Second position."
+  },
+  {
+   "t0": 23,
+   "t1": 26,
+   "text": "Corner of the TV stand."
+  },
+  {
+   "t0": 30,
+   "t1": 37,
+   "text": "Third position, corner of kitchen bar."
+  },
+  {
+   "t0": 37,
+   "t1": 47,
+   "text": "Fourth position, leaning against the island in the kitchen."
+  },
+  {
+   "t0": 47,
+   "t1": 55,
+   "text": "Fifth position, all the way back of the room."
+  },
+  {
+   "t0": 55,
+   "t1": 58,
+   "text": "Bye, Siri."
+  },
+  {
+   "t0": 58,
+   "t1": 60,
+   "text": "Thank you."
+  }
+ ]
+}

@@ -1,0 +1,384 @@
+{
+ "frame": "metres; x to the right and y up as the Truth page draws the room (y grows away from the TV wall)",
+ "map_version": "a17f2f",
+ "convention": "phone x, y on the room map; facing_deg 0 = toward +y, clockwise positive (Truth page); mirror = the tape's left/right capsule order is swapped",
+ "poses": {
+  "walk-002736": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot",
+   "source_file": "Dictate/captures/geonar/walk-002736/truth.json",
+   "source_saved_utc": "2026-10-18T23:19:18.047Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-111830": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot",
+   "source_file": "Dictate/captures/geonar/walk-111830/truth.json",
+   "source_saved_utc": "2026-10-22T00:37:11.050Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-114614": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot",
+   "source_file": "Dictate/captures/geonar/walk-114614/truth.json",
+   "source_saved_utc": "2026-10-22T00:37:56.860Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-125621": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot",
+   "source_file": "Dictate/captures/geonar/walk-125621/truth.json",
+   "source_saved_utc": "2026-10-22T00:37:11.053Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-154655": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot",
+   "source_file": "Dictate/captures/geonar/walk-154655/truth.json",
+   "source_saved_utc": "2026-10-01T03:36:54.138Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-155937": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "placed by Jay 2026-10-21 (phone on the TV stand, facing 0; the couch middle at 4.26 m, -5 deg)",
+   "source_file": "Dictate/captures/geonar/walk-155937/truth.json",
+   "source_saved_utc": "2026-10-22T00:37:11.049Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-165255": {
+   "phone": {
+    "x": -2.13,
+    "y": -0.25,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "phone set on the TV stand 2026-09-28; its own file still carries an older map",
+   "source_file": "Dictate/captures/geonar/walk-165255/truth.json",
+   "source_saved_utc": "2026-09-29T00:28:46.512Z",
+   "source_map_version": "f44f6b"
+  },
+  "walk-170343": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot",
+   "source_file": "Dictate/captures/geonar/walk-170343/truth.json",
+   "source_saved_utc": "2026-10-22T00:37:56.858Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-180036": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot",
+   "source_file": "Dictate/captures/geonar/walk-180036/truth.json",
+   "source_saved_utc": "2026-10-01T03:36:54.149Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-194532": {
+   "phone": {
+    "x": -3.6,
+    "y": 2.4,
+    "facing_deg": 90
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "as marked on the current map, not re-checked",
+   "source_file": "Dictate/captures/geonar/walk-194532/truth.json",
+   "source_saved_utc": "2026-09-29T00:52:05.733Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-194940": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "inferred 2026-10-21: of Jay's two candidates only the TV stand (facing 0) puts the original marks on the decode's landmarks; onsets agree",
+   "source_file": "Dictate/captures/geonar/walk-194940/truth.json",
+   "source_saved_utc": "2026-10-22T00:37:11.048Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-195454": {
+   "phone": {
+    "x": -3.8,
+    "y": 2.4,
+    "facing_deg": 90
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "confirmed by Jay 2026-10-21 (sectional edge, facing 90); the half-second bearings agree",
+   "source_file": "Dictate/captures/geonar/walk-195454/truth.json",
+   "source_saved_utc": "2026-09-28T05:59:50.954Z",
+   "source_map_version": "b85e4e"
+  },
+  "walk-203939": {
+   "phone": {
+    "x": -3.35,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "re-marked by Jay 2026-10-11 on the current map",
+   "source_file": "Dictate/captures/geonar/walk-203939/truth.json",
+   "source_saved_utc": "2026-10-11T20:15:02.294Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-204738": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot",
+   "source_file": "Dictate/captures/geonar/walk-204738/truth.json",
+   "source_saved_utc": "2026-10-01T03:36:54.175Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-204753": {
+   "phone": {
+    "x": -3.6,
+    "y": 2.4,
+    "facing_deg": 90
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "as marked on the current map, not re-checked",
+   "source_file": "Dictate/captures/geonar/walk-204753/truth.json",
+   "source_saved_utc": "2026-09-30T02:51:32.585Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-205043": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot",
+   "source_file": "Dictate/captures/geonar/walk-205043/truth.json",
+   "source_saved_utc": "2026-10-01T03:36:54.176Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-205606": {
+   "phone": {
+    "x": 0.45,
+    "y": 4.3,
+    "facing_deg": -124
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "as marked on the current map, not re-checked",
+   "source_file": "Dictate/captures/geonar/walk-205606/truth.json",
+   "source_saved_utc": "2026-10-01T03:24:06.617Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-210054": {
+   "phone": {
+    "x": -3.8,
+    "y": 2.4,
+    "facing_deg": 90
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "as marked on the current map, not re-checked",
+   "source_file": "Dictate/captures/geonar/walk-210054/truth.json",
+   "source_saved_utc": "2026-09-29T06:17:11.605Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-211959": {
+   "phone": {
+    "x": 0.4,
+    "y": 4.2,
+    "facing_deg": -131
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "as marked on the current map, not re-checked",
+   "source_file": "Dictate/captures/geonar/walk-211959/truth.json",
+   "source_saved_utc": "2026-10-01T03:24:06.618Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-212347": {
+   "phone": {
+    "x": -3.6,
+    "y": 2.4,
+    "facing_deg": 90
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "as marked on the current map, not re-checked",
+   "source_file": "Dictate/captures/geonar/walk-212347/truth.json",
+   "source_saved_utc": "2026-09-29T02:30:24.609Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-213150": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 2
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "as marked on the current map, not re-checked",
+   "source_file": "Dictate/captures/geonar/walk-213150/truth.json",
+   "source_saved_utc": "2026-09-30T02:53:00.732Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-214241": {
+   "phone": {
+    "x": 0.1,
+    "y": 4.15,
+    "facing_deg": -129
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "as marked on the current map, not re-checked",
+   "source_file": "Dictate/captures/geonar/walk-214241/truth.json",
+   "source_saved_utc": "2026-10-01T03:24:06.618Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-214457": {
+   "phone": {
+    "x": -3.4,
+    "y": -0.35,
+    "facing_deg": 42
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "as marked on the current map, not re-checked",
+   "source_file": "Dictate/captures/geonar/walk-214457/truth.json",
+   "source_saved_utc": "2026-09-30T02:55:57.147Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-221126": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot",
+   "source_file": "Dictate/captures/geonar/walk-221126/truth.json",
+   "source_saved_utc": "2026-10-01T03:36:54.187Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-223157": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot",
+   "source_file": "Dictate/captures/geonar/walk-223157/truth.json",
+   "source_saved_utc": "2026-10-01T03:36:54.188Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-224459": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot",
+   "source_file": "Dictate/captures/geonar/walk-224459/truth.json",
+   "source_saved_utc": "2026-10-01T03:36:54.191Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-225729": {
+   "phone": {
+    "x": -3.7,
+    "y": 2.35,
+    "facing_deg": 90
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "as marked on the current map, not re-checked",
+   "source_file": "Dictate/captures/geonar/walk-225729/truth.json",
+   "source_saved_utc": "2026-09-29T06:16:12.798Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-225905": {
+   "phone": {
+    "x": -3.7,
+    "y": 2.35,
+    "facing_deg": 90
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "as marked on the current map, not re-checked",
+   "source_file": "Dictate/captures/geonar/walk-225905/truth.json",
+   "source_saved_utc": "2026-09-29T06:16:04.581Z",
+   "source_map_version": "a17f2f"
+  },
+  "walk-233828": {
+   "phone": {
+    "x": -2.15,
+    "y": -0.2,
+    "facing_deg": 0
+   },
+   "phone_h_m": 1.5,
+   "mirror": true,
+   "status": "2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot",
+   "source_file": "Dictate/captures/geonar/walk-233828/truth.json",
+   "source_saved_utc": "2026-10-01T03:36:54.209Z",
+   "source_map_version": "a17f2f"
+  }
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "name": "walk-203939",
+ "source": "Dictate/captures/geonar/walk-203939-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 78.58,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 10,
+   "text": "Okay, well right now I'm in the first position at the corner of the couch, and this D-code should probably help because I'm actually saying where I am."
+  },
+  {
+   "t0": 14,
+   "t1": 22,
+   "text": "I just moved to the corner of the kitchen bar."
+  },
+  {
+   "t0": 22,
+   "t1": 26,
+   "text": "I guess all of this is going to be facing the phone."
+  },
+  {
+   "t0": 26,
+   "t1": 28,
+   "text": "So we're right for a few seconds."
+  },
+  {
+   "t0": 38,
+   "t1": 40,
+   "text": "And now the end of the kitchen bar."
+  },
+  {
+   "t0": 40,
+   "t1": 42,
+   "text": "I'm not going to, you know, like,"
+  },
+  {
+   "t0": 42,
+   "t1": 45,
+   "text": "test fade too much or tempt fade too much"
+  },
+  {
+   "t0": 45,
+   "t1": 47,
+   "text": "by moving too far to the kitchen,"
+  },
+  {
+   "t0": 47,
+   "t1": 49,
+   "text": "but the acoustic should be slightly different now."
+  },
+  {
+   "t0": 56,
+   "t1": 66,
+   "text": "I'm currently at the, I'm just being on the wall of the laundry room."
+  },
+  {
+   "t0": 66,
+   "t1": 73,
+   "text": "So there's really not a lot of other positions can be in this room."
+  },
+  {
+   "t0": 73,
+   "t1": 78,
+   "text": "Bye, Siri."
+  },
+  {
+   "t0": 78,
+   "t1": 79,
+   "text": "Bye, Siri."
+  }
+ ]
+}

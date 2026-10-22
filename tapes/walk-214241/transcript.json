@@ -1,0 +1,79 @@
+{
+ "name": "walk-214241",
+ "source": "Dictate/captures/geonar/walk-214241-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 68.76,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 9,
+   "text": "I'm now at the left corner of the hallway building, just kind of looking out at the back windows."
+  },
+  {
+   "t0": 9,
+   "t1": 15,
+   "text": "I wonder what the moon is in fact."
+  },
+  {
+   "t0": 15,
+   "t1": 25,
+   "text": "This is in position in the very corner of the wall of the kitchen to the living room."
+  },
+  {
+   "t0": 25,
+   "t1": 28,
+   "text": "Kind of the corner of the laundry room, really."
+  },
+  {
+   "t0": 30,
+   "t1": 35,
+   "text": "Well, here's a musician."
+  },
+  {
+   "t0": 35,
+   "t1": 39,
+   "text": "I am right where the circular couch is."
+  },
+  {
+   "t0": 39,
+   "t1": 42,
+   "text": "Yeah, that's exactly right, right, right."
+  },
+  {
+   "t0": 42,
+   "t1": 45,
+   "text": "Back into the ball."
+  },
+  {
+   "t0": 49,
+   "t1": 52,
+   "text": "Now I'm very middle of the living room."
+  },
+  {
+   "t0": 52,
+   "t1": 57,
+   "text": "Straight in line with the TV stand."
+  },
+  {
+   "t0": 57,
+   "t1": 58,
+   "text": "Yeah."
+  },
+  {
+   "t0": 58,
+   "t1": 65,
+   "text": "Bye to me."
+  },
+  {
+   "t0": 65,
+   "t1": 66,
+   "text": "Endo."
+  },
+  {
+   "t0": 66,
+   "t1": 68,
+   "text": "Endo."
+  }
+ ]
+}

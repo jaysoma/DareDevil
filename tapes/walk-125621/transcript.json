@@ -1,0 +1,114 @@
+{
+ "name": "walk-125621",
+ "source": "Dictate/captures/geonar/walk-125621-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 151.85,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 10.56,
+   "text": "meters facing the thumb two meters facing the thumb 90 degrees clockwise 90 degrees"
+  },
+  {
+   "t0": 10.56,
+   "t1": 17.96,
+   "text": "clockwise 90 degrees clockwise 90 degrees clockwise 180 degrees facing away"
+  },
+  {
+   "t0": 17.96,
+   "t1": 24.88,
+   "text": "180 degrees facing away 180 degrees facing away 180 degrees facing away"
+  },
+  {
+   "t0": 24.88,
+   "t1": 29.98,
+   "text": "two hundred seventy degrees facing the left two hundred seventy degrees"
+  },
+  {
+   "t0": 30,
+   "t1": 33,
+   "text": "Facing the left, 270 degrees, facing the left."
+  },
+  {
+   "t0": 37,
+   "t1": 39,
+   "text": "Facing the phone, 0 degrees."
+  },
+  {
+   "t0": 39,
+   "t1": 41,
+   "text": "Facing the phone, 0 degrees."
+  },
+  {
+   "t0": 41,
+   "t1": 43,
+   "text": "Facing the phone, 0 degrees."
+  },
+  {
+   "t0": 45,
+   "t1": 51,
+   "text": "4 meters facing the phone,"
+  },
+  {
+   "t0": 51,
+   "t1": 54,
+   "text": "facing the phone, 4 meters facing the phone."
+  },
+  {
+   "t0": 58,
+   "t1": 59,
+   "text": "90 degrees, clockwise."
+  },
+  {
+   "t0": 59,
+   "t1": 63,
+   "text": "clockwise, 90 degrees, clockwise, 90 degrees, clockwise."
+  },
+  {
+   "t0": 66,
+   "t1": 70,
+   "text": "Pacing away, same position, facing away, 180."
+  },
+  {
+   "t0": 71,
+   "t1": 73,
+   "text": "Facing away, 180 degrees."
+  },
+  {
+   "t0": 75,
+   "t1": 80,
+   "text": "Facing away, four meters, facing away, four meters, facing away, four meters."
+  },
+  {
+   "t0": 89,
+   "t1": 99.92,
+   "text": "45 degrees. On the top cap, about 3 meters. 3 meters, 40 degrees. Basically, yes, 45 degrees."
+  },
+  {
+   "t0": 102.04,
+   "t1": 110.98,
+   "text": "Rotating counter clock lines while talking. Facing, where the left cap is pointing,"
+  },
+  {
+   "t0": 111.22,
+   "t1": 116.88,
+   "text": "walking towards the kitchen in a street line facing the far wall."
+  },
+  {
+   "t0": 119,
+   "t1": 132.68,
+   "text": "wall rotating 180 degrees currently walking parallel to the horizontal axis of the"
+  },
+  {
+   "t0": 132.68,
+   "t1": 144.68,
+   "text": "phone about four meters from the foam at 45 degrees orientation is 90 degrees"
+  },
+  {
+   "t0": 144.68,
+   "t1": 145.18,
+   "text": "clockwise."
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "name": "walk-213150",
+ "source": "Dictate/captures/geonar/walk-213150-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 92.1,
+ "segments": [
+  {
+   "t0": 1.22,
+   "t1": 9.62,
+   "text": "First position, the L section of the sectional, which is where I am holding for now."
+  },
+  {
+   "t0": 17.62,
+   "t1": 27.24,
+   "text": "Second position, I am at the very corner of the island in the kitchen. That's right."
+  },
+  {
+   "t0": 31.24,
+   "t1": 44.96,
+   "text": "Third position. I am at the very corner of the kitchen that is the opposite of the pantry."
+  },
+  {
+   "t0": 45.64,
+   "t1": 45.84,
+   "text": "Yes."
+  },
+  {
+   "t0": 54.32,
+   "t1": 56.2,
+   "text": "I don't remember what number."
+  },
+  {
+   "t0": 56.2,
+   "t1": 63.34,
+   "text": "Next position, I am at the corner of the couch section."
+  },
+  {
+   "t0": 64.8,
+   "t1": 68.56,
+   "text": "Next to the circular coffee table."
+  },
+  {
+   "t0": 72.58,
+   "t1": 82.24,
+   "text": "Alright, next position, I am at the corner of the wall facing the entryway directly, looking straight at it."
+  },
+  {
+   "t0": 84.88,
+   "t1": 85.9,
+   "text": "End out."
+  },
+  {
+   "t0": 88.38,
+   "t1": 90.3,
+   "text": "And demo."
+  }
+ ]
+}

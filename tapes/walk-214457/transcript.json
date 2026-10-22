@@ -1,0 +1,109 @@
+{
+ "name": "walk-214457",
+ "source": "Dictate/captures/geonar/walk-214457-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 101.37,
+ "segments": [
+  {
+   "t0": 1.08,
+   "t1": 4,
+   "text": "First position, L section of the living room."
+  },
+  {
+   "t0": 5.84,
+   "t1": 10.2,
+   "text": "Uh, uh, I'm considering staying so long to this recording."
+  },
+  {
+   "t0": 15.88,
+   "t1": 16.84,
+   "text": "Second position, yeah."
+  },
+  {
+   "t0": 17.34,
+   "t1": 20.32,
+   "text": "Corner of bar, close to the room, at the platform."
+  },
+  {
+   "t0": 21.04,
+   "t1": 21.56,
+   "text": "Tillotsook."
+  },
+  {
+   "t0": 30.62,
+   "t1": 37.74,
+   "text": "of the wall, separating the room from the logger, the very corner of the wall."
+  },
+  {
+   "t0": 39.12,
+   "t1": 44.2,
+   "text": "Very corner of the wall."
+  },
+  {
+   "t0": 45.3,
+   "t1": 46.12,
+   "text": "Okay, there's a bit confused."
+  },
+  {
+   "t0": 46.34,
+   "t1": 53.2,
+   "text": "I am right now at the corner of the end of the wall right next to the footsoon or bottom."
+  },
+  {
+   "t0": 55.06,
+   "t1": 57.8,
+   "text": "Yeah, all this is going to mark at the dudes page."
+  },
+  {
+   "t0": 64.18,
+   "t1": 67.46,
+   "text": "Okay, I'm deep in the kitchen now."
+  },
+  {
+   "t0": 68.52,
+   "t1": 70.06,
+   "text": "I'm leaning on the fridge."
+  },
+  {
+   "t0": 70.9,
+   "t1": 71.78,
+   "text": "My back is on the bridge."
+  },
+  {
+   "t0": 71.9,
+   "t1": 72.98,
+   "text": "Back is just to the fridge."
+  },
+  {
+   "t0": 74.36,
+   "t1": 77.82,
+   "text": "And I'm leaning out of the building right in front of the fridge."
+  },
+  {
+   "t0": 82.38,
+   "t1": 88.32,
+   "text": "Now that I end the border of the kitchen to the living room, right along with the half."
+  },
+  {
+   "t0": 88.32,
+   "t1": 90.5,
+   "text": "or the kitchen."
+  },
+  {
+   "t0": 91.38,
+   "t1": 93.32,
+   "text": "Yeah, this will be the last position."
+  },
+  {
+   "t0": 97.44,
+   "t1": 98.96,
+   "text": "Then don't."
+  },
+  {
+   "t0": 100.18,
+   "t1": 101.14,
+   "text": "Bye, Siri."
+  }
+ ]
+}

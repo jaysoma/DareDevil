@@ -1,0 +1,274 @@
+{
+ "name": "walk-223157",
+ "source": "Dictate/captures/geonar/walk-223157-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 165.08,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 7,
+   "text": "Two meters from though."
+  },
+  {
+   "t0": 7,
+   "t1": 12,
+   "text": "I'm right now two meters from though, facing thaw."
+  },
+  {
+   "t0": 12,
+   "t1": 15,
+   "text": "Wind road clock, what?"
+  },
+  {
+   "t0": 15,
+   "t1": 18,
+   "text": "Uh, uh, uh, uh..."
+  },
+  {
+   "t0": 30,
+   "t1": 32,
+   "text": "H."
+  },
+  {
+   "t0": 32,
+   "t1": 35,
+   "text": "Hibisindon."
+  },
+  {
+   "t0": 35,
+   "t1": 36,
+   "text": "Hibisindon."
+  },
+  {
+   "t0": 36,
+   "t1": 37,
+   "text": "Okay,"
+  },
+  {
+   "t0": 37,
+   "t1": 39,
+   "text": "933,000."
+  },
+  {
+   "t0": 39,
+   "t1": 40,
+   "text": "2."
+  },
+  {
+   "t0": 40,
+   "t1": 45,
+   "text": "277."
+  },
+  {
+   "t0": 45,
+   "t1": 46,
+   "text": "27."
+  },
+  {
+   "t0": 46,
+   "t1": 47,
+   "text": "7."
+  },
+  {
+   "t0": 47,
+   "t1": 49,
+   "text": "7."
+  },
+  {
+   "t0": 49,
+   "t1": 51,
+   "text": "Two-sevee-heavy."
+  },
+  {
+   "t0": 51,
+   "t1": 66,
+   "text": "Basic, basic phone it."
+  },
+  {
+   "t0": 66,
+   "t1": 67,
+   "text": "Basic, phone in."
+  },
+  {
+   "t0": 67,
+   "t1": 68,
+   "text": "POP-T-T-T-T."
+  },
+  {
+   "t0": 68,
+   "t1": 70,
+   "text": "POMPE-T-T."
+  },
+  {
+   "t0": 79,
+   "t1": 81,
+   "text": "A..."
+  },
+  {
+   "t0": 81,
+   "t1": 85,
+   "text": "Uh..."
+  },
+  {
+   "t0": 85,
+   "t1": 87,
+   "text": "...in the f..."
+  },
+  {
+   "t0": 87,
+   "t1": 104,
+   "text": "...in the f..."
+  },
+  {
+   "t0": 104,
+   "t1": 105,
+   "text": "F..."
+  },
+  {
+   "t0": 105,
+   "t1": 106,
+   "text": "F..."
+  },
+  {
+   "t0": 109,
+   "t1": 113,
+   "text": "Okay, okay, okay, I knew this couple of us."
+  },
+  {
+   "t0": 113,
+   "t1": 117,
+   "text": "It's in the bottom, the bottom, I mean, in line the box out."
+  },
+  {
+   "t0": 117,
+   "t1": 120,
+   "text": "Puckethe"
+  },
+  {
+   "t0": 120,
+   "t1": 121,
+   "text": "Pucktem."
+  },
+  {
+   "t0": 121,
+   "t1": 122,
+   "text": "Pucktta"
+  },
+  {
+   "t0": 122,
+   "t1": 123,
+   "text": "Phae"
+  },
+  {
+   "t0": 123,
+   "t1": 124,
+   "text": "Pah"
+  },
+  {
+   "t0": 124,
+   "t1": 125,
+   "text": "TEN"
+  },
+  {
+   "t0": 125,
+   "t1": 126,
+   "text": "META"
+  },
+  {
+   "t0": 126,
+   "t1": 127,
+   "text": "WING Ome"
+  },
+  {
+   "t0": 127,
+   "t1": 128,
+   "text": "MET"
+  },
+  {
+   "t0": 128,
+   "t1": 129,
+   "text": "P"
+  },
+  {
+   "t0": 129,
+   "t1": 130,
+   "text": "D."
+  },
+  {
+   "t0": 130,
+   "t1": 134,
+   "text": "And now why you"
+  },
+  {
+   "t0": 134,
+   "t1": 135,
+   "text": "Bukh"
+  },
+  {
+   "t0": 135,
+   "t1": 136,
+   "text": "Mip"
+  },
+  {
+   "t0": 136,
+   "t1": 137,
+   "text": "No,"
+  },
+  {
+   "t0": 137,
+   "t1": 138,
+   "text": "no"
+  },
+  {
+   "t0": 138,
+   "t1": 139,
+   "text": "no"
+  },
+  {
+   "t0": 139,
+   "t1": 140,
+   "text": "Nob."
+  },
+  {
+   "t0": 140,
+   "t1": 144,
+   "text": "Use when you..."
+  },
+  {
+   "t0": 144,
+   "t1": 145,
+   "text": "P..."
+  },
+  {
+   "t0": 145,
+   "t1": 146,
+   "text": "Snow, snow."
+  },
+  {
+   "t0": 146,
+   "t1": 153,
+   "text": "Snow, snow."
+  },
+  {
+   "t0": 153,
+   "t1": 155,
+   "text": "I don't know."
+  },
+  {
+   "t0": 155,
+   "t1": 157,
+   "text": "I'm going to be."
+  },
+  {
+   "t0": 157,
+   "t1": 159,
+   "text": "Thank you."
+  },
+  {
+   "t0": 159,
+   "t1": 161,
+   "text": "I don't know."
+  }
+ ]
+}

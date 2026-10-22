@@ -1,0 +1,357 @@
+{
+ "dataset": "geonar-truth",
+ "built": "2026-10-22T01:41:44.986Z",
+ "tapes": [
+  {
+   "name": "walk-002736",
+   "recorded": "2026-09-14T00:27:36-05:00",
+   "duration_s": 37.621,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-002736/transcript.json",
+    "tapes/walk-002736/odas.json",
+    "tapes/walk-002736/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-111830",
+   "recorded": "2026-09-22T11:18:30-05:00",
+   "duration_s": 346.831,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-111830/transcript.json",
+    "tapes/walk-111830/odas.json",
+    "tapes/walk-111830/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-114614",
+   "recorded": "2026-09-22T11:46:14-05:00",
+   "duration_s": 78.579,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-114614/transcript.json",
+    "tapes/walk-114614/odas.json",
+    "tapes/walk-114614/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-125621",
+   "recorded": "2026-09-19T12:56:21-05:00",
+   "duration_s": 151.846,
+   "rotation": true,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-125621/transcript.json",
+    "tapes/walk-125621/odas.json",
+    "tapes/walk-125621/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-154655",
+   "recorded": "2026-09-19T15:46:55-05:00",
+   "duration_s": 105.727,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-154655/transcript.json",
+    "tapes/walk-154655/odas.json",
+    "tapes/walk-154655/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-155937",
+   "recorded": "2026-09-19T15:59:37-05:00",
+   "duration_s": 152.52,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-155937/transcript.json",
+    "tapes/walk-155937/odas.json",
+    "tapes/walk-155937/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-165255",
+   "recorded": "2026-09-23T16:52:55-05:00",
+   "duration_s": 75.91,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-165255/transcript.json",
+    "tapes/walk-165255/odas.json",
+    "tapes/walk-165255/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-170343",
+   "recorded": "2026-09-19T17:03:43-05:00",
+   "duration_s": 157.026,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-170343/transcript.json",
+    "tapes/walk-170343/odas.json",
+    "tapes/walk-170343/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-180036",
+   "recorded": "2026-09-23T18:00:36-05:00",
+   "duration_s": 37.087,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-180036/transcript.json",
+    "tapes/walk-180036/odas.json",
+    "tapes/walk-180036/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-194532",
+   "recorded": "2026-09-28T19:45:32-05:00",
+   "duration_s": 81.997,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-194532/transcript.json",
+    "tapes/walk-194532/odas.json",
+    "tapes/walk-194532/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-194940",
+   "recorded": "2026-09-24T19:49:40-05:00",
+   "duration_s": 51.208,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-194940/transcript.json",
+    "tapes/walk-194940/odas.json",
+    "tapes/walk-194940/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-195454",
+   "recorded": "2026-09-24T19:54:54-05:00",
+   "duration_s": 82.986,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-195454/transcript.json",
+    "tapes/walk-195454/odas.json",
+    "tapes/walk-195454/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-203939",
+   "recorded": "2026-09-23T20:39:39-05:00",
+   "duration_s": 78.581,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-203939/transcript.json",
+    "tapes/walk-203939/odas.json",
+    "tapes/walk-203939/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-204738",
+   "recorded": "2026-09-15T20:47:38-05:00",
+   "duration_s": 34.308,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-204738/transcript.json",
+    "tapes/walk-204738/odas.json",
+    "tapes/walk-204738/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-204753",
+   "recorded": "2026-09-29T20:47:53-05:00",
+   "duration_s": 93.1,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-204753/transcript.json",
+    "tapes/walk-204753/odas.json",
+    "tapes/walk-204753/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-205043",
+   "recorded": "2026-09-22T20:50:43-05:00",
+   "duration_s": 193.667,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-205043/transcript.json",
+    "tapes/walk-205043/odas.json",
+    "tapes/walk-205043/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-205606",
+   "recorded": "2026-09-23T20:56:06-05:00",
+   "duration_s": 90.961,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-205606/transcript.json",
+    "tapes/walk-205606/odas.json",
+    "tapes/walk-205606/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-210054",
+   "recorded": "2026-09-24T21:00:54-05:00",
+   "duration_s": 58.272,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-210054/transcript.json",
+    "tapes/walk-210054/odas.json",
+    "tapes/walk-210054/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-211959",
+   "recorded": "2026-09-23T21:19:59-05:00",
+   "duration_s": 110.345,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-211959/transcript.json",
+    "tapes/walk-211959/odas.json",
+    "tapes/walk-211959/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-212347",
+   "recorded": "2026-09-28T21:23:47-05:00",
+   "recorded_note": "tape_index date is the import day; stepped back one day",
+   "duration_s": 111.02,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-212347/transcript.json",
+    "tapes/walk-212347/odas.json",
+    "tapes/walk-212347/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-213150",
+   "recorded": "2026-09-29T21:31:50-05:00",
+   "duration_s": 92.1,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-213150/transcript.json",
+    "tapes/walk-213150/odas.json",
+    "tapes/walk-213150/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-214241",
+   "recorded": "2026-09-29T21:42:41-05:00",
+   "duration_s": 68.758,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-214241/transcript.json",
+    "tapes/walk-214241/odas.json",
+    "tapes/walk-214241/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-214457",
+   "recorded": "2026-09-29T21:44:57-05:00",
+   "duration_s": 101.374,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-214457/transcript.json",
+    "tapes/walk-214457/odas.json",
+    "tapes/walk-214457/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-221126",
+   "recorded": "2026-09-21T22:11:26-05:00",
+   "duration_s": 244.492,
+   "rotation": true,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-221126/transcript.json",
+    "tapes/walk-221126/odas.json",
+    "tapes/walk-221126/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-223157",
+   "recorded": "2026-09-21T22:31:57-05:00",
+   "duration_s": 165.08,
+   "rotation": false,
+   "note": "decode garbled (\"wind road clock\" may be \"rotate clockwise\")",
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-223157/transcript.json",
+    "tapes/walk-223157/odas.json",
+    "tapes/walk-223157/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-224459",
+   "recorded": "2026-09-17T22:44:59-05:00",
+   "duration_s": 78.552,
+   "rotation": true,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-224459/transcript.json",
+    "tapes/walk-224459/odas.json",
+    "tapes/walk-224459/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-225729",
+   "recorded": "2026-09-26T22:57:29-05:00",
+   "duration_s": 83.879,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-225729/transcript.json",
+    "tapes/walk-225729/odas.json",
+    "tapes/walk-225729/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-225905",
+   "recorded": "2026-09-26T22:59:05-05:00",
+   "duration_s": 45.016,
+   "rotation": false,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-225905/transcript.json",
+    "tapes/walk-225905/odas.json",
+    "tapes/walk-225905/audio-input.json"
+   ]
+  },
+  {
+   "name": "walk-233828",
+   "recorded": "2026-09-14T23:38:28-05:00",
+   "duration_s": 108.315,
+   "rotation": false,
+   "note": "positions, then walking while talking",
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-233828/transcript.json",
+    "tapes/walk-233828/odas.json",
+    "tapes/walk-233828/audio-input.json"
+   ]
+  }
+ ]
+}

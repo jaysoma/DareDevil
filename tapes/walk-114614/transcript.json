@@ -1,0 +1,84 @@
+{
+ "name": "walk-114614",
+ "source": "Dictate/captures/geonar/walk-114614-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 78.58,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 7,
+   "text": "I'm now standing at one meter."
+  },
+  {
+   "t0": 7,
+   "t1": 9,
+   "text": "One meter from the phone."
+  },
+  {
+   "t0": 9,
+   "t1": 13,
+   "text": "The phone is slightly higher from where it was before."
+  },
+  {
+   "t0": 13,
+   "t1": 15,
+   "text": "It's lying on his back now."
+  },
+  {
+   "t0": 15,
+   "t1": 19,
+   "text": "I'm going to do a phone on its back and also"
+  },
+  {
+   "t0": 19,
+   "t1": 21,
+   "text": "phones standing on its long edge."
+  },
+  {
+   "t0": 21,
+   "t1": 26,
+   "text": "But right now it's on his back."
+  },
+  {
+   "t0": 26,
+   "t1": 29,
+   "text": "I'm now at two meters facing the phone."
+  },
+  {
+   "t0": 29,
+   "t1": 36,
+   "text": "Facing the phone, the phone is in a slightly position just on the x-axis."
+  },
+  {
+   "t0": 36,
+   "t1": 47,
+   "text": "I'm now at 4 meters, 4 meters from the phone."
+  },
+  {
+   "t0": 47,
+   "t1": 53,
+   "text": "Looking straight to the phone, I'm sitting down now, though, so my mouth is more in line where the phone is."
+  },
+  {
+   "t0": 53,
+   "t1": 58,
+   "text": "I did not do the in-between because it just isn't feasible."
+  },
+  {
+   "t0": 58,
+   "t1": 62,
+   "text": "It just isn't feasible along this plane."
+  },
+  {
+   "t0": 62,
+   "t1": 67,
+   "text": "Now I'm talking while moving towards the phone."
+  },
+  {
+   "t0": 67,
+   "t1": 73,
+   "text": "I am at two meters and I'm talking while approaching the phone, one meter."
+  }
+ ]
+}

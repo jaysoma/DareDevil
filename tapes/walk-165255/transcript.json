@@ -1,0 +1,44 @@
+{
+ "name": "walk-165255",
+ "source": "Dictate/captures/geonar/walk-165255-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 75.91,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 12,
+   "text": "I'm standing right from the phone at what I measured to be 3.5-6 meters."
+  },
+  {
+   "t0": 14,
+   "t1": 16,
+   "text": "Your mileage may vary."
+  },
+  {
+   "t0": 21,
+   "t1": 28,
+   "text": "I'm standing closer now. I haven't measured the spot, so I think it's 1.5 meters."
+  },
+  {
+   "t0": 30,
+   "t1": 37,
+   "text": "I move sideways about 45 degrees toward the top cap"
+  },
+  {
+   "t0": 37,
+   "t1": 52.62,
+   "text": "move sideways so I'm now at the new position I'm just gonna use the truth page to mark"
+  },
+  {
+   "t0": 52.62,
+   "t1": 57.12,
+   "text": "these positions that's what I did before yeah that's what I'm gonna do so this is position"
+  },
+  {
+   "t0": 57.12,
+   "t1": 75.28,
+   "text": "one two three four okay and this is the fifth position so i'm going to close this tape bye sirie"
+  }
+ ]
+}

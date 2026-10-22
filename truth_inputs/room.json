@@ -1,0 +1,135 @@
+{
+ "source": "Dictate/captures/geonar/truth.json (the Truth page's shared room)",
+ "map_version": "a17f2f",
+ "map_unchanged_since": "2026-09-28 19:48 (furniture since 00:33 that day)",
+ "frame": "metres; x to the right and y up as the Truth page draws the room (y grows away from the TV wall)",
+ "room_w": 8,
+ "room_d": 11,
+ "ceiling_h": 2.79,
+ "outline": [
+  [
+   -8.5,
+   -0.63
+  ],
+  [
+   -8.5,
+   0.99
+  ],
+  [
+   -5.371,
+   0.99
+  ],
+  [
+   -4.525,
+   2.08
+  ],
+  [
+   -4.525,
+   6.785
+  ],
+  [
+   -0.015,
+   6.785
+  ],
+  [
+   -0.015,
+   4.04
+  ],
+  [
+   0.949,
+   4.04
+  ],
+  [
+   0.949,
+   6.785
+  ],
+  [
+   3.663,
+   6.785
+  ],
+  [
+   5.095,
+   5.68
+  ],
+  [
+   5.095,
+   0.93
+  ],
+  [
+   0.68,
+   0.93
+  ],
+  [
+   0.68,
+   -1.88
+  ],
+  [
+   -0.385,
+   -1.88
+  ],
+  [
+   -0.385,
+   -0.91
+  ],
+  [
+   -4.78,
+   -0.91
+  ],
+  [
+   -4.78,
+   -1.985
+  ],
+  [
+   -5.84,
+   -1.985
+  ],
+  [
+   -5.84,
+   -0.63
+  ]
+ ],
+ "openings": [
+  3
+ ],
+ "outline_ar": {
+  "source": "ARMeter chain 2026-09-11 14:56, TV wall from the phone's unit westward, right angles assumed",
+  "points": [
+   [
+    -3.35,
+    -0.5
+   ],
+   [
+    -7.86,
+    -0.5
+   ],
+   [
+    -7.86,
+    0.44
+   ],
+   [
+    -8.76,
+    0.44
+   ],
+   [
+    -8.76,
+    1.22
+   ],
+   [
+    -8.76,
+    3.86
+   ],
+   [
+    -7.07,
+    3.86
+   ],
+   [
+    -7.07,
+    6.99
+   ],
+   [
+    -5.72,
+    6.99
+   ]
+  ]
+ }
+}

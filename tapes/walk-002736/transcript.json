@@ -1,0 +1,19 @@
+{
+ "name": "walk-002736",
+ "source": "Dictate/captures/geonar/walk-002736-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 37.62,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 29.98,
+   "text": "I'm right now on the side of the top mic about 2.5 meters, I would say maybe 20 degrees from the top mic standing right underneath the track lights. I'm working with that."
+  },
+  {
+   "t0": 30,
+   "t1": 32,
+   "text": "up."
+  }
+ ]
+}

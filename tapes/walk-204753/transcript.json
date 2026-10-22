@@ -1,0 +1,99 @@
+{
+ "name": "walk-204753",
+ "source": "Dictate/captures/geonar/walk-204753-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 93.1,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 14,
+   "text": "Position one, I am right at the corner of the laundry room and the living room, right at the corner of the corner of the wall."
+  },
+  {
+   "t0": 14,
+   "t1": 29,
+   "text": "Position two, I am at the corner of my friend the TV, sitting at the TV stand."
+  },
+  {
+   "t0": 29,
+   "t1": 34,
+   "text": "the TV stand."
+  },
+  {
+   "t0": 38,
+   "t1": 39,
+   "text": "The edition 3."
+  },
+  {
+   "t0": 39,
+   "t1": 45,
+   "text": "The air, uh, end of the kitchen bar top."
+  },
+  {
+   "t0": 45,
+   "t1": 52,
+   "text": "Right, right at the bar top."
+  },
+  {
+   "t0": 52,
+   "t1": 56,
+   "text": "This is more."
+  },
+  {
+   "t0": 56,
+   "t1": 58,
+   "text": "Let's see if this week works."
+  },
+  {
+   "t0": 58,
+   "t1": 62,
+   "text": "I am right in front of the bridge in the kitchen."
+  },
+  {
+   "t0": 62,
+   "t1": 63,
+   "text": "Mark this nice on that later."
+  },
+  {
+   "t0": 71,
+   "t1": 72,
+   "text": "Position 5."
+  },
+  {
+   "t0": 72,
+   "t1": 75,
+   "text": "I am in front of the dining table."
+  },
+  {
+   "t0": 75,
+   "t1": 77,
+   "text": "Oh no, it's bearing zero."
+  },
+  {
+   "t0": 77,
+   "t1": 79,
+   "text": "The curse is bearing."
+  },
+  {
+   "t0": 79,
+   "t1": 81,
+   "text": "What will I do?"
+  },
+  {
+   "t0": 81,
+   "t1": 87,
+   "text": "Right in the middle of the dining table."
+  },
+  {
+   "t0": 87,
+   "t1": 88,
+   "text": "Bye, Siri."
+  },
+  {
+   "t0": 90.5,
+   "t1": 91.62,
+   "text": "Bye, Siri."
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "name": "walk-194532",
+ "source": "Dictate/captures/geonar/walk-194532-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 82,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 15,
+   "text": "First position in front of the phone, in line with the glass shelf and the round coffee table."
+  },
+  {
+   "t0": 15,
+   "t1": 23,
+   "text": "Second position, corner of the kitchen bar."
+  },
+  {
+   "t0": 23,
+   "t1": 27,
+   "text": "Third position, other corner of the kitchen bar."
+  },
+  {
+   "t0": 27,
+   "t1": 31,
+   "text": "Third position, other corner of the kitchen bar."
+  },
+  {
+   "t0": 35,
+   "t1": 45,
+   "text": "Fourth position, leaning on the wall to the laundry room, right at the edge of the dining table."
+  },
+  {
+   "t0": 49,
+   "t1": 55,
+   "text": "Fifth position, far back wall. Well, maybe, and a little bit shy."
+  },
+  {
+   "t0": 57,
+   "t1": 64,
+   "text": "Sixth position, corner of the pantry, right down the left edge of the bridge."
+  }
+ ]
+}

@@ -1,0 +1,124 @@
+{
+ "name": "walk-212347",
+ "source": "Dictate/captures/geonar/walk-212347-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 111.02,
+ "segments": [
+  {
+   "t0": 3.1,
+   "t1": 9.58,
+   "text": "I'm now in the first position, same one as before, talking directly facing the phone."
+  },
+  {
+   "t0": 15.92,
+   "t1": 21.92,
+   "text": "And now the second position, corner of the kitchen bar."
+  },
+  {
+   "t0": 23.3,
+   "t1": 24.52,
+   "text": "I'm now leading to the phone."
+  },
+  {
+   "t0": 28.96,
+   "t1": 30.66,
+   "text": "I'm now leading on the third position."
+  },
+  {
+   "t0": 31.22,
+   "t1": 33.52,
+   "text": "I'm beating on the position that would make it sense."
+  },
+  {
+   "t0": 34.56,
+   "t1": 37.9,
+   "text": "I'm now leading on the kitchen bar which is the third position."
+  },
+  {
+   "t0": 42.04,
+   "t1": 44.26,
+   "text": "I'm now leading on the fourth position."
+  },
+  {
+   "t0": 44.62,
+   "t1": 46.18,
+   "text": "Might as well just keep that consistent."
+  },
+  {
+   "t0": 48.02,
+   "t1": 51.9,
+   "text": "I'm beating on the wall, which is the"
+  },
+  {
+   "t0": 51.92,
+   "t1": 56.04,
+   "text": "the laundry room wall."
+  },
+  {
+   "t0": 61.48,
+   "t1": 64.5,
+   "text": "I'd really be interested to see how this position comes out."
+  },
+  {
+   "t0": 65.38,
+   "t1": 66.44,
+   "text": "This one's kind of tricky."
+  },
+  {
+   "t0": 67.98,
+   "t1": 70.66,
+   "text": "Well, I mean, if it records, hopefully it'll come out."
+  },
+  {
+   "t0": 74.62,
+   "t1": 77.52,
+   "text": "I'm really interested to see if this position comes up,"
+  },
+  {
+   "t0": 78.5,
+   "t1": 79.82,
+   "text": "which is right in front of the bridge."
+  },
+  {
+   "t0": 80.74,
+   "t1": 88.24,
+   "text": "The far end of the room."
+  },
+  {
+   "t0": 89.84,
+   "t1": 91.7,
+   "text": "And of course, last but not least,"
+  },
+  {
+   "t0": 92.96,
+   "t1": 94.1,
+   "text": "the TV stand corner."
+  },
+  {
+   "t0": 95.54,
+   "t1": 97.22,
+   "text": "Holding up our dear TV friend,"
+  },
+  {
+   "t0": 97.52,
+   "t1": 99.66,
+   "text": "which I haven't used for quite a while."
+  },
+  {
+   "t0": 99.94,
+   "t1": 101.4,
+   "text": "My goodness, what's happening to me?"
+  },
+  {
+   "t0": 101.94,
+   "t1": 103.24,
+   "text": "It looks like to my TV friend."
+  },
+  {
+   "t0": 109.82,
+   "t1": 111,
+   "text": "Thank you."
+  }
+ ]
+}
