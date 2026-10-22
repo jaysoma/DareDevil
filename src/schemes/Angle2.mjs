@@ -28,7 +28,8 @@
 //   Nothing is averaged: one frame's peaks, sample-level timing, one fit per delay.
 //   Delay convention is Angle's: R(t) = L(t - tau), deg = asin(-tau c / d), +deg reaches R first.
 //   THE UTTERANCE'S ONSET (readUtterance, below): the first direction to recur three times from 100 ms before the
-//   Conductor's onset -- what Render's puck uses for an utterance when the tape has it (geonar/angle_rays.py).
+//   Conductor's onset, counting rising windows first -- what Render's puck uses for an utterance when the tape has it
+//   (geonar/angle_rays.py).
 //   NOT ACTIVE until RangeMath/active.json names it: {"bearing": "Angle2"}.
 export const FRAME = 1024, STEP = 512, NFFT = 2048, LO_HZ = 1100, HI_HZ = 8000, PRE = 0.97, SCAN_TAUS = 181;
 export const BLOCK = FRAME;                    // the read's length under its old name
@@ -302,8 +303,19 @@ export function readSound(L, R, s, baselineM, floor = null) {
 // averaged: each window's own peak, counted. The scan runs at most U_LONG_MS.
 // On walk-203939 (hand count before this was built): 19.1 s +30s, 37.7 s +54/+59/+51 29 ms before the Conductor's onset,
 // 56.4 s +90/+61/+73 ahead of the kitchen reflection's -38 family.
+// THE ONSET FROM CLEAN, RISING WINDOWS (2026-10-22, results/angle2_pull.md). On STARSS23 the onset read 2-19 deg nearer
+// 0 than GccPhat, growing with angle. In image-source rooms it is neither U_AGREE nor U_HITS: it is WHEN the count starts.
+// In a room with noise (or the last phrase's tail) the voice clears the gate tens of ms after it starts; by then the
+// floor, ceiling and front/back walls -- all images nearer 0 than the talker -- are in every 3 ms window, and the first
+// family to recur is theirs or a blend. Two tests pick the windows the direct sound still holds alone: the level is
+// U_RISE_DB over the window U_RISE_MS before (new sound, and new sound reaches the mics direct first), and the read's peak
+// holds U_CLEAN of the band's votes (one wave, not a blend). The onset is the first direction to recur U_EDGE_HITS times
+// among those windows; when none does within U_LONG_MS, the first to recur U_HITS times among all counted windows, as
+// before, flagged edge: false. The first reflection is unchanged: the next direction to recur among all counted
+// windows, other than the onset's. On the room sweep (94 sets): 2576 onsets moved to within 10 deg, 557 out of it.
 // ======================================================================================================================
 export const U_WIN = 144, U_GATE_DB = 10, U_HITS = 3, U_AGREE = 3, U_BEFORE_MS = 100, U_LONG_MS = 600;
+export const U_RISE_DB = 3, U_RISE_MS = 3, U_CLEAN = 0.6, U_EDGE_HITS = 2;
 const U_N = 1024, U_K0 = Math.ceil(LO_HZ * U_N / SR), U_K1 = Math.floor(HI_HZ * U_N / SR);
 const U_HANN = Float64Array.from({ length: U_WIN }, (_, i) => 0.5 - 0.5 * Math.cos(2 * Math.PI * i / (U_WIN - 1)));
 let U_STEER = null;
@@ -318,7 +330,7 @@ function uSteer(baselineM) {
   }
   return (U_STEER = { baselineM, nb, cos, sin, tauOf });
 }
-function uRead(lf, rf, a, S) {                                       // one 3 ms window's strongest delay, in seconds
+function uRead(lf, rf, a, S) {                       // one 3 ms window's strongest delay (s) and its peak's share of the votes
   const lr = new Float64Array(U_N), li = new Float64Array(U_N), rr = new Float64Array(U_N), ri = new Float64Array(U_N);
   for (let i = 0; i < U_WIN; i++) { lr[i] = lf[a + i] * U_HANN[i]; rr[i] = rf[a + i] * U_HANN[i]; }
   fft(lr, li); fft(rr, ri);
@@ -330,14 +342,16 @@ function uRead(lf, rf, a, S) {                                       // one 3 ms
     for (let j = 0; j < SCAN_TAUS; j++) score[j] += cr * S.cos[o + j] + ci * S.sin[o + j];
   }
   let j = 0; for (let q = 1; q < SCAN_TAUS; q++) if (score[q] > score[j]) j = q;
-  return S.tauOf(j);
+  return { tau: S.tauOf(j), share: score[j] / S.nb };
 }
-/* The utterance whose Conductor onset is at sample `at`: { onset: {deg, first, at3}, refl: {deg, first, at3} | null } in
-   tape samples (first = the direction's first read, at3 = the read that made it recur U_HITS times), or null when no
-   direction recurred within U_LONG_MS or the tape has too little around it. */
-export function readUtterance(L, R, at, baselineM) {
+/* The utterance whose Conductor onset is at sample `at`: { onset: {deg, first, at3, edge}, refl: {deg, first, at3} | null }
+   in tape samples (first = the direction's first read, at3 = the read that made it recur U_HITS times; edge = the onset
+   came from the clean, rising windows), or null when no direction recurred within U_LONG_MS or the tape has too little
+   around it. `trace`, when an array, gets every counted window's read {at, db (over the floor), rise (dB over the window
+   U_RISE_MS before), share, deg, fam (its family's index)}, for checking. */
+export function readUtterance(L, R, at, baselineM, trace = null) {
   const a0 = at - U_BEFORE_MS * 48, f0 = a0 - 100 * 48, pad = 2048;
-  const lo = f0 - pad, hi = at + U_LONG_MS * 48 + U_WIN + pad;
+  const lo = f0 - pad, hi = at + U_LONG_MS * 48 + U_WIN + pad;      // the scan starts 100 ms + pad in: room to look U_RISE_MS back
   if (lo < 0 || hi > L.length) return null;
   const n = hi - lo; let N = 1; while (N < n) N <<= 1;
   const g = bandGain(N), Ls = spectrum(L, lo, n, N), Rs = spectrum(R, lo, n, N);
@@ -349,21 +363,29 @@ export function readUtterance(L, R, at, baselineM) {
     let e = 0; for (let i = 0; i < 48; i++) e += lf[b + i] * lf[b + i] + rf[b + i] * rf[b + i];
     floorDb = Math.min(floorDb, 10 * Math.log10(e / 48 + 1e-12));
   }
-  const fams = [];
-  let onsetFam = null, onset = null, refl = null;
-  for (let ms = 0; ms < U_LONG_MS + U_BEFORE_MS && !refl; ms++) {
-    const a = a0 - lo + ms * 48;
-    let e = 0; for (let i = 0; i < U_WIN; i++) e += lf[a + i] * lf[a + i] + rf[a + i] * rf[a + i];
-    if (10 * Math.log10(e / U_WIN + 1e-12) < floorDb + U_GATE_DB) continue;
-    const tau = uRead(lf, rf, a, S), ds = tau * SR;
-    let f = fams.find((q) => Math.abs(q.ds - ds) <= U_AGREE);
-    if (!f) { f = { ds, tau, first: a0 + ms * 48, hits: 0 }; fams.push(f); }
-    if (++f.hits === U_HITS) {
-      if (!onsetFam) { onsetFam = f; onset = { deg: degOf(f.tau, baselineM), first: f.first, at3: a0 + ms * 48 }; }
-      else if (f !== onsetFam) refl = { deg: degOf(f.tau, baselineM), first: f.first, at3: a0 + ms * 48 };
-    }
+  const tally = (fs, ds, tau, t) => {                              // count a read into its family (new if none within U_AGREE)
+    let f = fs.find((q) => Math.abs(q.ds - ds) <= U_AGREE);
+    if (!f) { f = { ds, tau, first: t, hits: 0 }; fs.push(f); }
+    f.hits++; return f;
+  };
+  const fams = [], edges = [], recurred = [];   // families of every counted window, of the clean rising ones; fams in the order they recurred
+  let edge = null;
+  const other = (r) => Math.abs(r.f.ds - edge.f.ds) > U_AGREE;
+  for (let ms = 0; ms < U_LONG_MS + U_BEFORE_MS && !(edge && recurred.some(other)); ms++) {
+    const a = a0 - lo + ms * 48, b = a - U_RISE_MS * 48;
+    let e = 0, e0 = 0;
+    for (let i = 0; i < U_WIN; i++) { e += lf[a + i] * lf[a + i] + rf[a + i] * rf[a + i]; e0 += lf[b + i] * lf[b + i] + rf[b + i] * rf[b + i]; }
+    const db = 10 * Math.log10(e / U_WIN + 1e-12) - floorDb, rise = 10 * Math.log10((e + 1e-12) / (e0 + 1e-12));
+    if (db < U_GATE_DB) continue;
+    const { tau, share } = uRead(lf, rf, a, S), ds = tau * SR, t = a0 + ms * 48;
+    const f = tally(fams, ds, tau, t);
+    if (trace) trace.push({ at: t, db, rise, share, deg: degOf(tau, baselineM), fam: fams.indexOf(f) });
+    if (f.hits === U_HITS) recurred.push({ f, at3: t });
+    if (!edge && rise >= U_RISE_DB && share >= U_CLEAN) { const h = tally(edges, ds, tau, t); if (h.hits === U_EDGE_HITS) edge = { f: h, at3: t }; }
   }
-  return onset ? { onset, refl } : null;
+  const pos = (r, isEdge) => ({ deg: degOf(r.f.tau, baselineM), first: r.f.first, at3: r.at3, ...(isEdge === undefined ? {} : { edge: isEdge }) });
+  if (edge) { const r = recurred.find(other); return { onset: pos(edge, true), refl: r ? pos(r) : null }; }
+  return recurred.length ? { onset: pos(recurred[0], false), refl: recurred[1] ? pos(recurred[1]) : null } : null;
 }
 
 // the whole band's level of one frame, as geonar/detect_movie.band_level: first difference, a symmetric Hann, the two

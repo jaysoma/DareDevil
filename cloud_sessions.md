@@ -32,6 +32,10 @@ absolute error as the phone's. Commit `results/starss23/report.md` and the per-c
 
 ## 2. Angle2 inward pull
 
+DONE for the rooms in the 2026-10-22 cloud session: `results/angle2_pull.md` (mechanism, fix, before/after). The
+STARSS re-check (step 3) is still open: that session had no network access to zenodo.org. The commands are at the end of
+the report.
+
 Read HANDOFF.md, `results/starss23/report.md` (section 2), then `src/schemes/Angle2.mjs`. REVISED 2026-10-22 after
 the STARSS23 run: `readUtterance` reads 2-19 deg nearer 0 than GccPhat on the same real cuts, growing with angle, but
 with exact fractional delays and no room it is within 1 deg everywhere. The pull comes with reflections. A plane-wave
