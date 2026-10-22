@@ -4,9 +4,9 @@ nearer 0) and its offset from GccPhat on the same cut, before and after; the sha
 how those and the rest read; per room; how many onsets moved to within 10 deg or out of it. GccPhat is unchanged, so its
 reads must match the old ones exactly (checked).
 usage: python compare_fix.py <dir with new cuts_XY.jsonl + preds_XY.jsonl> <dir with old preds_XY.jsonl> [out.json]"""
-import json, statistics as st, sys
+import json, os, statistics as st, sys
 from pathlib import Path
-NEW, OLD = Path(sys.argv[1]), Path(sys.argv[2]); PAIRS = ['12', '13', '14', '23', '24', '34']
+NEW, OLD = Path(sys.argv[1]), Path(sys.argv[2]); PAIRS = os.environ.get('PAIRS', '12 13 14 23 24 34').split()
 BANDS = [(0, 15), (15, 30), (30, 45), (45, 60), (60, 90)]
 rows, gcc_same, gcc_n = [], 0, 0
 for p in PAIRS:
