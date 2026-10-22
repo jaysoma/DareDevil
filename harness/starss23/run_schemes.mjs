@@ -30,6 +30,7 @@ for await (const line of rl) {
   try {
     const r = A2.readUtterance(L, R, on, base);
     out.a2 = r ? [r.onset.deg, r.refl ? r.refl.deg : null] : null;
+    if (r && r.onset.edge !== undefined) out.a2_edge = r.onset.edge;   // onset from clean rising windows (since 2026-10-22)
   } catch (e) { out.a2_err = String(e); }
   process.stdout.write(JSON.stringify(out) + '\n');
 }
