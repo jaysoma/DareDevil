@@ -16,11 +16,11 @@ pct = lambda a, b: f'{100 * a / b:.1f}' if b else '-'
 share = lambda c: pct(c[1], c[0])     # c = [frames, near 0, null near 0]
 
 
-def pooled(s, rooms=ROOMS, pairs=PAIRS, hp='0'):
+def pooled(s, rooms=ROOMS, pairs=PAIRS, hp='0', kind='counts'):
     n = k = z = 0
     for m in rooms:
         for p in pairs:
-            c = r['counts'][s].get(m, {}).get(p, {}).get(hp)
+            c = r[kind][s].get(m, {}).get(p, {}).get(hp)
             if c:
                 n += c[0]; k += c[1]; z += c[2]
     return n, k, z
@@ -33,31 +33,33 @@ def table(head, rows):
 
 
 hp_head = [f'HP {h} Hz' for h in HPS]
-for s in ('silence', 'speechfree'):
-    print(f'\n### {s}: pooled over 16 rooms and 6 pairs\n')
+for kind, s in (('counts', 'silence'), ('counts_sum', 'silence'), ('counts', 'speechfree'), ('counts_sum', 'speechfree')):
+    lab = s + (', frame by frame' if kind == 'counts' else ', summed over 0.5 s')
+    print(f'\n### {lab}: pooled over 16 rooms and 6 pairs\n')
     rows = []
     for name, fn in (('peaks within 6 deg of 0, %', lambda c: pct(c[1], c[0])),
                      ('null (no coherence), %', lambda c: pct(c[2], c[0]))):
-        rows.append([name] + [fn(pooled(s, hp=h)) for h in HPS])
-    rows.append(['frames x pairs'] + [pooled(s, hp=h)[0] for h in HPS])
+        rows.append([name] + [fn(pooled(s, hp=h, kind=kind)) for h in HPS])
+    rows.append(['reads x pairs'] + [pooled(s, hp=h, kind=kind)[0] for h in HPS])
     print(table([''] + hp_head, rows))
 
-    print(f'\n### {s}: by pair, pooled over rooms (% within 6 deg of 0)\n')
+    print(f'\n### {lab}: by pair, pooled over rooms (% within 6 deg of 0)\n')
     print(table(['pair', 'mm'] + hp_head + ['null at HP 0'],
-                [[p, r['config']['baseline_mm'][p]] + [share(pooled(s, pairs=[p], hp=h)) for h in HPS]
-                 + [pct(pooled(s, pairs=[p])[2], pooled(s, pairs=[p])[0])] for p in PAIRS]))
+                [[p, r['config']['baseline_mm'][p]] + [share(pooled(s, pairs=[p], hp=h, kind=kind)) for h in HPS]
+                 + [pct(pooled(s, pairs=[p], kind=kind)[2], pooled(s, pairs=[p], kind=kind)[0])] for p in PAIRS]))
 
-    print(f'\n### {s}: by room, pooled over pairs (% within 6 deg of 0)\n')
+    print(f'\n### {lab}: by room, pooled over pairs (% within 6 deg of 0)\n')
     rows = []
     for m in ROOMS:
-        n0 = pooled(s, rooms=[m])
-        rows.append([m, n0[0] // 6] + [share(pooled(s, rooms=[m], hp=h)) for h in HPS] + [pct(n0[2], n0[0])])
-    print(table(['room', 'frames'] + hp_head + ['null at HP 0'], rows))
+        n0 = pooled(s, rooms=[m], kind=kind)
+        rows.append([m, n0[0] // 6] + [share(pooled(s, rooms=[m], hp=h, kind=kind)) for h in HPS] + [pct(n0[2], n0[0])])
+    print(table(['room', 'reads'] + hp_head + ['null at HP 0'], rows))
 
-print('\n### silence: room x pair, % within 6 deg of 0, one table per high-pass\n')
-for h in HPS:
-    print(f'\n**HP {h} Hz**\n')
-    print(table(['room'] + PAIRS, [[m] + [share(r['counts']['silence'][m][p][h]) for p in PAIRS] for m in ROOMS]))
+for kind, lab in (('counts', 'frame by frame'), ('counts_sum', 'summed over 0.5 s')):
+    print(f'\n### silence, {lab}: room x pair, % within 6 deg of 0, one table per high-pass\n')
+    for h in HPS:
+        print(f'\n**HP {h} Hz**\n')
+        print(table(['room'] + PAIRS, [[m] + [share(r[kind]['silence'][m][p][h]) for p in PAIRS] for m in ROOMS]))
 
 print('\n### silence: strongest quarter of frames (by PHAT peak share), % within 6 deg of 0, pooled pairs (mean)\n')
 st = r['strength']['silence']
@@ -81,9 +83,10 @@ print(table(['Hz'] + bands, [[m] + [f"{np.mean([r['coherence_re'][m][p]['band_ms
 
 if len(sys.argv) > 2:
     sm = json.load(open(sys.argv[2]))
-    print('\n### simulation: % within 6 deg of 0\n')
-    rows = []
-    for d in ('68.5mm', '157.0mm'):
-        for k, v in sm[d].items():
-            rows.append([d, k] + [v[h] for h in HPS])
-    print(table(['pair', 'field'] + hp_head, rows))
+    for i, lab in enumerate(('frame by frame', 'summed')):
+        print(f'\n### simulation, {lab}: % within 6 deg of 0\n')
+        rows = []
+        for d in ('68.5mm', '157.0mm'):
+            for k, v in sm[d].items():
+                rows.append([d, k] + [v[h][i] for h in HPS])
+        print(table(['pair', 'field'] + hp_head, rows))

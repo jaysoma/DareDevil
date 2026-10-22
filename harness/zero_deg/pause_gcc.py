@@ -12,6 +12,10 @@ L conj(R), from HP Hz (0 means from the first non-DC slice) to 8 kHz, scored ove
 GccPhat.mjs; the tallest is the frame's peak. The angle convention is the pair's lateral angle (0 = broadside), so the
 sign does not matter here: only |deg| < 6 is counted.
 
+Summed: the same, but over half a second, as GccPhat.mjs reads (2026-10-20): the cross-spectra of SUM_FRAMES
+consecutive pause frames (0.5 s of frame starts) added before the PHAT, one read per non-overlapping block. A diffuse
+field's coherence is a fixed property of the room and the pair, so summing makes it count where one frame's noise hides it.
+
 Null: the same frames with the second capsule taken from a different pause frame of the same file (half the file's
 pause frames away). Same spectra, no inter-channel coherence: what PHAT and the delay grid give by themselves.
 
@@ -35,6 +39,7 @@ import soundfile as sf
 SR, NFFT, HOP, HI_HZ, TAUS, C = 24000, 1024, 512, 8000, 241, 343.0
 HPS = [0, 100, 300, 1100, 2500]       # 2500: the 1100 Hz of a 157 mm pair, scaled to 68.5 mm (c / 2d)
 NEAR0 = 6.0
+SUM_FRAMES = 24                       # 24 frame starts 512 apart: the half second GccPhat.mjs sums
 FRAME_S = 0.1
 GUARD_AFTER, GUARD_BEFORE = 3, 1      # label frames kept clear after an event ends / before one starts
 SKIP_START_S = 2.0                    # the clapper that starts each scene may sit unlabelled at the top
@@ -99,6 +104,21 @@ def peaks(X, f, E, deg, hp):
     return deg[j], sc[np.arange(len(j)), j] / (E.shape[0] - k0)
 
 
+def blocks(st):
+    """Start indices of non-overlapping runs of SUM_FRAMES consecutive analysis frames."""
+    out, i = [], 0
+    while i + SUM_FRAMES <= len(st):
+        if st[i + SUM_FRAMES - 1] - st[i] == (SUM_FRAMES - 1) * HOP:
+            out.append(i); i += SUM_FRAMES
+        else:
+            i += 1
+    return np.array(out, int)
+
+
+def phat(S):
+    return S / np.maximum(np.abs(S), 1e-30)
+
+
 def main():
     root, out = Path(sys.argv[1]), Path(sys.argv[2])
     out.mkdir(parents=True, exist_ok=True)
@@ -110,6 +130,7 @@ def main():
     win = np.hanning(NFFT + 1)[:-1]
     # counts[set][room][pair][hp] = [frames, near0, null_near0], hist the same keyed set/room/pair/hp
     counts = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: [0, 0, 0]))))
+    counts_sum = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: [0, 0, 0]))))
     hist = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: np.zeros(len(DEG_BINS) - 1, int)))))
     shares = defaultdict(lambda: defaultdict(list))            # (set, hp) -> [(share, near0)] for a strength split
     coh = defaultdict(lambda: defaultdict(lambda: [np.zeros(len(f), complex), np.zeros(len(f)), np.zeros(len(f))]))
@@ -134,6 +155,8 @@ def main():
             Xc = np.fft.rfft(seg, axis=1)[:, :len(f)]                               # frames x slices x 4
             rec[f'{set_name}_rms_db'] = round(float(10 * np.log10(np.mean(seg[..., 0] ** 2) + 1e-20)), 1)
             shift = len(st) // 2
+            bl = blocks(st)
+            rec[f'{set_name}_sum_blocks'] = int(len(bl))
             for p in PAIRS:
                 d, _, E, deg = geo[p]
                 A, B = Xc[..., p[0] - 1], Xc[..., p[1] - 1]
@@ -142,8 +165,10 @@ def main():
                 if set_name == 'silence':
                     c = coh[room][p]
                     c[0] += S.sum(0); c[1] += (np.abs(A) ** 2).sum(0); c[2] += (np.abs(B) ** 2).sum(0)
-                P = S / np.maximum(np.abs(S), 1e-30)
-                Pn = Sn / np.maximum(np.abs(Sn), 1e-30)
+                P, Pn = phat(S), phat(Sn)
+                if len(bl):
+                    idx = bl[:, None] + np.arange(SUM_FRAMES)[None, :]
+                    Ps, Psn = phat(S[idx].sum(1)), phat(Sn[idx].sum(1))
                 for hp in HPS:
                     dg, sh = peaks(P, f, E, deg, hp)
                     dn, _ = peaks(Pn, f, E, deg, hp)
@@ -152,6 +177,11 @@ def main():
                     cnt[0] += len(dg); cnt[1] += int(near.sum()); cnt[2] += int((np.abs(dn) < NEAR0).sum())
                     hist[set_name][room][p][hp] += np.histogram(dg, DEG_BINS)[0]
                     shares[set_name, hp][p].append(np.stack([sh, near]).T)
+                    if len(bl):
+                        ds, _ = peaks(Ps, f, E, deg, hp)
+                        dsn, _ = peaks(Psn, f, E, deg, hp)
+                        cs = counts_sum[set_name][room][p][hp]
+                        cs[0] += len(ds); cs[1] += int((np.abs(ds) < NEAR0).sum()); cs[2] += int((np.abs(dsn) < NEAR0).sum())
         per_file.append(rec)
         print(f'{i + 1}/{len(wavs)} {wav.stem} silence {rec.get("silence_frames", 0)} speechfree {rec.get("speechfree_frames", 0)}',
               flush=True)
@@ -162,6 +192,9 @@ def main():
                       'baseline_mm': {key(p): round(geo[p][0] * 1000, 1) for p in PAIRS}},
            'counts': {s: {r: {key(p): {str(h): v for h, v in hh.items()} for p, hh in pp.items()} for r, pp in rr.items()}
                       for s, rr in counts.items()},
+           'counts_sum': {s: {r: {key(p): {str(h): v for h, v in hh.items()} for p, hh in pp.items()} for r, pp in rr.items()}
+                          for s, rr in counts_sum.items()},
+           'sum_frames': SUM_FRAMES,
            'hist_edges': DEG_BINS.tolist(),
            'hist': {s: {r: {key(p): {str(h): v.tolist() for h, v in hh.items()} for p, hh in pp.items()} for r, pp in rr.items()}
                     for s, rr in hist.items()},
