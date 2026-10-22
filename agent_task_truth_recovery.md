@@ -1,114 +1,88 @@
-# Agent task: recover where Jay stood, tape by tape
+# Task: recover per-tape truth for the walk corpus
 
-You are recovering ground truth for 29 phone recordings: for each tape, **where Jay was standing during each stretch of
-speech**, as positions on the room map. The old position marks were dropped from this dataset because they were paired
-with speech by silence gaps and came out wrong. Your positions come from **what Jay says on the tape**, placed with the
-room's landmarks and the phone's pose. Work one tape at a time and report what you could not settle.
+You are reconstructing ground truth for ~51 two-microphone recordings ("tapes") made in one house.
+The recordist knows WHERE the phone could have been (4 poses) and WHERE he stood (named landmarks),
+but not WHICH pose each tape used or WHICH landmark each stop was. Your job is to recover both from
+evidence, state your confidence, and send everything you cannot settle to a review list.
+Do not guess. An unresolved stop is a correct output; a wrong confident one corrupts every later result.
 
-Everything is in this repo, and also served read-only at `https://jaysoma.dev/voice/geonar-truth/<path>` (the bare
-`/voice/geonar-truth/` lists every file).
+## Inputs (repo paths)
+Read `README.md` at the repo root first; where it and this brief differ on file contents, the README wins.
+- `truth_inputs/landmarks.json` — furniture and fixtures. **x, y is each item's MIN corner**; its centre is
+  (x + w/2, y + d/2). Spoken places ("center of couch", "end of kitchen bar") are resolved against these.
+  Names are the recordist's own; treat them as authoritative.
+- `truth_inputs/poses.json` — the phone's place and facing PER TAPE, each with how it was established.
+- `truth_inputs/room.json` — room outline and openings.
+- `tapes/<tape>/transcript.json` — Whisper (distil-large-v3) segments with times.
+- `tapes/<tape>/odas.json` — ODAS over the whole tape (157 mm baseline, 8 pots, 8 tracks). Built with no stops and no truth.
+- `tapes/<tape>/audio-input.json` — format, length, sha256 (no audio in the repo).
+- `library.json` (repo root) — every tape: name, recording time (America/Chicago), duration, rotation walk or not.
 
-## Inputs
+Ignore any `draft_of`, `transcript`, `phone_note`, `mirror`, `sonar_room` or `dots` fields inside room or landmark files:
+they are editor state left over from other work and do not describe any tape.
 
-| File | What it holds |
-|---|---|
-| `library.json` | Every tape: `name`, `recorded` (America/Chicago), `duration_s`, `rotation` (turning in place, not walking), `note` |
-| `truth_inputs/room.json` | Room outline (`outline`, metres), `openings`, `room_w`, `room_d`, `ceiling_h` |
-| `truth_inputs/landmarks.json` | Furniture and fixtures: `kind`, `x`, `y`, `w`, `d` (and `shape`, `size`) |
-| `truth_inputs/poses.json` | Per tape: the phone's `x`, `y`, `facing_deg`, `phone_h_m`, `mirror`, and `status` (how the pose was established) |
-| `tapes/<tape>/transcript.json` | Whisper decode: `segments` of `{t0, t1, text}` in seconds from the tape's start |
-| `tapes/<tape>/odas.json` | ODAS over the whole tape: `frames` of `[timeStamp, tracks [[id, az_deg, activity]], pots [[az_deg, E]]]`, `hop_s` per timeStamp |
-| `tapes/<tape>/audio-input.json` | The audio's format, length and sha256 (the audio itself is not here) |
+## Step 1 — stops and landmarks (per tape)
+1. Segment stops from the transcript's words and segment times ONLY. Do not use silence-separated bursts: they
+   merge positions that were named without a 3 s pause (see README). A position change is where a new place is named.
+2. For each stop, match what was said there to a landmark name. Matching may be loose
+   ("corner of the couch" -> "center of couch"; "far back wall" -> "8/9 meters") but must be justified in one line.
+3. Spoken distances or angles ("about 3 meters", "rotated 90 degrees") are recorded as `said`, never converted into a position.
+4. No confident match -> the stop goes to the review list with its time span and transcript snippet.
 
-## Conventions (get these right before anything else)
+## Step 2 — VERIFY the given phone pose (per tape), from independent evidence only
+`poses.json` already assigns a pose to each tape. Do not re-derive it from scratch: check it. Mark a tape's pose
+`confirmed` when the evidence below agrees, `disputed` (with the evidence) when it does not, and `circular` when its
+recorded provenance is one of the recordist's own bearing schemes (GccPhat, Angle2, etc.) -- those are what this truth
+will later be used to evaluate, so a pose they chose cannot be used to grade them; such a tape needs independent
+confirmation before its stops can be tier A. Evidence, in order of weight:
+1. Session clustering: tapes recorded within the same sitting (same date, close times) share a pose unless the
+   transcript says the phone moved.
+2. Transcript statements about the phone ("on the TV stand", "bar counter", "top capsule on the right").
+3. ODAS bearings at stops with a resolved landmark: for each pose P1-P4 and each capsule sign (+/-), compute each
+   landmark's expected bearing. A two-mic pair cannot tell front from back, so compare LATERAL angles
+   (fold each bearing to [-90, +90] about the mic axis) and only for |lateral| < 70 deg. Pick the pose+sign with
+   the lowest median absolute error; require the runner-up to be at least 1.5x worse, otherwise mark ambiguous.
+4. A stationary source during pauses (e.g. the HVAC vent in room.json) as a cross-check: its ODAS bearing in
+   silence depends only on the pose.
+5. audio-input.json channel order as a constraint on the sign.
 
-- **Map frame:** metres; x to the right, y up, as the Truth page draws it (y grows away from the TV wall).
-- **Landmarks:** `x, y` is the **minimum corner**. A landmark covers `x .. x+w` and `y .. y+d`; its centre is
-  `(x + w/2, y + d/2)`. Circles have `d = w`. Several kinds repeat (three `couch` entries, `island` and `island 2`).
-- **Phone:** `facing_deg` 0 points toward +y; positive turns clockwise (toward +x). A **bearing** from the phone is
-  measured from its facing, clockwise positive, so a point to the phone's right has a positive bearing. A position at
-  range `r` and bearing `b` is `(x + r·sin(f+b), y + r·cos(f+b))` with `f = facing_deg`.
-- **Times:** transcript `t0`/`t1` are stamped to whole or half seconds; treat them as ±1 s.
-- **ODAS `az_deg`:** the two-capsule pair's bearing (asin of x). Its sign relative to the map depends on which capsule
-  is the left channel (`mirror`), so calibrate the sign per tape from one stretch whose place is unambiguous before you
-  use ODAS for anything else.
+## Known issues found before launch (check each; do not assume they are resolved)
+- EXCLUDE as unusable for bearing truth: walk-195454 and walk-212347 (dead capsule pair, L/R corr +0.058 and
+  +0.12) and walk-194532 (mono duplicate, corr 1.000). Their stops can still be listed, as tier C, flagged `dead_pair`.
+- 13 tapes carry the same status line, "2026-09-30 TV-stand stamp; Jay's walk-155937 placement ... puts the phone in
+  the same spot". That is one tape's placement applied to others recorded Sep 14-22: treat these poses as UNVERIFIED
+  until evidence confirms each one.
+- walk-194940: pose inferred partly because "onsets agree" -- the recordist's own scheme. Mark `circular` unless
+  independent evidence confirms it.
+- CAPSULE ORIENTATION IS A PER-TAPE UNKNOWN. The recordist's convention is that the phone's TOP capsule points to HIS
+  LEFT as he faces the phone (for the TV-stand pose, facing +y, that is +x on the map). He confirms he did not always
+  follow it: a diagram he drew of one TV-stand tape shows the top capsule toward -x (his right). So do NOT assume a sign
+  for any tape: for every tape, test both capsule signs as part of the pose check (Step 2.3) and record which one the
+  evidence supports. Use `mirror` and the convention only as a weak prior.
+- walk-111830: the recordist says on tape the top capsule is "on the right, where usually you'd be on the left" -- in his
+  own frame facing the phone. Expect the sign opposite to the convention there; let the evidence decide.
+- walk-114614: the recordist says the phone is "lying on its back" -- a different geometry from the upright TV-stand pose
+  it is assigned. Expect `disputed`.
+- walk-203939 (the reference walk) sits at (-3.35, -0.2) facing 0, which matches no other tape's pose: confirm whether
+  it is a fifth placement or a mis-entered facing for the (-3.4, -0.25) facing ~45 placement.
+- walk-165255 and walk-195454 were saved on older map versions (f44f6b, b85e4e) than the rest (a17f2f); check that their
+  coordinates are in the same frame.
+- `mirror` is true on all 29 tapes, so it carries no information except where it should differ (walk-111830).
+- ODAS azimuths are quantised (repeating values such as 0, 3.8, 7.5, 22.6, 51.6, 82.1): about 4 deg steps near
+  broadside, coarser toward the ends. Good enough to choose between poses, not to grade fine angles.
 
-## Steps, for each tape
-
-1. **Find the stops in the words.** A stop starts where Jay announces a place ("first position", "this is position 2",
-   "I'm at the corner of the kitchen bar", "two meters from the phone") and lasts until the next announcement or until
-   he says he is moving ("walking", "talking while I'm walking"). Walking stretches get no position. The last few
-   seconds of most tapes are Jay walking back saying "bye Siri"; they are not a position.
-2. **Place each stop from what he says**, in this order of strength:
-   - a named landmark ("middle of the couch", "corner of the kitchen bar", "the edge of the sectional",
-     "in line with the angled door"): map it to coordinates from `landmarks.json`/`room.json`, standing in front of
-     the landmark on the side facing the phone unless the words say otherwise;
-   - a spoken distance and/or angle from the phone ("about 3.5 meters", "45 degrees", "same bearing"): convert with the
-     pose; a bare distance with no angle means straight ahead of the phone's facing;
-   - both: use the landmark, and record the spoken distance and angle beside it as a check.
-3. **Write down every ambiguity instead of resolving it silently.** If a phrase has two readings ("in line with the
-   angled door" can mean *level with* the door or *in the door's direction from the phone*), give both positions.
-4. **Optionally check with ODAS.** For each stop, take the strongest track bearings in its time window, starting from
-   the first frames after each speech onset (the direct sound arrives first). Report whether they agree with your
-   position's bearing. ODAS may choose between two word-readings that differ by more than 20°. **It never overrides
-   the words**, and a stop with no clear agreement keeps the words' position, flagged.
-5. **Check the pose.** If the words cannot fit the room from the pose in `poses.json` (e.g. a landmark would be behind
-   a wall, or a spoken range is far from the landmark's range), say so; do not move the phone yourself.
+## Outputs
+- `truth/<tape>.json`:
+  `{ "tape", "pose_id", "capsule_sign", "pose_confidence": "high|medium|low|unresolved",
+     "pose_evidence": [ "..." ],
+     "stops": [ { "t0", "t1", "landmark_id" | null, "said", "match_note", "tier": "A|B|C" } ] }`
+  Tier A: landmark resolved AND pose high-confidence. Tier B: landmark resolved, pose medium/low.
+  Tier C: no landmark (still usable for repetition-spread metrics).
+- `truth/review.md` — every unresolved stop and every ambiguous pose: tape, time span, transcript snippet,
+  your top candidates, and the single question that would settle it.
+- `truth/summary.md` — table: tape, pose, confidence, stops by tier; plus totals.
 
 ## Rules
-
-- **The decode is the truth.** Never use earlier marks, stops files or dots from anywhere else.
-- **One tape at a time. No aggregation:** no averages or "N of M" scores across tapes, and no constant fitted on
-  several tapes. A measured constant (the phone's 1.5 m height) is fine.
-- **Rotation walks** (`rotation: true`): Jay stays at one spot and turns; give one position and list the turns with
-  their times.
-- **The phone moves between tapes**, even tapes minutes apart (194940 and 195454 had different spots). Never copy a
-  pose or a position from another tape.
-- **Pose trust** follows `poses.json` `status`: "placed by Jay" and "confirmed by Jay" are solid; "inferred" is good;
-  "2026-09-30 TV-stand stamp" and "as marked … not re-checked" are unverified, so flag any tape whose words fight its
-  pose.
-- Don't edit anything under `truth_inputs/` or `tapes/`.
-
-## Output
-
-For each tape write `positions/<tape>.json`:
-
-```json
-{
-  "tape": "walk-194940",
-  "pose_status": "inferred 2026-10-21 ...",
-  "stops": [
-    {
-      "n": 2, "t0": 23.0, "t1": 33.0,
-      "words": "This is position 2 in the middle of the couch, right against the couch",
-      "basis": "landmark",
-      "x": -2.43, "y": 3.95,
-      "range_m": 4.16, "bearing_deg": -4,
-      "alternatives": [],
-      "odas_check": "agrees within 6 deg",
-      "confidence": "high",
-      "note": ""
-    }
-  ],
-  "questions": ["Which side of the phone is the kitchen bar on?"]
-}
-```
-
-`basis` is `landmark`, `spoken_range_angle`, `spoken_range` or `unknown`. Leave `x`/`y` null when the words do not place
-the stop, and say why in `note`. `confidence` is `high`, `medium` or `low`.
-
-Questions for Jay are for facts he can answer roughly from memory, such as **which side** of the phone something was on
-or whether the phone moved. He doesn't remember exact angles, so never ask for one.
-
-Also write `positions/REPORT.md`: one short section per tape listing its stops, every ambiguity, every pose doubt and
-every question. Keep it per tape, with no cross-tape totals.
-
-## Worked examples (from Jay, 2026-10-21)
-
-- **walk-194940:** phone on the TV stand, facing 0. Position one is 0–17 s, "in line with the angled door" (ambiguous,
-  so give both readings). Position 2 is 23–33 s, "in the middle of the couch, right against the couch". Position 3 is
-  33–47 s, "I'm at the corner of the kitchen bar".
-- **walk-155937:** phone on the TV stand, facing 0. Jay placed the middle of the couch, where he sat, at 4.26 m and −5°.
-  His spoken "about 3.5 meters" was short.
-- **walk-195454:** phone at the edge of the sectional, facing 90 (confirmed by Jay). The kitchen-bar and dining-table
-  stops lie roughly in a line from the phone.
+- Do not edit anything under `truth_inputs/` or `tapes/`.
+- Every claim in a truth file must be traceable to an evidence line.
+- Finish with a self-check: re-derive 5 random tier-A stops from scratch and report agreement.
