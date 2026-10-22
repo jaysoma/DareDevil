@@ -58,10 +58,8 @@ Commit the fix and `results/angle2_pull.md` (mechanism, before/after table) to a
 ## 3. dEchorate onset and first-reflection truth
 
 DONE in a 2026-10-22 cloud session: `results/dechorate/report.md`. GccPhat finds the direct path; neither scheme finds
-the first reflection. Don't start this one.
-
-DONE in Jay's 2026-10-22 session: `results/dechorate/report.md`. v2.0's RIR file below can't be read; the run used
-v1.0's `dechorate_rir_processed.hdf5` (https://zenodo.org/records/5562386). Don't start this one.
+the first reflection. v2.0's RIR file below can't be read; the run used v1.0's `dechorate_rir_processed.hdf5`
+(https://zenodo.org/records/5562386). Don't start this one.
 
 Read HANDOFF.md. From https://zenodo.org/records/6576203, download `dEchorate_rirs_gzip7.hdf5`,
 `dEchorate_database.csv`, `dEchorate_echo_notes.pkl` and `main_geometry_from_echo_calibration.py` (about 4.2 GB
