@@ -1,0 +1,89 @@
+{
+ "tape": "walk-203939",
+ "recorded": "2026-09-23T20:39:39-05:00",
+ "pose_id": "assigned",
+ "pose": {
+  "x": -3.35,
+  "y": -0.2,
+  "facing_deg": 0
+ },
+ "capsule_sign": 1,
+ "pose_confidence": "high",
+ "pose_evidence": [
+  "ODAS: assigned (-3.35,-0.2) facing 0, sign +, 3.7 deg over 3 stops; P4+ 7.4; P2 (facing 47) not competitive. Facing 0 is supported, not 47: a fifth placement left of the TV.",
+  "ODAS ranking: assigned+ 3.7 deg over 3; P4+ 7.4 deg over 4; P1- 33.6 deg over 4; P2+ 38.4 deg over 4"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 14.0,
+   "text": "right now I'm in the first position at the corner of the couch",
+   "said": null,
+   "place": "couch (long), corner unspecified",
+   "xy": [
+    -2.43,
+    4.56
+   ],
+   "radius_m": 1.3,
+   "match_note": "Corner never named, so I used the long-couch centre with a wide radius. This tape's order (couch, kitchen-bar corner, bar end, laundry wall) follows Jay's J3, J1, J2, J4 labels, so this is probably J3 at (-2.50, 4.05), which is inside the radius.",
+   "tier": "B",
+   "odas_az": -2.0,
+   "predicted_az": 10.9,
+   "angular_uncertainty_deg": 15.0,
+   "tier_note": "placement radius 1.3 m at 4.8 m is +-15 deg: too loose to grade angles"
+  },
+  {
+   "t0": 14.0,
+   "t1": 38.0,
+   "text": "I just moved to the corner of the kitchen bar.",
+   "said": "facing the phone ('all of this is going to be facing the phone')",
+   "place": "J1",
+   "xy": [
+    -0.1,
+    4.0
+   ],
+   "radius_m": 0.7,
+   "match_note": "Matched to J1 by order: it sits right before 'end of the kitchen bar' (J2) and J1's label is the truncated 'Corner of kitchen . . .'. Inference, not exact wording.",
+   "tier": "A",
+   "odas_az": 34.0,
+   "predicted_az": 37.7,
+   "angular_uncertainty_deg": 7.5
+  },
+  {
+   "t0": 38.0,
+   "t1": 56.0,
+   "text": "And now the end of the kitchen bar.",
+   "said": "facing the phone",
+   "place": "J2",
+   "xy": [
+    1.0,
+    3.95
+   ],
+   "radius_m": 0.3,
+   "match_note": "Same words as J2 'End of kitchen bar'.",
+   "tier": "A",
+   "odas_az": 44.0,
+   "predicted_az": 46.3,
+   "angular_uncertainty_deg": 2.9
+  },
+  {
+   "t0": 56.0,
+   "t1": 78.581,
+   "text": "I'm currently at the, I'm just being on the wall of the laundry room.",
+   "said": null,
+   "place": "J4",
+   "xy": [
+    0.6,
+    1.05
+   ],
+   "radius_m": 0.4,
+   "match_note": "Matches J4 'wall/laundry'.",
+   "tier": "B",
+   "odas_az": 36.0,
+   "predicted_az": 72.4,
+   "angular_uncertainty_deg": 5.5,
+   "tier_note": "predicted bearing beyond 70 deg: outside the pair's reliable range"
+  }
+ ]
+}

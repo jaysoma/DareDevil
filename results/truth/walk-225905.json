@@ -1,0 +1,31 @@
+{
+ "tape": "walk-225905",
+ "recorded": "2026-09-26T22:59:05-05:00",
+ "pose_id": "assigned",
+ "pose": {
+  "x": -3.7,
+  "y": 2.35,
+  "facing_deg": 90
+ },
+ "capsule_sign": null,
+ "pose_confidence": "unverified",
+ "pose_evidence": [
+  "No stop could be placed on the map, so ODAS cannot test the pose; assigned pose kept as-is: as marked on the current map, not re-checked"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 45.0,
+   "text": "E3",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "'E3' might be mis-heard 'J3' or a stop label; not confirmed, so unresolved.",
+   "tier": "C",
+   "odas_az": 0.0,
+   "predicted_az": null
+  }
+ ]
+}

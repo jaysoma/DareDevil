@@ -1,0 +1,112 @@
+{
+ "tape": "walk-205606",
+ "recorded": "2026-09-23T20:56:06-05:00",
+ "pose_id": "P1",
+ "pose": {
+  "x": 0.35,
+  "y": 4.2,
+  "facing_deg": -133.0
+ },
+ "capsule_sign": 1,
+ "pose_confidence": "recollection",
+ "pose_evidence": [
+  "Jay, 2026-10-22: phone was on the kitchen bar. ODAS disagrees: P1+ fits at 19.5 deg vs TV stand 4.6 over 3 stops -- keep as tier B until the disagreement is explained.",
+  "With the J4 stop added (Jay: 'lobby room' = laundry), the kitchen bar fits that stop at 5.5 deg (predicted -51.5, ODAS -46.0), the TV stand does not; but no single pose fits all 4 placed stops (kitchen bar errors 5.5/15.2/19.5/51.5; TV stand 0.4/4.6/19.5/65.5). Kept as Jay recalls; tier B.",
+  "Assigned kitchen bar (0.45,4.3,-124), but ODAS fits P4- (TV stand) at 4.6 deg over 3 stops vs kitchen-bar P1+ 19.5. He also stands at the TV stand on this tape, which is odd if the phone is on it. Needs his recollection.",
+  "ODAS ranking: P4- 4.6 deg over 3; P1+ 19.5 deg over 3; P2- 26.3 deg over 3; P3- 33.6 deg over 2"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 17.0,
+   "text": "this would be the middle of the TV stand. Yeah, I am standing in the middle of the TV stand.",
+   "said": null,
+   "place": "tv stand, centre",
+   "xy": [
+    -2.13,
+    -0.5
+   ],
+   "radius_m": 0.4,
+   "match_note": "'Middle of the TV stand': he is at or just in front of its centre.",
+   "tier": "B",
+   "odas_az": -4.0,
+   "predicted_az": -19.2
+  },
+  {
+   "t0": 17.0,
+   "t1": 38.0,
+   "text": "corner of the wall to the lobby room. Right, this is the corner of the wall to the lobby room.",
+   "said": null,
+   "place": "J4",
+   "xy": [
+    0.6,
+    1.05
+   ],
+   "radius_m": 0.3,
+   "match_note": "Jay, 2026-10-22: \"lobby room\" = laundry room (J4).",
+   "tier": "B",
+   "odas_az": -46.0,
+   "predicted_az": -51.5,
+   "angular_uncertainty_deg": 5.4
+  },
+  {
+   "t0": 38.0,
+   "t1": 46.0,
+   "text": "Other edge of the door to the laundry room.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "The laundry door is not on the map.",
+   "tier": "C",
+   "odas_az": -64.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 46.0,
+   "t1": 56.0,
+   "text": "The corner of the wall leading to the laundry.",
+   "said": null,
+   "place": "J4",
+   "xy": [
+    0.6,
+    1.05
+   ],
+   "radius_m": 0.4,
+   "match_note": "Matches J4, the wall corner toward the laundry room.",
+   "tier": "B",
+   "odas_az": 0.0,
+   "predicted_az": -51.5
+  },
+  {
+   "t0": 56.0,
+   "t1": 72.0,
+   "text": "Corner of the wall leading to the hallway. ... Corner of the wall in the tutorial.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "The hallway is not on the map; 'in the tutorial' is garbled.",
+   "tier": "C",
+   "odas_az": 4.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 72.0,
+   "t1": 90.961,
+   "text": "Corner intersectional of the L of the part of the deceptional.",
+   "said": null,
+   "place": "sectional L junction (long couch meets couch box)",
+   "xy": [
+    -3.5,
+    4.1
+   ],
+   "radius_m": 0.6,
+   "match_note": "'Corner of the L of the sectional' is where the long couch (x>=-3.45) meets the box couch (x<=-3.54), at the inner corner.",
+   "tier": "B",
+   "odas_az": 22.0,
+   "predicted_az": 41.5
+  }
+ ]
+}

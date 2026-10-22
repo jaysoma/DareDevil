@@ -1,0 +1,98 @@
+{
+ "tape": "walk-213150",
+ "recorded": "2026-09-29T21:31:50-05:00",
+ "pose_id": "P4",
+ "pose": {
+  "x": -2.15,
+  "y": -0.2,
+  "facing_deg": 0.0
+ },
+ "capsule_sign": 1,
+ "pose_confidence": "high",
+ "pose_evidence": [
+  "ODAS: P4+ 4.9 deg over 3 stops; next distinct pose 30.2 deg. Agrees with the assigned TV-stand pose.",
+  "ODAS ranking: P4+ 4.9 deg over 3; P3- 30.2 deg over 2; P4- 31.3 deg over 3; P1- 33.3 deg over 3"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 1.2,
+   "t1": 17.6,
+   "text": "First position, the L section of the sectional, which is where I am holding for now.",
+   "said": null,
+   "place": "couch box (L leg of sectional), centre",
+   "xy": [
+    -3.99,
+    4.07
+   ],
+   "radius_m": 1.0,
+   "match_note": "The L leg is the perpendicular couch box (x -4.45..-3.54, y 3.05..5.08); no spot along it is given, so a 1 m radius.",
+   "tier": "B",
+   "odas_az": -8.0,
+   "predicted_az": -23.3,
+   "angular_uncertainty_deg": 12.1,
+   "tier_note": "placement radius 1.0 m at 4.6 m is +-12 deg: too loose to grade angles"
+  },
+  {
+   "t0": 17.6,
+   "t1": 31.2,
+   "text": "Second position, I am at the very corner of the island in the kitchen.",
+   "said": null,
+   "place": "island (island + island 2), corner unspecified",
+   "xy": [
+    2.7,
+    4.63
+   ],
+   "radius_m": 1.3,
+   "match_note": "Which corner is not said; I used the combined island block centre with a radius that covers its corners.",
+   "tier": "B",
+   "odas_az": 50.0,
+   "predicted_az": 45.1,
+   "angular_uncertainty_deg": 10.8,
+   "tier_note": "placement radius 1.3 m at 6.8 m is +-11 deg: too loose to grade angles"
+  },
+  {
+   "t0": 31.2,
+   "t1": 56.2,
+   "text": "Third position. I am at the very corner of the kitchen that is the opposite of the pantry.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Defined relative to the pantry, which is not on the map.",
+   "tier": "C",
+   "odas_az": 34.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 56.2,
+   "t1": 72.6,
+   "text": "Next position, I am at the corner of the couch section. Next to the circular coffee table.",
+   "said": null,
+   "place": "couch (long), SE corner by glass coffee table",
+   "xy": [
+    -1.42,
+    4.1
+   ],
+   "radius_m": 0.4,
+   "match_note": "The circular table is the glass coffee table at (-1.19, 3.76); the nearest couch corner is the long couch's east-front corner.",
+   "tier": "A",
+   "odas_az": 6.0,
+   "predicted_az": 9.6,
+   "angular_uncertainty_deg": 5.2
+  },
+  {
+   "t0": 72.6,
+   "t1": 92.1,
+   "text": "next position, I am at the corner of the wall facing the entryway directly, looking straight at it.",
+   "said": "facing the entryway directly",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "The entryway is not on the map.",
+   "tier": "C",
+   "odas_az": 44.0,
+   "predicted_az": null
+  }
+ ]
+}

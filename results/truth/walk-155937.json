@@ -1,0 +1,109 @@
+{
+ "tape": "walk-155937",
+ "recorded": "2026-09-19T15:59:37-05:00",
+ "pose_id": "assigned",
+ "pose": {
+  "x": -2.15,
+  "y": -0.2,
+  "facing_deg": 0
+ },
+ "capsule_sign": null,
+ "pose_confidence": "unverified",
+ "pose_evidence": [
+  "No stop could be placed on the map, so ODAS cannot test the pose; assigned pose kept as-is: placed by Jay 2026-10-21 (phone on the TV stand, facing 0; the couch middle at 4.26 m, -5 deg)"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 37.0,
+   "text": "I'm sitting on the couch, which is about 3.5 meters from the front of the phone. I'm slightly off center. I would say maybe two degrees to the left.",
+   "said": "sitting, ~3.5 m from front of phone, ~2 deg left of centre",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "'the couch' named but map has three couch pieces and phone location for this tape is not stated; 3.5 m does not fit the long couch if phone were on TV stand (>=4.3 m); left unresolved",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 37.0,
+   "t1": 55.0,
+   "text": "I moved about one meter closer, but my elevation has changed, so I'm standing now",
+   "said": "~1 m closer than the couch (~2.5 m), standing",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "relative distance only",
+   "tier": "C",
+   "odas_az": 14.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 55.0,
+   "t1": 74.86,
+   "text": "Now I'm about one meter from the bone. Same bearing should be anyway.",
+   "said": "~1 m from phone, same bearing, standing, facing the phone (notes he shouldn't turn his head away)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "distance only",
+   "tier": "C",
+   "odas_az": 16.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 74.86,
+   "t1": 91.0,
+   "text": "different bearing about five meters from the phone I would say well maybe four meters from the phone about I don't know like six degrees from the center",
+   "said": "~4-5 m, ~6 deg off centre, different bearing",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "distance/angle only",
+   "tier": "C",
+   "odas_az": 52.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 91.0,
+   "t1": 98.0,
+   "text": "I'm in the board of the kitchen.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "'border of the kitchen' (mis-heard); could be J1/J2 alcove opening or near the island, not specific enough",
+   "tier": "C",
+   "odas_az": 42.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 98.0,
+   "t1": 138.38,
+   "text": "Now I'm sitting the couch on the other side of the phone. I would say maybe 2.5 meters. ... like 20 degrees from the center. Yeah, it's about 2.20 meters",
+   "said": "sitting, ~2.2-2.5 m, ~20 deg from centre on the other side",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "a couch on 'the other side' - which couch piece is unclear (circle couch at (-4.0,2.7) or chaise?) and phone location unknown; unresolved",
+   "tier": "C",
+   "odas_az": -22.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 138.38,
+   "t1": 152.52,
+   "text": "Last position on the couch, which was the first position.",
+   "said": "same as first position (~3.5 m, ~2 deg left)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "same as stop 1, which is unresolved",
+   "tier": "C",
+   "odas_az": 4.0,
+   "predicted_az": null
+  }
+ ]
+}

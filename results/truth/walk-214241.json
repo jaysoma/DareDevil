@@ -1,0 +1,77 @@
+{
+ "tape": "walk-214241",
+ "recorded": "2026-09-29T21:42:41-05:00",
+ "pose_id": "P1",
+ "pose": {
+  "x": 0.35,
+  "y": 4.2,
+  "facing_deg": -133.0
+ },
+ "capsule_sign": 1,
+ "pose_confidence": "medium",
+ "pose_evidence": [
+  "ODAS: P1+ 6.7 deg over 2 stops; next 18.0. Agrees with the assigned kitchen-bar pose; only 2 stops.",
+  "ODAS ranking: P1+ 6.7 deg over 2; P4- 18.0 deg over 2; P3- 33.0 deg over 1; P2- 33.7 deg over 2"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 15.0,
+   "text": "I'm now at the left corner of the hallway building, just kind of looking out at the back windows.",
+   "said": "looking out at the back windows",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "hallway not on map",
+   "tier": "C",
+   "odas_az": null,
+   "predicted_az": null
+  },
+  {
+   "t0": 15.0,
+   "t1": 35.0,
+   "text": "This is in position in the very corner of the wall of the kitchen to the living room. Kind of the corner of the laundry room, really.",
+   "said": null,
+   "place": "J4",
+   "xy": [
+    0.6,
+    1.05
+   ],
+   "radius_m": 0.5,
+   "match_note": "'corner of the laundry room' matches J4 'wall corner toward the laundry room' (wall vertex 0.68,0.93 separating living room from dining/kitchen side)",
+   "tier": "B",
+   "odas_az": -48.0,
+   "predicted_az": -51.5
+  },
+  {
+   "t0": 35.0,
+   "t1": 49.0,
+   "text": "I am right where the circular couch is.",
+   "said": null,
+   "place": "couch (circular)",
+   "xy": [
+    -4.0,
+    2.7
+   ],
+   "radius_m": 0.6,
+   "match_note": "only circular couch on map; 'back into the ball' at 42 s unclear, kept in this stop",
+   "tier": "B",
+   "odas_az": 14.0,
+   "predicted_az": 24.0
+  },
+  {
+   "t0": 49.0,
+   "t1": 58.0,
+   "text": "Now I'm very middle of the living room. Straight in line with the TV stand.",
+   "said": "middle of living room, in line with TV stand",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "'middle of the living room' is not a mapped point; in-line is a bearing statement",
+   "tier": "C",
+   "odas_az": -8.0,
+   "predicted_az": null
+  }
+ ]
+}

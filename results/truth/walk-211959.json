@@ -1,0 +1,100 @@
+{
+ "tape": "walk-211959",
+ "recorded": "2026-09-23T21:19:59-05:00",
+ "pose_id": "P1",
+ "pose": {
+  "x": 0.35,
+  "y": 4.2,
+  "facing_deg": -133.0
+ },
+ "capsule_sign": 1,
+ "pose_confidence": "medium",
+ "pose_evidence": [
+  "Jay, 2026-10-22: phone was on the kitchen bar. ODAS weakly consistent (P1+ 13.2 deg over 4 stops).",
+  "Assigned kitchen bar (~P1); ODAS cannot separate P2- 11.9 from P1+ 13.2 over 4 stops (all errors large). His library note says all marks fall behind the recorded facing.",
+  "ODAS ranking: P2- 11.9 deg over 4; P1+ 13.2 deg over 4; P4- 17.8 deg over 4; P4+ 19.0 deg over 4"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 2.82,
+   "t1": 35.44,
+   "text": "I'm now at the top left corner of the copy table.",
+   "said": null,
+   "place": "coffee table, centre (corner ambiguous)",
+   "xy": [
+    -2.53,
+    3.4
+   ],
+   "radius_m": 0.8,
+   "match_note": "'Copy table' = coffee table (41 in x 31 in measured matches 1.04 m width); 'top left' has no defined frame, so centre.",
+   "tier": "B",
+   "odas_az": 6.0,
+   "predicted_az": 27.5
+  },
+  {
+   "t0": 35.44,
+   "t1": 52.86,
+   "text": "I'm now at the other corner of the coffee table.",
+   "said": null,
+   "place": "coffee table, centre (corner ambiguous)",
+   "xy": [
+    -2.53,
+    3.4
+   ],
+   "radius_m": 0.8,
+   "match_note": "Another corner of the coffee table, which one unstated; centre.",
+   "tier": "B",
+   "odas_az": 20.0,
+   "predicted_az": 27.5
+  },
+  {
+   "t0": 52.86,
+   "t1": 72.38,
+   "text": "I'm now at the corner of the fold of the section room. Coffee table.",
+   "said": null,
+   "place": "coffee table, NW corner (toward sectional fold)",
+   "xy": [
+    -3.05,
+    3.7
+   ],
+   "radius_m": 0.7,
+   "match_note": "'Fold of the sectional' = inner corner of the L-couch (~-3.5,4.1); nearest coffee-table corner is NW; radius covers both.",
+   "tier": "B",
+   "odas_az": 38.0,
+   "predicted_az": 34.6
+  },
+  {
+   "t0": 72.38,
+   "t1": 98.16,
+   "text": "I'm now at the glass shell to the left of the TV.",
+   "said": null,
+   "place": "glass unit L",
+   "xy": [
+    -3.4,
+    -0.45
+   ],
+   "radius_m": 0.3,
+   "match_note": "Jay, 2026-10-22: the left glass unit, toward the door.",
+   "tier": "B",
+   "odas_az": -2.0,
+   "predicted_az": -8.1
+  },
+  {
+   "t0": 98.16,
+   "t1": 110.345,
+   "text": "I'm now at the circular coffee table diameter 20 inches.",
+   "said": null,
+   "place": "glass coffee table",
+   "xy": [
+    -1.19,
+    3.76
+   ],
+   "radius_m": 0.5,
+   "match_note": "Circular coffee table, 20 in (0.51 m) matches the 0.52 m glass coffee table circle.",
+   "tier": "B",
+   "odas_az": 8.0,
+   "predicted_az": 27.0
+  }
+ ]
+}

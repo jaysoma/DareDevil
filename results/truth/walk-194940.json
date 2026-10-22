@@ -1,0 +1,79 @@
+{
+ "tape": "walk-194940",
+ "recorded": "2026-09-24T19:49:40-05:00",
+ "pose_id": "unresolved",
+ "pose": null,
+ "capsule_sign": null,
+ "pose_confidence": "unresolved",
+ "pose_evidence": [
+  "Jay, 2026-10-22: unsure -- either his Truth-page draft (-3.4, -0.25) facing 30, or the TV stand centre. ODAS cannot separate them (12.0 vs 14.4 deg over 2 stops). Candidates kept; stops held at tier C.",
+  "Jay's Truth-page draft, 2026-10-22: phone at (-3.4, -0.25) facing 30 -- left end of the TV stand, near glass unit L. ODAS: this placement fits best (sign +, 12.0 deg over 2 stops) but not decisively (TV stand centre 14.4).",
+  "Jay, 2026-10-22: phone on the TV stand, from memory independent of the bearings -- no longer circular. ODAS cannot fix the capsule sign (P4+ 14.4 vs P4- 16.4 deg).",
+  "Assigned TV stand (P4) partly because \"onsets agree\" (his own scheme). ODAS cannot separate it: P4+ 14.4, P4- 16.4, P2- 19.2 over 2 stops.",
+  "ODAS ranking: P4+ 14.4 deg over 2; P4- 16.4 deg over 2; P2- 19.2 deg over 2; P2+ 25.2 deg over 2"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 23.0,
+   "text": "this will be position one ... This would be in line with the angled door.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "'In line with the angled door' does not match a mapped place (only door object is far west at x -8.25); unresolved.",
+   "tier": "C",
+   "odas_az": 0.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 23.0,
+   "t1": 33.0,
+   "text": "This is position 2 in the middle of the couch, right against the couch, staring at the boat.",
+   "said": "facing the 'boat' (likely the phone/TV wall; mis-hearing)",
+   "place": "J3",
+   "xy": [
+    -2.5,
+    4.05
+   ],
+   "radius_m": 0.3,
+   "match_note": "'Middle of the couch, right against the couch' = J3 'center of couch'.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null,
+   "tier_note": "place known, phone pose unresolved"
+  },
+  {
+   "t0": 33.0,
+   "t1": 51.208,
+   "text": "This is the position 3. I'm at the corner of the kitchen bar.",
+   "said": null,
+   "place": "J1",
+   "xy": [
+    -0.1,
+    4.0
+   ],
+   "radius_m": 1.1,
+   "match_note": "J1 label begins 'Corner of kitchen'; but 'kitchen bar' also fits J2 'End of kitchen bar' (1.1 m away), so radius covers both.",
+   "tier": "C",
+   "odas_az": 4.0,
+   "predicted_az": null,
+   "tier_note": "place known, phone pose unresolved"
+  }
+ ],
+ "pose_candidates": [
+  {
+   "x": -3.4,
+   "y": -0.25,
+   "facing_deg": 30.0,
+   "source": "Jay draft"
+  },
+  {
+   "x": -2.15,
+   "y": -0.2,
+   "facing_deg": 0.0,
+   "source": "TV stand centre (P4)"
+  }
+ ]
+}

@@ -1,0 +1,110 @@
+{
+ "tape": "walk-195454",
+ "recorded": "2026-09-24T19:54:54-05:00",
+ "pose_id": "excluded",
+ "pose": null,
+ "capsule_sign": null,
+ "pose_confidence": "unresolved",
+ "pose_evidence": [
+  "dead capsule pair (L/R corr +0.058); excluded from bearing truth.",
+  "ODAS ranking: P3- 9.8 deg over 2; P2- 12.0 deg over 2; P3+ 13.0 deg over 2; P2+ 14.0 deg over 2"
+ ],
+ "phone_statements": [
+  {
+   "t": 10.0,
+   "text": "Currently the edge of the sectional, placing the phone."
+  }
+ ],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 19.0,
+   "text": "Okay, first position, I am currently at the edge of the sectional.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Which edge of the sectional is not stated (spans x -4.45..-1.42); unresolved.",
+   "tier": "C",
+   "odas_az": -2.0,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 19.0,
+   "t1": 29.0,
+   "text": "This is the second position. I am in line in the kitchen bar.",
+   "said": "facing the phone",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "'In line with the kitchen bar' is an alignment, not a point; unresolved.",
+   "tier": "C",
+   "odas_az": 0.0,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 29.0,
+   "t1": 43.0,
+   "text": "Third position, I am in line the kitchen bar. I am in line with the dining table. I'm in the kitchen",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Alignment with bar/dining table plus 'in the kitchen'; no single point.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 43.0,
+   "t1": 50.0,
+   "text": "Fourth position, I am on the other side of the table,",
+   "said": "directly facing the phone",
+   "place": "dining table, far side (side unspecified)",
+   "xy": [
+    2.83,
+    2.23
+   ],
+   "radius_m": 1.7,
+   "match_note": "'Other side of the table' = dining table; which side is not certain, so centre with large radius.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 50.0,
+   "t1": 69.0,
+   "text": "Fifth position, I am at the corner of the kitchen bar.",
+   "said": "at an angle to the phone, still facing the phone",
+   "place": "kitchen bar corner (J1 or J2)",
+   "xy": [
+    0.45,
+    3.98
+   ],
+   "radius_m": 1.0,
+   "match_note": "Matches J1 'Corner of kitchen...'/J2 'End of kitchen bar' (1.1 m apart); midpoint used. East corners of the bar not excluded.",
+   "tier": "C",
+   "odas_az": 4.0,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 69.0,
+   "t1": 82.92,
+   "text": "I am at the corner of the hallway into my bedroom.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Hallway not on map.",
+   "tier": "C",
+   "odas_az": 36.0,
+   "predicted_az": null,
+   "dead_pair": true
+  }
+ ]
+}

@@ -1,0 +1,169 @@
+{
+ "tape": "walk-111830",
+ "recorded": "2026-09-22T11:18:30-05:00",
+ "pose_id": "P4",
+ "pose": {
+  "x": -2.15,
+  "y": -0.2,
+  "facing_deg": 0.0
+ },
+ "capsule_sign": -1,
+ "pose_confidence": "medium",
+ "pose_evidence": [
+  "ODAS: P4- 1.3 deg vs P4+ 10.7 on 1 stop; on tape he says the top capsule is on the right, unlike the other recordings, phone on the TV stand. Sign flipped relative to walk-213150, as he said.",
+  "ODAS ranking: P4- 1.3 deg over 1; P4+ 10.7 deg over 1; P2- 29.2 deg over 1; P1+ 34.0 deg over 1"
+ ],
+ "phone_statements": [
+  {
+   "t": 14.8,
+   "text": "i made sure i put the top capsule on the same side uh yeah top capsules on the right ... where usually you'd be on the left for all the other recordings ... the bearing signs are going to be flipped"
+  },
+  {
+   "t": 89.0,
+   "text": "the top cap is on the right which is pointing towards the entryway but earlier when it was sitting on in the middle of the TV stand it was basically still pointing to towards the entryway on the left about I would say maybe four meters it has a wall"
+  },
+  {
+   "t": 141.0,
+   "text": "The phone is on a TV stand."
+  },
+  {
+   "t": 298.66,
+   "text": "the reverb is probably coming from the TV which is behind this phone right the TV is behind the phone"
+  }
+ ],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 71.0,
+   "text": "one meter from the phone standing i am standing one meter from the phone facing the phone",
+   "said": "1 m from phone, standing, facing the phone",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "distance only",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 71.0,
+   "t1": 119.0,
+   "text": "I'm now standing two meters from the phone, right down the middle.",
+   "said": "2 m from phone, standing, on the centre line",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "distance only; 'last position in my comfy couch' at 79 s is future intent, not a move",
+   "tier": "C",
+   "odas_az": 6.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 119.0,
+   "t1": 178.0,
+   "text": "I'm now at 3 meters.",
+   "said": "3 m from phone (tape-measured, toothpick markers)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "distance only",
+   "tier": "C",
+   "odas_az": 6.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 178.0,
+   "t1": 237.4,
+   "text": "I'm seated at four meters right now.",
+   "said": "seated, 4 m, facing the phone, right down the middle",
+   "place": "couch (long back couch, near J3 'center of couch')",
+   "xy": [
+    -2.5,
+    4.05
+   ],
+   "radius_m": 1.0,
+   "match_note": "he later says he 'walked continuously from the couch'; announced the last position as the 'comfy couch ... a sectional'; centre-line implies the long section, but the sectional also has the x -4 chaise, hence 1.0 m radius",
+   "tier": "B",
+   "odas_az": 6.0,
+   "predicted_az": 4.7
+  },
+  {
+   "t0": 237.4,
+   "t1": 248.4,
+   "text": "This is me walking towards the phone while I'm talking.",
+   "said": "walking toward the phone from the couch",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "in motion, no fixed position",
+   "tier": "C",
+   "odas_az": 6.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 248.4,
+   "t1": 249.4,
+   "text": "That's three meters.",
+   "said": "3 m (called out while walking toward phone)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "distance only, in motion",
+   "tier": "C",
+   "odas_az": 6.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 249.4,
+   "t1": 252.4,
+   "text": "While I'm talking, that's two meters.",
+   "said": "2 m (called out while walking)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "distance only, in motion",
+   "tier": "C",
+   "odas_az": 6.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 252.4,
+   "t1": 256.4,
+   "text": "While I'm talking continuously, that's one meter.",
+   "said": "1 m (called out while walking)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "distance only, in motion",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 256.4,
+   "t1": 305.12,
+   "text": "And now it's half a meter. I am now half a meter from the phone.",
+   "said": "0.5 m, standing; first facing forward (not at phone), then looking down at phone, then facing forward again",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "distance only",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 305.12,
+   "t1": 346.831,
+   "text": "I'm now kneeling at two meters the same position I was in when I was standing earlier",
+   "said": "2 m, kneeling, dead centre, talking directly to the phone",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "distance only; same spot as the 71 s stop",
+   "tier": "C",
+   "odas_az": 4.0,
+   "predicted_az": null
+  }
+ ]
+}

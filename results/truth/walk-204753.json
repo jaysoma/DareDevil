@@ -1,0 +1,102 @@
+{
+ "tape": "walk-204753",
+ "recorded": "2026-09-29T20:47:53-05:00",
+ "pose_id": "P3",
+ "pose": {
+  "x": -4.0,
+  "y": 2.2,
+  "facing_deg": 89.0
+ },
+ "capsule_sign": 1,
+ "pose_confidence": "high",
+ "pose_evidence": [
+  "ODAS: P3+ 3.8 deg over 4 stops; next distinct pose P2+ 12.2 deg. Agrees with the assigned left-wall pose.",
+  "ODAS ranking: P3+ 3.8 deg over 4; assigned+ 4.2 deg over 4; P2+ 12.2 deg over 4; P3- 30.7 deg over 4"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 14.0,
+   "text": "Position one, I am right at the corner of the laundry room and the living room, right at the corner of the corner of the wall.",
+   "said": null,
+   "place": "J4",
+   "xy": [
+    0.6,
+    1.05
+   ],
+   "radius_m": 0.3,
+   "match_note": "Wall corner between laundry and living room = J4 'wall/laundry'.",
+   "tier": "A",
+   "odas_az": 14.0,
+   "predicted_az": 15.0,
+   "angular_uncertainty_deg": 3.6
+  },
+  {
+   "t0": 14.0,
+   "t1": 38.0,
+   "text": "Position two, I am at the corner of my friend the TV, sitting at the TV stand.",
+   "said": "sitting",
+   "place": "tv stand, centre (corner unspecified)",
+   "xy": [
+    -2.13,
+    -0.5
+   ],
+   "radius_m": 1.0,
+   "match_note": "Says a corner of the TV stand but not which; centre with large radius.",
+   "tier": "B",
+   "odas_az": 50.0,
+   "predicted_az": 56.3,
+   "angular_uncertainty_deg": 16.9,
+   "tier_note": "placement radius 1.0 m at 3.3 m is +-17 deg: too loose to grade angles"
+  },
+  {
+   "t0": 38.0,
+   "t1": 52.0,
+   "text": "The edition 3. The air, uh, end of the kitchen bar top. Right, right at the bar top.",
+   "said": null,
+   "place": "J2",
+   "xy": [
+    1.0,
+    3.95
+   ],
+   "radius_m": 0.3,
+   "match_note": "'End of the kitchen bar top' = J2 'End of kitchen bar'.",
+   "tier": "A",
+   "odas_az": -14.0,
+   "predicted_az": -18.3,
+   "angular_uncertainty_deg": 3.2
+  },
+  {
+   "t0": 52.0,
+   "t1": 71.0,
+   "text": "This is more. ... I am right in front of the bridge in the kitchen.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Position 4 (mis-heard 'more'); 'bridge' = fridge, which is not on the map.",
+   "tier": "C",
+   "odas_az": -18.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 71.0,
+   "t1": 93.1,
+   "text": "Position 5. I am in front of the dining table. ... Right in the middle of the dining table.",
+   "said": null,
+   "place": "dining table, centre (side unspecified)",
+   "xy": [
+    2.83,
+    2.23
+   ],
+   "radius_m": 1.0,
+   "match_note": "In front of the middle of the dining table; which long side is not stated, so centre with radius covering both side midpoints.",
+   "tier": "B",
+   "odas_az": 4.0,
+   "predicted_az": 0.7,
+   "angular_uncertainty_deg": 8.3,
+   "tier_note": "placement radius 1.0 m at 6.8 m is +-8 deg: too loose to grade angles"
+  }
+ ]
+}

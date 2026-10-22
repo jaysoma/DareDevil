@@ -1,0 +1,70 @@
+{
+ "tape": "walk-205043",
+ "recorded": "2026-09-22T20:50:43-05:00",
+ "pose_id": "assigned",
+ "pose": {
+  "x": -2.15,
+  "y": -0.2,
+  "facing_deg": 0
+ },
+ "capsule_sign": null,
+ "pose_confidence": "unverified",
+ "pose_evidence": [
+  "No stop could be placed on the map, so ODAS cannot test the pose; assigned pose kept as-is: 2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 27.96,
+   "text": "(no position named)",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Speaker not naming positions; start spot unknown.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 27.96,
+   "t1": 75.62,
+   "text": "So I'll go stand back here a little bit further",
+   "said": "moved further back; at 54.72 'talking from the same range'",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Relative move only.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 75.62,
+   "t1": 124.6,
+   "text": "And now I'm going to go back here even further and stuff. And I'm here now and there's a wall close to me.",
+   "said": "even further back, near a wall",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Relative move only; wall not identifiable.",
+   "tier": "C",
+   "odas_az": -2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 124.6,
+   "t1": 193.6,
+   "text": "And now I'm going to go to very, very, back of the room.",
+   "said": "very back of the room",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "'Back of the room' relative to unknown phone placement; not matched (J5 possible but unjustified).",
+   "tier": "C",
+   "odas_az": 0.0,
+   "predicted_az": null
+  }
+ ]
+}

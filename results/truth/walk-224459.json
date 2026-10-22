@@ -1,0 +1,148 @@
+{
+ "tape": "walk-224459",
+ "recorded": "2026-09-17T22:44:59-05:00",
+ "pose_id": "assigned",
+ "pose": {
+  "x": -2.15,
+  "y": -0.2,
+  "facing_deg": 0
+ },
+ "capsule_sign": null,
+ "pose_confidence": "unverified",
+ "pose_evidence": [
+  "No stop could be placed on the map, so ODAS cannot test the pose; assigned pose kept as-is: 2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 6.0,
+   "text": "All right, recording. I'm on the side of the bottom mic.",
+   "said": "on the bottom-mic side of the phone",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "relative to phone only",
+   "tier": "C",
+   "odas_az": -12.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 6.0,
+   "t1": 12.0,
+   "text": "I remember about now facing away from the bottom mic, walking away from the phone.",
+   "said": "facing away from the bottom mic, walking away",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "in motion",
+   "tier": "C",
+   "odas_az": -28.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 12.0,
+   "t1": 19.0,
+   "text": "Now, back to walking towards the phone, still the side of the bottom mic.",
+   "said": "walking toward phone, bottom-mic side",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "in motion",
+   "tier": "C",
+   "odas_az": -10.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 19.0,
+   "t1": 24.0,
+   "text": "Walking across both paths of the phone facing the wall.",
+   "said": "walking across the phone, facing the wall",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "in motion",
+   "tier": "C",
+   "odas_az": -24.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 24.0,
+   "t1": 27.0,
+   "text": "Now turn out, walking the other way.",
+   "said": "turned, walking the other way",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "in motion",
+   "tier": "C",
+   "odas_az": 34.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 27.0,
+   "t1": 46.0,
+   "text": "Now it greets to the phone. and across the length of the bone.",
+   "said": "walking across the length of the phone at 90 degrees, repeated, same range",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "in motion; '90 degrees' mis-heard as 'it greets'",
+   "tier": "C",
+   "odas_az": 24.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 46.0,
+   "t1": 53.0,
+   "text": "Now I'll walk in a circle.",
+   "said": "walking in a circle",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "in motion",
+   "tier": "C",
+   "odas_az": 4.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 53.0,
+   "t1": 56.0,
+   "text": "Now facing away from the bone, walking away from the bone.",
+   "said": "facing away, walking away from phone",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "in motion",
+   "tier": "C",
+   "odas_az": -10.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 56.0,
+   "t1": 67.0,
+   "text": "Walking around. ... six, seven meters, walking around, and facing all kinds of directions.",
+   "said": "~6-7 m, walking around, facing all directions",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "in motion",
+   "tier": "C",
+   "odas_az": -18.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 67.0,
+   "t1": 78.552,
+   "text": "And I'm now coming back to the phone. Kind of like an S- zigzag.",
+   "said": "returning to phone in S/zigzag",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "in motion",
+   "tier": "C",
+   "odas_az": -8.0,
+   "predicted_az": null
+  }
+ ]
+}

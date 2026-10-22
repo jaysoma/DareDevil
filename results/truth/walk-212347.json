@@ -1,0 +1,114 @@
+{
+ "tape": "walk-212347",
+ "recorded": "2026-09-28T21:23:47-05:00",
+ "pose_id": "excluded",
+ "pose": null,
+ "capsule_sign": null,
+ "pose_confidence": "unresolved",
+ "pose_evidence": [
+  "dead capsule pair (L/R corr +0.12); excluded from bearing truth. Note: its 5 placed stops still fit P3+ at 8.3 deg, so the pair may not be fully dead -- worth re-measuring.",
+  "ODAS ranking: P3+ 8.3 deg over 5; assigned+ 8.9 deg over 5; P2+ 10.8 deg over 5; P2- 25.0 deg over 5"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 3.1,
+   "t1": 15.92,
+   "text": "I'm now in the first position, same one as before, talking directly facing the phone.",
+   "said": "directly facing the phone",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "'Same one as before' refers to an earlier tape; position not named.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 15.92,
+   "t1": 28.96,
+   "text": "And now the second position, corner of the kitchen bar.",
+   "said": null,
+   "place": "J1",
+   "xy": [
+    -0.1,
+    4.0
+   ],
+   "radius_m": 0.8,
+   "match_note": "J1 label 'Corner of kitchen . . .'; next stop is 'kitchen bar' separately (=J2), sequence matches J1,J2,J4,J5. J2 is 1.1 m away.",
+   "tier": "C",
+   "odas_az": -20.0,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 28.96,
+   "t1": 42.04,
+   "text": "I'm now leading on the third position. ... I'm now leading on the kitchen bar which is the third position.",
+   "said": "leaning on the kitchen bar",
+   "place": "J2",
+   "xy": [
+    1.0,
+    3.95
+   ],
+   "radius_m": 0.8,
+   "match_note": "'Kitchen bar' after 'corner of kitchen bar'; J2 'End of kitchen bar'. Could be anywhere along the bar.",
+   "tier": "C",
+   "odas_az": -10.0,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 42.04,
+   "t1": 74.62,
+   "text": "I'm now leading on the fourth position. ... I'm beating on the wall, which is the the laundry room wall.",
+   "said": "leaning on the wall",
+   "place": "J4",
+   "xy": [
+    0.6,
+    1.05
+   ],
+   "radius_m": 0.4,
+   "match_note": "'Laundry room wall' = J4 'wall/laundry'. 61-71 s comments ('this position') not a new named spot.",
+   "tier": "C",
+   "odas_az": 0.0,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 74.62,
+   "t1": 89.84,
+   "text": "I'm really interested to see if this position comes up, which is right in front of the bridge. The far end of the room.",
+   "said": null,
+   "place": "J5",
+   "xy": [
+    4.5,
+    3.15
+   ],
+   "radius_m": 0.8,
+   "match_note": "'Far end of the room' = J5, farthest spot; 'bridge' = fridge (not on map).",
+   "tier": "C",
+   "odas_az": 4.0,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 89.84,
+   "t1": 111.0,
+   "text": "And of course, last but not least, the TV stand corner.",
+   "said": null,
+   "place": "tv stand, front corner (east or west unspecified)",
+   "xy": [
+    -2.13,
+    -0.25
+   ],
+   "radius_m": 0.8,
+   "match_note": "Back corners against wall; front edge midpoint with radius covering both front corners.",
+   "tier": "C",
+   "odas_az": 52.0,
+   "predicted_az": null,
+   "dead_pair": true
+  }
+ ]
+}

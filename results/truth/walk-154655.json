@@ -1,0 +1,127 @@
+{
+ "tape": "walk-154655",
+ "recorded": "2026-09-19T15:46:55-05:00",
+ "pose_id": "assigned",
+ "pose": {
+  "x": -2.15,
+  "y": -0.2,
+  "facing_deg": 0
+ },
+ "capsule_sign": null,
+ "pose_confidence": "unverified",
+ "pose_evidence": [
+  "No stop could be placed on the map, so ODAS cannot test the pose; assigned pose kept as-is: 2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot"
+ ],
+ "phone_statements": [
+  {
+   "t": 12.0,
+   "text": "The phone is, I would say, slightly below mouth level, so I think I placed it correctly."
+  }
+ ],
+ "stops": [
+  {
+   "t0": 4.0,
+   "t1": 24.0,
+   "text": "I'm talking straight, center of the phone. I would say 1.5 meters, right at the phone.",
+   "said": "1.5 m, straight on phone centre (0 deg), talking toward phone",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance/angle only.",
+   "tier": "C",
+   "odas_az": 0.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 24.0,
+   "t1": 35.0,
+   "text": "I'm now at 2 meters, straight center phone. Center phone, so zero degrees.",
+   "said": "2 m, 0 deg",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance/angle only.",
+   "tier": "C",
+   "odas_az": 0.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 35.0,
+   "t1": 46.0,
+   "text": "About three meters now, sitting on the couch. So three or three point five meters, straight back.",
+   "said": "3-3.5 m, 0 deg straight back, sitting on the couch",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Map has three couch objects and he names no part of one; distance not converted.",
+   "tier": "C",
+   "odas_az": 0.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 46.0,
+   "t1": 56.0,
+   "text": "45 degree angle, about two meters, I would say. Angle, fully estimated.",
+   "said": "45 deg, ~2 m (angle estimated)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance/angle only.",
+   "tier": "C",
+   "odas_az": 48.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 56.0,
+   "t1": 58.0,
+   "text": "Walk straight back, so 45 degree angle, ... maybe four meters",
+   "said": "45 deg, ~4 m (the '4 m' words are at the start of the 58.0-71.5 segment)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance/angle only; the segment can't be split so this stop is short.",
+   "tier": "C",
+   "odas_az": 40.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 58.0,
+   "t1": 82.6,
+   "text": "so now i'm in the kitchen so this would be something like six point five meters i would say still at 45 degree angle",
+   "said": "~6.5 m, 45 deg, in the kitchen",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "'In the kitchen' names only an area (island + alcove span about 4 m), not a point.",
+   "tier": "C",
+   "odas_az": 40.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 82.6,
+   "t1": 89.6,
+   "text": "now on the other side of the final 45 or some kind of angle I'm at about 1.2 meters.",
+   "said": "~1.2 m at ~45 deg on the other side",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance/angle only; the naming starts at the end of the previous segment.",
+   "tier": "C",
+   "odas_az": -34.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 89.6,
+   "t1": 105.727,
+   "text": "Okay now I'm about 2. ... Okay now about 2. something meters along the same bearing.",
+   "said": "~2.x m, same bearing as previous",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance only; first named at the end of the 82.6 segment, confirmed at 93.6.",
+   "tier": "C",
+   "odas_az": -28.0,
+   "predicted_az": null
+  }
+ ]
+}

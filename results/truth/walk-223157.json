@@ -1,0 +1,31 @@
+{
+ "tape": "walk-223157",
+ "recorded": "2026-09-21T22:31:57-05:00",
+ "pose_id": "assigned",
+ "pose": {
+  "x": -2.15,
+  "y": -0.2,
+  "facing_deg": 0
+ },
+ "capsule_sign": null,
+ "pose_confidence": "unverified",
+ "pose_evidence": [
+  "No stop could be placed on the map, so ODAS cannot test the pose; assigned pose kept as-is: 2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 165.08,
+   "text": "I'm right now two meters from though, facing thaw. Wind road clock, what?",
+   "said": "~2 m from (likely) the phone, facing it; 12.0 'wind road clock' may be 'rotate clockwise' (garbled, per the library note)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance only and the decode is garbled; the rest of the tape is unintelligible and has no position words.",
+   "tier": "C",
+   "odas_az": 44.0,
+   "predicted_az": null
+  }
+ ]
+}

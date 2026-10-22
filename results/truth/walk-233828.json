@@ -1,0 +1,135 @@
+{
+ "tape": "walk-233828",
+ "recorded": "2026-09-14T23:38:28-05:00",
+ "pose_id": "assigned",
+ "pose": {
+  "x": -2.15,
+  "y": -0.2,
+  "facing_deg": 0
+ },
+ "capsule_sign": null,
+ "pose_confidence": "unverified",
+ "pose_evidence": [
+  "No stop could be placed on the map, so ODAS cannot test the pose; assigned pose kept as-is: 2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 16.0,
+   "text": "First test, I'm about 1.5 meters from the front of the phone.",
+   "said": "~1.5 m, in front of phone",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance only.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 16.0,
+   "t1": 31.0,
+   "text": "Now I'm about maybe 3 meters. Off-axis",
+   "said": "~3 m, off-axis",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance only.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 31.0,
+   "t1": 51.0,
+   "text": "Now maybe ... six, seven meters, six meters? Six meters?",
+   "said": "~6-7 m",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance only.",
+   "tier": "C",
+   "odas_az": 6.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 51.0,
+   "t1": 69.1,
+   "text": "Now you five meters, six meters. five meters different things uh flutin um b or bar",
+   "said": "~5-6 m; 'b or bar' maybe 'by the bar' (garbled)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance only; the bar reference is too garbled to match.",
+   "tier": "C",
+   "odas_az": 0.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 69.1,
+   "t1": 77.4,
+   "text": "oh it's funny like maybe maybe nine meters",
+   "said": "~9 m",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance only.",
+   "tier": "C",
+   "odas_az": 26.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 77.4,
+   "t1": 88.0,
+   "text": "i'm just gonna talk ... walk around on getting closer closer and closer to the phone",
+   "said": "walking toward phone (moving, not a fixed stand)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Moving.",
+   "tier": "C",
+   "odas_az": -2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 88.0,
+   "t1": 94.0,
+   "text": "probably about a three to a half meters",
+   "said": "~3.5 m (while walking)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance only.",
+   "tier": "C",
+   "odas_az": 20.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 94.0,
+   "t1": 99.0,
+   "text": "this is on two meters, and now, and now ... a meter.",
+   "said": "~2 m then ~1 m within one segment (walking)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance only; moving.",
+   "tier": "C",
+   "odas_az": -10.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 99.0,
+   "t1": 108.315,
+   "text": "And now, walking, walking away from the phone",
+   "said": "walking away from phone",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Moving.",
+   "tier": "C",
+   "odas_az": 4.0,
+   "predicted_az": null
+  }
+ ]
+}

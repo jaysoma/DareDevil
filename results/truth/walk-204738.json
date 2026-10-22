@@ -1,0 +1,44 @@
+{
+ "tape": "walk-204738",
+ "recorded": "2026-09-15T20:47:38-05:00",
+ "pose_id": "assigned",
+ "pose": {
+  "x": -2.15,
+  "y": -0.2,
+  "facing_deg": 0
+ },
+ "capsule_sign": null,
+ "pose_confidence": "unverified",
+ "pose_evidence": [
+  "No stop could be placed on the map, so ODAS cannot test the pose; assigned pose kept as-is: 2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 7.0,
+   "text": "Okay, talking from the top of the phone now, which means it should be the same loudness.",
+   "said": "at the top end of the phone (relative to phone axis)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "position relative to phone only",
+   "tier": "C",
+   "odas_az": -26.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 7.0,
+   "t1": 34.308,
+   "text": "Now from the front...",
+   "said": "in front of the phone",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "position relative to phone only; 30-33 s is garbled",
+   "tier": "C",
+   "odas_az": 6.0,
+   "predicted_az": null
+  }
+ ]
+}

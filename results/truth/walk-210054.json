@@ -1,0 +1,107 @@
+{
+ "tape": "walk-210054",
+ "recorded": "2026-09-24T21:00:54-05:00",
+ "pose_id": "P3",
+ "pose": {
+  "x": -4.0,
+  "y": 2.2,
+  "facing_deg": 89.0
+ },
+ "capsule_sign": 1,
+ "pose_confidence": "high",
+ "pose_evidence": [
+  "ODAS: P3+ 7.0 deg over 4 stops; next P2+ 13.7 (ratio 2.0). Agrees with the assigned left-wall pose.",
+  "ODAS ranking: P3+ 7.0 deg over 4; P2+ 13.7 deg over 4; P4- 19.7 deg over 4; P1- 29.1 deg over 4"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 8.0,
+   "t1": 21.0,
+   "text": "I guess this means I'm doing a walk, so first position. Corner of the coffee table.",
+   "said": null,
+   "place": "coffee table (rectangular), corner unspecified -> centre",
+   "xy": [
+    -2.53,
+    3.4
+   ],
+   "radius_m": 0.8,
+   "match_note": "'corner' implies the rectangular coffee table, not the round glass one; corner not identified so centre + half-diagonal+margin",
+   "tier": "B",
+   "odas_az": 2.0,
+   "predicted_az": -38.2,
+   "angular_uncertainty_deg": 22.9,
+   "tier_note": "placement radius 0.8 m at 1.9 m is +-23 deg: too loose to grade angles"
+  },
+  {
+   "t0": 21.0,
+   "t1": 30.0,
+   "text": "Second position. Corner of the TV stand.",
+   "said": null,
+   "place": "tv stand, corner unspecified -> centre",
+   "xy": [
+    -2.13,
+    -0.5
+   ],
+   "radius_m": 1.0,
+   "match_note": "which corner not stated; he must stand in front of/beside it so radius covers both front corners",
+   "tier": "B",
+   "odas_az": 48.0,
+   "predicted_az": 56.3,
+   "angular_uncertainty_deg": 16.9,
+   "tier_note": "placement radius 1.0 m at 3.3 m is +-17 deg: too loose to grade angles"
+  },
+  {
+   "t0": 30.0,
+   "t1": 37.0,
+   "text": "Third position, corner of kitchen bar.",
+   "said": null,
+   "place": "J1",
+   "xy": [
+    -0.1,
+    4.0
+   ],
+   "radius_m": 0.6,
+   "match_note": "same phrase as J1 name 'Corner of kitchen...'; J2 (other bar corner, 1.1 m east) is the alternative",
+   "tier": "A",
+   "odas_az": -18.0,
+   "predicted_az": -23.8,
+   "angular_uncertainty_deg": 8.0
+  },
+  {
+   "t0": 37.0,
+   "t1": 47.0,
+   "text": "Fourth position, leaning against the island in the kitchen.",
+   "said": null,
+   "place": "island (kitchen), side unspecified",
+   "xy": [
+    2.7,
+    4.6
+   ],
+   "radius_m": 1.2,
+   "match_note": "leaning against the island; side unknown so centre of island+island 2 block with radius covering its 2.1 m length",
+   "tier": "B",
+   "odas_az": -14.0,
+   "predicted_az": -18.7,
+   "angular_uncertainty_deg": 9.6,
+   "tier_note": "placement radius 1.2 m at 7.1 m is +-10 deg: too loose to grade angles"
+  },
+  {
+   "t0": 47.0,
+   "t1": 55.0,
+   "text": "Fifth position, all the way back of the room.",
+   "said": null,
+   "place": "J5",
+   "xy": [
+    4.5,
+    3.15
+   ],
+   "radius_m": 0.3,
+   "match_note": "Jay, 2026-10-22: \"all the way back of the room\" = 8/9 meters (J5).",
+   "tier": "A",
+   "odas_az": 2.0,
+   "predicted_az": -5.4,
+   "angular_uncertainty_deg": 2.0
+  }
+ ]
+}

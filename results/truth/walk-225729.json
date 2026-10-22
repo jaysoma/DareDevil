@@ -1,0 +1,31 @@
+{
+ "tape": "walk-225729",
+ "recorded": "2026-09-26T22:57:29-05:00",
+ "pose_id": "assigned",
+ "pose": {
+  "x": -3.7,
+  "y": 2.35,
+  "facing_deg": 90
+ },
+ "capsule_sign": null,
+ "pose_confidence": "unverified",
+ "pose_evidence": [
+  "No stop could be placed on the map, so ODAS cannot test the pose; assigned pose kept as-is: as marked on the current map, not re-checked"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 83.879,
+   "text": "I'm not looking away ... I'm facing the phone standing here, speaking directly to the phone",
+   "said": "facing the phone, not looking away, standing (single position for whole tape)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "No position named; rest of tape is Daredevil monologue.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  }
+ ]
+}

@@ -1,0 +1,88 @@
+{
+ "tape": "walk-214457",
+ "recorded": "2026-09-29T21:44:57-05:00",
+ "pose_id": "P2",
+ "pose": {
+  "x": -3.4,
+  "y": -0.25,
+  "facing_deg": 47.0
+ },
+ "capsule_sign": -1,
+ "pose_confidence": "medium",
+ "pose_evidence": [
+  "Jay, 2026-10-22: phone moved to left of TV (facing ~42) after walk-214241. ODAS: one stop, P2- at 17 deg.",
+  "Assigned P2 (left of TV, facing 42); the single usable stop fits P3- (0.3) better than P2 (17). One stop cannot settle it; recorded 2 min after walk-214241 at the kitchen bar.",
+  "ODAS ranking: P3- 0.3 deg over 1; P2- 17.3 deg over 1; P2+ 18.7 deg over 1; P4+ 19.2 deg over 1"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 1.08,
+   "t1": 15.88,
+   "text": "First position, L section of the living room.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "'L section' (sectional couch / L part of room?) not specific enough to place.",
+   "tier": "C",
+   "odas_az": -12.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 15.88,
+   "t1": 30.62,
+   "text": "Second position, yeah. Corner of bar, close to the room, at the platform.",
+   "said": null,
+   "place": "J2",
+   "xy": [
+    1.0,
+    3.95
+   ],
+   "radius_m": 0.8,
+   "match_note": "Corner of the bar nearest the living room = west end of bar, i.e. J2 area; 'platform' unexplained, so wider radius.",
+   "tier": "B",
+   "odas_az": 18.0,
+   "predicted_az": 0.7
+  },
+  {
+   "t0": 30.62,
+   "t1": 64.18,
+   "text": "of the wall, separating the room from the logger, the very corner of the wall. ... I am right now at the corner of the end of the wall right next to the footsoon or bottom.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Position 3 (intro words lost). 'Logger' may be laundry (-> J4) but he says he is confused and 'footsoon/bottom' is unintelligible; could also be J1 alcove wall corner. Unresolved.",
+   "tier": "C",
+   "odas_az": -30.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 64.18,
+   "t1": 82.38,
+   "text": "Okay, I'm deep in the kitchen now. I'm leaning on the fridge. My back is on the bridge.",
+   "said": "back against the fridge, leaning",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Fridge not on map.",
+   "tier": "C",
+   "odas_az": 8.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 82.38,
+   "t1": 101.374,
+   "text": "Now that I end the border of the kitchen to the living room, right along with the half. or the kitchen. Yeah, this will be the last position.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Kitchen/living-room border could be the alcove opening (y~4.0, x 0..0.95) or along the island; 'half' garbled. Unresolved.",
+   "tier": "C",
+   "odas_az": 30.0,
+   "predicted_az": null
+  }
+ ]
+}

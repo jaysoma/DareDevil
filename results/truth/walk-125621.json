@@ -1,0 +1,83 @@
+{
+ "tape": "walk-125621",
+ "recorded": "2026-09-19T12:56:21-05:00",
+ "pose_id": "assigned",
+ "pose": {
+  "x": -2.15,
+  "y": -0.2,
+  "facing_deg": 0
+ },
+ "capsule_sign": null,
+ "pose_confidence": "unverified",
+ "pose_evidence": [
+  "No stop could be placed on the map, so ODAS cannot test the pose; assigned pose kept as-is: 2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 45.0,
+   "text": "meters facing the thumb two meters facing the thumb",
+   "said": "~2 m from phone; facing phone, then rotated 90 cw, 180 (facing away), 270 (facing left), back to 0 (facing phone)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance-only position; rotation set at one spot.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 45.0,
+   "t1": 89.0,
+   "text": "4 meters facing the phone",
+   "said": "4 m from phone; facing phone, then 90 cw, 180 facing away ('same position')",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance-only position.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 89.0,
+   "t1": 111.22,
+   "text": "45 degrees. On the top cap, about 3 meters. 3 meters, 40 degrees.",
+   "said": "~3 m from phone at ~45 deg toward the top capsule; then rotating counter-clockwise while talking, facing where the left capsule points",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance/angle relative to phone only.",
+   "tier": "C",
+   "odas_az": 30.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 111.22,
+   "t1": 119.0,
+   "text": "walking towards the kitchen in a straight line facing the far wall",
+   "said": "moving toward kitchen, facing far wall",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "In motion; no fixed position.",
+   "tier": "C",
+   "odas_az": 32.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 119.0,
+   "t1": 145.18,
+   "text": "wall rotating 180 degrees currently walking parallel to the horizontal axis of the phone about four meters from the phone at 45 degrees orientation is 90 degrees clockwise",
+   "said": "walking parallel to phone's horizontal axis; ~4 m from phone at 45 deg; rotated 180, orientation 90 cw",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance/angle relative to phone only; also moving.",
+   "tier": "C",
+   "odas_az": 82.0,
+   "predicted_az": null
+  }
+ ]
+}

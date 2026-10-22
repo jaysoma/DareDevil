@@ -1,0 +1,83 @@
+{
+ "tape": "walk-180036",
+ "recorded": "2026-09-23T18:00:36-05:00",
+ "pose_id": "assigned",
+ "pose": {
+  "x": -2.15,
+  "y": -0.2,
+  "facing_deg": 0
+ },
+ "capsule_sign": null,
+ "pose_confidence": "unverified",
+ "pose_evidence": [
+  "No stop could be placed on the map, so ODAS cannot test the pose; assigned pose kept as-is: 2026-09-30 TV-stand stamp; Jay's walk-155937 placement on 2026-10-21 puts the phone in the same spot"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 7.0,
+   "text": "First position.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Numbered only, no location named.",
+   "tier": "C",
+   "odas_az": 0.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 7.0,
+   "t1": 18.0,
+   "text": "Second position. (then: I'm walking towards another position / talking while I'm walking)",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Numbered only; from 12.0 he is walking.",
+   "tier": "C",
+   "odas_az": 4.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 18.0,
+   "t1": 27.0,
+   "text": "Third position.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Numbered only.",
+   "tier": "C",
+   "odas_az": 40.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 27.0,
+   "t1": 29.0,
+   "text": "Fourth position.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Numbered only.",
+   "tier": "C",
+   "odas_az": 42.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 29.0,
+   "t1": 37.087,
+   "text": "position. Fifth position. (Biserie = bye Siri)",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Numbered only.",
+   "tier": "C",
+   "odas_az": -4.0,
+   "predicted_az": null
+  }
+ ]
+}

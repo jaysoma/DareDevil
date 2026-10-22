@@ -1,0 +1,107 @@
+{
+ "tape": "walk-194532",
+ "recorded": "2026-09-28T19:45:32-05:00",
+ "pose_id": "excluded",
+ "pose": null,
+ "capsule_sign": null,
+ "pose_confidence": "unresolved",
+ "pose_evidence": [
+  "mono duplicate (L/R corr 1.000); excluded from bearing truth."
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 15.0,
+   "text": "First position in front of the phone, in line with the glass shelf and the round coffee table.",
+   "said": "in front of the phone, in line with the glass shelf and round coffee table",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "defines a line (round glass coffee table x~-1.19 / shelf x~-1.20) but not a point on it; phone position not stated",
+   "tier": "C",
+   "odas_az": null,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 15.0,
+   "t1": 23.0,
+   "text": "Second position, corner of the kitchen bar.",
+   "said": null,
+   "place": "J1",
+   "xy": [
+    -0.1,
+    4.0
+   ],
+   "radius_m": 0.5,
+   "match_note": "'corner of the kitchen bar' matches J1 name 'Corner of kitchen...'; next stop is 'other corner' -> J2; J1/J2 order assumed from names (swap would be ~1.1 m)",
+   "tier": "C",
+   "odas_az": null,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 23.0,
+   "t1": 35.0,
+   "text": "Third position, other corner of the kitchen bar.",
+   "said": null,
+   "place": "J2",
+   "xy": [
+    1.0,
+    3.95
+   ],
+   "radius_m": 0.5,
+   "match_note": "'other corner' of the bar opposite stop 2; J2 'End of kitchen bar' = east side of alcove opening / west end of island",
+   "tier": "C",
+   "odas_az": null,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 35.0,
+   "t1": 49.0,
+   "text": "Fourth position, leaning on the wall to the laundry room, right at the edge of the dining table.",
+   "said": null,
+   "place": "J4",
+   "xy": [
+    0.6,
+    1.05
+   ],
+   "radius_m": 0.4,
+   "match_note": "J4 'wall/laundry' is the wall corner toward the laundry room, ~0.8 m west of the dining table's SW corner",
+   "tier": "C",
+   "odas_az": null,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 49.0,
+   "t1": 57.0,
+   "text": "Fifth position, far back wall. Well, maybe, and a little bit shy.",
+   "said": "a little shy of the far back wall",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "possibly J5 (far east wall, farthest spot) but 'back wall' could mean the north wall y~6.8; unresolved",
+   "tier": "C",
+   "odas_az": null,
+   "predicted_az": null,
+   "dead_pair": true
+  },
+  {
+   "t0": 57.0,
+   "t1": 81.997,
+   "text": "Sixth position, corner of the pantry, right down the left edge of the bridge.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "pantry (and 'bridge' = fridge?) not on the map",
+   "tier": "C",
+   "odas_az": null,
+   "predicted_az": null,
+   "dead_pair": true
+  }
+ ]
+}

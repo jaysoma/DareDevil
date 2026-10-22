@@ -1,0 +1,70 @@
+{
+ "tape": "walk-165255",
+ "recorded": "2026-09-23T16:52:55-05:00",
+ "pose_id": "assigned",
+ "pose": {
+  "x": -2.13,
+  "y": -0.25,
+  "facing_deg": 0
+ },
+ "capsule_sign": null,
+ "pose_confidence": "unverified",
+ "pose_evidence": [
+  "No stop could be placed on the map, so ODAS cannot test the pose; assigned pose kept as-is: phone set on the TV stand 2026-09-28; its own file still carries an older map"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 21.0,
+   "text": "I'm standing right from the phone at what I measured to be 3.5-6 meters.",
+   "said": "3.5-6 m from the phone (measured; transcript garbled, possibly 3.56 m)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance-only; no named place.",
+   "tier": "C",
+   "odas_az": 0.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 21.0,
+   "t1": 30.0,
+   "text": "I'm standing closer now. I haven't measured the spot, so I think it's 1.5 meters.",
+   "said": "~1.5 m from the phone (unmeasured)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance-only; no named place.",
+   "tier": "C",
+   "odas_az": 0.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 30.0,
+   "t1": 37.0,
+   "text": "I move sideways about 45 degrees toward the top cap",
+   "said": "moved sideways ~45 degrees toward the top capsule",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Angle-only relative to phone; no named place.",
+   "tier": "C",
+   "odas_az": 26.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 37.0,
+   "t1": 75.91,
+   "text": "move sideways so I'm now at the new position ... this is position one two three four okay and this is the fifth position",
+   "said": "moved sideways to a new position; then counts positions one-five for marking on the truth page",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "No place named; positions 1-5 are counted inside one Whisper segment (37-75 s) so cannot be split by words; positions were marked on the truth page, not spoken.",
+   "tier": "C",
+   "odas_az": 34.0,
+   "predicted_az": null
+  }
+ ]
+}

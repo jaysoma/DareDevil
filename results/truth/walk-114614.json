@@ -1,0 +1,106 @@
+{
+ "tape": "walk-114614",
+ "recorded": "2026-09-22T11:46:14-05:00",
+ "pose_id": "P4",
+ "pose": {
+  "x": -2.15,
+  "y": -0.2,
+  "facing_deg": 0.0,
+  "orientation": "lying flat on its back (screen up)"
+ },
+ "capsule_sign": null,
+ "pose_confidence": "recollection",
+ "pose_evidence": [
+  "Jay, 2026-10-22: TV stand, lying flat on its back. Flat geometry differs from upright; no stop can be placed, so untested.",
+  "He says the phone is lying on its back and higher than before: not the upright TV-stand pose it is assigned. No stop can be placed on the map."
+ ],
+ "phone_statements": [
+  {
+   "t": 9.0,
+   "text": "The phone is slightly higher from where it was before."
+  },
+  {
+   "t": 13.0,
+   "text": "It's lying on his back now."
+  },
+  {
+   "t": 15.0,
+   "text": "I'm going to do a phone on its back and also phones standing on its long edge."
+  },
+  {
+   "t": 21.0,
+   "text": "But right now it's on his back."
+  },
+  {
+   "t": 29.0,
+   "text": "Facing the phone, the phone is in a slightly position just on the x-axis."
+  }
+ ],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 26.0,
+   "text": "I'm now standing at one meter. One meter from the phone.",
+   "said": "1 m from the phone",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance-only; no named place.",
+   "tier": "C",
+   "odas_az": 4.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 26.0,
+   "t1": 36.0,
+   "text": "I'm now at two meters facing the phone.",
+   "said": "2 m from the phone, facing the phone",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance-only; no named place.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 36.0,
+   "t1": 62.0,
+   "text": "I'm now at 4 meters, 4 meters from the phone.",
+   "said": "4 m from the phone, looking straight at it, sitting down (mouth near phone height)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance-only; no named place.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 62.0,
+   "t1": 67.0,
+   "text": "Now I'm talking while moving towards the phone.",
+   "said": "moving toward the phone while talking",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "In motion; no fixed position.",
+   "tier": "C",
+   "odas_az": 4.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 67.0,
+   "t1": 78.579,
+   "text": "I am at two meters and I'm talking while approaching the phone, one meter.",
+   "said": "2 m then 1 m while approaching the phone",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance-only and moving; no named place.",
+   "tier": "C",
+   "odas_az": 4.0,
+   "predicted_az": null
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "tape": "walk-170343",
+ "recorded": "2026-09-19T17:03:43-05:00",
+ "pose_id": "P4",
+ "pose": {
+  "x": -2.15,
+  "y": -0.2,
+  "facing_deg": 0.0
+ },
+ "capsule_sign": -1,
+ "pose_confidence": "low",
+ "pose_evidence": [
+  "ODAS: P4- 1.4 vs P4+ 5.4 on a single stop. Too little to confirm the sign.",
+  "ODAS ranking: P4- 1.4 deg over 1; P4+ 5.4 deg over 1; P2- 33.6 deg over 1; P2+ 37.6 deg over 1"
+ ],
+ "phone_statements": [],
+ "stops": [
+  {
+   "t0": 0.0,
+   "t1": 30.0,
+   "text": "On the couch.",
+   "said": null,
+   "place": "couch (sectional, spot unspecified)",
+   "xy": [
+    -2.43,
+    4.56
+   ],
+   "radius_m": 1.6,
+   "match_note": "'The couch' unspecified; long-couch centre with radius covering the L-section and J3.",
+   "tier": "B",
+   "odas_az": 2.0,
+   "predicted_az": 3.4
+  },
+  {
+   "t0": 30.0,
+   "t1": 70.5,
+   "text": "one meter",
+   "said": "1 m (from phone, presumably)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance only.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 70.5,
+   "t1": 107.5,
+   "text": "3.5 meters",
+   "said": "3.5 m (from phone, presumably)",
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Distance only.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  },
+  {
+   "t0": 107.5,
+   "t1": 150.46,
+   "text": "On the factory, what I guess.",
+   "said": null,
+   "place": null,
+   "xy": null,
+   "radius_m": null,
+   "match_note": "Garbled 'On the ...' looks like a position name but is unrecoverable.",
+   "tier": "C",
+   "odas_az": 2.0,
+   "predicted_az": null
+  }
+ ]
+}
