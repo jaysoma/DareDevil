@@ -5,13 +5,16 @@ message. The briefs don't depend on each other, so run them in parallel. Each se
 repo and the brief.
 
 Prerequisites for every session:
-- Code in the repo, at `src/` (conductor, attacks, schemes) and `harness/starss23/`.
+- Code in the repo: `src/schemes/` (GccPhat, Angle2), `src/geonar/` (conductor and its modules), `harness/starss23/`.
 - Network access in the environment that allows `zenodo.org`.
 - The Claude GitHub App installed on this repo, so the session can push its results branch.
 
 ---
 
 ## 1. STARSS23 real-audio run
+
+TAKEN: running in Jay's 2026-10-22 session (not a separate cloud session). Results will land in `results/starss23/`.
+Don't start this one.
 
 Read HANDOFF.md, then harness/starss23/. Download `metadata_dev.zip` and `mic_dev.zip` from
 https://zenodo.org/records/7880637 into a data directory outside the repo; never commit audio.
