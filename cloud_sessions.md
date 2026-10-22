@@ -62,6 +62,10 @@ Commit `results/dechorate/report.md` to a branch.
 
 ## 4. The 0 deg peak in silence, on independent data
 
+DONE in a 2026-10-22 cloud session: `results/zero_deg/report.md`. No 0 deg peak in STARSS23 pauses, though the
+low-frequency diffuse noise is there; the phone-side test is `harness/zero_deg/phone_pause.py`.
+Don't start this one.
+
 Read HANDOFF.md, item 2 of "Done". ODAS puts 47% of active pause directions within 6 deg of 0, and the top suspect is
 low-frequency diffuse noise that is coherent at zero lag. Test this on STARSS23 pause segments, with no speech active
 per the labels. Measure the share of GCC-PHAT peaks within 6 deg of 0 at high-pass 0, 100, 300 and 1100 Hz, for each
