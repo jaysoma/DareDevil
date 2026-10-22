@@ -1,4 +1,4 @@
-# Angle2's inward pull: reproduced, explained, partly fixed (2026-10-22)
+# Angle2's inward pull: reproduced, explained, fixed for most onsets (2026-10-22)
 
 Brief 2 of `cloud_sessions.md`. On STARSS23, `Angle2.readUtterance` read 2-19 deg nearer 0 than GccPhat on the same
 cuts, growing with angle (`results/starss23/report.md`, section 2).
@@ -20,7 +20,8 @@ cuts, growing with angle (`results/starss23/report.md`, section 2).
 - **Schemes:** both ran unchanged through `harness/starss23/run_schemes.mjs`. The harness is `harness/rooms/`.
 - **Lean:** the signed error along the truth's side, median; negative means read nearer 0. Where one number is given,
   it is the median over |truth| 30-60 deg.
-- **Not run:** the STARSS cuts (step 3 of the brief). zenodo.org is blocked in this session's network policy.
+- **STARSS23 check (step 3):** run after Zenodo access was opened. All 6 capsule pairs, 8,532 reads, before and after
+  the fix on the same cuts. Results in section 4.
 
 ## 1. Reflections alone don't pull it in
 With every onset coming out of silence, Angle2's onset is within about 2 deg of the truth in every room and at both
@@ -177,7 +178,8 @@ Each cell is the mean over the sets of each set's median:
 
 ## Caveats
 - **Tuned on simulation.** The four constants come from a coarse grid (3 rise levels x 3 share levels x 2 hit counts) on
-  these rooms. The tests are generic, rising energy and single-wave dominance, but the real check is the STARSS cuts.
+  these rooms. The tests are generic, rising energy and single-wave dominance. STARSS (section 4) is the out-of-sample
+  check, and it holds there.
 - **A bare pair:** no phone body, no STARSS sphere.
 - **Speech:** 21 onsets from 5 clips, 16 kHz originals upsampled, so nothing above 8 kHz. That is the schemes' band top
   anyway.
@@ -185,15 +187,53 @@ Each cell is the mean over the sets of each set's median:
   ceiling images' angles.
 - **Noise:** ideal diffuse noise. Real pauses also hold other sources and the room's own noise directions.
 
-## Next: the STARSS check (step 3), once zenodo.org is allowed
-    # metadata_dev.zip and mic_dev.zip from https://zenodo.org/records/7880637, unzipped into <data>
-    for p in "1 2" "1 3" "1 4" "2 3" "2 4" "3 4"; do
-      python3 harness/starss23/starss_cut.py <data> --pair $p --out cuts_${p% *}${p#* }.jsonl
-      node harness/starss23/run_schemes.mjs cuts_${p% *}${p#* }.jsonl src/schemes > preds_${p% *}${p#* }.jsonl
-    done
-Then compare against `results/starss23/preds_*.jsonl`, which were made before the fix. The question to answer: does
-Angle2's lean against GccPhat (1.7 / 4.3 / 7.6 / 19.2 deg by band) shrink? `run_schemes.mjs` doesn't record the `edge`
-flag yet. Add `r.onset.edge` to its `a2` output to split the scores by it.
+## 4. STARSS23: the fix on real rooms
+**Run:** all 6 capsule pairs re-cut from https://zenodo.org/records/7880637 with `harness/starss23/starss_cut.py`. That
+gives 1,422 onsets per pair and 8,532 reads, the same cuts as `results/starss23/report.md`. Both schemes ran through
+`run_schemes.mjs`, and `harness/starss23/analysis/compare_fix.py` compared them against that report's predictions.
+
+**Checks:**
+- **GccPhat is identical on every read.** Its code didn't change.
+- **The before numbers reproduce the report's:** Angle2 nearer 0 than GccPhat by 1.7 / 4.3 / 7.6 / 19.2 deg.
+- **Fallback reads are identical to before.** 72% of reads got an edge onset. The other 28% took the old count unchanged.
+
+**Angle2's onset, before -> after, by |truth|.** GccPhat is shown for reference. "vs GccPhat" is Angle2 minus GccPhat on
+the same cut, along the truth's side; negative means Angle2 reads nearer 0.
+
+| \|truth\| | reads | vs GccPhat | median err | within 10 deg | on an edge | edge: err, within 10 | rest: err | GccPhat err |
+|---|---|---|---|---|---|---|---|---|
+| 0-15 | 1998 | -0.2 -> +0.2 | 10.9 -> 7.2 | 47% -> 61% | 74% | 5.7, 70% | 15.4 | 5.1 |
+| 15-30 | 1921 | -1.7 -> -0.7 | 11.2 -> 8.0 | 46% -> 57% | 79% | 6.7, 64% | 16.7 | 6.4 |
+| 30-45 | 1974 | -4.3 -> -1.5 | 14.9 -> 11.3 | 37% -> 45% | 73% | 9.8, 51% | 18.2 | 8.9 |
+| 45-60 | 1666 | -7.6 -> -2.5 | 20.8 -> 15.2 | 28% -> 36% | 71% | 13.0, 41% | 28.2 | 17.3 |
+| 60-90 | 861 | -19.2 -> -7.1 | 27.5 -> 22.5 | 13% -> 19% | 47% | 15.8, 28% | 30.2 | 15.6 |
+| all | 8420 | -2.8 -> -1.0 | 15.0 -> 10.8 | 37% -> 47% | 72% | 8.6, 55% | 20.2 | 9.2 |
+
+**What it shows:**
+- **The pull shrinks by about two-thirds in every band from 15 deg out.** 1,417 onsets moved to within 10 deg of the
+  truth, and 571 moved out of it.
+- **Edge onsets read about as well as GccPhat.** The median error is 8.6 deg against 9.2, and within 1 deg of it in every
+  band. At 45-60 they read better (13.0 against 17.3). That's one 3 ms recurrence against half a second summed.
+- **The rest keep the old read and are poor:** 20.2 deg median error. Those are the reads to dim.
+
+Angle2's absolute lean now goes outward (+4.0 at 30-45, +5.7 at 45-60), like GccPhat's (+5.6, +11.3). Before, the room's
+inward pull and the sphere's outward lean cancelled. With the pull mostly gone, the STARSS sphere's lean shows through,
+as section 2 of the STARSS report predicted.
+
+**Every room improves.** Angle2's median error per room, |truth| < 40, before -> after (GccPhat):
+
+| room | 2 | 4 | 6 | 7 | 8 | 9 | 10 | 12 | 13 | 14 | 15 | 16 | 21 | 22 | 23 | 24 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| before | 18.5 | 16.3 | 11.4 | 9.1 | 13.0 | 14.2 | 9.2 | 10.1 | 10.0 | 10.4 | 5.6 | 8.9 | 16.1 | 14.5 | 15.7 | 14.8 |
+| after | 15.5 | 10.3 | 7.0 | 7.1 | 9.4 | 11.6 | 6.7 | 6.9 | 5.4 | 7.2 | 4.4 | 6.5 | 12.3 | 12.5 | 12.5 | 9.6 |
+| GccPhat | 15.5 | 8.8 | 6.9 | 4.7 | 6.3 | 10.2 | 6.0 | 5.0 | 3.9 | 4.2 | 3.7 | 4.4 | 10.0 | 11.0 | 8.9 | 5.6 |
+
+**For the phone:**
+- **GccPhat is still the better angle 1 overall.** It reads 9.2 deg against 10.8 here.
+- **Angle2 now has a trustworthy subset.** Its `edge: true` onsets, nearly 3 in 4, are as good as GccPhat. Its
+  `edge: false` onsets are not, and Render should dim them.
+- **Where the two schemes agree,** the earlier report found that GccPhat's error drops (6.6 deg). With edge onsets that
+  cross-check should get stronger. It isn't re-measured here.
 
 ## Files
 - **`src/schemes/Angle2.mjs`:** `readUtterance` with the clean-rising-edge onset, the `edge` flag and `trace`.
@@ -207,3 +247,8 @@ flag yet. Add `r.onset.edge` to its `a2` output to split the scores by it.
   - `ablation.json`: `U_AGREE`, `U_HITS`, `U_WIN`;
   - `rise_only.json`: rising windows only, no fallback;
   - `policies.json`: the offline grid.
+- **`results/starss23/after_angle2_fix/`:**
+  - `preds_<pair>.jsonl`: both schemes after the fix, with Angle2's `a2_edge`;
+  - `compare.json`: every number in section 4.
+
+  The cuts are 546 MB per pair and not committed. Re-make them with `starss_cut.py`.
