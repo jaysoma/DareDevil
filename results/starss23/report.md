@@ -63,6 +63,13 @@ rooms it reads 6 to 11 deg nearer 0 than that from 30 deg out, and about 30 deg 
 Measured cut by cut against GccPhat, Angle2 sits nearer 0 by a median of 1.7 deg (15-30), 4.3 (30-45), 7.6 (45-60) and
 19.2 (60-90), across all six pairs.
 
+**Update, same day (`results/angle2_pull.md`, brief 2):** a room alone doesn't do it. The pull needs a room plus
+anything that opens Angle2's gate late: noise, the previous phrase's tail, or an onset label up to 100 ms off (STARSS
+labels come in 100 ms frames). By the time the gate opens, the floor, ceiling and front/back-wall images, all nearer
+0 than the talker, are in every 3 ms window. Brief 2's fix (count clean, rising windows first) run on these same cuts:
+median error 15.0 -> 10.8 deg, within 10 deg 37% -> 47%. On the 72% of cuts with a clean rising onset, the lean
+against GccPhat is within 1.6 deg in every band; the rest still lean in by 11-30 deg from 30 deg out.
+
 **A correction to the previous session:** with exact fractional delays and no room, Angle2 is within 1 deg everywhere
 (free-field row above). The earlier synthetic result (-28 read as -19.5) doesn't reproduce here. That pull appears with
 reflections, not on a clean wavefront. `U_AGREE` may still be part of the mechanism, since it decides which reads count
