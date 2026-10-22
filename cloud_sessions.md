@@ -13,7 +13,7 @@ Prerequisites for every session:
 
 ## 1. STARSS23 real-audio run
 
-TAKEN: running in Jay's 2026-10-22 session (not a separate cloud session). Results will land in `results/starss23/`.
+DONE in Jay's 2026-10-22 session: `results/starss23/report.md`.
 Don't start this one.
 
 Read HANDOFF.md, then harness/starss23/. Download `metadata_dev.zip` and `mic_dev.zip` from
@@ -32,16 +32,21 @@ absolute error as the phone's. Commit `results/starss23/report.md` and the per-c
 
 ## 2. Angle2 inward pull
 
-Read HANDOFF.md, then `src/schemes/Angle2.mjs`. In the synthetic plane-wave test, `readUtterance` pulls toward 0 deg
-(-28 reads -19.5, 24.6 reads 8.3). The suspect is `U_AGREE = 3`, a fixed delay tolerance in samples, which is a large
-share of a short pair's lag range.
+Read HANDOFF.md, `results/starss23/report.md` (section 2), then `src/schemes/Angle2.mjs`. REVISED 2026-10-22 after
+the STARSS23 run: `readUtterance` reads 2-19 deg nearer 0 than GccPhat on the same real cuts, growing with angle, but
+with exact fractional delays and no room it is within 1 deg everywhere. The pull comes with reflections. A plane-wave
+test cannot show it, so don't start there.
 
-1. Reproduce the pull at 69 mm and at 157 mm.
-2. Make the tolerance scale with the pair spacing (for example, a fixed fraction of the maximum lag), or find the
-   real cause.
-3. Re-run the synthetic sweep from -60 to +60 deg in 2 deg steps.
+1. Reproduce it with reflections. Use image-source rooms (`pip install pyroomacoustics`) at 157 mm and at 69 mm: a
+   direct path plus a floor and one wall, then a full shoebox. Sweep -60 to +60 deg. Find the smallest room that pulls
+   it in.
+2. Find the mechanism. Candidates: `U_AGREE = 3` samples merging direct and reflection reads into one family; the
+   recurrence count (`U_HITS`) letting a near-0 reflection family reach 3 first; the 3 ms window holding the direct and
+   a reflection together. Log every window's read for a few pulled cuts and show which it is.
+3. Fix it in Angle2 only, never GccPhat. Check the fix on the room sweep, and on the STARSS cuts if you can make them
+   (`harness/starss23/starss_cut.py`, data from https://zenodo.org/records/7880637).
 
-Change Angle2 only, never GccPhat. Commit the fix and `results/angle2_uagree.md` with a before/after table to a branch.
+Commit the fix and `results/angle2_pull.md` (mechanism, before/after table) to a branch.
 
 ## 3. dEchorate onset and first-reflection truth
 
