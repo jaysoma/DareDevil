@@ -49,6 +49,7 @@ from scipy.signal import resample_poly
 
 SR, HOP, NFFT_DFN = 48000, 480, 960
 ATTEN_DB = 12.0
+CHUNK_S, WARM_S, TAIL_S = 60.0, 30.0, 0.1      # long recordings in pieces (Dfn.run); 5 s of warm-up was not enough
 TARGET_DBFS = -26.0
 # GccPhat's slices and lock window (src/schemes/GccPhat.mjs)
 G_NFFT, G_HOP, G_LO, G_HI, G_FRAMES, PREROLL = 2048, 512, 300, 8000, 47, 512
@@ -92,7 +93,32 @@ class Dfn:
 
     def run(self, chans, enhance):
         """chans [C, N] float32; the LAST channel drives the model. Returns (mask_lin [T, 481], lsnr [T], enhanced
-        [C-1, N] or None): the operator from the last channel applied to the others."""
+        [C-1, N] or None): the operator from the last channel applied to the others.
+        Long recordings go in CHUNK_S pieces, each started WARM_S early (the GRUs' state and the STFT's overlap settle
+        in that warm-up, which is then discarded) and run TAIL_S late (the model's 2-frame look-ahead): one pass over a
+        9-minute recording needs over 7 GB, and four at once do not fit."""
+        n = chans.shape[1]
+        if n <= int(CHUNK_S * SR):
+            return self._run(chans, enhance)
+        T = n // HOP + 3
+        W, Ls, E = np.zeros((T, self.inv.shape[1]), np.float32), np.zeros(T, np.float32), None
+        if enhance:
+            E = np.zeros((chans.shape[0] - 1, n), np.float32)
+        step, warm, tail = int(CHUNK_S * SR), int(WARM_S * SR), int(TAIL_S * SR)
+        for s in range(0, n, step):
+            a, b = max(0, s - warm), min(n, s + step + tail)
+            w, l, e = self._run(chans[:, a:b], enhance)
+            k0 = s // HOP
+            k1 = min(T, (s + step) // HOP if s + step < n else T, k0 + len(l) - (k0 - a // HOP))
+            W[k0:k1] = w[k0 - a // HOP:k1 - a // HOP]
+            Ls[k0:k1] = l[k0 - a // HOP:k1 - a // HOP]
+            last = k1
+            if enhance:
+                e_end = min(n, s + step)
+                E[:, s:e_end] = e[:, s - a:e_end - a]
+        return W[:last], Ls[:last], E
+
+    def _run(self, chans, enhance):
         n = chans.shape[1]
         self.st.reset()
         if hasattr(self.model, 'reset_h0'):
