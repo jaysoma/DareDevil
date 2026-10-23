@@ -697,8 +697,11 @@ A coarse facing class (even 45 deg steps) would be a bonus.
 
 ## 20. Range from the opening utterance, and keeping a turned head from flinging it
 
-READY 2026-10-23. The network policy now allows the Hugging Face CDN (`us.aws.cdn.hf.co`,
-`cdn-lfs.huggingface.co`) and `openaipublic.azureedge.net`.
+DONE 2026-10-23: `results/range_facing/report.md`. The CDR falls a third as fast as the law's -20 dB per decade
+(r_c does follow dEchorate's echo time), so the opener anchors range only where talkers really move (LOCATA). Facing
+away costs HF most and LF least, but HF - LF can't tell toward from away on the phone pair. In simulation the
+announcement reads r_c a steady ~24% low (the near-source field); the CDR, not the probe, is the weak link. Jay's
+check: `results/range_facing/protocol.md`.
 
 The physics: in a room, the direct-to-reverberant ratio falls 6 dB per doubling of distance, DRR = 20 log10(r_c / r).
 The slope is fixed; r_c (the critical distance) is the room's one unknown. Relative range needs no r_c at all: a

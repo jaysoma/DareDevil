@@ -8,8 +8,9 @@ line for line, with the HTTP call to Ollama replaced by `model`. Nothing is told
 
 Words arrive as a recogniser's phrases would: a phrase ends at a pause over PHRASE_GAP_S or at PHRASE_MAX words, and
 is delivered when it's sealed (its last word + PHRASE_GAP_S). The run keeps a clock, as stage3 runs live: one pass at a
-time; a phrase that lands during a pass waits for the next; a pass takes the time it actually took (fisher) or
---pass-s (the stand-ins, so they see the same batching). The first pass waits for MIN_WORDS; each takes the newest
+time; a phrase that lands during a pass waits for the next. On the clock a pass takes --pass-s (10 s: the same
+batching for the model and the stand-ins, as on hardware that answers in 10 s), or, with --real-clock, the time it
+actually took (on a 4-core CPU the model falls behind the meeting and its windows grow to MAX_NEW). The first pass waits for MIN_WORDS; each takes the newest
 CONTEXT settled words (a contiguous two-speaker stretch) plus up to MAX_NEW new words.
 
 THE MODEL (--model):
@@ -201,7 +202,8 @@ def main():
     ap.add_argument('--gguf')
     ap.add_argument('--threads', type=int, default=4)
     ap.add_argument('--until-s', type=float)
-    ap.add_argument('--pass-s', type=float, default=10.0, help='a stand-in pass\'s duration on the clock (fisher uses its own)')
+    ap.add_argument('--pass-s', type=float, default=10.0, help='a pass\'s duration on the clock')
+    ap.add_argument('--real-clock', action='store_true', help='the model\'s passes take the time they really took')
     ap.add_argument('--out', required=True)
     a = ap.parse_args()
     seq = [json.loads(l) for l in open(a.transcript)]
@@ -225,7 +227,7 @@ def main():
     while True:
         deliver(clock)
         if run_pass(model, words, log):
-            clock += log[-1]['s'] if a.model == 'fisher' else a.pass_s
+            clock += log[-1]['s'] if a.real_clock else a.pass_s
         elif q < len(queue):
             clock = max(clock, queue[q][0])          # idle until the next phrase is sealed
         else:
@@ -237,7 +239,7 @@ def main():
         x['spk'] = pred.get(x['k'])
     res = score(seq, log, len(seq))
     res.update({'transcript': Path(a.transcript).name, 'model': a.model, 'until_s': a.until_s,
-                'clock_behind_at_end_s': round(behind, 1), 'pass_s_standin': a.pass_s if a.model != 'fisher' else None})
+                'clock_behind_at_end_s': round(behind, 1), 'clock': 'real' if a.real_clock else f'{a.pass_s:g} s per pass'})
     Path(a.out).write_text(json.dumps(res, indent=1))
     print(json.dumps(res))
 
