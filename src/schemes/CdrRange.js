@@ -67,6 +67,15 @@ class RangeScheme {
   static SLOPE_MIN = 0.6;
   static SLOPE_MAX = 1.0;
   static SLOPE = 1.0;                // the steered fallback's law, and the free-direction one until the opening
+  // THE LAW IS HELD AT -20 (2026-10-23, brief 20). The opener-set slope above was fitted on one shoebox
+  // simulator. On LOCATA's real room (160 mm pair, 207 reads after the opener;
+  // harness/range_facing/opener_slope_check.py) -20 puts 68% within 1.5x of the true distance ratio and
+  // the opener's slope 66%, with more reads off by 2x (26 against 20). Held at -20, the opener only sets
+  // the unit; with the opener's slope it also sets the law, so who spoke first would change the shape of
+  // the room. The cost: far reads come out too near (the CDR falls about a third as fast as -20), a bit
+  // more than with the opener's slope (0.67 against 0.61 doublings on reads 2x+ from the opener).
+  // true brings the opener's slope back.
+  static SLOPE_FROM_OPENING = false;
   // SAME TALKER, SAME SPOT, READINGS ACCUMULATE (Jay, 2026-10-05: "that's a good thing to add in"). An
   // utterance whose bearing is within POOL_DEG of the pool's and whose own reading is within POOL_DB of
   // the pool's adds its band powers to the pool, and the range is read from all of it -- scatter falls as
@@ -347,7 +356,7 @@ class RangeScheme {
     if (v === null) return;
     if (R.refCdr === null || (c.opening && kind === R.refKind)) {   // the opening: 1.000 u, and the law,
       R.refCdr = v; R.refKind = kind; c.opening = true;            // refined at each of its own steps
-      R.slopeNow = (kind === "free")
+      R.slopeNow = (kind === "free" && R.SLOPE_FROM_OPENING)
         ? Math.max(R.SLOPE_MIN, Math.min(R.SLOPE_MAX, R.SLOPE_A + R.SLOPE_B * v)) : R.SLOPE;
     }
     if (kind === R.refKind) {

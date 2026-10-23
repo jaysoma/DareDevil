@@ -444,3 +444,21 @@ angles for Q), then per room the opener, three announcements with 3 s of quiet a
 - **Disk:** the cut audio was deleted once its CDR was read. Nothing with audio is committed.
 - **The reads:** every read's CDR per band, with its truth and no audio, is in `reads.tar.gz` (2 MB), along with
   `sim_probe.py`'s output and dEchorate's RIR truth. `analyze.py` and `sim_summary.py` rerun from it.
+
+## Addendum (2026-10-23): CdrRange's law against brief 20's, on LOCATA
+CdrRange set its slope from the opener's own CDR (a fit on one shoebox simulator); brief 20 kept −20.
+`harness/range_facing/opener_slope_check.py` scores both on LOCATA's 160 mm pair from the committed animation files
+(the anchor is the first lone onset facing the array, as `bake.py` picks it):
+
+```
+law                                  reads within 1.5x off by 2x+  mean error, the rest  true change 2x+: mean error
+S = 1 (the -20 law, brief 20)          207         68%         20              0.37 dbl                     0.67 dbl (n=36)
+S from the opener (CdrRange)           207         66%         26              0.38 dbl                     0.61 dbl (n=36)
+S = 0.6                                207         55%         44              0.40 dbl                     0.85 dbl (n=36)
+S = 1/3 (the CDR's own slope)          207         35%         95              0.45 dbl                     1.92 dbl (n=36)
+no range: everyone at the opener       207         57%         36              0.40 dbl                     1.39 dbl (n=36)
+```
+
+- **About even, with −20 slightly ahead:** 68% within 1.5x against 66%, and 20 reads off by 2x against 26. The
+  opener's slope does a little better on big moves (0.61 against 0.67 doublings), and costs more elsewhere.
+- **CdrRange now holds −20** (`SLOPE_FROM_OPENING = false`). The opener then sets only the unit, never the law.
