@@ -429,3 +429,49 @@ facing should be decidable at 0, 90, 180 and 270 deg.
 
 Score under the scoring rule, catalogue every set-aside read, and commit `results/orientation_reflections/` and
 `harness/orientation_reflections/` to a branch.
+
+---
+
+# Stage 2 groundwork: diart and DFN on the same audio
+
+Stage 1 stays first; these queue behind batch A. **Waiting on Jay's check-in.** Don't start until these exist:
+- **`diarizer/`:** the diart settings as Jay runs them (window, step, latency, `tau_active`, `rho_update`,
+  `delta_new`), and the glue between raw audio and diart.
+- **`dfn/`:** Jay's DeepFilterNet fork, the one hacked to expose internal data that was being thrown away, with a note
+  on what each exposed field is.
+- **A Hugging Face token** stored as an environment secret, for diart's pyannote models. Never commit model weights.
+
+Both briefs run on the same human-talker data as batch A, keyed by batch A's read `id`, and write separate files. They
+add fields; they never change batch A's records.
+
+## 15. Diart for multi-speaker: who is talking, and does pooling by voice give each talker's angle?
+
+1. **Counting and attribution in rooms it hasn't seen,** at Jay's live latency (500 ms):
+   - **Data:** LOCATA task 4 (several moving talkers, per-source voice activity, tracked positions), STARSS23 clips
+     with overlapping speech, and AMI if it's reachable.
+   - **Scoring:** diarization error, speaker-count error, missed and false speaker changes, plus how often one person
+     is split into two voices and two people merged into one.
+   - **Settings:** choose diart's thresholds on one dataset and test them untouched on the others.
+2. **Input channel:** one raw capsule, against the DFN-enhanced capsule from brief 16 (the Android-processed stream's
+   stand-in). Does cleaning the voice help diart?
+3. **Pooling by voice.**
+   - Pool GccPhat's reads inside each diart voice's segments to get each voice's place, and score it against the
+     tracked positions.
+   - **Cross-talk:** while two voices overlap, compare the single read from the mix with each voice's pooled place.
+   - **Voices to places:** how many voices map to one place, and how often one voice spans two.
+4. **Diart as a whisper next to Jay's ears:** diart's speaker changes, snapped to the nearest onset by `attacks.py`'s
+   rule, against the true onsets. Diart is never the clock.
+
+Commit `results/stage2_diart/` and `harness/stage2_diart/` to a branch.
+
+## 16. DFN's internals as clues for the angle
+
+1. **Run Jay's DFN fork on one capsule** of every batch A cut. Record what it exposes per frame: the per-band gains or
+   masks, its local SNR estimate, and anything else, under a separate key `dfn`.
+2. **As commit-or-dim clues:** add the DFN fields to brief 11's rule search, and report whether they beat the clues
+   batch A already records.
+3. **As a vote gate, in a copy only** (`harness/fixes/`, never `src/schemes/`): weight each GccPhat frequency by DFN's
+   speech mask for that band and frame, and re-score batch A's cuts. Report every read that moved in or out of 10 deg.
+4. **Cost:** DFN's processing time per second of audio, against the live budget.
+
+Commit `results/stage2_dfn/` and `harness/stage2_dfn/` to a branch.
