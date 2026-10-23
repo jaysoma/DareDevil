@@ -131,6 +131,26 @@ def lock_mask(w, on48):
     return np.interp(G_F, np.arange(w.shape[1]) * SR / NFFT_DFN, lin)
 
 
+G_HANN = 0.5 - 0.5 * np.cos(2 * np.pi * np.arange(G_NFFT) / (G_NFFT - 1))
+
+
+def inphase(x2, on48):
+    """Per GccPhat slice over its lock window: |L+R|^2 / 2(|L|^2+|R|^2), 1 where the capsules add, 0 where they
+    cancel -- what the L+R mixdown keeps of each band (test 4's mechanism)."""
+    a = on48 - PREROLL
+    fr = np.stack([x2[a + G_HOP * i:a + G_HOP * i + G_NFFT] for i in range(G_FRAMES)]) * G_HANN[None, :, None]
+    S = np.fft.rfft(fr, axis=1)[:, G_K0:G_K1 + 1]
+    num = (np.abs(S[..., 0] + S[..., 1]) ** 2).sum(0)
+    den = 2 * (np.abs(S[..., 0]) ** 2 + np.abs(S[..., 1]) ** 2).sum(0) + 1e-30
+    return num / den
+
+
+def corr(a, b):
+    a, b = a - a.mean(), b - b.mean()
+    d = math.sqrt((a * a).sum() * (b * b).sum())
+    return float((a * b).sum() / d) if d > 0 else None
+
+
 def b64(x, scale):
     return base64.b64encode(np.clip(x * scale, -32768, 32767).astype('<i2').tobytes()).decode()
 
@@ -202,7 +222,18 @@ def main():
                     'L': b64(x2[i0:i1, 0], scale), 'R': b64(x2[i0:i1, 1], scale),
                     'DL': b64(enh[i0:i1, 0], scale), 'DR': b64(enh[i0:i1, 1], scale),
                     'wmix': [round(float(v), 4) for v in wm], 'wcap': [round(float(v), 4) for v in wc]}) + '\n')
-                fc.write(json.dumps({'id': r['id'], 'lsnr_on': round(float(lsnr[min(k, T - 1)]), 2),
+                rho = inphase(x2, on)
+                cancel, add = rho < 0.25, rho > 0.75
+                mech = {'corr_mix_inphase': corr(wm, rho), 'corr_cap_inphase': corr(wc, rho),
+                        'corr_mixminuscap_inphase': corr(wm - wc, rho),
+                        'mix_cancel': float(wm[cancel].mean()) if cancel.any() else None,
+                        'mix_add': float(wm[add].mean()) if add.any() else None,
+                        'cap_cancel': float(wc[cancel].mean()) if cancel.any() else None,
+                        'cap_add': float(wc[add].mean()) if add.any() else None,
+                        'cancel_share': float(cancel.mean())}
+                fc.write(json.dumps({'id': r['id'], 'mech': {k2: None if v2 is None else round(v2, 4)
+                                                              for k2, v2 in mech.items()},
+                                     'lsnr_on': round(float(lsnr[min(k, T - 1)]), 2),
                                      'lsnr_max200': round(float(lsnr[ks].max()), 2),
                                      'lsnr_cap_on': round(float(lsnr_cap[min(k, T - 1)]), 2),
                                      'mask_band': round(float(wm.mean()), 4),

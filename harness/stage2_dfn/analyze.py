@@ -353,6 +353,26 @@ for ds in ('starss23', 'locata'):
                                               'auc_low_means_wrong': auc([-x for x in wrong], [-x for x in right]),
                                               'n_right': len(right), 'n_wrong': len(wrong)}
 
+# 4's mechanism: does the mixdown's mask dip where L and R cancel, relative to one capsule's mask? (norm level only:
+# dfn_pass.py measures it from the norm-level pass)
+res['mechanism'] = {}
+for ds in ('starss23', 'locata'):
+    m = [clues[i]['norm']['mech'] for i in clues if 'norm' in clues[i] and 'mech' in clues[i]['norm']
+         and i in recs and recs[i]['dataset'] == ds]
+    if not m:
+        continue
+    g = lambda k: [x[k] for x in m if x.get(k) is not None]
+    dc = [x['mix_cancel'] - x['cap_cancel'] for x in m if x.get('mix_cancel') is not None and x.get('cap_cancel') is not None]
+    da = [x['mix_add'] - x['cap_add'] for x in m if x.get('mix_add') is not None and x.get('cap_add') is not None]
+    res['mechanism'][ds] = {
+        'reads': len(m), 'median_cancel_share': med(g('cancel_share')),
+        'median_corr_mix_vs_inphase': med(g('corr_mix_inphase')), 'median_corr_cap_vs_inphase': med(g('corr_cap_inphase')),
+        'median_corr_mix_minus_cap_vs_inphase': med(g('corr_mixminuscap_inphase')),
+        'share_corr_mix_minus_cap_positive': pct(x > 0 for x in g('corr_mixminuscap_inphase')),
+        'mix_minus_cap_in_cancel_bands': med(dc), 'mix_minus_cap_in_add_bands': med(da),
+        'mask_in_cancel_vs_add_bands': {'mix': [med(g('mix_cancel')), med(g('mix_add'))],
+                                        'cap': [med(g('cap_cancel')), med(g('cap_add'))]}}
+
 OUT.mkdir(parents=True, exist_ok=True)
 (OUT / 'summary.json').write_text(json.dumps(res, indent=1))
 with gzip.open(OUT / 'reads.jsonl.gz', 'wt') as fh:
