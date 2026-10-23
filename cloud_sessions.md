@@ -574,31 +574,48 @@ in front of someone.
 
 ## 18. AMI: who said what, and to whom, from the words
 
-DRAFT, waiting on Jay: the Fisher model's name and source, and his labeling script that turns its two-speaker split
-into 1-N speakers. Put the script in `harness/linguistic/` when he shares it. Don't start until this line is gone.
+READY 2026-10-23, once this session can read `jaysoma/FisherDiarization` (private; attach it the way this repo was
+attached). Read its README, `blends.py` and `stage3.py` first. Change nothing there; copy what you need into
+`harness/linguistic/` and replace its hard-coded `C:\` paths with arguments.
 
-Data: the AMI Meeting Corpus (https://groups.inf.ed.ac.uk/ami/corpus/): real meetings of about four people, with
-word-level transcripts that give every word's speaker and time. Check what the manual annotations hold before
-relying on them: dialogue acts with an addressee on a subset of meetings, and focus of attention (where each person
-looks) on a subset. If the AMI host is blocked by the network policy, try the Hugging Face copy (`edinburghcstr/ami`)
-for transcripts and audio; if neither is reachable, report that and stop. Commit derived scores only, never audio.
+**The pipeline under test (Jay's, in FisherDiarization):**
+- **The model:** Google's DiarizationLM-8b-Fisher-v2 (https://huggingface.co/google/DiarizationLM-8b-Fisher-v2), a
+  Llama 3 finetune trained on two-party Fisher phone calls. It reads a transcript with speaker tags and returns it
+  with the tags corrected. Jay runs a Q4_K_M GGUF in Ollama (`models/Modelfile.fisher`: raw template, temperature 0,
+  stop at `[eod]`). Here there's no GPU: use llama.cpp or Ollama on CPU with a Q4_K_M GGUF, made from the Hugging
+  Face weights if no GGUF can be downloaded. If the weights can't be fetched (gated, or the host blocked), report
+  that and stop.
+- **Two speakers at a time, N overall (`blends.py`):** each pass is the newest contiguous stretch of words that holds
+  exactly two speakers, walked back until a third would enter, at most 50 words (longer prompts came back untagged).
+  Overlapping windows chain the pairs, A/B then B/C then C/A. A window's labels are relative and are pinned onto the
+  running speakers by the majority of its already-settled words. Nothing is told how many people there are.
+- **Three ways in:** text only (`stage3.py`: new words enter with alternating tags, settled words keep theirs);
+  pitch first (`wordprint.py`, then the model corrects); diart first (`bench_dlm.py`, then the model corrects).
 
-1. **Who said what, from the words alone.** Cut each meeting into windows (2, 5 and 10 minutes). Strip the speaker
-   labels and timing, keep the word order, and run Jay's pipeline.
-   - **Score:** word-level speaker accuracy after the best one-to-one mapping of its labels to AMI's speakers, the
-     number of speakers it finds against the number who spoke, and turn-boundary accuracy.
-   - **Break it down** by the number of active speakers in the window (2 to 5), by overlap, and by short replies
-     ("yeah", "mm-hmm"), which carry little context.
-   - **Baseline:** everything to the window's most talkative speaker.
-2. **The same with recognised text, if the audio is reachable.** Run Whisper on the far-field array mixdown, map its
-   words to AMI's speakers by time, and repeat step 1. The gap between steps 1 and 2 is what recognition errors cost.
+**What's already measured (one AMI meeting, EN2002a, per-window best mapping):** coin flip 55.3%, pitch alone 76.1%,
+pitch then the model 79.4%. Text only has never been scored on AMI.
+
+Data: the AMI Meeting Corpus (https://groups.inf.ed.ac.uk/ami/corpus/), word-level transcripts with each word's
+speaker and time, plus audio for the pitch and diart paths. Check what the manual annotations hold before relying on
+them: addressee on a subset of meetings, focus of attention (where each person looks) on a subset. If the AMI host is
+blocked, try the Hugging Face copy (`edinburghcstr/ami`); if neither is reachable, report and stop. Commit derived
+scores only, never audio or weights.
+
+1. **Reproduce Jay's number** on EN2002a's first 300 s with `bench_chain.py`'s method: 55.3 / 76.1 / 79.4%. If it
+   doesn't reproduce within a point, stop and report the difference.
+2. **Who said what, across meetings.** At least 10 AMI meetings, more if CPU time allows. Report how long each pass
+   takes on CPU. Run all three ways in, and score each two ways:
+   - **Per window,** best mapping per window, as Jay's benches do. This measures the two-way split.
+   - **Whole meeting,** one mapping for the entire meeting. This measures the N-speaker chaining as well. Also
+     report speakers invented against speakers present, and how often one person is split in two or two merged.
+
+   Break both down by short replies ("yeah", "mm-hmm") and overlapped words. Baseline: everything to the meeting's
+   most talkative speaker.
 3. **To whom: words against facing.** On meetings with both addressee and focus-of-attention labels, predict each
-   dialogue act's addressee two ways, then both together:
-   - **Words:** names and vocatives, question-and-answer pairs, and who takes the next turn.
-   - **Facing:** the annotated focus of attention of the speaker during the act.
-   - **Score:** accuracy against the annotated addressee, split into "the group" and "one person", with chance for
-     each.
-   This is the direct test of the Tampere question: does facing add anything once the words are known?
+   dialogue act's addressee from the words (names, question and answer, who takes the next turn), from the speaker's
+   annotated focus of attention, and from both. Score against the annotated addressee, split into "the group" and
+   "one person", with chance for each. This is the direct test of the Tampere question: does facing add anything
+   once the words are known?
 
 Score in Jay's spirit: report every meeting, set aside meetings that fail outright to study separately, and catalogue
 the failures by kind. Commit `results/linguistic/ami/` and `harness/linguistic/` to a branch.
