@@ -122,7 +122,8 @@ def starss(data_root, out):
                'duration_s': round((last + 1) * 0.1, 1), 'frame_s': 0.1,
                'array': {'kind': 'Eigenmike em32, MIC format: 4 capsules on a rigid sphere',
                          'radius_m': 0.042, 'capsules_az_el_deg': STARSS_CAPS,
-                         'pairs': sorted({p for e in evs for p in e['pairs']})},
+                         'pairs': sorted({p for e in evs for p in e['pairs']}),
+                         'horizontal_pairs': ['14', '23']},
                'conventions': {
                    'az_el': 'STARSS23 labels: azimuth 0 deg ahead and positive to the left, elevation positive up',
                    'truth_deg': "a pair's lateral angle to the source; + = it reaches the pair's second capsule first",
@@ -133,6 +134,7 @@ def starss(data_root, out):
                    'range_rel': 'provisional: 10^((cdr_anchor - cdr)/20), anchored on the first lone speech onset; '
                                 'brief 20 settles the rule'},
                'range_anchor_t': anchor['t'] if anchor else None,
+               'range_anchor_dist_m': anchor['truth']['dist_m'] if anchor else None,
                'tracks': tracks, 'events': evs, 'words': None}
         write(out, name, doc)
         index.append({'recording': name, 'room': doc['room'], 'duration_s': doc['duration_s'], 'events': len(evs),
@@ -288,6 +290,7 @@ def locata(out):
                    'range_rel': 'provisional: 10^((cdr_anchor - cdr)/20), anchored on the first lone onset facing '
                                 'the array within 30 deg; brief 20 settles the rule'},
                'range_anchor_t': anchor['t'] if anchor else None,
+               'range_anchor_dist_m': anchor['truth']['dist_m'] if anchor else None,
                'tracks': tracks, 'events': evs, 'words': None}
         write(out, name, doc)
         index.append({'recording': name, 'talkers': talkers_all, 'events': len(evs),

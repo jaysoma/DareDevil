@@ -39,14 +39,17 @@ clips are read sentences, so their text is already in.
   - **`sphere_ref_deg`:** what GccPhat reads for that direction through the sphere alone. Judge reads against it.
   - **`gcc`, `dim`:** the full brief 11 rule, with the pause test.
   - **`a2`, `pause`, `range`, `range_rel`:** as for LOCATA.
-- **Drawing a read:** a pair's angle is the angle from that pair's axis, which runs from its first capsule to its second
-  (`array.capsules_az_el_deg`). The axes tilt ±35 deg, so a read drawn as a horizontal azimuth sits off the true
-  azimuth by geometry alone. A 2D page should either draw the cone's horizontal cut, or pick the pair whose axis is
-  nearest horizontal for the source.
+- **Which pair to draw:** the four capsules sit on a sphere of radius 4.2 cm at azimuth ±45 and ±135 deg, elevation ±35
+  deg. Pairs **14** and **23** are horizontal (68.8 mm; axes along azimuth −135 and 135 deg), so their angle maps onto
+  a horizontal half-plane the way the phone's does. Use one of those for a phone-like page. The other four pairs tilt
+  45 deg, so their angle is a cone that a flat page can't place.
+- **Remember the sphere:** even on a horizontal pair, the sphere bends sound and reads wide. Judge a read against
+  `sphere_ref_deg`, not `truth_deg`.
 
 ## dEchorate (`dechorate/<wall setting>.json`)
-- **Words:** each clip is an EARS read sentence. `file_text` is the whole file's text (EARS transcripts, CC BY-NC 4.0);
-  the clip holds the 2 s around `onset_in_file_s`, so only part of it.
+- **Words:** there are no dEchorate recordings here. Each clip is a clean EARS read sentence played through dEchorate's
+  measured room responses: 1.0 s from `onset_in_file_s` in the EARS file. `file_text` is the whole file's text (EARS
+  transcripts, CC BY-NC 4.0). `add_words.py dechorate` decodes the 16 EARS files and gives each clip its own words.
 - **`setups`**, one per source × array × spacing. Each has `truth` (the pair's angle from the measured direct delay,
   `deg_measured`; the geometric angle; distance; `echoes` per surface with angle, delay and whether it's reflective in
   this setting), and `clips`, one per speech clip with the reads.
@@ -71,3 +74,12 @@ clips are read sentences, so their text is already in.
       nearly the same angle.
     - A two-mic angle can't tell front from back. With the phone backed by a book and everyone in front, take the
       front half.
+
+## Range on the page: the anchor
+- **`range_rel`** is each read's distance as a multiple of the anchor's, from the CDR by brief 20's rule,
+  10^((CDR_anchor − CDR)/20). The anchor is the recording's first lone onset (on LOCATA, also facing the array).
+- **On a dashboard,** multiply by `range_anchor_dist_m`, the anchor's true distance. The anchor then sits where it
+  truly was, and every later dot is the CDR's own prediction from it. Drawn beside the true track, this shows the
+  compression brief 20 measured directly: far talkers land nearer than they are.
+- **In the app** there's no true distance. The anchor is 1 unit, and Render's range scale says how big a unit is
+  drawn.

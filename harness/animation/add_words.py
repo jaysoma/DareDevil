@@ -18,7 +18,12 @@ where the models already are.
         python3 add_words.py starss results/animation/starss23 --model medium.en
         python3 add_words.py starss results/animation/starss23 --audio <STARSS23 root with mic_dev/>
 
-  dEchorate needs no decoding: its clips are EARS read sentences, and bake.py already carries each file's text.
+  dEchorate: there are no dEchorate recordings in these results. Each clip is a clean EARS read sentence (from its
+    onset, 1.0 s of it) played through dEchorate's measured room responses. bake.py already carries each file's whole
+    text; this decodes the 16 EARS files (streamed from the EARS release zips, a few MB each) and keeps each clip's own
+    words, timed from the clip's onset.
+
+        python3 add_words.py dechorate results/animation/dechorate --model medium.en
 
 Writes "words": [{"t0", "t1", "w", "p", "talker" or "src"}] into each file, times in seconds from the recording start.
 """
@@ -105,9 +110,41 @@ def starss(folder, audio_root, model):
         print(f.name, len(words), 'words')
 
 
+def dechorate(folder, model):
+    import sys
+    import zipfile
+    import soundfile as sf
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'dechorate'))
+    from ears_fetch import RangeFile, URL as EARS_URL
+    POST_S = 1.0                                                     # dechorate_cut.py: the clip runs 1.0 s from its onset
+    files = {}
+    docs = {f: json.loads(f.read_text()) for f in sorted(Path(folder).glob('*.json')) if f.name != 'index.json'}
+    for doc in docs.values():
+        for su in doc['setups']:
+            for c in su['clips']:
+                files.setdefault(c['clip'].split('@')[0], None)
+    for key in sorted(files):
+        spk, name = key.split('_', 1)
+        zf = zipfile.ZipFile(io.BufferedReader(RangeFile(EARS_URL.format(spk)), buffer_size=1 << 20))
+        member = next(n for n in zf.namelist() if n.endswith(f'{name}.wav'))
+        x, sr = sf.read(io.BytesIO(zf.read(member)), dtype='float32')
+        if x.ndim > 1:
+            x = x.mean(axis=1)
+        files[key] = transcribe(model, to16k(x, sr))
+        print(key, len(files[key]), 'words')
+    for f, doc in docs.items():
+        for su in doc['setups']:
+            for c in su['clips']:
+                key, at = c['clip'].split('@')[0], c.get('onset_in_file_s') or 0.0
+                c['words'] = [{'t0': round(w['t0'] - at, 2), 't1': round(w['t1'] - at, 2), 'w': w['w'], 'p': w['p']}
+                              for w in files[key] if w['t1'] > at and w['t0'] < at + POST_S]
+        doc['words_note'] = "clips' words from Whisper on the clean EARS files, times from each clip's onset"
+        f.write_text(json.dumps(doc, separators=(',', ':')))
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('dataset', choices=['locata', 'starss'])
+    ap.add_argument('dataset', choices=['locata', 'starss', 'dechorate'])
     ap.add_argument('folder')
     ap.add_argument('--audio', help='STARSS23 root (with mic_dev/)')
     ap.add_argument('--model', default='medium.en')
@@ -117,6 +154,8 @@ def main():
     model = WhisperModel(a.model, device=a.device)
     if a.dataset == 'locata':
         locata(a.folder, model)
+    elif a.dataset == 'dechorate':
+        dechorate(a.folder, model)
     else:
         starss(a.folder, a.audio, model)
 
