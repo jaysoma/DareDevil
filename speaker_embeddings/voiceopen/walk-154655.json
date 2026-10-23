@@ -1,0 +1,160 @@
+{
+ "enrol_s": 5.08,
+ "enrol_utts": [
+  0,
+  1,
+  2
+ ],
+ "enrol_min_s": 5.0,
+ "model": "campplus_zh_en_advanced.onnx",
+ "min_score_s": 0.4,
+ "utts": [
+  {
+   "oi": 0,
+   "t": 19.737,
+   "dur": 1.393,
+   "cos": 0.4185,
+   "enrolled": true
+  },
+  {
+   "oi": 1,
+   "t": 21.87,
+   "dur": 0.99,
+   "cos": 0.3248,
+   "enrolled": true
+  },
+  {
+   "oi": 2,
+   "t": 23.591,
+   "dur": 2.699,
+   "cos": 0.8384,
+   "enrolled": true
+  },
+  {
+   "oi": 3,
+   "t": 26.743,
+   "dur": 4.737,
+   "cos": 0.5273,
+   "enrolled": false
+  },
+  {
+   "oi": 4,
+   "t": 32.218,
+   "dur": 0.512,
+   "cos": 0.2904,
+   "enrolled": false
+  },
+  {
+   "oi": 5,
+   "t": 33.997,
+   "dur": 7.353,
+   "cos": 0.5008,
+   "enrolled": false
+  },
+  {
+   "oi": 6,
+   "t": 45.753,
+   "dur": 3.607,
+   "cos": 0.5893,
+   "enrolled": false
+  },
+  {
+   "oi": 7,
+   "t": 49.92,
+   "dur": 1.88,
+   "cos": 0.4609,
+   "enrolled": false
+  },
+  {
+   "oi": 8,
+   "t": 56.367,
+   "dur": 5.353,
+   "cos": 0.5357,
+   "enrolled": false
+  },
+  {
+   "oi": 9,
+   "t": 62.343,
+   "dur": 1.007,
+   "cos": 0.4055,
+   "enrolled": false
+  },
+  {
+   "oi": 10,
+   "t": 64.962,
+   "dur": 0.728,
+   "cos": 0.3465,
+   "enrolled": false
+  },
+  {
+   "oi": 11,
+   "t": 66.813,
+   "dur": 0.447,
+   "cos": 0.3183,
+   "enrolled": false
+  },
+  {
+   "oi": 12,
+   "t": 68.233,
+   "dur": 6.097,
+   "cos": 0.4507,
+   "enrolled": false
+  },
+  {
+   "oi": 13,
+   "t": 78.533,
+   "dur": 0.657,
+   "cos": 0.2994,
+   "enrolled": false
+  },
+  {
+   "oi": 14,
+   "t": 80.495,
+   "dur": 0.145,
+   "cos": null,
+   "enrolled": false
+  },
+  {
+   "oi": 15,
+   "t": 81.736,
+   "dur": 6.014,
+   "cos": 0.3844,
+   "enrolled": false
+  },
+  {
+   "oi": 16,
+   "t": 90.502,
+   "dur": 0.708,
+   "cos": 0.3456,
+   "enrolled": false
+  },
+  {
+   "oi": 17,
+   "t": 93.533,
+   "dur": 6.527,
+   "cos": 0.4719,
+   "enrolled": false
+  },
+  {
+   "oi": 18,
+   "t": 100.483,
+   "dur": 0.857,
+   "cos": 0.3508,
+   "enrolled": false
+  },
+  {
+   "oi": 19,
+   "t": 101.662,
+   "dur": 0.618,
+   "cos": 0.3449,
+   "enrolled": false
+  },
+  {
+   "oi": 20,
+   "t": 104.313,
+   "dur": 1.297,
+   "cos": 0.3617,
+   "enrolled": false
+  }
+ ]
+}

@@ -1,0 +1,188 @@
+{
+ "enrol_s": 9.59,
+ "enrol_utts": [
+  0,
+  1,
+  2
+ ],
+ "enrol_min_s": 5.0,
+ "model": "campplus_zh_en_advanced.onnx",
+ "min_score_s": 0.4,
+ "utts": [
+  {
+   "oi": 0,
+   "t": 0.58,
+   "dur": 0.24,
+   "cos": null,
+   "enrolled": true
+  },
+  {
+   "oi": 1,
+   "t": 5.3,
+   "dur": 2.35,
+   "cos": 0.2987,
+   "enrolled": true
+  },
+  {
+   "oi": 2,
+   "t": 9.3,
+   "dur": 7.0,
+   "cos": 0.9544,
+   "enrolled": true
+  },
+  {
+   "oi": 3,
+   "t": 21.22,
+   "dur": 2.33,
+   "cos": 0.317,
+   "enrolled": false
+  },
+  {
+   "oi": 4,
+   "t": 26.3,
+   "dur": 2.32,
+   "cos": 0.422,
+   "enrolled": false
+  },
+  {
+   "oi": 5,
+   "t": 30.2,
+   "dur": 0.76,
+   "cos": 0.2586,
+   "enrolled": false
+  },
+  {
+   "oi": 6,
+   "t": 32.18,
+   "dur": 1.13,
+   "cos": 0.2697,
+   "enrolled": false
+  },
+  {
+   "oi": 7,
+   "t": 34.47,
+   "dur": 0.87,
+   "cos": 0.2277,
+   "enrolled": false
+  },
+  {
+   "oi": 8,
+   "t": 36.46,
+   "dur": 0.12,
+   "cos": null,
+   "enrolled": false
+  },
+  {
+   "oi": 9,
+   "t": 38.252,
+   "dur": 2.678,
+   "cos": 0.3881,
+   "enrolled": false
+  },
+  {
+   "oi": 10,
+   "t": 42.306,
+   "dur": 0.504,
+   "cos": 0.1173,
+   "enrolled": false
+  },
+  {
+   "oi": 11,
+   "t": 43.74,
+   "dur": 2.47,
+   "cos": 0.4228,
+   "enrolled": false
+  },
+  {
+   "oi": 12,
+   "t": 48.24,
+   "dur": 0.39,
+   "cos": null,
+   "enrolled": false
+  },
+  {
+   "oi": 13,
+   "t": 49.99,
+   "dur": 0.08,
+   "cos": null,
+   "enrolled": false
+  },
+  {
+   "oi": 14,
+   "t": 53.95,
+   "dur": 4.58,
+   "cos": 0.3448,
+   "enrolled": false
+  },
+  {
+   "oi": 15,
+   "t": 60.16,
+   "dur": 0.01,
+   "cos": null,
+   "enrolled": false
+  },
+  {
+   "oi": 16,
+   "t": 61.15,
+   "dur": 1.76,
+   "cos": 0.4283,
+   "enrolled": false
+  },
+  {
+   "oi": 17,
+   "t": 63.78,
+   "dur": 1.76,
+   "cos": 0.439,
+   "enrolled": false
+  },
+  {
+   "oi": 18,
+   "t": 68.29,
+   "dur": 0.01,
+   "cos": null,
+   "enrolled": false
+  },
+  {
+   "oi": 19,
+   "t": 69.83,
+   "dur": 0.07,
+   "cos": null,
+   "enrolled": false
+  },
+  {
+   "oi": 20,
+   "t": 70.938,
+   "dur": 2.472,
+   "cos": 0.2826,
+   "enrolled": false
+  },
+  {
+   "oi": 21,
+   "t": 74.418,
+   "dur": 4.262,
+   "cos": 0.1878,
+   "enrolled": false
+  },
+  {
+   "oi": 22,
+   "t": 80.43,
+   "dur": 0.07,
+   "cos": null,
+   "enrolled": false
+  },
+  {
+   "oi": 23,
+   "t": 81.561,
+   "dur": 6.769,
+   "cos": 0.3304,
+   "enrolled": false
+  },
+  {
+   "oi": 24,
+   "t": 89.288,
+   "dur": 0.962,
+   "cos": 0.1894,
+   "enrolled": false
+  }
+ ]
+}
