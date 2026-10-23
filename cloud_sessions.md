@@ -697,6 +697,9 @@ A coarse facing class (even 45 deg steps) would be a bonus.
 
 ## 20. Range from the opening utterance, and keeping a turned head from flinging it
 
+READY 2026-10-23. The network policy now allows the Hugging Face CDN (`us.aws.cdn.hf.co`,
+`cdn-lfs.huggingface.co`) and `openaipublic.azureedge.net`.
+
 The physics: in a room, the direct-to-reverberant ratio falls 6 dB per doubling of distance, DRR = 20 log10(r_c / r).
 The slope is fixed; r_c (the critical distance) is the room's one unknown. Relative range needs no r_c at all: a
 talker whose DRR sits 6 dB under the opener's is twice as far. Facing away lowers the direct sound, mostly at high
@@ -750,6 +753,9 @@ Commit `results/range_facing/` and `harness/range_facing/` to a branch. `src/` s
 
 ## 21. When to re-read within an utterance: angle, range and facing
 
+READY 2026-10-23. The network policy now allows the Hugging Face CDN (`us.aws.cdn.hf.co`,
+`cdn-lfs.huggingface.co`) and `openaipublic.azureedge.net`.
+
 LOCATA's truth runs continuously while people walk and talk, so update policies can be scored against where the
 talker actually was. Brief 10 found the talker moves a median 2.1 deg (90th percentile 6.6) during GccPhat's half
 second.
@@ -769,3 +775,38 @@ second.
 
 Copies of the schemes go under `harness/`; `src/` stays unchanged. Commit `results/resample/` and
 `harness/resample/` to a branch.
+
+## 22. Who it's for: real requests to people, in their own context
+
+READY 2026-10-23. Text only. Builds on brief 19 (`results/device_directed/report.md`, `harness/device_directed/`).
+
+Brief 19 found that Jay's shape-and-contrast finds spliced device instructions well (89% at 1 false accept per hour),
+but accepts the same instructions said to a person nearly as often. Its own caveat: those to-a-person phrases were
+spliced in from outside, so they were as foreign to the surrounding talk as the real instructions. A real request to a
+person usually belongs to its conversation, which should lower its contrast score. This brief tests that, then adds
+the cues that say who the words are for.
+
+1. **Real requests to people, in their own place.** Find them without splicing:
+   - **Switchboard (SWDA):** utterances tagged as action-directives, and other requests to the other caller.
+   - **AMI:** dialogue acts that are suggestions or requests, especially those with a one-person addressee (brief
+     18's annotations).
+
+   They stay where they were said. Score them with brief 19's methods and thresholds, unchanged. If contrast rejects
+   them far more often than the spliced to-a-person phrases, brief 19's hardest number was an artefact of splicing.
+   Say so either way.
+2. **Who-it's-for cues.** Add these to the best brief 19 method, as a second score or a small learned combination:
+   - a vocative or name ("Dave, can you ...");
+   - "you" as the addressee;
+   - first-person narration ("I'll ...", "I'm going to ...");
+   - past tense or reported speech ("I was going to ...", "she said to ...");
+   - a bare imperative with no addressee ("Text Sam, ...").
+
+   Report what each cue adds on brief 19's spliced set and on step 1's real requests.
+3. **Jay's speakerphone case, on real calls.** Splice brief 19's car instructions into one side of Switchboard calls
+   (as brief 19 did), next to step 1's real requests in other calls. Score the device instructions against the real
+   person-directed requests directly.
+4. **A small general model asked,** if brief 19's follow-up has landed. Use its best size, on the same windows.
+
+Hits and false accepts per hour as brief 19 scored them, with the full curve. Score in Jay's spirit: report every
+condition, set aside failing ones to study, and catalogue the false accepts by kind. Commit `results/who_for/` and
+`harness/who_for/` to a branch. Commit no third-party text that its licence doesn't allow redistributing.
