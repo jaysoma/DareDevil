@@ -8,7 +8,9 @@ DATA=$1; W=$2; shift 2
 HERE=$(cd "$(dirname "$0")" && pwd); ROOT=$HERE/../../..
 mkdir -p "$W/cuts"
 [ -n "$(ls "$W"/cuts/cuts_*.jsonl 2>/dev/null)" ] || python3 "$ROOT/harness/batchA/locata/locata_cut.py" "$DATA" "$W/cuts"
-cat "$W"/cuts/truth_*.jsonl > "$W/truth.jsonl"
+cat "$W"/cuts/cuts_*.jsonl | python3 -c "import json,sys
+for l in sys.stdin:
+    c = json.loads(l); c.pop('L'); c.pop('R'); print(json.dumps(c))" > "$W/truth.jsonl"      # the cuts without audio
 for spec in "$@"; do
   name=${spec%%=*}; dir=${spec#*=}
   cat "$W"/cuts/cuts_*.jsonl | node "$ROOT/harness/batchA/starss23/runner.mjs" "$dir" > "$W/reads_$name.jsonl" 2> "$W/run_$name.log"
