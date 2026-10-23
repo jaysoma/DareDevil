@@ -1,0 +1,948 @@
+{"id": "r0000", "call": "sw_0001_4325", "act_index": 5, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0510_3680", "spliced_start": 0, "spliced_pos": 23}
+{"id": "r0001", "call": "sw_0001_4325", "act_index": 7, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0391_2259", "spliced_start": 3, "spliced_pos": 16}
+{"id": "r0002", "call": "sw_0001_4325", "act_index": 8, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0488_3215", "spliced_start": 8, "spliced_pos": 5}
+{"id": "r0003", "call": "sw_0003_4103", "act_index": 79, "tag": "co", "kind": "commit", "inplace_pos": 23, "spliced_into": "sw_0380_4572", "spliced_start": 8, "spliced_pos": 18}
+{"id": "r0005", "call": "sw_0013_4617", "act_index": 58, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0048_4340", "spliced_start": 37, "spliced_pos": 14}
+{"id": "r0006", "call": "sw_0013_4617", "act_index": 59, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0881_3500", "spliced_start": 24, "spliced_pos": 9}
+{"id": "r0007", "call": "sw_0013_4617", "act_index": 101, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_1109_2842", "spliced_start": 36, "spliced_pos": 5}
+{"id": "r0008", "call": "sw_0018_4082", "act_index": 56, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0702_2652", "spliced_start": 66, "spliced_pos": 10}
+{"id": "r0009", "call": "sw_0020_4109", "act_index": 7, "tag": "ad^t", "kind": "directive", "inplace_pos": 4, "spliced_into": "sw_0655_2849", "spliced_start": 99, "spliced_pos": 22}
+{"id": "r0010", "call": "sw_0021_4168", "act_index": 4, "tag": "ad", "kind": "directive", "inplace_pos": 3, "spliced_into": "sw_0586_2295", "spliced_start": 34, "spliced_pos": 9}
+{"id": "r0011", "call": "sw_0024_4688", "act_index": 78, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0109_4342", "spliced_start": 21, "spliced_pos": 21}
+{"id": "r0014", "call": "sw_0038_4611", "act_index": 49, "tag": "co", "kind": "commit", "inplace_pos": 13, "spliced_into": "sw_1058_3711", "spliced_start": 18, "spliced_pos": 21}
+{"id": "r0016", "call": "sw_0051_4364", "act_index": 84, "tag": "ad", "kind": "directive", "inplace_pos": 20, "spliced_into": "sw_0392_2405", "spliced_start": 39, "spliced_pos": 24}
+{"id": "r0017", "call": "sw_0056_3351", "act_index": 27, "tag": "qy", "kind": "ask", "inplace_pos": 16, "spliced_into": "sw_0831_3253", "spliced_start": 37, "spliced_pos": 6}
+{"id": "r0019", "call": "sw_0064_4346", "act_index": 27, "tag": "ad", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_1307_2752", "spliced_start": 67, "spliced_pos": 18}
+{"id": "r0020", "call": "sw_0068_3075", "act_index": 4, "tag": "qy", "kind": "ask", "inplace_pos": 4, "spliced_into": "sw_0894_4703", "spliced_start": 2, "spliced_pos": 7}
+{"id": "r0021", "call": "sw_0068_3075", "act_index": 155, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0745_2387", "spliced_start": 12, "spliced_pos": 17}
+{"id": "r0022", "call": "sw_0069_3144", "act_index": 93, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0128_3441", "spliced_start": 12, "spliced_pos": 22}
+{"id": "r0024", "call": "sw_0070_3435", "act_index": 72, "tag": "qy", "kind": "ask", "inplace_pos": 17, "spliced_into": "sw_0016_3389", "spliced_start": 12, "spliced_pos": 19}
+{"id": "r0025", "call": "sw_0070_3435", "act_index": 76, "tag": "qy", "kind": "ask", "inplace_pos": 11, "spliced_into": "sw_0365_3515", "spliced_start": 1, "spliced_pos": 21}
+{"id": "r0026", "call": "sw_0070_3435", "act_index": 103, "tag": "co", "kind": "commit", "inplace_pos": 17, "spliced_into": "sw_0732_4927", "spliced_start": 22, "spliced_pos": 17}
+{"id": "r0027", "call": "sw_0070_3435", "act_index": 106, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0405_2717", "spliced_start": 56, "spliced_pos": 6}
+{"id": "r0028", "call": "sw_0074_4127", "act_index": 60, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_1202_2151", "spliced_start": 4, "spliced_pos": 12}
+{"id": "r0029", "call": "sw_0083_4830", "act_index": 96, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0115_2370", "spliced_start": 49, "spliced_pos": 17}
+{"id": "r0031", "call": "sw_0087_2775", "act_index": 189, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0963_4716", "spliced_start": 5, "spliced_pos": 8}
+{"id": "r0032", "call": "sw_0087_2775", "act_index": 248, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_1095_3257", "spliced_start": 8, "spliced_pos": 24}
+{"id": "r0033", "call": "sw_0087_2775", "act_index": 249, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0989_3692", "spliced_start": 15, "spliced_pos": 7}
+{"id": "r0034", "call": "sw_0091_3135", "act_index": 91, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0238_3364", "spliced_start": 52, "spliced_pos": 23}
+{"id": "r0035", "call": "sw_0094_3315", "act_index": 26, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0256_4728", "spliced_start": 2, "spliced_pos": 10}
+{"id": "r0036", "call": "sw_0095_3445", "act_index": 122, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0734_2019", "spliced_start": 8, "spliced_pos": 15}
+{"id": "r0037", "call": "sw_0103_4074", "act_index": 94, "tag": "qy", "kind": "ask", "inplace_pos": 12, "spliced_into": "sw_0364_3491", "spliced_start": 55, "spliced_pos": 13}
+{"id": "r0038", "call": "sw_0105_4123", "act_index": 77, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0092_3154", "spliced_start": 4, "spliced_pos": 11}
+{"id": "r0039", "call": "sw_0106_4137", "act_index": 41, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0253_4072", "spliced_start": 13, "spliced_pos": 21}
+{"id": "r0040", "call": "sw_0106_4137", "act_index": 43, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_1017_2543", "spliced_start": 110, "spliced_pos": 7}
+{"id": "r0041", "call": "sw_0106_4137", "act_index": 55, "tag": "qy", "kind": "ask", "inplace_pos": 10, "spliced_into": "sw_0052_4378", "spliced_start": 17, "spliced_pos": 8}
+{"id": "r0042", "call": "sw_0107_4150", "act_index": 24, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0982_3310", "spliced_start": 39, "spliced_pos": 12}
+{"id": "r0043", "call": "sw_0108_4175", "act_index": 149, "tag": "cc", "kind": "commit", "inplace_pos": 17, "spliced_into": "sw_0721_3777", "spliced_start": 15, "spliced_pos": 22}
+{"id": "r0044", "call": "sw_0108_4175", "act_index": 155, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0085_2395", "spliced_start": 30, "spliced_pos": 19}
+{"id": "r0046", "call": "sw_0110_4880", "act_index": 81, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0434_3809", "spliced_start": 13, "spliced_pos": 19}
+{"id": "r0047", "call": "sw_0111_2018", "act_index": 22, "tag": "ad^t", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0108_4175", "spliced_start": 96, "spliced_pos": 19}
+{"id": "r0048", "call": "sw_0111_2018", "act_index": 23, "tag": "ad^t", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0533_2486", "spliced_start": 31, "spliced_pos": 11}
+{"id": "r0049", "call": "sw_0112_2061", "act_index": 10, "tag": "co", "kind": "commit", "inplace_pos": 7, "spliced_into": "sw_0559_3365", "spliced_start": 8, "spliced_pos": 24}
+{"id": "r0050", "call": "sw_0113_2093", "act_index": 73, "tag": "ad^t", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_0379_4483", "spliced_start": 40, "spliced_pos": 5}
+{"id": "r0051", "call": "sw_0113_2093", "act_index": 143, "tag": "ad^t", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_1042_4078", "spliced_start": 10, "spliced_pos": 23}
+{"id": "r0052", "call": "sw_0113_2093", "act_index": 144, "tag": "ad^t", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0093_3227", "spliced_start": 31, "spliced_pos": 5}
+{"id": "r0053", "call": "sw_0116_2406", "act_index": 180, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0010_4356", "spliced_start": 13, "spliced_pos": 19}
+{"id": "r0054", "call": "sw_0116_2406", "act_index": 200, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0927_2228", "spliced_start": 34, "spliced_pos": 18}
+{"id": "r0055", "call": "sw_0116_2406", "act_index": 249, "tag": "ad", "kind": "directive", "inplace_pos": 27, "spliced_into": "sw_0744_2376", "spliced_start": 87, "spliced_pos": 13}
+{"id": "r0056", "call": "sw_0117_2837", "act_index": 40, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0795_3429", "spliced_start": 38, "spliced_pos": 8}
+{"id": "r0058", "call": "sw_0125_3306", "act_index": 185, "tag": "ad^t", "kind": "directive", "inplace_pos": 26, "spliced_into": "sw_1325_4384", "spliced_start": 41, "spliced_pos": 15}
+{"id": "r0059", "call": "sw_0125_3306", "act_index": 187, "tag": "ad", "kind": "directive", "inplace_pos": 27, "spliced_into": "sw_1072_3270", "spliced_start": 16, "spliced_pos": 10}
+{"id": "r0060", "call": "sw_0129_3476", "act_index": 4, "tag": "ad^t", "kind": "directive", "inplace_pos": 3, "spliced_into": "sw_0582_2051", "spliced_start": 67, "spliced_pos": 10}
+{"id": "r0061", "call": "sw_0132_3682", "act_index": 124, "tag": "cc", "kind": "commit", "inplace_pos": 16, "spliced_into": "sw_1066_2679", "spliced_start": 126, "spliced_pos": 19}
+{"id": "r0062", "call": "sw_0143_2290", "act_index": 27, "tag": "qy", "kind": "ask", "inplace_pos": 9, "spliced_into": "sw_1209_2836", "spliced_start": 48, "spliced_pos": 19}
+{"id": "r0063", "call": "sw_0143_2290", "act_index": 222, "tag": "qy", "kind": "ask", "inplace_pos": 19, "spliced_into": "sw_0720_3696", "spliced_start": 4, "spliced_pos": 18}
+{"id": "r0064", "call": "sw_0145_2429", "act_index": 43, "tag": "cc", "kind": "commit", "inplace_pos": 21, "spliced_into": "sw_0413_3041", "spliced_start": 90, "spliced_pos": 10}
+{"id": "r0065", "call": "sw_0145_2429", "act_index": 45, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0111_2018", "spliced_start": 48, "spliced_pos": 16}
+{"id": "r0066", "call": "sw_0145_2429", "act_index": 182, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0119_3083", "spliced_start": 8, "spliced_pos": 21}
+{"id": "r0067", "call": "sw_0145_2429", "act_index": 188, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0417_3237", "spliced_start": 92, "spliced_pos": 21}
+{"id": "r0068", "call": "sw_0145_2429", "act_index": 203, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_1101_3693", "spliced_start": 20, "spliced_pos": 5}
+{"id": "r0069", "call": "sw_0145_2429", "act_index": 209, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_1059_3764", "spliced_start": 43, "spliced_pos": 5}
+{"id": "r0070", "call": "sw_0145_2429", "act_index": 211, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0213_2285", "spliced_start": 73, "spliced_pos": 8}
+{"id": "r0071", "call": "sw_0145_2429", "act_index": 212, "tag": "ad", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_0541_2719", "spliced_start": 64, "spliced_pos": 13}
+{"id": "r0075", "call": "sw_0152_3108", "act_index": 4, "tag": "ad", "kind": "directive", "inplace_pos": 3, "spliced_into": "sw_1098_3788", "spliced_start": 35, "spliced_pos": 15}
+{"id": "r0076", "call": "sw_0154_3142", "act_index": 168, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0115_2370", "spliced_start": 59, "spliced_pos": 21}
+{"id": "r0078", "call": "sw_0156_3252", "act_index": 90, "tag": "co", "kind": "commit", "inplace_pos": 23, "spliced_into": "sw_0007_4171", "spliced_start": 7, "spliced_pos": 12}
+{"id": "r0079", "call": "sw_0160_3467", "act_index": 9, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0253_4072", "spliced_start": 20, "spliced_pos": 14}
+{"id": "r0080", "call": "sw_0160_3467", "act_index": 101, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0663_3225", "spliced_start": 14, "spliced_pos": 7}
+{"id": "r0081", "call": "sw_0173_2548", "act_index": 170, "tag": "qy", "kind": "ask", "inplace_pos": 19, "spliced_into": "sw_0697_2514", "spliced_start": 11, "spliced_pos": 10}
+{"id": "r0082", "call": "sw_0174_2708", "act_index": 86, "tag": "co", "kind": "commit", "inplace_pos": 20, "spliced_into": "sw_0596_2734", "spliced_start": 53, "spliced_pos": 17}
+{"id": "r0083", "call": "sw_0174_2708", "act_index": 88, "tag": "co^c", "kind": "commit", "inplace_pos": 16, "spliced_into": "sw_0300_3268", "spliced_start": 52, "spliced_pos": 18}
+{"id": "r0084", "call": "sw_0174_2708", "act_index": 137, "tag": "ad", "kind": "directive", "inplace_pos": 26, "spliced_into": "sw_0494_3331", "spliced_start": 34, "spliced_pos": 11}
+{"id": "r0085", "call": "sw_0175_2729", "act_index": 220, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0785_2647", "spliced_start": 5, "spliced_pos": 20}
+{"id": "r0086", "call": "sw_0175_2729", "act_index": 246, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_1074_3647", "spliced_start": 69, "spliced_pos": 12}
+{"id": "r0087", "call": "sw_0175_2729", "act_index": 254, "tag": "cc", "kind": "commit", "inplace_pos": 7, "spliced_into": "sw_0275_2540", "spliced_start": 15, "spliced_pos": 14}
+{"id": "r0089", "call": "sw_0187_3242", "act_index": 76, "tag": "ad^t", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0930_2446", "spliced_start": 3, "spliced_pos": 14}
+{"id": "r0090", "call": "sw_0190_3324", "act_index": 45, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0326_2249", "spliced_start": 14, "spliced_pos": 22}
+{"id": "r0091", "call": "sw_0194_3595", "act_index": 114, "tag": "ad", "kind": "directive", "inplace_pos": 20, "spliced_into": "sw_0685_4726", "spliced_start": 21, "spliced_pos": 22}
+{"id": "r0092", "call": "sw_0194_3595", "act_index": 155, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0150_2628", "spliced_start": 86, "spliced_pos": 15}
+{"id": "r0093", "call": "sw_0195_3763", "act_index": 3, "tag": "ad", "kind": "directive", "inplace_pos": 3, "spliced_into": "sw_0797_3563", "spliced_start": 4, "spliced_pos": 24}
+{"id": "r0094", "call": "sw_0197_3883", "act_index": 17, "tag": "co", "kind": "commit", "inplace_pos": 10, "spliced_into": "sw_0907_2830", "spliced_start": 161, "spliced_pos": 20}
+{"id": "r0095", "call": "sw_0199_4004", "act_index": 37, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0826_2981", "spliced_start": 10, "spliced_pos": 20}
+{"id": "r0096", "call": "sw_0207_2039", "act_index": 157, "tag": "co", "kind": "commit", "inplace_pos": 19, "spliced_into": "sw_0756_3063", "spliced_start": 26, "spliced_pos": 12}
+{"id": "r0097", "call": "sw_0209_2102", "act_index": 215, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0177_2759", "spliced_start": 14, "spliced_pos": 10}
+{"id": "r0098", "call": "sw_0212_2275", "act_index": 153, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0173_2548", "spliced_start": 27, "spliced_pos": 23}
+{"id": "r0100", "call": "sw_0214_2302", "act_index": 128, "tag": "ad", "kind": "directive", "inplace_pos": 25, "spliced_into": "sw_0269_2382", "spliced_start": 2, "spliced_pos": 9}
+{"id": "r0101", "call": "sw_0217_2421", "act_index": 113, "tag": "ad^t", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0636_2079", "spliced_start": 17, "spliced_pos": 12}
+{"id": "r0104", "call": "sw_0220_2549", "act_index": 7, "tag": "co^t", "kind": "commit", "inplace_pos": 6, "spliced_into": "sw_0833_3281", "spliced_start": 57, "spliced_pos": 20}
+{"id": "r0105", "call": "sw_0220_2549", "act_index": 9, "tag": "co^t", "kind": "commit", "inplace_pos": 7, "spliced_into": "sw_0849_4709", "spliced_start": 28, "spliced_pos": 22}
+{"id": "r0106", "call": "sw_0222_2676", "act_index": 282, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0550_3124", "spliced_start": 26, "spliced_pos": 11}
+{"id": "r0107", "call": "sw_0222_2676", "act_index": 284, "tag": "co", "kind": "commit", "inplace_pos": 12, "spliced_into": "sw_1107_3332", "spliced_start": 34, "spliced_pos": 24}
+{"id": "r0108", "call": "sw_0224_2818", "act_index": 67, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0101_4019", "spliced_start": 30, "spliced_pos": 24}
+{"id": "r0109", "call": "sw_0225_2877", "act_index": 158, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0508_3628", "spliced_start": 22, "spliced_pos": 20}
+{"id": "r0110", "call": "sw_0226_3081", "act_index": 131, "tag": "cc", "kind": "commit", "inplace_pos": 16, "spliced_into": "sw_0265_2264", "spliced_start": 37, "spliced_pos": 11}
+{"id": "r0111", "call": "sw_0227_3093", "act_index": 150, "tag": "ad^t", "kind": "directive", "inplace_pos": 25, "spliced_into": "sw_0869_2871", "spliced_start": 95, "spliced_pos": 10}
+{"id": "r0112", "call": "sw_0228_3115", "act_index": 10, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0101_4019", "spliced_start": 70, "spliced_pos": 23}
+{"id": "r0113", "call": "sw_0230_3148", "act_index": 90, "tag": "qy^c", "kind": "ask", "inplace_pos": 21, "spliced_into": "sw_0646_2575", "spliced_start": 13, "spliced_pos": 9}
+{"id": "r0114", "call": "sw_0232_3159", "act_index": 106, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0491_3256", "spliced_start": 12, "spliced_pos": 10}
+{"id": "r0115", "call": "sw_0233_3182", "act_index": 42, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0780_2393", "spliced_start": 64, "spliced_pos": 14}
+{"id": "r0119", "call": "sw_0240_3387", "act_index": 57, "tag": "qy", "kind": "ask", "inplace_pos": 19, "spliced_into": "sw_0704_2690", "spliced_start": 20, "spliced_pos": 19}
+{"id": "r0120", "call": "sw_0243_3513", "act_index": 94, "tag": "ad", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_1062_2190", "spliced_start": 76, "spliced_pos": 9}
+{"id": "r0121", "call": "sw_0248_3697", "act_index": 111, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0549_3111", "spliced_start": 47, "spliced_pos": 7}
+{"id": "r0122", "call": "sw_0251_4026", "act_index": 27, "tag": "ad", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_0362_3447", "spliced_start": 11, "spliced_pos": 7}
+{"id": "r0124", "call": "sw_0259_2020", "act_index": 230, "tag": "ad^t", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0930_2446", "spliced_start": 34, "spliced_pos": 19}
+{"id": "r0125", "call": "sw_0260_2073", "act_index": 180, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0676_3804", "spliced_start": 29, "spliced_pos": 10}
+{"id": "r0127", "call": "sw_0263_2226", "act_index": 56, "tag": "cc", "kind": "commit", "inplace_pos": 6, "spliced_into": "sw_0265_2264", "spliced_start": 23, "spliced_pos": 8}
+{"id": "r0128", "call": "sw_0263_2226", "act_index": 75, "tag": "cc", "kind": "commit", "inplace_pos": 5, "spliced_into": "sw_1107_3332", "spliced_start": 69, "spliced_pos": 17}
+{"id": "r0130", "call": "sw_0269_2382", "act_index": 6, "tag": "ad", "kind": "directive", "inplace_pos": 4, "spliced_into": "sw_0204_4698", "spliced_start": 7, "spliced_pos": 18}
+{"id": "r0131", "call": "sw_0269_2382", "act_index": 12, "tag": "co", "kind": "commit", "inplace_pos": 5, "spliced_into": "sw_0093_3227", "spliced_start": 21, "spliced_pos": 23}
+{"id": "r0132", "call": "sw_0269_2382", "act_index": 75, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0573_4022", "spliced_start": 9, "spliced_pos": 16}
+{"id": "r0133", "call": "sw_0269_2382", "act_index": 121, "tag": "ad^c", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_1069_2884", "spliced_start": 12, "spliced_pos": 5}
+{"id": "r0134", "call": "sw_0269_2382", "act_index": 176, "tag": "co", "kind": "commit", "inplace_pos": 16, "spliced_into": "sw_1207_2503", "spliced_start": 9, "spliced_pos": 10}
+{"id": "r0135", "call": "sw_0269_2382", "act_index": 202, "tag": "cc", "kind": "commit", "inplace_pos": 19, "spliced_into": "sw_0028_4133", "spliced_start": 14, "spliced_pos": 17}
+{"id": "r0136", "call": "sw_0269_2382", "act_index": 203, "tag": "cc", "kind": "commit", "inplace_pos": 18, "spliced_into": "sw_0159_3369", "spliced_start": 23, "spliced_pos": 21}
+{"id": "r0137", "call": "sw_0269_2382", "act_index": 227, "tag": "ad", "kind": "directive", "inplace_pos": 25, "spliced_into": "sw_1005_2693", "spliced_start": 99, "spliced_pos": 12}
+{"id": "r0138", "call": "sw_0273_2485", "act_index": 4, "tag": "co", "kind": "commit", "inplace_pos": 4, "spliced_into": "sw_0235_3232", "spliced_start": 78, "spliced_pos": 21}
+{"id": "r0140", "call": "sw_0277_2598", "act_index": 220, "tag": "cc", "kind": "commit", "inplace_pos": 14, "spliced_into": "sw_0235_3232", "spliced_start": 5, "spliced_pos": 20}
+{"id": "r0141", "call": "sw_0281_2657", "act_index": 175, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0662_3196", "spliced_start": 12, "spliced_pos": 10}
+{"id": "r0142", "call": "sw_0283_2710", "act_index": 44, "tag": "qy^d", "kind": "ask", "inplace_pos": 19, "spliced_into": "sw_0499_3420", "spliced_start": 10, "spliced_pos": 7}
+{"id": "r0143", "call": "sw_0283_2710", "act_index": 197, "tag": "cc", "kind": "commit", "inplace_pos": 16, "spliced_into": "sw_0243_3513", "spliced_start": 24, "spliced_pos": 15}
+{"id": "r0144", "call": "sw_0286_2785", "act_index": 96, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_1019_2898", "spliced_start": 80, "spliced_pos": 14}
+{"id": "r0145", "call": "sw_0287_2819", "act_index": 64, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0749_2726", "spliced_start": 69, "spliced_pos": 16}
+{"id": "r0146", "call": "sw_0288_2828", "act_index": 37, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0177_2759", "spliced_start": 71, "spliced_pos": 22}
+{"id": "r0147", "call": "sw_0288_2828", "act_index": 40, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0304_3338", "spliced_start": 24, "spliced_pos": 17}
+{"id": "r0149", "call": "sw_0290_2851", "act_index": 125, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0161_3781", "spliced_start": 35, "spliced_pos": 15}
+{"id": "r0151", "call": "sw_0303_3313", "act_index": 95, "tag": "co", "kind": "commit", "inplace_pos": 26, "spliced_into": "sw_1098_3788", "spliced_start": 32, "spliced_pos": 18}
+{"id": "r0153", "call": "sw_0311_3776", "act_index": 26, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0447_4801", "spliced_start": 9, "spliced_pos": 14}
+{"id": "r0154", "call": "sw_0314_3983", "act_index": 42, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0064_4346", "spliced_start": 26, "spliced_pos": 19}
+{"id": "r0156", "call": "sw_0318_4565", "act_index": 80, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0733_4940", "spliced_start": 28, "spliced_pos": 7}
+{"id": "r0159", "call": "sw_0327_2253", "act_index": 113, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0363_3487", "spliced_start": 4, "spliced_pos": 14}
+{"id": "r0160", "call": "sw_0327_2253", "act_index": 129, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_1006_2967", "spliced_start": 87, "spliced_pos": 18}
+{"id": "r0161", "call": "sw_0330_2466", "act_index": 186, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0723_3797", "spliced_start": 4, "spliced_pos": 16}
+{"id": "r0162", "call": "sw_0333_2584", "act_index": 194, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0263_2226", "spliced_start": 75, "spliced_pos": 12}
+{"id": "r0163", "call": "sw_0333_2584", "act_index": 309, "tag": "co", "kind": "commit", "inplace_pos": 16, "spliced_into": "sw_0730_4905", "spliced_start": 17, "spliced_pos": 23}
+{"id": "r0164", "call": "sw_0336_2603", "act_index": 213, "tag": "co", "kind": "commit", "inplace_pos": 7, "spliced_into": "sw_0640_2309", "spliced_start": 50, "spliced_pos": 22}
+{"id": "r0167", "call": "sw_0337_2608", "act_index": 3, "tag": "oo", "kind": "commit", "inplace_pos": 3, "spliced_into": "sw_0284_2743", "spliced_start": 4, "spliced_pos": 15}
+{"id": "r0168", "call": "sw_0337_2608", "act_index": 4, "tag": "ad", "kind": "directive", "inplace_pos": 3, "spliced_into": "sw_0282_2672", "spliced_start": 8, "spliced_pos": 12}
+{"id": "r0169", "call": "sw_0337_2608", "act_index": 21, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_1017_2543", "spliced_start": 106, "spliced_pos": 22}
+{"id": "r0170", "call": "sw_0337_2608", "act_index": 22, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0239_3367", "spliced_start": 7, "spliced_pos": 18}
+{"id": "r0171", "call": "sw_0337_2608", "act_index": 24, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0003_4103", "spliced_start": 23, "spliced_pos": 6}
+{"id": "r0172", "call": "sw_0337_2608", "act_index": 25, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_1018_2692", "spliced_start": 118, "spliced_pos": 18}
+{"id": "r0173", "call": "sw_0337_2608", "act_index": 31, "tag": "ad", "kind": "directive", "inplace_pos": 21, "spliced_into": "sw_0291_2876", "spliced_start": 96, "spliced_pos": 21}
+{"id": "r0174", "call": "sw_0337_2608", "act_index": 34, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0371_3688", "spliced_start": 41, "spliced_pos": 13}
+{"id": "r0175", "call": "sw_0337_2608", "act_index": 35, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0668_3373", "spliced_start": 20, "spliced_pos": 7}
+{"id": "r0176", "call": "sw_0337_2608", "act_index": 42, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_1302_2505", "spliced_start": 56, "spliced_pos": 11}
+{"id": "r0177", "call": "sw_0337_2608", "act_index": 44, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_1058_3711", "spliced_start": 32, "spliced_pos": 15}
+{"id": "r0178", "call": "sw_0337_2608", "act_index": 45, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0272_2479", "spliced_start": 70, "spliced_pos": 21}
+{"id": "r0179", "call": "sw_0337_2608", "act_index": 50, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0100_3925", "spliced_start": 32, "spliced_pos": 7}
+{"id": "r0180", "call": "sw_0337_2608", "act_index": 51, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0055_3156", "spliced_start": 0, "spliced_pos": 13}
+{"id": "r0181", "call": "sw_0337_2608", "act_index": 52, "tag": "ad", "kind": "directive", "inplace_pos": 21, "spliced_into": "sw_0790_3002", "spliced_start": 24, "spliced_pos": 7}
+{"id": "r0182", "call": "sw_0337_2608", "act_index": 60, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0879_3433", "spliced_start": 16, "spliced_pos": 23}
+{"id": "r0183", "call": "sw_0337_2608", "act_index": 70, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0768_3626", "spliced_start": 7, "spliced_pos": 20}
+{"id": "r0184", "call": "sw_0337_2608", "act_index": 72, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0748_2663", "spliced_start": 49, "spliced_pos": 11}
+{"id": "r0185", "call": "sw_0337_2608", "act_index": 74, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0295_3200", "spliced_start": 12, "spliced_pos": 13}
+{"id": "r0186", "call": "sw_0337_2608", "act_index": 75, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0804_4165", "spliced_start": 10, "spliced_pos": 14}
+{"id": "r0187", "call": "sw_0337_2608", "act_index": 81, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0259_2020", "spliced_start": 34, "spliced_pos": 15}
+{"id": "r0188", "call": "sw_0337_2608", "act_index": 82, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0567_3574", "spliced_start": 4, "spliced_pos": 13}
+{"id": "r0189", "call": "sw_0337_2608", "act_index": 83, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0657_2900", "spliced_start": 9, "spliced_pos": 17}
+{"id": "r0190", "call": "sw_0337_2608", "act_index": 89, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0366_3517", "spliced_start": 48, "spliced_pos": 8}
+{"id": "r0191", "call": "sw_0337_2608", "act_index": 90, "tag": "ad", "kind": "directive", "inplace_pos": 20, "spliced_into": "sw_0335_2589", "spliced_start": 15, "spliced_pos": 11}
+{"id": "r0192", "call": "sw_0337_2608", "act_index": 145, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0901_2418", "spliced_start": 83, "spliced_pos": 8}
+{"id": "r0193", "call": "sw_0337_2608", "act_index": 203, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0976_3046", "spliced_start": 166, "spliced_pos": 20}
+{"id": "r0196", "call": "sw_0342_2956", "act_index": 103, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0189_3266", "spliced_start": 45, "spliced_pos": 19}
+{"id": "r0197", "call": "sw_0342_2956", "act_index": 143, "tag": "ad(^q)", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_1032_2557", "spliced_start": 76, "spliced_pos": 14}
+{"id": "r0198", "call": "sw_0343_2965", "act_index": 118, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_1312_3469", "spliced_start": 38, "spliced_pos": 18}
+{"id": "r0199", "call": "sw_0343_2965", "act_index": 120, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0639_2187", "spliced_start": 56, "spliced_pos": 23}
+{"id": "r0200", "call": "sw_0343_2965", "act_index": 123, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0828_3055", "spliced_start": 103, "spliced_pos": 17}
+{"id": "r0201", "call": "sw_0349_3082", "act_index": 35, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0996_4745", "spliced_start": 11, "spliced_pos": 20}
+{"id": "r0202", "call": "sw_0350_3103", "act_index": 72, "tag": "qy", "kind": "ask", "inplace_pos": 8, "spliced_into": "sw_1011_3352", "spliced_start": 19, "spliced_pos": 24}
+{"id": "r0203", "call": "sw_0350_3103", "act_index": 157, "tag": "qy", "kind": "ask", "inplace_pos": 12, "spliced_into": "sw_0768_3626", "spliced_start": 1, "spliced_pos": 16}
+{"id": "r0207", "call": "sw_0360_3397", "act_index": 77, "tag": "qy", "kind": "ask", "inplace_pos": 17, "spliced_into": "sw_0023_4341", "spliced_start": 15, "spliced_pos": 20}
+{"id": "r0208", "call": "sw_0361_3398", "act_index": 11, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0976_3046", "spliced_start": 54, "spliced_pos": 5}
+{"id": "r0209", "call": "sw_0361_3398", "act_index": 43, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0385_2012", "spliced_start": 26, "spliced_pos": 15}
+{"id": "r0210", "call": "sw_0365_3515", "act_index": 24, "tag": "ad", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_0114_2107", "spliced_start": 133, "spliced_pos": 13}
+{"id": "r0211", "call": "sw_0366_3517", "act_index": 41, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0756_3063", "spliced_start": 11, "spliced_pos": 5}
+{"id": "r0213", "call": "sw_0375_4050", "act_index": 100, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_1076_3686", "spliced_start": 43, "spliced_pos": 10}
+{"id": "r0214", "call": "sw_0382_4785", "act_index": 62, "tag": "ad(^q)", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0277_2598", "spliced_start": 130, "spliced_pos": 8}
+{"id": "r0215", "call": "sw_0387_2067", "act_index": 33, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_1069_2884", "spliced_start": 15, "spliced_pos": 22}
+{"id": "r0216", "call": "sw_0388_2078", "act_index": 264, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0085_2395", "spliced_start": 50, "spliced_pos": 15}
+{"id": "r0217", "call": "sw_0388_2078", "act_index": 277, "tag": "ad", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_0200_4159", "spliced_start": 2, "spliced_pos": 7}
+{"id": "r0218", "call": "sw_0388_2078", "act_index": 282, "tag": "ad", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_1203_2229", "spliced_start": 44, "spliced_pos": 19}
+{"id": "r0219", "call": "sw_0389_2157", "act_index": 101, "tag": "ad", "kind": "directive", "inplace_pos": 21, "spliced_into": "sw_0484_3085", "spliced_start": 24, "spliced_pos": 23}
+{"id": "r0220", "call": "sw_0393_2407", "act_index": 102, "tag": "ad", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_0595_2645", "spliced_start": 36, "spliced_pos": 9}
+{"id": "r0221", "call": "sw_0394_2427", "act_index": 37, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0940_2995", "spliced_start": 21, "spliced_pos": 6}
+{"id": "r0222", "call": "sw_0397_2492", "act_index": 178, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0854_2168", "spliced_start": 45, "spliced_pos": 18}
+{"id": "r0223", "call": "sw_0401_2568", "act_index": 261, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0619_3399", "spliced_start": 11, "spliced_pos": 23}
+{"id": "r0224", "call": "sw_0401_2568", "act_index": 287, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0570_3691", "spliced_start": 15, "spliced_pos": 14}
+{"id": "r0225", "call": "sw_0402_2634", "act_index": 154, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0107_4150", "spliced_start": 37, "spliced_pos": 14}
+{"id": "r0227", "call": "sw_0405_2717", "act_index": 42, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0278_2599", "spliced_start": 25, "spliced_pos": 16}
+{"id": "r0228", "call": "sw_0416_3205", "act_index": 86, "tag": "ad", "kind": "directive", "inplace_pos": 21, "spliced_into": "sw_0624_3557", "spliced_start": 16, "spliced_pos": 22}
+{"id": "r0229", "call": "sw_0421_3311", "act_index": 88, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0995_4735", "spliced_start": 4, "spliced_pos": 21}
+{"id": "r0230", "call": "sw_0421_3311", "act_index": 168, "tag": "ad^t", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0451_2062", "spliced_start": 37, "spliced_pos": 6}
+{"id": "r0231", "call": "sw_0421_3311", "act_index": 211, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_1051_3170", "spliced_start": 47, "spliced_pos": 6}
+{"id": "r0232", "call": "sw_0421_3311", "act_index": 216, "tag": "ad", "kind": "directive", "inplace_pos": 21, "spliced_into": "sw_1093_3184", "spliced_start": 38, "spliced_pos": 21}
+{"id": "r0233", "call": "sw_0421_3311", "act_index": 218, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0488_3215", "spliced_start": 8, "spliced_pos": 7}
+{"id": "r0235", "call": "sw_0423_3325", "act_index": 191, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0641_2313", "spliced_start": 34, "spliced_pos": 17}
+{"id": "r0236", "call": "sw_0433_3727", "act_index": 132, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0345_3021", "spliced_start": 96, "spliced_pos": 24}
+{"id": "r0237", "call": "sw_0433_3727", "act_index": 135, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0920_3747", "spliced_start": 19, "spliced_pos": 21}
+{"id": "r0238", "call": "sw_0433_3727", "act_index": 138, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0140_4928", "spliced_start": 5, "spliced_pos": 10}
+{"id": "r0239", "call": "sw_0442_4649", "act_index": 76, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0090_3133", "spliced_start": 48, "spliced_pos": 13}
+{"id": "r0241", "call": "sw_0447_4801", "act_index": 55, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0218_2465", "spliced_start": 112, "spliced_pos": 23}
+{"id": "r0242", "call": "sw_0450_4886", "act_index": 17, "tag": "ad@", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_1042_4078", "spliced_start": 46, "spliced_pos": 7}
+{"id": "r0243", "call": "sw_0451_2062", "act_index": 161, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0636_2079", "spliced_start": 16, "spliced_pos": 9}
+{"id": "r0244", "call": "sw_0456_2266", "act_index": 149, "tag": "ad*", "kind": "directive", "inplace_pos": 26, "spliced_into": "sw_0416_3205", "spliced_start": 13, "spliced_pos": 16}
+{"id": "r0245", "call": "sw_0457_2304", "act_index": 151, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_1017_2543", "spliced_start": 53, "spliced_pos": 8}
+{"id": "r0246", "call": "sw_0457_2304", "act_index": 164, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0892_3979", "spliced_start": 9, "spliced_pos": 18}
+{"id": "r0247", "call": "sw_0457_2304", "act_index": 168, "tag": "ad", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_0672_3453", "spliced_start": 32, "spliced_pos": 7}
+{"id": "r0248", "call": "sw_0457_2304", "act_index": 175, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_1024_3247", "spliced_start": 11, "spliced_pos": 17}
+{"id": "r0249", "call": "sw_0462_2439", "act_index": 105, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_1206_2461", "spliced_start": 57, "spliced_pos": 12}
+{"id": "r0250", "call": "sw_0462_2439", "act_index": 107, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_1111_2897", "spliced_start": 16, "spliced_pos": 11}
+{"id": "r0251", "call": "sw_0462_2439", "act_index": 116, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0351_3207", "spliced_start": 30, "spliced_pos": 8}
+{"id": "r0253", "call": "sw_0465_2525", "act_index": 4, "tag": "ad", "kind": "directive", "inplace_pos": 3, "spliced_into": "sw_0491_3256", "spliced_start": 15, "spliced_pos": 21}
+{"id": "r0254", "call": "sw_0465_2525", "act_index": 227, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0069_3144", "spliced_start": 78, "spliced_pos": 13}
+{"id": "r0256", "call": "sw_0467_2554", "act_index": 280, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_1303_2567", "spliced_start": 13, "spliced_pos": 12}
+{"id": "r0257", "call": "sw_0470_2627", "act_index": 207, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0523_2092", "spliced_start": 41, "spliced_pos": 22}
+{"id": "r0258", "call": "sw_0473_2658", "act_index": 10, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0845_3754", "spliced_start": 19, "spliced_pos": 24}
+{"id": "r0259", "call": "sw_0473_2658", "act_index": 12, "tag": "oo", "kind": "commit", "inplace_pos": 8, "spliced_into": "sw_1201_2131", "spliced_start": 214, "spliced_pos": 11}
+{"id": "r0260", "call": "sw_0473_2658", "act_index": 44, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0935_2774", "spliced_start": 1, "spliced_pos": 14}
+{"id": "r0261", "call": "sw_0478_2896", "act_index": 43, "tag": "ad", "kind": "directive", "inplace_pos": 21, "spliced_into": "sw_0518_4691", "spliced_start": 61, "spliced_pos": 11}
+{"id": "r0262", "call": "sw_0478_2896", "act_index": 77, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0089_3086", "spliced_start": 21, "spliced_pos": 10}
+{"id": "r0263", "call": "sw_0478_2896", "act_index": 113, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0479_2910", "spliced_start": 48, "spliced_pos": 22}
+{"id": "r0264", "call": "sw_0478_2896", "act_index": 114, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_1060_3852", "spliced_start": 5, "spliced_pos": 23}
+{"id": "r0265", "call": "sw_0478_2896", "act_index": 122, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0800_3841", "spliced_start": 1, "spliced_pos": 5}
+{"id": "r0266", "call": "sw_0478_2896", "act_index": 136, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0732_4927", "spliced_start": 61, "spliced_pos": 15}
+{"id": "r0267", "call": "sw_0478_2896", "act_index": 139, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0822_2776", "spliced_start": 36, "spliced_pos": 6}
+{"id": "r0268", "call": "sw_0478_2896", "act_index": 161, "tag": "ad", "kind": "directive", "inplace_pos": 20, "spliced_into": "sw_1057_3293", "spliced_start": 91, "spliced_pos": 9}
+{"id": "r0269", "call": "sw_0482_3068", "act_index": 24, "tag": "ad^t", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_1051_3170", "spliced_start": 16, "spliced_pos": 21}
+{"id": "r0270", "call": "sw_0482_3068", "act_index": 82, "tag": "qy", "kind": "ask", "inplace_pos": 21, "spliced_into": "sw_0674_3666", "spliced_start": 92, "spliced_pos": 9}
+{"id": "r0271", "call": "sw_0483_3070", "act_index": 15, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0022_4320", "spliced_start": 7, "spliced_pos": 20}
+{"id": "r0272", "call": "sw_0483_3070", "act_index": 18, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0586_2295", "spliced_start": 63, "spliced_pos": 8}
+{"id": "r0273", "call": "sw_0485_3099", "act_index": 24, "tag": "ad", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_1104_2921", "spliced_start": 127, "spliced_pos": 21}
+{"id": "r0274", "call": "sw_0485_3099", "act_index": 145, "tag": "ad", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_0105_4123", "spliced_start": 24, "spliced_pos": 9}
+{"id": "r0275", "call": "sw_0485_3099", "act_index": 151, "tag": "ad", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_0333_2584", "spliced_start": 4, "spliced_pos": 13}
+{"id": "r0276", "call": "sw_0485_3099", "act_index": 152, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0045_4312", "spliced_start": 11, "spliced_pos": 6}
+{"id": "r0278", "call": "sw_0486_3173", "act_index": 34, "tag": "qy", "kind": "ask", "inplace_pos": 17, "spliced_into": "sw_0110_4880", "spliced_start": 3, "spliced_pos": 24}
+{"id": "r0279", "call": "sw_0494_3331", "act_index": 53, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0432_3720", "spliced_start": 53, "spliced_pos": 23}
+{"id": "r0282", "call": "sw_0498_3417", "act_index": 83, "tag": "ad", "kind": "directive", "inplace_pos": 26, "spliced_into": "sw_0539_2609", "spliced_start": 13, "spliced_pos": 13}
+{"id": "r0283", "call": "sw_0499_3420", "act_index": 43, "tag": "ad", "kind": "directive", "inplace_pos": 21, "spliced_into": "sw_0002_4330", "spliced_start": 5, "spliced_pos": 8}
+{"id": "r0284", "call": "sw_0499_3420", "act_index": 96, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0146_2477", "spliced_start": 60, "spliced_pos": 11}
+{"id": "r0285", "call": "sw_0507_3606", "act_index": 127, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0148_2604", "spliced_start": 84, "spliced_pos": 9}
+{"id": "r0287", "call": "sw_0510_3680", "act_index": 41, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0678_3845", "spliced_start": 60, "spliced_pos": 7}
+{"id": "r0288", "call": "sw_0510_3680", "act_index": 43, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0201_4311", "spliced_start": 8, "spliced_pos": 24}
+{"id": "r0289", "call": "sw_0511_3746", "act_index": 54, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0044_4177", "spliced_start": 1, "spliced_pos": 20}
+{"id": "r0290", "call": "sw_0513_3988", "act_index": 50, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0316_4051", "spliced_start": 0, "spliced_pos": 9}
+{"id": "r0291", "call": "sw_0526_2160", "act_index": 39, "tag": "ad^t", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0112_2061", "spliced_start": 91, "spliced_pos": 6}
+{"id": "r0292", "call": "sw_0527_2177", "act_index": 44, "tag": "co", "kind": "commit", "inplace_pos": 24, "spliced_into": "sw_0557_3333", "spliced_start": 37, "spliced_pos": 19}
+{"id": "r0293", "call": "sw_0534_2499", "act_index": 212, "tag": "co", "kind": "commit", "inplace_pos": 19, "spliced_into": "sw_0102_4033", "spliced_start": 2, "spliced_pos": 11}
+{"id": "r0294", "call": "sw_0537_2521", "act_index": 6, "tag": "co", "kind": "commit", "inplace_pos": 5, "spliced_into": "sw_0898_2303", "spliced_start": 62, "spliced_pos": 23}
+{"id": "r0295", "call": "sw_0537_2521", "act_index": 55, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0732_4927", "spliced_start": 31, "spliced_pos": 21}
+{"id": "r0296", "call": "sw_0538_2545", "act_index": 56, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0335_2589", "spliced_start": 8, "spliced_pos": 14}
+{"id": "r0297", "call": "sw_0541_2719", "act_index": 124, "tag": "co^t", "kind": "commit", "inplace_pos": 7, "spliced_into": "sw_0730_4905", "spliced_start": 10, "spliced_pos": 20}
+{"id": "r0298", "call": "sw_0542_2782", "act_index": 7, "tag": "ad@", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_1100_3419", "spliced_start": 62, "spliced_pos": 23}
+{"id": "r0299", "call": "sw_0542_2782", "act_index": 10, "tag": "ad", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_0708_2927", "spliced_start": 46, "spliced_pos": 12}
+{"id": "r0300", "call": "sw_0546_2913", "act_index": 116, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0342_2956", "spliced_start": 98, "spliced_pos": 5}
+{"id": "r0301", "call": "sw_0546_2913", "act_index": 121, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0679_3898", "spliced_start": 34, "spliced_pos": 13}
+{"id": "r0302", "call": "sw_0547_3051", "act_index": 55, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0110_4880", "spliced_start": 3, "spliced_pos": 5}
+{"id": "r0303", "call": "sw_0547_3051", "act_index": 63, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_1068_2834", "spliced_start": 76, "spliced_pos": 24}
+{"id": "r0304", "call": "sw_0547_3051", "act_index": 109, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0119_3083", "spliced_start": 7, "spliced_pos": 12}
+{"id": "r0305", "call": "sw_0562_3443", "act_index": 36, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0265_2264", "spliced_start": 9, "spliced_pos": 14}
+{"id": "r0306", "call": "sw_0562_3443", "act_index": 120, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0539_2609", "spliced_start": 57, "spliced_pos": 16}
+{"id": "r0307", "call": "sw_0567_3574", "act_index": 58, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0452_2111", "spliced_start": 92, "spliced_pos": 7}
+{"id": "r0308", "call": "sw_0568_3586", "act_index": 7, "tag": "cc^t", "kind": "commit", "inplace_pos": 5, "spliced_into": "sw_0112_2061", "spliced_start": 83, "spliced_pos": 18}
+{"id": "r0309", "call": "sw_0577_4659", "act_index": 5, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0327_2253", "spliced_start": 63, "spliced_pos": 9}
+{"id": "r0310", "call": "sw_0579_4834", "act_index": 49, "tag": "co", "kind": "commit", "inplace_pos": 7, "spliced_into": "sw_0337_2608", "spliced_start": 134, "spliced_pos": 7}
+{"id": "r0312", "call": "sw_0581_2032", "act_index": 48, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0618_3368", "spliced_start": 42, "spliced_pos": 16}
+{"id": "r0313", "call": "sw_0581_2032", "act_index": 301, "tag": "co", "kind": "commit", "inplace_pos": 16, "spliced_into": "sw_1094_3255", "spliced_start": 68, "spliced_pos": 21}
+{"id": "r0314", "call": "sw_0582_2051", "act_index": 97, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0082_4626", "spliced_start": 17, "spliced_pos": 6}
+{"id": "r0315", "call": "sw_0582_2051", "act_index": 105, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0715_3092", "spliced_start": 134, "spliced_pos": 9}
+{"id": "r0316", "call": "sw_0582_2051", "act_index": 180, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0176_2749", "spliced_start": 34, "spliced_pos": 8}
+{"id": "r0317", "call": "sw_0582_2051", "act_index": 191, "tag": "ad", "kind": "directive", "inplace_pos": 25, "spliced_into": "sw_0168_4765", "spliced_start": 16, "spliced_pos": 19}
+{"id": "r0319", "call": "sw_0587_2383", "act_index": 78, "tag": "co", "kind": "commit", "inplace_pos": 20, "spliced_into": "sw_0290_2851", "spliced_start": 137, "spliced_pos": 14}
+{"id": "r0320", "call": "sw_0588_2423", "act_index": 113, "tag": "ad^t", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0996_4745", "spliced_start": 28, "spliced_pos": 11}
+{"id": "r0321", "call": "sw_0588_2423", "act_index": 116, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0418_3275", "spliced_start": 62, "spliced_pos": 10}
+{"id": "r0322", "call": "sw_0591_2460", "act_index": 182, "tag": "qy", "kind": "ask", "inplace_pos": 20, "spliced_into": "sw_0785_2647", "spliced_start": 89, "spliced_pos": 8}
+{"id": "r0323", "call": "sw_0592_2533", "act_index": 265, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0047_4339", "spliced_start": 5, "spliced_pos": 14}
+{"id": "r0325", "call": "sw_0595_2645", "act_index": 157, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0036_4379", "spliced_start": 13, "spliced_pos": 20}
+{"id": "r0326", "call": "sw_0595_2645", "act_index": 158, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0917_3694", "spliced_start": 40, "spliced_pos": 9}
+{"id": "r0327", "call": "sw_0595_2645", "act_index": 175, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0316_4051", "spliced_start": 7, "spliced_pos": 8}
+{"id": "r0328", "call": "sw_0601_2893", "act_index": 217, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0716_3105", "spliced_start": 4, "spliced_pos": 19}
+{"id": "r0329", "call": "sw_0602_2938", "act_index": 224, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0496_3344", "spliced_start": 16, "spliced_pos": 17}
+{"id": "r0330", "call": "sw_0604_2969", "act_index": 89, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0776_2086", "spliced_start": 6, "spliced_pos": 8}
+{"id": "r0331", "call": "sw_0604_2969", "act_index": 235, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0871_2930", "spliced_start": 39, "spliced_pos": 18}
+{"id": "r0332", "call": "sw_0604_2969", "act_index": 252, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0300_3268", "spliced_start": 13, "spliced_pos": 17}
+{"id": "r0333", "call": "sw_0606_3011", "act_index": 57, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0124_3201", "spliced_start": 0, "spliced_pos": 5}
+{"id": "r0334", "call": "sw_0607_3012", "act_index": 28, "tag": "co", "kind": "commit", "inplace_pos": 14, "spliced_into": "sw_0807_4799", "spliced_start": 9, "spliced_pos": 22}
+{"id": "r0335", "call": "sw_0607_3012", "act_index": 56, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0037_4382", "spliced_start": 3, "spliced_pos": 18}
+{"id": "r0336", "call": "sw_0607_3012", "act_index": 104, "tag": "ad", "kind": "directive", "inplace_pos": 21, "spliced_into": "sw_0968_2413", "spliced_start": 8, "spliced_pos": 23}
+{"id": "r0337", "call": "sw_0609_3049", "act_index": 79, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0955_3489", "spliced_start": 59, "spliced_pos": 11}
+{"id": "r0338", "call": "sw_0609_3049", "act_index": 85, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0367_3524", "spliced_start": 10, "spliced_pos": 17}
+{"id": "r0339", "call": "sw_0613_3096", "act_index": 145, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0901_2418", "spliced_start": 80, "spliced_pos": 5}
+{"id": "r0340", "call": "sw_0614_3097", "act_index": 21, "tag": "ad", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_0168_4765", "spliced_start": 14, "spliced_pos": 11}
+{"id": "r0342", "call": "sw_0618_3368", "act_index": 51, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0789_2999", "spliced_start": 12, "spliced_pos": 7}
+{"id": "r0343", "call": "sw_0621_3449", "act_index": 75, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0275_2540", "spliced_start": 39, "spliced_pos": 24}
+{"id": "r0344", "call": "sw_0621_3449", "act_index": 138, "tag": "ad", "kind": "directive", "inplace_pos": 26, "spliced_into": "sw_0409_2866", "spliced_start": 10, "spliced_pos": 11}
+{"id": "r0345", "call": "sw_0625_3573", "act_index": 4, "tag": "ad", "kind": "directive", "inplace_pos": 3, "spliced_into": "sw_0197_3883", "spliced_start": 20, "spliced_pos": 11}
+{"id": "r0346", "call": "sw_0626_3596", "act_index": 6, "tag": "ad", "kind": "directive", "inplace_pos": 4, "spliced_into": "sw_0882_3554", "spliced_start": 84, "spliced_pos": 18}
+{"id": "r0347", "call": "sw_0626_3596", "act_index": 7, "tag": "ad", "kind": "directive", "inplace_pos": 4, "spliced_into": "sw_0593_2597", "spliced_start": 46, "spliced_pos": 6}
+{"id": "r0348", "call": "sw_0627_3651", "act_index": 21, "tag": "co", "kind": "commit", "inplace_pos": 12, "spliced_into": "sw_0973_2934", "spliced_start": 51, "spliced_pos": 19}
+{"id": "r0349", "call": "sw_0629_4056", "act_index": 11, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0132_3682", "spliced_start": 52, "spliced_pos": 23}
+{"id": "r0350", "call": "sw_0631_4149", "act_index": 2, "tag": "co", "kind": "commit", "inplace_pos": 3, "spliced_into": "sw_0925_4681", "spliced_start": 33, "spliced_pos": 11}
+{"id": "r0351", "call": "sw_0632_4707", "act_index": 15, "tag": "co^t", "kind": "commit", "inplace_pos": 10, "spliced_into": "sw_0067_2945", "spliced_start": 70, "spliced_pos": 18}
+{"id": "r0352", "call": "sw_0632_4707", "act_index": 17, "tag": "co", "kind": "commit", "inplace_pos": 11, "spliced_into": "sw_0311_3776", "spliced_start": 22, "spliced_pos": 21}
+{"id": "r0353", "call": "sw_0634_2027", "act_index": 224, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0208_2094", "spliced_start": 17, "spliced_pos": 16}
+{"id": "r0354", "call": "sw_0635_2065", "act_index": 98, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0265_2264", "spliced_start": 12, "spliced_pos": 13}
+{"id": "r0355", "call": "sw_0635_2065", "act_index": 100, "tag": "ad", "kind": "directive", "inplace_pos": 20, "spliced_into": "sw_0486_3173", "spliced_start": 0, "spliced_pos": 10}
+{"id": "r0356", "call": "sw_0635_2065", "act_index": 103, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0521_2041", "spliced_start": 96, "spliced_pos": 8}
+{"id": "r0357", "call": "sw_0635_2065", "act_index": 150, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_1040_3244", "spliced_start": 49, "spliced_pos": 9}
+{"id": "r0358", "call": "sw_0639_2187", "act_index": 11, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0362_3447", "spliced_start": 21, "spliced_pos": 13}
+{"id": "r0359", "call": "sw_0639_2187", "act_index": 128, "tag": "co", "kind": "commit", "inplace_pos": 10, "spliced_into": "sw_0611_3072", "spliced_start": 11, "spliced_pos": 23}
+{"id": "r0360", "call": "sw_0639_2187", "act_index": 140, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0759_3191", "spliced_start": 6, "spliced_pos": 5}
+{"id": "r0361", "call": "sw_0639_2187", "act_index": 142, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0009_4329", "spliced_start": 48, "spliced_pos": 13}
+{"id": "r0362", "call": "sw_0639_2187", "act_index": 167, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0904_2767", "spliced_start": 74, "spliced_pos": 12}
+{"id": "r0363", "call": "sw_0639_2187", "act_index": 180, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0354_3286", "spliced_start": 10, "spliced_pos": 20}
+{"id": "r0364", "call": "sw_0641_2313", "act_index": 111, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0742_2235", "spliced_start": 51, "spliced_pos": 7}
+{"id": "r0365", "call": "sw_0642_2450", "act_index": 62, "tag": "ad", "kind": "directive", "inplace_pos": 25, "spliced_into": "sw_0891_3921", "spliced_start": 45, "spliced_pos": 20}
+{"id": "r0367", "call": "sw_0643_2452", "act_index": 51, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0290_2851", "spliced_start": 169, "spliced_pos": 14}
+{"id": "r0368", "call": "sw_0645_2537", "act_index": 94, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_1026_3280", "spliced_start": 14, "spliced_pos": 18}
+{"id": "r0369", "call": "sw_0645_2537", "act_index": 99, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0286_2785", "spliced_start": 17, "spliced_pos": 8}
+{"id": "r0370", "call": "sw_0645_2537", "act_index": 149, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0797_3563", "spliced_start": 9, "spliced_pos": 7}
+{"id": "r0371", "call": "sw_0646_2575", "act_index": 74, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0846_3956", "spliced_start": 31, "spliced_pos": 12}
+{"id": "r0372", "call": "sw_0647_2579", "act_index": 72, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0967_2340", "spliced_start": 154, "spliced_pos": 17}
+{"id": "r0373", "call": "sw_0647_2579", "act_index": 99, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0799_3828", "spliced_start": 8, "spliced_pos": 13}
+{"id": "r0374", "call": "sw_0649_2620", "act_index": 52, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0411_2998", "spliced_start": 8, "spliced_pos": 17}
+{"id": "r0375", "call": "sw_0649_2620", "act_index": 155, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0766_3556", "spliced_start": 65, "spliced_pos": 19}
+{"id": "r0378", "call": "sw_0654_2847", "act_index": 55, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_1007_2993", "spliced_start": 50, "spliced_pos": 15}
+{"id": "r0379", "call": "sw_0661_3194", "act_index": 59, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0402_2634", "spliced_start": 52, "spliced_pos": 14}
+{"id": "r0380", "call": "sw_0661_3194", "act_index": 61, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0823_2827", "spliced_start": 144, "spliced_pos": 24}
+{"id": "r0381", "call": "sw_0661_3194", "act_index": 62, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0556_3317", "spliced_start": 33, "spliced_pos": 14}
+{"id": "r0382", "call": "sw_0661_3194", "act_index": 63, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0587_2383", "spliced_start": 22, "spliced_pos": 13}
+{"id": "r0383", "call": "sw_0661_3194", "act_index": 73, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_1203_2229", "spliced_start": 121, "spliced_pos": 20}
+{"id": "r0384", "call": "sw_0661_3194", "act_index": 74, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_1106_3662", "spliced_start": 22, "spliced_pos": 9}
+{"id": "r0385", "call": "sw_0661_3194", "act_index": 78, "tag": "qy", "kind": "ask", "inplace_pos": 12, "spliced_into": "sw_0571_3750", "spliced_start": 64, "spliced_pos": 6}
+{"id": "r0386", "call": "sw_0661_3194", "act_index": 98, "tag": "co", "kind": "commit", "inplace_pos": 22, "spliced_into": "sw_0648_2616", "spliced_start": 9, "spliced_pos": 15}
+{"id": "r0387", "call": "sw_0664_3330", "act_index": 86, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0412_3015", "spliced_start": 31, "spliced_pos": 17}
+{"id": "r0388", "call": "sw_0668_3373", "act_index": 76, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0256_4728", "spliced_start": 54, "spliced_pos": 21}
+{"id": "r0389", "call": "sw_0672_3453", "act_index": 134, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0236_3235", "spliced_start": 27, "spliced_pos": 17}
+{"id": "r0390", "call": "sw_0674_3666", "act_index": 58, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0062_4158", "spliced_start": 1, "spliced_pos": 16}
+{"id": "r0391", "call": "sw_0674_3666", "act_index": 217, "tag": "co", "kind": "commit", "inplace_pos": 22, "spliced_into": "sw_0907_2830", "spliced_start": 4, "spliced_pos": 23}
+{"id": "r0394", "call": "sw_0675_3675", "act_index": 117, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_1015_2355", "spliced_start": 200, "spliced_pos": 22}
+{"id": "r0395", "call": "sw_0676_3804", "act_index": 19, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0597_2835", "spliced_start": 88, "spliced_pos": 7}
+{"id": "r0396", "call": "sw_0676_3804", "act_index": 52, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0316_4051", "spliced_start": 9, "spliced_pos": 17}
+{"id": "r0399", "call": "sw_0679_3898", "act_index": 40, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0810_2232", "spliced_start": 36, "spliced_pos": 17}
+{"id": "r0400", "call": "sw_0680_3926", "act_index": 46, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_1000_2292", "spliced_start": 33, "spliced_pos": 16}
+{"id": "r0401", "call": "sw_0682_4660", "act_index": 36, "tag": "qy", "kind": "ask", "inplace_pos": 16, "spliced_into": "sw_0798_3736", "spliced_start": 0, "spliced_pos": 23}
+{"id": "r0402", "call": "sw_0682_4660", "act_index": 38, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0778_2248", "spliced_start": 117, "spliced_pos": 6}
+{"id": "r0404", "call": "sw_0691_2283", "act_index": 193, "tag": "co", "kind": "commit", "inplace_pos": 24, "spliced_into": "sw_0317_4064", "spliced_start": 39, "spliced_pos": 13}
+{"id": "r0406", "call": "sw_0693_2300", "act_index": 30, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0666_3359", "spliced_start": 31, "spliced_pos": 21}
+{"id": "r0407", "call": "sw_0693_2300", "act_index": 33, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0052_4378", "spliced_start": 24, "spliced_pos": 14}
+{"id": "r0408", "call": "sw_0695_2424", "act_index": 137, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0977_3104", "spliced_start": 25, "spliced_pos": 9}
+{"id": "r0409", "call": "sw_0695_2424", "act_index": 169, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0781_2482", "spliced_start": 2, "spliced_pos": 11}
+{"id": "r0410", "call": "sw_0695_2424", "act_index": 183, "tag": "co", "kind": "commit", "inplace_pos": 18, "spliced_into": "sw_0602_2938", "spliced_start": 95, "spliced_pos": 7}
+{"id": "r0411", "call": "sw_0696_2431", "act_index": 9, "tag": "co^t", "kind": "commit", "inplace_pos": 8, "spliced_into": "sw_0851_4802", "spliced_start": 37, "spliced_pos": 23}
+{"id": "r0412", "call": "sw_0696_2431", "act_index": 59, "tag": "qy", "kind": "ask", "inplace_pos": 24, "spliced_into": "sw_0064_4346", "spliced_start": 0, "spliced_pos": 5}
+{"id": "r0413", "call": "sw_0696_2431", "act_index": 100, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_1003_2524", "spliced_start": 32, "spliced_pos": 21}
+{"id": "r0414", "call": "sw_0698_2515", "act_index": 7, "tag": "ad", "kind": "directive", "inplace_pos": 4, "spliced_into": "sw_0100_3925", "spliced_start": 6, "spliced_pos": 18}
+{"id": "r0415", "call": "sw_0700_2586", "act_index": 60, "tag": "co", "kind": "commit", "inplace_pos": 5, "spliced_into": "sw_0487_3206", "spliced_start": 1, "spliced_pos": 20}
+{"id": "r0416", "call": "sw_0705_2713", "act_index": 25, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0450_4886", "spliced_start": 8, "spliced_pos": 5}
+{"id": "r0417", "call": "sw_0705_2713", "act_index": 104, "tag": "ad,qy@", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0339_2669", "spliced_start": 41, "spliced_pos": 11}
+{"id": "r0418", "call": "sw_0705_2713", "act_index": 111, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0865_2741", "spliced_start": 52, "spliced_pos": 6}
+{"id": "r0420", "call": "sw_0706_2751", "act_index": 179, "tag": "ad", "kind": "directive", "inplace_pos": 27, "spliced_into": "sw_0947_3118", "spliced_start": 5, "spliced_pos": 10}
+{"id": "r0422", "call": "sw_0713_3036", "act_index": 50, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0131_3561", "spliced_start": 10, "spliced_pos": 24}
+{"id": "r0423", "call": "sw_0713_3036", "act_index": 116, "tag": "co", "kind": "commit", "inplace_pos": 26, "spliced_into": "sw_1105_3175", "spliced_start": 5, "spliced_pos": 16}
+{"id": "r0424", "call": "sw_0713_3036", "act_index": 117, "tag": "co", "kind": "commit", "inplace_pos": 27, "spliced_into": "sw_0808_2038", "spliced_start": 17, "spliced_pos": 15}
+{"id": "r0426", "call": "sw_0714_3039", "act_index": 25, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0162_3801", "spliced_start": 9, "spliced_pos": 22}
+{"id": "r0427", "call": "sw_0714_3039", "act_index": 209, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0369_3584", "spliced_start": 2, "spliced_pos": 15}
+{"id": "r0428", "call": "sw_0714_3039", "act_index": 215, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0324_2154", "spliced_start": 53, "spliced_pos": 16}
+{"id": "r0429", "call": "sw_0714_3039", "act_index": 217, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_1111_2897", "spliced_start": 14, "spliced_pos": 7}
+{"id": "r0430", "call": "sw_0714_3039", "act_index": 218, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0636_2079", "spliced_start": 5, "spliced_pos": 18}
+{"id": "r0431", "call": "sw_0715_3092", "act_index": 17, "tag": "co", "kind": "commit", "inplace_pos": 11, "spliced_into": "sw_0967_2340", "spliced_start": 145, "spliced_pos": 17}
+{"id": "r0432", "call": "sw_0720_3696", "act_index": 10, "tag": "co^t", "kind": "commit", "inplace_pos": 4, "spliced_into": "sw_0930_2446", "spliced_start": 31, "spliced_pos": 20}
+{"id": "r0434", "call": "sw_0723_3797", "act_index": 79, "tag": "co", "kind": "commit", "inplace_pos": 25, "spliced_into": "sw_0538_2545", "spliced_start": 34, "spliced_pos": 17}
+{"id": "r0435", "call": "sw_0726_4443", "act_index": 55, "tag": "qy", "kind": "ask", "inplace_pos": 9, "spliced_into": "sw_1304_2632", "spliced_start": 124, "spliced_pos": 16}
+{"id": "r0436", "call": "sw_0732_4927", "act_index": 67, "tag": "co^c", "kind": "commit", "inplace_pos": 22, "spliced_into": "sw_0684_4723", "spliced_start": 23, "spliced_pos": 21}
+{"id": "r0437", "call": "sw_0732_4927", "act_index": 70, "tag": "ad^c", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0040_2095", "spliced_start": 15, "spliced_pos": 16}
+{"id": "r0438", "call": "sw_0735_2025", "act_index": 7, "tag": "co^t", "kind": "commit", "inplace_pos": 4, "spliced_into": "sw_0593_2597", "spliced_start": 7, "spliced_pos": 19}
+{"id": "r0439", "call": "sw_0735_2025", "act_index": 10, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0006_4108", "spliced_start": 30, "spliced_pos": 18}
+{"id": "r0441", "call": "sw_0736_2071", "act_index": 120, "tag": "ad^t", "kind": "directive", "inplace_pos": 25, "spliced_into": "sw_0213_2285", "spliced_start": 12, "spliced_pos": 7}
+{"id": "r0444", "call": "sw_0738_2178", "act_index": 262, "tag": "ad(^q)", "kind": "directive", "inplace_pos": 27, "spliced_into": "sw_0178_3038", "spliced_start": 45, "spliced_pos": 6}
+{"id": "r0445", "call": "sw_0741_2221", "act_index": 83, "tag": "ad*", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0231_3150", "spliced_start": 55, "spliced_pos": 6}
+{"id": "r0447", "call": "sw_0746_2448", "act_index": 50, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0948_3151", "spliced_start": 93, "spliced_pos": 19}
+{"id": "r0448", "call": "sw_0746_2448", "act_index": 146, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0577_4659", "spliced_start": 18, "spliced_pos": 13}
+{"id": "r0449", "call": "sw_0748_2663", "act_index": 52, "tag": "ad^t", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0574_4023", "spliced_start": 8, "spliced_pos": 21}
+{"id": "r0450", "call": "sw_0748_2663", "act_index": 57, "tag": "ad^t", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0615_3131", "spliced_start": 44, "spliced_pos": 5}
+{"id": "r0451", "call": "sw_0748_2663", "act_index": 58, "tag": "ad^t", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0899_2325", "spliced_start": 83, "spliced_pos": 24}
+{"id": "r0452", "call": "sw_0749_2726", "act_index": 169, "tag": "ad", "kind": "directive", "inplace_pos": 20, "spliced_into": "sw_0409_2866", "spliced_start": 48, "spliced_pos": 12}
+{"id": "r0453", "call": "sw_0750_2736", "act_index": 167, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0905_2780", "spliced_start": 44, "spliced_pos": 16}
+{"id": "r0455", "call": "sw_0757_3071", "act_index": 4, "tag": "co^t", "kind": "commit", "inplace_pos": 3, "spliced_into": "sw_0867_2770", "spliced_start": 17, "spliced_pos": 15}
+{"id": "r0456", "call": "sw_0758_3087", "act_index": 144, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0118_3080", "spliced_start": 77, "spliced_pos": 15}
+{"id": "r0457", "call": "sw_0759_3191", "act_index": 34, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0790_3002", "spliced_start": 18, "spliced_pos": 15}
+{"id": "r0458", "call": "sw_0762_3371", "act_index": 70, "tag": "qy", "kind": "ask", "inplace_pos": 14, "spliced_into": "sw_0451_2062", "spliced_start": 36, "spliced_pos": 5}
+{"id": "r0459", "call": "sw_0766_3556", "act_index": 145, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_1044_2457", "spliced_start": 63, "spliced_pos": 18}
+{"id": "r0460", "call": "sw_0769_3659", "act_index": 127, "tag": "co", "kind": "commit", "inplace_pos": 18, "spliced_into": "sw_0345_3021", "spliced_start": 63, "spliced_pos": 10}
+{"id": "r0461", "call": "sw_0770_3681", "act_index": 64, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0148_2604", "spliced_start": 24, "spliced_pos": 17}
+{"id": "r0463", "call": "sw_0775_2006", "act_index": 30, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0610_3056", "spliced_start": 41, "spliced_pos": 13}
+{"id": "r0464", "call": "sw_0776_2086", "act_index": 3, "tag": "ad", "kind": "directive", "inplace_pos": 3, "spliced_into": "sw_0480_3040", "spliced_start": 3, "spliced_pos": 21}
+{"id": "r0465", "call": "sw_0776_2086", "act_index": 4, "tag": "ad", "kind": "directive", "inplace_pos": 3, "spliced_into": "sw_0998_2175", "spliced_start": 93, "spliced_pos": 5}
+{"id": "r0466", "call": "sw_0776_2086", "act_index": 5, "tag": "ad", "kind": "directive", "inplace_pos": 3, "spliced_into": "sw_0622_3473", "spliced_start": 69, "spliced_pos": 13}
+{"id": "r0467", "call": "sw_0776_2086", "act_index": 7, "tag": "ad", "kind": "directive", "inplace_pos": 4, "spliced_into": "sw_0984_3414", "spliced_start": 25, "spliced_pos": 20}
+{"id": "r0468", "call": "sw_0776_2086", "act_index": 8, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0569_3638", "spliced_start": 35, "spliced_pos": 5}
+{"id": "r0469", "call": "sw_0776_2086", "act_index": 9, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0074_4127", "spliced_start": 41, "spliced_pos": 5}
+{"id": "r0470", "call": "sw_0776_2086", "act_index": 10, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0382_4785", "spliced_start": 87, "spliced_pos": 14}
+{"id": "r0471", "call": "sw_0776_2086", "act_index": 11, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0396_2490", "spliced_start": 174, "spliced_pos": 12}
+{"id": "r0472", "call": "sw_0776_2086", "act_index": 12, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0407_2826", "spliced_start": 101, "spliced_pos": 6}
+{"id": "r0473", "call": "sw_0776_2086", "act_index": 14, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0113_2093", "spliced_start": 33, "spliced_pos": 21}
+{"id": "r0474", "call": "sw_0776_2086", "act_index": 15, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0264_2252", "spliced_start": 14, "spliced_pos": 20}
+{"id": "r0475", "call": "sw_0776_2086", "act_index": 16, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0686_4829", "spliced_start": 10, "spliced_pos": 9}
+{"id": "r0476", "call": "sw_0776_2086", "act_index": 17, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0968_2413", "spliced_start": 0, "spliced_pos": 11}
+{"id": "r0477", "call": "sw_0776_2086", "act_index": 115, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0338_2641", "spliced_start": 11, "spliced_pos": 16}
+{"id": "r0478", "call": "sw_0776_2086", "act_index": 118, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0266_2299", "spliced_start": 98, "spliced_pos": 13}
+{"id": "r0480", "call": "sw_0784_2630", "act_index": 146, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0412_3015", "spliced_start": 44, "spliced_pos": 24}
+{"id": "r0482", "call": "sw_0786_2875", "act_index": 226, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0900_2339", "spliced_start": 106, "spliced_pos": 17}
+{"id": "r0484", "call": "sw_0787_2926", "act_index": 265, "tag": "co", "kind": "commit", "inplace_pos": 15, "spliced_into": "sw_0185_3174", "spliced_start": 71, "spliced_pos": 16}
+{"id": "r0485", "call": "sw_0788_2984", "act_index": 22, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0222_2676", "spliced_start": 160, "spliced_pos": 24}
+{"id": "r0486", "call": "sw_0788_2984", "act_index": 143, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0860_2614", "spliced_start": 38, "spliced_pos": 10}
+{"id": "r0487", "call": "sw_0790_3002", "act_index": 152, "tag": "ad^t", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0490_3246", "spliced_start": 43, "spliced_pos": 20}
+{"id": "r0488", "call": "sw_0791_3050", "act_index": 142, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0959_3735", "spliced_start": 17, "spliced_pos": 23}
+{"id": "r0489", "call": "sw_0793_3095", "act_index": 19, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0408_2860", "spliced_start": 105, "spliced_pos": 15}
+{"id": "r0490", "call": "sw_0797_3563", "act_index": 14, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_1082_2854", "spliced_start": 34, "spliced_pos": 9}
+{"id": "r0491", "call": "sw_0800_3841", "act_index": 7, "tag": "cc", "kind": "commit", "inplace_pos": 3, "spliced_into": "sw_0868_2788", "spliced_start": 201, "spliced_pos": 21}
+{"id": "r0494", "call": "sw_0814_2308", "act_index": 160, "tag": "oo(^q)", "kind": "commit", "inplace_pos": 24, "spliced_into": "sw_0333_2584", "spliced_start": 210, "spliced_pos": 7}
+{"id": "r0496", "call": "sw_0818_2528", "act_index": 167, "tag": "cc", "kind": "commit", "inplace_pos": 8, "spliced_into": "sw_1045_2495", "spliced_start": 5, "spliced_pos": 6}
+{"id": "r0497", "call": "sw_0821_2711", "act_index": 31, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0802_3971", "spliced_start": 66, "spliced_pos": 24}
+{"id": "r0498", "call": "sw_0821_2711", "act_index": 211, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0112_2061", "spliced_start": 40, "spliced_pos": 20}
+{"id": "r0499", "call": "sw_0821_2711", "act_index": 217, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0887_3803", "spliced_start": 9, "spliced_pos": 6}
+{"id": "r0500", "call": "sw_0821_2711", "act_index": 218, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0974_2942", "spliced_start": 10, "spliced_pos": 9}
+{"id": "r0501", "call": "sw_0821_2711", "act_index": 249, "tag": "ad", "kind": "directive", "inplace_pos": 27, "spliced_into": "sw_0249_3728", "spliced_start": 74, "spliced_pos": 17}
+{"id": "r0504", "call": "sw_0823_2827", "act_index": 111, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0557_3333", "spliced_start": 19, "spliced_pos": 17}
+{"id": "r0505", "call": "sw_0823_2827", "act_index": 155, "tag": "cc", "kind": "commit", "inplace_pos": 10, "spliced_into": "sw_0373_4013", "spliced_start": 51, "spliced_pos": 9}
+{"id": "r0506", "call": "sw_0823_2827", "act_index": 218, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0565_3523", "spliced_start": 58, "spliced_pos": 23}
+{"id": "r0507", "call": "sw_0824_2944", "act_index": 126, "tag": "co", "kind": "commit", "inplace_pos": 21, "spliced_into": "sw_0173_2548", "spliced_start": 35, "spliced_pos": 5}
+{"id": "r0510", "call": "sw_0826_2981", "act_index": 79, "tag": "qy", "kind": "ask", "inplace_pos": 19, "spliced_into": "sw_0799_3828", "spliced_start": 7, "spliced_pos": 20}
+{"id": "r0511", "call": "sw_0829_3228", "act_index": 131, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0535_2501", "spliced_start": 16, "spliced_pos": 13}
+{"id": "r0512", "call": "sw_0831_3253", "act_index": 112, "tag": "ad", "kind": "directive", "inplace_pos": 25, "spliced_into": "sw_0721_3777", "spliced_start": 49, "spliced_pos": 11}
+{"id": "r0513", "call": "sw_0833_3281", "act_index": 107, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0014_4619", "spliced_start": 10, "spliced_pos": 23}
+{"id": "r0514", "call": "sw_0835_3319", "act_index": 54, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0640_2309", "spliced_start": 12, "spliced_pos": 6}
+{"id": "r0515", "call": "sw_0837_3379", "act_index": 14, "tag": "cc", "kind": "commit", "inplace_pos": 8, "spliced_into": "sw_1070_3013", "spliced_start": 86, "spliced_pos": 15}
+{"id": "r0516", "call": "sw_0838_3405", "act_index": 32, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0593_2597", "spliced_start": 21, "spliced_pos": 19}
+{"id": "r0517", "call": "sw_0840_3426", "act_index": 15, "tag": "ad^t", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0027_4096", "spliced_start": 2, "spliced_pos": 5}
+{"id": "r0518", "call": "sw_0842_3657", "act_index": 8, "tag": "ad^t", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0677_3805", "spliced_start": 20, "spliced_pos": 21}
+{"id": "r0519", "call": "sw_0842_3657", "act_index": 14, "tag": "ad^t", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0276_2565", "spliced_start": 29, "spliced_pos": 23}
+{"id": "r0520", "call": "sw_0842_3657", "act_index": 15, "tag": "co^t", "kind": "commit", "inplace_pos": 7, "spliced_into": "sw_0357_3360", "spliced_start": 5, "spliced_pos": 12}
+{"id": "r0521", "call": "sw_0842_3657", "act_index": 16, "tag": "ad^t", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0318_4565", "spliced_start": 3, "spliced_pos": 9}
+{"id": "r0522", "call": "sw_0843_3738", "act_index": 9, "tag": "cc", "kind": "commit", "inplace_pos": 7, "spliced_into": "sw_0006_4108", "spliced_start": 31, "spliced_pos": 15}
+{"id": "r0523", "call": "sw_0843_3738", "act_index": 11, "tag": "cc^r", "kind": "commit", "inplace_pos": 9, "spliced_into": "sw_0374_4032", "spliced_start": 38, "spliced_pos": 22}
+{"id": "r0525", "call": "sw_0845_3754", "act_index": 37, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_1083_2959", "spliced_start": 49, "spliced_pos": 21}
+{"id": "r0526", "call": "sw_0845_3754", "act_index": 159, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0125_3306", "spliced_start": 56, "spliced_pos": 22}
+{"id": "r0527", "call": "sw_0845_3754", "act_index": 178, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0143_2290", "spliced_start": 96, "spliced_pos": 5}
+{"id": "r0528", "call": "sw_0849_4709", "act_index": 10, "tag": "cc", "kind": "commit", "inplace_pos": 7, "spliced_into": "sw_1081_2821", "spliced_start": 172, "spliced_pos": 24}
+{"id": "r0529", "call": "sw_0852_2090", "act_index": 172, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0352_3236", "spliced_start": 61, "spliced_pos": 8}
+{"id": "r0531", "call": "sw_0853_2125", "act_index": 63, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0872_3034", "spliced_start": 65, "spliced_pos": 8}
+{"id": "r0532", "call": "sw_0854_2168", "act_index": 44, "tag": "qy", "kind": "ask", "inplace_pos": 12, "spliced_into": "sw_0889_3815", "spliced_start": 0, "spliced_pos": 21}
+{"id": "r0533", "call": "sw_0855_2191", "act_index": 134, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0960_3751", "spliced_start": 58, "spliced_pos": 18}
+{"id": "r0534", "call": "sw_0855_2191", "act_index": 135, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0629_4056", "spliced_start": 37, "spliced_pos": 6}
+{"id": "r0535", "call": "sw_0857_2483", "act_index": 17, "tag": "ad^t", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0927_2228", "spliced_start": 50, "spliced_pos": 6}
+{"id": "r0536", "call": "sw_0857_2483", "act_index": 181, "tag": "ad", "kind": "directive", "inplace_pos": 21, "spliced_into": "sw_0968_2413", "spliced_start": 9, "spliced_pos": 18}
+{"id": "r0538", "call": "sw_0858_2506", "act_index": 160, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0340_2678", "spliced_start": 62, "spliced_pos": 5}
+{"id": "r0539", "call": "sw_0860_2614", "act_index": 38, "tag": "ad^t", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0673_3504", "spliced_start": 19, "spliced_pos": 23}
+{"id": "r0540", "call": "sw_0860_2614", "act_index": 240, "tag": "ad", "kind": "directive", "inplace_pos": 26, "spliced_into": "sw_0397_2492", "spliced_start": 4, "spliced_pos": 19}
+{"id": "r0541", "call": "sw_0860_2614", "act_index": 241, "tag": "ad", "kind": "directive", "inplace_pos": 26, "spliced_into": "sw_0524_2124", "spliced_start": 28, "spliced_pos": 21}
+{"id": "r0542", "call": "sw_0861_2684", "act_index": 215, "tag": "cc", "kind": "commit", "inplace_pos": 24, "spliced_into": "sw_0213_2285", "spliced_start": 58, "spliced_pos": 19}
+{"id": "r0543", "call": "sw_0862_2707", "act_index": 120, "tag": "ad", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_0920_3747", "spliced_start": 18, "spliced_pos": 22}
+{"id": "r0544", "call": "sw_0862_2707", "act_index": 122, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0428_3550", "spliced_start": 27, "spliced_pos": 22}
+{"id": "r0545", "call": "sw_0862_2707", "act_index": 221, "tag": "cc", "kind": "commit", "inplace_pos": 14, "spliced_into": "sw_0273_2485", "spliced_start": 9, "spliced_pos": 14}
+{"id": "r0546", "call": "sw_0862_2707", "act_index": 236, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0602_2938", "spliced_start": 46, "spliced_pos": 16}
+{"id": "r0547", "call": "sw_0862_2707", "act_index": 238, "tag": "cc^r", "kind": "commit", "inplace_pos": 21, "spliced_into": "sw_0944_3064", "spliced_start": 88, "spliced_pos": 10}
+{"id": "r0548", "call": "sw_0862_2707", "act_index": 240, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0718_3543", "spliced_start": 1, "spliced_pos": 18}
+{"id": "r0549", "call": "sw_0865_2741", "act_index": 11, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_1102_2820", "spliced_start": 84, "spliced_pos": 11}
+{"id": "r0550", "call": "sw_0866_2768", "act_index": 303, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0856_2342", "spliced_start": 30, "spliced_pos": 15}
+{"id": "r0551", "call": "sw_0868_2788", "act_index": 133, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0874_3059", "spliced_start": 45, "spliced_pos": 20}
+{"id": "r0553", "call": "sw_0871_2930", "act_index": 123, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0350_3103", "spliced_start": 6, "spliced_pos": 7}
+{"id": "r0554", "call": "sw_0871_2930", "act_index": 176, "tag": "ad", "kind": "directive", "inplace_pos": 25, "spliced_into": "sw_0309_3663", "spliced_start": 64, "spliced_pos": 15}
+{"id": "r0555", "call": "sw_0877_3166", "act_index": 132, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_1110_2874", "spliced_start": 49, "spliced_pos": 14}
+{"id": "r0556", "call": "sw_0877_3166", "act_index": 136, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0091_3135", "spliced_start": 25, "spliced_pos": 12}
+{"id": "r0557", "call": "sw_0885_3745", "act_index": 8, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0109_4342", "spliced_start": 14, "spliced_pos": 16}
+{"id": "r0558", "call": "sw_0888_3813", "act_index": 102, "tag": "ad", "kind": "directive", "inplace_pos": 27, "spliced_into": "sw_1314_3528", "spliced_start": 26, "spliced_pos": 10}
+{"id": "r0559", "call": "sw_0890_3903", "act_index": 4, "tag": "co^c", "kind": "commit", "inplace_pos": 3, "spliced_into": "sw_0098_3830", "spliced_start": 75, "spliced_pos": 9}
+{"id": "r0561", "call": "sw_0900_2339", "act_index": 239, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0880_3439", "spliced_start": 28, "spliced_pos": 24}
+{"id": "r0562", "call": "sw_0900_2339", "act_index": 241, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0531_2365", "spliced_start": 68, "spliced_pos": 10}
+{"id": "r0564", "call": "sw_0901_2418", "act_index": 19, "tag": "ad^t", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_1028_3496", "spliced_start": 9, "spliced_pos": 12}
+{"id": "r0565", "call": "sw_0901_2418", "act_index": 115, "tag": "ad", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_0854_2168", "spliced_start": 30, "spliced_pos": 9}
+{"id": "r0566", "call": "sw_0901_2418", "act_index": 119, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0790_3002", "spliced_start": 3, "spliced_pos": 20}
+{"id": "r0567", "call": "sw_0901_2418", "act_index": 134, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0568_3586", "spliced_start": 18, "spliced_pos": 24}
+{"id": "r0568", "call": "sw_0901_2418", "act_index": 157, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0138_4890", "spliced_start": 34, "spliced_pos": 6}
+{"id": "r0569", "call": "sw_0901_2418", "act_index": 158, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0382_4785", "spliced_start": 83, "spliced_pos": 10}
+{"id": "r0570", "call": "sw_0901_2418", "act_index": 161, "tag": "cc", "kind": "commit", "inplace_pos": 13, "spliced_into": "sw_0370_3636", "spliced_start": 12, "spliced_pos": 7}
+{"id": "r0571", "call": "sw_0901_2418", "act_index": 174, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_1309_2838", "spliced_start": 40, "spliced_pos": 24}
+{"id": "r0572", "call": "sw_0901_2418", "act_index": 213, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0890_3903", "spliced_start": 23, "spliced_pos": 6}
+{"id": "r0573", "call": "sw_0901_2418", "act_index": 263, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0920_3747", "spliced_start": 32, "spliced_pos": 24}
+{"id": "r0574", "call": "sw_0901_2418", "act_index": 273, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0631_4149", "spliced_start": 32, "spliced_pos": 7}
+{"id": "r0575", "call": "sw_0904_2767", "act_index": 17, "tag": "ad", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_0905_2780", "spliced_start": 68, "spliced_pos": 14}
+{"id": "r0576", "call": "sw_0904_2767", "act_index": 27, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0203_4603", "spliced_start": 11, "spliced_pos": 5}
+{"id": "r0577", "call": "sw_0904_2767", "act_index": 204, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_1037_3054", "spliced_start": 4, "spliced_pos": 5}
+{"id": "r0578", "call": "sw_0905_2780", "act_index": 109, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0722_3791", "spliced_start": 81, "spliced_pos": 12}
+{"id": "r0579", "call": "sw_0907_2830", "act_index": 11, "tag": "co^t", "kind": "commit", "inplace_pos": 6, "spliced_into": "sw_0079_4318", "spliced_start": 48, "spliced_pos": 16}
+{"id": "r0580", "call": "sw_0907_2830", "act_index": 163, "tag": "ad^t", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0247_3660", "spliced_start": 18, "spliced_pos": 24}
+{"id": "r0581", "call": "sw_0907_2830", "act_index": 243, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_1025_3250", "spliced_start": 16, "spliced_pos": 23}
+{"id": "r0582", "call": "sw_0907_2830", "act_index": 244, "tag": "ad", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_0644_2476", "spliced_start": 121, "spliced_pos": 6}
+{"id": "r0583", "call": "sw_0907_2830", "act_index": 256, "tag": "ad^t", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0073_4049", "spliced_start": 16, "spliced_pos": 10}
+{"id": "r0584", "call": "sw_0907_2830", "act_index": 285, "tag": "ad", "kind": "directive", "inplace_pos": 21, "spliced_into": "sw_0592_2533", "spliced_start": 84, "spliced_pos": 20}
+{"id": "r0585", "call": "sw_0907_2830", "act_index": 433, "tag": "ad", "kind": "directive", "inplace_pos": 26, "spliced_into": "sw_1301_2347", "spliced_start": 83, "spliced_pos": 15}
+{"id": "r0586", "call": "sw_0909_2879", "act_index": 10, "tag": "cc", "kind": "commit", "inplace_pos": 5, "spliced_into": "sw_1323_4167", "spliced_start": 9, "spliced_pos": 16}
+{"id": "r0587", "call": "sw_0909_2879", "act_index": 51, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0358_3362", "spliced_start": 21, "spliced_pos": 14}
+{"id": "r0588", "call": "sw_0910_2955", "act_index": 113, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0134_3887", "spliced_start": 27, "spliced_pos": 11}
+{"id": "r0591", "call": "sw_0921_3810", "act_index": 94, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0255_4548", "spliced_start": 35, "spliced_pos": 9}
+{"id": "r0595", "call": "sw_0929_2344", "act_index": 17, "tag": "ad^t", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_0254_4138", "spliced_start": 4, "spliced_pos": 14}
+{"id": "r0597", "call": "sw_0932_2610", "act_index": 107, "tag": "qy", "kind": "ask", "inplace_pos": 21, "spliced_into": "sw_0837_3379", "spliced_start": 2, "spliced_pos": 13}
+{"id": "r0598", "call": "sw_0933_2662", "act_index": 130, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0822_2776", "spliced_start": 4, "spliced_pos": 8}
+{"id": "r0599", "call": "sw_0936_2917", "act_index": 177, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0821_2711", "spliced_start": 52, "spliced_pos": 13}
+{"id": "r0601", "call": "sw_0937_2950", "act_index": 31, "tag": "qy", "kind": "ask", "inplace_pos": 15, "spliced_into": "sw_0173_2548", "spliced_start": 85, "spliced_pos": 14}
+{"id": "r0602", "call": "sw_0941_3014", "act_index": 157, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0475_2761", "spliced_start": 23, "spliced_pos": 23}
+{"id": "r0603", "call": "sw_0941_3014", "act_index": 203, "tag": "ad", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_0729_4840", "spliced_start": 34, "spliced_pos": 12}
+{"id": "r0604", "call": "sw_0941_3014", "act_index": 210, "tag": "ad", "kind": "directive", "inplace_pos": 20, "spliced_into": "sw_0356_3303", "spliced_start": 14, "spliced_pos": 7}
+{"id": "r0605", "call": "sw_0942_3025", "act_index": 131, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0548_3074", "spliced_start": 141, "spliced_pos": 19}
+{"id": "r0606", "call": "sw_0942_3025", "act_index": 132, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0527_2177", "spliced_start": 22, "spliced_pos": 15}
+{"id": "r0610", "call": "sw_0952_3454", "act_index": 8, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0457_2304", "spliced_start": 0, "spliced_pos": 10}
+{"id": "r0611", "call": "sw_0952_3454", "act_index": 37, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0229_3130", "spliced_start": 59, "spliced_pos": 12}
+{"id": "r0612", "call": "sw_0954_3460", "act_index": 76, "tag": "ad", "kind": "directive", "inplace_pos": 21, "spliced_into": "sw_0715_3092", "spliced_start": 56, "spliced_pos": 6}
+{"id": "r0613", "call": "sw_0955_3489", "act_index": 54, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0830_3233", "spliced_start": 2, "spliced_pos": 5}
+{"id": "r0614", "call": "sw_0959_3735", "act_index": 48, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0078_4181", "spliced_start": 50, "spliced_pos": 8}
+{"id": "r0615", "call": "sw_0960_3751", "act_index": 50, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0654_2847", "spliced_start": 119, "spliced_pos": 7}
+{"id": "r0616", "call": "sw_0960_3751", "act_index": 176, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0918_3716", "spliced_start": 0, "spliced_pos": 10}
+{"id": "r0617", "call": "sw_0964_2237", "act_index": 190, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_1081_2821", "spliced_start": 46, "spliced_pos": 9}
+{"id": "r0618", "call": "sw_0964_2237", "act_index": 191, "tag": "ad", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_0607_3012", "spliced_start": 30, "spliced_pos": 20}
+{"id": "r0619", "call": "sw_0967_2340", "act_index": 35, "tag": "ad^t", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0611_3072", "spliced_start": 98, "spliced_pos": 24}
+{"id": "r0620", "call": "sw_0974_2942", "act_index": 145, "tag": "co", "kind": "commit", "inplace_pos": 9, "spliced_into": "sw_0274_2527", "spliced_start": 13, "spliced_pos": 20}
+{"id": "r0621", "call": "sw_0976_3046", "act_index": 25, "tag": "ad^t", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0697_2514", "spliced_start": 27, "spliced_pos": 20}
+{"id": "r0622", "call": "sw_0977_3104", "act_index": 18, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0002_4330", "spliced_start": 1, "spliced_pos": 16}
+{"id": "r0623", "call": "sw_0978_3167", "act_index": 10, "tag": "ad", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_0437_4092", "spliced_start": 57, "spliced_pos": 18}
+{"id": "r0624", "call": "sw_0978_3167", "act_index": 15, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0116_2406", "spliced_start": 104, "spliced_pos": 10}
+{"id": "r0625", "call": "sw_0978_3167", "act_index": 35, "tag": "ad", "kind": "directive", "inplace_pos": 21, "spliced_into": "sw_0359_3393", "spliced_start": 31, "spliced_pos": 20}
+{"id": "r0626", "call": "sw_0978_3167", "act_index": 40, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0213_2285", "spliced_start": 49, "spliced_pos": 24}
+{"id": "r0627", "call": "sw_0980_3185", "act_index": 168, "tag": "ad(^q)", "kind": "directive", "inplace_pos": 26, "spliced_into": "sw_0257_4876", "spliced_start": 23, "spliced_pos": 24}
+{"id": "r0628", "call": "sw_0984_3414", "act_index": 97, "tag": "ad(^q)", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_0410_2970", "spliced_start": 154, "spliced_pos": 16}
+{"id": "r0629", "call": "sw_0984_3414", "act_index": 100, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0231_3150", "spliced_start": 28, "spliced_pos": 19}
+{"id": "r0630", "call": "sw_0986_3455", "act_index": 190, "tag": "ad", "kind": "directive", "inplace_pos": 26, "spliced_into": "sw_0282_2672", "spliced_start": 60, "spliced_pos": 24}
+{"id": "r0631", "call": "sw_0988_3570", "act_index": 48, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0177_2759", "spliced_start": 62, "spliced_pos": 14}
+{"id": "r0632", "call": "sw_0990_3703", "act_index": 133, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0995_4735", "spliced_start": 7, "spliced_pos": 16}
+{"id": "r0633", "call": "sw_0990_3703", "act_index": 151, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0810_2232", "spliced_start": 17, "spliced_pos": 9}
+{"id": "r0634", "call": "sw_0999_2227", "act_index": 266, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0511_3746", "spliced_start": 36, "spliced_pos": 17}
+{"id": "r0635", "call": "sw_1000_2292", "act_index": 103, "tag": "qy", "kind": "ask", "inplace_pos": 10, "spliced_into": "sw_0081_4380", "spliced_start": 27, "spliced_pos": 21}
+{"id": "r0638", "call": "sw_1014_2101", "act_index": 161, "tag": "ad^t", "kind": "directive", "inplace_pos": 25, "spliced_into": "sw_0601_2893", "spliced_start": 16, "spliced_pos": 23}
+{"id": "r0639", "call": "sw_1015_2355", "act_index": 307, "tag": "ad", "kind": "directive", "inplace_pos": 25, "spliced_into": "sw_0671_3421", "spliced_start": 32, "spliced_pos": 17}
+{"id": "r0641", "call": "sw_1016_2471", "act_index": 98, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0441_4608", "spliced_start": 37, "spliced_pos": 14}
+{"id": "r0642", "call": "sw_1019_2898", "act_index": 13, "tag": "ad", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0572_3768", "spliced_start": 52, "spliced_pos": 16}
+{"id": "r0643", "call": "sw_1019_2898", "act_index": 26, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0118_3080", "spliced_start": 89, "spliced_pos": 17}
+{"id": "r0644", "call": "sw_1019_2898", "act_index": 27, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_0260_2073", "spliced_start": 66, "spliced_pos": 19}
+{"id": "r0645", "call": "sw_1019_2898", "act_index": 79, "tag": "ad", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_0827_3019", "spliced_start": 46, "spliced_pos": 5}
+{"id": "r0646", "call": "sw_1021_2954", "act_index": 221, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0607_3012", "spliced_start": 55, "spliced_pos": 23}
+{"id": "r0647", "call": "sw_1021_2954", "act_index": 326, "tag": "cc", "kind": "commit", "inplace_pos": 20, "spliced_into": "sw_1001_2389", "spliced_start": 17, "spliced_pos": 14}
+{"id": "r0650", "call": "sw_1028_3496", "act_index": 4, "tag": "qy^t", "kind": "ask", "inplace_pos": 3, "spliced_into": "sw_0860_2614", "spliced_start": 31, "spliced_pos": 5}
+{"id": "r0651", "call": "sw_1032_2557", "act_index": 83, "tag": "ad", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_1035_2957", "spliced_start": 12, "spliced_pos": 7}
+{"id": "r0652", "call": "sw_1033_2723", "act_index": 28, "tag": "ad", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_0004_4327", "spliced_start": 2, "spliced_pos": 18}
+{"id": "r0653", "call": "sw_1033_2723", "act_index": 269, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_0326_2249", "spliced_start": 5, "spliced_pos": 15}
+{"id": "r0654", "call": "sw_1033_2723", "act_index": 285, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_1083_2959", "spliced_start": 99, "spliced_pos": 16}
+{"id": "r0655", "call": "sw_1033_2723", "act_index": 286, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0241_3403", "spliced_start": 19, "spliced_pos": 24}
+{"id": "r0656", "call": "sw_1038_3061", "act_index": 223, "tag": "ad", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_0998_2175", "spliced_start": 88, "spliced_pos": 22}
+{"id": "r0657", "call": "sw_1039_3077", "act_index": 10, "tag": "co^t", "kind": "commit", "inplace_pos": 4, "spliced_into": "sw_0968_2413", "spliced_start": 3, "spliced_pos": 24}
+{"id": "r0658", "call": "sw_1039_3077", "act_index": 12, "tag": "co^t", "kind": "commit", "inplace_pos": 6, "spliced_into": "sw_0536_2502", "spliced_start": 110, "spliced_pos": 10}
+{"id": "r0659", "call": "sw_1040_3244", "act_index": 11, "tag": "ad", "kind": "directive", "inplace_pos": 8, "spliced_into": "sw_0495_3334", "spliced_start": 22, "spliced_pos": 8}
+{"id": "r0660", "call": "sw_1042_4078", "act_index": 106, "tag": "qy", "kind": "ask", "inplace_pos": 20, "spliced_into": "sw_1031_2386", "spliced_start": 76, "spliced_pos": 12}
+{"id": "r0661", "call": "sw_1043_2293", "act_index": 3, "tag": "ad", "kind": "directive", "inplace_pos": 3, "spliced_into": "sw_0429_3607", "spliced_start": 2, "spliced_pos": 9}
+{"id": "r0662", "call": "sw_1044_2457", "act_index": 172, "tag": "ad", "kind": "directive", "inplace_pos": 20, "spliced_into": "sw_0792_3065", "spliced_start": 77, "spliced_pos": 19}
+{"id": "r0663", "call": "sw_1045_2495", "act_index": 42, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0946_3107", "spliced_start": 18, "spliced_pos": 21}
+{"id": "r0664", "call": "sw_1046_2621", "act_index": 266, "tag": "qy", "kind": "ask", "inplace_pos": 6, "spliced_into": "sw_0088_3073", "spliced_start": 71, "spliced_pos": 24}
+{"id": "r0665", "call": "sw_1047_2754", "act_index": 125, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0155_3219", "spliced_start": 11, "spliced_pos": 22}
+{"id": "r0666", "call": "sw_1059_3764", "act_index": 91, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0380_4572", "spliced_start": 12, "spliced_pos": 24}
+{"id": "r0667", "call": "sw_1060_3852", "act_index": 4, "tag": "ad^t", "kind": "directive", "inplace_pos": 3, "spliced_into": "sw_1039_3077", "spliced_start": 16, "spliced_pos": 16}
+{"id": "r0669", "call": "sw_1062_2190", "act_index": 82, "tag": "ad^t", "kind": "directive", "inplace_pos": 20, "spliced_into": "sw_0831_3253", "spliced_start": 41, "spliced_pos": 20}
+{"id": "r0670", "call": "sw_1064_2478", "act_index": 27, "tag": "ad^t", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0628_3773", "spliced_start": 48, "spliced_pos": 12}
+{"id": "r0671", "call": "sw_1066_2679", "act_index": 26, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0870_2888", "spliced_start": 86, "spliced_pos": 22}
+{"id": "r0672", "call": "sw_1066_2679", "act_index": 305, "tag": "ad", "kind": "directive", "inplace_pos": 20, "spliced_into": "sw_0237_3279", "spliced_start": 11, "spliced_pos": 5}
+{"id": "r0673", "call": "sw_1068_2834", "act_index": 23, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0459_2330", "spliced_start": 7, "spliced_pos": 14}
+{"id": "r0674", "call": "sw_1074_3647", "act_index": 38, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0697_2514", "spliced_start": 36, "spliced_pos": 11}
+{"id": "r0675", "call": "sw_1074_3647", "act_index": 46, "tag": "ad^t", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0944_3064", "spliced_start": 6, "spliced_pos": 7}
+{"id": "r0676", "call": "sw_1074_3647", "act_index": 106, "tag": "qy", "kind": "ask", "inplace_pos": 19, "spliced_into": "sw_0814_2308", "spliced_start": 12, "spliced_pos": 11}
+{"id": "r0677", "call": "sw_1077_2205", "act_index": 115, "tag": "qy", "kind": "ask", "inplace_pos": 13, "spliced_into": "sw_0004_4327", "spliced_start": 2, "spliced_pos": 16}
+{"id": "r0678", "call": "sw_1077_2205", "act_index": 182, "tag": "ad", "kind": "directive", "inplace_pos": 26, "spliced_into": "sw_0700_2586", "spliced_start": 101, "spliced_pos": 10}
+{"id": "r0679", "call": "sw_1078_2437", "act_index": 146, "tag": "ad", "kind": "directive", "inplace_pos": 5, "spliced_into": "sw_0598_2858", "spliced_start": 70, "spliced_pos": 14}
+{"id": "r0680", "call": "sw_1078_2437", "act_index": 226, "tag": "ad^t", "kind": "directive", "inplace_pos": 26, "spliced_into": "sw_0992_3952", "spliced_start": 32, "spliced_pos": 16}
+{"id": "r0681", "call": "sw_1079_2511", "act_index": 80, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0717_3384", "spliced_start": 76, "spliced_pos": 20}
+{"id": "r0682", "call": "sw_1081_2821", "act_index": 22, "tag": "cc", "kind": "commit", "inplace_pos": 13, "spliced_into": "sw_0742_2235", "spliced_start": 54, "spliced_pos": 18}
+{"id": "r0683", "call": "sw_1085_3001", "act_index": 13, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0535_2501", "spliced_start": 33, "spliced_pos": 22}
+{"id": "r0684", "call": "sw_1085_3001", "act_index": 53, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_1322_4157", "spliced_start": 4, "spliced_pos": 12}
+{"id": "r0686", "call": "sw_1086_3057", "act_index": 46, "tag": "ad", "kind": "directive", "inplace_pos": 10, "spliced_into": "sw_0113_2093", "spliced_start": 14, "spliced_pos": 24}
+{"id": "r0687", "call": "sw_1087_3214", "act_index": 164, "tag": "cc", "kind": "commit", "inplace_pos": 19, "spliced_into": "sw_0046_4316", "spliced_start": 2, "spliced_pos": 15}
+{"id": "r0689", "call": "sw_1091_2373", "act_index": 111, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0344_3020", "spliced_start": 125, "spliced_pos": 10}
+{"id": "r0690", "call": "sw_1091_2373", "act_index": 166, "tag": "cc", "kind": "commit", "inplace_pos": 10, "spliced_into": "sw_0443_4679", "spliced_start": 10, "spliced_pos": 15}
+{"id": "r0693", "call": "sw_1094_3255", "act_index": 46, "tag": "ad^c", "kind": "directive", "inplace_pos": 7, "spliced_into": "sw_0179_3120", "spliced_start": 26, "spliced_pos": 24}
+{"id": "r0694", "call": "sw_1094_3255", "act_index": 48, "tag": "ad^t", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0022_4320", "spliced_start": 31, "spliced_pos": 14}
+{"id": "r0697", "call": "sw_1108_3533", "act_index": 129, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0206_4859", "spliced_start": 23, "spliced_pos": 14}
+{"id": "r0698", "call": "sw_1112_3004", "act_index": 8, "tag": "ad^t", "kind": "directive", "inplace_pos": 4, "spliced_into": "sw_1081_2821", "spliced_start": 82, "spliced_pos": 13}
+{"id": "r0699", "call": "sw_1112_3004", "act_index": 10, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0248_3697", "spliced_start": 10, "spliced_pos": 24}
+{"id": "r0700", "call": "sw_1112_3004", "act_index": 15, "tag": "ad", "kind": "directive", "inplace_pos": 9, "spliced_into": "sw_0136_4099", "spliced_start": 6, "spliced_pos": 16}
+{"id": "r0702", "call": "sw_1200_2121", "act_index": 184, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0749_2726", "spliced_start": 68, "spliced_pos": 9}
+{"id": "r0703", "call": "sw_1201_2131", "act_index": 299, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0684_4723", "spliced_start": 2, "spliced_pos": 5}
+{"id": "r0704", "call": "sw_1203_2229", "act_index": 106, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0392_2405", "spliced_start": 42, "spliced_pos": 19}
+{"id": "r0705", "call": "sw_1203_2229", "act_index": 107, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_1040_3244", "spliced_start": 26, "spliced_pos": 22}
+{"id": "r0706", "call": "sw_1205_2441", "act_index": 185, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0744_2376", "spliced_start": 153, "spliced_pos": 12}
+{"id": "r0707", "call": "sw_1205_2441", "act_index": 190, "tag": "ad", "kind": "directive", "inplace_pos": 15, "spliced_into": "sw_0294_3088", "spliced_start": 63, "spliced_pos": 7}
+{"id": "r0708", "call": "sw_1205_2441", "act_index": 247, "tag": "ad", "kind": "directive", "inplace_pos": 12, "spliced_into": "sw_1086_3057", "spliced_start": 124, "spliced_pos": 18}
+{"id": "r0709", "call": "sw_1206_2461", "act_index": 120, "tag": "ad", "kind": "directive", "inplace_pos": 11, "spliced_into": "sw_0867_2770", "spliced_start": 3, "spliced_pos": 11}
+{"id": "r0710", "call": "sw_1207_2503", "act_index": 75, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_1016_2471", "spliced_start": 8, "spliced_pos": 18}
+{"id": "r0711", "call": "sw_1208_2724", "act_index": 131, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0830_3233", "spliced_start": 15, "spliced_pos": 12}
+{"id": "r0712", "call": "sw_1209_2836", "act_index": 97, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0175_2729", "spliced_start": 101, "spliced_pos": 20}
+{"id": "r0713", "call": "sw_1210_3756", "act_index": 65, "tag": "ad", "kind": "directive", "inplace_pos": 16, "spliced_into": "sw_0076_4153", "spliced_start": 5, "spliced_pos": 14}
+{"id": "r0714", "call": "sw_1300_2335", "act_index": 92, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0605_2989", "spliced_start": 4, "spliced_pos": 20}
+{"id": "r0715", "call": "sw_1300_2335", "act_index": 104, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0443_4679", "spliced_start": 9, "spliced_pos": 12}
+{"id": "r0716", "call": "sw_1300_2335", "act_index": 105, "tag": "ad^r", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0817_2379", "spliced_start": 61, "spliced_pos": 18}
+{"id": "r0717", "call": "sw_1300_2335", "act_index": 107, "tag": "ad", "kind": "directive", "inplace_pos": 13, "spliced_into": "sw_1021_2954", "spliced_start": 60, "spliced_pos": 6}
+{"id": "r0718", "call": "sw_1300_2335", "act_index": 108, "tag": "ad", "kind": "directive", "inplace_pos": 24, "spliced_into": "sw_0484_3085", "spliced_start": 93, "spliced_pos": 6}
+{"id": "r0719", "call": "sw_1300_2335", "act_index": 111, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0439_4314", "spliced_start": 52, "spliced_pos": 6}
+{"id": "r0720", "call": "sw_1300_2335", "act_index": 115, "tag": "ad", "kind": "directive", "inplace_pos": 20, "spliced_into": "sw_0184_3171", "spliced_start": 55, "spliced_pos": 15}
+{"id": "r0721", "call": "sw_1300_2335", "act_index": 117, "tag": "ad", "kind": "directive", "inplace_pos": 18, "spliced_into": "sw_0879_3433", "spliced_start": 25, "spliced_pos": 14}
+{"id": "r0722", "call": "sw_1300_2335", "act_index": 120, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_0974_2942", "spliced_start": 16, "spliced_pos": 21}
+{"id": "r0723", "call": "sw_1300_2335", "act_index": 125, "tag": "ad", "kind": "directive", "inplace_pos": 6, "spliced_into": "sw_0210_2113", "spliced_start": 70, "spliced_pos": 13}
+{"id": "r0724", "call": "sw_1300_2335", "act_index": 280, "tag": "ad", "kind": "directive", "inplace_pos": 19, "spliced_into": "sw_0442_4649", "spliced_start": 14, "spliced_pos": 17}
+{"id": "r0725", "call": "sw_1303_2567", "act_index": 121, "tag": "ad", "kind": "directive", "inplace_pos": 17, "spliced_into": "sw_1010_3226", "spliced_start": 7, "spliced_pos": 12}
+{"id": "r0726", "call": "sw_1314_3528", "act_index": 101, "tag": "ad", "kind": "directive", "inplace_pos": 23, "spliced_into": "sw_0391_2259", "spliced_start": 14, "spliced_pos": 9}
+{"id": "r0728", "call": "sw_1315_3924", "act_index": 106, "tag": "ad", "kind": "directive", "inplace_pos": 22, "spliced_into": "sw_0268_2366", "spliced_start": 32, "spliced_pos": 13}
+{"id": "r0729", "call": "sw_1318_3968", "act_index": 38, "tag": "ad", "kind": "directive", "inplace_pos": 14, "spliced_into": "sw_0321_4902", "spliced_start": 14, "spliced_pos": 17}
+{"id": "c0000", "slurp_id": 16501, "call": "sw_0066_2593", "start": 11, "pos": 11}
+{"id": "c0001", "slurp_id": 15503, "call": "sw_0272_2479", "start": 208, "pos": 20}
+{"id": "c0002", "slurp_id": 16995, "call": "sw_0963_4716", "start": 38, "pos": 6}
+{"id": "c0003", "slurp_id": 17011, "call": "sw_0410_2970", "start": 162, "pos": 10}
+{"id": "c0004", "slurp_id": 15560, "call": "sw_0528_2260", "start": 62, "pos": 8}
+{"id": "c0005", "slurp_id": 16148, "call": "sw_0233_3182", "start": 11, "pos": 18}
+{"id": "c0006", "slurp_id": 16780, "call": "sw_0144_2399", "start": 8, "pos": 12}
+{"id": "c0007", "slurp_id": 12159, "call": "sw_0683_4675", "start": 55, "pos": 16}
+{"id": "c0008", "slurp_id": 15652, "call": "sw_0665_3355", "start": 18, "pos": 9}
+{"id": "c0009", "slurp_id": 15556, "call": "sw_1023_3231", "start": 54, "pos": 9}
+{"id": "c0010", "slurp_id": 12607, "call": "sw_0501_3450", "start": 26, "pos": 7}
+{"id": "c0011", "slurp_id": 12166, "call": "sw_0488_3215", "start": 19, "pos": 10}
+{"id": "c0012", "slurp_id": 12724, "call": "sw_0066_2593", "start": 11, "pos": 17}
+{"id": "c0013", "slurp_id": 16103, "call": "sw_0593_2597", "start": 41, "pos": 23}
+{"id": "c0014", "slurp_id": 5128, "call": "sw_0662_3196", "start": 9, "pos": 23}
+{"id": "c0015", "slurp_id": 12736, "call": "sw_0635_2065", "start": 27, "pos": 9}
+{"id": "c0016", "slurp_id": 16593, "call": "sw_0187_3242", "start": 63, "pos": 7}
+{"id": "c0017", "slurp_id": 12779, "call": "sw_0802_3971", "start": 40, "pos": 19}
+{"id": "c0018", "slurp_id": 12376, "call": "sw_0434_3809", "start": 0, "pos": 23}
+{"id": "c0019", "slurp_id": 12377, "call": "sw_0123_3186", "start": 3, "pos": 19}
+{"id": "c0020", "slurp_id": 15177, "call": "sw_0702_2652", "start": 105, "pos": 8}
+{"id": "c0021", "slurp_id": 12672, "call": "sw_0430_3633", "start": 24, "pos": 11}
+{"id": "c0022", "slurp_id": 8100, "call": "sw_1320_4002", "start": 15, "pos": 7}
+{"id": "c0023", "slurp_id": 15703, "call": "sw_0397_2492", "start": 38, "pos": 22}
+{"id": "c0024", "slurp_id": 12623, "call": "sw_0202_4376", "start": 0, "pos": 7}
+{"id": "c0025", "slurp_id": 16320, "call": "sw_1309_2838", "start": 30, "pos": 20}
+{"id": "c0026", "slurp_id": 13215, "call": "sw_0092_3154", "start": 38, "pos": 24}
+{"id": "c0027", "slurp_id": 12693, "call": "sw_0902_2552", "start": 72, "pos": 12}
+{"id": "c0028", "slurp_id": 15166, "call": "sw_0805_4758", "start": 43, "pos": 15}
+{"id": "c0029", "slurp_id": 12329, "call": "sw_1105_3175", "start": 3, "pos": 18}
+{"id": "c0030", "slurp_id": 17015, "call": "sw_0492_3259", "start": 50, "pos": 19}
+{"id": "c0031", "slurp_id": 15635, "call": "sw_0984_3414", "start": 32, "pos": 9}
+{"id": "c0032", "slurp_id": 15700, "call": "sw_0255_4548", "start": 26, "pos": 15}
+{"id": "c0033", "slurp_id": 12905, "call": "sw_0092_3154", "start": 15, "pos": 22}
+{"id": "c0034", "slurp_id": 12264, "call": "sw_0656_2887", "start": 29, "pos": 11}
+{"id": "c0035", "slurp_id": 15593, "call": "sw_0239_3367", "start": 1, "pos": 16}
+{"id": "c0036", "slurp_id": 12532, "call": "sw_1062_2190", "start": 4, "pos": 19}
+{"id": "c0037", "slurp_id": 16455, "call": "sw_0142_2145", "start": 15, "pos": 6}
+{"id": "c0038", "slurp_id": 15829, "call": "sw_0709_2952", "start": 76, "pos": 6}
+{"id": "c0039", "slurp_id": 16376, "call": "sw_0932_2610", "start": 29, "pos": 16}
+{"id": "c0040", "slurp_id": 15655, "call": "sw_0969_2578", "start": 47, "pos": 8}
+{"id": "c0041", "slurp_id": 12839, "call": "sw_0044_4177", "start": 27, "pos": 20}
+{"id": "c0042", "slurp_id": 15626, "call": "sw_0634_2027", "start": 54, "pos": 21}
+{"id": "c0043", "slurp_id": 17020, "call": "sw_0352_3236", "start": 20, "pos": 7}
+{"id": "c0044", "slurp_id": 12189, "call": "sw_0615_3131", "start": 77, "pos": 7}
+{"id": "c0045", "slurp_id": 16296, "call": "sw_0154_3142", "start": 0, "pos": 16}
+{"id": "c0046", "slurp_id": 16891, "call": "sw_0614_3097", "start": 117, "pos": 23}
+{"id": "c0047", "slurp_id": 12844, "call": "sw_0576_4363", "start": 2, "pos": 8}
+{"id": "c0048", "slurp_id": 15401, "call": "sw_0164_3862", "start": 9, "pos": 12}
+{"id": "c0049", "slurp_id": 15554, "call": "sw_1320_4002", "start": 26, "pos": 21}
+{"id": "c0050", "slurp_id": 15197, "call": "sw_0638_2105", "start": 13, "pos": 23}
+{"id": "c0051", "slurp_id": 16158, "call": "sw_0750_2736", "start": 100, "pos": 9}
+{"id": "c0052", "slurp_id": 12256, "call": "sw_1004_2562", "start": 73, "pos": 22}
+{"id": "c0053", "slurp_id": 12814, "call": "sw_0227_3093", "start": 48, "pos": 23}
+{"id": "c0054", "slurp_id": 16630, "call": "sw_0664_3330", "start": 40, "pos": 23}
+{"id": "c0055", "slurp_id": 17042, "call": "sw_1075_3665", "start": 44, "pos": 13}
+{"id": "c0056", "slurp_id": 15950, "call": "sw_0044_4177", "start": 2, "pos": 9}
+{"id": "c0057", "slurp_id": 12343, "call": "sw_0252_4071", "start": 23, "pos": 19}
+{"id": "c0058", "slurp_id": 15828, "call": "sw_0394_2427", "start": 117, "pos": 9}
+{"id": "c0059", "slurp_id": 17019, "call": "sw_0370_3636", "start": 69, "pos": 5}
+{"id": "c0060", "slurp_id": 12604, "call": "sw_0266_2299", "start": 77, "pos": 20}
+{"id": "c0061", "slurp_id": 15548, "call": "sw_0276_2565", "start": 18, "pos": 12}
+{"id": "c0062", "slurp_id": 12634, "call": "sw_0859_2534", "start": 105, "pos": 18}
+{"id": "c0063", "slurp_id": 17023, "call": "sw_0046_4316", "start": 45, "pos": 14}
+{"id": "c0064", "slurp_id": 12339, "call": "sw_0599_2870", "start": 145, "pos": 16}
+{"id": "c0065", "slurp_id": 15364, "call": "sw_0768_3626", "start": 3, "pos": 20}
+{"id": "c0066", "slurp_id": 16398, "call": "sw_0182_3152", "start": 82, "pos": 14}
+{"id": "c0067", "slurp_id": 15456, "call": "sw_1053_3203", "start": 13, "pos": 18}
+{"id": "c0068", "slurp_id": 15670, "call": "sw_0896_4814", "start": 23, "pos": 17}
+{"id": "c0069", "slurp_id": 12932, "call": "sw_0736_2071", "start": 13, "pos": 16}
+{"id": "c0070", "slurp_id": 12354, "call": "sw_0873_3042", "start": 59, "pos": 15}
+{"id": "c0071", "slurp_id": 15350, "call": "sw_0217_2421", "start": 43, "pos": 6}
+{"id": "c0072", "slurp_id": 15721, "call": "sw_0406_2784", "start": 61, "pos": 15}
+{"id": "c0073", "slurp_id": 12251, "call": "sw_1078_2437", "start": 55, "pos": 6}
+{"id": "c0074", "slurp_id": 12244, "call": "sw_0984_3414", "start": 5, "pos": 12}
+{"id": "c0075", "slurp_id": 12685, "call": "sw_0461_2436", "start": 36, "pos": 19}
+{"id": "c0076", "slurp_id": 15337, "call": "sw_0695_2424", "start": 39, "pos": 24}
+{"id": "c0077", "slurp_id": 12558, "call": "sw_0694_2380", "start": 70, "pos": 17}
+{"id": "c0078", "slurp_id": 15825, "call": "sw_0219_2472", "start": 81, "pos": 18}
+{"id": "c0079", "slurp_id": 15185, "call": "sw_0761_3340", "start": 40, "pos": 17}
+{"id": "c0080", "slurp_id": 12874, "call": "sw_0900_2339", "start": 25, "pos": 18}
+{"id": "c0081", "slurp_id": 12127, "call": "sw_1031_2386", "start": 75, "pos": 11}
+{"id": "c0082", "slurp_id": 16049, "call": "sw_0909_2879", "start": 20, "pos": 17}
+{"id": "c0083", "slurp_id": 12869, "call": "sw_0805_4758", "start": 17, "pos": 11}
+{"id": "c0084", "slurp_id": 15358, "call": "sw_0605_2989", "start": 7, "pos": 19}
+{"id": "c0085", "slurp_id": 16624, "call": "sw_0238_3364", "start": 59, "pos": 12}
+{"id": "c0086", "slurp_id": 15557, "call": "sw_0465_2525", "start": 40, "pos": 12}
+{"id": "c0087", "slurp_id": 12430, "call": "sw_0384_2005", "start": 80, "pos": 7}
+{"id": "c0088", "slurp_id": 17113, "call": "sw_0423_3325", "start": 15, "pos": 23}
+{"id": "c0089", "slurp_id": 15686, "call": "sw_1306_2733", "start": 18, "pos": 24}
+{"id": "c0090", "slurp_id": 16318, "call": "sw_0454_2231", "start": 50, "pos": 13}
+{"id": "c0091", "slurp_id": 16430, "call": "sw_0659_3143", "start": 30, "pos": 5}
+{"id": "c0092", "slurp_id": 16781, "call": "sw_0150_2628", "start": 78, "pos": 19}
+{"id": "c0093", "slurp_id": 14214, "call": "sw_1079_2511", "start": 33, "pos": 16}
+{"id": "c0094", "slurp_id": 12469, "call": "sw_0860_2614", "start": 30, "pos": 12}
+{"id": "c0095", "slurp_id": 12818, "call": "sw_0904_2767", "start": 109, "pos": 9}
+{"id": "c0096", "slurp_id": 12883, "call": "sw_1202_2151", "start": 13, "pos": 11}
+{"id": "c0097", "slurp_id": 12675, "call": "sw_0427_3509", "start": 21, "pos": 20}
+{"id": "c0098", "slurp_id": 16693, "call": "sw_1302_2505", "start": 72, "pos": 13}
+{"id": "c0099", "slurp_id": 16056, "call": "sw_0036_4379", "start": 25, "pos": 8}
+{"id": "c0100", "slurp_id": 16005, "call": "sw_0772_4752", "start": 22, "pos": 7}
+{"id": "c0101", "slurp_id": 16613, "call": "sw_0841_3530", "start": 13, "pos": 22}
+{"id": "c0102", "slurp_id": 12817, "call": "sw_0587_2383", "start": 23, "pos": 16}
+{"id": "c0103", "slurp_id": 12802, "call": "sw_0230_3148", "start": 31, "pos": 8}
+{"id": "c0104", "slurp_id": 15276, "call": "sw_0444_4682", "start": 1, "pos": 14}
+{"id": "c0105", "slurp_id": 12340, "call": "sw_0129_3476", "start": 6, "pos": 21}
+{"id": "c0106", "slurp_id": 12468, "call": "sw_0695_2424", "start": 64, "pos": 21}
+{"id": "c0107", "slurp_id": 12452, "call": "sw_1312_3469", "start": 25, "pos": 18}
+{"id": "c0108", "slurp_id": 12759, "call": "sw_0160_3467", "start": 33, "pos": 6}
+{"id": "c0109", "slurp_id": 15849, "call": "sw_0803_4037", "start": 30, "pos": 21}
+{"id": "c0110", "slurp_id": 12851, "call": "sw_0561_3406", "start": 1, "pos": 5}
+{"id": "c0111", "slurp_id": 16201, "call": "sw_0828_3055", "start": 116, "pos": 6}
+{"id": "c0112", "slurp_id": 16496, "call": "sw_0884_3676", "start": 35, "pos": 12}
+{"id": "c0113", "slurp_id": 15464, "call": "sw_0215_2314", "start": 60, "pos": 24}
+{"id": "c0114", "slurp_id": 12606, "call": "sw_0551_3155", "start": 40, "pos": 19}
+{"id": "c0115", "slurp_id": 15399, "call": "sw_0770_3681", "start": 15, "pos": 8}
+{"id": "c0116", "slurp_id": 12629, "call": "sw_0689_2197", "start": 31, "pos": 15}
+{"id": "c0117", "slurp_id": 15472, "call": "sw_0397_2492", "start": 27, "pos": 9}
+{"id": "c0118", "slurp_id": 16045, "call": "sw_1041_3290", "start": 60, "pos": 21}
+{"id": "c0119", "slurp_id": 16560, "call": "sw_0089_3086", "start": 58, "pos": 17}
+{"id": "c0120", "slurp_id": 16459, "call": "sw_0633_2024", "start": 13, "pos": 21}
+{"id": "c0121", "slurp_id": 16701, "call": "sw_0411_2998", "start": 11, "pos": 22}
+{"id": "c0122", "slurp_id": 15508, "call": "sw_0956_3521", "start": 60, "pos": 23}
+{"id": "c0123", "slurp_id": 17148, "call": "sw_0603_2962", "start": 21, "pos": 9}
+{"id": "c0124", "slurp_id": 12402, "call": "sw_0782_2570", "start": 27, "pos": 10}
+{"id": "c0125", "slurp_id": 15565, "call": "sw_0345_3021", "start": 71, "pos": 8}
+{"id": "c0126", "slurp_id": 12235, "call": "sw_0767_3591", "start": 0, "pos": 15}
+{"id": "c0127", "slurp_id": 12745, "call": "sw_0362_3447", "start": 32, "pos": 8}
+{"id": "c0128", "slurp_id": 16956, "call": "sw_1306_2733", "start": 69, "pos": 24}
+{"id": "c0129", "slurp_id": 12789, "call": "sw_0766_3556", "start": 19, "pos": 15}
+{"id": "c0130", "slurp_id": 15756, "call": "sw_0647_2579", "start": 99, "pos": 23}
+{"id": "c0131", "slurp_id": 15518, "call": "sw_0101_4019", "start": 62, "pos": 23}
+{"id": "c0132", "slurp_id": 12722, "call": "sw_0807_4799", "start": 6, "pos": 15}
+{"id": "c0133", "slurp_id": 12437, "call": "sw_0437_4092", "start": 57, "pos": 6}
+{"id": "c0134", "slurp_id": 12293, "call": "sw_0878_3189", "start": 4, "pos": 12}
+{"id": "c0135", "slurp_id": 15708, "call": "sw_0346_3047", "start": 14, "pos": 22}
+{"id": "c0136", "slurp_id": 15802, "call": "sw_0272_2479", "start": 88, "pos": 14}
+{"id": "c0137", "slurp_id": 12381, "call": "sw_0326_2249", "start": 58, "pos": 14}
+{"id": "c0138", "slurp_id": 16297, "call": "sw_0341_2932", "start": 10, "pos": 5}
+{"id": "c0139", "slurp_id": 12281, "call": "sw_0556_3317", "start": 71, "pos": 17}
+{"id": "c0140", "slurp_id": 16518, "call": "sw_0528_2260", "start": 114, "pos": 23}
+{"id": "c0141", "slurp_id": 6403, "call": "sw_0410_2970", "start": 59, "pos": 5}
+{"id": "c0142", "slurp_id": 12383, "call": "sw_0621_3449", "start": 20, "pos": 11}
+{"id": "c0143", "slurp_id": 16698, "call": "sw_1323_4167", "start": 7, "pos": 16}
+{"id": "c0144", "slurp_id": 17147, "call": "sw_0992_3952", "start": 48, "pos": 10}
+{"id": "c0145", "slurp_id": 15610, "call": "sw_0958_3734", "start": 31, "pos": 22}
+{"id": "c0146", "slurp_id": 15661, "call": "sw_0584_2220", "start": 107, "pos": 8}
+{"id": "c0147", "slurp_id": 15587, "call": "sw_0940_2995", "start": 33, "pos": 21}
+{"id": "c0148", "slurp_id": 12240, "call": "sw_0521_2041", "start": 109, "pos": 13}
+{"id": "c0149", "slurp_id": 12526, "call": "sw_0955_3489", "start": 41, "pos": 6}
+{"id": "c0150", "slurp_id": 12261, "call": "sw_0541_2719", "start": 78, "pos": 19}
+{"id": "c0151", "slurp_id": 15731, "call": "sw_0199_4004", "start": 13, "pos": 15}
+{"id": "c0152", "slurp_id": 15906, "call": "sw_0945_3076", "start": 87, "pos": 10}
+{"id": "c0153", "slurp_id": 12838, "call": "sw_0895_4788", "start": 2, "pos": 10}
+{"id": "c0154", "slurp_id": 17123, "call": "sw_0633_2024", "start": 13, "pos": 23}
+{"id": "c0155", "slurp_id": 16694, "call": "sw_0207_2039", "start": 47, "pos": 5}
+{"id": "c0156", "slurp_id": 12553, "call": "sw_0402_2634", "start": 75, "pos": 11}
+{"id": "c0157", "slurp_id": 16559, "call": "sw_0651_2766", "start": 75, "pos": 6}
+{"id": "c0158", "slurp_id": 12856, "call": "sw_0238_3364", "start": 30, "pos": 15}
+{"id": "c0159", "slurp_id": 12618, "call": "sw_0338_2641", "start": 114, "pos": 15}
+{"id": "c0160", "slurp_id": 16221, "call": "sw_0568_3586", "start": 15, "pos": 8}
+{"id": "c0161", "slurp_id": 12294, "call": "sw_0225_2877", "start": 65, "pos": 10}
+{"id": "c0162", "slurp_id": 12473, "call": "sw_0021_4168", "start": 62, "pos": 5}
+{"id": "c0163", "slurp_id": 16519, "call": "sw_0075_4129", "start": 0, "pos": 19}
+{"id": "c0164", "slurp_id": 12367, "call": "sw_0458_2316", "start": 30, "pos": 11}
+{"id": "c0165", "slurp_id": 14465, "call": "sw_0577_4659", "start": 11, "pos": 16}
+{"id": "c0166", "slurp_id": 17143, "call": "sw_0435_4008", "start": 42, "pos": 11}
+{"id": "c0167", "slurp_id": 12162, "call": "sw_0698_2515", "start": 49, "pos": 20}
+{"id": "c0168", "slurp_id": 15841, "call": "sw_0483_3070", "start": 39, "pos": 19}
+{"id": "c0169", "slurp_id": 12436, "call": "sw_0177_2759", "start": 80, "pos": 17}
+{"id": "c0170", "slurp_id": 12800, "call": "sw_1005_2693", "start": 117, "pos": 18}
+{"id": "c0171", "slurp_id": 15459, "call": "sw_0293_3069", "start": 53, "pos": 18}
+{"id": "c0172", "slurp_id": 15676, "call": "sw_0943_3028", "start": 32, "pos": 22}
+{"id": "c0173", "slurp_id": 16072, "call": "sw_0695_2424", "start": 59, "pos": 12}
+{"id": "c0174", "slurp_id": 16605, "call": "sw_0234_3195", "start": 12, "pos": 24}
+{"id": "c0175", "slurp_id": 15693, "call": "sw_1101_3693", "start": 38, "pos": 15}
+{"id": "c0176", "slurp_id": 16883, "call": "sw_0159_3369", "start": 23, "pos": 14}
+{"id": "c0177", "slurp_id": 15656, "call": "sw_0675_3675", "start": 5, "pos": 9}
+{"id": "c0178", "slurp_id": 15847, "call": "sw_0039_4628", "start": 11, "pos": 22}
+{"id": "c0179", "slurp_id": 16314, "call": "sw_0971_2839", "start": 56, "pos": 12}
+{"id": "c0180", "slurp_id": 12252, "call": "sw_1049_2889", "start": 48, "pos": 24}
+{"id": "c0181", "slurp_id": 16622, "call": "sw_0892_3979", "start": 2, "pos": 17}
+{"id": "c0182", "slurp_id": 16754, "call": "sw_0441_4608", "start": 47, "pos": 12}
+{"id": "c0183", "slurp_id": 15409, "call": "sw_0862_2707", "start": 146, "pos": 9}
+{"id": "c0184", "slurp_id": 12306, "call": "sw_0931_2467", "start": 3, "pos": 18}
+{"id": "c0185", "slurp_id": 12723, "call": "sw_0057_3506", "start": 18, "pos": 6}
+{"id": "c0186", "slurp_id": 16873, "call": "sw_0354_3286", "start": 3, "pos": 7}
+{"id": "c0187", "slurp_id": 16838, "call": "sw_0808_2038", "start": 21, "pos": 23}
+{"id": "c0188", "slurp_id": 12537, "call": "sw_0096_3580", "start": 37, "pos": 20}
+{"id": "c0189", "slurp_id": 16989, "call": "sw_0414_3067", "start": 13, "pos": 23}
+{"id": "c0190", "slurp_id": 15382, "call": "sw_0094_3315", "start": 31, "pos": 19}
+{"id": "c0191", "slurp_id": 15634, "call": "sw_0838_3405", "start": 0, "pos": 14}
+{"id": "c0192", "slurp_id": 15275, "call": "sw_1200_2121", "start": 3, "pos": 10}
+{"id": "c0193", "slurp_id": 16029, "call": "sw_0309_3663", "start": 32, "pos": 13}
+{"id": "c0194", "slurp_id": 16911, "call": "sw_0506_3576", "start": 31, "pos": 7}
+{"id": "c0195", "slurp_id": 16410, "call": "sw_0409_2866", "start": 18, "pos": 13}
+{"id": "c0196", "slurp_id": 12707, "call": "sw_0993_3965", "start": 69, "pos": 6}
+{"id": "c0197", "slurp_id": 12608, "call": "sw_1023_3231", "start": 30, "pos": 17}
+{"id": "c0198", "slurp_id": 12289, "call": "sw_0107_4150", "start": 5, "pos": 11}
+{"id": "c0199", "slurp_id": 15487, "call": "sw_1022_2982", "start": 105, "pos": 10}
+{"id": "c0200", "slurp_id": 16729, "call": "sw_0806_4774", "start": 4, "pos": 13}
+{"id": "c0201", "slurp_id": 12824, "call": "sw_0732_4927", "start": 49, "pos": 19}
+{"id": "c0202", "slurp_id": 12419, "call": "sw_0803_4037", "start": 38, "pos": 19}
+{"id": "c0203", "slurp_id": 15796, "call": "sw_0139_4908", "start": 10, "pos": 20}
+{"id": "c0204", "slurp_id": 12536, "call": "sw_0359_3393", "start": 34, "pos": 23}
+{"id": "c0205", "slurp_id": 15289, "call": "sw_0224_2818", "start": 0, "pos": 23}
+{"id": "c0206", "slurp_id": 16470, "call": "sw_0624_3557", "start": 9, "pos": 7}
+{"id": "c0207", "slurp_id": 12446, "call": "sw_0262_2137", "start": 4, "pos": 17}
+{"id": "c0208", "slurp_id": 12442, "call": "sw_0881_3500", "start": 0, "pos": 21}
+{"id": "c0209", "slurp_id": 15592, "call": "sw_0232_3159", "start": 19, "pos": 11}
+{"id": "c0210", "slurp_id": 12582, "call": "sw_0399_2526", "start": 2, "pos": 17}
+{"id": "c0211", "slurp_id": 15553, "call": "sw_0835_3319", "start": 40, "pos": 21}
+{"id": "c0212", "slurp_id": 16245, "call": "sw_0617_3353", "start": 27, "pos": 6}
+{"id": "c0213", "slurp_id": 15488, "call": "sw_0709_2952", "start": 23, "pos": 20}
+{"id": "c0214", "slurp_id": 16402, "call": "sw_0963_4716", "start": 36, "pos": 22}
+{"id": "c0215", "slurp_id": 12121, "call": "sw_0015_4877", "start": 14, "pos": 10}
+{"id": "c0216", "slurp_id": 17054, "call": "sw_0322_4936", "start": 2, "pos": 23}
+{"id": "c0217", "slurp_id": 16955, "call": "sw_0555_3294", "start": 55, "pos": 18}
+{"id": "c0218", "slurp_id": 15747, "call": "sw_0674_3666", "start": 135, "pos": 15}
+{"id": "c0219", "slurp_id": 12835, "call": "sw_0182_3152", "start": 44, "pos": 6}
+{"id": "c0220", "slurp_id": 15618, "call": "sw_1045_2495", "start": 54, "pos": 20}
+{"id": "c0221", "slurp_id": 15942, "call": "sw_0694_2380", "start": 37, "pos": 15}
+{"id": "c0222", "slurp_id": 16506, "call": "sw_0399_2526", "start": 55, "pos": 16}
+{"id": "c0223", "slurp_id": 15231, "call": "sw_1094_3255", "start": 65, "pos": 18}
+{"id": "c0224", "slurp_id": 13400, "call": "sw_0970_2773", "start": 30, "pos": 14}
+{"id": "c0225", "slurp_id": 16944, "call": "sw_0208_2094", "start": 15, "pos": 10}
+{"id": "c0226", "slurp_id": 16717, "call": "sw_0143_2290", "start": 87, "pos": 23}
+{"id": "c0227", "slurp_id": 15216, "call": "sw_0112_2061", "start": 169, "pos": 19}
+{"id": "c0228", "slurp_id": 12150, "call": "sw_0808_2038", "start": 10, "pos": 16}
+{"id": "c0229", "slurp_id": 17043, "call": "sw_0624_3557", "start": 22, "pos": 8}
+{"id": "c0230", "slurp_id": 15995, "call": "sw_0354_3286", "start": 26, "pos": 20}
+{"id": "c0231", "slurp_id": 7353, "call": "sw_0827_3019", "start": 131, "pos": 5}
+{"id": "c0232", "slurp_id": 15672, "call": "sw_0174_2708", "start": 1, "pos": 20}
+{"id": "c0233", "slurp_id": 12413, "call": "sw_0681_4147", "start": 27, "pos": 10}
+{"id": "c0234", "slurp_id": 16886, "call": "sw_0213_2285", "start": 48, "pos": 5}
+{"id": "c0235", "slurp_id": 16791, "call": "sw_0902_2552", "start": 64, "pos": 20}
+{"id": "c0236", "slurp_id": 15387, "call": "sw_0474_2691", "start": 105, "pos": 10}
+{"id": "c0237", "slurp_id": 16028, "call": "sw_0571_3750", "start": 24, "pos": 16}
+{"id": "c0238", "slurp_id": 15454, "call": "sw_0230_3148", "start": 39, "pos": 20}
+{"id": "c0239", "slurp_id": 16120, "call": "sw_0176_2749", "start": 28, "pos": 10}
+{"id": "c0240", "slurp_id": 12866, "call": "sw_1048_2794", "start": 7, "pos": 24}
+{"id": "c0241", "slurp_id": 14646, "call": "sw_0780_2393", "start": 60, "pos": 20}
+{"id": "c0242", "slurp_id": 12182, "call": "sw_1086_3057", "start": 188, "pos": 9}
+{"id": "c0243", "slurp_id": 16024, "call": "sw_0542_2782", "start": 69, "pos": 10}
+{"id": "c0244", "slurp_id": 12233, "call": "sw_0076_4153", "start": 42, "pos": 5}
+{"id": "c0245", "slurp_id": 15155, "call": "sw_0947_3118", "start": 38, "pos": 17}
+{"id": "c0246", "slurp_id": 12212, "call": "sw_0083_4830", "start": 46, "pos": 7}
+{"id": "c0247", "slurp_id": 15359, "call": "sw_0247_3660", "start": 3, "pos": 21}
+{"id": "c0248", "slurp_id": 16419, "call": "sw_0463_2469", "start": 19, "pos": 15}
+{"id": "c0249", "slurp_id": 16082, "call": "sw_1100_3419", "start": 35, "pos": 6}
+{"id": "c0250", "slurp_id": 16377, "call": "sw_0574_4023", "start": 27, "pos": 6}
+{"id": "c0251", "slurp_id": 15546, "call": "sw_0421_3311", "start": 93, "pos": 21}
+{"id": "c0252", "slurp_id": 12299, "call": "sw_0109_4342", "start": 24, "pos": 18}
+{"id": "c0253", "slurp_id": 16938, "call": "sw_0339_2669", "start": 4, "pos": 15}
+{"id": "c0254", "slurp_id": 12248, "call": "sw_0657_2900", "start": 14, "pos": 24}
+{"id": "c0255", "slurp_id": 15271, "call": "sw_0589_2433", "start": 41, "pos": 16}
+{"id": "c0256", "slurp_id": 12689, "call": "sw_0046_4316", "start": 22, "pos": 5}
+{"id": "c0257", "slurp_id": 15448, "call": "sw_0766_3556", "start": 59, "pos": 5}
+{"id": "c0258", "slurp_id": 12710, "call": "sw_0480_3040", "start": 40, "pos": 10}
+{"id": "c0259", "slurp_id": 16282, "call": "sw_0804_4165", "start": 5, "pos": 15}
+{"id": "c0260", "slurp_id": 17151, "call": "sw_0251_4026", "start": 3, "pos": 8}
+{"id": "c0261", "slurp_id": 16280, "call": "sw_1100_3419", "start": 4, "pos": 13}
+{"id": "c0262", "slurp_id": 15457, "call": "sw_0005_4646", "start": 10, "pos": 15}
+{"id": "c0263", "slurp_id": 15994, "call": "sw_0934_2744", "start": 117, "pos": 19}
+{"id": "c0264", "slurp_id": 15647, "call": "sw_0102_4033", "start": 2, "pos": 23}
+{"id": "c0265", "slurp_id": 16438, "call": "sw_0777_2122", "start": 78, "pos": 15}
+{"id": "c0266", "slurp_id": 16225, "call": "sw_1304_2632", "start": 87, "pos": 18}
+{"id": "c0267", "slurp_id": 12813, "call": "sw_0544_2800", "start": 9, "pos": 16}
+{"id": "c0268", "slurp_id": 12873, "call": "sw_1079_2511", "start": 32, "pos": 19}
+{"id": "c0269", "slurp_id": 15532, "call": "sw_0703_2661", "start": 25, "pos": 7}
+{"id": "c0270", "slurp_id": 15706, "call": "sw_1073_3271", "start": 35, "pos": 20}
+{"id": "c0271", "slurp_id": 16166, "call": "sw_0605_2989", "start": 22, "pos": 24}
+{"id": "c0272", "slurp_id": 16406, "call": "sw_0380_4572", "start": 12, "pos": 20}
+{"id": "c0273", "slurp_id": 12717, "call": "sw_0675_3675", "start": 30, "pos": 10}
+{"id": "c0274", "slurp_id": 15732, "call": "sw_0509_3639", "start": 48, "pos": 9}
+{"id": "c0275", "slurp_id": 16032, "call": "sw_0454_2231", "start": 34, "pos": 11}
+{"id": "c0276", "slurp_id": 12716, "call": "sw_0128_3441", "start": 19, "pos": 9}
+{"id": "c0277", "slurp_id": 12161, "call": "sw_0721_3777", "start": 4, "pos": 19}
+{"id": "c0278", "slurp_id": 12846, "call": "sw_0368_3541", "start": 3, "pos": 22}
+{"id": "c0279", "slurp_id": 12511, "call": "sw_0184_3171", "start": 9, "pos": 18}
+{"id": "c0280", "slurp_id": 12797, "call": "sw_0344_3020", "start": 86, "pos": 17}
+{"id": "c0281", "slurp_id": 15911, "call": "sw_0862_2707", "start": 116, "pos": 21}
+{"id": "c0282", "slurp_id": 16131, "call": "sw_0714_3039", "start": 144, "pos": 23}
+{"id": "c0283", "slurp_id": 12581, "call": "sw_0688_2181", "start": 118, "pos": 8}
+{"id": "c0284", "slurp_id": 15187, "call": "sw_0013_4617", "start": 56, "pos": 21}
+{"id": "c0285", "slurp_id": 16947, "call": "sw_0425_3382", "start": 45, "pos": 18}
+{"id": "c0286", "slurp_id": 12245, "call": "sw_0712_3029", "start": 44, "pos": 15}
+{"id": "c0287", "slurp_id": 16266, "call": "sw_0416_3205", "start": 21, "pos": 20}
+{"id": "c0288", "slurp_id": 16880, "call": "sw_0321_4902", "start": 6, "pos": 21}
+{"id": "c0289", "slurp_id": 15598, "call": "sw_0182_3152", "start": 72, "pos": 20}
+{"id": "c0290", "slurp_id": 16892, "call": "sw_0078_4181", "start": 17, "pos": 21}
+{"id": "c0291", "slurp_id": 16872, "call": "sw_0744_2376", "start": 43, "pos": 15}
+{"id": "c0292", "slurp_id": 15707, "call": "sw_0613_3096", "start": 81, "pos": 6}
+{"id": "c0293", "slurp_id": 16846, "call": "sw_0440_4347", "start": 28, "pos": 21}
+{"id": "c0294", "slurp_id": 12366, "call": "sw_0662_3196", "start": 15, "pos": 7}
+{"id": "c0295", "slurp_id": 16961, "call": "sw_1319_3994", "start": 41, "pos": 9}
+{"id": "c0296", "slurp_id": 15857, "call": "sw_0907_2830", "start": 60, "pos": 13}
+{"id": "c0297", "slurp_id": 15765, "call": "sw_0736_2071", "start": 38, "pos": 17}
+{"id": "c0298", "slurp_id": 15723, "call": "sw_0343_2965", "start": 8, "pos": 23}
+{"id": "c0299", "slurp_id": 15208, "call": "sw_1090_2353", "start": 72, "pos": 22}
+{"id": "c0300", "slurp_id": 12291, "call": "sw_0997_2155", "start": 1, "pos": 20}
+{"id": "c0301", "slurp_id": 16591, "call": "sw_1101_3693", "start": 29, "pos": 14}
+{"id": "c0302", "slurp_id": 16401, "call": "sw_0519_4733", "start": 66, "pos": 15}
+{"id": "c0303", "slurp_id": 15413, "call": "sw_0664_3330", "start": 29, "pos": 14}
+{"id": "c0304", "slurp_id": 12254, "call": "sw_0355_3300", "start": 33, "pos": 17}
+{"id": "c0305", "slurp_id": 12310, "call": "sw_0347_3052", "start": 40, "pos": 8}
+{"id": "c0306", "slurp_id": 16916, "call": "sw_1051_3170", "start": 4, "pos": 17}
+{"id": "c0307", "slurp_id": 12392, "call": "sw_0372_3725", "start": 24, "pos": 14}
+{"id": "c0308", "slurp_id": 16375, "call": "sw_0421_3311", "start": 32, "pos": 17}
+{"id": "c0309", "slurp_id": 12308, "call": "sw_0117_2837", "start": 174, "pos": 6}
+{"id": "c0310", "slurp_id": 12213, "call": "sw_0162_3801", "start": 38, "pos": 24}
+{"id": "c0311", "slurp_id": 15318, "call": "sw_0098_3830", "start": 4, "pos": 7}
+{"id": "c0312", "slurp_id": 15186, "call": "sw_0695_2424", "start": 54, "pos": 13}
+{"id": "c0313", "slurp_id": 15402, "call": "sw_0927_2228", "start": 42, "pos": 16}
+{"id": "c0314", "slurp_id": 16437, "call": "sw_0083_4830", "start": 22, "pos": 9}
+{"id": "c0315", "slurp_id": 15957, "call": "sw_0916_3642", "start": 0, "pos": 8}
+{"id": "c0316", "slurp_id": 12930, "call": "sw_0362_3447", "start": 3, "pos": 15}
+{"id": "c0317", "slurp_id": 12453, "call": "sw_0222_2676", "start": 98, "pos": 19}
+{"id": "c0318", "slurp_id": 15987, "call": "sw_0111_2018", "start": 82, "pos": 12}
+{"id": "c0319", "slurp_id": 17081, "call": "sw_0345_3021", "start": 80, "pos": 17}
+{"id": "c0320", "slurp_id": 16535, "call": "sw_0184_3171", "start": 8, "pos": 13}
+{"id": "c0321", "slurp_id": 15467, "call": "sw_0638_2105", "start": 21, "pos": 5}
+{"id": "c0322", "slurp_id": 15444, "call": "sw_0161_3781", "start": 66, "pos": 6}
+{"id": "c0323", "slurp_id": 12548, "call": "sw_0642_2450", "start": 2, "pos": 23}
+{"id": "c0324", "slurp_id": 12908, "call": "sw_0603_2962", "start": 38, "pos": 24}
+{"id": "c0325", "slurp_id": 15845, "call": "sw_0910_2955", "start": 89, "pos": 16}
+{"id": "c0326", "slurp_id": 12160, "call": "sw_0661_3194", "start": 11, "pos": 17}
+{"id": "c0327", "slurp_id": 15736, "call": "sw_0918_3716", "start": 65, "pos": 17}

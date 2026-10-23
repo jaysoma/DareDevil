@@ -778,6 +778,9 @@ Copies of the schemes go under `harness/`; `src/` stays unchanged. Commit `resul
 
 ## 22. Who it's for: real requests to people, in their own context
 
+DONE in a 2026-10-23 cloud session (Switchboard only: AMI's annotation host is blocked here; step 4 waits on brief
+19's general-model follow-up): `results/who_for/report.md`. Don't start this one.
+
 READY 2026-10-23. Text only. Builds on brief 19 (`results/device_directed/report.md`, `harness/device_directed/`).
 
 Brief 19 found that Jay's shape-and-contrast finds spliced device instructions well (89% at 1 false accept per hour),
