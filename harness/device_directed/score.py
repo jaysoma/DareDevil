@@ -41,6 +41,7 @@ def main():
     ap.add_argument('--methods', nargs='+', default=ALL)
     ap.add_argument('--minilm'); ap.add_argument('--gguf', nargs='*', default=[]); ap.add_argument('--threads', type=int, default=4)
     ap.add_argument('--limit', type=int, default=0)
+    ap.add_argument('--resume', action='store_true', help='general models: keep windows already scored, do the rest')
     a = ap.parse_args()
     setd, src, out = Path(a.set_dir), Path(a.src), Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -123,16 +124,24 @@ def main():
     for g in a.gguf:
         name = 'llm_' + Path(g).stem.replace('-instruct-q4_k_m', '').replace('qwen2.5-', 'qwen')
         ask = M.Asker(g, threads=a.threads)
+        path = out / f'scores_{name}.jsonl'
+        done = {json.loads(l)['id'] for l in open(path)} if a.resume and path.exists() else set()
+        todo = [r for r in rows if r['id'] not in done]
         t0 = time.time()
-        with open(out / f'scores_{name}.jsonl', 'w') as fh:
-            for k, r in enumerate(rows):
+        with open(path, 'a' if done else 'w') as fh:
+            for k, r in enumerate(todo):
                 p = ask(r['device'], texts(r))
                 fh.write(json.dumps({'id': r['id'], 'scores': [round(float(x), 6) for x in p[1:]], 'none': round(float(p[0]), 6)}) + '\n')
+                fh.flush()
                 if k % 50 == 0:
-                    print(f'{name}: {k}/{len(rows)} windows, {time.time() - t0:.0f} s', flush=True)
+                    print(f'{name}: {len(done) + k}/{len(rows)} windows, {time.time() - t0:.0f} s', flush=True)
         dt = time.time() - t0
-        cost[name] = {'seconds_per_phrase': round(dt / n_phr, 5), 'seconds_per_window': round(dt / len(rows), 3),
-                      'model_bytes': os.path.getsize(g), 'note': f'llama.cpp, Q4_K_M, {a.threads} CPU threads, wall clock'}
+        if todo:
+            ph = sum(len(r['phrases']) for r in todo)
+            cost[name] = {'seconds_per_phrase': round(dt / ph, 5), 'seconds_per_window': round(dt / len(todo), 3),
+                          'model_bytes': os.path.getsize(g), 'timed_windows': len(todo),
+                          'note': f'llama.cpp, Q4_K_M, {a.threads} CPU threads, wall clock'}
+        costp.write_text(json.dumps(cost, indent=1))
     costp.write_text(json.dumps(cost, indent=1))
 
 
