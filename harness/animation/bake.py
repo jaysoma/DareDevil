@@ -302,6 +302,7 @@ def dechorate(out):
     out = Path(out)
     preds = {r['id']: r for r in jl(ROOT / 'results/dechorate/preds.jsonl.gz')}
     refl = {r['id']: r for r in jl(ROOT / 'results/first_reflection/dechorate_reads.jsonl.gz')}
+    ears = json.loads((ROOT / 'harness/animation/ears_transcripts.json').read_text())['transcripts']
     by = defaultdict(lambda: defaultdict(list))
     for t in jl(ROOT / 'results/dechorate/truth.jsonl.gz'):
         by[t['room']][(t['src'], t['array'], t['spacing_mm'])].append(t)
@@ -315,7 +316,9 @@ def dechorate(out):
             for t in cuts:
                 p = preds.get(t['id'], {})
                 f = refl.get(t['id'], {})
-                clips.append({'id': t['id'], 'clip': t['clean'],
+                clip_file, _, at = t['clean'].partition('@')
+                clips.append({'id': t['id'], 'clip': t['clean'], 'onset_in_file_s': float(at) if at else None,
+                              'file_text': ears.get(clip_file.split('_', 1)[1]),
                               'gcc': p.get('gcc'), 'a2_onset_deg': (p.get('a2') or [None])[0],
                               'reflection': {'angle2_second_deg': (p.get('a2') or [None, None])[1],
                                              'read_sound': {'deg': (f.get('refl') or {}).get('deg')
@@ -330,6 +333,8 @@ def dechorate(out):
                           'clips': clips})
         doc = {'dataset': 'dechorate', 'room': room,
                'walls': 'six digits: which panels are reflective (1) or absorbing (0), as dEchorate names them',
+               'text': 'file_text is the whole EARS file read aloud (EARS transcripts, CC BY-NC 4.0); each clip is 2 s '
+                       'around onset_in_file_s, so it holds only part of it',
                'conventions': {'deg_measured': "the pair's angle from the measured RIRs' direct-path delay; score "
                                                "against it (results/clean/report.md)",
                                'echoes': 'first-order image sources per surface: angle at the pair, delay after the '

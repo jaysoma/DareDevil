@@ -1,8 +1,9 @@
 # One joined file per recording, for the dashboard animations
 
 Built by `harness/animation/bake.py` from committed results; no scheme is run. Each dataset has an `index.json` listing
-its files. Words are added on Jay's box by `harness/animation/add_words.py`. None of the datasets ships transcripts,
-and the cloud sessions can't fetch Whisper.
+its files. Words for LOCATA and STARSS23 are added on Jay's box by `harness/animation/add_words.py`, which streams the
+audio from Zenodo one file at a time. Neither ships transcripts, and the cloud sessions can't fetch Whisper. dEchorate's
+clips are read sentences, so their text is already in.
 
 | folder | files | what a tile is |
 |---|---|---|
@@ -44,6 +45,8 @@ and the cloud sessions can't fetch Whisper.
   nearest horizontal for the source.
 
 ## dEchorate (`dechorate/<wall setting>.json`)
+- **Words:** each clip is an EARS read sentence. `file_text` is the whole file's text (EARS transcripts, CC BY-NC 4.0);
+  the clip holds the 2 s around `onset_in_file_s`, so only part of it.
 - **`setups`**, one per source × array × spacing. Each has `truth` (the pair's angle from the measured direct delay,
   `deg_measured`; the geometric angle; distance; `echoes` per surface with angle, delay and whether it's reflective in
   this setting), and `clips`, one per speech clip with the reads.

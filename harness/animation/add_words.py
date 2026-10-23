@@ -12,9 +12,13 @@ where the models already are.
 
   STARSS23 (rough): far-field, quiet, overlapping talkers. Whisper runs on capsules 1+2 mixed down (one fixed gain,
     no AGC). A word is given to a labelled speech source only when exactly one is active at that 100 ms frame;
-    otherwise "src" is null.
+    otherwise "src" is null. Each recording is streamed out of Zenodo's mic_dev.zip one file at a time (20-60 MB each,
+    about 3.4 GB over all 168), unless --audio points at a local copy.
 
-        python3 add_words.py starss results/animation/starss23 --audio <STARSS23 root with mic_dev/> --model medium.en
+        python3 add_words.py starss results/animation/starss23 --model medium.en
+        python3 add_words.py starss results/animation/starss23 --audio <STARSS23 root with mic_dev/>
+
+  dEchorate needs no decoding: its clips are EARS read sentences, and bake.py already carries each file's text.
 
 Writes "words": [{"t0", "t1", "w", "p", "talker" or "src"}] into each file, times in seconds from the recording start.
 """
@@ -26,6 +30,7 @@ from pathlib import Path
 import numpy as np
 
 LOCATA_ZIP = 'https://zenodo.org/records/3630471/files/{set}.zip?download=1'
+STARSS_ZIP = 'https://zenodo.org/records/7880637/files/mic_dev.zip?download=1'
 
 
 def transcribe(model, x16):
@@ -69,10 +74,20 @@ def locata(folder, model):
 
 def starss(folder, audio_root, model):
     import soundfile as sf
+    z = None
+    if not audio_root:
+        from remotezip import RemoteZip
+        z = RemoteZip(STARSS_ZIP)
     for f in sorted(Path(folder).glob('fold*_room*_mix*.json')):
         doc = json.loads(f.read_text())
-        wav = next(Path(audio_root).glob(f"mic_dev/*/{doc['recording']}.wav"))
-        x, sr = sf.read(str(wav), dtype='float32', always_2d=True)
+        if doc.get('words'):
+            continue                                                  # done on an earlier run
+        if z is not None:
+            with z.open(f"mic_dev/{doc['split']}/{doc['recording']}.wav") as fh:
+                x, sr = sf.read(io.BytesIO(fh.read()), dtype='float32', always_2d=True)
+        else:
+            wav = next(Path(audio_root).glob(f"mic_dev/*/{doc['recording']}.wav"))
+            x, sr = sf.read(str(wav), dtype='float32', always_2d=True)
         mono = 0.5 * (x[:, 0] + x[:, 1])
         rms = float(np.sqrt(np.mean(mono ** 2)) + 1e-12)
         mono = mono * min(0.05 / rms, 1.0 / (np.abs(mono).max() + 1e-12))     # one fixed gain for the whole file
