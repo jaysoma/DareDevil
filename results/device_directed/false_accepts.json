@@ -1968,6 +1968,656 @@
    }
   ]
  },
+ "llm_qwen0.5b|car": {
+  "false_accepts": 91,
+  "kinds": {
+   "other": 46,
+   "short": 32,
+   "question": 8,
+   "device vocabulary": 5
+  },
+  "by_stream": {
+   "ami": 50,
+   "calls": 38,
+   "lyrics": 1,
+   "monologue": 2
+  },
+  "examples": [
+   {
+    "window": "w0194",
+    "stream": "ami",
+    "text": "From yeah, it's it's c it from words X_M_L_, is that it's saying here?"
+   },
+   {
+    "window": "w0029",
+    "stream": "ami",
+    "text": "Um, this is um I'll just go over your head if that's okay."
+   },
+   {
+    "window": "w0182",
+    "stream": "ami",
+    "text": "Alpha."
+   },
+   {
+    "window": "w0019",
+    "stream": "ami",
+    "text": "Yeah."
+   },
+   {
+    "window": "w0006",
+    "stream": "ami",
+    "text": "Uh, no, that did not come up at all."
+   },
+   {
+    "window": "w0064",
+    "stream": "calls",
+    "text": "I say yes."
+   },
+   {
+    "window": "w0154",
+    "stream": "ami",
+    "text": "I can make it full?"
+   },
+   {
+    "window": "w0060",
+    "stream": "calls",
+    "text": "I'd rather have some restrictions put on weapons but yet allow hunting rifles, uh, things that people would use for sporting type of, uh, a, activity. Those would be fine but when you get into a, a lot of the more complex weapons, I would say yes we need to put restrictions on them ."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0844",
+    "kind": "foreign",
+    "text": "like a trap or something like that in some sense. And they're also looking at, uh, other, you know, ways of monitoring this and, cause they've found out something basically that, uh, - and a poorly tuned car can emit something it's an incredible amount. It was like four hundred times as much"
+   }
+  ]
+ },
+ "llm_qwen0.5b|kitchen": {
+  "false_accepts": 91,
+  "kinds": {
+   "other": 50,
+   "short": 26,
+   "device vocabulary": 9,
+   "question": 6
+  },
+  "by_stream": {
+   "ami": 50,
+   "calls": 30,
+   "lyrics": 8,
+   "monologue": 3
+  },
+  "examples": [
+   {
+    "window": "w0412",
+    "stream": "ami",
+    "text": "Hmm."
+   },
+   {
+    "window": "w0212",
+    "stream": "ami",
+    "text": "I mean all we have is two push buttons and two scrollers, do we really need an integrated circuit to you know to process that."
+   },
+   {
+    "window": "w0402",
+    "stream": "calls",
+    "text": "Oh, great yeah. We have, uh, right now we have two cars, uh I have, my husband and myself and we have two sons who are drivers"
+   },
+   {
+    "window": "w0900",
+    "stream": "ami",
+    "text": "crack on."
+   },
+   {
+    "window": "w0238",
+    "stream": "ami",
+    "text": "Mm-hmm."
+   },
+   {
+    "window": "w0395",
+    "stream": "calls",
+    "text": "Yeah."
+   },
+   {
+    "window": "w0894",
+    "stream": "ami",
+    "text": "Like it's not in time domain."
+   },
+   {
+    "window": "w0210",
+    "stream": "ami",
+    "text": "Or spec mm specific people's work that you um But can you give us an example of a scheme that's based on exchange of information?"
+   }
+  ],
+  "hard_accepted": []
+ },
+ "llm_qwen0.5b|watch": {
+  "false_accepts": 88,
+  "kinds": {
+   "other": 41,
+   "short": 34,
+   "device vocabulary": 7,
+   "question": 5,
+   "request shape": 1
+  },
+  "by_stream": {
+   "ami": 49,
+   "calls": 34,
+   "lyrics": 2,
+   "monologue": 3
+  },
+  "examples": [
+   {
+    "window": "w0468",
+    "stream": "calls",
+    "text": "Well, I'd encourage it."
+   },
+   {
+    "window": "w0463",
+    "stream": "calls",
+    "text": "Well, I, I, oh, I don't know. It's kind of a tricky question, because I think it's, it's a practical system"
+   },
+   {
+    "window": "w0588",
+    "stream": "calls",
+    "text": "Huh, yes."
+   },
+   {
+    "window": "w0607",
+    "stream": "ami",
+    "text": "I know."
+   },
+   {
+    "window": "w0464",
+    "stream": "calls",
+    "text": "Yeah. We, you know, we, I like it there. And I think Dallas has enough to offer that they don't have to hog everything . So, I'm glad that they're staying in Arlington."
+   },
+   {
+    "window": "w0452",
+    "stream": "ami",
+    "text": "P Well the only problem I can think of with that is if you've got a lot of people that don't wanna be bothered learning how to use new rem remote controls."
+   },
+   {
+    "window": "w0463",
+    "stream": "calls",
+    "text": "Yeah. I think that the, I think what, - I mean, I don't know what happened last time. I remember they tried it in the seventies at one point or something and, -"
+   },
+   {
+    "window": "w0473",
+    "stream": "calls",
+    "text": "Sure."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0585",
+    "kind": "subject",
+    "text": "Alex's birthday is next weekend"
+   }
+  ]
+ },
+ "llm_qwen0.5b|general": {
+  "false_accepts": 95,
+  "kinds": {
+   "other": 52,
+   "short": 23,
+   "device vocabulary": 12,
+   "question": 7,
+   "request shape": 1
+  },
+  "by_stream": {
+   "ami": 49,
+   "calls": 39,
+   "lyrics": 6,
+   "monologue": 1
+  },
+  "examples": [
+   {
+    "window": "w0641",
+    "stream": "ami",
+    "text": "I'm pretty excited."
+   },
+   {
+    "window": "w0960",
+    "stream": "ami",
+    "text": "We're down to t two buttons, is it?"
+   },
+   {
+    "window": "w0630",
+    "stream": "ami",
+    "text": "And and do we know how long it'll take to uh develop a a custom chip."
+   },
+   {
+    "window": "w0681",
+    "stream": "calls",
+    "text": "Oh, really?"
+   },
+   {
+    "window": "w0817",
+    "stream": "ami",
+    "text": "Uh it yeah, it depends, yeah."
+   },
+   {
+    "window": "w0681",
+    "stream": "calls",
+    "text": "Well, I don't do anything with the lawn really but I do gardening"
+   },
+   {
+    "window": "w0998",
+    "stream": "ami",
+    "text": "So the plu the plus w once that's written down on the page that'll be really simple, won't it?"
+   },
+   {
+    "window": "w0824",
+    "stream": "ami",
+    "text": "Yeah, I mean I can remo Yeah, I can remember when I start being a st when I was sta starting being a student."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0814",
+    "kind": "to_person",
+    "text": "Priya, can you add new item to list for me?"
+   }
+  ]
+ },
+ "llm_qwen1.5b|car": {
+  "false_accepts": 91,
+  "kinds": {
+   "other": 59,
+   "short": 20,
+   "device vocabulary": 7,
+   "question": 5
+  },
+  "by_stream": {
+   "ami": 33,
+   "calls": 42,
+   "lyrics": 15,
+   "monologue": 1
+  },
+  "examples": [
+   {
+    "window": "w0080",
+    "stream": "lyrics",
+    "text": "Lord, thou hast been favourable unto thy land: thou hast brought back the captivity of Jacob."
+   },
+   {
+    "window": "w0052",
+    "stream": "calls",
+    "text": "I do it for fun really and to save"
+   },
+   {
+    "window": "w0073",
+    "stream": "calls",
+    "text": "and somebody will find a way to make money at it."
+   },
+   {
+    "window": "w0064",
+    "stream": "calls",
+    "text": "evidently this is one of the ways that they're paying for the program plus discouraging the people to quit smoking so they don't have to pay out as many, uh, benefits on like lung cancer and things like this."
+   },
+   {
+    "window": "w0841",
+    "stream": "calls",
+    "text": "so, it's been fun. How about you?"
+   },
+   {
+    "window": "w0046",
+    "stream": "calls",
+    "text": "Is it"
+   },
+   {
+    "window": "w0202",
+    "stream": "ami",
+    "text": "Uh I have one or or two question."
+   },
+   {
+    "window": "w0173",
+    "stream": "calls",
+    "text": "um, but I don't know I, I've been camping a couple times but I'm not a real avid camper, uh a lot of people I know are but, um, I don't, I don't . -"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0130",
+    "kind": "to_person",
+    "text": "I'll open twitter send message when we get home"
+   },
+   {
+    "window": "w0137",
+    "kind": "subject",
+    "text": "Can you check the map, i don't know where the hospital is"
+   },
+   {
+    "window": "w0145",
+    "kind": "subject",
+    "text": "Did you text alex back about tonight?"
+   },
+   {
+    "window": "w0148",
+    "kind": "to_person",
+    "text": "I'll find myself a train ticket to boston when we get home"
+   },
+   {
+    "window": "w0156",
+    "kind": "to_person",
+    "text": "I'll add this new email with contact when we get home"
+   },
+   {
+    "window": "w0160",
+    "kind": "to_person",
+    "text": "I need to tell comcast i hate them after this call"
+   },
+   {
+    "window": "w0164",
+    "kind": "to_person",
+    "text": "Remember to open company name and find complaints tonight"
+   },
+   {
+    "window": "w0168",
+    "kind": "to_person",
+    "text": "I need to get myself a person asap after this call"
+   }
+  ]
+ },
+ "llm_qwen1.5b|kitchen": {
+  "false_accepts": 91,
+  "kinds": {
+   "other": 61,
+   "short": 19,
+   "device vocabulary": 6,
+   "question": 5
+  },
+  "by_stream": {
+   "ami": 37,
+   "calls": 39,
+   "lyrics": 12,
+   "monologue": 3
+  },
+  "examples": [
+   {
+    "window": "w0394",
+    "stream": "calls",
+    "text": "will tell you that, uh, it is set up right now, all the laws protect the criminal."
+   },
+   {
+    "window": "w0298",
+    "stream": "lyrics",
+    "text": "Met in garden bright"
+   },
+   {
+    "window": "w0268",
+    "stream": "calls",
+    "text": "whereas she will be about"
+   },
+   {
+    "window": "w0366",
+    "stream": "calls",
+    "text": "Uh-huh yeah."
+   },
+   {
+    "window": "w0327",
+    "stream": "lyrics",
+    "text": "I am as a wonder unto many; but thou art my strong refuge."
+   },
+   {
+    "window": "w0258",
+    "stream": "calls",
+    "text": "Oh, I'm sure it would."
+   },
+   {
+    "window": "w0279",
+    "stream": "calls",
+    "text": "Okay well, I've, I have had some because I was working for P I E and they went bankrupt so"
+   },
+   {
+    "window": "w0254",
+    "stream": "calls",
+    "text": "Well, we don't have any children but we're going to have one next year ."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0342",
+    "kind": "to_person",
+    "text": "I need to tell myself the recipe of after this call"
+   },
+   {
+    "window": "w0343",
+    "kind": "subject",
+    "text": "We're out of coffee again"
+   },
+   {
+    "window": "w0346",
+    "kind": "to_person",
+    "text": "Remember to set my coffee machine tonight"
+   },
+   {
+    "window": "w0355",
+    "kind": "subject",
+    "text": "It says to bake it for forty minutes at 350"
+   },
+   {
+    "window": "w0360",
+    "kind": "to_person",
+    "text": "I need to order pizza for delivery after this call"
+   },
+   {
+    "window": "w0363",
+    "kind": "subject",
+    "text": "The coffee machine is making that noise again"
+   },
+   {
+    "window": "w0370",
+    "kind": "to_person",
+    "text": "Sam, can you make my usual for me?"
+   },
+   {
+    "window": "w0371",
+    "kind": "subject",
+    "text": "We're out of coffee again"
+   }
+  ]
+ },
+ "llm_qwen1.5b|watch": {
+  "false_accepts": 88,
+  "kinds": {
+   "other": 57,
+   "short": 19,
+   "question": 6,
+   "device vocabulary": 5,
+   "request shape": 1
+  },
+  "by_stream": {
+   "ami": 31,
+   "calls": 42,
+   "lyrics": 8,
+   "monologue": 7
+  },
+  "examples": [
+   {
+    "window": "w0491",
+    "stream": "calls",
+    "text": "want an editor, they don't come ."
+   },
+   {
+    "window": "w0503",
+    "stream": "lyrics",
+    "text": "If I were hungry, I would not tell thee: for the world is mine, and the fulness thereof."
+   },
+   {
+    "window": "w0542",
+    "stream": "monologue",
+    "text": "Let the blunt King tempt you againe to bed,"
+   },
+   {
+    "window": "w0543",
+    "stream": "monologue",
+    "text": "it to you trippingly on the Tongue: But if you mouth it,"
+   },
+   {
+    "window": "w0612",
+    "stream": "calls",
+    "text": "Sure."
+   },
+   {
+    "window": "w0483",
+    "stream": "calls",
+    "text": "Uh, well, no I can't really complain. I'm a student, um and I d-, I work as a co-op at, uh, Georgia Tech Research Institute. And, uh, I'm going to get back most of what I earned, I mean most of what I pay in taxes and, uh, and, uh"
+   },
+   {
+    "window": "w0496",
+    "stream": "calls",
+    "text": "Yeah."
+   },
+   {
+    "window": "w0596",
+    "stream": "calls",
+    "text": "Yeah. But, well, -"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0556",
+    "kind": "to_person",
+    "text": "I'll delete event from calendar when we get home"
+   },
+   {
+    "window": "w0557",
+    "kind": "subject",
+    "text": "My alarm didn't go off this morning"
+   },
+   {
+    "window": "w0560",
+    "kind": "to_person",
+    "text": "Remember to create a meeting event in my calendar tonight"
+   },
+   {
+    "window": "w0564",
+    "kind": "to_person",
+    "text": "Remember to remind me to pick up mark at the airport at six pm tonight"
+   },
+   {
+    "window": "w0566",
+    "kind": "to_person",
+    "text": "I need to remove the latest alarm after this call"
+   },
+   {
+    "window": "w0568",
+    "kind": "to_person",
+    "text": "I need to set my alarm for seven am after this call"
+   },
+   {
+    "window": "w0573",
+    "kind": "subject",
+    "text": "I keep missing my reminders"
+   },
+   {
+    "window": "w0574",
+    "kind": "to_person",
+    "text": "I need to set an alert for two pm after this call"
+   }
+  ]
+ },
+ "llm_qwen1.5b|general": {
+  "false_accepts": 95,
+  "kinds": {
+   "other": 60,
+   "short": 20,
+   "question": 7,
+   "device vocabulary": 7,
+   "request shape": 1
+  },
+  "by_stream": {
+   "ami": 38,
+   "calls": 39,
+   "lyrics": 15,
+   "monologue": 3
+  },
+  "examples": [
+   {
+    "window": "w0671",
+    "stream": "calls",
+    "text": "Uh-huh."
+   },
+   {
+    "window": "w0736",
+    "stream": "lyrics",
+    "text": "Deal bountifully with thy servant, that I may live, and keep thy word."
+   },
+   {
+    "window": "w0654",
+    "stream": "ami",
+    "text": "I Mm-hmm."
+   },
+   {
+    "window": "w0810",
+    "stream": "calls",
+    "text": "you, uh, like best."
+   },
+   {
+    "window": "w0717",
+    "stream": "lyrics",
+    "text": "Gracious is the LORD, and righteous; yea, our God is merciful."
+   },
+   {
+    "window": "w0806",
+    "stream": "calls",
+    "text": "Yeah that's true."
+   },
+   {
+    "window": "w0831",
+    "stream": "calls",
+    "text": "Yeah sure."
+   },
+   {
+    "window": "w0807",
+    "stream": "calls",
+    "text": "And in fact, some of these things I get, some of these questionnaires, - it's funny because I'm, I was in the process of filling one out when I decided I would make this phone call but , uh, I haven't got to the end of it yet where it asks all that salary information and everything but, when you have to send that back in the mail with your name on it, your salary information, I, I just have a real hard time doing that, uh and they ask you what type of household items do you own, like stereos and T V -s and V C R -s and, and you hate to send something off with your name and address and what types of things do you own and what kind of money do you make and you wonder, well, who's going to get ahold of this and think, um, that's a nice place to go rob ."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0761",
+    "kind": "subject",
+    "text": "Who sings this one?"
+   },
+   {
+    "window": "w0768",
+    "kind": "to_person",
+    "text": "Remember to remind me of how many lists i have tonight"
+   },
+   {
+    "window": "w0769",
+    "kind": "subject",
+    "text": "Can you put it on the shopping list?"
+   },
+   {
+    "window": "w0772",
+    "kind": "to_person",
+    "text": "Remember to play it again tonight"
+   },
+   {
+    "window": "w0788",
+    "kind": "to_person",
+    "text": "Dave, can you play coldplay album for me?"
+   },
+   {
+    "window": "w0803",
+    "kind": "subject",
+    "text": "Turn it down, i can't hear you"
+   },
+   {
+    "window": "w0805",
+    "kind": "subject",
+    "text": "Turn it down, i can't hear you"
+   },
+   {
+    "window": "w0814",
+    "kind": "to_person",
+    "text": "Priya, can you add new item to list for me?"
+   }
+  ]
+ },
  "shape_embed|car": {
   "false_accepts": 91,
   "kinds": {

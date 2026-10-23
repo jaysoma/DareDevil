@@ -648,7 +648,8 @@ the failures by kind. Commit `results/linguistic/ami/` and `harness/linguistic/`
 DONE in a 2026-10-23 cloud session: `results/device_directed/report.md`. Shape finds the instructions and Jay's
 contrast makes it better (MiniLM: 89% at 1 false accept per hour, keywords 9%); a foreign-phrase control shows
 it is not just spotting the splice. But the same instructions said to a person pass almost as often: words alone
-don't say who they are for. Don't start this one.
+don't say who they are for. A small general model asked directly does far worse (Qwen2.5-1.5B: 12% at 1/h; 0.5B
+answers by line position). Don't start this one.
 
 READY 2026-10-23. Text only: no audio, no GPU, no Fisher model needed.
 

@@ -34,5 +34,19 @@
   "seconds_per_phrase": 0.00051,
   "model_bytes": 90405214,
   "note": "all-MiniLM-L6-v2 ONNX fp32; encoding 12.9 ms per phrase"
+ },
+ "llm_qwen1.5b": {
+  "seconds_per_phrase": 0.14692,
+  "seconds_per_window": 4.554,
+  "model_bytes": 1117320736,
+  "timed_windows": 568,
+  "note": "llama.cpp, Q4_K_M, 4 CPU threads, wall clock"
+ },
+ "llm_qwen0.5b": {
+  "seconds_per_phrase": 0.15963,
+  "seconds_per_window": 4.948,
+  "model_bytes": 491400032,
+  "timed_windows": 950,
+  "note": "llama.cpp, Q4_K_M, 4 CPU threads, wall clock from the run log (950 windows in 4701 s), CPU shared with other work for much of it; alone it ran 24 windows in 70 s (2.9 s each)"
  }
 }
