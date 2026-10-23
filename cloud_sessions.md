@@ -434,12 +434,13 @@ Score under the scoring rule, catalogue every set-aside read, and commit `result
 
 # Stage 2 groundwork: diart and DFN on the same audio
 
-Stage 1 stays first; these queue behind batch A. **Waiting on Jay's check-in.** Don't start until these exist:
-- **`diarizer/`:** the diart settings as Jay runs them (window, step, latency, `tau_active`, `rho_update`,
-  `delta_new`), and the glue between raw audio and diart.
-- **`dfn/`:** Jay's DeepFilterNet fork, the one hacked to expose internal data that was being thrown away, with a note
-  on what each exposed field is.
-- **A Hugging Face token** stored as an environment secret, for diart's pyannote models. Never commit model weights.
+Stage 1 stays first; these queue behind batch A.
+- **Brief 15 (diart) is ready** once a Hugging Face token is stored as an environment secret, from an account that has
+  accepted the user conditions for `pyannote/segmentation`, `pyannote/segmentation-3.0` and `pyannote/embedding`. Diart
+  runs out of the box (`pip install diart`, its own defaults): that's what worked best for Jay, and every modified
+  version did worse. Never commit model weights.
+- **Brief 16 (DFN) waits on Jay's DeepFilterNet fork,** the one hacked to expose internal data that was being thrown
+  away, with a note on what each exposed field is. A private repo attached to the session is fine.
 
 Both briefs run on the same human-talker data as batch A, keyed by batch A's read `id`, and write separate files. They
 add fields; they never change batch A's records.
@@ -451,9 +452,9 @@ add fields; they never change batch A's records.
      with overlapping speech, and AMI if it's reachable.
    - **Scoring:** diarization error, speaker-count error, missed and false speaker changes, plus how often one person
      is split into two voices and two people merged into one.
-   - **Settings:** choose diart's thresholds on one dataset and test them untouched on the others.
-2. **Input channel:** one raw capsule, against the DFN-enhanced capsule from brief 16 (the Android-processed stream's
-   stand-in). Does cleaning the voice help diart?
+   - **Settings:** diart out of the box. Record the exact version and defaults it ran with; tune nothing.
+2. **Input channel:** one raw capsule. If brief 16 has run, also try its DFN-enhanced capsule (a stand-in for the
+   Android-processed stream). Does cleaning the voice help diart?
 3. **Pooling by voice.**
    - Pool GccPhat's reads inside each diart voice's segments to get each voice's place, and score it against the
      tracked positions.
