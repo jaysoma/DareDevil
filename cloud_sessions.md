@@ -258,6 +258,32 @@ audio. The cues are the onset level (FiveMsAmplitude's 5 ms), the direction-free
 Score angle under the scoring rule at the top. Commit everything to a branch: no audio, but the truth and per-read
 records so brief 11 can run from the repo alone.
 
+**The plan: three agents in parallel, then one to join them**
+
+| Agent | Brief | Asks | Data |
+|---|---|---|---|
+| 1 | 9 | Which wrong locks happen in many real rooms, and what each read knew at the time | STARSS23 development set, 16 rooms, real talkers |
+| 2 | 10 | The same, at the phone's spacing, with tracked head facing and several talkers | LOCATA, DICIT 16 cm and 8 cm pairs, real talkers |
+| 3 | 13 | Which cause produces which wrong lock, and its fingerprint in the clues | Human speech (EARS) placed by exact delays and by dEchorate's measured RIRs, one cause at a time |
+| then | 11 | Match real wrong locks to causes, fix the top ones, choose commit-or-dim, run once on held-out data | Outputs of 9, 10 and 13, then the STARSS23 evaluation set |
+
+Agents 1 and 2 find what goes wrong on real people. Agent 3 shows what each suspected cause looks like when it's the
+only thing changed. Brief 11 joins them. Nobody changes `src/schemes/`: proposed fixes go into a copy under
+`harness/` and are compared side by side.
+
+**The record format, shared by 9, 10 and 13** (one JSON line per read, `reads.jsonl`, plus `truth.jsonl` without
+audio):
+
+    {"dataset", "scenario", "id", "pair_mm",
+     "truth": {"deg", "dist_m", "facing_deg"|null, "others": [{"deg", "class"}]},
+     "gcc": {"angles": [deg...], "shares": [...], "widths": [[lo,hi]...], "tie", "votes",
+             "track": {"43": deg, "100": deg, "250": deg, "lock": deg}},
+     "a2": {"deg", "edge", "first_ms", "at3_ms", "second_deg"},
+     "pause_deg", "snr_db": {"mf", "hf1", "hf2"},
+     "classes": [...], "cause": null | "<agent 3 knob and level>"}
+
+Keep field names exact so brief 11 joins the three without translation.
+
 ## 9. Batch A on STARSS23 (16 rooms, real talkers)
 
 Cut with `harness/starss23/starss_cut.py`, all six pairs. Record the speech onsets, and also the other classes' onsets
@@ -275,18 +301,52 @@ of each talker, and onsets come from each source's voice-activity record. The ta
 in the data, so the facing class is real here. With several talkers in task 4, the "another labelled source" class is
 the multi-talker case. Commit to `results/batchA/locata/`.
 
-## 11. After 9 and 10: commit or dim, chosen on one dataset and tested on the other
+## 11. After 9, 10 and 13: join, fix, choose commit-or-dim, then one held-out run
 
-Read both batch A results.
-1. **Find the simplest rule:** one or two thresholds on the recorded clues that splits reads into "commit" (drawn
-   solid) and "dim". Choose it on STARSS23 and test it untouched on LOCATA, then the other way round.
-2. **Report the curve:** the share of reads committed against the share of those within 10 deg, for each rule and each
-   direction of the cross-test. A rule that only works on the data it was chosen on is tuned, not general: say so.
-3. **Name the leading wrong-angle classes** and whether the rule catches them.
-4. **Range:** which cue is consistent in both datasets, and whether committing on the angle rule also picks the reads
-   whose range is consistent.
+Read all three results.
+1. **Attribute.** Match each real wrong lock from 9 and 10 to the cause whose fingerprint (from 13) it carries. Rank
+   the causes by their share of wrong locks on real talkers, per dataset.
+2. **Fix the top two causes, in a copy.** Change a copy of the schemes under `harness/fixes/`; leave `src/schemes/`
+   alone. Re-score 9's and 10's reads with the copy, and report every read that moved in or out of 10 deg.
+3. **Commit or dim.** Choose the simplest rule (one or two thresholds on the recorded clues) on STARSS23, and test it
+   untouched on LOCATA. Then the other way round. Plot the share of reads committed against the share of those within
+   10 deg. A rule that works only where it was chosen is tuned, not general: say so.
+4. **Range:** which cue is consistent in both datasets, and whether committing on the angle rule also picks reads whose
+   range is consistent.
+5. **Held-out exam, once.** Run the final schemes and rule on the STARSS23 evaluation set
+   (https://zenodo.org/records/7880637, `mic_eval.zip`), which nothing so far has touched. If its labels aren't in
+   the release, report that and stop. Report whatever comes out, with no tuning after the run.
 
 Commit `results/batchA/report.md` to a branch.
+
+## 13. Mechanism lab: which cause makes a wrong lock, and its fingerprint
+
+Read HANDOFF.md, `results/angle2_pull.md`, `results/zero_deg/report.md` and the batch A spec above. The speech is
+human (EARS, via `harness/dechorate/ears_fetch.py`). Only the placement is synthetic: exact fractional delays at
+157 mm and 69 mm in free field, and dEchorate's measured RIRs (155 mm pair) in configuration 000000 (all absorbing)
+and 011111 (all reflective). Don't derive geometry from the loudspeaker RIRs; they only carry the mechanisms.
+Talker angles span -75 to +75 deg in 5 deg steps.
+
+**Change one thing at a time.** For each setting, run both schemes unchanged and record in the shared format, with
+`cause` set:
+1. **A steady directional source** (pink noise, then a second voice) at a known angle, sounding through the pause and
+   under the speech, from 30 dB below the voice to 0 dB. Does the read lock to it?
+2. **A common-mode signal**, identical in both channels, at the same levels. The 0 deg pull.
+3. **Diffuse noise** with the pair's true coherence, at the same levels.
+4. **Spatial aliasing.** With no noise, find which talker angles produce aliasing-partner reads. Then vary the
+   analysis band's low edge (300, 1100, 2000 Hz) in a copy of the schemes only, and say so.
+5. **Late or early onset.** Hand the schemes an onset -50 to +150 ms off the true one.
+6. **No pause history.** The same cuts handed to GccPhat without the pause before the onset, so its votes aren't
+   weighted.
+7. **A quiet voice.** The voice at 30, 20, 10 and 5 dB over a floor of capsule noise only.
+
+**For each cause and level, report:**
+- **Wrong-lock rate:** over 10 deg and over 36 deg, per scheme and angle band.
+- **Fingerprint:** which recorded clues move with it (share, width, edge, agreement, pause direction, band SNRs) and
+  by how much. That's what brief 11 uses to attribute real failures.
+- **Who falls first:** the level at which each scheme starts losing reads.
+
+Score under the scoring rule above. Commit `results/batchA/lab/` and `harness/batchA_lab/` to a branch.
 
 ---
 
