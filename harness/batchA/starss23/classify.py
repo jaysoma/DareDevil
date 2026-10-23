@@ -17,9 +17,10 @@ lateral angle stays in truth.deg, and the rule's score is given against both.
 THE CLASSES, for a read off its reference by more than 10 deg (moderate) or 36 deg (outlier):
   mirror                   |ref| >= 10 and the read within 10 deg of -ref
   end-fire pin             |read| >= 85
-  pause direction          within 10 deg of GccPhat's read of the 0.5 s before the onset
-  another labelled source  within 10 deg of another source active from 0.5 s before to 0.5 s after the onset
-                           (its own sphere reference)
+  pause direction          within 10 deg of GccPhat's read of the 0.5 s before the onset, that read itself more than
+                           10 deg from the reference (so it is a different direction, not the talker's own last word)
+  another labelled source  within 10 deg of another source active from 0.5 s before to 0.5 s after the onset (its own
+                           sphere reference), that source more than 10 deg from the reference
   0 deg pull               |read| < 6 while |ref| > 15
   aliasing partner         the read's delay and the reference's differ by one period of a frequency f with
                            c/2d <= f <= 8 kHz, and f's third-octave band holds >= ALIAS_SHARE of the voice's power
@@ -97,9 +98,9 @@ def classify(x, ref, d, others, pause, alts, early, bands):
         cl.append('mirror')
     if abs(x) >= 85:
         cl.append('end-fire pin')
-    if pause is not None and abs(x - pause) <= 10:
+    if pause is not None and abs(x - pause) <= 10 and abs(pause - ref) > 10:
         cl.append('pause direction')
-    if any(o is not None and abs(x - o) <= 10 for o in others):
+    if any(o is not None and abs(x - o) <= 10 and abs(o - ref) > 10 for o in others):
         cl.append('another labelled source')
     if abs(x) < 6 and abs(ref) > 15:
         cl.append('0 deg pull')
@@ -244,6 +245,36 @@ def main():
                             'read': r['gcc']['angles'][0] if s == 'gcc' else r['a2']['deg'], 'err': r[s]['err'], 'severity': r[s]['severity'],
                             'classes': r['classes'] if s == 'gcc' else r['a2']['classes'],
                             'others': [[o['class'], o['deg']] for o in r['truth']['others']], 'pause_deg': r['pause_deg']})
+    # ---- chance for the classes that match a direction the cut carried: the same test with that direction taken from a
+    # random other cut of the same scenario (room and pair), against this read and this reference
+    chance = {}
+    by_scen = defaultdict(list)
+    for r in recs:
+        by_scen[r['scenario']].append(r)
+    feats = lambda r, s: (r['pause_deg'], [o['sphere_deg'][s] if o['sphere_deg'][s] is not None else o['deg'] for o in r['truth']['others']],
+                          (r['gcc']['angles'][1:] if r['gcc'] else []) if s == 'gcc' else [r['a2']['second_deg']] if r['a2'] else [])
+    for s, name in (('gcc', 'GccPhat'), ('a2', 'Angle2')):
+        for kind in ('speech', 'other'):
+            wrong = [r for r in recs if r['truth']['kind'] == kind and r[s] and r[s].get('err') is not None and r[s]['err'] > OK
+                     and abs(r['truth']['sphere_deg'][s]) <= CS.SCOPE]
+            hit, base = Counter(), Counter()
+            for r in wrong:
+                x = r['gcc']['angles'][0] if s == 'gcc' else r['a2']['deg']
+                ref, d = r['truth']['sphere_deg'][s], r['pair_mm'] / 1000
+                own = classify(x, ref, d, feats(r, s)[1], feats(r, s)[0], feats(r, s)[2], None, None)
+                mate = rnd.choice(by_scen[r['scenario']])
+                pa, ot, al = feats(mate, s)
+                sh = classify(x, ref, d, ot, pa, al, None, None)
+                for c in ('pause direction', 'another labelled source', 'truth was angle 2 or 3'):
+                    hit[c] += c in own; base[c] += c in sh
+            chance.setdefault(name, {})[kind] = {c: {'observed_pct': round(100 * hit[c] / max(len(wrong), 1), 1),
+                                                    'chance_pct': round(100 * base[c] / max(len(wrong), 1), 1)} for c in hit}
+            # what the pause held when a read locked to it: a labelled source sounding before the onset, or nothing labelled
+            pz = [r for r in wrong if 'pause direction' in (r['classes'] if s == 'gcc' else r['a2']['classes'])]
+            lab = sum(1 for r in pz if any(o['before'] and abs((o['sphere_deg'][s] if o['sphere_deg'][s] is not None else o['deg']) - r['pause_deg']) <= 10
+                                           for o in r['truth']['others']))
+            chance[name][kind]['pause direction']['pause held a labelled source'] = lab
+            chance[name][kind]['pause direction']['pause held nothing labelled near that direction'] = len(pz) - lab
     with open(OUTD / 'catalogue.jsonl', 'w') as fh:
         for c in cat:
             fh.write(json.dumps(c) + '\n')
@@ -266,7 +297,11 @@ def main():
                'snr hf1 dB': lambda r: r['snr_db']['hf1'] if r['snr_db'] else None,
                'snr hf2 dB': lambda r: r['snr_db']['hf2'] if r['snr_db'] else None,
                'another source active': lambda r: float(bool(r['truth']['others']))}
-        clues[name] = {k: {sev: med([r for r in sel if r[s]['severity'] == sev], fn) for sev in ('ok', 'moderate', 'outlier')} for k, fn in fns.items()}
+        rate = lambda rows, fn: (lambda v: round(100 * sum(v) / len(v), 1) if v else None)([x for x in (fn(r) for r in rows) if x is not None])
+        binary = {'gcc tie', 'a2 edge', 'schemes agree within 5 deg', 'another source active'}
+        clues[name] = {(k + ' (% of reads)' if k in binary else k + ' (median)'):
+                       {sev: (rate if k in binary else med)([r for r in sel if r[s]['severity'] == sev], fn) for sev in ('ok', 'moderate', 'outlier')}
+                       for k, fn in fns.items()}
 
     # ---- the lean, as results/starss23/report.md section 2 (solo speech, pairs 1-2 and 3-4, against geometric truth)
     lean = {}
@@ -287,7 +322,7 @@ def main():
                'gcc_no_read': sum(1 for r in recs if not r['gcc'] or not r['gcc']['angles']),
                'a2_no_read': sum(1 for r in recs if not r['a2']),
                'alias_share_threshold': ALIAS_SHARE, 'score': score, 'classes': tables, 'overlaps': overlaps,
-               'examples': examples, 'clues_median_by_severity': clues, 'lean': lean}
+               'examples': examples, 'chance': chance, 'clues_by_severity': clues, 'lean': lean}
     (OUTD / 'summary.json').write_text(json.dumps(summary, indent=1))
     print(json.dumps({k: summary[k] for k in ('reads', 'by_kind', 'replica_ok_pct', 'gcc_no_read', 'a2_no_read')}, indent=1))
 

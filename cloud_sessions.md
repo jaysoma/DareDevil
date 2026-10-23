@@ -286,6 +286,9 @@ Keep field names exact so brief 11 joins the three without translation.
 
 ## 9. Batch A on STARSS23 (16 rooms, real talkers)
 
+DONE 2026-10-23: `results/batchA/starss23/report.md`. Over half of GccPhat's wrong speech locks (two-thirds of its
+outliers) sit on another direction that was also sounding: the pause's or another labelled source's, at 2.5-3x chance.
+
 Cut with `harness/starss23/starss_cut.py`, all six pairs. Record the speech onsets, and also the other classes' onsets
 (footsteps, door, knock, phone and so on) under a separate label, since Stage 1 renders every sound. STARSS has no
 facing truth. Truth for other active sources comes from the metadata frames around each onset. The array is a rigid

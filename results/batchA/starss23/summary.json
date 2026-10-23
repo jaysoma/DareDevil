@@ -1,0 +1,4552 @@
+{
+ "reads": 44988,
+ "by_kind": {
+  "other not solo": 7536,
+  "speech not solo": 27246,
+  "speech solo": 8562,
+  "other solo": 1644
+ },
+ "by_class_of_sound": {
+  "male speech": 19842,
+  "female speech": 15966,
+  "laughter": 4338,
+  "footsteps": 1140,
+  "musical instrument": 984,
+  "door/cupboard": 588,
+  "clapping": 456,
+  "bell": 396,
+  "domestic sounds": 372,
+  "telephone": 306,
+  "music": 276,
+  "water tap": 192,
+  "knock": 132
+ },
+ "replica_ok_pct": 100.0,
+ "gcc_no_read": 42,
+ "a2_no_read": 1888,
+ "alias_share_threshold": 0.05,
+ "score": {
+  "speech": {
+   "sphere": {
+    "GccPhat": {
+     "reads": 35801,
+     "in_scope": 30710,
+     "read_outliers": 5282,
+     "read_outliers_pct": 17.2,
+     "scenarios": 96,
+     "scenarios_dropped": 2,
+     "dropped": [
+      "room2 pair 24",
+      "room23 pair 34"
+     ],
+     "kept_pct": 82.3,
+     "score": {
+      "n": 25288,
+      "mean_err": 9.5,
+      "median_err": 6.4,
+      "within_10_pct": 65.2,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 6050,
+        "mean": -0.7
+       },
+       "15-30": {
+        "n": 6122,
+        "mean": -0.5
+       },
+       "30-45": {
+        "n": 5975,
+        "mean": -0.1
+       },
+       "45-60": {
+        "n": 3914,
+        "mean": -0.5
+       },
+       "60-75": {
+        "n": 2835,
+        "mean": 2.3
+       }
+      }
+     }
+    },
+    "Angle2": {
+     "reads": 34438,
+     "in_scope": 30141,
+     "read_outliers": 7026,
+     "read_outliers_pct": 23.3,
+     "scenarios": 96,
+     "scenarios_dropped": 3,
+     "dropped": [
+      "room2 pair 14",
+      "room22 pair 14",
+      "room2 pair 24"
+     ],
+     "kept_pct": 75.5,
+     "score": {
+      "n": 22744,
+      "mean_err": 11.0,
+      "median_err": 8.2,
+      "within_10_pct": 57.0,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 5764,
+        "mean": -1.0
+       },
+       "15-30": {
+        "n": 5773,
+        "mean": -1.1
+       },
+       "30-45": {
+        "n": 5070,
+        "mean": -1.1
+       },
+       "45-60": {
+        "n": 3333,
+        "mean": -2.3
+       },
+       "60-75": {
+        "n": 2403,
+        "mean": -1.8
+       }
+      }
+     }
+    }
+   },
+   "geometric": {
+    "GccPhat": {
+     "reads": 35801,
+     "in_scope": 34908,
+     "read_outliers": 6603,
+     "read_outliers_pct": 18.9,
+     "scenarios": 96,
+     "scenarios_dropped": 1,
+     "dropped": [
+      "room22 pair 24"
+     ],
+     "kept_pct": 80.7,
+     "score": {
+      "n": 28175,
+      "mean_err": 11.2,
+      "median_err": 8.2,
+      "within_10_pct": 56.7,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 6727,
+        "mean": 0.4
+       },
+       "15-30": {
+        "n": 7287,
+        "mean": 1.5
+       },
+       "30-45": {
+        "n": 6241,
+        "mean": 4.8
+       },
+       "45-60": {
+        "n": 4943,
+        "mean": 7.6
+       },
+       "60-75": {
+        "n": 2394,
+        "mean": 11.7
+       }
+      }
+     }
+    },
+    "Angle2": {
+     "reads": 34438,
+     "in_scope": 33571,
+     "read_outliers": 8128,
+     "read_outliers_pct": 24.2,
+     "scenarios": 96,
+     "scenarios_dropped": 1,
+     "dropped": [
+      "room22 pair 24"
+     ],
+     "kept_pct": 75.4,
+     "score": {
+      "n": 25302,
+      "mean_err": 12.1,
+      "median_err": 9.4,
+      "within_10_pct": 52.1,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 6239,
+        "mean": 0.1
+       },
+       "15-30": {
+        "n": 6720,
+        "mean": 0.7
+       },
+       "30-45": {
+        "n": 5606,
+        "mean": 2.7
+       },
+       "45-60": {
+        "n": 4391,
+        "mean": 3.9
+       },
+       "60-75": {
+        "n": 1827,
+        "mean": 5.0
+       }
+      }
+     }
+    }
+   }
+  },
+  "speech, alone (the old single-talker set)": {
+   "sphere": {
+    "GccPhat": {
+     "reads": 8562,
+     "in_scope": 7393,
+     "read_outliers": 518,
+     "read_outliers_pct": 7.0,
+     "scenarios": 96,
+     "scenarios_dropped": 1,
+     "dropped": [
+      "room2 pair 24"
+     ],
+     "kept_pct": 92.8,
+     "score": {
+      "n": 6858,
+      "mean_err": 8.4,
+      "median_err": 5.5,
+      "within_10_pct": 69.7,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 1581,
+        "mean": -0.5
+       },
+       "15-30": {
+        "n": 1554,
+        "mean": -0.0
+       },
+       "30-45": {
+        "n": 1665,
+        "mean": 0.6
+       },
+       "45-60": {
+        "n": 1111,
+        "mean": 0.3
+       },
+       "60-75": {
+        "n": 812,
+        "mean": 4.2
+       }
+      }
+     }
+    },
+    "Angle2": {
+     "reads": 8450,
+     "in_scope": 7434,
+     "read_outliers": 929,
+     "read_outliers_pct": 12.5,
+     "scenarios": 96,
+     "scenarios_dropped": 1,
+     "dropped": [
+      "room22 pair 14"
+     ],
+     "kept_pct": 87.2,
+     "score": {
+      "n": 6485,
+      "mean_err": 9.8,
+      "median_err": 7.1,
+      "within_10_pct": 61.9,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 1540,
+        "mean": -0.4
+       },
+       "15-30": {
+        "n": 1516,
+        "mean": -0.1
+       },
+       "30-45": {
+        "n": 1532,
+        "mean": -0.0
+       },
+       "45-60": {
+        "n": 977,
+        "mean": -1.6
+       },
+       "60-75": {
+        "n": 780,
+        "mean": -2.2
+       }
+      }
+     }
+    }
+   },
+   "geometric": {
+    "GccPhat": {
+     "reads": 8562,
+     "in_scope": 8352,
+     "read_outliers": 806,
+     "read_outliers_pct": 9.7,
+     "scenarios": 96,
+     "scenarios_dropped": 1,
+     "dropped": [
+      "room22 pair 24"
+     ],
+     "kept_pct": 90.1,
+     "score": {
+      "n": 7524,
+      "mean_err": 10.6,
+      "median_err": 7.6,
+      "within_10_pct": 59.7,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 1745,
+        "mean": 0.8
+       },
+       "15-30": {
+        "n": 1828,
+        "mean": 2.4
+       },
+       "30-45": {
+        "n": 1767,
+        "mean": 5.8
+       },
+       "45-60": {
+        "n": 1388,
+        "mean": 9.9
+       },
+       "60-75": {
+        "n": 595,
+        "mean": 13.9
+       }
+      }
+     }
+    },
+    "Angle2": {
+     "reads": 8450,
+     "in_scope": 8241,
+     "read_outliers": 1168,
+     "read_outliers_pct": 14.2,
+     "scenarios": 96,
+     "scenarios_dropped": 1,
+     "dropped": [
+      "room22 pair 24"
+     ],
+     "kept_pct": 85.6,
+     "score": {
+      "n": 7054,
+      "mean_err": 11.0,
+      "median_err": 8.4,
+      "within_10_pct": 56.2,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 1662,
+        "mean": 1.1
+       },
+       "15-30": {
+        "n": 1759,
+        "mean": 2.4
+       },
+       "30-45": {
+        "n": 1650,
+        "mean": 4.1
+       },
+       "45-60": {
+        "n": 1320,
+        "mean": 5.8
+       },
+       "60-75": {
+        "n": 481,
+        "mean": 8.3
+       }
+      }
+     }
+    }
+   }
+  },
+  "speech, with another source active": {
+   "sphere": {
+    "GccPhat": {
+     "reads": 26975,
+     "in_scope": 23094,
+     "read_outliers": 4755,
+     "read_outliers_pct": 20.6,
+     "scenarios": 96,
+     "scenarios_dropped": 2,
+     "dropped": [
+      "room2 pair 24",
+      "room23 pair 34"
+     ],
+     "kept_pct": 78.9,
+     "score": {
+      "n": 18219,
+      "mean_err": 9.8,
+      "median_err": 6.7,
+      "within_10_pct": 63.8,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 4399,
+        "mean": -0.8
+       },
+       "15-30": {
+        "n": 4558,
+        "mean": -0.5
+       },
+       "30-45": {
+        "n": 4242,
+        "mean": -0.3
+       },
+       "45-60": {
+        "n": 2773,
+        "mean": -0.8
+       },
+       "60-75": {
+        "n": 1988,
+        "mean": 1.5
+       }
+      }
+     }
+    },
+    "Angle2": {
+     "reads": 25732,
+     "in_scope": 22506,
+     "read_outliers": 6062,
+     "read_outliers_pct": 26.9,
+     "scenarios": 96,
+     "scenarios_dropped": 3,
+     "dropped": [
+      "room2 pair 14",
+      "room22 pair 14",
+      "room2 pair 24"
+     ],
+     "kept_pct": 71.8,
+     "score": {
+      "n": 16149,
+      "mean_err": 11.5,
+      "median_err": 8.6,
+      "within_10_pct": 55.0,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 4154,
+        "mean": -1.2
+       },
+       "15-30": {
+        "n": 4249,
+        "mean": -1.3
+       },
+       "30-45": {
+        "n": 3508,
+        "mean": -1.6
+       },
+       "45-60": {
+        "n": 2338,
+        "mean": -2.6
+       },
+       "60-75": {
+        "n": 1632,
+        "mean": -2.1
+       }
+      }
+     }
+    }
+   },
+   "geometric": {
+    "GccPhat": {
+     "reads": 26975,
+     "in_scope": 26293,
+     "read_outliers": 5744,
+     "read_outliers_pct": 21.8,
+     "scenarios": 96,
+     "scenarios_dropped": 2,
+     "dropped": [
+      "room22 pair 24",
+      "room23 pair 34"
+     ],
+     "kept_pct": 77.4,
+     "score": {
+      "n": 20358,
+      "mean_err": 11.4,
+      "median_err": 8.4,
+      "within_10_pct": 55.8,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 4858,
+        "mean": 0.2
+       },
+       "15-30": {
+        "n": 5392,
+        "mean": 1.2
+       },
+       "30-45": {
+        "n": 4439,
+        "mean": 4.4
+       },
+       "45-60": {
+        "n": 3529,
+        "mean": 6.6
+       },
+       "60-75": {
+        "n": 1766,
+        "mean": 11.0
+       }
+      }
+     }
+    },
+    "Angle2": {
+     "reads": 25732,
+     "in_scope": 25074,
+     "read_outliers": 6884,
+     "read_outliers_pct": 27.5,
+     "scenarios": 96,
+     "scenarios_dropped": 1,
+     "dropped": [
+      "room22 pair 24"
+     ],
+     "kept_pct": 72.1,
+     "score": {
+      "n": 18075,
+      "mean_err": 12.5,
+      "median_err": 9.8,
+      "within_10_pct": 50.5,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 4510,
+        "mean": -0.3
+       },
+       "15-30": {
+        "n": 4930,
+        "mean": 0.2
+       },
+       "30-45": {
+        "n": 3932,
+        "mean": 2.2
+       },
+       "45-60": {
+        "n": 3041,
+        "mean": 3.1
+       },
+       "60-75": {
+        "n": 1329,
+        "mean": 4.0
+       }
+      }
+     }
+    }
+   }
+  },
+  "other sounds": {
+   "sphere": {
+    "GccPhat": {
+     "reads": 9145,
+     "in_scope": 7675,
+     "read_outliers": 1916,
+     "read_outliers_pct": 25.0,
+     "scenarios": 96,
+     "scenarios_dropped": 1,
+     "dropped": [
+      "room2 pair 24"
+     ],
+     "kept_pct": 75.0,
+     "score": {
+      "n": 5757,
+      "mean_err": 10.1,
+      "median_err": 6.8,
+      "within_10_pct": 62.6,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 1476,
+        "mean": -0.3
+       },
+       "15-30": {
+        "n": 1567,
+        "mean": -1.5
+       },
+       "30-45": {
+        "n": 1288,
+        "mean": -3.0
+       },
+       "45-60": {
+        "n": 758,
+        "mean": -0.5
+       },
+       "60-75": {
+        "n": 559,
+        "mean": 1.9
+       }
+      }
+     }
+    },
+    "Angle2": {
+     "reads": 8662,
+     "in_scope": 7422,
+     "read_outliers": 1781,
+     "read_outliers_pct": 24.0,
+     "scenarios": 96,
+     "scenarios_dropped": 2,
+     "dropped": [
+      "room8 pair 14",
+      "room22 pair 24"
+     ],
+     "kept_pct": 75.2,
+     "score": {
+      "n": 5578,
+      "mean_err": 10.3,
+      "median_err": 7.3,
+      "within_10_pct": 61.3,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 1443,
+        "mean": -1.0
+       },
+       "15-30": {
+        "n": 1527,
+        "mean": -1.4
+       },
+       "30-45": {
+        "n": 1239,
+        "mean": -2.7
+       },
+       "45-60": {
+        "n": 714,
+        "mean": -1.7
+       },
+       "60-75": {
+        "n": 537,
+        "mean": -1.3
+       }
+      }
+     }
+    }
+   },
+   "geometric": {
+    "GccPhat": {
+     "reads": 9145,
+     "in_scope": 8844,
+     "read_outliers": 2290,
+     "read_outliers_pct": 25.9,
+     "scenarios": 96,
+     "scenarios_dropped": 1,
+     "dropped": [
+      "room12 pair 23"
+     ],
+     "kept_pct": 73.3,
+     "score": {
+      "n": 6485,
+      "mean_err": 11.8,
+      "median_err": 8.5,
+      "within_10_pct": 55.1,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 1630,
+        "mean": 0.3
+       },
+       "15-30": {
+        "n": 1824,
+        "mean": 0.4
+       },
+       "30-45": {
+        "n": 1307,
+        "mean": 1.6
+       },
+       "45-60": {
+        "n": 952,
+        "mean": 6.6
+       },
+       "60-75": {
+        "n": 629,
+        "mean": 11.7
+       }
+      }
+     }
+    },
+    "Angle2": {
+     "reads": 8662,
+     "in_scope": 8368,
+     "read_outliers": 2081,
+     "read_outliers_pct": 24.9,
+     "scenarios": 96,
+     "scenarios_dropped": 2,
+     "dropped": [
+      "room22 pair 24",
+      "room2 pair 34"
+     ],
+     "kept_pct": 74.4,
+     "score": {
+      "n": 6225,
+      "mean_err": 11.3,
+      "median_err": 8.3,
+      "within_10_pct": 56.4,
+      "lean_mean_by_band": {
+       "0-15": {
+        "n": 1547,
+        "mean": -0.2
+       },
+       "15-30": {
+        "n": 1803,
+        "mean": 0.6
+       },
+       "30-45": {
+        "n": 1278,
+        "mean": 1.8
+       },
+       "45-60": {
+        "n": 906,
+        "mean": 4.7
+       },
+       "60-75": {
+        "n": 552,
+        "mean": 7.4
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "classes": {
+  "GccPhat": {
+   "speech": {
+    "reads_in_scope": 30710,
+    "moderate": 8900,
+    "outlier": 5282,
+    "by_class": {
+     "mirror": {
+      "moderate": 322,
+      "outlier": 538,
+      "share_of_wrong_pct": 6.1,
+      "only_this_class": 133
+     },
+     "end-fire pin": {
+      "moderate": 911,
+      "outlier": 1309,
+      "share_of_wrong_pct": 15.7,
+      "only_this_class": 863
+     },
+     "pause direction": {
+      "moderate": 3079,
+      "outlier": 2720,
+      "share_of_wrong_pct": 40.9,
+      "only_this_class": 1225
+     },
+     "another labelled source": {
+      "moderate": 2475,
+      "outlier": 2722,
+      "share_of_wrong_pct": 36.6,
+      "only_this_class": 786
+     },
+     "0 deg pull": {
+      "moderate": 543,
+      "outlier": 406,
+      "share_of_wrong_pct": 6.7,
+      "only_this_class": 154
+     },
+     "aliasing partner": {
+      "moderate": 0,
+      "outlier": 95,
+      "share_of_wrong_pct": 0.7,
+      "only_this_class": 13
+     },
+     "truth was angle 2 or 3": {
+      "moderate": 257,
+      "outlier": 2104,
+      "share_of_wrong_pct": 16.6,
+      "only_this_class": 300
+     },
+     "drift": {
+      "moderate": 1636,
+      "outlier": 804,
+      "share_of_wrong_pct": 17.2,
+      "only_this_class": 880
+     },
+     "facing": {
+      "moderate": 0,
+      "outlier": 0,
+      "share_of_wrong_pct": 0.0,
+      "only_this_class": 0
+     },
+     "other": {
+      "moderate": 3140,
+      "outlier": 544,
+      "share_of_wrong_pct": 26.0,
+      "only_this_class": 3684
+     }
+    }
+   },
+   "other": {
+    "reads_in_scope": 7675,
+    "moderate": 2153,
+    "outlier": 1916,
+    "by_class": {
+     "mirror": {
+      "moderate": 80,
+      "outlier": 241,
+      "share_of_wrong_pct": 7.9,
+      "only_this_class": 56
+     },
+     "end-fire pin": {
+      "moderate": 189,
+      "outlier": 494,
+      "share_of_wrong_pct": 16.8,
+      "only_this_class": 190
+     },
+     "pause direction": {
+      "moderate": 838,
+      "outlier": 785,
+      "share_of_wrong_pct": 39.9,
+      "only_this_class": 294
+     },
+     "another labelled source": {
+      "moderate": 836,
+      "outlier": 923,
+      "share_of_wrong_pct": 43.2,
+      "only_this_class": 316
+     },
+     "0 deg pull": {
+      "moderate": 183,
+      "outlier": 137,
+      "share_of_wrong_pct": 7.9,
+      "only_this_class": 58
+     },
+     "aliasing partner": {
+      "moderate": 0,
+      "outlier": 152,
+      "share_of_wrong_pct": 3.7,
+      "only_this_class": 17
+     },
+     "truth was angle 2 or 3": {
+      "moderate": 71,
+      "outlier": 728,
+      "share_of_wrong_pct": 19.6,
+      "only_this_class": 115
+     },
+     "drift": {
+      "moderate": 456,
+      "outlier": 349,
+      "share_of_wrong_pct": 19.8,
+      "only_this_class": 227
+     },
+     "facing": {
+      "moderate": 0,
+      "outlier": 0,
+      "share_of_wrong_pct": 0.0,
+      "only_this_class": 0
+     },
+     "other": {
+      "moderate": 570,
+      "outlier": 190,
+      "share_of_wrong_pct": 18.7,
+      "only_this_class": 760
+     }
+    }
+   }
+  },
+  "Angle2": {
+   "speech": {
+    "reads_in_scope": 30141,
+    "moderate": 10049,
+    "outlier": 7026,
+    "by_class": {
+     "mirror": {
+      "moderate": 404,
+      "outlier": 880,
+      "share_of_wrong_pct": 7.5,
+      "only_this_class": 460
+     },
+     "end-fire pin": {
+      "moderate": 659,
+      "outlier": 1235,
+      "share_of_wrong_pct": 11.1,
+      "only_this_class": 936
+     },
+     "pause direction": {
+      "moderate": 2933,
+      "outlier": 2791,
+      "share_of_wrong_pct": 33.5,
+      "only_this_class": 1436
+     },
+     "another labelled source": {
+      "moderate": 2545,
+      "outlier": 2833,
+      "share_of_wrong_pct": 31.5,
+      "only_this_class": 1211
+     },
+     "0 deg pull": {
+      "moderate": 726,
+      "outlier": 537,
+      "share_of_wrong_pct": 7.4,
+      "only_this_class": 358
+     },
+     "aliasing partner": {
+      "moderate": 0,
+      "outlier": 90,
+      "share_of_wrong_pct": 0.5,
+      "only_this_class": 18
+     },
+     "truth was angle 2 or 3": {
+      "moderate": 1106,
+      "outlier": 1600,
+      "share_of_wrong_pct": 15.8,
+      "only_this_class": 943
+     },
+     "drift": {
+      "moderate": 0,
+      "outlier": 0,
+      "share_of_wrong_pct": 0.0,
+      "only_this_class": 0
+     },
+     "facing": {
+      "moderate": 0,
+      "outlier": 0,
+      "share_of_wrong_pct": 0.0,
+      "only_this_class": 0
+     },
+     "other": {
+      "moderate": 4669,
+      "outlier": 1552,
+      "share_of_wrong_pct": 36.4,
+      "only_this_class": 6221
+     }
+    }
+   },
+   "other": {
+    "reads_in_scope": 7422,
+    "moderate": 2187,
+    "outlier": 1781,
+    "by_class": {
+     "mirror": {
+      "moderate": 103,
+      "outlier": 229,
+      "share_of_wrong_pct": 8.4,
+      "only_this_class": 95
+     },
+     "end-fire pin": {
+      "moderate": 144,
+      "outlier": 344,
+      "share_of_wrong_pct": 12.3,
+      "only_this_class": 195
+     },
+     "pause direction": {
+      "moderate": 736,
+      "outlier": 685,
+      "share_of_wrong_pct": 35.8,
+      "only_this_class": 325
+     },
+     "another labelled source": {
+      "moderate": 718,
+      "outlier": 794,
+      "share_of_wrong_pct": 38.1,
+      "only_this_class": 383
+     },
+     "0 deg pull": {
+      "moderate": 173,
+      "outlier": 125,
+      "share_of_wrong_pct": 7.5,
+      "only_this_class": 86
+     },
+     "aliasing partner": {
+      "moderate": 0,
+      "outlier": 124,
+      "share_of_wrong_pct": 3.1,
+      "only_this_class": 28
+     },
+     "truth was angle 2 or 3": {
+      "moderate": 221,
+      "outlier": 380,
+      "share_of_wrong_pct": 15.1,
+      "only_this_class": 173
+     },
+     "drift": {
+      "moderate": 0,
+      "outlier": 0,
+      "share_of_wrong_pct": 0.0,
+      "only_this_class": 0
+     },
+     "facing": {
+      "moderate": 0,
+      "outlier": 0,
+      "share_of_wrong_pct": 0.0,
+      "only_this_class": 0
+     },
+     "other": {
+      "moderate": 878,
+      "outlier": 331,
+      "share_of_wrong_pct": 30.5,
+      "only_this_class": 1209
+     }
+    }
+   }
+  }
+ },
+ "overlaps": {
+  "GccPhat": {
+   "speech": {
+    "combinations": [
+     [
+      [
+       "other"
+      ],
+      3684
+     ],
+     [
+      [
+       "another labelled source",
+       "pause direction"
+      ],
+      1445
+     ],
+     [
+      [
+       "pause direction"
+      ],
+      1225
+     ],
+     [
+      [
+       "drift"
+      ],
+      880
+     ],
+     [
+      [
+       "end-fire pin"
+      ],
+      863
+     ],
+     [
+      [
+       "another labelled source"
+      ],
+      786
+     ],
+     [
+      [
+       "another labelled source",
+       "pause direction",
+       "truth was angle 2 or 3"
+      ],
+      456
+     ],
+     [
+      [
+       "another labelled source",
+       "end-fire pin",
+       "pause direction"
+      ],
+      310
+     ],
+     [
+      [
+       "truth was angle 2 or 3"
+      ],
+      300
+     ],
+     [
+      [
+       "end-fire pin",
+       "pause direction"
+      ],
+      285
+     ],
+     [
+      [
+       "drift",
+       "pause direction"
+      ],
+      245
+     ],
+     [
+      [
+       "0 deg pull",
+       "another labelled source",
+       "pause direction"
+      ],
+      226
+     ],
+     [
+      [
+       "another labelled source",
+       "drift"
+      ],
+      212
+     ],
+     [
+      [
+       "another labelled source",
+       "mirror",
+       "pause direction"
+      ],
+      193
+     ],
+     [
+      [
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ],
+      192
+     ]
+    ],
+    "pairs": {
+     "another labelled source + pause direction": 3386,
+     "another labelled source + truth was angle 2 or 3": 1354,
+     "pause direction + truth was angle 2 or 3": 1305,
+     "end-fire pin + pause direction": 876,
+     "drift + pause direction": 820,
+     "another labelled source + drift": 811,
+     "another labelled source + end-fire pin": 712,
+     "0 deg pull + pause direction": 548,
+     "another labelled source + mirror": 511,
+     "0 deg pull + another labelled source": 502,
+     "drift + truth was angle 2 or 3": 496,
+     "mirror + pause direction": 484,
+     "end-fire pin + truth was angle 2 or 3": 390,
+     "drift + end-fire pin": 294,
+     "mirror + truth was angle 2 or 3": 288
+    }
+   },
+   "other": {
+    "combinations": [
+     [
+      [
+       "other"
+      ],
+      760
+     ],
+     [
+      [
+       "another labelled source",
+       "pause direction"
+      ],
+      418
+     ],
+     [
+      [
+       "another labelled source"
+      ],
+      316
+     ],
+     [
+      [
+       "pause direction"
+      ],
+      294
+     ],
+     [
+      [
+       "drift"
+      ],
+      227
+     ],
+     [
+      [
+       "end-fire pin"
+      ],
+      190
+     ],
+     [
+      [
+       "another labelled source",
+       "end-fire pin",
+       "pause direction"
+      ],
+      116
+     ],
+     [
+      [
+       "truth was angle 2 or 3"
+      ],
+      115
+     ],
+     [
+      [
+       "another labelled source",
+       "pause direction",
+       "truth was angle 2 or 3"
+      ],
+      92
+     ],
+     [
+      [
+       "end-fire pin",
+       "pause direction"
+      ],
+      92
+     ],
+     [
+      [
+       "another labelled source",
+       "drift"
+      ],
+      85
+     ],
+     [
+      [
+       "0 deg pull",
+       "another labelled source",
+       "pause direction"
+      ],
+      79
+     ],
+     [
+      [
+       "another labelled source",
+       "end-fire pin"
+      ],
+      68
+     ],
+     [
+      [
+       "drift",
+       "pause direction"
+      ],
+      63
+     ],
+     [
+      [
+       "another labelled source",
+       "drift",
+       "pause direction"
+      ],
+      61
+     ]
+    ],
+    "pairs": {
+     "another labelled source + pause direction": 981,
+     "another labelled source + truth was angle 2 or 3": 400,
+     "another labelled source + drift": 335,
+     "pause direction + truth was angle 2 or 3": 326,
+     "end-fire pin + pause direction": 283,
+     "another labelled source + end-fire pin": 274,
+     "drift + truth was angle 2 or 3": 230,
+     "drift + pause direction": 225,
+     "0 deg pull + another labelled source": 184,
+     "another labelled source + mirror": 162,
+     "0 deg pull + pause direction": 158,
+     "end-fire pin + truth was angle 2 or 3": 142,
+     "mirror + pause direction": 139,
+     "mirror + truth was angle 2 or 3": 109,
+     "drift + end-fire pin": 102
+    }
+   }
+  },
+  "Angle2": {
+   "speech": {
+    "combinations": [
+     [
+      [
+       "other"
+      ],
+      6221
+     ],
+     [
+      [
+       "another labelled source",
+       "pause direction"
+      ],
+      1847
+     ],
+     [
+      [
+       "pause direction"
+      ],
+      1436
+     ],
+     [
+      [
+       "another labelled source"
+      ],
+      1211
+     ],
+     [
+      [
+       "truth was angle 2 or 3"
+      ],
+      943
+     ],
+     [
+      [
+       "end-fire pin"
+      ],
+      936
+     ],
+     [
+      [
+       "mirror"
+      ],
+      460
+     ],
+     [
+      [
+       "another labelled source",
+       "pause direction",
+       "truth was angle 2 or 3"
+      ],
+      424
+     ],
+     [
+      [
+       "0 deg pull"
+      ],
+      358
+     ],
+     [
+      [
+       "0 deg pull",
+       "another labelled source",
+       "pause direction"
+      ],
+      309
+     ],
+     [
+      [
+       "another labelled source",
+       "end-fire pin",
+       "pause direction"
+      ],
+      273
+     ],
+     [
+      [
+       "end-fire pin",
+       "pause direction"
+      ],
+      271
+     ],
+     [
+      [
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ],
+      259
+     ],
+     [
+      [
+       "another labelled source",
+       "mirror",
+       "pause direction"
+      ],
+      244
+     ],
+     [
+      [
+       "pause direction",
+       "truth was angle 2 or 3"
+      ],
+      237
+     ]
+    ],
+    "pairs": {
+     "another labelled source + pause direction": 3353,
+     "another labelled source + truth was angle 2 or 3": 1029,
+     "pause direction + truth was angle 2 or 3": 1021,
+     "end-fire pin + pause direction": 635,
+     "0 deg pull + pause direction": 615,
+     "0 deg pull + another labelled source": 575,
+     "another labelled source + mirror": 522,
+     "another labelled source + end-fire pin": 515,
+     "mirror + pause direction": 510,
+     "mirror + truth was angle 2 or 3": 303,
+     "0 deg pull + truth was angle 2 or 3": 282,
+     "end-fire pin + truth was angle 2 or 3": 243,
+     "aliasing partner + another labelled source": 42,
+     "aliasing partner + pause direction": 34,
+     "aliasing partner + truth was angle 2 or 3": 21
+    }
+   },
+   "other": {
+    "combinations": [
+     [
+      [
+       "other"
+      ],
+      1209
+     ],
+     [
+      [
+       "another labelled source",
+       "pause direction"
+      ],
+      475
+     ],
+     [
+      [
+       "another labelled source"
+      ],
+      383
+     ],
+     [
+      [
+       "pause direction"
+      ],
+      325
+     ],
+     [
+      [
+       "end-fire pin"
+      ],
+      195
+     ],
+     [
+      [
+       "truth was angle 2 or 3"
+      ],
+      173
+     ],
+     [
+      [
+       "mirror"
+      ],
+      95
+     ],
+     [
+      [
+       "another labelled source",
+       "pause direction",
+       "truth was angle 2 or 3"
+      ],
+      86
+     ],
+     [
+      [
+       "0 deg pull"
+      ],
+      86
+     ],
+     [
+      [
+       "another labelled source",
+       "end-fire pin",
+       "pause direction"
+      ],
+      83
+     ],
+     [
+      [
+       "end-fire pin",
+       "pause direction"
+      ],
+      79
+     ],
+     [
+      [
+       "another labelled source",
+       "mirror",
+       "pause direction"
+      ],
+      77
+     ],
+     [
+      [
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ],
+      75
+     ],
+     [
+      [
+       "0 deg pull",
+       "another labelled source",
+       "pause direction"
+      ],
+      70
+     ],
+     [
+      [
+       "pause direction",
+       "truth was angle 2 or 3"
+      ],
+      56
+     ]
+    ],
+    "pairs": {
+     "another labelled source + pause direction": 862,
+     "another labelled source + truth was angle 2 or 3": 253,
+     "pause direction + truth was angle 2 or 3": 225,
+     "end-fire pin + pause direction": 197,
+     "another labelled source + end-fire pin": 169,
+     "another labelled source + mirror": 150,
+     "0 deg pull + another labelled source": 147,
+     "mirror + pause direction": 139,
+     "0 deg pull + pause direction": 123,
+     "mirror + truth was angle 2 or 3": 75,
+     "end-fire pin + truth was angle 2 or 3": 62,
+     "0 deg pull + truth was angle 2 or 3": 58,
+     "aliasing partner + another labelled source": 45,
+     "aliasing partner + pause direction": 40,
+     "aliasing partner + truth was angle 2 or 3": 28
+    }
+   }
+  }
+ },
+ "examples": {
+  "GccPhat": {
+   "speech": {
+    "mirror": [
+     {
+      "file": "fold3_room22_mix006",
+      "onset_s": 5.6,
+      "pair": "13",
+      "class": "female speech",
+      "truth_deg": 23.17,
+      "ref_deg": 23.51,
+      "read": -17.46,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "another labelled source",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix010",
+      "onset_s": 186.9,
+      "pair": "24",
+      "class": "female speech",
+      "truth_deg": -69.09,
+      "ref_deg": -65.52,
+      "read": 71.81,
+      "classes": [
+       "mirror"
+      ]
+     },
+     {
+      "file": "fold3_room7_mix001",
+      "onset_s": 56.5,
+      "pair": "24",
+      "class": "male speech",
+      "truth_deg": -35.63,
+      "ref_deg": -36.5,
+      "read": 27.82,
+      "classes": [
+       "mirror",
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix003",
+      "onset_s": 88.7,
+      "pair": "34",
+      "class": "male speech",
+      "truth_deg": 41.27,
+      "ref_deg": 47.61,
+      "read": -53.93,
+      "classes": [
+       "mirror",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold3_room6_mix003",
+      "onset_s": 288.0,
+      "pair": "34",
+      "class": "female speech",
+      "truth_deg": 12.43,
+      "ref_deg": 17.75,
+      "read": -15.96,
+      "classes": [
+       "mirror"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix004",
+      "onset_s": 24.9,
+      "pair": "34",
+      "class": "female speech",
+      "truth_deg": 9.11,
+      "ref_deg": 12.64,
+      "read": -21,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "another labelled source"
+      ]
+     }
+    ],
+    "end-fire pin": [
+     {
+      "file": "fold4_room2_mix003",
+      "onset_s": 207.5,
+      "pair": "14",
+      "class": "female speech",
+      "truth_deg": -74.23,
+      "ref_deg": -62.95,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix002",
+      "onset_s": 91.3,
+      "pair": "24",
+      "class": "male speech",
+      "truth_deg": -22.58,
+      "ref_deg": -32.84,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "pause direction",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room6_mix006",
+      "onset_s": 19.5,
+      "pair": "12",
+      "class": "female speech",
+      "truth_deg": -40.96,
+      "ref_deg": -65.13,
+      "read": -90,
+      "classes": [
+       "end-fire pin"
+      ]
+     },
+     {
+      "file": "fold3_room7_mix002",
+      "onset_s": 72.5,
+      "pair": "14",
+      "class": "male speech",
+      "truth_deg": -72.3,
+      "ref_deg": -29.55,
+      "read": -90,
+      "classes": [
+       "end-fire pin"
+      ]
+     },
+     {
+      "file": "fold3_room9_mix001",
+      "onset_s": 24.0,
+      "pair": "24",
+      "class": "female speech",
+      "truth_deg": -32.83,
+      "ref_deg": -51.48,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix003",
+      "onset_s": 61.4,
+      "pair": "14",
+      "class": "male speech",
+      "truth_deg": -72.0,
+      "ref_deg": -33.24,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     }
+    ],
+    "pause direction": [
+     {
+      "file": "fold3_room12_mix001",
+      "onset_s": 138.7,
+      "pair": "24",
+      "class": "male speech",
+      "truth_deg": 12.22,
+      "ref_deg": 16.59,
+      "read": -2.87,
+      "classes": [
+       "pause direction",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix006",
+      "onset_s": 33.4,
+      "pair": "34",
+      "class": "male speech",
+      "truth_deg": 35.24,
+      "ref_deg": 45.02,
+      "read": -34.52,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room4_mix007",
+      "onset_s": 73.5,
+      "pair": "12",
+      "class": "male speech",
+      "truth_deg": 3.55,
+      "ref_deg": 3.39,
+      "read": 13.98,
+      "classes": [
+       "pause direction"
+      ]
+     },
+     {
+      "file": "fold3_room9_mix001",
+      "onset_s": 121.0,
+      "pair": "12",
+      "class": "female speech",
+      "truth_deg": 24.47,
+      "ref_deg": 24.69,
+      "read": -19.47,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix004",
+      "onset_s": 90.6,
+      "pair": "34",
+      "class": "female speech",
+      "truth_deg": 16.11,
+      "ref_deg": 22.41,
+      "read": -40.54,
+      "classes": [
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room9_mix004",
+      "onset_s": 91.5,
+      "pair": "23",
+      "class": "female speech",
+      "truth_deg": 52.07,
+      "ref_deg": 60.7,
+      "read": 43.76,
+      "classes": [
+       "pause direction"
+      ]
+     }
+    ],
+    "another labelled source": [
+     {
+      "file": "fold3_room7_mix003",
+      "onset_s": 195.0,
+      "pair": "24",
+      "class": "male speech",
+      "truth_deg": 12.04,
+      "ref_deg": 12.19,
+      "read": -77.16,
+      "classes": [
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix029",
+      "onset_s": 107.0,
+      "pair": "23",
+      "class": "male speech",
+      "truth_deg": 27.23,
+      "ref_deg": 27.69,
+      "read": 12.02,
+      "classes": [
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room13_mix002",
+      "onset_s": 220.8,
+      "pair": "23",
+      "class": "female speech",
+      "truth_deg": -40.63,
+      "ref_deg": -45.59,
+      "read": 10.08,
+      "classes": [
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix006",
+      "onset_s": 15.7,
+      "pair": "14",
+      "class": "female speech",
+      "truth_deg": -40.51,
+      "ref_deg": -56.88,
+      "read": -32.8,
+      "classes": [
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold4_room23_mix010",
+      "onset_s": 6.8,
+      "pair": "23",
+      "class": "male speech",
+      "truth_deg": -55.0,
+      "ref_deg": -70.33,
+      "read": -9.59,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room13_mix009",
+      "onset_s": 16.2,
+      "pair": "24",
+      "class": "female speech",
+      "truth_deg": -24.35,
+      "ref_deg": -33.69,
+      "read": -68.96,
+      "classes": [
+       "another labelled source"
+      ]
+     }
+    ],
+    "0 deg pull": [
+     {
+      "file": "fold3_room21_mix003",
+      "onset_s": 85.5,
+      "pair": "34",
+      "class": "male speech",
+      "truth_deg": 37.52,
+      "ref_deg": 39.31,
+      "read": -3.82,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room13_mix001",
+      "onset_s": 33.5,
+      "pair": "34",
+      "class": "female speech",
+      "truth_deg": 27.36,
+      "ref_deg": 33.71,
+      "read": 0.95,
+      "classes": [
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room4_mix007",
+      "onset_s": 65.5,
+      "pair": "34",
+      "class": "male speech",
+      "truth_deg": 22.77,
+      "ref_deg": 32.71,
+      "read": 3.82,
+      "classes": [
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room9_mix003",
+      "onset_s": 116.0,
+      "pair": "12",
+      "class": "female speech",
+      "truth_deg": -21.36,
+      "ref_deg": -22.1,
+      "read": 3.82,
+      "classes": [
+       "pause direction",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room7_mix004",
+      "onset_s": 176.0,
+      "pair": "14",
+      "class": "female speech",
+      "truth_deg": -77.01,
+      "ref_deg": -26.03,
+      "read": 5.26,
+      "classes": [
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix001",
+      "onset_s": 213.3,
+      "pair": "12",
+      "class": "male speech",
+      "truth_deg": 46.78,
+      "ref_deg": 51.11,
+      "read": -3.82,
+      "classes": [
+       "another labelled source",
+       "0 deg pull"
+      ]
+     }
+    ],
+    "aliasing partner": [
+     {
+      "file": "fold3_room4_mix001",
+      "onset_s": 107.5,
+      "pair": "13",
+      "class": "male speech",
+      "truth_deg": 46.25,
+      "ref_deg": 54.13,
+      "read": -10.56,
+      "classes": [
+       "pause direction",
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold3_room6_mix003",
+      "onset_s": 91.5,
+      "pair": "24",
+      "class": "female speech",
+      "truth_deg": -56.18,
+      "ref_deg": -68.46,
+      "read": 4.3,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "0 deg pull",
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold3_room9_mix001",
+      "onset_s": 116.5,
+      "pair": "23",
+      "class": "female speech",
+      "truth_deg": 9.85,
+      "ref_deg": 10.56,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "pause direction",
+       "another labelled source",
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix001",
+      "onset_s": 13.9,
+      "pair": "13",
+      "class": "female speech",
+      "truth_deg": -8.18,
+      "ref_deg": -8.14,
+      "read": 90,
+      "classes": [
+       "end-fire pin",
+       "another labelled source",
+       "aliasing partner",
+       "truth was angle 2 or 3",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix011",
+      "onset_s": 99.0,
+      "pair": "34",
+      "class": "male speech",
+      "truth_deg": 32.15,
+      "ref_deg": 42.23,
+      "read": -44.43,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "another labelled source",
+       "aliasing partner",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix025",
+      "onset_s": 0.6,
+      "pair": "23",
+      "class": "male speech",
+      "truth_deg": 54.19,
+      "ref_deg": 60.29,
+      "read": 6.22,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "aliasing partner",
+       "truth was angle 2 or 3"
+      ]
+     }
+    ],
+    "truth was angle 2 or 3": [
+     {
+      "file": "fold4_room16_mix003",
+      "onset_s": 54.6,
+      "pair": "12",
+      "class": "male speech",
+      "truth_deg": -49.13,
+      "ref_deg": -68.53,
+      "read": 32.8,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold4_room23_mix003",
+      "onset_s": 17.9,
+      "pair": "34",
+      "class": "male speech",
+      "truth_deg": 3.38,
+      "ref_deg": 4.78,
+      "read": 37.47,
+      "classes": [
+       "truth was angle 2 or 3",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix001",
+      "onset_s": 192.7,
+      "pair": "13",
+      "class": "female speech",
+      "truth_deg": -40.46,
+      "ref_deg": -45.26,
+      "read": 26.74,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room9_mix004",
+      "onset_s": 10.0,
+      "pair": "14",
+      "class": "female speech",
+      "truth_deg": -37.32,
+      "ref_deg": -44.52,
+      "read": 25.68,
+      "classes": [
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix011",
+      "onset_s": 161.9,
+      "pair": "23",
+      "class": "male speech",
+      "truth_deg": -24.96,
+      "ref_deg": -25.54,
+      "read": -70.33,
+      "classes": [
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room7_mix001",
+      "onset_s": 137.5,
+      "pair": "14",
+      "class": "male speech",
+      "truth_deg": 4.91,
+      "ref_deg": 5.69,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "truth was angle 2 or 3"
+      ]
+     }
+    ],
+    "drift": [
+     {
+      "file": "fold4_room24_mix001",
+      "onset_s": 49.3,
+      "pair": "24",
+      "class": "male speech",
+      "truth_deg": 18.55,
+      "ref_deg": 22.41,
+      "read": -23.06,
+      "classes": [
+       "mirror",
+       "truth was angle 2 or 3",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix009",
+      "onset_s": 15.0,
+      "pair": "12",
+      "class": "female speech",
+      "truth_deg": 11.33,
+      "ref_deg": 16.63,
+      "read": 27.82,
+      "classes": [
+       "drift"
+      ]
+     },
+     {
+      "file": "fold3_room9_mix006",
+      "onset_s": 114.0,
+      "pair": "12",
+      "class": "female speech",
+      "truth_deg": 46.96,
+      "ref_deg": 52.99,
+      "read": 90,
+      "classes": [
+       "end-fire pin",
+       "pause direction",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold3_room9_mix005",
+      "onset_s": 148.5,
+      "pair": "34",
+      "class": "male speech",
+      "truth_deg": -44.74,
+      "ref_deg": -74.6,
+      "read": 40.54,
+      "classes": [
+       "another labelled source",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold4_room24_mix005",
+      "onset_s": 53.9,
+      "pair": "34",
+      "class": "female speech",
+      "truth_deg": -52.58,
+      "ref_deg": -57.07,
+      "read": -8.63,
+      "classes": [
+       "another labelled source",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix016",
+      "onset_s": 40.6,
+      "pair": "34",
+      "class": "male speech",
+      "truth_deg": -19.42,
+      "ref_deg": -19.5,
+      "read": 7.18,
+      "classes": [
+       "another labelled source",
+       "drift"
+      ]
+     }
+    ],
+    "facing": [],
+    "other": [
+     {
+      "file": "fold3_room12_mix001",
+      "onset_s": 187.5,
+      "pair": "12",
+      "class": "female speech",
+      "truth_deg": 14.8,
+      "ref_deg": 21.55,
+      "read": 47.87,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold3_room6_mix003",
+      "onset_s": 74.0,
+      "pair": "23",
+      "class": "male speech",
+      "truth_deg": -24.74,
+      "ref_deg": -26.96,
+      "read": -38.68,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold3_room9_mix005",
+      "onset_s": 102.0,
+      "pair": "34",
+      "class": "female speech",
+      "truth_deg": 25.16,
+      "ref_deg": 35.74,
+      "read": 55.59,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold4_room15_mix006",
+      "onset_s": 246.7,
+      "pair": "34",
+      "class": "female speech",
+      "truth_deg": -29.43,
+      "ref_deg": -45.18,
+      "read": -65.28,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold3_room9_mix008",
+      "onset_s": 69.0,
+      "pair": "14",
+      "class": "male speech",
+      "truth_deg": 17.37,
+      "ref_deg": 19.95,
+      "read": 32.8,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold4_room23_mix005",
+      "onset_s": 17.2,
+      "pair": "12",
+      "class": "male speech",
+      "truth_deg": 18.54,
+      "ref_deg": 18.75,
+      "read": 34.52,
+      "classes": [
+       "other"
+      ]
+     }
+    ]
+   },
+   "other": {
+    "mirror": [
+     {
+      "file": "fold4_room8_mix003",
+      "onset_s": 190.0,
+      "pair": "23",
+      "class": "musical instrument",
+      "truth_deg": 54.95,
+      "ref_deg": 60.29,
+      "read": -60.07,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix028",
+      "onset_s": 17.5,
+      "pair": "14",
+      "class": "bell",
+      "truth_deg": 29.54,
+      "ref_deg": 38.22,
+      "read": -40.54,
+      "classes": [
+       "mirror",
+       "aliasing partner",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room7_mix005",
+      "onset_s": 139.5,
+      "pair": "13",
+      "class": "laughter",
+      "truth_deg": 24.42,
+      "ref_deg": 36.87,
+      "read": -32.8,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix007",
+      "onset_s": 240.9,
+      "pair": "23",
+      "class": "laughter",
+      "truth_deg": -50.61,
+      "ref_deg": -59.1,
+      "read": 65.28,
+      "classes": [
+       "mirror"
+      ]
+     },
+     {
+      "file": "fold3_room9_mix008",
+      "onset_s": 193.5,
+      "pair": "14",
+      "class": "clapping",
+      "truth_deg": 18.06,
+      "ref_deg": 21.51,
+      "read": -23.06,
+      "classes": [
+       "mirror",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix011",
+      "onset_s": 119.2,
+      "pair": "14",
+      "class": "laughter",
+      "truth_deg": 14.92,
+      "ref_deg": 16.46,
+      "read": -19.98,
+      "classes": [
+       "mirror",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     }
+    ],
+    "end-fire pin": [
+     {
+      "file": "fold3_room21_mix027",
+      "onset_s": 46.3,
+      "pair": "14",
+      "class": "bell",
+      "truth_deg": 8.15,
+      "ref_deg": 9.7,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "pause direction",
+       "another labelled source",
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold4_room2_mix003",
+      "onset_s": 133.8,
+      "pair": "13",
+      "class": "clapping",
+      "truth_deg": -4.98,
+      "ref_deg": -5.45,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "pause direction"
+      ]
+     },
+     {
+      "file": "fold4_room15_mix004",
+      "onset_s": 6.0,
+      "pair": "14",
+      "class": "door/cupboard",
+      "truth_deg": 81.4,
+      "ref_deg": 70.39,
+      "read": 90,
+      "classes": [
+       "end-fire pin",
+       "pause direction"
+      ]
+     },
+     {
+      "file": "fold4_room10_mix007",
+      "onset_s": 11.0,
+      "pair": "12",
+      "class": "music",
+      "truth_deg": -37.83,
+      "ref_deg": -53.54,
+      "read": 90,
+      "classes": [
+       "end-fire pin",
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold3_room4_mix008",
+      "onset_s": 36.5,
+      "pair": "13",
+      "class": "telephone",
+      "truth_deg": 57.24,
+      "ref_deg": 73.02,
+      "read": -90,
+      "classes": [
+       "end-fire pin"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix026",
+      "onset_s": 45.4,
+      "pair": "34",
+      "class": "domestic sounds",
+      "truth_deg": 6.93,
+      "ref_deg": 7.1,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "drift"
+      ]
+     }
+    ],
+    "pause direction": [
+     {
+      "file": "fold4_room15_mix002",
+      "onset_s": 60.5,
+      "pair": "34",
+      "class": "musical instrument",
+      "truth_deg": -38.56,
+      "ref_deg": -72.8,
+      "read": 0.48,
+      "classes": [
+       "pause direction",
+       "0 deg pull",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix013",
+      "onset_s": 16.2,
+      "pair": "34",
+      "class": "footsteps",
+      "truth_deg": 18.9,
+      "ref_deg": 20.48,
+      "read": -24.62,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold4_room24_mix013",
+      "onset_s": 53.8,
+      "pair": "12",
+      "class": "laughter",
+      "truth_deg": -22.79,
+      "ref_deg": -29.51,
+      "read": -1.91,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room4_mix001",
+      "onset_s": 41.5,
+      "pair": "13",
+      "class": "telephone",
+      "truth_deg": 56.74,
+      "ref_deg": 70.08,
+      "read": -3.82,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix004",
+      "onset_s": 259.1,
+      "pair": "24",
+      "class": "laughter",
+      "truth_deg": 24.63,
+      "ref_deg": 28.89,
+      "read": -26.21,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room7_mix006",
+      "onset_s": 208.0,
+      "pair": "12",
+      "class": "laughter",
+      "truth_deg": 54.85,
+      "ref_deg": 63.49,
+      "read": 15.96,
+      "classes": [
+       "pause direction",
+       "another labelled source"
+      ]
+     }
+    ],
+    "another labelled source": [
+     {
+      "file": "fold3_room21_mix012",
+      "onset_s": 62.9,
+      "pair": "12",
+      "class": "laughter",
+      "truth_deg": 64.3,
+      "ref_deg": 40.54,
+      "read": 90,
+      "classes": [
+       "end-fire pin",
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix005",
+      "onset_s": 57.9,
+      "pair": "24",
+      "class": "laughter",
+      "truth_deg": 13.38,
+      "ref_deg": 19.49,
+      "read": -3.34,
+      "classes": [
+       "another labelled source",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix028",
+      "onset_s": 70.1,
+      "pair": "23",
+      "class": "bell",
+      "truth_deg": -42.73,
+      "ref_deg": -44.91,
+      "read": -26.74,
+      "classes": [
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix010",
+      "onset_s": 90.7,
+      "pair": "23",
+      "class": "bell",
+      "truth_deg": -25.79,
+      "ref_deg": -28.17,
+      "read": 6.22,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix009",
+      "onset_s": 17.1,
+      "pair": "13",
+      "class": "laughter",
+      "truth_deg": 2.23,
+      "ref_deg": 2.18,
+      "read": -24.62,
+      "classes": [
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room13_mix009",
+      "onset_s": 158.2,
+      "pair": "24",
+      "class": "laughter",
+      "truth_deg": -42.27,
+      "ref_deg": -49.43,
+      "read": -62.05,
+      "classes": [
+       "another labelled source"
+      ]
+     }
+    ],
+    "0 deg pull": [
+     {
+      "file": "fold4_room16_mix013",
+      "onset_s": 40.0,
+      "pair": "13",
+      "class": "clapping",
+      "truth_deg": -18.33,
+      "ref_deg": -18.51,
+      "read": 2.87,
+      "classes": [
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix002",
+      "onset_s": 56.5,
+      "pair": "34",
+      "class": "laughter",
+      "truth_deg": 36.96,
+      "ref_deg": 38.45,
+      "read": -3.34,
+      "classes": [
+       "0 deg pull",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold4_room24_mix012",
+      "onset_s": 139.2,
+      "pair": "34",
+      "class": "footsteps",
+      "truth_deg": -29.76,
+      "ref_deg": -31.21,
+      "read": 0,
+      "classes": [
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix001",
+      "onset_s": 36.4,
+      "pair": "34",
+      "class": "laughter",
+      "truth_deg": 28.73,
+      "ref_deg": 31.44,
+      "read": -0.95,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "0 deg pull",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix009",
+      "onset_s": 9.3,
+      "pair": "34",
+      "class": "footsteps",
+      "truth_deg": -15.31,
+      "ref_deg": -22.05,
+      "read": -1.91,
+      "classes": [
+       "another labelled source",
+       "0 deg pull",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix010",
+      "onset_s": 197.4,
+      "pair": "12",
+      "class": "laughter",
+      "truth_deg": 23.04,
+      "ref_deg": 23.85,
+      "read": 0.95,
+      "classes": [
+       "pause direction",
+       "0 deg pull"
+      ]
+     }
+    ],
+    "aliasing partner": [
+     {
+      "file": "fold3_room21_mix028",
+      "onset_s": 55.3,
+      "pair": "14",
+      "class": "bell",
+      "truth_deg": 29.54,
+      "ref_deg": 38.22,
+      "read": -33.94,
+      "classes": [
+       "mirror",
+       "aliasing partner",
+       "truth was angle 2 or 3",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold4_room15_mix009",
+      "onset_s": 79.7,
+      "pair": "24",
+      "class": "footsteps",
+      "truth_deg": -9.76,
+      "ref_deg": -10.07,
+      "read": 33.37,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "aliasing partner",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold4_room15_mix008",
+      "onset_s": 78.1,
+      "pair": "34",
+      "class": "musical instrument",
+      "truth_deg": -32.38,
+      "ref_deg": -32.76,
+      "read": 26.74,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "another labelled source",
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix024",
+      "onset_s": 50.5,
+      "pair": "13",
+      "class": "telephone",
+      "truth_deg": -20.42,
+      "ref_deg": -21.31,
+      "read": 75.16,
+      "classes": [
+       "aliasing partner",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix009",
+      "onset_s": 56.6,
+      "pair": "24",
+      "class": "door/cupboard",
+      "truth_deg": -49.13,
+      "ref_deg": -58.02,
+      "read": 32.8,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "aliasing partner",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix008",
+      "onset_s": 161.5,
+      "pair": "13",
+      "class": "door/cupboard",
+      "truth_deg": -41.15,
+      "ref_deg": -48.82,
+      "read": 23.58,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "aliasing partner",
+       "truth was angle 2 or 3"
+      ]
+     }
+    ],
+    "truth was angle 2 or 3": [
+     {
+      "file": "fold3_room12_mix009",
+      "onset_s": 6.1,
+      "pair": "13",
+      "class": "door/cupboard",
+      "truth_deg": -41.15,
+      "ref_deg": -48.82,
+      "read": 63.08,
+      "classes": [
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix013",
+      "onset_s": 97.9,
+      "pair": "13",
+      "class": "footsteps",
+      "truth_deg": -8.93,
+      "ref_deg": -9.25,
+      "read": -70.33,
+      "classes": [
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix003",
+      "onset_s": 122.6,
+      "pair": "13",
+      "class": "laughter",
+      "truth_deg": 7.0,
+      "ref_deg": 6.95,
+      "read": -41.81,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "truth was angle 2 or 3",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold3_room6_mix001",
+      "onset_s": 214.5,
+      "pair": "23",
+      "class": "clapping",
+      "truth_deg": -33.64,
+      "ref_deg": -36.28,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "pause direction",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix007",
+      "onset_s": 152.2,
+      "pair": "12",
+      "class": "laughter",
+      "truth_deg": 10.6,
+      "ref_deg": 10.52,
+      "read": 77.16,
+      "classes": [
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold4_room15_mix008",
+      "onset_s": 144.8,
+      "pair": "13",
+      "class": "laughter",
+      "truth_deg": 52.55,
+      "ref_deg": 60.02,
+      "read": -27.28,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     }
+    ],
+    "drift": [
+     {
+      "file": "fold4_room16_mix010",
+      "onset_s": 39.7,
+      "pair": "12",
+      "class": "footsteps",
+      "truth_deg": -5.45,
+      "ref_deg": -6.53,
+      "read": -16.96,
+      "classes": [
+       "drift"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix008",
+      "onset_s": 196.3,
+      "pair": "34",
+      "class": "laughter",
+      "truth_deg": -1.64,
+      "ref_deg": -1.63,
+      "read": 15.47,
+      "classes": [
+       "drift"
+      ]
+     },
+     {
+      "file": "fold4_room24_mix013",
+      "onset_s": 42.1,
+      "pair": "13",
+      "class": "laughter",
+      "truth_deg": 35.04,
+      "ref_deg": 35.84,
+      "read": 50.06,
+      "classes": [
+       "drift"
+      ]
+     },
+     {
+      "file": "fold4_room10_mix003",
+      "onset_s": 103.0,
+      "pair": "12",
+      "class": "laughter",
+      "truth_deg": -32.1,
+      "ref_deg": -36.89,
+      "read": 5.74,
+      "classes": [
+       "0 deg pull",
+       "drift"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix010",
+      "onset_s": 107.3,
+      "pair": "12",
+      "class": "domestic sounds",
+      "truth_deg": 18.79,
+      "ref_deg": 18.88,
+      "read": 29.45,
+      "classes": [
+       "drift"
+      ]
+     },
+     {
+      "file": "fold4_room15_mix007",
+      "onset_s": 71.7,
+      "pair": "12",
+      "class": "musical instrument",
+      "truth_deg": 42.71,
+      "ref_deg": 44.22,
+      "read": -4.3,
+      "classes": [
+       "another labelled source",
+       "0 deg pull",
+       "aliasing partner",
+       "truth was angle 2 or 3",
+       "drift"
+      ]
+     }
+    ],
+    "facing": [],
+    "other": [
+     {
+      "file": "fold4_room15_mix007",
+      "onset_s": 62.2,
+      "pair": "24",
+      "class": "laughter",
+      "truth_deg": 33.4,
+      "ref_deg": 40.42,
+      "read": 50.81,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold4_room23_mix011",
+      "onset_s": 81.8,
+      "pair": "14",
+      "class": "telephone",
+      "truth_deg": -38.35,
+      "ref_deg": -49.3,
+      "read": -38.68,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold3_room7_mix002",
+      "onset_s": 102.5,
+      "pair": "13",
+      "class": "laughter",
+      "truth_deg": -18.31,
+      "ref_deg": -24.51,
+      "read": -6.7,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold3_room14_mix003",
+      "onset_s": 30.2,
+      "pair": "23",
+      "class": "laughter",
+      "truth_deg": -39.64,
+      "ref_deg": -44.37,
+      "read": 77.16,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold3_room13_mix001",
+      "onset_s": 147.7,
+      "pair": "24",
+      "class": "laughter",
+      "truth_deg": -42.29,
+      "ref_deg": -44.65,
+      "read": -15.96,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix010",
+      "onset_s": 197.9,
+      "pair": "34",
+      "class": "laughter",
+      "truth_deg": -22.72,
+      "ref_deg": -33.53,
+      "read": -51.57,
+      "classes": [
+       "other"
+      ]
+     }
+    ]
+   }
+  },
+  "Angle2": {
+   "speech": {
+    "mirror": [
+     {
+      "file": "fold3_room12_mix007",
+      "onset_s": 228.4,
+      "pair": "13",
+      "class": "male speech",
+      "truth_deg": -38.89,
+      "ref_deg": -44.32,
+      "read": 42.67,
+      "classes": [
+       "mirror",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix006",
+      "onset_s": 140.0,
+      "pair": "34",
+      "class": "male speech",
+      "truth_deg": 33.96,
+      "ref_deg": 42.09,
+      "read": -43.54,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix025",
+      "onset_s": 208.1,
+      "pair": "13",
+      "class": "male speech",
+      "truth_deg": 21.76,
+      "ref_deg": 20.86,
+      "read": -26.39,
+      "classes": [
+       "mirror",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room13_mix002",
+      "onset_s": 277.8,
+      "pair": "12",
+      "class": "male speech",
+      "truth_deg": -27.24,
+      "ref_deg": -27.68,
+      "read": 30.74,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold4_room2_mix002",
+      "onset_s": 102.0,
+      "pair": "23",
+      "class": "male speech",
+      "truth_deg": -52.03,
+      "ref_deg": -58.97,
+      "read": 58.82,
+      "classes": [
+       "mirror"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix002",
+      "onset_s": 75.8,
+      "pair": "12",
+      "class": "female speech",
+      "truth_deg": -12.61,
+      "ref_deg": -12.01,
+      "read": 4.46,
+      "classes": [
+       "mirror",
+       "pause direction"
+      ]
+     }
+    ],
+    "end-fire pin": [
+     {
+      "file": "fold3_room9_mix003",
+      "onset_s": 60.5,
+      "pair": "14",
+      "class": "female speech",
+      "truth_deg": -40.39,
+      "ref_deg": -48.39,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "pause direction"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix013",
+      "onset_s": 9.7,
+      "pair": "14",
+      "class": "male speech",
+      "truth_deg": -82.72,
+      "ref_deg": -45.08,
+      "read": -90,
+      "classes": [
+       "end-fire pin"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix011",
+      "onset_s": 183.0,
+      "pair": "24",
+      "class": "male speech",
+      "truth_deg": -59.11,
+      "ref_deg": -74.31,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room7_mix005",
+      "onset_s": 21.0,
+      "pair": "12",
+      "class": "female speech",
+      "truth_deg": 14.0,
+      "ref_deg": 13.85,
+      "read": 90,
+      "classes": [
+       "end-fire pin",
+       "pause direction",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix004",
+      "onset_s": 115.4,
+      "pair": "14",
+      "class": "female speech",
+      "truth_deg": -80.78,
+      "ref_deg": -66.58,
+      "read": -90,
+      "classes": [
+       "end-fire pin"
+      ]
+     },
+     {
+      "file": "fold3_room13_mix009",
+      "onset_s": 61.8,
+      "pair": "24",
+      "class": "female speech",
+      "truth_deg": -21.79,
+      "ref_deg": -23.13,
+      "read": -90,
+      "classes": [
+       "end-fire pin"
+      ]
+     }
+    ],
+    "pause direction": [
+     {
+      "file": "fold3_room12_mix008",
+      "onset_s": 37.6,
+      "pair": "23",
+      "class": "female speech",
+      "truth_deg": 35.6,
+      "ref_deg": 38.44,
+      "read": -32.99,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix003",
+      "onset_s": 11.2,
+      "pair": "23",
+      "class": "male speech",
+      "truth_deg": -41.1,
+      "ref_deg": -41.86,
+      "read": -7.66,
+      "classes": [
+       "pause direction"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix029",
+      "onset_s": 42.0,
+      "pair": "23",
+      "class": "male speech",
+      "truth_deg": 19.73,
+      "ref_deg": 19.09,
+      "read": 37.67,
+      "classes": [
+       "pause direction"
+      ]
+     },
+     {
+      "file": "fold3_room9_mix002",
+      "onset_s": 131.0,
+      "pair": "34",
+      "class": "female speech",
+      "truth_deg": 35.67,
+      "ref_deg": 39.29,
+      "read": 20.15,
+      "classes": [
+       "pause direction"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix001",
+      "onset_s": 30.4,
+      "pair": "14",
+      "class": "female speech",
+      "truth_deg": -68.14,
+      "ref_deg": 21.26,
+      "read": -68.96,
+      "classes": [
+       "pause direction"
+      ]
+     },
+     {
+      "file": "fold3_room13_mix006",
+      "onset_s": 260.9,
+      "pair": "23",
+      "class": "male speech",
+      "truth_deg": -44.97,
+      "ref_deg": -54.87,
+      "read": -27.1,
+      "classes": [
+       "pause direction",
+       "another labelled source"
+      ]
+     }
+    ],
+    "another labelled source": [
+     {
+      "file": "fold3_room12_mix004",
+      "onset_s": 252.7,
+      "pair": "23",
+      "class": "female speech",
+      "truth_deg": 53.76,
+      "ref_deg": 62.62,
+      "read": -16.79,
+      "classes": [
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix001",
+      "onset_s": 155.3,
+      "pair": "34",
+      "class": "female speech",
+      "truth_deg": -10.62,
+      "ref_deg": -15.31,
+      "read": -58.82,
+      "classes": [
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix013",
+      "onset_s": 58.7,
+      "pair": "13",
+      "class": "male speech",
+      "truth_deg": -41.17,
+      "ref_deg": -43.54,
+      "read": 13.49,
+      "classes": [
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix003",
+      "onset_s": 66.2,
+      "pair": "13",
+      "class": "male speech",
+      "truth_deg": 13.49,
+      "ref_deg": 12.84,
+      "read": 0.64,
+      "classes": [
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold4_room24_mix005",
+      "onset_s": 51.1,
+      "pair": "34",
+      "class": "female speech",
+      "truth_deg": -52.58,
+      "ref_deg": -56.77,
+      "read": -1.91,
+      "classes": [
+       "another labelled source",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room7_mix004",
+      "onset_s": 12.0,
+      "pair": "24",
+      "class": "female speech",
+      "truth_deg": -41.96,
+      "ref_deg": -69.52,
+      "read": -56.44,
+      "classes": [
+       "pause direction",
+       "another labelled source"
+      ]
+     }
+    ],
+    "0 deg pull": [
+     {
+      "file": "fold4_room2_mix001",
+      "onset_s": 7.7,
+      "pair": "12",
+      "class": "male speech",
+      "truth_deg": 16.91,
+      "ref_deg": 16.9,
+      "read": 4.46,
+      "classes": [
+       "pause direction",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room13_mix009",
+      "onset_s": 275.6,
+      "pair": "14",
+      "class": "male speech",
+      "truth_deg": -48.91,
+      "ref_deg": -59.74,
+      "read": -4.46,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "0 deg pull",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix003",
+      "onset_s": 45.7,
+      "pair": "12",
+      "class": "female speech",
+      "truth_deg": -19.73,
+      "ref_deg": -20.83,
+      "read": -3.82,
+      "classes": [
+       "pause direction",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix010",
+      "onset_s": 54.8,
+      "pair": "13",
+      "class": "male speech",
+      "truth_deg": -19.53,
+      "ref_deg": -19.49,
+      "read": -3.82,
+      "classes": [
+       "pause direction",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix008",
+      "onset_s": 84.2,
+      "pair": "24",
+      "class": "male speech",
+      "truth_deg": 43.63,
+      "ref_deg": 46.48,
+      "read": -0.64,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room13_mix001",
+      "onset_s": 216.8,
+      "pair": "34",
+      "class": "male speech",
+      "truth_deg": 18.14,
+      "ref_deg": 24.96,
+      "read": 2.55,
+      "classes": [
+       "0 deg pull"
+      ]
+     }
+    ],
+    "aliasing partner": [
+     {
+      "file": "fold3_room4_mix001",
+      "onset_s": 107.5,
+      "pair": "24",
+      "class": "male speech",
+      "truth_deg": 44.25,
+      "ref_deg": 50.85,
+      "read": -16.79,
+      "classes": [
+       "another labelled source",
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold4_room8_mix006",
+      "onset_s": 157.0,
+      "pair": "24",
+      "class": "male speech",
+      "truth_deg": 23.22,
+      "ref_deg": 35.44,
+      "read": -64.16,
+      "classes": [
+       "another labelled source",
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix004",
+      "onset_s": 85.0,
+      "pair": "12",
+      "class": "female speech",
+      "truth_deg": -18.54,
+      "ref_deg": -18.43,
+      "read": 29.27,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold4_room15_mix006",
+      "onset_s": 254.0,
+      "pair": "24",
+      "class": "female speech",
+      "truth_deg": -52.9,
+      "ref_deg": -73.46,
+      "read": 32.23,
+      "classes": [
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold4_room8_mix002",
+      "onset_s": 109.0,
+      "pair": "24",
+      "class": "male speech",
+      "truth_deg": 11.6,
+      "ref_deg": 12.53,
+      "read": -28.54,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "aliasing partner",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix008",
+      "onset_s": 81.1,
+      "pair": "34",
+      "class": "female speech",
+      "truth_deg": -54.76,
+      "ref_deg": -63.08,
+      "read": 49.07,
+      "classes": [
+       "aliasing partner"
+      ]
+     }
+    ],
+    "truth was angle 2 or 3": [
+     {
+      "file": "fold3_room7_mix004",
+      "onset_s": 68.5,
+      "pair": "13",
+      "class": "female speech",
+      "truth_deg": -25.01,
+      "ref_deg": -31.11,
+      "read": 27.1,
+      "classes": [
+       "mirror",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix025",
+      "onset_s": 208.1,
+      "pair": "14",
+      "class": "male speech",
+      "truth_deg": -28.73,
+      "ref_deg": -34.21,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix008",
+      "onset_s": 139.2,
+      "pair": "13",
+      "class": "female speech",
+      "truth_deg": 23.76,
+      "ref_deg": 22.9,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "aliasing partner",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room6_mix006",
+      "onset_s": 36.5,
+      "pair": "34",
+      "class": "male speech",
+      "truth_deg": 35.34,
+      "ref_deg": 37.58,
+      "read": -72.85,
+      "classes": [
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold4_room24_mix009",
+      "onset_s": 4.7,
+      "pair": "12",
+      "class": "male speech",
+      "truth_deg": -27.65,
+      "ref_deg": -34.05,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room4_mix007",
+      "onset_s": 173.5,
+      "pair": "12",
+      "class": "male speech",
+      "truth_deg": 18.99,
+      "ref_deg": 18.66,
+      "read": 60.07,
+      "classes": [
+       "truth was angle 2 or 3"
+      ]
+     }
+    ],
+    "drift": [],
+    "facing": [],
+    "other": [
+     {
+      "file": "fold3_room13_mix002",
+      "onset_s": 98.9,
+      "pair": "12",
+      "class": "female speech",
+      "truth_deg": 2.09,
+      "ref_deg": 2.95,
+      "read": 15.47,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold4_room8_mix004",
+      "onset_s": 31.5,
+      "pair": "34",
+      "class": "male speech",
+      "truth_deg": 33.35,
+      "ref_deg": 40.9,
+      "read": 58.82,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold4_room2_mix003",
+      "onset_s": 131.3,
+      "pair": "23",
+      "class": "male speech",
+      "truth_deg": -57.11,
+      "ref_deg": -64.63,
+      "read": 8.31,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix013",
+      "onset_s": 42.5,
+      "pair": "12",
+      "class": "male speech",
+      "truth_deg": -57.15,
+      "ref_deg": -70.91,
+      "read": -29.27,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix006",
+      "onset_s": 29.7,
+      "pair": "23",
+      "class": "male speech",
+      "truth_deg": 13.38,
+      "ref_deg": 13.98,
+      "read": 54.2,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold4_room8_mix005",
+      "onset_s": 22.0,
+      "pair": "34",
+      "class": "male speech",
+      "truth_deg": -28.31,
+      "ref_deg": -30.3,
+      "read": -56.44,
+      "classes": [
+       "other"
+      ]
+     }
+    ]
+   },
+   "other": {
+    "mirror": [
+     {
+      "file": "fold4_room24_mix003",
+      "onset_s": 3.2,
+      "pair": "24",
+      "class": "knock",
+      "truth_deg": 41.28,
+      "ref_deg": 47.3,
+      "read": -39.3,
+      "classes": [
+       "mirror"
+      ]
+     },
+     {
+      "file": "fold3_room4_mix007",
+      "onset_s": 134.0,
+      "pair": "34",
+      "class": "laughter",
+      "truth_deg": 21.47,
+      "ref_deg": 28.58,
+      "read": -22.2,
+      "classes": [
+       "mirror"
+      ]
+     },
+     {
+      "file": "fold3_room4_mix008",
+      "onset_s": 30.5,
+      "pair": "24",
+      "class": "telephone",
+      "truth_deg": 33.25,
+      "ref_deg": 37.31,
+      "read": -39.3,
+      "classes": [
+       "mirror",
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix029",
+      "onset_s": 46.3,
+      "pair": "14",
+      "class": "laughter",
+      "truth_deg": 30.98,
+      "ref_deg": 39.59,
+      "read": -32.23,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix009",
+      "onset_s": 19.5,
+      "pair": "12",
+      "class": "laughter",
+      "truth_deg": -14.09,
+      "ref_deg": -14.1,
+      "read": 14.81,
+      "classes": [
+       "mirror",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix027",
+      "onset_s": 46.3,
+      "pair": "24",
+      "class": "bell",
+      "truth_deg": -42.52,
+      "ref_deg": -44.91,
+      "read": 40.12,
+      "classes": [
+       "mirror",
+       "aliasing partner"
+      ]
+     }
+    ],
+    "end-fire pin": [
+     {
+      "file": "fold4_room15_mix008",
+      "onset_s": 144.8,
+      "pair": "23",
+      "class": "laughter",
+      "truth_deg": 56.89,
+      "ref_deg": 67.84,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room13_mix002",
+      "onset_s": 285.6,
+      "pair": "34",
+      "class": "laughter",
+      "truth_deg": -42.93,
+      "ref_deg": -70.19,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "pause direction"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix010",
+      "onset_s": 107.4,
+      "pair": "24",
+      "class": "laughter",
+      "truth_deg": -64.34,
+      "ref_deg": -65.54,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room6_mix006",
+      "onset_s": 87.5,
+      "pair": "14",
+      "class": "footsteps",
+      "truth_deg": 53.24,
+      "ref_deg": 44.87,
+      "read": 90,
+      "classes": [
+       "end-fire pin",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold4_room8_mix007",
+      "onset_s": 21.5,
+      "pair": "14",
+      "class": "musical instrument",
+      "truth_deg": 11.66,
+      "ref_deg": 13.12,
+      "read": 90,
+      "classes": [
+       "end-fire pin"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix003",
+      "onset_s": 226.8,
+      "pair": "34",
+      "class": "laughter",
+      "truth_deg": -50.86,
+      "ref_deg": -54.26,
+      "read": -90,
+      "classes": [
+       "end-fire pin"
+      ]
+     }
+    ],
+    "pause direction": [
+     {
+      "file": "fold3_room13_mix008",
+      "onset_s": 127.4,
+      "pair": "34",
+      "class": "door/cupboard",
+      "truth_deg": 25.39,
+      "ref_deg": 34.71,
+      "read": 15.47,
+      "classes": [
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix022",
+      "onset_s": 144.0,
+      "pair": "12",
+      "class": "clapping",
+      "truth_deg": -27.11,
+      "ref_deg": -33.8,
+      "read": -22.89,
+      "classes": [
+       "pause direction"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix004",
+      "onset_s": 35.5,
+      "pair": "13",
+      "class": "laughter",
+      "truth_deg": -1.26,
+      "ref_deg": -1.04,
+      "read": -18.13,
+      "classes": [
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room13_mix006",
+      "onset_s": 123.1,
+      "pair": "23",
+      "class": "laughter",
+      "truth_deg": -40.93,
+      "ref_deg": -48.15,
+      "read": -28.54,
+      "classes": [
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room13_mix002",
+      "onset_s": 188.6,
+      "pair": "14",
+      "class": "laughter",
+      "truth_deg": -79.71,
+      "ref_deg": -30.84,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "pause direction"
+      ]
+     },
+     {
+      "file": "fold4_room15_mix010",
+      "onset_s": 501.3,
+      "pair": "34",
+      "class": "musical instrument",
+      "truth_deg": -31.71,
+      "ref_deg": -53.66,
+      "read": -38.48,
+      "classes": [
+       "pause direction"
+      ]
+     }
+    ],
+    "another labelled source": [
+     {
+      "file": "fold4_room8_mix001",
+      "onset_s": 196.0,
+      "pair": "12",
+      "class": "laughter",
+      "truth_deg": -34.28,
+      "ref_deg": -41.2,
+      "read": 49.07,
+      "classes": [
+       "mirror",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix017",
+      "onset_s": 125.8,
+      "pair": "13",
+      "class": "music",
+      "truth_deg": -21.4,
+      "ref_deg": -22.44,
+      "read": 18.13,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix007",
+      "onset_s": 229.2,
+      "pair": "13",
+      "class": "laughter",
+      "truth_deg": -38.09,
+      "ref_deg": -41.69,
+      "read": 36.08,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix027",
+      "onset_s": 60.1,
+      "pair": "14",
+      "class": "bell",
+      "truth_deg": 8.15,
+      "ref_deg": 8.76,
+      "read": -68.96,
+      "classes": [
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold4_room24_mix005",
+      "onset_s": 59.4,
+      "pair": "13",
+      "class": "laughter",
+      "truth_deg": 35.14,
+      "ref_deg": 34.89,
+      "read": 52.08,
+      "classes": [
+       "another labelled source"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix008",
+      "onset_s": 199.3,
+      "pair": "14",
+      "class": "laughter",
+      "truth_deg": -16.32,
+      "ref_deg": -18.64,
+      "read": 90,
+      "classes": [
+       "end-fire pin",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     }
+    ],
+    "0 deg pull": [
+     {
+      "file": "fold4_room10_mix008",
+      "onset_s": 45.5,
+      "pair": "14",
+      "class": "laughter",
+      "truth_deg": -48.65,
+      "ref_deg": -65.26,
+      "read": 3.18,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix009",
+      "onset_s": 99.9,
+      "pair": "23",
+      "class": "bell",
+      "truth_deg": -25.79,
+      "ref_deg": -27.57,
+      "read": 0.64,
+      "classes": [
+       "pause direction",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix004",
+      "onset_s": 61.5,
+      "pair": "12",
+      "class": "footsteps",
+      "truth_deg": 33.49,
+      "ref_deg": 35.97,
+      "read": 2.55,
+      "classes": [
+       "another labelled source",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix012",
+      "onset_s": 146.0,
+      "pair": "24",
+      "class": "laughter",
+      "truth_deg": -18.7,
+      "ref_deg": -18.67,
+      "read": -4.46,
+      "classes": [
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold4_room2_mix005",
+      "onset_s": 152.2,
+      "pair": "23",
+      "class": "laughter",
+      "truth_deg": -49.42,
+      "ref_deg": -54.8,
+      "read": -1.27,
+      "classes": [
+       "pause direction",
+       "0 deg pull"
+      ]
+     },
+     {
+      "file": "fold4_room15_mix009",
+      "onset_s": 160.6,
+      "pair": "34",
+      "class": "footsteps",
+      "truth_deg": -19.26,
+      "ref_deg": -19.08,
+      "read": 1.91,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "0 deg pull"
+      ]
+     }
+    ],
+    "aliasing partner": [
+     {
+      "file": "fold4_room10_mix007",
+      "onset_s": 11.0,
+      "pair": "24",
+      "class": "music",
+      "truth_deg": 24.94,
+      "ref_deg": 36.71,
+      "read": -42.67,
+      "classes": [
+       "mirror",
+       "pause direction",
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold4_room2_mix001",
+      "onset_s": 49.7,
+      "pair": "13",
+      "class": "telephone",
+      "truth_deg": -8.15,
+      "ref_deg": -7.95,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix004",
+      "onset_s": 29.8,
+      "pair": "34",
+      "class": "bell",
+      "truth_deg": 5.33,
+      "ref_deg": 8.44,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold3_room4_mix001",
+      "onset_s": 107.5,
+      "pair": "34",
+      "class": "water tap",
+      "truth_deg": 32.99,
+      "ref_deg": 42.07,
+      "read": -28.54,
+      "classes": [
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold4_room8_mix002",
+      "onset_s": 63.0,
+      "pair": "23",
+      "class": "musical instrument",
+      "truth_deg": -12.45,
+      "ref_deg": -13.59,
+      "read": -75.16,
+      "classes": [
+       "aliasing partner"
+      ]
+     },
+     {
+      "file": "fold3_room21_mix027",
+      "onset_s": 51.1,
+      "pair": "34",
+      "class": "bell",
+      "truth_deg": 12.92,
+      "ref_deg": 15.4,
+      "read": -90,
+      "classes": [
+       "end-fire pin",
+       "pause direction",
+       "aliasing partner"
+      ]
+     }
+    ],
+    "truth was angle 2 or 3": [
+     {
+      "file": "fold4_room15_mix008",
+      "onset_s": 144.8,
+      "pair": "14",
+      "class": "laughter",
+      "truth_deg": 31.56,
+      "ref_deg": 36.17,
+      "read": 11.54,
+      "classes": [
+       "pause direction",
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room12_mix007",
+      "onset_s": 185.6,
+      "pair": "12",
+      "class": "laughter",
+      "truth_deg": 9.19,
+      "ref_deg": 8.92,
+      "read": -27.82,
+      "classes": [
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room6_mix005",
+      "onset_s": 214.0,
+      "pair": "34",
+      "class": "musical instrument",
+      "truth_deg": -6.7,
+      "ref_deg": -9.08,
+      "read": -44.43,
+      "classes": [
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold4_room8_mix004",
+      "onset_s": 31.0,
+      "pair": "23",
+      "class": "music",
+      "truth_deg": -61.98,
+      "ref_deg": -72.4,
+      "read": -23.58,
+      "classes": [
+       "another labelled source",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room13_mix005",
+      "onset_s": 41.7,
+      "pair": "13",
+      "class": "door/cupboard",
+      "truth_deg": -29.91,
+      "ref_deg": -39.01,
+      "read": 90,
+      "classes": [
+       "end-fire pin",
+       "pause direction",
+       "truth was angle 2 or 3"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix008",
+      "onset_s": 71.8,
+      "pair": "24",
+      "class": "laughter",
+      "truth_deg": 42.74,
+      "ref_deg": 48.12,
+      "read": -12.19,
+      "classes": [
+       "pause direction",
+       "truth was angle 2 or 3"
+      ]
+     }
+    ],
+    "drift": [],
+    "facing": [],
+    "other": [
+     {
+      "file": "fold4_room16_mix003",
+      "onset_s": 70.4,
+      "pair": "34",
+      "class": "footsteps",
+      "truth_deg": 6.86,
+      "ref_deg": 8.07,
+      "read": 28.54,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold4_room23_mix011",
+      "onset_s": 57.1,
+      "pair": "34",
+      "class": "footsteps",
+      "truth_deg": -32.09,
+      "ref_deg": -43.59,
+      "read": -14.15,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold3_room22_mix005",
+      "onset_s": 2.5,
+      "pair": "12",
+      "class": "water tap",
+      "truth_deg": -6.73,
+      "ref_deg": -9.59,
+      "read": -72.85,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold4_room23_mix005",
+      "onset_s": 38.1,
+      "pair": "34",
+      "class": "laughter",
+      "truth_deg": -17.68,
+      "ref_deg": -25.89,
+      "read": 48.11,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold4_room16_mix004",
+      "onset_s": 84.9,
+      "pair": "34",
+      "class": "laughter",
+      "truth_deg": 15.34,
+      "ref_deg": 20.87,
+      "read": 9.59,
+      "classes": [
+       "other"
+      ]
+     },
+     {
+      "file": "fold4_room15_mix010",
+      "onset_s": 370.1,
+      "pair": "13",
+      "class": "musical instrument",
+      "truth_deg": 60.5,
+      "ref_deg": 74.6,
+      "read": 64.16,
+      "classes": [
+       "other"
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "chance": {
+  "GccPhat": {
+   "speech": {
+    "pause direction": {
+     "observed_pct": 40.9,
+     "chance_pct": 16.1,
+     "pause held a labelled source": 3483,
+     "pause held nothing labelled near that direction": 2316
+    },
+    "another labelled source": {
+     "observed_pct": 36.6,
+     "chance_pct": 15.1
+    },
+    "truth was angle 2 or 3": {
+     "observed_pct": 16.6,
+     "chance_pct": 12.4
+    }
+   },
+   "other": {
+    "pause direction": {
+     "observed_pct": 39.9,
+     "chance_pct": 14.9,
+     "pause held a labelled source": 968,
+     "pause held nothing labelled near that direction": 655
+    },
+    "another labelled source": {
+     "observed_pct": 43.2,
+     "chance_pct": 16.5
+    },
+    "truth was angle 2 or 3": {
+     "observed_pct": 19.6,
+     "chance_pct": 14.4
+    }
+   }
+  },
+  "Angle2": {
+   "speech": {
+    "pause direction": {
+     "observed_pct": 33.5,
+     "chance_pct": 13.9,
+     "pause held a labelled source": 3450,
+     "pause held nothing labelled near that direction": 2274
+    },
+    "another labelled source": {
+     "observed_pct": 31.5,
+     "chance_pct": 14.2
+    },
+    "truth was angle 2 or 3": {
+     "observed_pct": 15.8,
+     "chance_pct": 10.7
+    }
+   },
+   "other": {
+    "pause direction": {
+     "observed_pct": 35.8,
+     "chance_pct": 14.5,
+     "pause held a labelled source": 879,
+     "pause held nothing labelled near that direction": 542
+    },
+    "another labelled source": {
+     "observed_pct": 38.1,
+     "chance_pct": 16.0
+    },
+    "truth was angle 2 or 3": {
+     "observed_pct": 15.1,
+     "chance_pct": 11.0
+    }
+   }
+  }
+ },
+ "clues_by_severity": {
+  "GccPhat": {
+   "gcc share (median)": {
+    "ok": 0.58,
+    "moderate": 0.514,
+    "outlier": 0.454
+   },
+   "gcc width (median)": {
+    "ok": 37.9,
+    "moderate": 44.55,
+    "outlier": 36.1
+   },
+   "gcc votes (median)": {
+    "ok": 181.68,
+    "moderate": 153.035,
+    "outlier": 141.66
+   },
+   "gcc tie (% of reads)": {
+    "ok": 5.7,
+    "moderate": 12.5,
+    "outlier": 25.9
+   },
+   "gcc 43 ms to lock (median)": {
+    "ok": 12.4,
+    "moderate": 15.65,
+    "outlier": 22.02
+   },
+   "a2 edge (% of reads)": {
+    "ok": 72.2,
+    "moderate": 58.6,
+    "outlier": 50.8
+   },
+   "schemes agree within 5 deg (% of reads)": {
+    "ok": 43.2,
+    "moderate": 29.0,
+    "outlier": 26.8
+   },
+   "snr mf dB (median)": {
+    "ok": 9.39,
+    "moderate": 7.33,
+    "outlier": 4.47
+   },
+   "snr hf1 dB (median)": {
+    "ok": 7.73,
+    "moderate": 5.67,
+    "outlier": 3.08
+   },
+   "snr hf2 dB (median)": {
+    "ok": 4.76,
+    "moderate": 2.87,
+    "outlier": 1.87
+   },
+   "another source active (% of reads)": {
+    "ok": 70.5,
+    "moderate": 75.1,
+    "outlier": 90.0
+   }
+  },
+  "Angle2": {
+   "gcc share (median)": {
+    "ok": 0.584,
+    "moderate": 0.53,
+    "outlier": 0.467
+   },
+   "gcc width (median)": {
+    "ok": 37.0,
+    "moderate": 42.1,
+    "outlier": 39.9
+   },
+   "gcc votes (median)": {
+    "ok": 188.45,
+    "moderate": 164.56,
+    "outlier": 150.73
+   },
+   "gcc tie (% of reads)": {
+    "ok": 6.7,
+    "moderate": 10.6,
+    "outlier": 18.0
+   },
+   "gcc 43 ms to lock (median)": {
+    "ok": 11.46,
+    "moderate": 14.68,
+    "outlier": 24.57
+   },
+   "a2 edge (% of reads)": {
+    "ok": 78.8,
+    "moderate": 59.3,
+    "outlier": 44.2
+   },
+   "schemes agree within 5 deg (% of reads)": {
+    "ok": 52.6,
+    "moderate": 26.1,
+    "outlier": 20.3
+   },
+   "snr mf dB (median)": {
+    "ok": 10.14,
+    "moderate": 7.76,
+    "outlier": 5.76
+   },
+   "snr hf1 dB (median)": {
+    "ok": 8.48,
+    "moderate": 6.21,
+    "outlier": 4.31
+   },
+   "snr hf2 dB (median)": {
+    "ok": 5.23,
+    "moderate": 3.55,
+    "outlier": 2.61
+   },
+   "another source active (% of reads)": {
+    "ok": 68.6,
+    "moderate": 74.5,
+    "outlier": 86.3
+   }
+  }
+ },
+ "lean": {
+  "GccPhat, real rooms": {
+   "0-15": {
+    "n": 734,
+    "median": 2.0
+   },
+   "15-30": {
+    "n": 825,
+    "median": 1.6
+   },
+   "30-45": {
+    "n": 555,
+    "median": 5.4
+   },
+   "45-60": {
+    "n": 558,
+    "median": 18.7
+   },
+   "60-90": {
+    "n": 42,
+    "median": 26.8
+   }
+  },
+  "GccPhat, rigid sphere, no room (grid)": {
+   "0-15": {
+    "n": 734,
+    "median": 0.6
+   },
+   "15-30": {
+    "n": 825,
+    "median": 1.0
+   },
+   "30-45": {
+    "n": 555,
+    "median": 5.5
+   },
+   "45-60": {
+    "n": 558,
+    "median": 14.5
+   },
+   "60-90": {
+    "n": 42,
+    "median": 21.2
+   }
+  },
+  "Angle2, real rooms": {
+   "0-15": {
+    "n": 730,
+    "median": 2.4
+   },
+   "15-30": {
+    "n": 812,
+    "median": 0.7
+   },
+   "30-45": {
+    "n": 548,
+    "median": 2.6
+   },
+   "45-60": {
+    "n": 546,
+    "median": 10.5
+   },
+   "60-90": {
+    "n": 42,
+    "median": 14.3
+   }
+  },
+  "Angle2, rigid sphere, no room (grid)": {
+   "0-15": {
+    "n": 734,
+    "median": 0.8
+   },
+   "15-30": {
+    "n": 825,
+    "median": 1.4
+   },
+   "30-45": {
+    "n": 555,
+    "median": 5.1
+   },
+   "45-60": {
+    "n": 558,
+    "median": 13.5
+   },
+   "60-90": {
+    "n": 42,
+    "median": 20.0
+   }
+  },
+  "GccPhat, real against its sphere reference": {
+   "0-15": {
+    "n": 705,
+    "median": 0.3
+   },
+   "15-30": {
+    "n": 644,
+    "median": -1.0
+   },
+   "30-45": {
+    "n": 602,
+    "median": -0.6
+   },
+   "45-60": {
+    "n": 290,
+    "median": 1.2
+   },
+   "60-90": {
+    "n": 479,
+    "median": 6.0
+   }
+  },
+  "Angle2, real against its sphere reference": {
+   "0-15": {
+    "n": 671,
+    "median": 0.8
+   },
+   "15-30": {
+    "n": 653,
+    "median": -1.3
+   },
+   "30-45": {
+    "n": 584,
+    "median": -1.7
+   },
+   "45-60": {
+    "n": 293,
+    "median": -3.7
+   },
+   "60-90": {
+    "n": 472,
+    "median": -3.0
+   }
+  }
+ }
+}
