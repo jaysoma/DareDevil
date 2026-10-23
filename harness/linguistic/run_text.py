@@ -6,9 +6,11 @@ prompt and its parsing) and stage3.Pass (placing completion words, the majority 
 onto the running speakers, pick() for a label with nothing behind it). run_pass()'s window rule is restated here
 line for line, with the HTTP call to Ollama replaced by `model`. Nothing is told how many people there are.
 
-Words arrive as a recogniser's phrases would: a phrase ends at a pause over PHRASE_GAP_S or at PHRASE_MAX words. One
-pass per phrase, as stage3 does: the first waits for MIN_WORDS, then each takes the newest CONTEXT settled words (a
-contiguous two-speaker stretch) plus up to MAX_NEW new words.
+Words arrive as a recogniser's phrases would: a phrase ends at a pause over PHRASE_GAP_S or at PHRASE_MAX words, and
+is delivered when it's sealed (its last word + PHRASE_GAP_S). The run keeps a clock, as stage3 runs live: one pass at a
+time; a phrase that lands during a pass waits for the next; a pass takes the time it actually took (fisher) or
+--pass-s (the stand-ins, so they see the same batching). The first pass waits for MIN_WORDS; each takes the newest
+CONTEXT settled words (a contiguous two-speaker stretch) plus up to MAX_NEW new words.
 
 THE MODEL (--model):
   fisher   DiarizationLM-8b-Fisher-v2, Q4_K_M GGUF, through llama.cpp on CPU (--gguf): raw completion of the prompt,
@@ -199,6 +201,7 @@ def main():
     ap.add_argument('--gguf')
     ap.add_argument('--threads', type=int, default=4)
     ap.add_argument('--until-s', type=float)
+    ap.add_argument('--pass-s', type=float, default=10.0, help='a stand-in pass\'s duration on the clock (fisher uses its own)')
     ap.add_argument('--out', required=True)
     a = ap.parse_args()
     seq = [json.loads(l) for l in open(a.transcript)]
@@ -210,17 +213,31 @@ def main():
     log = []
     for k, x in enumerate(seq):
         x['k'] = k
-    for ph in phrases(seq):
-        for x in ph:
-            words.append({'w': x['w'], 'n': dl.normalize_text(x['w']) or x['w'], 'spk': None, 'truth': x['spk'], 'k': x['k']})
-        while run_pass(model, words, log):
-            pass
+    queue = [(ph[-1]['t'] + PHRASE_GAP_S, ph) for ph in phrases(seq)]
+    clock, q = 0.0, 0
+
+    def deliver(upto):
+        nonlocal q
+        while q < len(queue) and queue[q][0] <= upto:
+            for x in queue[q][1]:
+                words.append({'w': x['w'], 'n': dl.normalize_text(x['w']) or x['w'], 'spk': None, 'truth': x['spk'], 'k': x['k']})
+            q += 1
+    while True:
+        deliver(clock)
+        if run_pass(model, words, log):
+            clock += log[-1]['s'] if a.model == 'fisher' else a.pass_s
+        elif q < len(queue):
+            clock = max(clock, queue[q][0])          # idle until the next phrase is sealed
+        else:
+            break
+    behind = clock - (seq[-1]['t'] if seq else 0)
     pred = {w['k']: w['spk'] for w in words}
     for x in seq:
         x['spk_true'], x['truth'] = x['spk'], x['spk']
         x['spk'] = pred.get(x['k'])
     res = score(seq, log, len(seq))
-    res.update({'transcript': Path(a.transcript).name, 'model': a.model, 'until_s': a.until_s})
+    res.update({'transcript': Path(a.transcript).name, 'model': a.model, 'until_s': a.until_s,
+                'clock_behind_at_end_s': round(behind, 1), 'pass_s_standin': a.pass_s if a.model != 'fisher' else None})
     Path(a.out).write_text(json.dumps(res, indent=1))
     print(json.dumps(res))
 
