@@ -589,11 +589,15 @@ attached). Read its README, `blends.py` and `stage3.py` first. Change nothing th
   exactly two speakers, walked back until a third would enter, at most 50 words (longer prompts came back untagged).
   Overlapping windows chain the pairs, A/B then B/C then C/A. A window's labels are relative and are pinned onto the
   running speakers by the majority of its already-settled words. Nothing is told how many people there are.
-- **Three ways in:** text only (`stage3.py`: new words enter with alternating tags, settled words keep theirs);
-  pitch first (`wordprint.py`, then the model corrects); diart first (`bench_dlm.py`, then the model corrects).
+- **Two ways in:** text only (`stage3.py`: new words enter with alternating tags, settled words keep theirs), and
+  diart first (`bench_dlm.py`, then the model corrects). The pitch path (`wordprint.py`) was an experiment: leave it
+  out (Jay, 2026-10-23).
+- **Why two speakers at a time is enough (Jay, tested):** the words come from a recogniser, and a recogniser can't
+  decode several people talking at once. So 85-90% of the time a run of consecutive words comes from one speaker,
+  and a short stretch rarely holds more than two.
 
-**What's already measured (one AMI meeting, EN2002a, per-window best mapping):** coin flip 55.3%, pitch alone 76.1%,
-pitch then the model 79.4%. Text only has never been scored on AMI.
+**Nothing usable is measured yet.** The repo's AMI figures (EN2002a) include the pitch path, and Jay doubts them.
+Text only has never been scored on AMI.
 
 Data: the AMI Meeting Corpus (https://groups.inf.ed.ac.uk/ami/corpus/), word-level transcripts with each word's
 speaker and time, plus audio for the pitch and diart paths. Check what the manual annotations hold before relying on
@@ -601,10 +605,13 @@ them: addressee on a subset of meetings, focus of attention (where each person l
 blocked, try the Hugging Face copy (`edinburghcstr/ami`); if neither is reachable, report and stop. Commit derived
 scores only, never audio or weights.
 
-1. **Reproduce Jay's number** on EN2002a's first 300 s with `bench_chain.py`'s method: 55.3 / 76.1 / 79.4%. If it
-   doesn't reproduce within a point, stop and report the difference.
+1. **Make the words look like a recogniser's.** AMI's manual transcript interleaves overlapping speakers word by
+   word, which a live recogniser never produces. Score every condition twice: on the full transcript, and with
+   overlapped words resolved the way a recogniser would (keep the louder or longer talker's words in the overlap, drop
+   the other's). If the audio is reachable, add a third: Whisper on the far-field mixdown, its words mapped to AMI's
+   speakers by time.
 2. **Who said what, across meetings.** At least 10 AMI meetings, more if CPU time allows. Report how long each pass
-   takes on CPU. Run all three ways in, and score each two ways:
+   takes on CPU. Run both ways in, and score each two ways:
    - **Per window,** best mapping per window, as Jay's benches do. This measures the two-way split.
    - **Whole meeting,** one mapping for the entire meeting. This measures the N-speaker chaining as well. Also
      report speakers invented against speakers present, and how often one person is split in two or two merged.
