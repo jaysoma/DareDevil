@@ -287,3 +287,38 @@ Read both batch A results.
    whose range is consistent.
 
 Commit `results/batchA/report.md` to a branch.
+
+---
+
+# Orientation: head direction from two mics, on public data with real talkers
+
+Context: Turi, Politis, Sudarsanam and Virtanen (Tampere) estimate speaker head orientation from one array in
+https://arxiv.org/abs/2607.02129 (July 2026). They use the STFT phase of each channel in 4 ms windows, a deep network,
+simulated training (pyroomacoustics plus 22 directivity patterns) and fine-tuning on the public Direction-of-Voice
+dataset (Ahuja et al., UIST 2020, https://github.com/FIGLAB/DirectionOfVoice). On that real data, with 8 orientations
+45 deg apart, trained on session 1 and tested on session 2 and the other way round, they report: DoV's own method
+65.4%, theirs trained on real data only 62.6%, theirs pre-trained and fine-tuned 73.2%. They test no 2-mic
+configuration, and say the model "still lacks strong generalization".
+
+## 12. Direction-of-Voice with two of its four mics, and Jay's RotationTracker
+
+Read HANDOFF.md and `src/orientation/RotationTracker.js`. That's Jay's tracker: a mel-band lateral cue against a
+facing reference built from enrolment utterances. Its constants are frozen for holdout testing; don't retune
+`cueScale` or the bands.
+
+1. **Get the DoV raw dataset** from the links in the FIGLAB README. If its host is blocked by the network policy, report
+   the domain and stop. Its ReSpeaker array's channels 1-4 are raw. Take the geometry from the ReSpeaker documentation
+   and choose two pairs: the widest, and one adjacent.
+2. **Reproduce the paper's real-data protocol exactly:** 8 classes, session 1 to 2 and 2 to 1, with accuracy as the
+   paper defines it plus the mean angular error.
+3. **Methods, each on the two-mic pairs only:**
+   - **RotationTracker as written.** Build each participant's facing reference from that participant's 0 deg
+     utterances in the training session. It estimates |sin(theta)| plus continuity, so report what it can and cannot
+     resolve: front/back and left/right from a single utterance.
+   - **A transparent baseline,** the same as RotationTracker but on per-band level differences, so readers can see what
+     the hand-built cue adds.
+4. **Report next to the paper's numbers** (65.4%, 62.6%, 73.2% on all channels), with the per-class confusion matrix,
+   per distance (1, 3 and 5 m) and per room. State plainly that the comparison is two mics against their array.
+
+Score under the scoring rule above, with outliers catalogued. Commit `results/orientation_dov/` and the harness to a
+branch. No audio in the repo.
