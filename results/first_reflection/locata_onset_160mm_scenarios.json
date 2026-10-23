@@ -1,0 +1,196 @@
+{
+ "readSound onset": [
+  {
+   "scenario": "dev_task3_rec1 talker5 160mm",
+   "reads": 5,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 12.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task3_rec2 talker2 160mm",
+   "reads": 6,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task3_rec3 talker1 160mm",
+   "reads": 6,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec1 talker1 160mm",
+   "reads": 21,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 6.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec1 talker2 160mm",
+   "reads": 12,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 7.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec2 talker2 160mm",
+   "reads": 18,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 8.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec2 talker5 160mm",
+   "reads": 13,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 8.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec3 talker1 160mm",
+   "reads": 18,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 5.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec3 talker5 160mm",
+   "reads": 18,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 11.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec1 talker2 160mm",
+   "reads": 7,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec2 talker1 160mm",
+   "reads": 6,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec3 talker4 160mm",
+   "reads": 8,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec4 talker4 160mm",
+   "reads": 7,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec5 talker5 160mm",
+   "reads": 6,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec1 talker1 160mm",
+   "reads": 19,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 11.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec1 talker2 160mm",
+   "reads": 17,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 3.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec2 talker1 160mm",
+   "reads": 10,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec2 talker2 160mm",
+   "reads": 11,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec3 talker2 160mm",
+   "reads": 18,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec3 talker5 160mm",
+   "reads": 18,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec4 talker2 160mm",
+   "reads": 17,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec4 talker5 160mm",
+   "reads": 18,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 4.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec5 talker1 160mm",
+   "reads": 14,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec5 talker5 160mm",
+   "reads": 14,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 10.2,
+   "dropped": false,
+   "why": null
+  }
+ ]
+}

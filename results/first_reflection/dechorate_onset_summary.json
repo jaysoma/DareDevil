@@ -1,0 +1,47 @@
+{
+ "readSound onset": {
+  "reads_total": 19008,
+  "in_scope": 13464,
+  "read_outliers": 834,
+  "read_outliers_pct": 6.2,
+  "scenarios": 561,
+  "scenarios_dropped": 0,
+  "reads_in_dropped_scenarios": 0,
+  "kept": 12630,
+  "kept_pct": 93.8,
+  "score": {
+   "n": 12630,
+   "mean_err": 6.9,
+   "median_err": 4.1,
+   "within_10_pct": 76.6,
+   "lean_mean_by_band": {
+    "0-15": {
+     "n": 3107,
+     "mean": -1.1
+    },
+    "15-30": {
+     "n": 4074,
+     "mean": -1.6
+    },
+    "30-45": {
+     "n": 2396,
+     "mean": -2.3
+    },
+    "45-60": {
+     "n": 2407,
+     "mean": -1.6
+    },
+    "60-75": {
+     "n": 646,
+     "mean": -3.9
+    }
+   }
+  },
+  "outlier_kinds": {
+   "mirror (sign flipped)": 116,
+   "on a reflective surface's echo": 102,
+   "other": 608,
+   "truth was its 2nd/3rd direction": 8
+  }
+ }
+}
