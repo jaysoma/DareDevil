@@ -117,22 +117,36 @@ function addFrame(L, R, s, re, im, w, pw = null) {
     if (pw) pw[b] += (w.lr[k] * w.lr[k] + w.li[k] * w.li[k] + w.rr[k] * w.rr[k] + w.ri[k] * w.ri[k]) / 2;   // the frame's power
   }
 }
+// LOGGED READS (Jay, 2026-10-22: "anytime [the angle] evaluates to 0, log the values"). Tagged for the console's filter;
+// console.warn, so a headless run's stdout (one JSON line per read) stays clean. setLog() swaps the sink.
+export let LOG = (tag, values) => console.warn(tag, JSON.stringify(values));
+export function setLog(fn) { LOG = fn; }
+const FLAT = 1e-9;              // a scan whose tallest delay beats its lowest by less than this (per vote) has no peak
 // the PHAT of the sum, scored over the delays: the tallest is the read. share = that score over the slice count (1 when
 // every frequency agrees on the one delay).
 export function readSum(re, im, st, wt = null) {
   const wr = new Float64Array(NB), wi = new Float64Array(NB);
   for (let b = 0; b < NB; b++) { const m = Math.hypot(re[b], im[b]) || 1; wr[b] = re[b] / m; wi[b] = im[b] / m; }
   if (wt) for (let b = 0; b < NB; b++) { wr[b] *= wt[b]; wi[b] *= wt[b]; }      // a slice the pause already filled votes ~0
-  let best = -Infinity, jb = 0;
+  // EVERY DELAY'S SCORE FIRST, THEN THE TALLEST (Jay, 2026-10-22: "setting an initial value to -Infinity is ... never a
+  // good idea ... calculate all scores, store them in an array and take the max value at the end"). With a -Infinity
+  // seed, a scan of NaNs or a flat one (every vote weighed to 0 by the pause) silently kept index 0, which is the most
+  // negative delay: +90 deg. Now such a scan is no read at all, and says so.
   const sc = new Float64Array(TAUS);
   for (let j = 0; j < TAUS; j++) {
     const o = j * NB;
     let score = 0;
     for (let b = 0; b < NB; b++) score += wr[b] * st.cos[o + b] + wi[b] * st.sin[o + b];
     sc[j] = score;
-    if (score > best) { best = score; jb = j; }
   }
   const votes = wt ? Math.max(wt.reduce((a, v) => a + v, 0), 1e-9) : NB;
+  let jb = 0, lo = sc[0];
+  for (let j = 1; j < TAUS; j++) { if (sc[j] > sc[jb]) jb = j; if (sc[j] < lo) lo = sc[j]; }
+  const best = sc[jb];
+  if (!sc.every(Number.isFinite) || best - lo <= FLAT * Math.max(votes, 1)) {
+    LOG('[GccPhat] no peak', { finite: sc.every(Number.isFinite), max: best, min: lo, votes: round(votes, 3) });
+    return null;
+  }
   // ANGLES 1, 2, 3: the peaks of the scan (a delay scoring at least both neighbours), tallest first, each TIE_SEP_DEG or
   // more from the taller ones kept; a peak's width runs out to where the scan falls below half its height
   const cand = [];
@@ -152,7 +166,11 @@ export function readSum(re, im, st, wt = null) {
   });
   // the tie: angle 2, when it scores TIE_SHARE of the lock or more (the same peak the tie search found before)
   const second = (pk.length > 1 && best > 0 && sc[pk[1]] >= TIE_SHARE * best) ? angles[1] : null;
-  return { deg: round(st.deg[jb], 2), tau_ms: round(st.tau[jb] * 1000, 4), share: round(best / votes, 3), second, angles };
+  const read = { deg: round(st.deg[jb], 2), tau_ms: round(st.tau[jb] * 1000, 4), share: round(best / votes, 3), second, angles };
+  if (read.deg === 0) LOG('[GccPhat] zero', { j: jb, tau_ms: read.tau_ms, score: round(best, 4), share: read.share,
+    min: round(lo, 4), mean: round(sc.reduce((a, v) => a + v, 0) / TAUS, 4), votes: round(votes, 3), width: angles[0].width,
+    next: angles[1] ? { deg: angles[1].deg, share: angles[1].share } : null });
+  return read;
 }
 export function createStream(baselineM, { readFrom = null } = {}) {
   if (!FFT_T) FFT_T = fftTables(NFFT);

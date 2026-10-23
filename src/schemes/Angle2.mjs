@@ -330,7 +330,11 @@ function uSteer(baselineM) {
   }
   return (U_STEER = { baselineM, nb, cos, sin, tauOf });
 }
-function uRead(lf, rf, a, S) {                       // one 3 ms window's strongest delay (s) and its peak's share of the votes
+// LOGGED READS (Jay, 2026-10-22: "anytime [the angle] evaluates to 0, log the values"), as GccPhat.mjs: console.warn,
+// tagged; setLog() swaps the sink.
+export let LOG = (tag, values) => console.warn(tag, JSON.stringify(values));
+export function setLog(fn) { LOG = fn; }
+function uRead(lf, rf, a, S, t) {                    // one 3 ms window's strongest delay (s) and its peak's share of the votes
   const lr = new Float64Array(U_N), li = new Float64Array(U_N), rr = new Float64Array(U_N), ri = new Float64Array(U_N);
   for (let i = 0; i < U_WIN; i++) { lr[i] = lf[a + i] * U_HANN[i]; rr[i] = rf[a + i] * U_HANN[i]; }
   fft(lr, li); fft(rr, ri);
@@ -341,8 +345,19 @@ function uRead(lf, rf, a, S) {                       // one 3 ms window's strong
     const cr = re / m, ci = im / m, o = b * SCAN_TAUS;
     for (let j = 0; j < SCAN_TAUS; j++) score[j] += cr * S.cos[o + j] + ci * S.sin[o + j];
   }
-  let j = 0; for (let q = 1; q < SCAN_TAUS; q++) if (score[q] > score[j]) j = q;
-  return { tau: S.tauOf(j), share: score[j] / S.nb };
+  // every delay scored first, then the tallest; a flat or broken scan (no bin voted, or NaNs) is no read rather than
+  // index 0, the most negative delay, +90 deg (Jay, 2026-10-22)
+  let j = 0, lo = score[0];
+  for (let q = 1; q < SCAN_TAUS; q++) { if (score[q] > score[j]) j = q; if (score[q] < lo) lo = score[q]; }
+  if (!score.every(Number.isFinite) || score[j] - lo <= 1e-9 * S.nb) {
+    LOG('[Angle2] no peak', { at: t, finite: score.every(Number.isFinite), max: score[j], min: lo });
+    return null;
+  }
+  const tau = S.tauOf(j), share = score[j] / S.nb;
+  if (round(degOf(tau, S.baselineM), 2) === 0)
+    LOG('[Angle2] zero', { at: t, j, tau_ms: round(tau * 1000, 4), score: round(score[j], 4), share: round(share, 3),
+      min: round(lo, 4), mean: round(score.reduce((x, v) => x + v, 0) / SCAN_TAUS, 4) });
+  return { tau, share };
 }
 /* The utterance whose Conductor onset is at sample `at`: { onset: {deg, first, at3, edge}, refl: {deg, first, at3} | null }
    in tape samples (first = the direction's first read, at3 = the read that made it recur U_HITS times; edge = the onset
@@ -377,7 +392,9 @@ export function readUtterance(L, R, at, baselineM, trace = null) {
     for (let i = 0; i < U_WIN; i++) { e += lf[a + i] * lf[a + i] + rf[a + i] * rf[a + i]; e0 += lf[b + i] * lf[b + i] + rf[b + i] * rf[b + i]; }
     const db = 10 * Math.log10(e / U_WIN + 1e-12) - floorDb, rise = 10 * Math.log10((e + 1e-12) / (e0 + 1e-12));
     if (db < U_GATE_DB) continue;
-    const { tau, share } = uRead(lf, rf, a, S), ds = tau * SR, t = a0 + ms * 48;
+    const t = a0 + ms * 48, u = uRead(lf, rf, a, S, t);
+    if (!u) continue;                                             // a scan with no peak has no direction: no vote
+    const { tau, share } = u, ds = tau * SR;
     const f = tally(fams, ds, tau, t);
     if (trace) trace.push({ at: t, db, rise, share, deg: degOf(tau, baselineM), fam: fams.indexOf(f) });
     if (f.hits === U_HITS) recurred.push({ f, at3: t });
