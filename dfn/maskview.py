@@ -38,7 +38,10 @@ from rot_bearing import source_of, read_stereo                 # noqa: E402
 
 FRAME = 480                        # 10 ms at 48 kHz -- DFN3's own hop
 BANDS = [("LF", 100.0, 1000.0), ("MF", 1000.0, 4000.0), ("HF", 4000.0, 8000.0)]
-DB_LO, DB_HI = -95.0, -5.0
+# The levels are 10 log10 of the summed power of a Hann-windowed 10 ms frame, NOT dBFS: dBFS = this - 46.35
+# (Render.html applies that offset). The old range, -95..-5, clipped everything above about -51 dBFS, so on
+# walk-205043 more than half the frames sat on the ceiling. This range covers -96..-1 dBFS.
+DB_LO, DB_HI = -50.0, 45.0
 LSNR_LO, LSNR_HI = -16.0, 36.0
 CHUNK_S = 20.0                     # DFN in slices, so a long tape cannot blow memory
 
