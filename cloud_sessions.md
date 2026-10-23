@@ -498,3 +498,23 @@ human-talker cuts (STARSS23, and LOCATA with its per-source voice activity), key
 7. **Cost:** processing time per second of audio, against the live budget.
 
 Score under the scoring rule; commit `results/stage2_dfn/` and `harness/stage2_dfn/` to a branch.
+
+## 17. Orientation from DFN run on each capsule separately
+
+QUEUED with the orientation work (Jay, 2026-10-23). Jay's earlier attempt fed L and R into DFN as two separate streams
+and compared what it kept in each, to read the talker's facing. It didn't work. This brief finds out whether it could
+have, before spending more on it.
+
+1. **Physics first, cheaply.** At 1, 2 and 4 m, the two capsules (157 mm apart) see the talker's mouth from directions
+   about 9, 4.5 and 2.2 deg apart. Using a measured speech directivity (DirPat, which the Tampere paper also uses), predict
+   the largest L-R difference in level per band that a turn of the head can produce across that spread, at every facing.
+   Compare it with the capsules' own mismatch, measured on LOCATA's pauses. If the predicted difference is below the
+   mismatch, report that the per-capsule split can't carry orientation at this spacing, and stop.
+2. **Only if step 1 leaves room:** run DFN separately on each capsule of LOCATA's 16 cm pair (tasks 3 and 4, tracked
+   head orientation). Take the per-band difference in mask and `lsnr` between L and R, and test it against the tracked
+   facing, with distance held as a covariate.
+3. **Either way:** test the cues that physics says do change with facing, on one channel: the mask's HF/LF tilt, `lsnr`,
+   and the mask-weighted direct-to-diffuse ratio from `dfn/dfn_shared.py`'s `coh_drr`. Hold distance as a covariate.
+   Render.html's note says the tilt tracked range, not facing, on LOCATA, so separating the two is the point.
+
+Score under the scoring rule; commit `results/orientation_dfn/` to a branch.
