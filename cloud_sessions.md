@@ -582,6 +582,10 @@ in front of someone.
 
 ## 18. AMI: who said what, and to whom, from the words
 
+BLOCKED 2026-10-23: the session's network policy denies `huggingface.co` (the model weights, and the AMI copy) and
+`groups.inf.ed.ac.uk` (AMI). Per the brief it stopped before any run. The pipeline files are copied into
+`harness/linguistic/`; its README lists the hosts to allow.
+
 READY 2026-10-23, once this session can read `jaysoma/FisherDiarization` (private; attach it the way this repo was
 attached). Read its README, `blends.py` and `stage3.py` first. Change nothing there; copy what you need into
 `harness/linguistic/` and replace its hard-coded `C:\` paths with arguments.
