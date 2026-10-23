@@ -19,7 +19,18 @@ driver over AMI word files is still to be written. It would feed them a meeting'
 through llama.cpp or Ollama on CPU, and record each window's labels. That driver waits on the data and the model,
 since neither can be reached from the session that copied these.
 
-## Status (2026-10-23): blocked before any run
+## Added for the AMI run (this repo's own)
+- **`ami_parse.py`:** AMI's manual annotations to one JSON per meeting: words, segments, dialogue acts with addressee,
+  adjacency pairs and focus of attention.
+- **`transcripts.py`:** AMI's full transcript and a recogniser-style one (overlaps resolved), with their statistics and
+  the baselines.
+- **`run_text.py`:** `stage3.py`'s logic in batch over a meeting. It runs the Fisher model through llama.cpp, or a
+  labelled stand-in (oracle or echo).
+- **`addressee.py`:** step 3, addressee from the words, from focus of attention, and from both.
+
+Results so far: `results/linguistic/ami/report.md`.
+
+## Status (2026-10-23, first session): blocked before any run
 - **The model:** DiarizationLM-8b-Fisher-v2 is on `huggingface.co` only, and the environment's network policy denies
   that host (HTTP 403 at the proxy), with its file CDNs `cdn-lfs.huggingface.co` and `cas-bridge.xethub.hf.co`. Ollama's
   registry (`registry.ollama.ai`, `ollama.com`) is denied too.
