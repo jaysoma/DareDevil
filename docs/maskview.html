@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>walk-205043 Mask View</title>
+<title>DareDevil Mask View</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,35 +99,42 @@ footer { font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--rule)
 #status { font-family: var(--font-data); font-size: 12.5px; color: var(--screen-dim); }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
 </style>
+<style>
+.picker { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 4px; }
+.picker span { font-family: var(--font-data); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
+.picker .opts { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--paper-2); }
+.picker button { font: 500 13.5px var(--font-body); color: var(--ink); background: transparent; border: 0; padding: 7px 12px; cursor: pointer; }
+.picker button + button { border-left: 1px solid var(--rule); }
+.picker button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+:root { --other: #22d3ee; }
+.transcript li .tag { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; vertical-align: 1px; background: var(--ink-2); }
+.transcript li.k-speech .tag { background: var(--ink); }
+.transcript li.k-other .tag { background: #0891b2; }
+.said .ev { display: block; }
+.said .ev.k-other { color: #67e8f9; }
+</style>
 
 <div class="wrap">
   <header>
-    <div class="eyebrow"><a href="index.html" style="color:inherit">← DareDevil results</a> · DeepFilterNet3 internals · one walk</div>
-    <h1>walk-205043 Mask View</h1>
-    <p class="lede">A Galaxy Z Flip4 listened in Jay's living room for 194 seconds while he talked and walked around it. DeepFilterNet3 normally hands back only cleaned audio and throws the rest away. Here its inner outputs are kept: the 32-band gain map it would apply (how much of each band it judged worth keeping) and its own running estimate of speech-to-noise, <code>lsnr</code>. Drag the window, press play, or click any line of the transcript.</p>
-    <ul class="specs">
-      <li><b>Phone</b> Galaxy Z Flip4, unfolded</li>
-      <li><b>Pair</b> 2 capsules, 157 mm</li>
-      <li><b>Capture</b> raw, 48 kHz</li>
-      <li><b>Model</b> DFN3 on the L+R mixdown</li>
-      <li><b>Grid</b> 10 ms × 32 ERB bands</li>
-      <li><b>Length</b> 193.7 s · 19,366 frames</li>
-    </ul>
+    <div class="eyebrow"><a href="index.html" style="color:inherit">← DareDevil results</a> · DeepFilterNet3 internals</div>
+    <h1 id="h1">Mask View</h1>
+    <p class="lede" id="lede"></p>
+    <ul class="specs" id="specs"></ul>
+    <div class="picker" role="group" aria-label="Recording">
+      <span>Recording</span>
+      <div class="opts" id="picker"></div>
+    </div>
   </header>
 
   <div class="bench" aria-label="Mask viewer">
     <div class="row" style="justify-content:space-between">
-      <h2>Whole walk · lsnr envelope, onsets, phrases</h2>
+      <h2 id="ov-title">Whole recording · lsnr envelope and labelled sounds</h2>
       <span id="status">loading the bake…</span>
     </div>
-    <canvas id="ov" aria-label="Whole-walk overview; click or drag to move the window"></canvas>
+    <canvas id="ov" aria-label="Whole-recording overview; click or drag to move the window"></canvas>
     <div class="row" style="justify-content:space-between">
       <h2>Window · mean gain and lsnr</h2>
-      <div class="legend">
-        <span><i style="background:var(--mask)"></i>mean gain (0–1, left)</span>
-        <span><i style="background:var(--lsnr)"></i>lsnr (dB, right; 0 dB dashed)</span>
-        <span><i style="background:var(--onset)"></i>MF onset</span>
-      </div>
+      <div class="legend" id="legend"></div>
     </div>
     <canvas id="det" aria-label="Mean gain and lsnr for the current window"></canvas>
     <div class="row" style="justify-content:space-between">
@@ -146,7 +153,7 @@ footer { font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--rule)
         <button type="button" data-win="5">5 s</button><button type="button" data-win="10" aria-pressed="true">10 s</button><button type="button" data-win="20">20 s</button>
       </div>
       <label for="pos" class="sr">Position</label>
-      <input id="pos" type="range" min="0" max="193.6" step="0.01" value="0">
+      <input id="pos" type="range" min="0" max="1" step="0.01" value="0">
       <span id="clock">0.00 s</span>
     </div>
     <div class="readout" aria-live="polite">
@@ -156,68 +163,162 @@ footer { font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--rule)
       <div><span>LF · MF · HF</span><b id="r-b">–</b></div>
       <div><span>tilt HF/LF</span><b id="r-tilt">–</b></div>
     </div>
-    <p class="said" id="said"><em>Transcript at the cursor appears here.</em></p>
+    <p class="said" id="said"></p>
   </div>
 
   <div class="cols">
     <section>
       <h2>What to look for</h2>
-      <ul>
-        <li><b>lsnr against the onsets.</b> The amber line is DFN's own guess at speech-to-noise. Watch where it crosses the dashed 0 dB line relative to the white onset marks from the app's own onset detector; the grey ticks are when its gate decided.</li>
-        <li><b>Where the gain map lights up.</b> Bright bands are what DFN kept. Across this walk the most-kept bands sit around 1–2.5 kHz, where speech carries its formants.</li>
-        <li><b>The phone talking.</b> At 6.08 s and 14.36 s the phone itself says "Scanning heartbeat signature" and "Begin test recording". It's speech to DFN, from a speaker between the capsules.</li>
-        <li><b>A quiet tape.</b> Across the walk, lsnr averages −4.4 dB and sits above 0 dB in 32% of frames. Jay's raw tapes sit around −48 to −51 dBFS, quiet enough that DFN partly treats them as noise.</li>
-      </ul>
-      <h2 style="margin-top:20px">Jay's bench notes</h2>
-      <ul>
-        <li>lsnr as a speech track worked on his house tapes: it crossed 0 dB at every speech start, within 16 ms of the MF onset, and never in gaps.</li>
-        <li>The mask as a speech track missed a soft first word and opened on footsteps.</li>
-        <li>Weighting the 5 ms angle read by the mask strengthened the ghost direction instead of the voice.</li>
-        <li>Nothing normalises the input level. On LOCATA, normalising raised lsnr from −5.4 to +3.3 dB.</li>
-      </ul>
-      <p class="caution">Jay's caution: anything upstream in his pipeline could explain these. They're being re-tested on public datasets with independent truth.</p>
+      <ul id="look"></ul>
+      <h2 style="margin-top:20px" id="notes-title">Notes</h2>
+      <ul id="notes"></ul>
+      <p class="caution" id="caution"></p>
     </section>
     <section>
-      <h2>Transcript</h2>
-      <ol class="transcript" id="tx" aria-label="Transcript; select a line to jump there"></ol>
-      <p class="caution" style="margin-top:12px">About this bake: the raw and per-band level tracks are left out. The bake stored them on a scale that clipped everything above about −51 dBFS, so most frames sat on the ceiling. <code>maskview.py</code> now uses a wider range, and the next bake brings them back.</p>
+      <h2 id="list-title">Events</h2>
+      <ol class="transcript" id="tx" aria-label="Select a line to jump there"></ol>
     </section>
   </div>
 
   <footer>
-    <span>Code and data: <a href="https://github.com/jaysoma/DareDevil/tree/main/dfn">github.com/jaysoma/DareDevil/dfn</a></span>
-    <span>Live page: <a href="https://github.com/jaysoma/DareDevil/tree/main/render">render/</a></span>
-    <span>Model: <a href="https://github.com/Rikorose/DeepFilterNet">DeepFilterNet</a> by Hendrik Schröter et al. (MIT / Apache-2.0), unmodified</span>
+    <span>Code: <a href="https://github.com/jaysoma/DareDevil/tree/main/dfn">github.com/jaysoma/DareDevil/dfn</a> (<code>maskview_starss.py</code>, <code>maskview.py</code>)</span>
+    <span>Data: <a href="https://zenodo.org/records/7880637">STARSS23</a>, Politis et al., Tampere University and Sony</span>
+    <span>Model: <a href="https://github.com/Rikorose/DeepFilterNet">DeepFilterNet</a> by Hendrik Schröter et al., unmodified</span>
   </footer>
 </div>
 
 <style>.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
 <script>
 (function () {
-  var D = null, N = 0, FM = 0.01, G = null, LS = null, MM = null, LF = null, MF = null, HF = null, TILT = null;
-  var LSLO = -16, LSHI = 36;
-  var view = { t0: 0, win: 10 }, cursor = 0, playing = false, last = 0;
+  // Each recording: its bake file and the words around it. Numbers quoted in the notes were measured on these bakes
+  // (dfn/maskview_starss.py prints the level figures; the lsnr shares are frame counts inside and outside the labels).
+  var BAKES = [
+    { id: 'room16', file: 'starss23-fold4_room16_mix010.json', label: 'STARSS23 room 16', start: 27.5, cursor: 27.95,
+      h1: 'STARSS23 room 16, through DeepFilterNet3',
+      lede: '132 seconds from STARSS23, recorded by Tampere University and Sony: people talking, laughing, walking and knocking, with every sound labelled by the dataset’s annotators by class, direction and distance. Two capsules of its four-capsule array are mixed down and run through DeepFilterNet3, keeping what it normally throws away: its 32-band gain map and its own speech-to-noise estimate, lsnr. White marks are labelled speech, cyan marks every other labelled sound. Drag the window, press play, or pick an event from the list.',
+      look: [
+        ['lsnr against labelled speech.', ' It crosses 0 dB within 0.6 s of 31 of the 35 labelled speech onsets, a median 60 ms after the label. Labels come in 100 ms frames, so that is about as fine as they can resolve.'],
+        ['Where it opens without speech.', ' The knock at 27.9 s, with nobody talking, takes lsnr to +16 dB. Footsteps from 39.7 to 46.8 s reach +16 dB too. Overall, lsnr is above 0 dB in 27% of labelled-speech frames, 4% of frames with only other sounds, and 1% of unlabelled frames.'],
+        ['Laughter.', ' From 51.9 s, laughter sits above 0 dB in up to 37% of its frames: DFN keeps voice sounds that aren’t words.']
+      ],
+      notesTitle: 'Level',
+      notes: [
+        'As recorded, DFN calls almost all of this recording noise. STARSS23’s files are quiet: labelled speech here averages −47.5 dBFS, lsnr averages −13.8 dB, and it is above 0 dB in 0.4% of frames.',
+        'This view uses one fixed gain for the whole recording, +21.5 dB, which brings labelled speech to −26 dBFS. A fixed gain changes no phase and no ratio between channels; it isn’t automatic gain control.'
+      ],
+      caution: 'The gain was chosen offline from the labels, one number per recording. The next cloud run measures lsnr as a speech switch across every STARSS23 and LOCATA recording, as recorded and with this gain.' },
+    { id: 'room4', file: 'starss23-fold3_room4_mix001.json', label: 'STARSS23 room 4', start: 44.5, cursor: 45.6,
+      h1: 'STARSS23 room 4, through DeepFilterNet3',
+      lede: '129 seconds from STARSS23, recorded by Tampere University and Sony: a few talkers, a ringing telephone, doors, footsteps and a water tap, with every sound labelled by the dataset’s annotators by class, direction and distance. Two capsules of its four-capsule array are mixed down and run through DeepFilterNet3, keeping its 32-band gain map and its own speech-to-noise estimate, lsnr. White marks are labelled speech, cyan marks every other labelled sound. Drag the window, press play, or pick an event from the list.',
+      look: [
+        ['The telephone.', ' It rings at 41.5 s and 45.5 s, behind the array (azimuth +173°), with nobody talking. On the second ring lsnr reaches +10.9 dB. A speech switch on lsnr alone would draw that ring as a talker.'],
+        ['Quiet, distant speech.', ' lsnr crosses 0 dB within 0.6 s of only 11 of the 18 labelled speech onsets, a median 270 ms after the label. It is above 0 dB in 8% of labelled-speech frames, 0.5% of frames with only other sounds, and 0.1% of unlabelled frames.'],
+        ['Against room 16.', ' Same model and the same gain rule, far less speech found. As recorded, labelled speech here is 16 dB quieter than in room 16.']
+      ],
+      notesTitle: 'Level',
+      notes: [
+        'As recorded, lsnr never rises above 0 dB in this recording: labelled speech averages −63.5 dBFS.',
+        'This view uses one fixed gain for the whole recording, +37.5 dB, which brings labelled speech to −26 dBFS. A fixed gain changes no phase and no ratio between channels; it isn’t automatic gain control.'
+      ],
+      caution: 'The gain was chosen offline from the labels, one number per recording. The next cloud run measures lsnr as a speech switch across every STARSS23 and LOCATA recording, as recorded and with this gain.' },
+    { id: 'walk', file: 'walk-205043.json', label: 'Jay’s walk', start: 5.5, cursor: 6.2,
+      h1: 'walk-205043, through DeepFilterNet3',
+      lede: 'A Galaxy Z Flip4 listened in Jay’s living room for 194 seconds while he talked and walked around it. DeepFilterNet3 normally hands back only cleaned audio and throws the rest away. Here its inner outputs are kept: the 32-band gain map it would apply and its own running estimate of speech-to-noise, lsnr. White marks are the app’s own onsets. Drag the window, press play, or click any line of the transcript.',
+      look: [
+        ['lsnr against the onsets.', ' Watch where the amber line crosses the dashed 0 dB line relative to the white onset marks from the app’s own onset detector; the grey ticks are when its gate decided.'],
+        ['Where the gain map lights up.', ' Across this walk the most-kept bands sit around 1–2.5 kHz, where speech carries its formants.'],
+        ['The phone talking.', ' At 6.08 s and 14.36 s the phone itself says “Scanning heartbeat signature” and “Begin test recording”. It’s speech to DFN, from a speaker between the capsules.'],
+        ['A quiet tape.', ' Across the walk, lsnr averages −4.4 dB and sits above 0 dB in 32% of frames. Jay\u2019s raw tapes sit around \u221248 to \u221251 dBFS, quiet enough that DFN partly treats them as noise; this one is as recorded, with no gain.']
+      ],
+      notesTitle: 'Jay’s bench notes',
+      notes: [
+        'lsnr as a speech track worked on his house tapes: it crossed 0 dB at every speech start, within 16 ms of the MF onset, and never in gaps.',
+        'The mask as a speech track missed a soft first word and opened on footsteps.',
+        'Weighting the 5 ms angle read by the mask strengthened the ghost direction instead of the voice.',
+        'Nothing normalises the input level. On LOCATA, normalising raised lsnr from −5.4 to +3.3 dB.'
+      ],
+      caution: 'Jay’s caution: anything upstream in his pipeline could explain these. They’re being re-tested on public datasets with independent truth.' }
+  ];
+
+  var B = null, D = null, N = 0, FM = 0.01, G = null, LS = null, MM = null, LF = null, MF = null, HF = null, TILT = null;
+  var LSLO = -16, LSHI = 36, STARSS = false;
+  var view = { t0: 0, win: 10 }, cursor = 0, playing = false, last = 0, token = 0;
   var ov = document.getElementById('ov'), det = document.getElementById('det'), strip = document.getElementById('strip');
   var pos = document.getElementById('pos'), clock = document.getElementById('clock'), playBtn = document.getElementById('play');
   var status = document.getElementById('status');
+  var C_SPEECH = '#e7e7f0', C_OTHER = '#22d3ee';
 
   function b64(s) { var r = atob(s), a = new Uint8Array(r.length); for (var i = 0; i < r.length; i++) a[i] = r.charCodeAt(i); return a; }
   function dec(key, lo, hi) { var a = b64(D[key]), o = new Float32Array(a.length); for (var i = 0; i < a.length; i++) o[i] = lo + a[i] / 255 * (hi - lo); return o; }
   function fit(c) { var dpr = Math.min(2, window.devicePixelRatio || 1), w = Math.max(1, Math.round(c.clientWidth * dpr)), h = Math.max(1, Math.round(c.clientHeight * dpr)); if (c.width !== w || c.height !== h) { c.width = w; c.height = h; } return dpr; }
-  function heat(v) { return [Math.round(20 + 235 * v * v), Math.round(24 + 211 * v), Math.round(48 + 120 * v - 60 * v * v)]; }
   function fmt(t) { return t.toFixed(2) + ' s'; }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function kindColor(o) { return o.kind === 'other' ? C_OTHER : C_SPEECH; }
+  function evEnd(s) { return s.end != null ? s.end : s.t; }
 
-  fetch('walk-205043.json').then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(function (d) {
-    D = d; N = d.n; FM = d.frame_ms / 1000; LSLO = d.lsnr_lo; LSHI = d.lsnr_hi;
-    G = b64(d.mask32); LS = dec('lsnr', d.lsnr_lo, d.lsnr_hi); MM = dec('mask_mean', 0, 1);
-    LF = new Float32Array(N); MF = new Float32Array(N); HF = new Float32Array(N); TILT = new Float32Array(N);
-    var bm = function (k, b0, b1) { var a = 0; for (var b = b0; b <= b1; b++) a += G[b * N + k]; return a / 255 / (b1 - b0 + 1); };
-    for (var k = 0; k < N; k++) { LF[k] = bm(k, 1, 9); MF[k] = bm(k, 10, 19); HF[k] = bm(k, 20, 24); TILT[k] = 20 * Math.log10(Math.max(HF[k], 1e-3) / Math.max(LF[k], 1e-3)); }
-    pos.max = (N * FM - 0.01).toFixed(2);
-    buildTranscript();
-    status.textContent = N.toLocaleString() + ' frames · ' + d.onsets.length + ' onsets · ' + d.decode.length + ' phrases';
-    setView(5.5, false); cursor = 6.2; draw();
-  }).catch(function (e) { status.textContent = 'Could not load the bake (' + e.message + '). Reload the page to try again.'; });
+  // ---- the picker and the words around each recording ------------------------------------------
+  var picker = document.getElementById('picker');
+  BAKES.forEach(function (b) {
+    var btn = el('button', null, b.label); btn.type = 'button'; btn.dataset.id = b.id;
+    btn.addEventListener('click', function () { choose(b.id, true); });
+    picker.appendChild(btn);
+  });
+
+  function words(b, d) {
+    document.getElementById('h1').textContent = b.h1;
+    document.title = b.label + ' · Mask View';
+    document.getElementById('lede').textContent = b.lede;
+    var specs = document.getElementById('specs'); specs.textContent = '';
+    var add = function (k, v) { var li = el('li'); li.appendChild(el('b', null, k)); li.appendChild(document.createTextNode(' ' + v)); specs.appendChild(li); };
+    var dur = (d.n * d.frame_ms / 1000).toFixed(1) + ' s';
+    if (STARSS) {
+      var s = d.source, sp = d.onsets.filter(function (o) { return o.kind === 'speech'; }).length;
+      add('Data', 'STARSS23 dev, ' + s.recording);
+      add('Array', 'MIC format, capsules ' + s.pair.join('+') + ' mixed down');
+      add('Capture', (s.sr_in / 1000) + ' kHz, resampled to 48 kHz');
+      add('Level', 'one fixed gain, ' + (d.gain_db > 0 ? '+' : '') + d.gain_db.toFixed(1) + ' dB');
+      add('Model', 'DFN3, unmodified');
+      add('Grid', '10 ms × 32 ERB bands');
+      add('Length', dur + ' · ' + d.onsets.length + ' labelled sounds, ' + sp + ' speech');
+    } else {
+      add('Phone', 'Galaxy Z Flip4, unfolded'); add('Pair', '2 capsules, 157 mm'); add('Capture', 'raw, 48 kHz');
+      add('Model', 'DFN3 on the L+R mixdown'); add('Grid', '10 ms × 32 ERB bands'); add('Length', dur + ' · ' + d.n.toLocaleString() + ' frames');
+    }
+    var look = document.getElementById('look'); look.textContent = '';
+    b.look.forEach(function (p) { var li = el('li'); li.appendChild(el('b', null, p[0])); li.appendChild(document.createTextNode(p[1])); look.appendChild(li); });
+    document.getElementById('notes-title').textContent = b.notesTitle;
+    var notes = document.getElementById('notes'); notes.textContent = '';
+    b.notes.forEach(function (t) { notes.appendChild(el('li', null, t)); });
+    document.getElementById('caution').textContent = b.caution;
+    document.getElementById('list-title').textContent = STARSS ? 'Labelled sounds' : 'Transcript';
+    document.getElementById('ov-title').textContent = STARSS ? 'Whole recording · lsnr envelope and labelled sounds' : 'Whole walk · lsnr envelope, onsets, phrases';
+    var lg = document.getElementById('legend'); lg.textContent = '';
+    var item = function (c, t) { var s = el('span'); var i = el('i'); i.style.background = c; s.appendChild(i); s.appendChild(document.createTextNode(t)); lg.appendChild(s); };
+    item('#34d399', 'mean gain (0–1, left)'); item('#f59e0b', 'lsnr (dB, right; 0 dB dashed)');
+    if (STARSS) { item(C_SPEECH, 'labelled speech'); item(C_OTHER, 'other labelled sound'); } else item(C_SPEECH, 'MF onset');
+  }
+
+  function choose(id, push) {
+    var b = BAKES.filter(function (x) { return x.id === id; })[0] || BAKES[0];
+    B = b; stop();
+    picker.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x.dataset.id === b.id ? 'true' : 'false'); });
+    if (push) { try { var u = new URL(location.href); u.searchParams.set('rec', b.id); history.replaceState(null, '', u); } catch (e) {} }
+    status.textContent = 'loading the bake…'; D = null;
+    var my = ++token;
+    fetch(b.file).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(function (d) {
+      if (my !== token) return;
+      D = d; N = d.n; FM = d.frame_ms / 1000; LSLO = d.lsnr_lo; LSHI = d.lsnr_hi; STARSS = !!(d.source && d.source.dataset === 'starss23');
+      d.onsets.forEach(function (o) { if (!o.kind) o.kind = 'speech'; });
+      G = b64(d.mask32); LS = dec('lsnr', d.lsnr_lo, d.lsnr_hi); MM = dec('mask_mean', 0, 1);
+      LF = new Float32Array(N); MF = new Float32Array(N); HF = new Float32Array(N); TILT = new Float32Array(N);
+      var bm = function (k, b0, b1) { var a = 0; for (var q = b0; q <= b1; q++) a += G[q * N + k]; return a / 255 / (b1 - b0 + 1); };
+      for (var k = 0; k < N; k++) { LF[k] = bm(k, 1, 9); MF[k] = bm(k, 10, 19); HF[k] = bm(k, 20, 24); TILT[k] = 20 * Math.log10(Math.max(HF[k], 1e-3) / Math.max(LF[k], 1e-3)); }
+      pos.max = (N * FM - 0.01).toFixed(2);
+      words(b, d); buildList();
+      status.textContent = N.toLocaleString() + ' frames · ' + (STARSS ? d.onsets.length + ' labelled sounds' : d.onsets.length + ' onsets · ' + d.decode.length + ' phrases');
+      setView(b.start + view.win / 2, false); cursor = b.cursor; draw();
+    }).catch(function (e) { if (my === token) status.textContent = 'Could not load the bake (' + e.message + '). Reload the page to try again.'; });
+  }
 
   function setView(center, keepCursor) {
     var T = N * FM; view.t0 = Math.max(0, Math.min(T - view.win, center - view.win / 2));
@@ -227,42 +328,51 @@ footer { font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--rule)
   function drawOverview() {
     var dpr = fit(ov), g = ov.getContext('2d'), W = ov.width, H = ov.height, T = N * FM;
     g.fillStyle = '#151520'; g.fillRect(0, 0, W, H);
-    var y = function (v) { return H - 6 * dpr - (v - LSLO) / (LSHI - LSLO) * (H - 12 * dpr); };
-    // the 0 dB line
+    var y = function (v) { return H - 8 * dpr - (v - LSLO) / (LSHI - LSLO) * (H - 18 * dpr); };
     g.strokeStyle = 'rgba(245,158,11,.35)'; g.setLineDash([4 * dpr, 4 * dpr]); g.lineWidth = dpr; g.beginPath(); g.moveTo(0, y(0)); g.lineTo(W, y(0)); g.stroke(); g.setLineDash([]);
-    // lsnr min/max envelope per pixel column
     g.strokeStyle = '#f59e0b'; g.lineWidth = Math.max(1, dpr);
     for (var x = 0; x < W; x++) {
       var k0 = Math.floor(x / W * N), k1 = Math.max(k0 + 1, Math.floor((x + 1) / W * N)), lo = 1e9, hi = -1e9;
       for (var k = k0; k < k1 && k < N; k++) { if (LS[k] < lo) lo = LS[k]; if (LS[k] > hi) hi = LS[k]; }
       g.beginPath(); g.moveTo(x + .5, y(hi)); g.lineTo(x + .5, y(lo) + .5); g.stroke();
     }
-    // phrases and onsets
-    g.fillStyle = 'rgba(201,201,214,.55)';
-    D.decode.forEach(function (s) { g.fillRect(s.t / T * W, 0, Math.max(1, dpr), 5 * dpr); });
-    g.fillStyle = '#e7e7f0';
-    D.onsets.forEach(function (o) { g.fillRect(o.t_s / T * W, H - 5 * dpr, Math.max(1, dpr), 5 * dpr); });
-    // the window
+    if (STARSS) {
+      // labelled spans: speech along the bottom, other sounds along the top
+      D.onsets.forEach(function (o) {
+        var x0 = o.t_s / T * W, x1 = Math.max(x0 + dpr, (o.end_s || o.t_s) / T * W);
+        g.fillStyle = o.kind === 'other' ? 'rgba(34,211,238,.85)' : 'rgba(231,231,240,.8)';
+        if (o.kind === 'other') g.fillRect(x0, 1 * dpr, x1 - x0, 4 * dpr); else g.fillRect(x0, H - 5 * dpr, x1 - x0, 4 * dpr);
+      });
+    } else {
+      g.fillStyle = 'rgba(201,201,214,.55)';
+      D.decode.forEach(function (s) { g.fillRect(s.t / T * W, 0, Math.max(1, dpr), 5 * dpr); });
+      g.fillStyle = C_SPEECH;
+      D.onsets.forEach(function (o) { g.fillRect(o.t_s / T * W, H - 5 * dpr, Math.max(1, dpr), 5 * dpr); });
+    }
     var wx = view.t0 / T * W, ww = view.win / T * W;
     g.fillStyle = 'rgba(255,255,255,.08)'; g.fillRect(wx, 0, ww, H);
     g.strokeStyle = 'rgba(255,255,255,.7)'; g.lineWidth = dpr; g.strokeRect(wx + .5, .5, ww - 1, H - 1);
   }
 
-  var img = null, off = document.createElement('canvas');
   function drawDetail() {
     var dpr = fit(det), g = det.getContext('2d'), W = det.width, H = det.height;
-    var k0 = Math.floor(view.t0 / FM), cols = Math.round(view.win / FM), axis = 46 * dpr, plotW = W - axis - 34 * dpr, top = 6 * dpr, mh = H - top - 22 * dpr;
+    var k0 = Math.floor(view.t0 / FM), cols = Math.round(view.win / FM), axis = 46 * dpr, plotW = W - axis - 34 * dpr, top = (STARSS ? 16 : 6) * dpr, mh = H - top - 22 * dpr;
     g.fillStyle = '#151520'; g.fillRect(0, 0, W, H);
-    // lines only (Jay, 2026-10-23): no gain-map pixels; mean gain on the left scale, lsnr on the right
     g.font = (11 * dpr) + 'px "IBM Plex Mono", ui-monospace, monospace'; g.textAlign = 'right'; g.textBaseline = 'middle';
     [0, 0.25, 0.5, 0.75, 1].forEach(function (v) {
       var yy = top + mh - v * mh; g.fillStyle = 'rgba(255,255,255,.06)'; g.fillRect(axis, yy, plotW, 1);
       g.fillStyle = '#34d399'; g.fillText(v.toFixed(2), axis - 6 * dpr, yy);
     });
-    // lines: mean gain (0..1, left scale) and lsnr (right scale)
     var xs = function (k) { return axis + (k - k0 + .5) / cols * plotW; };
+    var xt = function (t) { return axis + (t - view.t0) / view.win * plotW; };
     var ym = function (v) { return top + mh - v * mh; }, yl = function (v) { return top + mh - (v - LSLO) / (LSHI - LSLO) * mh; };
     g.strokeStyle = 'rgba(245,158,11,.45)'; g.setLineDash([5 * dpr, 4 * dpr]); g.lineWidth = dpr; g.beginPath(); g.moveTo(axis, yl(0)); g.lineTo(axis + plotW, yl(0)); g.stroke(); g.setLineDash([]);
+    // labelled spans as bars above the plot, two lanes
+    if (STARSS) D.onsets.forEach(function (o) {
+      var a = Math.max(axis, xt(o.t_s)), b = Math.min(axis + plotW, xt(o.end_s || o.t_s)); if (b <= axis || a >= axis + plotW) return;
+      g.fillStyle = o.kind === 'other' ? 'rgba(34,211,238,.8)' : 'rgba(231,231,240,.75)';
+      g.fillRect(a, (o.kind === 'other' ? 2 : 8) * dpr, Math.max(dpr, b - a), 4 * dpr);
+    });
     [[MM, ym, '#34d399', 1.6], [LS, yl, '#f59e0b', 1.6]].forEach(function (L) {
       g.strokeStyle = L[2]; g.lineWidth = L[3] * dpr; g.beginPath(); var on = false;
       for (var x = 0; x < cols; x++) { var k = k0 + x; if (k < 0 || k >= N) continue; var yy = L[1](L[0][k]); if (!on) { g.moveTo(xs(k), yy); on = true; } else g.lineTo(xs(k), yy); }
@@ -270,20 +380,17 @@ footer { font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--rule)
     });
     g.textAlign = 'left'; g.fillStyle = '#f59e0b';
     [-10, 0, 10, 20, 30].forEach(function (v) { if (v >= LSLO && v <= LSHI) g.fillText((v > 0 ? '+' : '') + v, axis + plotW + 5 * dpr, yl(v)); });
-    // onsets and gate decisions
     D.onsets.forEach(function (o) {
-      var x = axis + (o.t_s - view.t0) / view.win * plotW; if (x < axis || x > axis + plotW) return;
-      g.fillStyle = '#e7e7f0'; g.fillRect(x, top, Math.max(1, dpr), mh);
-      if (o.gate_t_s != null) { var gx = axis + (o.gate_t_s - view.t0) / view.win * plotW; if (gx >= axis && gx <= axis + plotW) { g.fillStyle = '#8a8aa2'; g.fillRect(gx, top + mh - 8 * dpr, Math.max(1, dpr), 8 * dpr); } }
+      var x = xt(o.t_s); if (x < axis || x > axis + plotW) return;
+      g.fillStyle = kindColor(o); g.fillRect(x, top, Math.max(1, dpr), mh);
+      if (o.gate_t_s != null) { var gx = xt(o.gate_t_s); if (gx >= axis && gx <= axis + plotW) { g.fillStyle = '#8a8aa2'; g.fillRect(gx, top + mh - 8 * dpr, Math.max(1, dpr), 8 * dpr); } }
     });
-    // time grid
     g.fillStyle = '#7d7d92'; g.textAlign = 'center'; g.textBaseline = 'top';
-    var step = view.win <= 5 ? 0.5 : (view.win <= 10 ? 1 : 2);
+    var pps = plotW / dpr / view.win, step = view.win <= 5 ? 0.5 : (view.win <= 10 ? 1 : 2); if (pps * step < 44) step *= 2;
     for (var s = Math.ceil(view.t0 / step) * step; s <= view.t0 + view.win + 1e-6; s += step) {
-      var tx = axis + (s - view.t0) / view.win * plotW; g.fillRect(tx, top + mh, 1, 4 * dpr); g.fillText(s.toFixed(step < 1 ? 1 : 0) + 's', tx, top + mh + 6 * dpr);
+      var tx = xt(s); g.fillRect(tx, top + mh, 1, 4 * dpr); g.fillText(s.toFixed(step < 1 ? 1 : 0) + 's', tx, top + mh + 6 * dpr);
     }
-    // the cursor
-    var cx = axis + (cursor - view.t0) / view.win * plotW;
+    var cx = xt(cursor);
     if (cx >= axis && cx <= axis + plotW) { g.fillStyle = playing ? '#f59e0b' : '#ffffff'; g.fillRect(cx - dpr / 2, top, Math.max(1.5, dpr * 1.5), mh); }
     det._geom = { axis: axis / dpr, plotW: plotW / dpr };
   }
@@ -313,39 +420,47 @@ footer { font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--rule)
     document.getElementById('r-m').textContent = MM[k].toFixed(2);
     document.getElementById('r-b').textContent = LF[k].toFixed(2) + ' · ' + MF[k].toFixed(2) + ' · ' + HF[k].toFixed(2);
     document.getElementById('r-tilt').textContent = (TILT[k] > 0 ? '+' : '') + TILT[k].toFixed(1) + ' dB';
-    var cur = null, idx = -1;
-    D.decode.forEach(function (s, i) { if (s.t <= cursor + 1e-6) { cur = s; idx = i; } });
-    var said = document.getElementById('said');
-    if (cur) { said.innerHTML = ''; var em = document.createElement('em'); em.textContent = cur.t.toFixed(2) + ' s  '; said.appendChild(em); said.appendChild(document.createTextNode(cur.text.trim())); }
-    var items = document.querySelectorAll('#tx li');
-    items.forEach(function (li, i) { li.classList.toggle('now', i === idx); });
+    var said = document.getElementById('said'); said.textContent = '';
+    var items = document.querySelectorAll('#tx li'), now = [];
+    if (STARSS) {
+      D.decode.forEach(function (s, i) { if (s.t <= cursor + 1e-6 && cursor < evEnd(s)) now.push(i); });
+      if (!now.length) said.appendChild(el('em', null, 'No labelled sound at the cursor.'));
+      now.forEach(function (i) { var s = D.decode[i], line = el('span', 'ev k-' + s.kind); line.appendChild(el('em', null, s.t.toFixed(1) + '–' + evEnd(s).toFixed(1) + ' s  ')); line.appendChild(document.createTextNode(s.text)); said.appendChild(line); });
+    } else {
+      var idx = -1; D.decode.forEach(function (s, i) { if (s.t <= cursor + 1e-6) idx = i; });
+      if (idx >= 0) { now.push(idx); said.appendChild(el('em', null, D.decode[idx].t.toFixed(2) + ' s  ')); said.appendChild(document.createTextNode(D.decode[idx].text.trim())); }
+      else said.appendChild(el('em', null, 'Transcript at the cursor appears here.'));
+    }
+    items.forEach(function (li, i) { li.classList.toggle('now', now.indexOf(i) >= 0); });
     clock.textContent = fmt(cursor); pos.value = cursor.toFixed(2);
   }
 
   function draw() { if (!D) return; drawOverview(); drawDetail(); drawStrip(); readout(); }
 
-  function buildTranscript() {
-    var ol = document.getElementById('tx');
+  function buildList() {
+    var ol = document.getElementById('tx'); ol.textContent = '';
     D.decode.forEach(function (s) {
-      var li = document.createElement('li'); li.tabIndex = 0;
-      var tm = document.createElement('time'); tm.textContent = s.t.toFixed(1);
-      var tx = document.createElement('span'); tx.textContent = s.text.trim();
-      if (/^(Scanning heartbeat signature|Begin test recording)/.test(s.text.trim())) { li.classList.add('phone'); tx.textContent += '  (the phone)'; }
-      li.appendChild(tm); li.appendChild(tx);
-      var go = function () { stop(); setView(s.t + view.win * 0.35, true); cursor = s.t; draw(); };
+      var li = el('li', 'k-' + (s.kind || 'speech')); li.tabIndex = 0;
+      li.appendChild(el('time', null, s.t.toFixed(1)));
+      var tx = el('span');
+      if (STARSS) { tx.appendChild(el('i', 'tag')); tx.appendChild(document.createTextNode(s.text)); }
+      else {
+        tx.textContent = s.text.trim();
+        if (/^(Scanning heartbeat signature|Begin test recording)/.test(s.text.trim())) { li.classList.add('phone'); tx.textContent += '  (the phone)'; }
+      }
+      li.appendChild(tx);
+      var go = function () { stop(); setView(s.t + view.win * 0.35, true); cursor = s.t + (STARSS ? 0.05 : 0); draw(); };
       li.addEventListener('click', go);
       li.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
       ol.appendChild(li);
     });
   }
 
-  // overview: click or drag to move the window
   var dragging = false;
   function ovAt(e) { var r = ov.getBoundingClientRect(), t = (e.clientX - r.left) / r.width * N * FM; stop(); setView(t, false); cursor = Math.max(0, Math.min(N * FM, t)); draw(); }
   ov.addEventListener('pointerdown', function (e) { if (!D) return; dragging = true; ov.setPointerCapture(e.pointerId); ovAt(e); });
-  ov.addEventListener('pointermove', function (e) { if (dragging) ovAt(e); });
+  ov.addEventListener('pointermove', function (e) { if (dragging && D) ovAt(e); });
   ov.addEventListener('pointerup', function () { dragging = false; });
-  // detail: the cursor follows the pointer; a click pins it
   function detT(e) { var r = det.getBoundingClientRect(), gm = det._geom || { axis: 46, plotW: r.width - 80 }; return view.t0 + (e.clientX - r.left - gm.axis) / gm.plotW * view.win; }
   det.addEventListener('pointermove', function (e) { if (!D || playing) return; var t = detT(e); if (t >= view.t0 && t <= view.t0 + view.win) { cursor = t; draw(); } });
   det.addEventListener('pointerdown', function (e) { if (!D) return; stop(); var t = detT(e); cursor = Math.max(view.t0, Math.min(view.t0 + view.win, t)); draw(); });
@@ -354,12 +469,12 @@ footer { font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--rule)
   document.querySelectorAll('.seg button').forEach(function (b) {
     b.addEventListener('click', function () {
       document.querySelectorAll('.seg button').forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
-      view.win = parseFloat(b.dataset.win); setView(cursor, true); draw();
+      view.win = parseFloat(b.dataset.win); if (D) { setView(cursor, true); draw(); }
     });
   });
 
   function tick(ts) {
-    if (!playing) return;
+    if (!playing || !D) return;
     var dt = last ? (ts - last) / 1000 : 0; last = ts; cursor += dt;
     if (cursor >= N * FM) { cursor = N * FM - 0.01; stop(); draw(); return; }
     if (cursor > view.t0 + view.win * 0.8 || cursor < view.t0) setView(cursor + view.win * 0.3, true);
@@ -372,6 +487,10 @@ footer { font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--rule)
     playing = true; last = 0; playBtn.textContent = 'Pause'; playBtn.setAttribute('aria-pressed', 'true'); requestAnimationFrame(tick);
   });
   window.addEventListener('resize', draw);
+
+  var first = null;
+  try { first = new URL(location.href).searchParams.get('rec'); } catch (e) {}
+  choose(first || BAKES[0].id, false);
 })();
 </script>
 

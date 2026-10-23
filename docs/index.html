@@ -215,7 +215,7 @@ td small { color: var(--ink-2); font-size: 12px; }
   <section class="finding" aria-labelledby="f9">
     <div class="n">LOOK INSIDE</div>
     <h3 id="f9">What DeepFilterNet3 keeps, frame by frame</h3>
-    <p>DeepFilterNet3's <code>enhance()</code> returns only cleaned audio. Called directly, it also gives its 32-band gain mask and its own speech-to-noise estimate, <code>lsnr</code>. On the author's recordings, <code>lsnr</code> crossed 0 dB at each speech start, close to the app's onset detector, and DFN3's two-frame look-ahead makes it a speech gate about 30 ms behind live. The Mask View lets you scrub one 194 s walk.</p>
+    <p>DeepFilterNet3's <code>enhance()</code> returns only cleaned audio. Called directly, it also gives its 32-band gain mask and its own speech-to-noise estimate, <code>lsnr</code>. On the author's recordings, <code>lsnr</code> crossed 0 dB at each speech start, close to the app's onset detector, and DFN3's two-frame look-ahead makes it a speech gate about 30 ms behind live. On STARSS23 it's less tidy. As recorded, the files are too quiet for it and it calls nearly everything noise. With one fixed gain, in room 16 it crossed 0 dB within 0.6 s of 31 of 35 labelled speech onsets, but it also opened on a knock and on footsteps with nobody talking. The Mask View shows two STARSS23 recordings against every labelled sound, and one of the author's walks.</p>
     <p><a href="maskview.html">Open the Mask View →</a></p>
   </section>
 
