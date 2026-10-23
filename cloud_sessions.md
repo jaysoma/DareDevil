@@ -626,3 +626,40 @@ scores only, never audio or weights.
 
 Score in Jay's spirit: report every meeting, set aside meetings that fail outright to study separately, and catalogue
 the failures by kind. Commit `results/linguistic/ami/` and `harness/linguistic/` to a branch.
+
+## 19. Device-directed words in a stream: does the instruction's shape find it?
+
+READY 2026-10-23. Text only: no audio, no GPU, no Fisher model needed.
+
+Jay's proposal: every device decodes every word, and each one listens only for words shaped like its own
+instructions. A phrase that fits the device and doesn't fit the talk around it is for the device. His strongest case:
+a driver on a speakerphone call says "Text Sam, I missed my flight and I'll be home tomorrow instead", then carries on
+the call. Same device, same direction, same voice, same channel for both listeners: head orientation can't separate
+them even in principle. Only the words can. This brief builds a test set with known answers and measures that.
+
+1. **Build the set (labels known by construction).**
+   - **Streams of other speech:** real conversation transcripts (AMI; the Fisher transcripts only if their licence
+     allows, and they're LDC-licensed as far as I know), public-domain song lyrics (pre-1929), and self-talk
+     (muttering, thinking aloud) from any free corpus that has it.
+   - **Instructions:** real spoken commands from a public set (Amazon's MASSIVE or SLURP), grouped by device: car
+     (navigation, messaging, calls), kitchen (oven, timers), watch (reminders, alarms), and general.
+   - **Splice** one instruction into a stream as one contiguous phrase, never interleaved (Jay: people don't speak in
+     interleaved words to several listeners). Include the speakerphone case: the instruction inside one side of a
+     two-person call.
+   - **Hard negatives,** the real test: the same instructions said to a person instead ("I'll text Sam that I missed
+     my flight"), and conversation about the device's subject ("did you set the oven to 400?"). Mark which are
+     generated. A method that only spots device words fails these.
+2. **Methods,** each scoring every phrase:
+   - **Keyword spotting,** the baseline: device words present.
+   - **Shape only:** how well the phrase fits the device's instructions.
+   - **Shape and contrast (Jay's):** fit to the device, minus fit to the surrounding stream.
+   - **A general model asked directly** which phrase, if any, is meant for the device.
+
+   Use small local models a phone could plausibly run. Report their size and time per phrase.
+3. **Score** per device and per stream type: hit rate, and false accepts per hour of non-device speech (count words
+   at about 150 a minute). Hard negatives are scored separately. Give the full curve of hits against false accepts as
+   the threshold moves, not one number.
+
+Report every condition, set aside failing ones to study, and catalogue the false accepts by kind. Commit the set's
+recipe (not third-party text that its licence doesn't allow redistributing), `results/device_directed/` and
+`harness/device_directed/` to a branch.
