@@ -57,12 +57,29 @@
 // arrivals too close to part read as one wide peak. What two mics cannot tell apart is drawn, not solved: Render shades
 // each width and mirrors it behind the phone (front and back give one delay). Judge them by whether a stop's angles
 // repeat from utterance to utterance, which needs no phone pose.
+// RE-READ AFTER THE LOCK, MOVE ONLY ON A COMMITTED CHANGE (Jay, 2026-10-23: "for holds and general re-sampling ...
+// just implement it, and I'll grab it locally and see how it tracks with expected positions"). Brief 21
+// (results/resample/report.md) scored update policies against LOCATA's continuous head tracking. The lock still comes
+// first, exactly as before. After it, every REREAD_MS the stream sums the same 47 frames over the newest half second
+// (weighted by the same onset pause) and reads it. The shown read moves to the re-read only when the re-read COMMITS
+// (brief 11's rule, results/batchA/report.md s3: its top two peaks differ by DIM_MARGIN or more in share, and it isn't
+// within DIM_PAUSE_DEG of a directional pause read, share DIM_PAUSE_SHARE or more) AND it differs from the shown read by
+// more than MOVE_DEG. Measured there: moving talkers 50% -> 61% of the time within 10 deg, the catch-up halved (1.1 ->
+// 0.5 s), still talkers unchanged, 36 moves a minute (173 if every re-read were shown); MOVE_DEG 10 gives 23 a minute for
+// 2 points. Every position also says whether its read `committed` (Render may dim one that didn't). The pause read is
+// the unweighted read of the frames that end by the onset, up to PAUSE_READ_S back: brief 11 used 0.5 s, and the
+// Conductor hands 213 ms of history, so in practice it's about 200 ms. One re-read per push at most: a catch-up push
+// re-reads once, at its newest half second.
 export const NFFT = 2048, HOP = 512, LO_HZ = 300, HI_HZ = 8000, TAUS = 241;
 export const FIRST_MS = 43;     // the first read: one frame (42.7 ms) from the read start, ~32 ms after the onset
 export const TIE_SHARE = 0.8, TIE_SEP_DEG = 10;   // a second direction drawn beside the lock
 export const ANGLES = 3;        // angles 1, 2, 3: the scan's tallest peaks, TIE_SEP_DEG apart, each with its width
 export const PAUSE_MS = 200;    // the pause before the onset that the votes are weighed against
 export const LOCK_S = 0.5;      // the half second: every frame that STARTS inside it, 47 of them (533 ms of audio)
+export const REREAD_MS = 250;   // after the lock, a fresh half-second read this often (brief 21)
+export const MOVE_DEG = 5;      // ...shown only when it commits and differs from the shown read by more than this
+export const DIM_MARGIN = 0.203, DIM_PAUSE_SHARE = 0.5, DIM_PAUSE_DEG = 10;   // brief 11's commit-or-dim rule
+export const PAUSE_READ_S = 0.5;   // the pause read: frames ending by the onset, this far back at most (brief 11's 0.5 s)
 // WHY 47 AND NOT THE 43 THAT END INSIDE 0.5 s (2026-10-20, walk-203939): the dry run Jay approved summed every frame
 // starting in the half second; the 43 that end inside it read -12 for -13 at 7.9 s (mark -15) and +83 for +80 at 56.4 s
 // (mark about +70). Jay, the same night: anything new that costs accuracy is not implemented.
@@ -124,7 +141,7 @@ export function setLog(fn) { LOG = fn; }
 const FLAT = 1e-9;              // a scan whose tallest delay beats its lowest by less than this (per vote) has no peak
 // the PHAT of the sum, scored over the delays: the tallest is the read. share = that score over the slice count (1 when
 // every frequency agrees on the one delay).
-export function readSum(re, im, st, wt = null) {
+export function readSum(re, im, st, wt = null, quiet = false) {
   const wr = new Float64Array(NB), wi = new Float64Array(NB);
   for (let b = 0; b < NB; b++) { const m = Math.hypot(re[b], im[b]) || 1; wr[b] = re[b] / m; wi[b] = im[b] / m; }
   if (wt) for (let b = 0; b < NB; b++) { wr[b] *= wt[b]; wi[b] *= wt[b]; }      // a slice the pause already filled votes ~0
@@ -144,7 +161,7 @@ export function readSum(re, im, st, wt = null) {
   for (let j = 1; j < TAUS; j++) { if (sc[j] > sc[jb]) jb = j; if (sc[j] < lo) lo = sc[j]; }
   const best = sc[jb];
   if (!sc.every(Number.isFinite) || best - lo <= FLAT * Math.max(votes, 1)) {
-    LOG('[GccPhat] no peak', { finite: sc.every(Number.isFinite), max: best, min: lo, votes: round(votes, 3) });
+    if (!quiet) LOG('[GccPhat] no peak', { finite: sc.every(Number.isFinite), max: best, min: lo, votes: round(votes, 3) });
     return null;
   }
   // ANGLES 1, 2, 3: the peaks of the scan (a delay scoring at least both neighbours), tallest first, each TIE_SEP_DEG or
@@ -167,12 +184,20 @@ export function readSum(re, im, st, wt = null) {
   // the tie: angle 2, when it scores TIE_SHARE of the lock or more (the same peak the tie search found before)
   const second = (pk.length > 1 && best > 0 && sc[pk[1]] >= TIE_SHARE * best) ? angles[1] : null;
   const read = { deg: round(st.deg[jb], 2), tau_ms: round(st.tau[jb] * 1000, 4), share: round(best / votes, 3), second, angles };
-  if (read.deg === 0) LOG('[GccPhat] zero', { j: jb, tau_ms: read.tau_ms, score: round(best, 4), share: read.share,
+  if (read.deg === 0 && !quiet) LOG('[GccPhat] zero', { j: jb, tau_ms: read.tau_ms, score: round(best, 4), share: read.share,
     min: round(lo, 4), mean: round(sc.reduce((a, v) => a + v, 0) / TAUS, 4), votes: round(votes, 3), width: angles[0].width,
     next: angles[1] ? { deg: angles[1].deg, share: angles[1].share } : null });
   return read;
 }
-export function createStream(baselineM, { readFrom = null } = {}) {
+// brief 11's rule: does this read commit (draw it solid), or dim?
+export function commits(read, pauseRead = null) {
+  if (!read || !read.angles || !read.angles.length) return false;
+  const a = read.angles, margin = a[0].share - (a.length > 1 ? a[1].share : 0);
+  const onPause = !!pauseRead && pauseRead.share >= DIM_PAUSE_SHARE && Math.abs(read.deg - pauseRead.deg) <= DIM_PAUSE_DEG;
+  return margin >= DIM_MARGIN && !onPause;
+}
+// `reread: false` keeps the stream as it was before 2026-10-23: lock, then hold. The harnesses that score the lock pass it.
+export function createStream(baselineM, { readFrom = null, reread = true } = {}) {
   if (!FFT_T) FFT_T = fftTables(NFFT);
   const st = steerOf(baselineM), need = Math.round(LOCK_S * SR), firstN = Math.round(FIRST_MS * SR / 1000);
   const w = { lr: new Float64Array(NFFT), li: new Float64Array(NFFT), rr: new Float64Array(NFFT), ri: new Float64Array(NFFT) };
@@ -180,9 +205,12 @@ export function createStream(baselineM, { readFrom = null } = {}) {
   let L = new Int16Array(24000), R = new Int16Array(24000), len = 0, firstSample = null, from = null;
   let next = 0, frames = 0, read = null, locked = false, lastVote = 0, onsetVoted = false;
   let nz;                         // the pause's power per slice: undefined until measured, null when there is no pause
+  let pauseRead = null;           // the pause's own unweighted read (for the commit rule), null when there is none
+  let shown = null, committed = null, lastReread = 0, rereads = 0, moves = 0;   // after the lock: what is shown
+  const rereadN = Math.round(REREAD_MS * SR / 1000);
   const pauseN = Math.round(PAUSE_MS * SR / 1000);
-  const out = { positions: [], first: null, votes: [], ms: 0, settling: false };
-  const begin = (s) => { from = s; next = s; frames = 0; read = null; locked = false; onsetVoted = false; re.fill(0); im.fill(0); pw.fill(0); nz = undefined; out.first = null; out.positions = []; out.settling = false; };
+  const out = { positions: [], first: null, votes: [], ms: 0, settling: false, reread: null };
+  const begin = (s) => { from = s; next = s; frames = 0; read = null; locked = false; onsetVoted = false; re.fill(0); im.fill(0); pw.fill(0); nz = undefined; pauseRead = null; shown = null; committed = null; lastReread = 0; rereads = 0; moves = 0; out.first = null; out.positions = []; out.settling = false; out.reread = null; };
   // every frame that has arrived and fits inside the half second goes into the sum; the read is renewed once per push
   // the pause: frames centred in the PAUSE_MS before the onset (the read start + one step), averaged per slice
   const pause = () => {
@@ -193,7 +221,39 @@ export function createStream(baselineM, { readFrom = null } = {}) {
     let k = 0;
     for (let s0 = a; s0 + NFFT <= b; s0 += HOP) { addFrame(L, R, s0, nre, nim, w, npw); k++; }
     for (let i = 0; i < NB; i++) npw[i] /= Math.max(k, 1);
+    pauseRead = pauseOf();
     return npw;
+  };
+  // THE PAUSE'S OWN READ, for the commit rule: frames that END by the onset (the read start + one step), up to
+  // PAUSE_READ_S back. Not the weighting frames above: those are centred in the pause, so their last ones reach 21 ms
+  // into the voice, and on a clean onset the voice would win the pause's read and veto its own lock.
+  const pauseOf = () => {
+    const onsetS = from + HOP, a = Math.max(0, onsetS - Math.round(PAUSE_READ_S * SR));
+    const pre = new Float64Array(NB), pim = new Float64Array(NB);
+    let k = 0;
+    for (let s0 = onsetS - NFFT; s0 >= a; s0 -= HOP) { addFrame(L, R, s0, pre, pim, w); k++; }
+    if (k < 2) return null;
+    const pr = readSum(pre, pim, st, null, true);
+    return pr ? { deg: pr.deg, share: pr.share, frames: k } : null;
+  };
+  // the same frame count as the lock, over the newest half second, weighted by the same onset pause
+  const spanRead = () => {
+    const n = Math.max(frames, 1), last = len - NFFT, s0 = last - (n - 1) * HOP;
+    if (s0 < from) return null;
+    const sre = new Float64Array(NB), sim = new Float64Array(NB), spw = new Float64Array(NB);
+    for (let s = s0; s <= last; s += HOP) addFrame(L, R, s, sre, sim, w, spw);
+    const wt = nz ? Float64Array.from(nz, (q, b) => Math.max(0, Math.min(1, 1 - q / Math.max(spw[b] / n, 1e-30)))) : null;
+    return readSum(sre, sim, st, wt);
+  };
+  // after the lock: the lock is shown first; then every REREAD_MS a re-read, shown only if it commits and moved
+  const follow = () => {
+    if (!locked || !read) return;
+    if (!reread) { if (!shown) { shown = read; committed = commits(read, pauseRead); } return; }
+    if (!shown) { shown = read; committed = commits(read, pauseRead); lastReread = len; return; }
+    if (len - lastReread < rereadN) return;
+    lastReread = len; rereads++;
+    const r = spanRead();
+    if (r && commits(r, pauseRead) && Math.abs(r.deg - shown.deg) > MOVE_DEG) { shown = r; committed = true; moves++; }
   };
   const weights = () => nz ? Float64Array.from(nz, (n, b) => Math.max(0, Math.min(1, 1 - n / Math.max(pw[b] / frames, 1e-30)))) : null;
   const advance = () => {
@@ -207,12 +267,14 @@ export function createStream(baselineM, { readFrom = null } = {}) {
   };
   const positions = () => {
     if (!read) return [];
-    const ms = Math.floor(len / 48), a = read.angles;
-    const p = [{ id: 1, deg: read.deg, tau_ms: read.tau_ms, hits: read.share * 500, first_ms: 0, last_ms: ms, standing_ms: ms, reflection_standing_ms: null, frames, locked, width: a[0].width }];
+    const r = (locked && shown) ? shown : read;
+    const ms = Math.floor(len / 48), a = r.angles;
+    const p = [{ id: 1, deg: r.deg, tau_ms: r.tau_ms, hits: r.share * 500, first_ms: 0, last_ms: ms, standing_ms: ms, reflection_standing_ms: null, frames, locked, width: a[0].width,
+                 committed: locked ? committed : null, moves }];
     // angles 2 and 3 at the lock, as positions of their own; angle 2 is also the tie when it scores TIE_SHARE of the lock
     if (locked) for (let i = 1; i < a.length; i++)
       p.push({ id: i + 1, deg: a[i].deg, tau_ms: a[i].tau_ms, hits: a[i].share * 500, first_ms: 0, last_ms: ms, standing_ms: ms,
-               reflection_standing_ms: null, lag_ms: null, width: a[i].width, ...(i === 1 && read.second ? { tie: true } : {}) });
+               reflection_standing_ms: null, lag_ms: null, width: a[i].width, ...(i === 1 && r.second ? { tie: true } : {}) });
     return p;
   };
   return {
@@ -226,11 +288,13 @@ export function createStream(baselineM, { readFrom = null } = {}) {
       L.set(l, len); R.set(r, len); len += l.length;
       out.votes = []; out.ms = Math.floor(len / 48);
       advance();
+      follow();
+      out.reread = locked ? { rereads, moves, committed, pause: pauseRead } : null;
       out.positions = positions();
       // FIRST VOTE = THE ONSET (2026-10-21, FiveMsAmplitude as the range; Jay: "Make the change for Range"): a range that
       // keeps only the first vote of a position reads the 5 ms from the onset (the read start + one step), at the locked delay.
       if (locked && read && !onsetVoted) { onsetVoted = true; out.votes.push({ id: 1, start: from + HOP, tau_ms: read.tau_ms }); }
-      if (locked && read && len - lastVote >= WIN) { lastVote = len; out.votes.push({ id: 1, start: len - WIN, tau_ms: read.tau_ms }); }
+      if (locked && read && len - lastVote >= WIN) { lastVote = len; out.votes.push({ id: 1, start: len - WIN, tau_ms: (shown || read).tau_ms }); }
       return out;
     },
     window(start) { return start >= 0 && start + WIN <= len ? { L: L.subarray(start, start + WIN), R: R.subarray(start, start + WIN) } : null; },
@@ -242,6 +306,7 @@ export function createStream(baselineM, { readFrom = null } = {}) {
       if (s < 0 || s > len) return false;
       begin(s); lastVote = len;
       advance();
+      follow();
       out.positions = positions();
       return true;
     },

@@ -100,7 +100,7 @@ for await (const line of rl) {
   const c = JSON.parse(line), L = i16(c.L), R = i16(c.R), on = c.onset_sample, base = c.baseline_m;
   const out = { id: c.id };
   try {
-    const s = Gcc.createStream(base, { readFrom: on - PREROLL });
+    const s = Gcc.createStream(base, { readFrom: on - PREROLL, reread: false });
     const track = { 43: null, 100: null, 250: null, lock: null };
     let o = null;
     for (let i = 0; i < L.length; i += CHUNK) {

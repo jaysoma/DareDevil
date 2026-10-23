@@ -44,7 +44,9 @@ from geonar.attacks import Attacks, settings as attack_settings, MF_HZ, ROOM_MS,
 from geonar.bandfloor import BandFloor, settings as floor_settings
 from geonar.cdr_direct import CdrFreeStream, HOP as CDR_HOP, NFFT as CDR_NFFT
 
-VERSION = 12                                 # 12: the ears' quiet count rides through flickers (attacks.HOLD_MS), and
+VERSION = 13                                 # 13: the range is handed only its utterance's first RANGE_READ_S of CDR
+                                             #     frames, then nothing until the next utterance: one read, held
+                                             # 12: the ears' quiet count rides through flickers (attacks.HOLD_MS), and
                                              #     the bearing is handed the pause before each read (BEARING_HISTORY)
                                              # 11: a recogniser begin inside an open utterance, snapped to its onset by
                                              #     the ears' own rule, starts a new bearing read (a 'phrase' item)
@@ -116,6 +118,15 @@ PHONE_R = -1.1     # OFF (2026-10-11). The sign-of-correlation test was measured
                    # -17 to -45 for every human stretch, which is physical rather than tuned: a driver centimetres
                    # from the capsules cannot be matched by a talker a metre out.
 SETTLE_S = 0.13    # ~ the PSD memory: ALPHA 0.92 per 10.7 ms hop
+# ONE RANGE READ PER UTTERANCE, FROM ITS FIRST HALF SECOND (Jay, 2026-10-23: "for holds and general re-sampling ... just
+# implement it"). Brief 21 (results/resample/report.md s3) scored range policies against LOCATA's tracked distance:
+# the CDR of the utterance's first half second, held, was within 25% of the truth 51% of the time; sliding 0.5 s and
+# 1 s windows managed 30-35%, and followed a real 20% change of distance about as often as a coin. People move about 5%
+# a second; the CDR's scatter over half a second is far bigger. So the range is handed the frames whose window ENDS by
+# onset + RANGE_READ_S (from SETTLE_S on, as before), then nothing more for that utterance: the range reads once and
+# holds by construction. A new phrase inside the utterance doesn't reopen it (Jay, 2026-10-21: "maybe we leave range
+# unchanged"). Render's notes say CdrRange sums the first 0.8 s; this makes that 0.5 s. None hands every frame, as v12.
+RANGE_READ_S = 0.5
 # THE ACTUAL ONSET (Jay, 2026-10-11: "it belongs in Conductor, so it hands Angle, Range and Orientation ACTUAL onset of
 # speech" -- "implement the walkback all the way till the beginning of the handed frame"). The gate's edge is EARLY:
 # segmentation-3.0 reads its 5 s window both ways and lifts the speech score on frames before the voice arrives, so on
@@ -445,7 +456,11 @@ class Conductor:
                               n=upto - u['sent'], baseline_m=self.baseline, L=b64(pair[0]), R=b64(pair[1]))
             u['sent'] = upto
         frames = []
+        limit = u['onset'] + int(RANGE_READ_S * SR) if RANGE_READ_S else None
         while u['next'] + CDR_NFFT <= min(now, self.src.frames):
+            if limit is not None and u['next'] + CDR_NFFT > limit:     # the range has its read: nothing more this utterance
+                u['next'] = min(now, self.src.frames)
+                break
             l, r = self.src.raw(u['next'], CDR_NFFT)
             direct, diffuse = u['cdr'].frame(np.stack([l, r], axis=1) / 32768.0)
             if u['next'] >= u['onset'] + int(SETTLE_S * SR):   # the settling frames are the instrument's own business

@@ -17,3 +17,12 @@ There's also a live speech spectrogram panel (top left: magma, 0-8 kHz, the last
 
 A note in the code worth keeping in view: on LOCATA, the mask's HF-to-LF tilt tracked range (rho -0.5 to -0.67
 against distance), not facing.
+
+**Bearing after the lock (2026-10-23, `GccPhat.mjs`).** The stream no longer just holds its lock. Every 250 ms it
+re-reads the newest half second, and position 1 moves only when that re-read commits (brief 11's rule) and differs by
+more than 5 deg. Position 1 now carries `committed` (whether the shown read passes the rule; draw it dimmed when false)
+and `moves` (how many times it has moved this utterance), and the stream's output carries `reread` (re-reads, moves,
+committed, and the pause's own read). `createStream(..., { reread: false })` restores lock-and-hold.
+
+**Range (Conductor v13).** The range is handed only the utterance's first half second of CDR frames (`RANGE_READ_S`),
+so it reads once and holds. `RANGE_READ_S = None` restores v12.
