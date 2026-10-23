@@ -385,6 +385,9 @@ branch. No audio in the repo.
 
 ## 14. Orientation from which wall lights up
 
+QUEUED for a later stage (Jay, 2026-10-22). Don't start this one yet. Built from scratch on purpose: Jay's earlier
+version of this idea hit about 35% of the time in his living room and kitchen.
+
 Jay's idea (2026-10-22): the talker under a microscope (raw audio, DFN masks) showed no repeatable rotation pattern.
 What does change consistently as a talker turns is the reflections. Any room reduces to four walls, so the talker's
 facing should be decidable at 0, 90, 180 and 270 deg.
@@ -418,7 +421,10 @@ facing should be decidable at 0, 90, 180 and 270 deg.
    same onsets.
 3. **Mechanism check on dEchorate.** Loudspeakers aren't heads, but sources 4 and 5 face walls with labelled echoes. Does
    the faced wall's echo come out brightest? A check, not a geometry result.
-4. **Where it breaks.** By talker distance from each wall, by angle, and by whether the faced wall is a side wall or a
+4. **180 deg is an odd one** (Jay). Score each onset against its own tracked orientation, never as a change from the
+   previous one: a turn from 180 to 270 registers more energy change than the turn from 0 to 90. Report 180 deg
+   separately, and normalise every echo against that onset's own direct sound.
+5. **Where it breaks.** By talker distance from each wall, by angle, and by whether the faced wall is a side wall or a
    front/back wall: the two-mic catch above.
 
 Score under the scoring rule, catalogue every set-aside read, and commit `results/orientation_reflections/` and
