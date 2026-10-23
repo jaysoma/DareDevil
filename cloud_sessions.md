@@ -205,6 +205,16 @@ never been scored.
    app doesn't have yet) with the direct angle, the echo angle and the lag. That gives the image source, and from it
    the reflecting wall's position. Report how far that lands from the real wall: this is the "it came off that wall"
    test.
+5. **Then on people: LOCATA** (added 2026-10-23; Jay prefers human talkers to dEchorate's loudspeakers). Use batch A's
+   LOCATA onsets and truth (`results/batchA/locata/truth.jsonl`, `harness/batchA/locata/`, the 160 and 80 mm pairs).
+   LOCATA has no labelled echoes, but the floor echo's lag follows from the tracked head and the array's position:
+   (path via the floor image - direct path) / c. Brief 10 computed it, with the mouth 0.12 m below the head marker.
+   - **Lag:** is `gap_ms` within 0.25 ms of the floor echo's lag, or of the ceiling's or a wall's if the room's
+     dimensions are in the release or the LOCATA paper? Chance as in step 2.
+   - **Range from the echo:** the floor echo's lag shrinks as the talker moves away. Score whether `gap_ms` orders
+     distance, as batch A scored its range cues: ordered right at 1.25x, 1.5x and 2x apart, and the spread at one
+     spot. Put it beside the CDR's numbers from `results/batchA/locata/report.md`. This is the test of whether a
+     geometric range cue exists at all with two mics.
 
 Score under the rule above, and catalogue every read set aside. Commit `results/first_reflection/` and the harness to a
 branch. Don't change Angle2's defaults.
