@@ -68,6 +68,15 @@ fs = S['facing_spread']
 p(f"\nFacing turns a median {fs['utterance']['median_deg']} deg within an utterance (90th percentile {fs['utterance']['p90_deg']}; "
   f"over 30 deg in {fs['utterance']['over_30_pct']}%), and {fs['phrase']['median_deg']} deg within a phrase. An utterance has "
   f"{S['phrases_per_utterance']} phrases on average, so per phrase and per utterance are nearly the same updates.")
+p("\n## 4b. Facing from brief 20's cue (HF - LF CDR against the talker's opener), under each update policy\n")
+p('| pair | update | utterances | separates toward from away: AUC [95% interval, by utterance] | AUC, log distance removed | '
+  'Spearman with facing | moves the right way when the head turns > 45 deg |')
+p('|---|---|---|---|---|---|---|')
+for k, v in S['facing_cue'].items():
+    sp, name = k.split('|')
+    mv = 'never moves' if v['did_not_move_pct'] == 100.0 else f"{v['moved_right_way_pct']}% (n={v['head_turns']}; {v['did_not_move_pct']}% didn't move)"
+    p(f"| {sp} mm | {name.replace('_', ' ')} | {v['utterances']} | {v['auc_toward_vs_away']} {v['auc_95pct_interval_by_utterance']} | "
+      f"{v['auc_distance_removed']} | {v['spearman_with_facing']} | {mv} |")
 (out / 'tables.md').write_text('\n'.join(L) + '\n')
 shutil.copy(src / 'summary.json', out / 'summary.json')
 

@@ -2298,5 +2298,127 @@
    "over_30_pct": 39.8
   }
  },
- "phrases_per_utterance": 1.05
+ "phrases_per_utterance": 1.05,
+ "facing_cue": {
+  "160|per_phrase": {
+   "grid_points": 10550,
+   "utterances": 306,
+   "away_share_pct": 32.9,
+   "auc_toward_vs_away": 0.606,
+   "auc_95pct_interval_by_utterance": [
+    0.548,
+    0.671
+   ],
+   "auc_distance_removed": 0.604,
+   "spearman_with_facing": -0.278,
+   "head_turns": 48,
+   "moved_right_way_pct": 8.3,
+   "did_not_move_pct": 85.4
+  },
+  "160|per_utterance": {
+   "grid_points": 10550,
+   "utterances": 306,
+   "away_share_pct": 32.9,
+   "auc_toward_vs_away": 0.615,
+   "auc_95pct_interval_by_utterance": [
+    0.556,
+    0.685
+   ],
+   "auc_distance_removed": 0.613,
+   "spearman_with_facing": -0.285,
+   "head_turns": 48,
+   "moved_right_way_pct": 0.0,
+   "did_not_move_pct": 100.0
+  },
+  "160|sliding_0.5s": {
+   "grid_points": 10550,
+   "utterances": 306,
+   "away_share_pct": 32.9,
+   "auc_toward_vs_away": 0.63,
+   "auc_95pct_interval_by_utterance": [
+    0.567,
+    0.687
+   ],
+   "auc_distance_removed": 0.629,
+   "spearman_with_facing": -0.306,
+   "head_turns": 48,
+   "moved_right_way_pct": 60.4,
+   "did_not_move_pct": 0.0
+  },
+  "160|sliding_1.0s": {
+   "grid_points": 10550,
+   "utterances": 306,
+   "away_share_pct": 32.9,
+   "auc_toward_vs_away": 0.639,
+   "auc_95pct_interval_by_utterance": [
+    0.572,
+    0.702
+   ],
+   "auc_distance_removed": 0.638,
+   "spearman_with_facing": -0.32,
+   "head_turns": 48,
+   "moved_right_way_pct": 56.2,
+   "did_not_move_pct": 0.0
+  },
+  "80|per_phrase": {
+   "grid_points": 10550,
+   "utterances": 306,
+   "away_share_pct": 32.9,
+   "auc_toward_vs_away": 0.607,
+   "auc_95pct_interval_by_utterance": [
+    0.536,
+    0.665
+   ],
+   "auc_distance_removed": 0.608,
+   "spearman_with_facing": -0.252,
+   "head_turns": 48,
+   "moved_right_way_pct": 10.4,
+   "did_not_move_pct": 85.4
+  },
+  "80|per_utterance": {
+   "grid_points": 10550,
+   "utterances": 306,
+   "away_share_pct": 32.9,
+   "auc_toward_vs_away": 0.611,
+   "auc_95pct_interval_by_utterance": [
+    0.546,
+    0.667
+   ],
+   "auc_distance_removed": 0.612,
+   "spearman_with_facing": -0.25,
+   "head_turns": 48,
+   "moved_right_way_pct": 0.0,
+   "did_not_move_pct": 100.0
+  },
+  "80|sliding_0.5s": {
+   "grid_points": 10550,
+   "utterances": 306,
+   "away_share_pct": 32.9,
+   "auc_toward_vs_away": 0.635,
+   "auc_95pct_interval_by_utterance": [
+    0.577,
+    0.685
+   ],
+   "auc_distance_removed": 0.637,
+   "spearman_with_facing": -0.273,
+   "head_turns": 48,
+   "moved_right_way_pct": 56.2,
+   "did_not_move_pct": 0.0
+  },
+  "80|sliding_1.0s": {
+   "grid_points": 10550,
+   "utterances": 306,
+   "away_share_pct": 32.9,
+   "auc_toward_vs_away": 0.641,
+   "auc_95pct_interval_by_utterance": [
+    0.581,
+    0.693
+   ],
+   "auc_distance_removed": 0.642,
+   "spearman_with_facing": -0.282,
+   "head_turns": 48,
+   "moved_right_way_pct": 62.5,
+   "did_not_move_pct": 0.0
+  }
+ }
 }

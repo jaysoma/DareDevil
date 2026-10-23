@@ -22,8 +22,9 @@ RANGE (distance ratio to the talker's opener, its first utterance in the recordi
   per_utt_<bands>         the CDR of the utterance's first half second, shown from 0.5 s, held (the shipped range)
   slide<W>_<bands>        the CDR of the last W seconds (0.5 or 1; shorter until W is available), every 0.25 s
   bands: shipped (1.1-8 kHz in three bands, as cdr_direct) or lf (0.1-1 kHz)
-FACING (the truth's own rate of change; brief 20's cue hasn't landed): a perfect facing reading taken per utterance
-  (at its onset), per phrase (at each phrase's start) or every 0.25 / 0.5 s, held, scored against the truth's facing.
+FACING, two ways. The truth's own rate of change: a perfect facing reading taken per utterance (at its onset), per
+  phrase (at each phrase's start) or every 0.25 / 0.5 s, held, scored against the truth's facing. And brief 20's cue
+  (HF - LF CDR against the talker's opener) under the same policies (facing_cue's docstring).
 MOTION: how far bearing, distance, head orientation and facing move over 0.25, 0.5 and 1 s within voiced speech.
 
 usage: python3 score.py WORK_DIR OUT_DIR
@@ -181,6 +182,92 @@ def wrap(d):
     return abs((d + 180) % 360 - 180)
 
 
+def auc(pos, neg):
+    """The chance a value from pos beats one from neg (ties half)."""
+    from scipy.stats import rankdata
+    if not pos or not neg:
+        return None
+    rk = rankdata(np.array(pos + neg, float))
+    return round(float((rk[:len(pos)].sum() - len(pos) * (len(pos) + 1) / 2) / (len(pos) * len(neg))), 3)
+
+
+def facing_cue(cuts, hops):
+    """Brief 20's facing estimate, F = HF CDR - unfloored LF CDR, taken against the talker's opener (F - F_opener), read
+    under each update policy and scored on the grid against the tracked facing: how well the shown value separates
+    toward (< 90 deg) from away, raw and with log distance (relative to the opener) regressed out as brief 20 did; and,
+    in utterances where the head really turns (facing changes > 45 deg first to last), whether the shown value moves
+    the right way (turning away should lower F). The opener's own utterance isn't scored."""
+    def F(h, a, b):
+        hf = window_db(h['hf']['dir'], h['hf']['dif'], a, b)
+        lf = window_db(h['lf']['dir'], h['lf']['dif'], a, b)
+        return None if hf is None or lf is None else hf - lf
+    by_talker = defaultdict(list)
+    for c in cuts.values():
+        by_talker[(c['recording'], c['talker'], c['pair_mm'])].append(c)
+    pts = defaultdict(list)
+    turns = defaultdict(list)
+    for (rec, tk, sp), cs in by_talker.items():
+        cs.sort(key=lambda c: c['onset_s'])
+        op = next((c for c in cs if c['truth'][0]['valid'] and c['id'] in hops), None)
+        if op is None:
+            continue
+        h0 = hops[op['id']]
+        f_open = F(h0, 0, min(len(h0['hf']['dir']), round(0.5 / HOP_S)))
+        d_open = op['truth'][0]['dist']
+        if f_open is None:
+            continue
+        for c in cs:
+            if c is op or c['id'] not in hops:
+                continue
+            h = hops[c['id']]
+            nh = len(h['hf']['dir'])
+            win = lambda t0, t1: F(h, max(0, round(t0 / HOP_S)), min(nh, round(t1 / HOP_S)))
+            pols = {'per_utterance': [(0.5, win(0, 0.5))],
+                    'per_phrase': [(min(p0 + 0.5, c['dur_s']), win(p0, min(p0 + 0.5, c['dur_s']))) for p0, _ in c['phrases']]}
+            for W in (0.5, 1.0):
+                pols[f'sliding_{W}s'] = [(round(t, 3), win(max(0, t - W), t)) for t in np.arange(0.5, c['dur_s'] + 1e-9, 0.25)]
+            ts = [g['t'] for g in c['truth']]
+            for name, ev in pols.items():
+                ev = [(t, v - f_open) for t, v in ev if v is not None]
+                shown = held_series(ts, ev)
+                seen = []
+                for g, v in zip(c['truth'], shown):
+                    if v is None or not g['valid'] or g['facing'] is None:
+                        continue
+                    pts[f'{sp}|{name}'].append((v, g['facing'], math.log10(g['dist'] / d_open), c['id']))
+                    seen.append((v, g['facing']))
+                if len(seen) >= 2 and abs(seen[-1][1] - seen[0][1]) > 45:
+                    dv = seen[-1][0] - seen[0][0]
+                    turns[f'{sp}|{name}'].append(None if dv == 0 else (dv < 0) == (seen[-1][1] > seen[0][1]))
+    out = {}
+    for k, v in sorted(pts.items()):
+        f = np.array([x[0] for x in v]); fac = np.array([x[1] for x in v]); ld = np.array([x[2] for x in v])
+        A = np.vstack([np.ones_like(ld), ld]).T
+        resid = f - A @ np.linalg.lstsq(A, f, rcond=None)[0]
+        tw = fac < 90
+        from scipy.stats import spearmanr
+        tr = turns.get(k, [])
+        # grid points within an utterance are not independent: the interval resamples whole utterances
+        ids = np.array([x[3] for x in v]); uniq = np.unique(ids)
+        idx = {u: np.flatnonzero(ids == u) for u in uniq}
+        rng = np.random.default_rng(0)
+        boots = []
+        for _ in range(200):
+            sel = np.concatenate([idx[u] for u in rng.choice(uniq, len(uniq))])
+            a_ = auc(f[sel][tw[sel]].tolist(), f[sel][~tw[sel]].tolist())
+            if a_ is not None:
+                boots.append(a_)
+        out[k] = {'grid_points': len(v), 'utterances': len(uniq), 'away_share_pct': round(100 * float(np.mean(~tw)), 1),
+                  'auc_toward_vs_away': auc(f[tw].tolist(), f[~tw].tolist()),
+                  'auc_95pct_interval_by_utterance': [round(float(np.percentile(boots, 2.5)), 3), round(float(np.percentile(boots, 97.5)), 3)],
+                  'auc_distance_removed': auc(resid[tw].tolist(), resid[~tw].tolist()),
+                  'spearman_with_facing': round(float(spearmanr(f, fac)[0]), 3),
+                  'head_turns': len(tr),
+                  'moved_right_way_pct': round(100 * sum(x is True for x in tr) / len(tr), 1) if tr else None,
+                  'did_not_move_pct': round(100 * sum(x is None for x in tr) / len(tr), 1) if tr else None}
+    return out
+
+
 def main():
     work, out = Path(sys.argv[1]), Path(sys.argv[2])
     out.mkdir(parents=True, exist_ok=True)
@@ -299,6 +386,7 @@ def main():
     res['facing_spread'] = {k: {'n': len(v), 'median_deg': round(float(np.median(v)), 1), 'p90_deg': round(float(np.percentile(v, 90)), 1),
                                 'over_30_pct': round(100 * np.mean([x > 30 for x in v]), 1)} for k, v in spans.items()}
     res['phrases_per_utterance'] = round(float(np.mean([len(c['phrases']) for c in cuts.values() if c['pair_mm'] == 160])), 2)
+    res['facing_cue'] = facing_cue(cuts, hops)
     (out / 'summary.json').write_text(json.dumps(res, indent=1))
     print(json.dumps(res['checks']))
 

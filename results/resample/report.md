@@ -15,9 +15,10 @@ truth over time:
 - **Range: don't re-read within an utterance.** The per-utterance CDR, as shipped, is the best of the policies tried.
   Sliding 0.5 s or 1 s windows are noisier than the movement they'd track, and follow a real 20% change of distance
   about as often as a coin.
-- **Facing: per phrase is the same as per utterance here** (1.05 phrases per utterance). The head turns a median 25 deg
-  within an utterance, though, so once there's a facing cue (brief 20) it would need re-reading within an utterance,
-  about every 0.5 s.
+- **Facing: no update cadence helps yet, because the cue barely reads facing.** Per phrase is per utterance here
+  (1.05 phrases per utterance), and the head turns a median 25 deg within an utterance. Brief 20's cue (HF minus LF CDR)
+  separates toward from away only weakly: AUC 0.61-0.64, intervals overlapping across every cadence. When the head
+  really turns, the sliding cue follows the right way 56-62% of the time, about chance.
 
 ## What was run
 - **Data:** LOCATA tasks 3 and 4, DICIT array, dev and eval, the 160 mm pair (mics 5-10, the phone's spacing) and the
@@ -112,8 +113,10 @@ scored), from the CDR by the room law, 6 dB per doubling. Tolerance 25% (1.9 dB)
 - **No rate clamp,** as Jay removed it on 2026-09-30.
 
 ## 4. Facing
-Brief 20's facing cue (HF minus LF CDR) hasn't landed. So this is the truth's own rate of change: a perfect facing
-reading, held, under each update policy.
+Two questions: how fast the truth changes (a perfect facing reading, held under each policy), and whether brief 20's
+cue, now landed, follows it under each policy.
+
+**The truth's own rate of change** (a perfect reading, held):
 
 | update | time within 30 deg | median / mean error | updates per minute |
 |---|---|---|---|
@@ -126,15 +129,39 @@ reading, held, under each update policy.
   0.1-0.3 s mid-utterance.
 - **The head turns a median 25 deg within an utterance** (90th percentile 67 deg; over 30 deg in 42% of them). Held per
   utterance, even a perfect reading is more than 30 deg off a sixth of the time.
-- **So facing needs re-reading within an utterance, about every 0.5 s,** if the cue can be read that fast. Whether it
-  can is brief 20's question: its cue is a CDR, and section 3 shows how noisy a 0.5 s CDR is.
+- **So a facing reading would need refreshing within an utterance, about every 0.5 s.**
+
+**Brief 20's cue under each policy.** The cue is F = HF CDR (4-8 kHz) minus unfloored LF CDR (0.1-1 kHz), against the
+same talker's opener; facing away should lower it. Each policy's shown value is scored on the grid against the tracked
+facing (toward under 90 deg, away over), at 160 mm:
+
+| update | separates toward from away: AUC [95% interval, resampling utterances] | AUC, log distance removed | moves the right way when the head turns > 45 deg (48 turns) |
+|---|---|---|---|
+| per utterance | 0.62 [0.56, 0.69] | 0.61 | never moves |
+| per phrase | 0.61 [0.55, 0.67] | 0.60 | 8% (85% don't move) |
+| sliding 0.5 s, every 0.25 s | 0.63 [0.57, 0.69] | 0.63 | 60% |
+| sliding 1 s, every 0.25 s | 0.64 [0.57, 0.70] | 0.64 | 56% |
+
+The 80 mm pair is the same (0.61-0.64; `tables.md`).
+
+- **The cue carries a little information about facing,** pooled over talkers and recordings. Every interval sits above
+  0.5, and removing distance doesn't change it. Brief 20 found the same cue fails as a classifier: 45% balanced
+  accuracy, toward or away, with a threshold carried between recordings. The two results fit together: a weak pooled
+  association that a threshold from one recording doesn't carry to another.
+- **No cadence reads it better.** The intervals overlap almost entirely: sliding windows score 0.02-0.03 higher, well
+  inside the noise.
+- **Within an utterance it doesn't follow the head.** When the head turns more than 45 deg, the sliding cue moves the
+  right way 56-62% of the time, close to chance on 48 turns (a 95% interval on 48 coin flips spans about 36-64%).
+- **So the update cadence isn't facing's bottleneck; the cue is.** Re-reading every 0.5 s would only pay once a cue
+  follows the head.
 
 ## What this means for the app
 - **Angle:** keep the onset read as shipped. After the lock, re-read every 0.25 s and move the dot only when the
   re-read passes the dim rule and differs by more than 5 deg. Use 10 deg if 36 moves a minute is too lively: that gives
   23 moves a minute for 2 points.
 - **Range:** keep the one read per utterance from its first half second. Don't slide it.
-- **Facing:** re-read within the utterance once a cue exists. Per phrase isn't enough of a difference to matter.
+- **Facing:** don't spend updates on it yet. Brief 20's cue barely reads facing under any cadence. When a cue does
+  follow the head, re-read it about every 0.5 s within the utterance; per phrase is too seldom to matter.
 
 ## Caveats
 - **One room and two talkers at most,** walking slowly; utterances of 2-6 s. Longer monologues would favour re-reading
@@ -148,7 +175,8 @@ reading, held, under each update policy.
 
 ## Files
 - **Summary:** `summary.json`, with every policy by pair, by task, and for moving against still utterances; the motion
-  statistics; the range-follows-change test; and the facing analysis.
+  statistics; the range-follows-change test; the facing analysis; and brief 20's cue under each policy
+  (`facing_cue`).
 - **Tables:** `tables.md`.
 - **Plot:** `tradeoff.png`, accuracy against moves per minute for every angle policy.
 - **Rebuild:** `harness/resample/` (see its README).

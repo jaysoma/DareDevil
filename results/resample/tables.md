@@ -148,3 +148,16 @@
 | every 0.5s | 99.6% | 1.8 / 3.71 | 98.1 |
 
 Facing turns a median 25.1 deg within an utterance (90th percentile 66.7; over 30 deg in 41.5%), and 24.5 deg within a phrase. An utterance has 1.05 phrases on average, so per phrase and per utterance are nearly the same updates.
+
+## 4b. Facing from brief 20's cue (HF - LF CDR against the talker's opener), under each update policy
+
+| pair | update | utterances | separates toward from away: AUC [95% interval, by utterance] | AUC, log distance removed | Spearman with facing | moves the right way when the head turns > 45 deg |
+|---|---|---|---|---|---|---|
+| 160 mm | per phrase | 306 | 0.606 [0.548, 0.671] | 0.604 | -0.278 | 8.3% (n=48; 85.4% didn't move) |
+| 160 mm | per utterance | 306 | 0.615 [0.556, 0.685] | 0.613 | -0.285 | never moves |
+| 160 mm | sliding 0.5s | 306 | 0.63 [0.567, 0.687] | 0.629 | -0.306 | 60.4% (n=48; 0.0% didn't move) |
+| 160 mm | sliding 1.0s | 306 | 0.639 [0.572, 0.702] | 0.638 | -0.32 | 56.2% (n=48; 0.0% didn't move) |
+| 80 mm | per phrase | 306 | 0.607 [0.536, 0.665] | 0.608 | -0.252 | 10.4% (n=48; 85.4% didn't move) |
+| 80 mm | per utterance | 306 | 0.611 [0.546, 0.667] | 0.612 | -0.25 | never moves |
+| 80 mm | sliding 0.5s | 306 | 0.635 [0.577, 0.685] | 0.637 | -0.273 | 56.2% (n=48; 0.0% didn't move) |
+| 80 mm | sliding 1.0s | 306 | 0.641 [0.581, 0.693] | 0.642 | -0.282 | 62.5% (n=48; 0.0% didn't move) |

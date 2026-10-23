@@ -7,7 +7,8 @@ raises every band's low edge to c/2d (the diffuse field is coherent below it), w
 clamp. A window's CDR is the ratio of its summed powers (cdr_free_db's way), so per-hop powers are computed once per
 utterance, from the onset with a fresh PSD state (batch A's per-utterance read started the same way).
 
-usage: python3 range_hops.py WORK_DIR   (reads utt_*.jsonl; writes hops_*.npz: per cut, hop powers for both band sets)
+usage: python3 range_hops.py WORK_DIR   (reads utt_*.jsonl; writes hops_*.npz: per cut, hop powers for each band set:
+       shipped, lf (unfloored, as brief 20's LF_raw) and hf)
 """
 import base64
 import json
@@ -19,6 +20,7 @@ import numpy as np
 SR, HOP, NFFT, C, ALPHA = 48000, 512, 2048, 343.0, 0.92            # as src/geonar/cdr_direct.py
 SHIPPED = ((1100.0, 2000.0), (2000.0, 4000.0), (4000.0, 8000.0))   # cdr_direct.FREE_BANDS
 LF = ((100.0, 1000.0),)
+HF = ((4000.0, 8000.0),)                                         # brief 20's HF, for its facing cue (HF - LF)
 
 
 def cdr_hops(x, baseline_m, bands, clamp=True):
@@ -66,7 +68,7 @@ def main():
             R = np.frombuffer(base64.b64decode(c['R']), '<i2').astype(float)
             x = np.stack([L, R], 1)[c['onset_sample']:] / 32768
             key = c['id'].replace('/', '|')
-            for name, bands, clamp in (('shipped', SHIPPED, True), ('lf', LF, False)):
+            for name, bands, clamp in (('shipped', SHIPPED, True), ('lf', LF, False), ('hf', HF, True)):
                 dp, fp = cdr_hops(x, c['baseline_m'], bands, clamp)
                 arrs[f'{key}#{name}#dir'] = dp.astype(np.float32)
                 arrs[f'{key}#{name}#dif'] = fp.astype(np.float32)
