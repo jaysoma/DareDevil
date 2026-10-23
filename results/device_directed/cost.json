@@ -1,0 +1,38 @@
+{
+ "keyword": {
+  "seconds_per_phrase": 8e-06,
+  "model_bytes": 645,
+  "note": "25 words per device"
+ },
+ "shape_ngram": {
+  "seconds_per_phrase": 5.4e-05,
+  "model_bytes": 11233728,
+  "note": "KN trigrams, counts at 8 bytes each"
+ },
+ "contrast_ngram": {
+  "seconds_per_phrase": 0.000171,
+  "model_bytes": 11233728,
+  "note": "KN trigrams plus a word cache of the window"
+ },
+ "contrast_ngram_past": {
+  "seconds_per_phrase": 0.000114,
+  "model_bytes": 11233728,
+  "note": "KN trigrams plus a word cache of the window"
+ },
+ "embed_train_instructions_s": 66.8,
+ "shape_embed": {
+  "seconds_per_phrase": 0.000654,
+  "model_bytes": 90405214,
+  "note": "all-MiniLM-L6-v2 ONNX fp32; encoding 12.9 ms per phrase"
+ },
+ "contrast_embed": {
+  "seconds_per_phrase": 0.000471,
+  "model_bytes": 90405214,
+  "note": "all-MiniLM-L6-v2 ONNX fp32; encoding 12.9 ms per phrase"
+ },
+ "contrast_embed_past": {
+  "seconds_per_phrase": 0.00051,
+  "model_bytes": 90405214,
+  "note": "all-MiniLM-L6-v2 ONNX fp32; encoding 12.9 ms per phrase"
+ }
+}

@@ -1,0 +1,2762 @@
+{
+ "contrast_embed|car": {
+  "false_accepts": 91,
+  "kinds": {
+   "other": 59,
+   "device vocabulary": 16,
+   "question": 8,
+   "short": 7,
+   "request shape": 1
+  },
+  "by_stream": {
+   "ami": 51,
+   "calls": 35,
+   "lyrics": 3,
+   "monologue": 2
+  },
+  "examples": [
+   {
+    "window": "w0033",
+    "stream": "ami",
+    "text": "How long is the meeting?"
+   },
+   {
+    "window": "w0180",
+    "stream": "calls",
+    "text": "Yeah that's true the traffic. -"
+   },
+   {
+    "window": "w0167",
+    "stream": "ami",
+    "text": "Uh this is this email."
+   },
+   {
+    "window": "w0878",
+    "stream": "ami",
+    "text": "Do we need another meeting this week?"
+   },
+   {
+    "window": "w0876",
+    "stream": "ami",
+    "text": "Contact."
+   },
+   {
+    "window": "w0842",
+    "stream": "ami",
+    "text": "I think that will be a problem because we don't have an input device to get the listings into it, so um it's a bit nuts to get the Monday Tuesday Wednesday you know."
+   },
+   {
+    "window": "w0130",
+    "stream": "ami",
+    "text": "How many hours is this?"
+   },
+   {
+    "window": "w0061",
+    "stream": "calls",
+    "text": "Hi you want to start first ?"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0130",
+    "kind": "to_person",
+    "text": "I'll open twitter send message when we get home"
+   },
+   {
+    "window": "w0131",
+    "kind": "subject",
+    "text": "Should we get a taxi to the hospital or just walk?"
+   },
+   {
+    "window": "w0132",
+    "kind": "to_person",
+    "text": "Remember to send an email to jake to tell him thank you tonight"
+   },
+   {
+    "window": "w0133",
+    "kind": "subject",
+    "text": "I'll drop you off at the airport on the way"
+   },
+   {
+    "window": "w0134",
+    "kind": "to_person",
+    "text": "I was going to send an email to this contact but I forgot"
+   },
+   {
+    "window": "w0135",
+    "kind": "subject",
+    "text": "The gps kept telling me to turn left into a field"
+   },
+   {
+    "window": "w0136",
+    "kind": "to_person",
+    "text": "I need to tell myself about the cheapest flight fares to nj today after this call"
+   },
+   {
+    "window": "w0137",
+    "kind": "subject",
+    "text": "Can you check the map, i don't know where the hospital is"
+   }
+  ]
+ },
+ "contrast_embed|kitchen": {
+  "false_accepts": 91,
+  "kinds": {
+   "other": 48,
+   "device vocabulary": 22,
+   "short": 13,
+   "question": 7,
+   "request shape": 1
+  },
+  "by_stream": {
+   "ami": 47,
+   "calls": 37,
+   "lyrics": 1,
+   "monologue": 6
+  },
+  "examples": [
+   {
+    "window": "w0904",
+    "stream": "ami",
+    "text": "Potato."
+   },
+   {
+    "window": "w0249",
+    "stream": "ami",
+    "text": "So I arrived uh in June, something like that, a couple of month ago."
+   },
+   {
+    "window": "w0270",
+    "stream": "calls",
+    "text": "waiting for mine."
+   },
+   {
+    "window": "w0274",
+    "stream": "calls",
+    "text": "You want to start?"
+   },
+   {
+    "window": "w0331",
+    "stream": "monologue",
+    "text": "Some little time: so by your Companies"
+   },
+   {
+    "window": "w0906",
+    "stream": "ami",
+    "text": "What day is it?"
+   },
+   {
+    "window": "w0913",
+    "stream": "calls",
+    "text": "Oh, that's too much trouble. That's too much trouble. Didn't want to cook."
+   },
+   {
+    "window": "w0380",
+    "stream": "ami",
+    "text": "Oh, I'm getting hungry."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0340",
+    "kind": "to_person",
+    "text": "Remember to look for apple pie recipe tonight"
+   },
+   {
+    "window": "w0341",
+    "kind": "subject",
+    "text": "What are we making for dinner tonight?"
+   },
+   {
+    "window": "w0342",
+    "kind": "to_person",
+    "text": "I need to tell myself the recipe of after this call"
+   },
+   {
+    "window": "w0343",
+    "kind": "subject",
+    "text": "We're out of coffee again"
+   },
+   {
+    "window": "w0344",
+    "kind": "to_person",
+    "text": "I need to start the coffee machine at three after this call"
+   },
+   {
+    "window": "w0345",
+    "kind": "subject",
+    "text": "The coffee machine is making that noise again"
+   },
+   {
+    "window": "w0346",
+    "kind": "to_person",
+    "text": "Remember to set my coffee machine tonight"
+   },
+   {
+    "window": "w0347",
+    "kind": "subject",
+    "text": "Mum has the recipe for the bread"
+   }
+  ]
+ },
+ "contrast_embed|watch": {
+  "false_accepts": 88,
+  "kinds": {
+   "other": 36,
+   "device vocabulary": 32,
+   "short": 12,
+   "question": 7,
+   "request shape": 1
+  },
+  "by_stream": {
+   "ami": 61,
+   "calls": 23,
+   "lyrics": 2,
+   "monologue": 2
+  },
+  "examples": [
+   {
+    "window": "w0936",
+    "stream": "ami",
+    "text": "I don't know, what time did we start this meeting, I'm not sure."
+   },
+   {
+    "window": "w0420",
+    "stream": "ami",
+    "text": "Twenty four."
+   },
+   {
+    "window": "w0930",
+    "stream": "ami",
+    "text": "So I will close the meeting, um just after that we'll have lunch break."
+   },
+   {
+    "window": "w0433",
+    "stream": "ami",
+    "text": "Morning."
+   },
+   {
+    "window": "w0455",
+    "stream": "ami",
+    "text": "I think we should definitely go ahead with the alarm system idea that you had."
+   },
+   {
+    "window": "w0449",
+    "stream": "ami",
+    "text": "The minutes."
+   },
+   {
+    "window": "w0587",
+    "stream": "ami",
+    "text": "You know, this is about twenty five minutes, this meeting."
+   },
+   {
+    "window": "w0459",
+    "stream": "ami",
+    "text": "Warning, finish meeting now."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0550",
+    "kind": "to_person",
+    "text": "I was going to put this event in a repeating pattern on my calendar but I forgot"
+   },
+   {
+    "window": "w0551",
+    "kind": "subject",
+    "text": "Priya's birthday is next friday"
+   },
+   {
+    "window": "w0552",
+    "kind": "to_person",
+    "text": "I was going to set alarm at nine am on next sunday but I forgot"
+   },
+   {
+    "window": "w0553",
+    "kind": "subject",
+    "text": "What time is your alarm set for?"
+   },
+   {
+    "window": "w0554",
+    "kind": "to_person",
+    "text": "I need to remind myself two days before my wife birthday after this call"
+   },
+   {
+    "window": "w0555",
+    "kind": "subject",
+    "text": "I forgot about the meeting at six"
+   },
+   {
+    "window": "w0556",
+    "kind": "to_person",
+    "text": "I'll delete event from calendar when we get home"
+   },
+   {
+    "window": "w0557",
+    "kind": "subject",
+    "text": "My alarm didn't go off this morning"
+   }
+  ]
+ },
+ "contrast_embed|general": {
+  "false_accepts": 95,
+  "kinds": {
+   "other": 42,
+   "short": 27,
+   "device vocabulary": 15,
+   "question": 11
+  },
+  "by_stream": {
+   "ami": 57,
+   "calls": 32,
+   "lyrics": 2,
+   "monologue": 4
+  },
+  "examples": [
+   {
+    "window": "w0994",
+    "stream": "ami",
+    "text": "I have no more email."
+   },
+   {
+    "window": "w0686",
+    "stream": "calls",
+    "text": "Good morning ."
+   },
+   {
+    "window": "w0655",
+    "stream": "ami",
+    "text": "Morning."
+   },
+   {
+    "window": "w0834",
+    "stream": "calls",
+    "text": "event."
+   },
+   {
+    "window": "w0646",
+    "stream": "ami",
+    "text": "Where where?"
+   },
+   {
+    "window": "w0702",
+    "stream": "calls",
+    "text": "Good night."
+   },
+   {
+    "window": "w0636",
+    "stream": "ami",
+    "text": "Banana?"
+   },
+   {
+    "window": "w0687",
+    "stream": "calls",
+    "text": "Well, what kind of weather are you having right now?"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0760",
+    "kind": "to_person",
+    "text": "Alex, can you show geographic details of pyramids for me?"
+   },
+   {
+    "window": "w0761",
+    "kind": "subject",
+    "text": "Who sings this one?"
+   },
+   {
+    "window": "w0762",
+    "kind": "to_person",
+    "text": "I was going to turn office lights off but I forgot"
+   },
+   {
+    "window": "w0763",
+    "kind": "subject",
+    "text": "Dave played that song again all night"
+   },
+   {
+    "window": "w0764",
+    "kind": "to_person",
+    "text": "Remember to check mom's number tonight"
+   },
+   {
+    "window": "w0765",
+    "kind": "subject",
+    "text": "What's the capital of australia again?"
+   },
+   {
+    "window": "w0766",
+    "kind": "to_person",
+    "text": "I need to give myself all available lists after this call"
+   },
+   {
+    "window": "w0767",
+    "kind": "subject",
+    "text": "Turn it down, i can't hear you"
+   }
+  ]
+ },
+ "contrast_embed_past|car": {
+  "false_accepts": 91,
+  "kinds": {
+   "short": 36,
+   "other": 36,
+   "device vocabulary": 11,
+   "question": 8
+  },
+  "by_stream": {
+   "ami": 50,
+   "calls": 37,
+   "lyrics": 4
+  },
+  "examples": [
+   {
+    "window": "w0013",
+    "stream": "ami",
+    "text": "So the first thing I have to do is close this so that I can get to Where is it?"
+   },
+   {
+    "window": "w0073",
+    "stream": "calls",
+    "text": "I've had four companies actually stop mailing me stuff."
+   },
+   {
+    "window": "w0041",
+    "stream": "calls",
+    "text": "Okay cars you, you - maybe this is a fantasy we can to talk about any kind of car"
+   },
+   {
+    "window": "w0040",
+    "stream": "calls",
+    "text": "Hi ."
+   },
+   {
+    "window": "w0139",
+    "stream": "ami",
+    "text": "Alright, okay."
+   },
+   {
+    "window": "w0033",
+    "stream": "ami",
+    "text": "How long is the meeting?"
+   },
+   {
+    "window": "w0061",
+    "stream": "calls",
+    "text": "Hi you want to start first ?"
+   },
+   {
+    "window": "w0189",
+    "stream": "calls",
+    "text": "You can did they give you a number to call?"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0130",
+    "kind": "to_person",
+    "text": "I'll open twitter send message when we get home"
+   },
+   {
+    "window": "w0131",
+    "kind": "subject",
+    "text": "Should we get a taxi to the hospital or just walk?"
+   },
+   {
+    "window": "w0132",
+    "kind": "to_person",
+    "text": "Remember to send an email to jake to tell him thank you tonight"
+   },
+   {
+    "window": "w0133",
+    "kind": "subject",
+    "text": "I'll drop you off at the airport on the way"
+   },
+   {
+    "window": "w0134",
+    "kind": "to_person",
+    "text": "I was going to send an email to this contact but I forgot"
+   },
+   {
+    "window": "w0136",
+    "kind": "to_person",
+    "text": "I need to tell myself about the cheapest flight fares to nj today after this call"
+   },
+   {
+    "window": "w0138",
+    "kind": "to_person",
+    "text": "I need to create an email for my co worker with my recently saved documents after this call"
+   },
+   {
+    "window": "w0140",
+    "kind": "to_person",
+    "text": "I'll add this person's email when we get home"
+   }
+  ]
+ },
+ "contrast_embed_past|kitchen": {
+  "false_accepts": 91,
+  "kinds": {
+   "other": 46,
+   "short": 24,
+   "device vocabulary": 13,
+   "question": 7,
+   "request shape": 1
+  },
+  "by_stream": {
+   "ami": 34,
+   "calls": 49,
+   "lyrics": 6,
+   "monologue": 2
+  },
+  "examples": [
+   {
+    "window": "w0370",
+    "stream": "calls",
+    "text": "and there is all kinds of restaurants and, I had one that was a favorite for a long time and then it changed hands and doubled the prices and then it finally went out of business."
+   },
+   {
+    "window": "w0410",
+    "stream": "calls",
+    "text": "and then I mix up, uh, some cream cheese and a little bit of Amaretta wi-, and some cool whip"
+   },
+   {
+    "window": "w0274",
+    "stream": "calls",
+    "text": "You want to start?"
+   },
+   {
+    "window": "w0260",
+    "stream": "calls",
+    "text": "That's one of my husband's pet peeves. He doesn't understand why somebody would go to a seafood place and eat either chicken or steak, you know."
+   },
+   {
+    "window": "w0374",
+    "stream": "calls",
+    "text": "And I still have this slice"
+   },
+   {
+    "window": "w0399",
+    "stream": "calls",
+    "text": "Sure."
+   },
+   {
+    "window": "w0386",
+    "stream": "calls",
+    "text": "Okay now you can tell me what you do."
+   },
+   {
+    "window": "w0903",
+    "stream": "calls",
+    "text": "Are we tonight?"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0340",
+    "kind": "to_person",
+    "text": "Remember to look for apple pie recipe tonight"
+   },
+   {
+    "window": "w0341",
+    "kind": "subject",
+    "text": "What are we making for dinner tonight?"
+   },
+   {
+    "window": "w0342",
+    "kind": "to_person",
+    "text": "I need to tell myself the recipe of after this call"
+   },
+   {
+    "window": "w0343",
+    "kind": "subject",
+    "text": "We're out of coffee again"
+   },
+   {
+    "window": "w0344",
+    "kind": "to_person",
+    "text": "I need to start the coffee machine at three after this call"
+   },
+   {
+    "window": "w0345",
+    "kind": "subject",
+    "text": "The coffee machine is making that noise again"
+   },
+   {
+    "window": "w0346",
+    "kind": "to_person",
+    "text": "Remember to set my coffee machine tonight"
+   },
+   {
+    "window": "w0347",
+    "kind": "subject",
+    "text": "Mum has the recipe for the bread"
+   }
+  ]
+ },
+ "contrast_embed_past|watch": {
+  "false_accepts": 88,
+  "kinds": {
+   "other": 36,
+   "device vocabulary": 27,
+   "short": 19,
+   "question": 6
+  },
+  "by_stream": {
+   "ami": 49,
+   "calls": 35,
+   "lyrics": 1,
+   "monologue": 3
+  },
+  "examples": [
+   {
+    "window": "w0936",
+    "stream": "ami",
+    "text": "I don't know, what time did we start this meeting, I'm not sure."
+   },
+   {
+    "window": "w0579",
+    "stream": "ami",
+    "text": "Uh fourth meeting."
+   },
+   {
+    "window": "w0557",
+    "stream": "calls",
+    "text": "And I guess, the suggestion is that we maybe talk about a menu for a dinner party, if we wanted to do something like that or"
+   },
+   {
+    "window": "w0952",
+    "stream": "ami",
+    "text": "Six."
+   },
+   {
+    "window": "w0924",
+    "stream": "ami",
+    "text": "So I think it's going to go to Mike."
+   },
+   {
+    "window": "w0455",
+    "stream": "ami",
+    "text": "I think we should definitely go ahead with the alarm system idea that you had."
+   },
+   {
+    "window": "w0459",
+    "stream": "ami",
+    "text": "Warning, finish meeting now."
+   },
+   {
+    "window": "w0420",
+    "stream": "ami",
+    "text": "Twenty four."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0550",
+    "kind": "to_person",
+    "text": "I was going to put this event in a repeating pattern on my calendar but I forgot"
+   },
+   {
+    "window": "w0551",
+    "kind": "subject",
+    "text": "Priya's birthday is next friday"
+   },
+   {
+    "window": "w0552",
+    "kind": "to_person",
+    "text": "I was going to set alarm at nine am on next sunday but I forgot"
+   },
+   {
+    "window": "w0553",
+    "kind": "subject",
+    "text": "What time is your alarm set for?"
+   },
+   {
+    "window": "w0554",
+    "kind": "to_person",
+    "text": "I need to remind myself two days before my wife birthday after this call"
+   },
+   {
+    "window": "w0555",
+    "kind": "subject",
+    "text": "I forgot about the meeting at six"
+   },
+   {
+    "window": "w0556",
+    "kind": "to_person",
+    "text": "I'll delete event from calendar when we get home"
+   },
+   {
+    "window": "w0557",
+    "kind": "subject",
+    "text": "My alarm didn't go off this morning"
+   }
+  ]
+ },
+ "contrast_embed_past|general": {
+  "false_accepts": 95,
+  "kinds": {
+   "other": 38,
+   "short": 29,
+   "device vocabulary": 18,
+   "question": 9,
+   "request shape": 1
+  },
+  "by_stream": {
+   "ami": 47,
+   "calls": 45,
+   "lyrics": 2,
+   "monologue": 1
+  },
+  "examples": [
+   {
+    "window": "w0831",
+    "stream": "calls",
+    "text": "Hello."
+   },
+   {
+    "window": "w0797",
+    "stream": "ami",
+    "text": "Where is it?"
+   },
+   {
+    "window": "w0642",
+    "stream": "ami",
+    "text": "That's for the volume."
+   },
+   {
+    "window": "w0994",
+    "stream": "ami",
+    "text": "I have no more email."
+   },
+   {
+    "window": "w0697",
+    "stream": "calls",
+    "text": "What, what, - how do you get your main source of current events?"
+   },
+   {
+    "window": "w0633",
+    "stream": "ami",
+    "text": "Calculator."
+   },
+   {
+    "window": "w0785",
+    "stream": "ami",
+    "text": "Which is you."
+   },
+   {
+    "window": "w0686",
+    "stream": "calls",
+    "text": "Good morning ."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0761",
+    "kind": "subject",
+    "text": "Who sings this one?"
+   },
+   {
+    "window": "w0762",
+    "kind": "to_person",
+    "text": "I was going to turn office lights off but I forgot"
+   },
+   {
+    "window": "w0764",
+    "kind": "to_person",
+    "text": "Remember to check mom's number tonight"
+   },
+   {
+    "window": "w0765",
+    "kind": "subject",
+    "text": "What's the capital of australia again?"
+   },
+   {
+    "window": "w0766",
+    "kind": "to_person",
+    "text": "I need to give myself all available lists after this call"
+   },
+   {
+    "window": "w0767",
+    "kind": "subject",
+    "text": "Turn it down, i can't hear you"
+   },
+   {
+    "window": "w0769",
+    "kind": "subject",
+    "text": "Can you put it on the shopping list?"
+   },
+   {
+    "window": "w0770",
+    "kind": "to_person",
+    "text": "Remember to turn off sound tonight"
+   }
+  ]
+ },
+ "contrast_ngram|car": {
+  "false_accepts": 91,
+  "kinds": {
+   "short": 59,
+   "other": 22,
+   "question": 7,
+   "device vocabulary": 2,
+   "request shape": 1
+  },
+  "by_stream": {
+   "ami": 48,
+   "calls": 30,
+   "lyrics": 5,
+   "monologue": 8
+  },
+  "examples": [
+   {
+    "window": "w0050",
+    "stream": "calls",
+    "text": "just stinks."
+   },
+   {
+    "window": "w0033",
+    "stream": "ami",
+    "text": "How long is the meeting?"
+   },
+   {
+    "window": "w0878",
+    "stream": "ami",
+    "text": "Hey Zoe."
+   },
+   {
+    "window": "w0031",
+    "stream": "ami",
+    "text": "Details, details."
+   },
+   {
+    "window": "w0054",
+    "stream": "calls",
+    "text": "through. -"
+   },
+   {
+    "window": "w0138",
+    "stream": "ami",
+    "text": "At twenty five."
+   },
+   {
+    "window": "w0195",
+    "stream": "ami",
+    "text": "Hey."
+   },
+   {
+    "window": "w0876",
+    "stream": "ami",
+    "text": "Contact."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0130",
+    "kind": "to_person",
+    "text": "I'll open twitter send message when we get home"
+   },
+   {
+    "window": "w0132",
+    "kind": "to_person",
+    "text": "Remember to send an email to jake to tell him thank you tonight"
+   },
+   {
+    "window": "w0134",
+    "kind": "to_person",
+    "text": "I was going to send an email to this contact but I forgot"
+   },
+   {
+    "window": "w0136",
+    "kind": "to_person",
+    "text": "I need to tell myself about the cheapest flight fares to nj today after this call"
+   },
+   {
+    "window": "w0137",
+    "kind": "subject",
+    "text": "Can you check the map, i don't know where the hospital is"
+   },
+   {
+    "window": "w0138",
+    "kind": "to_person",
+    "text": "I need to create an email for my co worker with my recently saved documents after this call"
+   },
+   {
+    "window": "w0140",
+    "kind": "to_person",
+    "text": "I'll add this person's email when we get home"
+   },
+   {
+    "window": "w0142",
+    "kind": "to_person",
+    "text": "I'll email to new contact when we get home"
+   }
+  ]
+ },
+ "contrast_ngram|kitchen": {
+  "false_accepts": 91,
+  "kinds": {
+   "short": 61,
+   "other": 23,
+   "question": 4,
+   "device vocabulary": 3
+  },
+  "by_stream": {
+   "ami": 44,
+   "calls": 31,
+   "lyrics": 5,
+   "monologue": 11
+  },
+  "examples": [
+   {
+    "window": "w0904",
+    "stream": "ami",
+    "text": "Potato."
+   },
+   {
+    "window": "w0250",
+    "stream": "calls",
+    "text": "express?"
+   },
+   {
+    "window": "w0366",
+    "stream": "calls",
+    "text": "Brick"
+   },
+   {
+    "window": "w0279",
+    "stream": "calls",
+    "text": "Hi."
+   },
+   {
+    "window": "w0369",
+    "stream": "ami",
+    "text": "Hey."
+   },
+   {
+    "window": "w0891",
+    "stream": "calls",
+    "text": "What"
+   },
+   {
+    "window": "w0232",
+    "stream": "ami",
+    "text": "What?"
+   },
+   {
+    "window": "w0215",
+    "stream": "ami",
+    "text": "What?"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0340",
+    "kind": "to_person",
+    "text": "Remember to look for apple pie recipe tonight"
+   },
+   {
+    "window": "w0341",
+    "kind": "subject",
+    "text": "What are we making for dinner tonight?"
+   },
+   {
+    "window": "w0342",
+    "kind": "to_person",
+    "text": "I need to tell myself the recipe of after this call"
+   },
+   {
+    "window": "w0344",
+    "kind": "to_person",
+    "text": "I need to start the coffee machine at three after this call"
+   },
+   {
+    "window": "w0345",
+    "kind": "subject",
+    "text": "The coffee machine is making that noise again"
+   },
+   {
+    "window": "w0346",
+    "kind": "to_person",
+    "text": "Remember to set my coffee machine tonight"
+   },
+   {
+    "window": "w0347",
+    "kind": "subject",
+    "text": "Mum has the recipe for the bread"
+   },
+   {
+    "window": "w0348",
+    "kind": "to_person",
+    "text": "I need to open the folder app after this call"
+   }
+  ]
+ },
+ "contrast_ngram|watch": {
+  "false_accepts": 88,
+  "kinds": {
+   "short": 52,
+   "other": 22,
+   "question": 11,
+   "device vocabulary": 3
+  },
+  "by_stream": {
+   "ami": 59,
+   "calls": 19,
+   "lyrics": 3,
+   "monologue": 7
+  },
+  "examples": [
+   {
+    "window": "w0475",
+    "stream": "calls",
+    "text": "Ri-, -"
+   },
+   {
+    "window": "w0954",
+    "stream": "ami",
+    "text": "Input."
+   },
+   {
+    "window": "w0480",
+    "stream": "calls",
+    "text": "Yo, Adrian >."
+   },
+   {
+    "window": "w0584",
+    "stream": "calls",
+    "text": "Completely."
+   },
+   {
+    "window": "w0598",
+    "stream": "ami",
+    "text": "Fashion update?"
+   },
+   {
+    "window": "w0440",
+    "stream": "ami",
+    "text": "Three, three, six, eight, eleven."
+   },
+   {
+    "window": "w0442",
+    "stream": "ami",
+    "text": "Hey hey."
+   },
+   {
+    "window": "w0445",
+    "stream": "ami",
+    "text": "Save."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0551",
+    "kind": "subject",
+    "text": "Priya's birthday is next friday"
+   },
+   {
+    "window": "w0552",
+    "kind": "to_person",
+    "text": "I was going to set alarm at nine am on next sunday but I forgot"
+   },
+   {
+    "window": "w0553",
+    "kind": "subject",
+    "text": "What time is your alarm set for?"
+   },
+   {
+    "window": "w0554",
+    "kind": "to_person",
+    "text": "I need to remind myself two days before my wife birthday after this call"
+   },
+   {
+    "window": "w0555",
+    "kind": "subject",
+    "text": "I forgot about the meeting at six"
+   },
+   {
+    "window": "w0556",
+    "kind": "to_person",
+    "text": "I'll delete event from calendar when we get home"
+   },
+   {
+    "window": "w0557",
+    "kind": "subject",
+    "text": "My alarm didn't go off this morning"
+   },
+   {
+    "window": "w0558",
+    "kind": "to_person",
+    "text": "Dave, can you show me my meeting for the next month for me?"
+   }
+  ]
+ },
+ "contrast_ngram|general": {
+  "false_accepts": 95,
+  "kinds": {
+   "short": 61,
+   "other": 18,
+   "question": 10,
+   "device vocabulary": 4,
+   "request shape": 2
+  },
+  "by_stream": {
+   "ami": 61,
+   "calls": 32,
+   "monologue": 2
+  },
+  "examples": [
+   {
+    "window": "w0633",
+    "stream": "ami",
+    "text": "Calculator."
+   },
+   {
+    "window": "w0772",
+    "stream": "ami",
+    "text": "Yo."
+   },
+   {
+    "window": "w0654",
+    "stream": "ami",
+    "text": "It's really hard to figure out right now."
+   },
+   {
+    "window": "w0974",
+    "stream": "ami",
+    "text": "The laptop?"
+   },
+   {
+    "window": "w0829",
+    "stream": "ami",
+    "text": "How is that?"
+   },
+   {
+    "window": "w0979",
+    "stream": "calls",
+    "text": "How old are they?"
+   },
+   {
+    "window": "w0993",
+    "stream": "calls",
+    "text": "if it's possible."
+   },
+   {
+    "window": "w0702",
+    "stream": "calls",
+    "text": "Good night."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0760",
+    "kind": "to_person",
+    "text": "Alex, can you show geographic details of pyramids for me?"
+   },
+   {
+    "window": "w0761",
+    "kind": "subject",
+    "text": "Who sings this one?"
+   },
+   {
+    "window": "w0763",
+    "kind": "subject",
+    "text": "Dave played that song again all night"
+   },
+   {
+    "window": "w0764",
+    "kind": "to_person",
+    "text": "Remember to check mom's number tonight"
+   },
+   {
+    "window": "w0765",
+    "kind": "subject",
+    "text": "What's the capital of australia again?"
+   },
+   {
+    "window": "w0767",
+    "kind": "subject",
+    "text": "Turn it down, i can't hear you"
+   },
+   {
+    "window": "w0768",
+    "kind": "to_person",
+    "text": "Remember to remind me of how many lists i have tonight"
+   },
+   {
+    "window": "w0769",
+    "kind": "subject",
+    "text": "Can you put it on the shopping list?"
+   }
+  ]
+ },
+ "contrast_ngram_past|car": {
+  "false_accepts": 91,
+  "kinds": {
+   "short": 58,
+   "other": 24,
+   "question": 7,
+   "device vocabulary": 2
+  },
+  "by_stream": {
+   "ami": 52,
+   "calls": 25,
+   "lyrics": 6,
+   "monologue": 8
+  },
+  "examples": [
+   {
+    "window": "w0050",
+    "stream": "calls",
+    "text": "just stinks."
+   },
+   {
+    "window": "w0033",
+    "stream": "ami",
+    "text": "How long is the meeting?"
+   },
+   {
+    "window": "w0878",
+    "stream": "ami",
+    "text": "Hey Zoe."
+   },
+   {
+    "window": "w0040",
+    "stream": "calls",
+    "text": "Hi ."
+   },
+   {
+    "window": "w0184",
+    "stream": "calls",
+    "text": "Hi."
+   },
+   {
+    "window": "w0031",
+    "stream": "ami",
+    "text": "Details, details."
+   },
+   {
+    "window": "w0054",
+    "stream": "calls",
+    "text": "through. -"
+   },
+   {
+    "window": "w0167",
+    "stream": "ami",
+    "text": "In which folder?"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0130",
+    "kind": "to_person",
+    "text": "I'll open twitter send message when we get home"
+   },
+   {
+    "window": "w0132",
+    "kind": "to_person",
+    "text": "Remember to send an email to jake to tell him thank you tonight"
+   },
+   {
+    "window": "w0134",
+    "kind": "to_person",
+    "text": "I was going to send an email to this contact but I forgot"
+   },
+   {
+    "window": "w0136",
+    "kind": "to_person",
+    "text": "I need to tell myself about the cheapest flight fares to nj today after this call"
+   },
+   {
+    "window": "w0137",
+    "kind": "subject",
+    "text": "Can you check the map, i don't know where the hospital is"
+   },
+   {
+    "window": "w0138",
+    "kind": "to_person",
+    "text": "I need to create an email for my co worker with my recently saved documents after this call"
+   },
+   {
+    "window": "w0140",
+    "kind": "to_person",
+    "text": "I'll add this person's email when we get home"
+   },
+   {
+    "window": "w0142",
+    "kind": "to_person",
+    "text": "I'll email to new contact when we get home"
+   }
+  ]
+ },
+ "contrast_ngram_past|kitchen": {
+  "false_accepts": 91,
+  "kinds": {
+   "short": 69,
+   "other": 13,
+   "question": 6,
+   "device vocabulary": 3
+  },
+  "by_stream": {
+   "ami": 54,
+   "calls": 26,
+   "lyrics": 3,
+   "monologue": 8
+  },
+  "examples": [
+   {
+    "window": "w0372",
+    "stream": "ami",
+    "text": "Google."
+   },
+   {
+    "window": "w0904",
+    "stream": "ami",
+    "text": "Potato."
+   },
+   {
+    "window": "w0250",
+    "stream": "calls",
+    "text": "express?"
+   },
+   {
+    "window": "w0366",
+    "stream": "calls",
+    "text": "Brick"
+   },
+   {
+    "window": "w0279",
+    "stream": "calls",
+    "text": "Hi."
+   },
+   {
+    "window": "w0215",
+    "stream": "ami",
+    "text": "What?"
+   },
+   {
+    "window": "w0369",
+    "stream": "ami",
+    "text": "Hey."
+   },
+   {
+    "window": "w0891",
+    "stream": "calls",
+    "text": "What"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0340",
+    "kind": "to_person",
+    "text": "Remember to look for apple pie recipe tonight"
+   },
+   {
+    "window": "w0341",
+    "kind": "subject",
+    "text": "What are we making for dinner tonight?"
+   },
+   {
+    "window": "w0342",
+    "kind": "to_person",
+    "text": "I need to tell myself the recipe of after this call"
+   },
+   {
+    "window": "w0344",
+    "kind": "to_person",
+    "text": "I need to start the coffee machine at three after this call"
+   },
+   {
+    "window": "w0345",
+    "kind": "subject",
+    "text": "The coffee machine is making that noise again"
+   },
+   {
+    "window": "w0346",
+    "kind": "to_person",
+    "text": "Remember to set my coffee machine tonight"
+   },
+   {
+    "window": "w0347",
+    "kind": "subject",
+    "text": "Mum has the recipe for the bread"
+   },
+   {
+    "window": "w0348",
+    "kind": "to_person",
+    "text": "I need to open the folder app after this call"
+   }
+  ]
+ },
+ "contrast_ngram_past|watch": {
+  "false_accepts": 54,
+  "kinds": {
+   "short": 30,
+   "other": 13,
+   "question": 7,
+   "device vocabulary": 4
+  },
+  "by_stream": {
+   "ami": 31,
+   "calls": 18,
+   "lyrics": 2,
+   "monologue": 3
+  },
+  "examples": [
+   {
+    "window": "w0475",
+    "stream": "calls",
+    "text": "Ri-, -"
+   },
+   {
+    "window": "w0954",
+    "stream": "ami",
+    "text": "Input."
+   },
+   {
+    "window": "w0480",
+    "stream": "calls",
+    "text": "Yo, Adrian >."
+   },
+   {
+    "window": "w0447",
+    "stream": "ami",
+    "text": "So I wanna eat my lunch today."
+   },
+   {
+    "window": "w0584",
+    "stream": "calls",
+    "text": "Completely."
+   },
+   {
+    "window": "w0598",
+    "stream": "ami",
+    "text": "Fashion update?"
+   },
+   {
+    "window": "w0440",
+    "stream": "ami",
+    "text": "Three, three, six, eight, eleven."
+   },
+   {
+    "window": "w0442",
+    "stream": "ami",
+    "text": "Hey hey."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0551",
+    "kind": "subject",
+    "text": "Priya's birthday is next friday"
+   },
+   {
+    "window": "w0552",
+    "kind": "to_person",
+    "text": "I was going to set alarm at nine am on next sunday but I forgot"
+   },
+   {
+    "window": "w0553",
+    "kind": "subject",
+    "text": "What time is your alarm set for?"
+   },
+   {
+    "window": "w0554",
+    "kind": "to_person",
+    "text": "I need to remind myself two days before my wife birthday after this call"
+   },
+   {
+    "window": "w0556",
+    "kind": "to_person",
+    "text": "I'll delete event from calendar when we get home"
+   },
+   {
+    "window": "w0557",
+    "kind": "subject",
+    "text": "My alarm didn't go off this morning"
+   },
+   {
+    "window": "w0558",
+    "kind": "to_person",
+    "text": "Dave, can you show me my meeting for the next month for me?"
+   },
+   {
+    "window": "w0559",
+    "kind": "subject",
+    "text": "What's the date today, the twentieth?"
+   }
+  ]
+ },
+ "contrast_ngram_past|general": {
+  "false_accepts": 95,
+  "kinds": {
+   "short": 48,
+   "other": 26,
+   "question": 14,
+   "device vocabulary": 6,
+   "request shape": 1
+  },
+  "by_stream": {
+   "ami": 53,
+   "calls": 39,
+   "monologue": 3
+  },
+  "examples": [
+   {
+    "window": "w0633",
+    "stream": "ami",
+    "text": "Calculator."
+   },
+   {
+    "window": "w0773",
+    "stream": "ami",
+    "text": "Banana colour."
+   },
+   {
+    "window": "w0636",
+    "stream": "ami",
+    "text": "Banana?"
+   },
+   {
+    "window": "w0686",
+    "stream": "calls",
+    "text": "Good morning ."
+   },
+   {
+    "window": "w0772",
+    "stream": "ami",
+    "text": "Yo."
+   },
+   {
+    "window": "w0993",
+    "stream": "calls",
+    "text": "if it's possible."
+   },
+   {
+    "window": "w0974",
+    "stream": "ami",
+    "text": "The laptop?"
+   },
+   {
+    "window": "w0654",
+    "stream": "ami",
+    "text": "It's really hard to figure out right now."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0760",
+    "kind": "to_person",
+    "text": "Alex, can you show geographic details of pyramids for me?"
+   },
+   {
+    "window": "w0761",
+    "kind": "subject",
+    "text": "Who sings this one?"
+   },
+   {
+    "window": "w0763",
+    "kind": "subject",
+    "text": "Dave played that song again all night"
+   },
+   {
+    "window": "w0764",
+    "kind": "to_person",
+    "text": "Remember to check mom's number tonight"
+   },
+   {
+    "window": "w0765",
+    "kind": "subject",
+    "text": "What's the capital of australia again?"
+   },
+   {
+    "window": "w0766",
+    "kind": "to_person",
+    "text": "I need to give myself all available lists after this call"
+   },
+   {
+    "window": "w0767",
+    "kind": "subject",
+    "text": "Turn it down, i can't hear you"
+   },
+   {
+    "window": "w0768",
+    "kind": "to_person",
+    "text": "Remember to remind me of how many lists i have tonight"
+   }
+  ]
+ },
+ "keyword|car": {
+  "false_accepts": 16,
+  "kinds": {
+   "device vocabulary": 16
+  },
+  "by_stream": {
+   "ami": 4,
+   "calls": 12
+  },
+  "examples": [
+   {
+    "window": "w0040",
+    "stream": "calls",
+    "text": "Largely from friends and I occasionally will read something like the NEW YORK REVIEW OF BOOKS. You know, someone will write a book about something and then I'll learn all about this thing that was in the news two years earlier."
+   },
+   {
+    "window": "w0008",
+    "stream": "ami",
+    "text": "but uh I I think i i if you if you want to to make uh well a a big jump but uh well you you have to to have a a a device when you could you could Well, not a mouse but uh something that that says more clearly that uh right, left, up, down, well, the to have the ability to to to write something to the navigator, maybe directly, or So, we can think of buttons like in the telephone to send messages or things like that."
+   },
+   {
+    "window": "w0042",
+    "stream": "calls",
+    "text": "Okay why don't you start so you probably have a job you need to get to pretty soon."
+   },
+   {
+    "window": "w0060",
+    "stream": "calls",
+    "text": "I'd rather have some restrictions put on weapons but yet allow hunting rifles, uh, things that people would use for sporting type of, uh, a, activity. Those would be fine but when you get into a, a lot of the more complex weapons, I would say yes we need to put restrictions on them ."
+   },
+   {
+    "window": "w0070",
+    "stream": "calls",
+    "text": "That's right. If I have a problem discipline, you know, I think now, boy, I really need to get out, you know, and apply something, you know and I screw around and don't do it or wait too long or something."
+   },
+   {
+    "window": "w0136",
+    "stream": "calls",
+    "text": "Just the people who don't need credit get the four and a half percent. The rest of the, uh, and me, we have got to pay fourteen and eighteen percent."
+   },
+   {
+    "window": "w0143",
+    "stream": "ami",
+    "text": "Findings oh which were the required materials for the basic internal construction, so all the really simplistic functions that we just discussed, we need rubber for buttons, aluminium for battery y contacts, integrated circuit which consists of a diode, transistor, resonator, resistors, and a capacitator, all those basic things that make a circuit function."
+   },
+   {
+    "window": "w0156",
+    "stream": "calls",
+    "text": "Uh, we've, we've, uh, taken how much we have, you know, write down how much we have coming in each month and then, uh, we've, - at the beginning of the year we sat down and determined how much we could spend. We sat dow-, made up different accounts like, you know we've set a budget for each, you know, household expenses, or food, and clothing and entertainment and then our, our own fun money and just stuff like that and then we write down each, each time we spend something, we write down in a book and at the end of the month we tally it up to see how close we, you know - we, we try to stay within a certain budget so. -"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0130",
+    "kind": "to_person",
+    "text": "I'll open twitter send message when we get home"
+   },
+   {
+    "window": "w0131",
+    "kind": "subject",
+    "text": "Should we get a taxi to the hospital or just walk?"
+   },
+   {
+    "window": "w0134",
+    "kind": "to_person",
+    "text": "I was going to send an email to this contact but I forgot"
+   },
+   {
+    "window": "w0140",
+    "kind": "to_person",
+    "text": "I'll add this person's email when we get home"
+   },
+   {
+    "window": "w0142",
+    "kind": "to_person",
+    "text": "I'll email to new contact when we get home"
+   },
+   {
+    "window": "w0143",
+    "kind": "subject",
+    "text": "Should we get a taxi to the supermarket or just walk?"
+   },
+   {
+    "window": "w0144",
+    "kind": "to_person",
+    "text": "I was going to send a reply to the last email but I forgot"
+   },
+   {
+    "window": "w0148",
+    "kind": "to_person",
+    "text": "I'll find myself a train ticket to boston when we get home"
+   }
+  ]
+ },
+ "keyword|kitchen": {
+  "false_accepts": 37,
+  "kinds": {
+   "device vocabulary": 37
+  },
+  "by_stream": {
+   "ami": 15,
+   "calls": 20,
+   "lyrics": 1,
+   "monologue": 1
+  },
+  "examples": [
+   {
+    "window": "w0346",
+    "stream": "calls",
+    "text": "I want to be there to make sure that, - well, they need guidance and they do need parental guidance"
+   },
+   {
+    "window": "w0410",
+    "stream": "calls",
+    "text": "and strawberries and bananas and whatever fresh fruit you want and you mix that with, um, excuse me, you use cream cheese and a little bit of orange juice and I can't remember what else is in it and you make kind of a glaze"
+   },
+   {
+    "window": "w0215",
+    "stream": "ami",
+    "text": "Yeah, I know, sure it j like it it would not necessary need to be a part of the final thing, but why don't we just provide some means, even if it does it automatically in the beginning as a start-up option, just to ask for a file name."
+   },
+   {
+    "window": "w0227",
+    "stream": "ami",
+    "text": "What it costs and what kind of materials that we can uh choose what we want in it and exactly, I need it."
+   },
+   {
+    "window": "w0232",
+    "stream": "ami",
+    "text": "Um we hadn't finished your It's the sort of thing that we want people to have prominent dis displayed on their um coffee table to say this says something about me."
+   },
+   {
+    "window": "w0237",
+    "stream": "ami",
+    "text": "But it'll need to be calculated at word level though because otherwise there won't be enough occurrences of the terms to make any meaningful sense."
+   },
+   {
+    "window": "w0247",
+    "stream": "ami",
+    "text": "So, we want to go for simple push buttons because it need a simple chip and it's really lesser uh re really less expensive compared to L_C_D_ which are uh which needs advanced chip technology and it's more expensive, since we want to put some other features such as speech recognition we want to reduce uh cost."
+   },
+   {
+    "window": "w0254",
+    "stream": "calls",
+    "text": "But if we do, then I'm going to need to find somebody and our church has a Mother's Day Out program"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0342",
+    "kind": "to_person",
+    "text": "I need to tell myself the recipe of after this call"
+   },
+   {
+    "window": "w0344",
+    "kind": "to_person",
+    "text": "I need to start the coffee machine at three after this call"
+   },
+   {
+    "window": "w0354",
+    "kind": "to_person",
+    "text": "I was going to find a recipe for dinner tonight but I forgot"
+   },
+   {
+    "window": "w0358",
+    "kind": "to_person",
+    "text": "I need to make myself a cup of coffee with salted carmel flavored cream after this call"
+   },
+   {
+    "window": "w0360",
+    "kind": "to_person",
+    "text": "I need to order pizza for delivery after this call"
+   },
+   {
+    "window": "w0364",
+    "kind": "to_person",
+    "text": "Remember to show me a video on cooking fried chicken tonight"
+   },
+   {
+    "window": "w0366",
+    "kind": "to_person",
+    "text": "Alex, can you make an order for noodles one pack make it as takeaway order for me?"
+   },
+   {
+    "window": "w0372",
+    "kind": "to_person",
+    "text": "I was going to start coffee at six am but I forgot"
+   }
+  ]
+ },
+ "keyword|watch": {
+  "false_accepts": 31,
+  "kinds": {
+   "device vocabulary": 31
+  },
+  "by_stream": {
+   "ami": 10,
+   "calls": 19,
+   "lyrics": 2
+  },
+  "examples": [
+   {
+    "window": "w0948",
+    "stream": "ami",
+    "text": "Yeah, and I think like I'll just I'll just kick in full time for N_L_S_S_D_ next week, 'cause there's nothing I have to do then."
+   },
+   {
+    "window": "w0421",
+    "stream": "ami",
+    "text": "Um is there Next meeting in thirty minutes."
+   },
+   {
+    "window": "w0421",
+    "stream": "ami",
+    "text": "And I guess I'll try and write up some minutes of uh this meeting to uh to give it to you for the next meeting."
+   },
+   {
+    "window": "w0444",
+    "stream": "ami",
+    "text": "Uh and the meeting time will be uh forty minutes, so you have to be very quick."
+   },
+   {
+    "window": "w0461",
+    "stream": "calls",
+    "text": "But, but they couldn't leave him alone at all. And they found out what happened when they did leave him alone one time but I won't tell you that, just in case you see the movie."
+   },
+   {
+    "window": "w0466",
+    "stream": "calls",
+    "text": "So that is a different way. And then my other girlfriend just, you know, tears her hair out and goes at it, you know, twenty-four hours a day, watching both kids all the time. And I think there is a point where you just have to get away."
+   },
+   {
+    "window": "w0474",
+    "stream": "calls",
+    "text": "Yeah and then you sa-, you make the bread but you pinch off a portion, or save a portion of it for the next time, or something."
+   },
+   {
+    "window": "w0482",
+    "stream": "calls",
+    "text": "But, uh, next morning, she let me know in no uncertain terms that she wanted to use the bathroom."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0550",
+    "kind": "to_person",
+    "text": "I was going to put this event in a repeating pattern on my calendar but I forgot"
+   },
+   {
+    "window": "w0551",
+    "kind": "subject",
+    "text": "Priya's birthday is next friday"
+   },
+   {
+    "window": "w0552",
+    "kind": "to_person",
+    "text": "I was going to set alarm at nine am on next sunday but I forgot"
+   },
+   {
+    "window": "w0553",
+    "kind": "subject",
+    "text": "What time is your alarm set for?"
+   },
+   {
+    "window": "w0554",
+    "kind": "to_person",
+    "text": "I need to remind myself two days before my wife birthday after this call"
+   },
+   {
+    "window": "w0556",
+    "kind": "to_person",
+    "text": "I'll delete event from calendar when we get home"
+   },
+   {
+    "window": "w0557",
+    "kind": "subject",
+    "text": "My alarm didn't go off this morning"
+   },
+   {
+    "window": "w0558",
+    "kind": "to_person",
+    "text": "Dave, can you show me my meeting for the next month for me?"
+   }
+  ]
+ },
+ "keyword|general": {
+  "false_accepts": 51,
+  "kinds": {
+   "device vocabulary": 51
+  },
+  "by_stream": {
+   "ami": 27,
+   "calls": 20,
+   "lyrics": 4
+  },
+  "examples": [
+   {
+    "window": "w0647",
+    "stream": "ami",
+    "text": "Then you say potentially you can then do other cool stuff like change the lights, I dunno, close the windows, whatever, turn the heating on, and um, I think that's something we may need to have as as at least as an optional extra to to kinda make our product cool, since we say we're putting the fashion in electronics."
+   },
+   {
+    "window": "w0647",
+    "stream": "ami",
+    "text": "Actually I'm not so sure because I'm the you know if I was using a remote control to, say, turn the volume up because I can't hear it very well, I don't really want to you know drown out what people are saying by talking you know when I'm when I'm instead of pressing up on on a remote control."
+   },
+   {
+    "window": "w0662",
+    "stream": "ami",
+    "text": "And show the the prototype to consumer research groups, we don't s want somebody to suddenly come to us and tell us that this button is toxic and you know some child will swallow it and then we won't sell any."
+   },
+   {
+    "window": "w0712",
+    "stream": "lyrics",
+    "text": "Sing unto him a new song; play skilfully with a loud noise."
+   },
+   {
+    "window": "w0828",
+    "stream": "ami",
+    "text": "If we want something new, we need to move away from what we already have and um just go creative."
+   },
+   {
+    "window": "w0630",
+    "stream": "ami",
+    "text": "I it will have voice recognition um uh if if that means uh if that means we can't afford buttons but I mean b b second question, do we need the five buttons for channel change, up down, volume up down and on off, just as a a backup or just so that people can uh j j just sit there pressing buttons?"
+   },
+   {
+    "window": "w0636",
+    "stream": "ami",
+    "text": "If you want the advanced chip it obviously costs more, but it that's what you need if you want the L_C_D_ display."
+   },
+   {
+    "window": "w0641",
+    "stream": "ami",
+    "text": "So, starting off with the um last the last one, oh I don't have it here um, but we talked about energy, we're gonna use a kinetic battery um, we want to use a simple chip, because we're not gonna need a a shuffle um, we're gonna need a scroll um, we're choosing a latex case w in fruity colours that's curved and um we're using push buttons uh with a supplement of an on-screen menu."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0762",
+    "kind": "to_person",
+    "text": "I was going to turn office lights off but I forgot"
+   },
+   {
+    "window": "w0785",
+    "kind": "subject",
+    "text": "I asked the speaker for the weather and it played music instead"
+   },
+   {
+    "window": "w0786",
+    "kind": "to_person",
+    "text": "Remember to show weather tonight"
+   },
+   {
+    "window": "w0798",
+    "kind": "to_person",
+    "text": "I need to turn off the sounds after this call"
+   },
+   {
+    "window": "w0800",
+    "kind": "to_person",
+    "text": "I need to check for myself new emails received from sara after this call"
+   },
+   {
+    "window": "w0801",
+    "kind": "subject",
+    "text": "I asked the speaker for the weather and it played music instead"
+   },
+   {
+    "window": "w0814",
+    "kind": "to_person",
+    "text": "Priya, can you add new item to list for me?"
+   },
+   {
+    "window": "w0821",
+    "kind": "subject",
+    "text": "I asked the speaker for the weather and it played music instead"
+   }
+  ]
+ },
+ "shape_embed|car": {
+  "false_accepts": 91,
+  "kinds": {
+   "other": 55,
+   "device vocabulary": 20,
+   "question": 9,
+   "short": 7
+  },
+  "by_stream": {
+   "ami": 41,
+   "calls": 46,
+   "lyrics": 3,
+   "monologue": 1
+  },
+  "examples": [
+   {
+    "window": "w0167",
+    "stream": "ami",
+    "text": "Uh this is this email."
+   },
+   {
+    "window": "w0180",
+    "stream": "calls",
+    "text": "Yeah that's true the traffic. -"
+   },
+   {
+    "window": "w0876",
+    "stream": "ami",
+    "text": "Contact."
+   },
+   {
+    "window": "w0167",
+    "stream": "ami",
+    "text": "You send it?"
+   },
+   {
+    "window": "w0189",
+    "stream": "calls",
+    "text": "You can did they give you a number to call?"
+   },
+   {
+    "window": "w0878",
+    "stream": "ami",
+    "text": "Do we need another meeting this week?"
+   },
+   {
+    "window": "w0007",
+    "stream": "ami",
+    "text": "We do the meeting."
+   },
+   {
+    "window": "w0165",
+    "stream": "calls",
+    "text": "barring traffic so, it's, um, it's, it's, you know, it's a heck of a drive. We are substantially north of New York enough that, uh"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0130",
+    "kind": "to_person",
+    "text": "I'll open twitter send message when we get home"
+   },
+   {
+    "window": "w0131",
+    "kind": "subject",
+    "text": "Should we get a taxi to the hospital or just walk?"
+   },
+   {
+    "window": "w0132",
+    "kind": "to_person",
+    "text": "Remember to send an email to jake to tell him thank you tonight"
+   },
+   {
+    "window": "w0133",
+    "kind": "subject",
+    "text": "I'll drop you off at the airport on the way"
+   },
+   {
+    "window": "w0134",
+    "kind": "to_person",
+    "text": "I was going to send an email to this contact but I forgot"
+   },
+   {
+    "window": "w0136",
+    "kind": "to_person",
+    "text": "I need to tell myself about the cheapest flight fares to nj today after this call"
+   },
+   {
+    "window": "w0137",
+    "kind": "subject",
+    "text": "Can you check the map, i don't know where the hospital is"
+   },
+   {
+    "window": "w0138",
+    "kind": "to_person",
+    "text": "I need to create an email for my co worker with my recently saved documents after this call"
+   }
+  ]
+ },
+ "shape_embed|kitchen": {
+  "false_accepts": 91,
+  "kinds": {
+   "other": 43,
+   "device vocabulary": 38,
+   "short": 5,
+   "question": 5
+  },
+  "by_stream": {
+   "ami": 20,
+   "calls": 65,
+   "lyrics": 5,
+   "monologue": 1
+  },
+  "examples": [
+   {
+    "window": "w0410",
+    "stream": "calls",
+    "text": "And you take a, uh, sugar cookie, uh, recipe"
+   },
+   {
+    "window": "w0367",
+    "stream": "calls",
+    "text": "and the THREE HUNDRED SIXTY-FIVE WAYS TO COOK PASTA"
+   },
+   {
+    "window": "w0370",
+    "stream": "calls",
+    "text": "Well, we have all kinds of fast foods everywhere around"
+   },
+   {
+    "window": "w0367",
+    "stream": "calls",
+    "text": "Well, the ones that I've been, I've been wanting to get, um, - I guess you've seen the THREE HUNDRED SIXTY-FIVE WAYS TO COOK CHICKEN"
+   },
+   {
+    "window": "w0367",
+    "stream": "calls",
+    "text": "where did you get this cook book?"
+   },
+   {
+    "window": "w0893",
+    "stream": "calls",
+    "text": "But it's a real good meal because you have squash and broccoli and, uh, carrots and celery and green peppers and, um, oh, gee, mushrooms."
+   },
+   {
+    "window": "w0380",
+    "stream": "ami",
+    "text": "Oh, I'm getting hungry."
+   },
+   {
+    "window": "w0370",
+    "stream": "calls",
+    "text": "and there is all kinds of restaurants and, I had one that was a favorite for a long time and then it changed hands and doubled the prices and then it finally went out of business."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0340",
+    "kind": "to_person",
+    "text": "Remember to look for apple pie recipe tonight"
+   },
+   {
+    "window": "w0341",
+    "kind": "subject",
+    "text": "What are we making for dinner tonight?"
+   },
+   {
+    "window": "w0342",
+    "kind": "to_person",
+    "text": "I need to tell myself the recipe of after this call"
+   },
+   {
+    "window": "w0343",
+    "kind": "subject",
+    "text": "We're out of coffee again"
+   },
+   {
+    "window": "w0344",
+    "kind": "to_person",
+    "text": "I need to start the coffee machine at three after this call"
+   },
+   {
+    "window": "w0345",
+    "kind": "subject",
+    "text": "The coffee machine is making that noise again"
+   },
+   {
+    "window": "w0346",
+    "kind": "to_person",
+    "text": "Remember to set my coffee machine tonight"
+   },
+   {
+    "window": "w0347",
+    "kind": "subject",
+    "text": "Mum has the recipe for the bread"
+   }
+  ]
+ },
+ "shape_embed|watch": {
+  "false_accepts": 88,
+  "kinds": {
+   "device vocabulary": 38,
+   "other": 32,
+   "short": 12,
+   "question": 6
+  },
+  "by_stream": {
+   "ami": 62,
+   "calls": 24,
+   "lyrics": 1,
+   "monologue": 1
+  },
+  "examples": [
+   {
+    "window": "w0936",
+    "stream": "ami",
+    "text": "I don't know, what time did we start this meeting, I'm not sure."
+   },
+   {
+    "window": "w0459",
+    "stream": "ami",
+    "text": "Warning, finish meeting now."
+   },
+   {
+    "window": "w0447",
+    "stream": "ami",
+    "text": "So I wanna eat my lunch today."
+   },
+   {
+    "window": "w0554",
+    "stream": "ami",
+    "text": "Hereby the meeting is finished."
+   },
+   {
+    "window": "w0421",
+    "stream": "ami",
+    "text": "Um is there Next meeting in thirty minutes."
+   },
+   {
+    "window": "w0420",
+    "stream": "ami",
+    "text": "Twenty four."
+   },
+   {
+    "window": "w0554",
+    "stream": "ami",
+    "text": "Finish meeting now."
+   },
+   {
+    "window": "w0587",
+    "stream": "ami",
+    "text": "You know, this is about twenty five minutes, this meeting."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0550",
+    "kind": "to_person",
+    "text": "I was going to put this event in a repeating pattern on my calendar but I forgot"
+   },
+   {
+    "window": "w0552",
+    "kind": "to_person",
+    "text": "I was going to set alarm at nine am on next sunday but I forgot"
+   },
+   {
+    "window": "w0553",
+    "kind": "subject",
+    "text": "What time is your alarm set for?"
+   },
+   {
+    "window": "w0554",
+    "kind": "to_person",
+    "text": "I need to remind myself two days before my wife birthday after this call"
+   },
+   {
+    "window": "w0555",
+    "kind": "subject",
+    "text": "I forgot about the meeting at six"
+   },
+   {
+    "window": "w0556",
+    "kind": "to_person",
+    "text": "I'll delete event from calendar when we get home"
+   },
+   {
+    "window": "w0557",
+    "kind": "subject",
+    "text": "My alarm didn't go off this morning"
+   },
+   {
+    "window": "w0558",
+    "kind": "to_person",
+    "text": "Dave, can you show me my meeting for the next month for me?"
+   }
+  ]
+ },
+ "shape_embed|general": {
+  "false_accepts": 95,
+  "kinds": {
+   "other": 31,
+   "short": 29,
+   "device vocabulary": 25,
+   "question": 10
+  },
+  "by_stream": {
+   "ami": 57,
+   "calls": 37,
+   "lyrics": 1
+  },
+  "examples": [
+   {
+    "window": "w0686",
+    "stream": "calls",
+    "text": "Good morning ."
+   },
+   {
+    "window": "w0687",
+    "stream": "calls",
+    "text": "Well, what kind of weather are you having right now?"
+   },
+   {
+    "window": "w0702",
+    "stream": "calls",
+    "text": "Good night."
+   },
+   {
+    "window": "w0994",
+    "stream": "ami",
+    "text": "I have no more email."
+   },
+   {
+    "window": "w0834",
+    "stream": "calls",
+    "text": "event."
+   },
+   {
+    "window": "w0651",
+    "stream": "ami",
+    "text": "So I would assume, you know, no more contact with Joe."
+   },
+   {
+    "window": "w0814",
+    "stream": "calls",
+    "text": "Hello."
+   },
+   {
+    "window": "w0831",
+    "stream": "calls",
+    "text": "Hello."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0761",
+    "kind": "subject",
+    "text": "Who sings this one?"
+   },
+   {
+    "window": "w0762",
+    "kind": "to_person",
+    "text": "I was going to turn office lights off but I forgot"
+   },
+   {
+    "window": "w0764",
+    "kind": "to_person",
+    "text": "Remember to check mom's number tonight"
+   },
+   {
+    "window": "w0766",
+    "kind": "to_person",
+    "text": "I need to give myself all available lists after this call"
+   },
+   {
+    "window": "w0767",
+    "kind": "subject",
+    "text": "Turn it down, i can't hear you"
+   },
+   {
+    "window": "w0768",
+    "kind": "to_person",
+    "text": "Remember to remind me of how many lists i have tonight"
+   },
+   {
+    "window": "w0769",
+    "kind": "subject",
+    "text": "Can you put it on the shopping list?"
+   },
+   {
+    "window": "w0770",
+    "kind": "to_person",
+    "text": "Remember to turn off sound tonight"
+   }
+  ]
+ },
+ "shape_ngram|car": {
+  "false_accepts": 91,
+  "kinds": {
+   "short": 53,
+   "other": 29,
+   "question": 7,
+   "device vocabulary": 2
+  },
+  "by_stream": {
+   "ami": 57,
+   "calls": 20,
+   "lyrics": 3,
+   "monologue": 11
+  },
+  "examples": [
+   {
+    "window": "w0050",
+    "stream": "calls",
+    "text": "just stinks."
+   },
+   {
+    "window": "w0167",
+    "stream": "ami",
+    "text": "Uh this is this email."
+   },
+   {
+    "window": "w0033",
+    "stream": "ami",
+    "text": "How long is the meeting?"
+   },
+   {
+    "window": "w0878",
+    "stream": "ami",
+    "text": "Hey Zoe."
+   },
+   {
+    "window": "w0040",
+    "stream": "calls",
+    "text": "Hi ."
+   },
+   {
+    "window": "w0040",
+    "stream": "calls",
+    "text": "Hi."
+   },
+   {
+    "window": "w0184",
+    "stream": "calls",
+    "text": "Hi."
+   },
+   {
+    "window": "w0184",
+    "stream": "calls",
+    "text": "Hi."
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0130",
+    "kind": "to_person",
+    "text": "I'll open twitter send message when we get home"
+   },
+   {
+    "window": "w0132",
+    "kind": "to_person",
+    "text": "Remember to send an email to jake to tell him thank you tonight"
+   },
+   {
+    "window": "w0134",
+    "kind": "to_person",
+    "text": "I was going to send an email to this contact but I forgot"
+   },
+   {
+    "window": "w0136",
+    "kind": "to_person",
+    "text": "I need to tell myself about the cheapest flight fares to nj today after this call"
+   },
+   {
+    "window": "w0137",
+    "kind": "subject",
+    "text": "Can you check the map, i don't know where the hospital is"
+   },
+   {
+    "window": "w0138",
+    "kind": "to_person",
+    "text": "I need to create an email for my co worker with my recently saved documents after this call"
+   },
+   {
+    "window": "w0142",
+    "kind": "to_person",
+    "text": "I'll email to new contact when we get home"
+   },
+   {
+    "window": "w0145",
+    "kind": "subject",
+    "text": "Did you text alex back about tonight?"
+   }
+  ]
+ },
+ "shape_ngram|kitchen": {
+  "false_accepts": 91,
+  "kinds": {
+   "short": 77,
+   "other": 7,
+   "question": 4,
+   "device vocabulary": 3
+  },
+  "by_stream": {
+   "ami": 66,
+   "calls": 19,
+   "lyrics": 3,
+   "monologue": 3
+  },
+  "examples": [
+   {
+    "window": "w0372",
+    "stream": "ami",
+    "text": "Google."
+   },
+   {
+    "window": "w0904",
+    "stream": "ami",
+    "text": "Potato."
+   },
+   {
+    "window": "w0324",
+    "stream": "lyrics",
+    "text": "\"I happy am,"
+   },
+   {
+    "window": "w0367",
+    "stream": "calls",
+    "text": "and the THREE HUNDRED SIXTY-FIVE WAYS TO COOK PASTA"
+   },
+   {
+    "window": "w0250",
+    "stream": "calls",
+    "text": "express?"
+   },
+   {
+    "window": "w0366",
+    "stream": "calls",
+    "text": "Brick"
+   },
+   {
+    "window": "w0279",
+    "stream": "calls",
+    "text": "Hi."
+   },
+   {
+    "window": "w0284",
+    "stream": "calls",
+    "text": "Which, -"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0340",
+    "kind": "to_person",
+    "text": "Remember to look for apple pie recipe tonight"
+   },
+   {
+    "window": "w0342",
+    "kind": "to_person",
+    "text": "I need to tell myself the recipe of after this call"
+   },
+   {
+    "window": "w0344",
+    "kind": "to_person",
+    "text": "I need to start the coffee machine at three after this call"
+   },
+   {
+    "window": "w0345",
+    "kind": "subject",
+    "text": "The coffee machine is making that noise again"
+   },
+   {
+    "window": "w0346",
+    "kind": "to_person",
+    "text": "Remember to set my coffee machine tonight"
+   },
+   {
+    "window": "w0347",
+    "kind": "subject",
+    "text": "Mum has the recipe for the bread"
+   },
+   {
+    "window": "w0348",
+    "kind": "to_person",
+    "text": "I need to open the folder app after this call"
+   },
+   {
+    "window": "w0349",
+    "kind": "subject",
+    "text": "Should we just order takeaway?"
+   }
+  ]
+ },
+ "shape_ngram|watch": {
+  "false_accepts": 83,
+  "kinds": {
+   "short": 37,
+   "other": 28,
+   "question": 11,
+   "device vocabulary": 7
+  },
+  "by_stream": {
+   "ami": 45,
+   "calls": 25,
+   "lyrics": 6,
+   "monologue": 7
+  },
+  "examples": [
+   {
+    "window": "w0475",
+    "stream": "calls",
+    "text": "Ri-, -"
+   },
+   {
+    "window": "w0954",
+    "stream": "ami",
+    "text": "Input."
+   },
+   {
+    "window": "w0447",
+    "stream": "ami",
+    "text": "So I wanna eat my lunch today."
+   },
+   {
+    "window": "w0577",
+    "stream": "calls",
+    "text": "Uh, Orlando, Florida."
+   },
+   {
+    "window": "w0480",
+    "stream": "calls",
+    "text": "Yo, Adrian >."
+   },
+   {
+    "window": "w0584",
+    "stream": "calls",
+    "text": "Completely."
+   },
+   {
+    "window": "w0598",
+    "stream": "ami",
+    "text": "Fashion update?"
+   },
+   {
+    "window": "w0585",
+    "stream": "calls",
+    "text": "Yo-, you know what eucalyptus is? It's, -"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0551",
+    "kind": "subject",
+    "text": "Priya's birthday is next friday"
+   },
+   {
+    "window": "w0552",
+    "kind": "to_person",
+    "text": "I was going to set alarm at nine am on next sunday but I forgot"
+   },
+   {
+    "window": "w0553",
+    "kind": "subject",
+    "text": "What time is your alarm set for?"
+   },
+   {
+    "window": "w0554",
+    "kind": "to_person",
+    "text": "I need to remind myself two days before my wife birthday after this call"
+   },
+   {
+    "window": "w0556",
+    "kind": "to_person",
+    "text": "I'll delete event from calendar when we get home"
+   },
+   {
+    "window": "w0557",
+    "kind": "subject",
+    "text": "My alarm didn't go off this morning"
+   },
+   {
+    "window": "w0558",
+    "kind": "to_person",
+    "text": "Dave, can you show me my meeting for the next month for me?"
+   },
+   {
+    "window": "w0559",
+    "kind": "subject",
+    "text": "What's the date today, the twentieth?"
+   }
+  ]
+ },
+ "shape_ngram|general": {
+  "false_accepts": 95,
+  "kinds": {
+   "short": 41,
+   "other": 28,
+   "question": 17,
+   "device vocabulary": 7,
+   "request shape": 2
+  },
+  "by_stream": {
+   "ami": 51,
+   "calls": 42,
+   "monologue": 2
+  },
+  "examples": [
+   {
+    "window": "w0633",
+    "stream": "ami",
+    "text": "Calculator."
+   },
+   {
+    "window": "w0773",
+    "stream": "ami",
+    "text": "Banana colour."
+   },
+   {
+    "window": "w0663",
+    "stream": "ami",
+    "text": "Three point one."
+   },
+   {
+    "window": "w0636",
+    "stream": "ami",
+    "text": "Banana?"
+   },
+   {
+    "window": "w0686",
+    "stream": "calls",
+    "text": "Good morning ."
+   },
+   {
+    "window": "w0772",
+    "stream": "ami",
+    "text": "Yo."
+   },
+   {
+    "window": "w0654",
+    "stream": "ami",
+    "text": "It's really hard to figure out right now."
+   },
+   {
+    "window": "w0979",
+    "stream": "calls",
+    "text": "How old are they?"
+   }
+  ],
+  "hard_accepted": [
+   {
+    "window": "w0760",
+    "kind": "to_person",
+    "text": "Alex, can you show geographic details of pyramids for me?"
+   },
+   {
+    "window": "w0761",
+    "kind": "subject",
+    "text": "Who sings this one?"
+   },
+   {
+    "window": "w0763",
+    "kind": "subject",
+    "text": "Dave played that song again all night"
+   },
+   {
+    "window": "w0764",
+    "kind": "to_person",
+    "text": "Remember to check mom's number tonight"
+   },
+   {
+    "window": "w0765",
+    "kind": "subject",
+    "text": "What's the capital of australia again?"
+   },
+   {
+    "window": "w0767",
+    "kind": "subject",
+    "text": "Turn it down, i can't hear you"
+   },
+   {
+    "window": "w0768",
+    "kind": "to_person",
+    "text": "Remember to remind me of how many lists i have tonight"
+   },
+   {
+    "window": "w0769",
+    "kind": "subject",
+    "text": "Can you put it on the shopping list?"
+   }
+  ]
+ }
+}

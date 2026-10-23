@@ -1,0 +1,2243 @@
+{
+ "methods": [
+  "contrast_embed",
+  "contrast_embed_past",
+  "contrast_ngram",
+  "contrast_ngram_past",
+  "keyword",
+  "shape_embed",
+  "shape_ngram"
+ ],
+ "contrast_embed": {
+  "car": {
+   "positives": 130,
+   "negative_hours": 9.18,
+   "auc_0_60fa": 0.997,
+   "at_1fa": {
+    "threshold": 0.26187,
+    "hit_pct": 95.4,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 2.3
+     },
+     "calls": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 0.5
+     },
+     "lyrics": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 92.5,
+     "subject": 67.5,
+     "foreign": 2.5
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.13579,
+    "hit_pct": 100.0,
+    "fa_per_hour": 9.91,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 17.0
+     },
+     "calls": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 8.9
+     },
+     "lyrics": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 1.5
+     },
+     "monologue": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 7.4
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 97.5,
+     "subject": 95.0,
+     "foreign": 27.5
+    }
+   }
+  },
+  "kitchen": {
+   "positives": 130,
+   "negative_hours": 9.18,
+   "auc_0_60fa": 0.999,
+   "at_1fa": {
+    "threshold": 0.20595,
+    "hit_pct": 97.7,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 1.3
+     },
+     "calls": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 1.0
+     },
+     "lyrics": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 3.9
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 90.0,
+     "subject": 97.5,
+     "foreign": 5.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.10439,
+    "hit_pct": 100.0,
+    "fa_per_hour": 9.92,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 15.4
+     },
+     "calls": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 9.2
+     },
+     "lyrics": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 0.5
+     },
+     "monologue": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 23.1
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 100.0,
+     "subject": 100.0,
+     "foreign": 22.5
+    }
+   }
+  },
+  "watch": {
+   "positives": 130,
+   "negative_hours": 8.81,
+   "auc_0_60fa": 0.997,
+   "at_1fa": {
+    "threshold": 0.36076,
+    "hit_pct": 95.4,
+    "fa_per_hour": 0.91,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 2.8
+     },
+     "calls": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 0.0
+     },
+     "lyrics": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 95.0,
+     "subject": 87.5,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.20827,
+    "hit_pct": 100.0,
+    "fa_per_hour": 9.99,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 21.7
+     },
+     "calls": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 5.8
+     },
+     "lyrics": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 1.1
+     },
+     "monologue": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 7.3
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 100.0,
+     "subject": 97.5,
+     "foreign": 12.5
+    }
+   }
+  },
+  "general": {
+   "positives": 130,
+   "negative_hours": 9.51,
+   "auc_0_60fa": 0.966,
+   "at_1fa": {
+    "threshold": 0.42563,
+    "hit_pct": 79.2,
+    "fa_per_hour": 0.95,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 72.5,
+      "fa_per_hour": 1.6
+     },
+     "calls": {
+      "hit_pct": 75.0,
+      "fa_per_hour": 1.0
+     },
+     "lyrics": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 70.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 60.0,
+     "subject": 57.5,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.28035,
+    "hit_pct": 93.1,
+    "fa_per_hour": 9.99,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 18.8
+     },
+     "calls": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 7.8
+     },
+     "lyrics": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 0.9
+     },
+     "monologue": {
+      "hit_pct": 80.0,
+      "fa_per_hour": 15.4
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 95.0,
+     "subject": 87.5,
+     "foreign": 15.0
+    }
+   }
+  },
+  "all": {
+   "positives": 520,
+   "negative_hours": 36.67,
+   "auc_0_60fa": 0.989,
+   "at_1fa": {
+    "threshold": 0.35518,
+    "hit_pct": 89.2,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 88.8,
+      "fa_per_hour": 2.4
+     },
+     "calls": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 0.4
+     },
+     "lyrics": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 85.0,
+      "fa_per_hour": 0.9
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 83.1,
+     "subject": 72.5,
+     "foreign": 1.9
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.21636,
+    "hit_pct": 98.5,
+    "fa_per_hour": 9.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 98.8,
+      "fa_per_hour": 18.4
+     },
+     "calls": {
+      "hit_pct": 99.4,
+      "fa_per_hour": 7.8
+     },
+     "lyrics": {
+      "hit_pct": 98.1,
+      "fa_per_hour": 1.3
+     },
+     "monologue": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 11.3
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 95.6,
+     "subject": 92.5,
+     "foreign": 13.1
+    }
+   }
+  }
+ },
+ "contrast_embed_past": {
+  "car": {
+   "positives": 130,
+   "negative_hours": 9.18,
+   "auc_0_60fa": 0.977,
+   "at_1fa": {
+    "threshold": 0.41274,
+    "hit_pct": 87.7,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 1.3
+     },
+     "calls": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 1.3
+     },
+     "lyrics": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 70.0,
+     "subject": 42.5,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.30262,
+    "hit_pct": 96.2,
+    "fa_per_hour": 9.91,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 16.7
+     },
+     "calls": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 9.4
+     },
+     "lyrics": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 2.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 95.0,
+     "subject": 67.5,
+     "foreign": 2.5
+    }
+   }
+  },
+  "kitchen": {
+   "positives": 130,
+   "negative_hours": 9.18,
+   "auc_0_60fa": 0.983,
+   "at_1fa": {
+    "threshold": 0.35732,
+    "hit_pct": 89.2,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 0.0
+     },
+     "calls": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 2.0
+     },
+     "lyrics": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 0.5
+     },
+     "monologue": {
+      "hit_pct": 70.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 85.0,
+     "subject": 82.5,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.26423,
+    "hit_pct": 96.9,
+    "fa_per_hour": 9.92,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 11.1
+     },
+     "calls": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 12.2
+     },
+     "lyrics": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 3.2
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 7.7
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 90.0,
+     "subject": 85.0,
+     "foreign": 5.0
+    }
+   }
+  },
+  "watch": {
+   "positives": 130,
+   "negative_hours": 8.81,
+   "auc_0_60fa": 0.984,
+   "at_1fa": {
+    "threshold": 0.47197,
+    "hit_pct": 86.9,
+    "fa_per_hour": 0.91,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 85.0,
+      "fa_per_hour": 2.5
+     },
+     "calls": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 0.3
+     },
+     "lyrics": {
+      "hit_pct": 85.0,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 80.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 77.5,
+     "subject": 70.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.34751,
+    "hit_pct": 97.7,
+    "fa_per_hour": 9.99,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 17.4
+     },
+     "calls": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 8.8
+     },
+     "lyrics": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 0.6
+     },
+     "monologue": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 11.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 100.0,
+     "subject": 95.0,
+     "foreign": 0.0
+    }
+   }
+  },
+  "general": {
+   "positives": 130,
+   "negative_hours": 9.51,
+   "auc_0_60fa": 0.869,
+   "at_1fa": {
+    "threshold": 0.57102,
+    "hit_pct": 59.2,
+    "fa_per_hour": 0.95,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 60.0,
+      "fa_per_hour": 2.0
+     },
+     "calls": {
+      "hit_pct": 57.5,
+      "fa_per_hour": 0.7
+     },
+     "lyrics": {
+      "hit_pct": 62.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 50.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 12.5,
+     "subject": 25.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.42571,
+    "hit_pct": 80.0,
+    "fa_per_hour": 9.99,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 75.0,
+      "fa_per_hour": 15.5
+     },
+     "calls": {
+      "hit_pct": 75.0,
+      "fa_per_hour": 11.0
+     },
+     "lyrics": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 0.9
+     },
+     "monologue": {
+      "hit_pct": 70.0,
+      "fa_per_hour": 3.9
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 75.0,
+     "subject": 67.5,
+     "foreign": 0.0
+    }
+   }
+  },
+  "all": {
+   "positives": 520,
+   "negative_hours": 36.67,
+   "auc_0_60fa": 0.954,
+   "at_1fa": {
+    "threshold": 0.50264,
+    "hit_pct": 71.7,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 68.8,
+      "fa_per_hour": 1.7
+     },
+     "calls": {
+      "hit_pct": 72.5,
+      "fa_per_hour": 0.9
+     },
+     "lyrics": {
+      "hit_pct": 78.1,
+      "fa_per_hour": 0.1
+     },
+     "monologue": {
+      "hit_pct": 55.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 56.9,
+     "subject": 40.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.35811,
+    "hit_pct": 92.3,
+    "fa_per_hour": 9.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 14.5
+     },
+     "calls": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 10.1
+     },
+     "lyrics": {
+      "hit_pct": 93.8,
+      "fa_per_hour": 3.1
+     },
+     "monologue": {
+      "hit_pct": 85.0,
+      "fa_per_hour": 7.5
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 85.6,
+     "subject": 80.6,
+     "foreign": 2.5
+    }
+   }
+  }
+ },
+ "contrast_ngram": {
+  "car": {
+   "positives": 130,
+   "negative_hours": 9.18,
+   "auc_0_60fa": 0.979,
+   "at_1fa": {
+    "threshold": 0.97904,
+    "hit_pct": 93.1,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 2.0
+     },
+     "calls": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 0.5
+     },
+     "lyrics": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 3.7
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 67.5,
+     "subject": 12.5,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.10814,
+    "hit_pct": 96.9,
+    "fa_per_hour": 9.91,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 16.0
+     },
+     "calls": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 7.6
+     },
+     "lyrics": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 2.5
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 29.5
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 92.5,
+     "subject": 55.0,
+     "foreign": 0.0
+    }
+   }
+  },
+  "kitchen": {
+   "positives": 130,
+   "negative_hours": 9.18,
+   "auc_0_60fa": 0.932,
+   "at_1fa": {
+    "threshold": 1.38305,
+    "hit_pct": 79.2,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 1.6
+     },
+     "calls": {
+      "hit_pct": 80.0,
+      "fa_per_hour": 1.0
+     },
+     "lyrics": {
+      "hit_pct": 75.0,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 60.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 42.5,
+     "subject": 15.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.06842,
+    "hit_pct": 90.8,
+    "fa_per_hour": 9.92,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 14.4
+     },
+     "calls": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 7.7
+     },
+     "lyrics": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 2.7
+     },
+     "monologue": {
+      "hit_pct": 80.0,
+      "fa_per_hour": 42.4
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 82.5,
+     "subject": 60.0,
+     "foreign": 0.0
+    }
+   }
+  },
+  "watch": {
+   "positives": 130,
+   "negative_hours": 8.81,
+   "auc_0_60fa": 0.974,
+   "at_1fa": {
+    "threshold": 1.5158,
+    "hit_pct": 88.5,
+    "fa_per_hour": 0.91,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 1.8
+     },
+     "calls": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 0.8
+     },
+     "lyrics": {
+      "hit_pct": 82.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 67.5,
+     "subject": 42.5,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.21751,
+    "hit_pct": 96.9,
+    "fa_per_hour": 9.99,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 21.0
+     },
+     "calls": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 4.8
+     },
+     "lyrics": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 1.7
+     },
+     "monologue": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 25.6
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 90.0,
+     "subject": 90.0,
+     "foreign": 0.0
+    }
+   }
+  },
+  "general": {
+   "positives": 130,
+   "negative_hours": 9.51,
+   "auc_0_60fa": 0.953,
+   "at_1fa": {
+    "threshold": 1.7268,
+    "hit_pct": 76.2,
+    "fa_per_hour": 0.95,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 85.0,
+      "fa_per_hour": 2.0
+     },
+     "calls": {
+      "hit_pct": 72.5,
+      "fa_per_hour": 0.7
+     },
+     "lyrics": {
+      "hit_pct": 75.0,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 60.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 27.5,
+     "subject": 37.5,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.5932,
+    "hit_pct": 93.1,
+    "fa_per_hour": 9.99,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 20.1
+     },
+     "calls": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 7.8
+     },
+     "lyrics": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 7.7
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 57.5,
+     "subject": 90.0,
+     "foreign": 0.0
+    }
+   }
+  },
+  "all": {
+   "positives": 520,
+   "negative_hours": 36.67,
+   "auc_0_60fa": 0.957,
+   "at_1fa": {
+    "threshold": 1.45866,
+    "hit_pct": 83.8,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 1.6
+     },
+     "calls": {
+      "hit_pct": 81.9,
+      "fa_per_hour": 1.1
+     },
+     "lyrics": {
+      "hit_pct": 80.6,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 80.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 50.6,
+     "subject": 30.6,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.26674,
+    "hit_pct": 94.6,
+    "fa_per_hour": 9.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 18.3
+     },
+     "calls": {
+      "hit_pct": 93.8,
+      "fa_per_hour": 7.3
+     },
+     "lyrics": {
+      "hit_pct": 93.8,
+      "fa_per_hour": 1.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 22.6
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 81.9,
+     "subject": 71.2,
+     "foreign": 0.6
+    }
+   }
+  }
+ },
+ "contrast_ngram_past": {
+  "car": {
+   "positives": 130,
+   "negative_hours": 9.18,
+   "auc_0_60fa": 0.974,
+   "at_1fa": {
+    "threshold": 1.278,
+    "hit_pct": 90.0,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 1.7
+     },
+     "calls": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 1.0
+     },
+     "lyrics": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 60.0,
+     "subject": 0.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.26367,
+    "hit_pct": 96.2,
+    "fa_per_hour": 9.91,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 17.3
+     },
+     "calls": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 6.4
+     },
+     "lyrics": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 3.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 29.5
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 90.0,
+     "subject": 52.5,
+     "foreign": 0.0
+    }
+   }
+  },
+  "kitchen": {
+   "positives": 130,
+   "negative_hours": 9.18,
+   "auc_0_60fa": 0.918,
+   "at_1fa": {
+    "threshold": 1.38305,
+    "hit_pct": 79.2,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 1.3
+     },
+     "calls": {
+      "hit_pct": 80.0,
+      "fa_per_hour": 1.0
+     },
+     "lyrics": {
+      "hit_pct": 75.0,
+      "fa_per_hour": 0.5
+     },
+     "monologue": {
+      "hit_pct": 60.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 42.5,
+     "subject": 15.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.28344,
+    "hit_pct": 90.8,
+    "fa_per_hour": 9.92,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 17.7
+     },
+     "calls": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 6.5
+     },
+     "lyrics": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 1.6
+     },
+     "monologue": {
+      "hit_pct": 80.0,
+      "fa_per_hour": 30.8
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 82.5,
+     "subject": 60.0,
+     "foreign": 0.0
+    }
+   }
+  },
+  "watch": {
+   "positives": 130,
+   "negative_hours": 8.81,
+   "auc_0_60fa": 0.967,
+   "at_1fa": {
+    "threshold": 1.60011,
+    "hit_pct": 88.5,
+    "fa_per_hour": 0.91,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 1.8
+     },
+     "calls": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 0.8
+     },
+     "lyrics": {
+      "hit_pct": 82.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 60.0,
+     "subject": 45.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.47769,
+    "hit_pct": 95.4,
+    "fa_per_hour": 6.13,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 11.0
+     },
+     "calls": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 4.5
+     },
+     "lyrics": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 1.1
+     },
+     "monologue": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 11.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 82.5,
+     "subject": 80.0,
+     "foreign": 0.0
+    }
+   }
+  },
+  "general": {
+   "positives": 130,
+   "negative_hours": 9.51,
+   "auc_0_60fa": 0.945,
+   "at_1fa": {
+    "threshold": 1.99799,
+    "hit_pct": 70.0,
+    "fa_per_hour": 0.95,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 75.0,
+      "fa_per_hour": 2.0
+     },
+     "calls": {
+      "hit_pct": 70.0,
+      "fa_per_hour": 0.7
+     },
+     "lyrics": {
+      "hit_pct": 67.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 60.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 20.0,
+     "subject": 35.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.61631,
+    "hit_pct": 93.1,
+    "fa_per_hour": 9.99,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 17.5
+     },
+     "calls": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 9.6
+     },
+     "lyrics": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 11.6
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 62.5,
+     "subject": 90.0,
+     "foreign": 0.0
+    }
+   }
+  },
+  "all": {
+   "positives": 520,
+   "negative_hours": 36.67,
+   "auc_0_60fa": 0.95,
+   "at_1fa": {
+    "threshold": 1.60011,
+    "hit_pct": 83.1,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 89.4,
+      "fa_per_hour": 1.7
+     },
+     "calls": {
+      "hit_pct": 80.6,
+      "fa_per_hour": 1.0
+     },
+     "lyrics": {
+      "hit_pct": 80.6,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 77.5,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 43.8,
+     "subject": 28.7,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.47769,
+    "hit_pct": 93.5,
+    "fa_per_hour": 9.49,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 96.2,
+      "fa_per_hour": 18.1
+     },
+     "calls": {
+      "hit_pct": 93.8,
+      "fa_per_hour": 6.8
+     },
+     "lyrics": {
+      "hit_pct": 91.9,
+      "fa_per_hour": 1.0
+     },
+     "monologue": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 16.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 76.2,
+     "subject": 63.1,
+     "foreign": 0.0
+    }
+   }
+  }
+ },
+ "keyword": {
+  "car": {
+   "positives": 130,
+   "negative_hours": 9.18,
+   "auc_0_60fa": 0.607,
+   "at_1fa": {
+    "threshold": 3.0,
+    "hit_pct": 9.2,
+    "fa_per_hour": 0.11,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 7.5,
+      "fa_per_hour": 0.0
+     },
+     "calls": {
+      "hit_pct": 15.0,
+      "fa_per_hour": 0.3
+     },
+     "lyrics": {
+      "hit_pct": 5.0,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 10.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 27.5,
+     "subject": 0.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 2.0,
+    "hit_pct": 31.5,
+    "fa_per_hour": 1.74,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 30.0,
+      "fa_per_hour": 1.3
+     },
+     "calls": {
+      "hit_pct": 42.5,
+      "fa_per_hour": 3.1
+     },
+     "lyrics": {
+      "hit_pct": 22.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 30.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 62.5,
+     "subject": 10.0,
+     "foreign": 2.5
+    }
+   }
+  },
+  "kitchen": {
+   "positives": 130,
+   "negative_hours": 9.18,
+   "auc_0_60fa": 0.597,
+   "at_1fa": {
+    "threshold": 3.0,
+    "hit_pct": 8.5,
+    "fa_per_hour": 0.22,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 7.5,
+      "fa_per_hour": 0.0
+     },
+     "calls": {
+      "hit_pct": 12.5,
+      "fa_per_hour": 0.5
+     },
+     "lyrics": {
+      "hit_pct": 7.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 0.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 20.0,
+     "subject": 0.0,
+     "foreign": 2.5
+    }
+   },
+   "at_10fa": {
+    "threshold": 2.0,
+    "hit_pct": 36.9,
+    "fa_per_hour": 4.03,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 37.5,
+      "fa_per_hour": 4.9
+     },
+     "calls": {
+      "hit_pct": 40.0,
+      "fa_per_hour": 5.0
+     },
+     "lyrics": {
+      "hit_pct": 40.0,
+      "fa_per_hour": 0.5
+     },
+     "monologue": {
+      "hit_pct": 10.0,
+      "fa_per_hour": 3.9
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 55.0,
+     "subject": 0.0,
+     "foreign": 5.0
+    }
+   }
+  },
+  "watch": {
+   "positives": 130,
+   "negative_hours": 8.81,
+   "auc_0_60fa": 0.747,
+   "at_1fa": {
+    "threshold": 3.0,
+    "hit_pct": 16.2,
+    "fa_per_hour": 0.11,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 20.0,
+      "fa_per_hour": 0.4
+     },
+     "calls": {
+      "hit_pct": 17.5,
+      "fa_per_hour": 0.0
+     },
+     "lyrics": {
+      "hit_pct": 10.0,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 20.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 25.0,
+     "subject": 15.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 2.0,
+    "hit_pct": 48.5,
+    "fa_per_hour": 3.52,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 50.0,
+      "fa_per_hour": 3.6
+     },
+     "calls": {
+      "hit_pct": 52.5,
+      "fa_per_hour": 4.8
+     },
+     "lyrics": {
+      "hit_pct": 45.0,
+      "fa_per_hour": 1.1
+     },
+     "monologue": {
+      "hit_pct": 40.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 65.0,
+     "subject": 65.0,
+     "foreign": 0.0
+    }
+   }
+  },
+  "general": {
+   "positives": 130,
+   "negative_hours": 9.51,
+   "auc_0_60fa": 0.378,
+   "at_1fa": {
+    "threshold": 3.0,
+    "hit_pct": 1.5,
+    "fa_per_hour": 0.53,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 0.0,
+      "fa_per_hour": 1.3
+     },
+     "calls": {
+      "hit_pct": 0.0,
+      "fa_per_hour": 0.0
+     },
+     "lyrics": {
+      "hit_pct": 5.0,
+      "fa_per_hour": 0.5
+     },
+     "monologue": {
+      "hit_pct": 0.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 7.5,
+     "subject": 0.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 2.0,
+    "hit_pct": 13.8,
+    "fa_per_hour": 5.36,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 10.0,
+      "fa_per_hour": 8.9
+     },
+     "calls": {
+      "hit_pct": 7.5,
+      "fa_per_hour": 4.9
+     },
+     "lyrics": {
+      "hit_pct": 25.0,
+      "fa_per_hour": 1.9
+     },
+     "monologue": {
+      "hit_pct": 10.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 25.0,
+     "subject": 10.0,
+     "foreign": 2.5
+    }
+   }
+  },
+  "all": {
+   "positives": 520,
+   "negative_hours": 36.67,
+   "auc_0_60fa": 0.582,
+   "at_1fa": {
+    "threshold": 3.0,
+    "hit_pct": 8.8,
+    "fa_per_hour": 0.25,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 8.8,
+      "fa_per_hour": 0.4
+     },
+     "calls": {
+      "hit_pct": 11.2,
+      "fa_per_hour": 0.2
+     },
+     "lyrics": {
+      "hit_pct": 6.9,
+      "fa_per_hour": 0.1
+     },
+     "monologue": {
+      "hit_pct": 7.5,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 20.0,
+     "subject": 3.8,
+     "foreign": 0.6
+    }
+   },
+   "at_10fa": {
+    "threshold": 2.0,
+    "hit_pct": 32.7,
+    "fa_per_hour": 3.68,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 31.9,
+      "fa_per_hour": 4.7
+     },
+     "calls": {
+      "hit_pct": 35.6,
+      "fa_per_hour": 4.4
+     },
+     "lyrics": {
+      "hit_pct": 33.1,
+      "fa_per_hour": 0.9
+     },
+     "monologue": {
+      "hit_pct": 22.5,
+      "fa_per_hour": 0.9
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 51.9,
+     "subject": 21.2,
+     "foreign": 2.5
+    }
+   }
+  }
+ },
+ "shape_embed": {
+  "car": {
+   "positives": 130,
+   "negative_hours": 9.18,
+   "auc_0_60fa": 0.974,
+   "at_1fa": {
+    "threshold": 0.53895,
+    "hit_pct": 85.4,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 85.0,
+      "fa_per_hour": 2.0
+     },
+     "calls": {
+      "hit_pct": 85.0,
+      "fa_per_hour": 0.8
+     },
+     "lyrics": {
+      "hit_pct": 85.0,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 77.5,
+     "subject": 47.5,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.42665,
+    "hit_pct": 96.2,
+    "fa_per_hour": 9.91,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 13.7
+     },
+     "calls": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 11.7
+     },
+     "lyrics": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 1.5
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 3.7
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 97.5,
+     "subject": 77.5,
+     "foreign": 0.0
+    }
+   }
+  },
+  "kitchen": {
+   "positives": 130,
+   "negative_hours": 9.18,
+   "auc_0_60fa": 0.968,
+   "at_1fa": {
+    "threshold": 0.53649,
+    "hit_pct": 82.3,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 0.7
+     },
+     "calls": {
+      "hit_pct": 82.5,
+      "fa_per_hour": 1.7
+     },
+     "lyrics": {
+      "hit_pct": 77.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 70.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 80.0,
+     "subject": 52.5,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.39827,
+    "hit_pct": 95.4,
+    "fa_per_hour": 9.92,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 6.5
+     },
+     "calls": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 16.2
+     },
+     "lyrics": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 2.7
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 3.9
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 92.5,
+     "subject": 92.5,
+     "foreign": 7.5
+    }
+   }
+  },
+  "watch": {
+   "positives": 130,
+   "negative_hours": 8.81,
+   "auc_0_60fa": 0.973,
+   "at_1fa": {
+    "threshold": 0.67166,
+    "hit_pct": 79.2,
+    "fa_per_hour": 0.91,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 82.5,
+      "fa_per_hour": 2.8
+     },
+     "calls": {
+      "hit_pct": 85.0,
+      "fa_per_hour": 0.0
+     },
+     "lyrics": {
+      "hit_pct": 72.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 70.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 62.5,
+     "subject": 47.5,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.51569,
+    "hit_pct": 96.2,
+    "fa_per_hour": 9.99,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 22.1
+     },
+     "calls": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 6.0
+     },
+     "lyrics": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 0.6
+     },
+     "monologue": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 3.7
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 100.0,
+     "subject": 95.0,
+     "foreign": 2.5
+    }
+   }
+  },
+  "general": {
+   "positives": 130,
+   "negative_hours": 9.51,
+   "auc_0_60fa": 0.829,
+   "at_1fa": {
+    "threshold": 0.72148,
+    "hit_pct": 47.7,
+    "fa_per_hour": 0.95,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 50.0,
+      "fa_per_hour": 1.0
+     },
+     "calls": {
+      "hit_pct": 42.5,
+      "fa_per_hour": 1.5
+     },
+     "lyrics": {
+      "hit_pct": 52.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 40.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 22.5,
+     "subject": 20.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.57789,
+    "hit_pct": 75.4,
+    "fa_per_hour": 9.99,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 70.0,
+      "fa_per_hour": 18.8
+     },
+     "calls": {
+      "hit_pct": 70.0,
+      "fa_per_hour": 9.1
+     },
+     "lyrics": {
+      "hit_pct": 85.0,
+      "fa_per_hour": 0.5
+     },
+     "monologue": {
+      "hit_pct": 80.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 70.0,
+     "subject": 55.0,
+     "foreign": 0.0
+    }
+   }
+  },
+  "all": {
+   "positives": 520,
+   "negative_hours": 36.67,
+   "auc_0_60fa": 0.923,
+   "at_1fa": {
+    "threshold": 0.66833,
+    "hit_pct": 61.0,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 61.9,
+      "fa_per_hour": 2.1
+     },
+     "calls": {
+      "hit_pct": 61.3,
+      "fa_per_hour": 0.7
+     },
+     "lyrics": {
+      "hit_pct": 63.7,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 45.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 46.9,
+     "subject": 35.6,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.51572,
+    "hit_pct": 89.4,
+    "fa_per_hour": 9.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 91.2,
+      "fa_per_hour": 17.7
+     },
+     "calls": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 9.0
+     },
+     "lyrics": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 0.9
+     },
+     "monologue": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 3.8
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 88.1,
+     "subject": 69.4,
+     "foreign": 1.9
+    }
+   }
+  }
+ },
+ "shape_ngram": {
+  "car": {
+   "positives": 130,
+   "negative_hours": 9.18,
+   "auc_0_60fa": 0.97,
+   "at_1fa": {
+    "threshold": 1.49651,
+    "hit_pct": 86.9,
+    "fa_per_hour": 0.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 1.3
+     },
+     "calls": {
+      "hit_pct": 82.5,
+      "fa_per_hour": 1.3
+     },
+     "lyrics": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 47.5,
+     "subject": 0.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.3959,
+    "hit_pct": 96.2,
+    "fa_per_hour": 9.91,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 19.0
+     },
+     "calls": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 5.1
+     },
+     "lyrics": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 1.5
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 40.6
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 82.5,
+     "subject": 32.5,
+     "foreign": 0.0
+    }
+   }
+  },
+  "kitchen": {
+   "positives": 130,
+   "negative_hours": 9.18,
+   "auc_0_60fa": 0.901,
+   "at_1fa": {
+    "threshold": 1.29119,
+    "hit_pct": 78.5,
+    "fa_per_hour": 0.87,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 87.5,
+      "fa_per_hour": 0.7
+     },
+     "calls": {
+      "hit_pct": 80.0,
+      "fa_per_hour": 1.2
+     },
+     "lyrics": {
+      "hit_pct": 72.5,
+      "fa_per_hour": 0.5
+     },
+     "monologue": {
+      "hit_pct": 60.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 42.5,
+     "subject": 15.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.53056,
+    "hit_pct": 84.6,
+    "fa_per_hour": 9.92,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 21.6
+     },
+     "calls": {
+      "hit_pct": 85.0,
+      "fa_per_hour": 4.7
+     },
+     "lyrics": {
+      "hit_pct": 82.5,
+      "fa_per_hour": 1.6
+     },
+     "monologue": {
+      "hit_pct": 60.0,
+      "fa_per_hour": 11.6
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 70.0,
+     "subject": 42.5,
+     "foreign": 0.0
+    }
+   }
+  },
+  "watch": {
+   "positives": 130,
+   "negative_hours": 8.81,
+   "auc_0_60fa": 0.962,
+   "at_1fa": {
+    "threshold": 1.38234,
+    "hit_pct": 89.2,
+    "fa_per_hour": 0.91,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 1.1
+     },
+     "calls": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 1.3
+     },
+     "lyrics": {
+      "hit_pct": 82.5,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 65.0,
+     "subject": 45.0,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.2613,
+    "hit_pct": 96.2,
+    "fa_per_hour": 9.43,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 97.5,
+      "fa_per_hour": 16.0
+     },
+     "calls": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 6.3
+     },
+     "lyrics": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 3.4
+     },
+     "monologue": {
+      "hit_pct": 100.0,
+      "fa_per_hour": 25.6
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 82.5,
+     "subject": 82.5,
+     "foreign": 0.0
+    }
+   }
+  },
+  "general": {
+   "positives": 130,
+   "negative_hours": 9.51,
+   "auc_0_60fa": 0.932,
+   "at_1fa": {
+    "threshold": 1.88618,
+    "hit_pct": 68.5,
+    "fa_per_hour": 0.95,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 75.0,
+      "fa_per_hour": 2.0
+     },
+     "calls": {
+      "hit_pct": 70.0,
+      "fa_per_hour": 0.7
+     },
+     "lyrics": {
+      "hit_pct": 65.0,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 50.0,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 20.0,
+     "subject": 37.5,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.61314,
+    "hit_pct": 92.3,
+    "fa_per_hour": 9.99,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 16.8
+     },
+     "calls": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 10.3
+     },
+     "lyrics": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 0.0
+     },
+     "monologue": {
+      "hit_pct": 90.0,
+      "fa_per_hour": 7.7
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 60.0,
+     "subject": 90.0,
+     "foreign": 0.0
+    }
+   }
+  },
+  "all": {
+   "positives": 520,
+   "negative_hours": 36.67,
+   "auc_0_60fa": 0.941,
+   "at_1fa": {
+    "threshold": 1.5163,
+    "hit_pct": 82.9,
+    "fa_per_hour": 0.93,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 89.4,
+      "fa_per_hour": 1.6
+     },
+     "calls": {
+      "hit_pct": 81.2,
+      "fa_per_hour": 0.9
+     },
+     "lyrics": {
+      "hit_pct": 80.6,
+      "fa_per_hour": 0.1
+     },
+     "monologue": {
+      "hit_pct": 72.5,
+      "fa_per_hour": 0.0
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 43.1,
+     "subject": 22.5,
+     "foreign": 0.0
+    }
+   },
+   "at_10fa": {
+    "threshold": 0.45465,
+    "hit_pct": 92.1,
+    "fa_per_hour": 9.98,
+    "by_stream": {
+     "ami": {
+      "hit_pct": 95.0,
+      "fa_per_hour": 18.4
+     },
+     "calls": {
+      "hit_pct": 92.5,
+      "fa_per_hour": 7.4
+     },
+     "lyrics": {
+      "hit_pct": 91.2,
+      "fa_per_hour": 1.0
+     },
+     "monologue": {
+      "hit_pct": 82.5,
+      "fa_per_hour": 19.7
+     }
+    },
+    "hard_accept_pct": {
+     "to_person": 74.4,
+     "subject": 58.1,
+     "foreign": 0.0
+    }
+   }
+  }
+ },
+ "failing_conditions": {},
+ "best_by_cell_at_10fa": {
+  "car ami": {
+   "hit": 100.0,
+   "method": "contrast_embed",
+   "threshold": 0.13579
+  },
+  "car calls": {
+   "hit": 100.0,
+   "method": "contrast_embed",
+   "threshold": 0.13579
+  },
+  "car lyrics": {
+   "hit": 100.0,
+   "method": "contrast_embed",
+   "threshold": 0.13579
+  },
+  "car monologue": {
+   "hit": 100.0,
+   "method": "contrast_embed",
+   "threshold": 0.13579
+  },
+  "kitchen ami": {
+   "hit": 100.0,
+   "method": "contrast_embed",
+   "threshold": 0.10439
+  },
+  "kitchen calls": {
+   "hit": 100.0,
+   "method": "contrast_embed",
+   "threshold": 0.10439
+  },
+  "kitchen lyrics": {
+   "hit": 100.0,
+   "method": "contrast_embed",
+   "threshold": 0.10439
+  },
+  "kitchen monologue": {
+   "hit": 100.0,
+   "method": "contrast_embed",
+   "threshold": 0.10439
+  },
+  "watch ami": {
+   "hit": 100.0,
+   "method": "contrast_embed",
+   "threshold": 0.20827
+  },
+  "watch calls": {
+   "hit": 100.0,
+   "method": "contrast_embed",
+   "threshold": 0.20827
+  },
+  "watch lyrics": {
+   "hit": 100.0,
+   "method": "contrast_embed",
+   "threshold": 0.20827
+  },
+  "watch monologue": {
+   "hit": 100.0,
+   "method": "contrast_embed",
+   "threshold": 0.20827
+  },
+  "general ami": {
+   "hit": 95.0,
+   "method": "contrast_embed",
+   "threshold": 0.28035
+  },
+  "general calls": {
+   "hit": 90.0,
+   "method": "contrast_embed",
+   "threshold": 0.28035
+  },
+  "general lyrics": {
+   "hit": 97.5,
+   "method": "contrast_embed",
+   "threshold": 0.28035
+  },
+  "general monologue": {
+   "hit": 90.0,
+   "method": "contrast_ngram",
+   "threshold": 0.5932
+  }
+ }
+}
