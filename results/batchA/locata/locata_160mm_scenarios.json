@@ -1,0 +1,390 @@
+{
+ "GccPhat": [
+  {
+   "scenario": "dev_task3_rec1 talker5 160mm",
+   "reads": 6,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task3_rec2 talker2 160mm",
+   "reads": 6,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task3_rec3 talker1 160mm",
+   "reads": 6,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec1 talker1 160mm",
+   "reads": 22,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec1 talker2 160mm",
+   "reads": 13,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 7.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec2 talker2 160mm",
+   "reads": 18,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 6.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec2 talker5 160mm",
+   "reads": 18,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 12.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec3 talker1 160mm",
+   "reads": 20,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec3 talker5 160mm",
+   "reads": 18,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec1 talker2 160mm",
+   "reads": 7,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec2 talker1 160mm",
+   "reads": 6,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec3 talker4 160mm",
+   "reads": 8,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec4 talker4 160mm",
+   "reads": 9,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec5 talker5 160mm",
+   "reads": 7,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec1 talker1 160mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 8.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec1 talker2 160mm",
+   "reads": 19,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 2.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec2 talker1 160mm",
+   "reads": 12,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec2 talker2 160mm",
+   "reads": 11,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec3 talker2 160mm",
+   "reads": 21,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec3 talker5 160mm",
+   "reads": 21,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 6.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec4 talker2 160mm",
+   "reads": 20,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 6.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec4 talker5 160mm",
+   "reads": 18,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 6.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec5 talker1 160mm",
+   "reads": 17,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 6.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec5 talker5 160mm",
+   "reads": 14,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 7.9,
+   "dropped": false,
+   "why": null
+  }
+ ],
+ "Angle2": [
+  {
+   "scenario": "dev_task3_rec1 talker5 160mm",
+   "reads": 6,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task3_rec2 talker2 160mm",
+   "reads": 6,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task3_rec3 talker1 160mm",
+   "reads": 6,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec1 talker1 160mm",
+   "reads": 22,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 6.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec1 talker2 160mm",
+   "reads": 12,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 6.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec2 talker2 160mm",
+   "reads": 18,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 7.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec2 talker5 160mm",
+   "reads": 17,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 5.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec3 talker1 160mm",
+   "reads": 20,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 5.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "dev_task4_rec3 talker5 160mm",
+   "reads": 18,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 11.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec1 talker2 160mm",
+   "reads": 7,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec2 talker1 160mm",
+   "reads": 6,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec3 talker4 160mm",
+   "reads": 8,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec4 talker4 160mm",
+   "reads": 9,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task3_rec5 talker5 160mm",
+   "reads": 7,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec1 talker1 160mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 8.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec1 talker2 160mm",
+   "reads": 19,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 8.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec2 talker1 160mm",
+   "reads": 12,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec2 talker2 160mm",
+   "reads": 11,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec3 talker2 160mm",
+   "reads": 21,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 10.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec3 talker5 160mm",
+   "reads": 21,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 5.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec4 talker2 160mm",
+   "reads": 20,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 8.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec4 talker5 160mm",
+   "reads": 18,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 6.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec5 talker1 160mm",
+   "reads": 17,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 5.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "eval_task4_rec5 talker5 160mm",
+   "reads": 14,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 5.8,
+   "dropped": false,
+   "why": null
+  }
+ ]
+}

@@ -1,0 +1,152 @@
+{
+ "dev/task3/recording1/talker5": {
+  "walking_frames": 1359,
+  "median_deg": 35.8,
+  "within_45": 0.643,
+  "beyond_135": 0.0
+ },
+ "dev/task3/recording2/talker2": {
+  "walking_frames": 2024,
+  "median_deg": 20.5,
+  "within_45": 0.982,
+  "beyond_135": 0.0
+ },
+ "dev/task3/recording3/talker1": {
+  "walking_frames": 1098,
+  "median_deg": 24.5,
+  "within_45": 0.832,
+  "beyond_135": 0.0
+ },
+ "dev/task4/recording1/talker1": {
+  "walking_frames": 2570,
+  "median_deg": 27.3,
+  "within_45": 0.921,
+  "beyond_135": 0.0
+ },
+ "dev/task4/recording1/talker2": {
+  "walking_frames": 3148,
+  "median_deg": 28.8,
+  "within_45": 0.747,
+  "beyond_135": 0.0
+ },
+ "dev/task4/recording2/talker2": {
+  "walking_frames": 1166,
+  "median_deg": 49.0,
+  "within_45": 0.486,
+  "beyond_135": 0.022
+ },
+ "dev/task4/recording2/talker5": {
+  "walking_frames": 1609,
+  "median_deg": 42.8,
+  "within_45": 0.53,
+  "beyond_135": 0.0
+ },
+ "dev/task4/recording3/talker1": {
+  "walking_frames": 1278,
+  "median_deg": 25.6,
+  "within_45": 0.792,
+  "beyond_135": 0.0
+ },
+ "dev/task4/recording3/talker5": {
+  "walking_frames": 1486,
+  "median_deg": 34.5,
+  "within_45": 0.655,
+  "beyond_135": 0.0
+ },
+ "eval/task3/recording1/talker2": {
+  "walking_frames": 1410,
+  "median_deg": 25.0,
+  "within_45": 0.809,
+  "beyond_135": 0.0
+ },
+ "eval/task3/recording2/talker1": {
+  "walking_frames": 1245,
+  "median_deg": 27.1,
+  "within_45": 0.69,
+  "beyond_135": 0.0
+ },
+ "eval/task3/recording3/talker4": {
+  "walking_frames": 1984,
+  "median_deg": 12.4,
+  "within_45": 0.971,
+  "beyond_135": 0.0
+ },
+ "eval/task3/recording4/talker4": {
+  "walking_frames": 1904,
+  "median_deg": 29.1,
+  "within_45": 0.799,
+  "beyond_135": 0.082
+ },
+ "eval/task3/recording5/talker5": {
+  "walking_frames": 813,
+  "median_deg": 32.7,
+  "within_45": 0.649,
+  "beyond_135": 0.0
+ },
+ "eval/task4/recording1/talker1": {
+  "walking_frames": 5019,
+  "median_deg": 18.7,
+  "within_45": 0.965,
+  "beyond_135": 0.0
+ },
+ "eval/task4/recording1/talker2": {
+  "walking_frames": 361,
+  "median_deg": 88.1,
+  "within_45": 0.285,
+  "beyond_135": 0.0
+ },
+ "eval/task4/recording2/talker1": {
+  "walking_frames": 1869,
+  "median_deg": 30.4,
+  "within_45": 0.652,
+  "beyond_135": 0.102
+ },
+ "eval/task4/recording2/talker2": {
+  "walking_frames": 2534,
+  "median_deg": 48.0,
+  "within_45": 0.457,
+  "beyond_135": 0.044
+ },
+ "eval/task4/recording3/talker2": {
+  "walking_frames": 1810,
+  "median_deg": 50.9,
+  "within_45": 0.433,
+  "beyond_135": 0.0
+ },
+ "eval/task4/recording3/talker5": {
+  "walking_frames": 2284,
+  "median_deg": 28.6,
+  "within_45": 0.642,
+  "beyond_135": 0.018
+ },
+ "eval/task4/recording4/talker2": {
+  "walking_frames": 3430,
+  "median_deg": 23.4,
+  "within_45": 0.863,
+  "beyond_135": 0.0
+ },
+ "eval/task4/recording4/talker5": {
+  "walking_frames": 282,
+  "median_deg": 77.8,
+  "within_45": 0.301,
+  "beyond_135": 0.0
+ },
+ "eval/task4/recording5/talker1": {
+  "walking_frames": 2199,
+  "median_deg": 27.9,
+  "within_45": 0.935,
+  "beyond_135": 0.0
+ },
+ "eval/task4/recording5/talker5": {
+  "walking_frames": 2679,
+  "median_deg": 31.4,
+  "within_45": 0.738,
+  "beyond_135": 0.0
+ },
+ "_all": {
+  "talker_tracks": 24,
+  "median_of_medians": 29.0,
+  "worst_median": 88.1,
+  "mean_beyond_135": 0.011
+ }
+}
