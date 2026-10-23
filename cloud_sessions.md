@@ -94,6 +94,8 @@ If the 0 deg share collapses with the high-pass, the mechanism is general and no
 
 ## 5. dEchorate with the fixed Angle2
 
+FOLDED INTO BRIEF 7 (2026-10-22). Don't start this one; brief 7 runs the fixed Angle2 on dEchorate as part of its work.
+
 Read HANDOFF.md, `results/dechorate/report.md` and `results/angle2_pull.md`. `src/schemes/Angle2.mjs` on `main` now has
 brief 2's fix: `readUtterance` counts clean, rising windows first and flags its onset `edge: true`; otherwise it falls
 back to the old count, flagged `edge: false`. The dEchorate run was made before the fix.
@@ -150,3 +152,59 @@ which cue puts talkers in the right order of distance, in rooms it has never see
 - **The verdict:** which cue holds across rooms (general) and which needs tuning per room.
 
 Commit `results/distance/report.md` and the harness under `harness/distance/` to a branch.
+
+---
+
+# Stage 1: what a two-ear listener hears
+
+Jay's stages: Stage 1 is acoustic and spatial, two raw streams, binaural. Every sound that registers is rendered where
+the array heard it come from, with speech as a bubble and everything else as rings. A talker facing the wall is
+rendered where the math says the speech came from, which can be the wall. So Stage 1's truth is **the direction the
+sound arrived from**, not where the source stands. The first onset and the first reflection are the core: showing that
+a sound came off a wall is the demo. Stage 2 (identity, diart) waits until Stage 1 is settled.
+
+## 7. dEchorate, scored by where the sound arrived from
+
+Read HANDOFF.md, `results/dechorate/report.md` and `results/clean/report.md`. This brief includes brief 5.
+
+1. **Re-run the schemes.** Run `harness/dechorate/run_all.sh` with the current `src/schemes/`, which includes the fixed
+   Angle2 with its `edge` flag. GccPhat's reads should reproduce the first run exactly; stop if they don't.
+2. **Build a second truth per cut: the strongest early arrival.** From the two RIRs of the cut's mic pair, measure the
+   peak at the direct path and at each labelled first-order echo (`truth.py` has the times). The arrival truth is the
+   direct path when its peak is within 6 dB of the strongest echo, and otherwise the strongest echo's direction. Report
+   how often each surface is the arrival, by source. Sources 4 and 5 face a wall.
+3. **Score both schemes against both truths,** under the scoring rule above, per wall configuration, spacing (155 and
+   65 mm) and source facing.
+   - **The headline:** for wall-facing sources, the share of reads that land on the strongest arrival when it's an echo.
+     That's "rendered the wall correctly".
+   - **Re-sort the outlier catalogue:** which of the old outliers were correct renderings under arrival truth?
+4. **Brief 5's questions:** Angle2 before and after its fix, and the agreement rule (GccPhat and Angle2 within 5 deg,
+   with an edge onset) against both truths.
+
+Commit `results/dechorate_arrival/` (report, summary, catalogue) and the harness changes to a branch.
+
+## 8. First reflection: does `Angle2.readSound` find the echo, its angle and its lag?
+
+Read HANDOFF.md, `results/dechorate/report.md` (section 3) and `src/schemes/Angle2.mjs`. `readSound` cancels the
+direct sound, then looks for the earliest positive, delayed copy of the voice in what remains: a direction and a lag.
+Only `readUtterance`'s second family was scored before, and that turned out to be a window artifact. `readSound` has
+never been scored.
+
+1. **Run `readSound` on the same dEchorate cuts** (`harness/dechorate/`, clean EARS speech through the measured RIRs),
+   with `s` at the sound's first frame. Record `decided`, the onset, the reflection's angle, `gap_ms` and `fit`.
+2. **Score against the labelled first-order echoes of the reflective surfaces,** per wall configuration, spacing and
+   source:
+   - **Angle:** is the reflection within 10 deg of the earliest distinct echo, or of any reflective echo?
+   - **Lag:** is `gap_ms` within 0.25 ms of that echo's delay?
+   - **Both at once:** the real test.
+   - **Chance:** as `results/dechorate/report.md` computed it.
+   - **The decided share:** reported with every score.
+3. **Lag limit.** `MAX_GAP_MS` is 12, and dEchorate's single-wall echoes arrive 8-13 ms after the direct sound. Re-run
+   with 25 ms as a variant, and report both.
+4. **Place the wall.** Where angle and lag are both right, use the true source distance (a stand-in for the range the
+   app doesn't have yet) with the direct angle, the echo angle and the lag. That gives the image source, and from it
+   the reflecting wall's position. Report how far that lands from the real wall: this is the "it came off that wall"
+   test.
+
+Score under the rule above, and catalogue every read set aside. Commit `results/first_reflection/` and the harness to a
+branch. Don't change Angle2's defaults: report variants side by side.
