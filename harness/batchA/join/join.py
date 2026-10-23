@@ -152,7 +152,7 @@ def plot(curves, path):
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
-    fig, axes = plt.subplots(1, 2, figsize=(11, 4.6), sharey=False)
+    fig, axes = plt.subplots(1, 2, figsize=(12, 6.2), sharey=False)
     for ax, (title, series) in zip(axes, curves.items()):
         for label, pts, style in series:
             if len(pts) == 1:
@@ -164,7 +164,7 @@ def plot(curves, path):
         ax.set_ylabel('committed reads within 10 deg (%)')
         ax.set_xlim(0, 102)
         ax.grid(alpha=0.3)
-        ax.legend(fontsize=7, loc='lower left')
+        ax.legend(fontsize=7, loc='upper center', bbox_to_anchor=(0.5, -0.14), ncol=1, frameon=False)
     fig.tight_layout()
     fig.savefig(path, dpi=130)
 
@@ -277,14 +277,36 @@ def main():
         res['3_commit'][tag] = {'chosen on starss23': e1, 'chosen on locata': e2}
         rules[tag] = (r1, r2)
         print('rule', tag, r1['name'], '|', r2['name'], file=sys.stderr)
+    # THE GENERAL RULE: the margin threshold every chosen rule shares (0.203, STARSS23's decile), with the lab's pause rule
+    # (dim a read within 10 deg of a pause read of share >= 0.5), which none of the searched rules has and the lab says
+    # is needed against steady sources. Chosen on STARSS23 + the lab; LOCATA never touched it.
+    gen = {'name': 'margin >= 0.203 and not on a pause read of share >= 0.5', 'parts': [('margin', '>=', 0.203), ('pause', 'pause', 0.5)]}
+    inS = [r for r in gS if C.in_scope(r)]; inL = [r for r in gL if C.in_scope(r)]
+    coh = [r for r in glab if r['cause'].split(':')[0].replace('no_pause+', '') in ('steady_pink', 'steady_voice', 'common_mode')]
+    labo = [r for r in glab if r not in coh]
+    res['3_commit']['general rule'] = {
+        'rule': gen['name'], 'starss23': RU.evaluate(gen, inS), 'locata (untouched)': RU.evaluate(gen, inL),
+        'lab coherent causes': dict(RU.evaluate(gen, coh), wrong_reads_committed_pct=pct(sum(RU.commits(gen, r) for r in coh if r['err'] > 10), sum(r['err'] > 10 for r in coh))),
+        'lab, everything else': RU.evaluate(gen, labo),
+        'by kind, starss23': {k: RU.evaluate(gen, [r for r in inS if r['kind'] == k]) for k in ('speech', 'other')},
+        'Angle2 (final), same rule on its own reads': {'starss23': RU.evaluate(gen, [r for r in S[fin] if r['scheme'] == 'a2' and C.in_scope(r)]),
+                                                       'locata': RU.evaluate(gen, [r for r in L[fin] if r['scheme'] == 'a2' and C.in_scope(r)])}}
+    rules['general'] = (gen, gen)
     # the plot: each dataset, the chosen rules' clues swept, plus the chosen points
     curves = {}
     for nameX, rows in (('STARSS23', gS), ('LOCATA', gL)):
         rows = [r for r in rows if C.in_scope(r)]
         series = []
-        for clue, op, style in (('margin', '>=', '-'), ('share', '>=', '--'), ('votes', '>=', ':'), ('snr_hf1', '>=', '-.')):
+        for clue, op, style in (('margin', '>=', '-'), ('share', '>=', '--'), ('snr_hf1', '>=', '-.')):
             series.append((f'{clue} {op} t, swept', RU.curve(clue, op, rows), style))
+        sub = [r for r in rows if RU.commits({'name': '', 'parts': [('pause', 'pause', 0.5)]}, r)]
+        series.append(('margin >= t swept, and not on a pause read of share >= 0.5',
+                       [(p[0] * len(sub) / len(rows), p[1], p[2]) for p in RU.curve('margin', '>=', sub)], 'k-'))
         for tag, (r1, r2) in rules.items():
+            if tag == 'general':
+                e = RU.evaluate(r1, rows)
+                series.append((f'the general rule: {r1["name"]}', [(e['committed_pct'], e['within10_committed_pct'])], 'r*'))
+                continue
             for who, rr in (('chosen on STARSS23', r1), ('chosen on LOCATA', r2)):
                 e = RU.evaluate(rr, rows)
                 series.append((f'{who} ({tag}): {rr["name"]}', [(e['committed_pct'], e['within10_committed_pct'])], 'o' if 'STARSS' in who else 's'))
