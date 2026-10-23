@@ -756,6 +756,11 @@ Commit `results/range_facing/` and `harness/range_facing/` to a branch. `src/` s
 
 ## 21. When to re-read within an utterance: angle, range and facing
 
+DONE in a 2026-10-23 cloud session: `results/resample/report.md`. Angle: re-read every 0.25 s and move only on
+the dim rule and > 5 deg (moving talkers 50% -> 61% within 10 deg, lag halved, ~36 moves/min). Range: keep one
+read per utterance; sliding CDR is worse. Facing turns ~25 deg within an utterance: re-read once a cue exists.
+Don't start this one.
+
 READY 2026-10-23. The network policy now allows the Hugging Face CDN (`us.aws.cdn.hf.co`,
 `cdn-lfs.huggingface.co`) and `openaipublic.azureedge.net`.
 
