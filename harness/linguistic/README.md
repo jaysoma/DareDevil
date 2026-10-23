@@ -14,10 +14,8 @@ Copied unchanged from the private repo `jaysoma/FisherDiarization` at commit 72d
 None of these files has a hard-coded `C:\` path. The ones that do (`ami_stats.py`, `bench.py`, `onnx_models.py`,
 `probe.py`, `whosaid.py`) belong to the pitch and diart-model paths, which brief 18 leaves out.
 
-`blends.py` and `stage3.py` are live services: they read words from local HTTP feeds and post results back. A batch
-driver over AMI word files is still to be written. It would feed them a meeting's words in time order, ask the model
-through llama.cpp or Ollama on CPU, and record each window's labels. That driver waits on the data and the model,
-since neither can be reached from the session that copied these.
+`blends.py` and `stage3.py` are live services: they read words from local HTTP feeds and post results back.
+`run_text.py` (below) drives `stage3.py`'s logic in batch over a meeting's words instead.
 
 ## Added for the AMI run (this repo's own)
 - **`ami_parse.py`:** AMI's manual annotations to one JSON per meeting: words, segments, dialogue acts with addressee,
