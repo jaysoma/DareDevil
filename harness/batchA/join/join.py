@@ -198,7 +198,7 @@ def range_score(rows, keep=None):
             if r['dataset'] == ds and (keep is None or r['id'] in keep):
                 g[r['who']].append(r)
         res[ds] = {}
-        for cue, sign in (('cdr', -1), ('level', -1), ('echo', -1)):
+        for cue in ('cdr', 'level', 'echo'):            # each reads larger when nearer
             order = {1.25: [0, 0], 1.5: [0, 0], 2.0: [0, 0]}
             same, far = [], []
             for grp in g.values():
@@ -209,7 +209,7 @@ def range_score(rows, keep=None):
                     ratio = max(a['dist'], b['dist']) / min(a['dist'], b['dist'])
                     diff = va - vb
                     if ratio >= 1.25 and diff != 0:
-                        right = (diff * sign > 0) == (a['dist'] < b['dist'])   # nearer reads more direct / louder / longer lag
+                        right = (diff > 0) == (a['dist'] < b['dist'])   # nearer: more direct, louder, a longer floor-echo lag
                         for th in order:
                             if ratio >= th:
                                 order[th][0] += right; order[th][1] += 1
