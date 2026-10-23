@@ -1,0 +1,200 @@
+{
+ "GccPhat": {
+  "reads_total": 8532,
+  "in_scope": 8322,
+  "read_outliers": 805,
+  "read_outliers_pct": 9.7,
+  "scenarios": 96,
+  "scenarios_dropped": 1,
+  "reads_in_dropped_scenarios": 22,
+  "kept": 7495,
+  "kept_pct": 90.1,
+  "score": {
+   "n": 7495,
+   "mean_err": 10.6,
+   "median_err": 7.6,
+   "within_10_pct": 59.6,
+   "lean_mean_by_band": {
+    "0-15": {
+     "n": 1737,
+     "mean": 0.8
+    },
+    "15-30": {
+     "n": 1819,
+     "mean": 2.4
+    },
+    "30-45": {
+     "n": 1764,
+     "mean": 5.8
+    },
+    "45-60": {
+     "n": 1383,
+     "mean": 9.9
+    },
+    "60-75": {
+     "n": 591,
+     "mean": 13.9
+    }
+   }
+  },
+  "outlier_kinds": {
+   "mirror (sign flipped)": 63,
+   "other": 278,
+   "pinned at end-fire": 360,
+   "truth was its 2nd/3rd direction": 104
+  }
+ },
+ "Angle2 (fixed)": {
+  "reads_total": 8420,
+  "in_scope": 8211,
+  "read_outliers": 1167,
+  "read_outliers_pct": 14.2,
+  "scenarios": 96,
+  "scenarios_dropped": 1,
+  "reads_in_dropped_scenarios": 19,
+  "kept": 7025,
+  "kept_pct": 85.6,
+  "score": {
+   "n": 7025,
+   "mean_err": 11.0,
+   "median_err": 8.4,
+   "within_10_pct": 56.1,
+   "lean_mean_by_band": {
+    "0-15": {
+     "n": 1654,
+     "mean": 1.1
+    },
+    "15-30": {
+     "n": 1751,
+     "mean": 2.4
+    },
+    "30-45": {
+     "n": 1647,
+     "mean": 4.1
+    },
+    "45-60": {
+     "n": 1315,
+     "mean": 5.8
+    },
+    "60-75": {
+     "n": 476,
+     "mean": 8.5
+    }
+   }
+  },
+  "outlier_kinds": {
+   "mirror (sign flipped)": 123,
+   "other": 547,
+   "pinned at end-fire": 327,
+   "truth was its 2nd/3rd direction": 170
+  }
+ },
+ "Angle2 (before fix)": {
+  "reads_total": 8420,
+  "in_scope": 8211,
+  "read_outliers": 1830,
+  "read_outliers_pct": 22.3,
+  "scenarios": 96,
+  "scenarios_dropped": 3,
+  "reads_in_dropped_scenarios": 80,
+  "kept": 6301,
+  "kept_pct": 76.7,
+  "score": {
+   "n": 6301,
+   "mean_err": 12.3,
+   "median_err": 10.2,
+   "within_10_pct": 49.0,
+   "lean_mean_by_band": {
+    "0-15": {
+     "n": 1544,
+     "mean": 0.8
+    },
+    "15-30": {
+     "n": 1598,
+     "mean": 1.7
+    },
+    "30-45": {
+     "n": 1461,
+     "mean": 1.6
+    },
+    "45-60": {
+     "n": 1113,
+     "mean": 3.3
+    },
+    "60-75": {
+     "n": 416,
+     "mean": 6.6
+    }
+   }
+  },
+  "outlier_kinds": {
+   "mirror (sign flipped)": 221,
+   "other": 822,
+   "pinned at end-fire": 493,
+   "truth was its 2nd/3rd direction": 294
+  }
+ },
+ "common": {
+  "schemes": [
+   "GccPhat",
+   "Angle2 (fixed)"
+  ],
+  "reads": 6630,
+  "GccPhat": {
+   "n": 6630,
+   "mean_err": 10.0,
+   "median_err": 7.0,
+   "within_10_pct": 62.5,
+   "lean_mean_by_band": {
+    "0-15": {
+     "n": 1601,
+     "mean": 0.6
+    },
+    "15-30": {
+     "n": 1679,
+     "mean": 2.4
+    },
+    "30-45": {
+     "n": 1535,
+     "mean": 5.4
+    },
+    "45-60": {
+     "n": 1181,
+     "mean": 10.2
+    },
+    "60-75": {
+     "n": 457,
+     "mean": 14.1
+    }
+   }
+  },
+  "Angle2 (fixed)": {
+   "n": 6630,
+   "mean_err": 10.6,
+   "median_err": 8.1,
+   "within_10_pct": 57.7,
+   "lean_mean_by_band": {
+    "0-15": {
+     "n": 1601,
+     "mean": 1.1
+    },
+    "15-30": {
+     "n": 1679,
+     "mean": 2.2
+    },
+    "30-45": {
+     "n": 1535,
+     "mean": 3.7
+    },
+    "45-60": {
+     "n": 1181,
+     "mean": 5.7
+    },
+    "60-75": {
+     "n": 457,
+     "mean": 8.8
+    }
+   }
+  }
+ }
+}

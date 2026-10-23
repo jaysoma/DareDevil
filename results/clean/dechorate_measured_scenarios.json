@@ -1,0 +1,8982 @@
+{
+ "GccPhat": [
+  {
+   "scenario": "000000 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 18,
+   "mean_err_after_outliers": 32.2,
+   "dropped": true,
+   "why": "mean over 22.5 deg"
+  },
+  {
+   "scenario": "000001 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 16,
+   "mean_err_after_outliers": 33.0,
+   "dropped": true,
+   "why": "mean over 22.5 deg"
+  },
+  {
+   "scenario": "000010 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 22,
+   "mean_err_after_outliers": 4.1,
+   "dropped": true,
+   "why": "over half its reads were outliers"
+  },
+  {
+   "scenario": "000010 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 23,
+   "mean_err_after_outliers": 30.1,
+   "dropped": true,
+   "why": "mean over 22.5 deg"
+  },
+  {
+   "scenario": "000100 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 23.3,
+   "dropped": true,
+   "why": "mean over 22.5 deg"
+  },
+  {
+   "scenario": "000100 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 16,
+   "mean_err_after_outliers": 30.3,
+   "dropped": true,
+   "why": "mean over 22.5 deg"
+  },
+  {
+   "scenario": "001000 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 13,
+   "mean_err_after_outliers": 33.0,
+   "dropped": true,
+   "why": "mean over 22.5 deg"
+  },
+  {
+   "scenario": "010000 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 25.1,
+   "dropped": true,
+   "why": "mean over 22.5 deg"
+  },
+  {
+   "scenario": "011000 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 14,
+   "mean_err_after_outliers": 1.1,
+   "dropped": true,
+   "why": "over half its reads were outliers"
+  },
+  {
+   "scenario": "011000 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 12,
+   "mean_err_after_outliers": 26.3,
+   "dropped": true,
+   "why": "mean over 22.5 deg"
+  },
+  {
+   "scenario": "011110 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 21,
+   "mean_err_after_outliers": 1.6,
+   "dropped": true,
+   "why": "over half its reads were outliers"
+  },
+  {
+   "scenario": "011110 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 15,
+   "mean_err_after_outliers": 6.9,
+   "dropped": true,
+   "why": "over half its reads were outliers"
+  },
+  {
+   "scenario": "011110 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 16,
+   "mean_err_after_outliers": 1.5,
+   "dropped": true,
+   "why": "over half its reads were outliers"
+  },
+  {
+   "scenario": "011110 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 27.1,
+   "dropped": true,
+   "why": "mean over 22.5 deg"
+  },
+  {
+   "scenario": "011110 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 16,
+   "mean_err_after_outliers": 31.9,
+   "dropped": true,
+   "why": "mean over 22.5 deg"
+  },
+  {
+   "scenario": "011111 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 24,
+   "mean_err_after_outliers": null,
+   "dropped": true,
+   "why": "mean over 22.5 deg"
+  },
+  {
+   "scenario": "011111 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 27.1,
+   "dropped": true,
+   "why": "mean over 22.5 deg"
+  },
+  {
+   "scenario": "011111 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 22,
+   "mean_err_after_outliers": 26.2,
+   "dropped": true,
+   "why": "mean over 22.5 deg"
+  },
+  {
+   "scenario": "020002 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 14,
+   "mean_err_after_outliers": 26.1,
+   "dropped": true,
+   "why": "mean over 22.5 deg"
+  },
+  {
+   "scenario": "000000 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 17.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 18.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 16.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 10.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 18.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 18.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 18.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 14.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 12.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 20.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 14.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 16.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 18.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 15.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 4.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 17.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 16.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 6.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 8.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 18.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 14.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 19.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 22.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 8.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 17.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 2.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 6.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 17.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 2.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 14.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 19.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 22.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 13.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 12,
+   "mean_err_after_outliers": 22.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 3.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 14.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 19.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 16.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 4.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 4.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 14.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 19.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 21.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 13.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 1.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 8.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 0.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 14.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 16.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 6.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 1.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 6.4,
+   "dropped": false,
+   "why": null
+  }
+ ],
+ "Angle2 (before fix)": [
+  {
+   "scenario": "000000 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 5.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 5.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 9.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 5.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 8.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 2.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 6.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 13.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 6.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 5.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 3.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 13.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 5.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 13.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 7.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 12.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 8.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 11.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 7.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 17.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 5.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 4.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000000 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 18.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 6.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 9.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 9.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 2.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 6.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 12.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 6.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 3.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 14.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 13.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 9.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 7.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 12.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 5.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 15.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 14.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 8.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 19.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 5.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 10.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 4.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000001 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 16.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 8.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 8.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 6.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 8.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 6.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 9.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 10.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 3.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 5.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 14.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 8.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 8.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 13.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 5.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 9.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 8.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 10.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 8.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 13.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 14.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 6.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 17.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 8.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 9.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000010 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 13.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 10.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 6.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 10.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 10.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 3.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 2.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 6.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 14.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 5.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 8.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 7.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 3.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 14.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 4.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 9.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 5.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 9.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 14.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 14.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 15.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 9.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 12.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 13.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 8.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 18.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 5.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 11.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 4.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "000100 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 16.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 5.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 7.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 9.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 11.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 3.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 5.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 5.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 12.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 5.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 7.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 15.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 10.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 10.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 10.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 10,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 12.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 10.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 10.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 11.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 13.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 6.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 10.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 11,
+   "mean_err_after_outliers": 8.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 17.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 5.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 10.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 7.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "001000 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 15.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 9.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 5.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 8.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 11.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 5.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 16.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 4.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 8.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 6.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 12.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 10.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 11.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 13.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 7.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 14.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 9.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 16.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 7.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 7.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "010000 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 15.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 10.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 10.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 5.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 9.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 5.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 14.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 5.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 16.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 14.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 11.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 13.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 9.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 15.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 14.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 12.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 16.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 6.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011000 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 16.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 5.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 12.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 5.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 8.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 5.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 5.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 15.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 5.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 15.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 12.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 14.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 12.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 14.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 12.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 12.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 12.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 9.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 10.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 15.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 8.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 12.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011100 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 14.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 9.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 7.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 12.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 6.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 12.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 8.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 6.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 10.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 4.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 10.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 6.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 13.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 3.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 9.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 5.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 13.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 11.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 6.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 7.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 10.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 16.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 14.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 13.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 8.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 12.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 8.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 14.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 12.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 14.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 9.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011110 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 18.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 6.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 15.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 5.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 5.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 8.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 5.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 11.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 7.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 13.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 9.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 6.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 8.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 9.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 4.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 13.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 12.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 10.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 4.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 7.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 13.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 15.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 12.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 13.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 14.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 9.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 15.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 13.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 19.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 12.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "011111 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 16.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src0 array2 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src0 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src0 array3 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src0 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 12.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src0 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src0 array4 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 12.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array0 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 5.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array1 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 6.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array1 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 11.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 5.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array2 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 9.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array5 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src1 array5 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array0 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 5.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array0 65mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array1 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array1 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 9.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array2 155mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 4.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array2 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 16.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array3 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array3 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array4 155mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 6.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src2 array4 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 8.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array0 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 9.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array1 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array1 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 12.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array4 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array4 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 12.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 4.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src3 array5 65mm",
+   "reads": 24,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 11.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array0 155mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array0 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 11.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array1 155mm",
+   "reads": 24,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 12.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array1 65mm",
+   "reads": 24,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 14.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array2 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 8.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array2 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 9.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array5 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 5.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src4 array5 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 9.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array0 155mm",
+   "reads": 24,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 9.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array0 65mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 13.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array1 155mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 8.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array1 65mm",
+   "reads": 24,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 11.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array2 155mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 8.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array2 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 19.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array3 155mm",
+   "reads": 24,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 6.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array3 65mm",
+   "reads": 24,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 9.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array4 155mm",
+   "reads": 24,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 7.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "020002 src5 array4 65mm",
+   "reads": 24,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 16.4,
+   "dropped": false,
+   "why": null
+  }
+ ]
+}

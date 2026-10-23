@@ -1,0 +1,157 @@
+{
+ "GccPhat": {
+  "reads_total": 19008,
+  "in_scope": 15312,
+  "read_outliers": 318,
+  "read_outliers_pct": 2.1,
+  "scenarios": 638,
+  "scenarios_dropped": 47,
+  "reads_in_dropped_scenarios": 911,
+  "kept": 14083,
+  "kept_pct": 92.0,
+  "score": {
+   "n": 14083,
+   "mean_err": 6.3,
+   "median_err": 4.4,
+   "within_10_pct": 78.9,
+   "lean_mean_by_band": {
+    "0-15": {
+     "n": 3946,
+     "mean": -0.1
+    },
+    "15-30": {
+     "n": 3973,
+     "mean": 1.9
+    },
+    "30-45": {
+     "n": 2986,
+     "mean": 6.1
+    },
+    "45-60": {
+     "n": 1548,
+     "mean": 7.1
+    },
+    "60-75": {
+     "n": 1630,
+     "mean": 12.0
+    }
+   }
+  },
+  "outlier_kinds": {
+   "mirror (sign flipped)": 61,
+   "on a reflective surface's echo": 163,
+   "other": 49,
+   "pinned at end-fire": 21,
+   "truth was its 2nd/3rd direction": 24
+  }
+ },
+ "Angle2 (before fix)": {
+  "reads_total": 19008,
+  "in_scope": 15312,
+  "read_outliers": 1556,
+  "read_outliers_pct": 10.2,
+  "scenarios": 638,
+  "scenarios_dropped": 5,
+  "reads_in_dropped_scenarios": 68,
+  "kept": 13688,
+  "kept_pct": 89.4,
+  "score": {
+   "n": 13688,
+   "mean_err": 9.5,
+   "median_err": 6.9,
+   "within_10_pct": 63.9,
+   "lean_mean_by_band": {
+    "0-15": {
+     "n": 3844,
+     "mean": 0.9
+    },
+    "15-30": {
+     "n": 4234,
+     "mean": -0.3
+    },
+    "30-45": {
+     "n": 2780,
+     "mean": 1.4
+    },
+    "45-60": {
+     "n": 1341,
+     "mean": -0.1
+    },
+    "60-75": {
+     "n": 1489,
+     "mean": 1.3
+    }
+   }
+  },
+  "outlier_kinds": {
+   "mirror (sign flipped)": 177,
+   "on a reflective surface's echo": 176,
+   "other": 632,
+   "pinned at end-fire": 265,
+   "truth was its 2nd/3rd direction": 306
+  }
+ },
+ "common": {
+  "schemes": [
+   "GccPhat",
+   "Angle2 (before fix)"
+  ],
+  "reads": 12693,
+  "GccPhat": {
+   "n": 12693,
+   "mean_err": 5.9,
+   "median_err": 4.2,
+   "within_10_pct": 81.6,
+   "lean_mean_by_band": {
+    "0-15": {
+     "n": 3831,
+     "mean": -0.2
+    },
+    "15-30": {
+     "n": 3777,
+     "mean": 1.9
+    },
+    "30-45": {
+     "n": 2654,
+     "mean": 5.8
+    },
+    "45-60": {
+     "n": 1312,
+     "mean": 6.9
+    },
+    "60-75": {
+     "n": 1119,
+     "mean": 11.5
+    }
+   }
+  },
+  "Angle2 (before fix)": {
+   "n": 12693,
+   "mean_err": 9.0,
+   "median_err": 6.6,
+   "within_10_pct": 65.9,
+   "lean_mean_by_band": {
+    "0-15": {
+     "n": 3831,
+     "mean": 0.9
+    },
+    "15-30": {
+     "n": 3777,
+     "mean": -0.1
+    },
+    "30-45": {
+     "n": 2654,
+     "mean": 1.3
+    },
+    "45-60": {
+     "n": 1312,
+     "mean": -0.0
+    },
+    "60-75": {
+     "n": 1119,
+     "mean": -0.6
+    }
+   }
+  }
+ }
+}

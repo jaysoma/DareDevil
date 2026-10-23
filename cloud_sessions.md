@@ -9,6 +9,11 @@ Prerequisites for every session:
 - Network access in the environment that allows `zenodo.org`.
 - The Claude GitHub App installed on this repo, so the session can push its results branch.
 
+Scoring, for every brief from 5 on: Jay's rule in `results/clean/report.md` (|truth| <= 75 deg only; reads off by
+more than 36 deg set aside; scenarios averaging over 22.5 deg, or losing over half their reads, dropped whole). Report
+the cleaned mean and median next to how much was set aside, and catalogue the outliers. `harness/scoring/clean_score.py`
+implements it.
+
 ---
 
 ## 1. STARSS23 real-audio run
@@ -101,10 +106,13 @@ back to the old count, flagged `edge: false`. The dEchorate run was made before 
    GccPhat's error? And when they disagree, or when there's no edge? Give each case's share of cuts.
 4. Did Angle2's second family (the "first reflection") change?
 
-Score against the measured direct-path truth and the published geometry, as the first run did. Commit
+Score against the measured direct-path truth and the published geometry, as the first run did. Then extend
+`harness/scoring/clean_score.py` to the new predictions and report under the scoring rule above. Commit
 `results/dechorate/after_angle2_fix/` and a short section in `results/dechorate/report.md` to a branch.
 
 ## 6. Relative distance: which physical cue ranks talkers by distance?
+
+ON HOLD (Jay, 2026-10-22): range waits until bearing is settled. Don't start this one.
 
 Read HANDOFF.md (the Range line: relative units anchored on the opening utterance, no metres). Then read
 `src/range/FiveMsAmplitude.js` and `src/geonar/cdr_direct.py`, whose notes record what was already tried. The question:

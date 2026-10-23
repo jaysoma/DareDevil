@@ -1,0 +1,2312 @@
+{
+ "GccPhat": [
+  {
+   "scenario": "room22 pair 24",
+   "reads": 61,
+   "read_outliers": 39,
+   "mean_err_after_outliers": 18.8,
+   "dropped": true,
+   "why": "over half its reads were outliers"
+  },
+  {
+   "scenario": "room10 pair 12",
+   "reads": 55,
+   "read_outliers": 11,
+   "mean_err_after_outliers": 15.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 13",
+   "reads": 55,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 15.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 14",
+   "reads": 55,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 16.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 23",
+   "reads": 55,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 24",
+   "reads": 55,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 34",
+   "reads": 55,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 12",
+   "reads": 154,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 10.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 13",
+   "reads": 154,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 14.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 14",
+   "reads": 154,
+   "read_outliers": 13,
+   "mean_err_after_outliers": 9.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 23",
+   "reads": 154,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 24",
+   "reads": 154,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 10.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 34",
+   "reads": 154,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 3.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 12",
+   "reads": 201,
+   "read_outliers": 12,
+   "mean_err_after_outliers": 7.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 13",
+   "reads": 201,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 9.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 14",
+   "reads": 184,
+   "read_outliers": 15,
+   "mean_err_after_outliers": 10.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 23",
+   "reads": 174,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 4.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 24",
+   "reads": 201,
+   "read_outliers": 26,
+   "mean_err_after_outliers": 13.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 34",
+   "reads": 201,
+   "read_outliers": 28,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 12",
+   "reads": 29,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 7.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 13",
+   "reads": 29,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 8.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 14",
+   "reads": 29,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 12.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 23",
+   "reads": 27,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 8.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 24",
+   "reads": 29,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 6.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 34",
+   "reads": 29,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 8.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 12",
+   "reads": 52,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 2.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 13",
+   "reads": 52,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 5.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 14",
+   "reads": 47,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 14.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 23",
+   "reads": 47,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 24",
+   "reads": 52,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 12.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 34",
+   "reads": 52,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 12",
+   "reads": 124,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 6.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 13",
+   "reads": 124,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 6.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 14",
+   "reads": 107,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 23",
+   "reads": 103,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 24",
+   "reads": 124,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 34",
+   "reads": 124,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 8.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 12",
+   "reads": 87,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 18.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 13",
+   "reads": 87,
+   "read_outliers": 11,
+   "mean_err_after_outliers": 12.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 14",
+   "reads": 76,
+   "read_outliers": 14,
+   "mean_err_after_outliers": 17.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 23",
+   "reads": 87,
+   "read_outliers": 10,
+   "mean_err_after_outliers": 6.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 24",
+   "reads": 87,
+   "read_outliers": 10,
+   "mean_err_after_outliers": 19.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 34",
+   "reads": 87,
+   "read_outliers": 21,
+   "mean_err_after_outliers": 12.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 12",
+   "reads": 104,
+   "read_outliers": 20,
+   "mean_err_after_outliers": 15.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 13",
+   "reads": 106,
+   "read_outliers": 21,
+   "mean_err_after_outliers": 16.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 14",
+   "reads": 100,
+   "read_outliers": 17,
+   "mean_err_after_outliers": 17.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 23",
+   "reads": 106,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 7.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 24",
+   "reads": 106,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 9.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 34",
+   "reads": 106,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 10.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room22 pair 12",
+   "reads": 66,
+   "read_outliers": 10,
+   "mean_err_after_outliers": 11.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room22 pair 13",
+   "reads": 66,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 8.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room22 pair 14",
+   "reads": 65,
+   "read_outliers": 15,
+   "mean_err_after_outliers": 18.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room22 pair 23",
+   "reads": 66,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 10.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room22 pair 34",
+   "reads": 64,
+   "read_outliers": 28,
+   "mean_err_after_outliers": 21.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 12",
+   "reads": 22,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 13",
+   "reads": 22,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 7.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 14",
+   "reads": 22,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 8.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 23",
+   "reads": 22,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 13.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 24",
+   "reads": 22,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 21.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 34",
+   "reads": 22,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 12.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 12",
+   "reads": 29,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 10.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 13",
+   "reads": 29,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 6.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 14",
+   "reads": 29,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 7.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 23",
+   "reads": 28,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 24",
+   "reads": 29,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 6.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 34",
+   "reads": 29,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 8.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 12",
+   "reads": 80,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 7.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 13",
+   "reads": 79,
+   "read_outliers": 18,
+   "mean_err_after_outliers": 11.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 14",
+   "reads": 80,
+   "read_outliers": 10,
+   "mean_err_after_outliers": 8.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 23",
+   "reads": 66,
+   "read_outliers": 12,
+   "mean_err_after_outliers": 14.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 24",
+   "reads": 80,
+   "read_outliers": 16,
+   "mean_err_after_outliers": 11.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 34",
+   "reads": 80,
+   "read_outliers": 21,
+   "mean_err_after_outliers": 8.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 12",
+   "reads": 109,
+   "read_outliers": 13,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 13",
+   "reads": 109,
+   "read_outliers": 14,
+   "mean_err_after_outliers": 9.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 14",
+   "reads": 105,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 13.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 23",
+   "reads": 98,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 24",
+   "reads": 109,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 11.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 34",
+   "reads": 109,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 9.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 12",
+   "reads": 58,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 8.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 13",
+   "reads": 58,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 7.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 14",
+   "reads": 56,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 9.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 23",
+   "reads": 33,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 24",
+   "reads": 58,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 7.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 34",
+   "reads": 58,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 9.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 12",
+   "reads": 84,
+   "read_outliers": 16,
+   "mean_err_after_outliers": 12.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 13",
+   "reads": 84,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 13.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 14",
+   "reads": 84,
+   "read_outliers": 11,
+   "mean_err_after_outliers": 10.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 23",
+   "reads": 84,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 9.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 24",
+   "reads": 84,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 8.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 34",
+   "reads": 84,
+   "read_outliers": 15,
+   "mean_err_after_outliers": 12.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 12",
+   "reads": 166,
+   "read_outliers": 18,
+   "mean_err_after_outliers": 14.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 13",
+   "reads": 166,
+   "read_outliers": 20,
+   "mean_err_after_outliers": 12.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 14",
+   "reads": 149,
+   "read_outliers": 30,
+   "mean_err_after_outliers": 17.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 23",
+   "reads": 152,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 11.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 24",
+   "reads": 166,
+   "read_outliers": 31,
+   "mean_err_after_outliers": 8.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 34",
+   "reads": 166,
+   "read_outliers": 28,
+   "mean_err_after_outliers": 16.1,
+   "dropped": false,
+   "why": null
+  }
+ ],
+ "Angle2 (fixed)": [
+  {
+   "scenario": "room22 pair 24",
+   "reads": 60,
+   "read_outliers": 41,
+   "mean_err_after_outliers": 20.5,
+   "dropped": true,
+   "why": "over half its reads were outliers"
+  },
+  {
+   "scenario": "room10 pair 12",
+   "reads": 54,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 14.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 13",
+   "reads": 54,
+   "read_outliers": 11,
+   "mean_err_after_outliers": 10.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 14",
+   "reads": 54,
+   "read_outliers": 14,
+   "mean_err_after_outliers": 14.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 23",
+   "reads": 54,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 24",
+   "reads": 54,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 5.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 34",
+   "reads": 54,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 12",
+   "reads": 153,
+   "read_outliers": 25,
+   "mean_err_after_outliers": 10.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 13",
+   "reads": 154,
+   "read_outliers": 13,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 14",
+   "reads": 153,
+   "read_outliers": 21,
+   "mean_err_after_outliers": 9.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 23",
+   "reads": 154,
+   "read_outliers": 12,
+   "mean_err_after_outliers": 11.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 24",
+   "reads": 153,
+   "read_outliers": 16,
+   "mean_err_after_outliers": 11.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 34",
+   "reads": 154,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 6.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 12",
+   "reads": 197,
+   "read_outliers": 22,
+   "mean_err_after_outliers": 8.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 13",
+   "reads": 197,
+   "read_outliers": 17,
+   "mean_err_after_outliers": 11.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 14",
+   "reads": 180,
+   "read_outliers": 30,
+   "mean_err_after_outliers": 11.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 23",
+   "reads": 170,
+   "read_outliers": 10,
+   "mean_err_after_outliers": 8.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 24",
+   "reads": 197,
+   "read_outliers": 42,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 34",
+   "reads": 197,
+   "read_outliers": 34,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 12",
+   "reads": 28,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 8.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 13",
+   "reads": 28,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 10.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 14",
+   "reads": 28,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 11.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 23",
+   "reads": 26,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 12.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 24",
+   "reads": 28,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 9.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 34",
+   "reads": 28,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 10.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 12",
+   "reads": 51,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 3.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 13",
+   "reads": 51,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 7.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 14",
+   "reads": 45,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 14.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 23",
+   "reads": 45,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 24",
+   "reads": 50,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 11.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 34",
+   "reads": 51,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 5.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 12",
+   "reads": 124,
+   "read_outliers": 11,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 13",
+   "reads": 124,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 9.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 14",
+   "reads": 107,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 23",
+   "reads": 102,
+   "read_outliers": 11,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 24",
+   "reads": 123,
+   "read_outliers": 10,
+   "mean_err_after_outliers": 8.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 34",
+   "reads": 123,
+   "read_outliers": 13,
+   "mean_err_after_outliers": 10.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 12",
+   "reads": 86,
+   "read_outliers": 10,
+   "mean_err_after_outliers": 15.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 13",
+   "reads": 86,
+   "read_outliers": 15,
+   "mean_err_after_outliers": 12.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 14",
+   "reads": 75,
+   "read_outliers": 17,
+   "mean_err_after_outliers": 16.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 23",
+   "reads": 86,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 9.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 24",
+   "reads": 86,
+   "read_outliers": 21,
+   "mean_err_after_outliers": 16.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 34",
+   "reads": 86,
+   "read_outliers": 14,
+   "mean_err_after_outliers": 15.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 12",
+   "reads": 104,
+   "read_outliers": 25,
+   "mean_err_after_outliers": 14.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 13",
+   "reads": 106,
+   "read_outliers": 16,
+   "mean_err_after_outliers": 14.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 14",
+   "reads": 100,
+   "read_outliers": 27,
+   "mean_err_after_outliers": 14.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 23",
+   "reads": 106,
+   "read_outliers": 12,
+   "mean_err_after_outliers": 10.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 24",
+   "reads": 106,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 10.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 34",
+   "reads": 106,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 12.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room22 pair 12",
+   "reads": 63,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 12.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room22 pair 13",
+   "reads": 64,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 8.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room22 pair 14",
+   "reads": 63,
+   "read_outliers": 24,
+   "mean_err_after_outliers": 18.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room22 pair 23",
+   "reads": 64,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 11.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room22 pair 34",
+   "reads": 61,
+   "read_outliers": 29,
+   "mean_err_after_outliers": 18.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 12",
+   "reads": 22,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 11.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 13",
+   "reads": 22,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 9.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 14",
+   "reads": 21,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 14.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 23",
+   "reads": 21,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 9.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 24",
+   "reads": 21,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 21.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 34",
+   "reads": 22,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 14.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 12",
+   "reads": 28,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 14.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 13",
+   "reads": 28,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 14",
+   "reads": 28,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 8.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 23",
+   "reads": 27,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 24",
+   "reads": 29,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 8.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 34",
+   "reads": 27,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 7.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 12",
+   "reads": 80,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 9.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 13",
+   "reads": 79,
+   "read_outliers": 37,
+   "mean_err_after_outliers": 10.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 14",
+   "reads": 80,
+   "read_outliers": 16,
+   "mean_err_after_outliers": 11.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 23",
+   "reads": 66,
+   "read_outliers": 23,
+   "mean_err_after_outliers": 13.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 24",
+   "reads": 80,
+   "read_outliers": 32,
+   "mean_err_after_outliers": 9.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 34",
+   "reads": 80,
+   "read_outliers": 18,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 12",
+   "reads": 109,
+   "read_outliers": 10,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 13",
+   "reads": 109,
+   "read_outliers": 13,
+   "mean_err_after_outliers": 8.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 14",
+   "reads": 105,
+   "read_outliers": 11,
+   "mean_err_after_outliers": 13.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 23",
+   "reads": 98,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 9.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 24",
+   "reads": 109,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 8.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 34",
+   "reads": 109,
+   "read_outliers": 11,
+   "mean_err_after_outliers": 8.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 12",
+   "reads": 58,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 10.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 13",
+   "reads": 58,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 9.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 14",
+   "reads": 56,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 9.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 23",
+   "reads": 33,
+   "read_outliers": 0,
+   "mean_err_after_outliers": 8.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 24",
+   "reads": 58,
+   "read_outliers": 10,
+   "mean_err_after_outliers": 8.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 34",
+   "reads": 58,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 13.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 12",
+   "reads": 79,
+   "read_outliers": 22,
+   "mean_err_after_outliers": 10.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 13",
+   "reads": 79,
+   "read_outliers": 11,
+   "mean_err_after_outliers": 13.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 14",
+   "reads": 81,
+   "read_outliers": 16,
+   "mean_err_after_outliers": 8.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 23",
+   "reads": 81,
+   "read_outliers": 12,
+   "mean_err_after_outliers": 12.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 24",
+   "reads": 80,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 10.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 34",
+   "reads": 82,
+   "read_outliers": 18,
+   "mean_err_after_outliers": 14.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 12",
+   "reads": 165,
+   "read_outliers": 12,
+   "mean_err_after_outliers": 12.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 13",
+   "reads": 164,
+   "read_outliers": 22,
+   "mean_err_after_outliers": 13.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 14",
+   "reads": 149,
+   "read_outliers": 50,
+   "mean_err_after_outliers": 16.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 23",
+   "reads": 149,
+   "read_outliers": 12,
+   "mean_err_after_outliers": 13.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 24",
+   "reads": 164,
+   "read_outliers": 24,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 34",
+   "reads": 164,
+   "read_outliers": 22,
+   "mean_err_after_outliers": 14.8,
+   "dropped": false,
+   "why": null
+  }
+ ],
+ "Angle2 (before fix)": [
+  {
+   "scenario": "room22 pair 24",
+   "reads": 60,
+   "read_outliers": 43,
+   "mean_err_after_outliers": 21.4,
+   "dropped": true,
+   "why": "over half its reads were outliers"
+  },
+  {
+   "scenario": "room22 pair 34",
+   "reads": 61,
+   "read_outliers": 34,
+   "mean_err_after_outliers": 21.7,
+   "dropped": true,
+   "why": "over half its reads were outliers"
+  },
+  {
+   "scenario": "room4 pair 13",
+   "reads": 79,
+   "read_outliers": 43,
+   "mean_err_after_outliers": 10.9,
+   "dropped": true,
+   "why": "over half its reads were outliers"
+  },
+  {
+   "scenario": "room10 pair 12",
+   "reads": 54,
+   "read_outliers": 19,
+   "mean_err_after_outliers": 13.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 13",
+   "reads": 54,
+   "read_outliers": 17,
+   "mean_err_after_outliers": 10.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 14",
+   "reads": 54,
+   "read_outliers": 17,
+   "mean_err_after_outliers": 15.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 23",
+   "reads": 54,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 10.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 24",
+   "reads": 54,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 8.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room10 pair 34",
+   "reads": 54,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 12.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 12",
+   "reads": 153,
+   "read_outliers": 34,
+   "mean_err_after_outliers": 9.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 13",
+   "reads": 154,
+   "read_outliers": 33,
+   "mean_err_after_outliers": 12.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 14",
+   "reads": 153,
+   "read_outliers": 38,
+   "mean_err_after_outliers": 10.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 23",
+   "reads": 154,
+   "read_outliers": 34,
+   "mean_err_after_outliers": 13.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 24",
+   "reads": 153,
+   "read_outliers": 29,
+   "mean_err_after_outliers": 12.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room12 pair 34",
+   "reads": 154,
+   "read_outliers": 21,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 12",
+   "reads": 197,
+   "read_outliers": 36,
+   "mean_err_after_outliers": 10.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 13",
+   "reads": 197,
+   "read_outliers": 31,
+   "mean_err_after_outliers": 12.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 14",
+   "reads": 180,
+   "read_outliers": 51,
+   "mean_err_after_outliers": 12.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 23",
+   "reads": 170,
+   "read_outliers": 24,
+   "mean_err_after_outliers": 10.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 24",
+   "reads": 197,
+   "read_outliers": 65,
+   "mean_err_after_outliers": 11.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room13 pair 34",
+   "reads": 197,
+   "read_outliers": 49,
+   "mean_err_after_outliers": 12.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 12",
+   "reads": 28,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 7.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 13",
+   "reads": 28,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 13.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 14",
+   "reads": 28,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 11.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 23",
+   "reads": 26,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 10.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 24",
+   "reads": 28,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 13.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room14 pair 34",
+   "reads": 28,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 13.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 12",
+   "reads": 51,
+   "read_outliers": 1,
+   "mean_err_after_outliers": 6.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 13",
+   "reads": 51,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 10.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 14",
+   "reads": 45,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 13.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 23",
+   "reads": 45,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 9.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 24",
+   "reads": 50,
+   "read_outliers": 10,
+   "mean_err_after_outliers": 11.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room15 pair 34",
+   "reads": 51,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 8.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 12",
+   "reads": 124,
+   "read_outliers": 15,
+   "mean_err_after_outliers": 8.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 13",
+   "reads": 124,
+   "read_outliers": 11,
+   "mean_err_after_outliers": 11.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 14",
+   "reads": 107,
+   "read_outliers": 18,
+   "mean_err_after_outliers": 10.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 23",
+   "reads": 102,
+   "read_outliers": 15,
+   "mean_err_after_outliers": 12.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 24",
+   "reads": 123,
+   "read_outliers": 28,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room16 pair 34",
+   "reads": 123,
+   "read_outliers": 24,
+   "mean_err_after_outliers": 11.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 12",
+   "reads": 86,
+   "read_outliers": 17,
+   "mean_err_after_outliers": 15.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 13",
+   "reads": 86,
+   "read_outliers": 24,
+   "mean_err_after_outliers": 13.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 14",
+   "reads": 75,
+   "read_outliers": 25,
+   "mean_err_after_outliers": 16.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 23",
+   "reads": 86,
+   "read_outliers": 16,
+   "mean_err_after_outliers": 13.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 24",
+   "reads": 86,
+   "read_outliers": 28,
+   "mean_err_after_outliers": 15.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room2 pair 34",
+   "reads": 86,
+   "read_outliers": 28,
+   "mean_err_after_outliers": 15.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 12",
+   "reads": 104,
+   "read_outliers": 35,
+   "mean_err_after_outliers": 17.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 13",
+   "reads": 106,
+   "read_outliers": 30,
+   "mean_err_after_outliers": 16.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 14",
+   "reads": 100,
+   "read_outliers": 38,
+   "mean_err_after_outliers": 16.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 23",
+   "reads": 106,
+   "read_outliers": 19,
+   "mean_err_after_outliers": 13.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 24",
+   "reads": 106,
+   "read_outliers": 17,
+   "mean_err_after_outliers": 12.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room21 pair 34",
+   "reads": 106,
+   "read_outliers": 18,
+   "mean_err_after_outliers": 15.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room22 pair 12",
+   "reads": 63,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 14.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room22 pair 13",
+   "reads": 64,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 10.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room22 pair 14",
+   "reads": 63,
+   "read_outliers": 22,
+   "mean_err_after_outliers": 18.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room22 pair 23",
+   "reads": 64,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 11.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 12",
+   "reads": 22,
+   "read_outliers": 3,
+   "mean_err_after_outliers": 15.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 13",
+   "reads": 22,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 10.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 14",
+   "reads": 21,
+   "read_outliers": 4,
+   "mean_err_after_outliers": 13.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 23",
+   "reads": 21,
+   "read_outliers": 6,
+   "mean_err_after_outliers": 9.6,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 24",
+   "reads": 21,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 19.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room23 pair 34",
+   "reads": 22,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 16.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 12",
+   "reads": 28,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 18.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 13",
+   "reads": 28,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 12.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 14",
+   "reads": 28,
+   "read_outliers": 7,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 23",
+   "reads": 27,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 10.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 24",
+   "reads": 29,
+   "read_outliers": 5,
+   "mean_err_after_outliers": 10.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room24 pair 34",
+   "reads": 27,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 13.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 12",
+   "reads": 80,
+   "read_outliers": 14,
+   "mean_err_after_outliers": 13.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 14",
+   "reads": 80,
+   "read_outliers": 20,
+   "mean_err_after_outliers": 12.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 23",
+   "reads": 66,
+   "read_outliers": 30,
+   "mean_err_after_outliers": 14.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 24",
+   "reads": 80,
+   "read_outliers": 38,
+   "mean_err_after_outliers": 11.4,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room4 pair 34",
+   "reads": 80,
+   "read_outliers": 23,
+   "mean_err_after_outliers": 11.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 12",
+   "reads": 109,
+   "read_outliers": 19,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 13",
+   "reads": 109,
+   "read_outliers": 26,
+   "mean_err_after_outliers": 10.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 14",
+   "reads": 105,
+   "read_outliers": 25,
+   "mean_err_after_outliers": 14.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 23",
+   "reads": 98,
+   "read_outliers": 15,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 24",
+   "reads": 109,
+   "read_outliers": 24,
+   "mean_err_after_outliers": 12.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room6 pair 34",
+   "reads": 109,
+   "read_outliers": 20,
+   "mean_err_after_outliers": 12.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 12",
+   "reads": 58,
+   "read_outliers": 8,
+   "mean_err_after_outliers": 9.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 13",
+   "reads": 58,
+   "read_outliers": 10,
+   "mean_err_after_outliers": 10.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 14",
+   "reads": 56,
+   "read_outliers": 10,
+   "mean_err_after_outliers": 10.7,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 23",
+   "reads": 33,
+   "read_outliers": 2,
+   "mean_err_after_outliers": 10.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 24",
+   "reads": 58,
+   "read_outliers": 13,
+   "mean_err_after_outliers": 10.5,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room7 pair 34",
+   "reads": 58,
+   "read_outliers": 12,
+   "mean_err_after_outliers": 13.2,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 12",
+   "reads": 79,
+   "read_outliers": 29,
+   "mean_err_after_outliers": 12.9,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 13",
+   "reads": 79,
+   "read_outliers": 18,
+   "mean_err_after_outliers": 14.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 14",
+   "reads": 81,
+   "read_outliers": 22,
+   "mean_err_after_outliers": 11.0,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 23",
+   "reads": 81,
+   "read_outliers": 22,
+   "mean_err_after_outliers": 12.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 24",
+   "reads": 80,
+   "read_outliers": 9,
+   "mean_err_after_outliers": 10.8,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room8 pair 34",
+   "reads": 82,
+   "read_outliers": 21,
+   "mean_err_after_outliers": 15.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 12",
+   "reads": 165,
+   "read_outliers": 31,
+   "mean_err_after_outliers": 13.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 13",
+   "reads": 164,
+   "read_outliers": 27,
+   "mean_err_after_outliers": 13.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 14",
+   "reads": 149,
+   "read_outliers": 54,
+   "mean_err_after_outliers": 16.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 23",
+   "reads": 149,
+   "read_outliers": 26,
+   "mean_err_after_outliers": 14.1,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 24",
+   "reads": 164,
+   "read_outliers": 33,
+   "mean_err_after_outliers": 12.3,
+   "dropped": false,
+   "why": null
+  },
+  {
+   "scenario": "room9 pair 34",
+   "reads": 164,
+   "read_outliers": 25,
+   "mean_err_after_outliers": 15.5,
+   "dropped": false,
+   "why": null
+  }
+ ]
+}

@@ -1,0 +1,522 @@
+{
+ "rule": {
+  "scope_deg": 75.0,
+  "read_outlier_deg": 36.0,
+  "scenario_mean_deg": 22.5,
+  "scenario_outlier_share": 0.5
+ },
+ "starss23": {
+  "GccPhat": {
+   "reads_total": 8532,
+   "in_scope": 8322,
+   "read_outliers": 805,
+   "read_outliers_pct": 9.7,
+   "scenarios": 96,
+   "scenarios_dropped": 1,
+   "reads_in_dropped_scenarios": 22,
+   "kept": 7495,
+   "kept_pct": 90.1,
+   "score": {
+    "n": 7495,
+    "mean_err": 10.6,
+    "median_err": 7.6,
+    "within_10_pct": 59.6,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 1737,
+      "mean": 0.8
+     },
+     "15-30": {
+      "n": 1819,
+      "mean": 2.4
+     },
+     "30-45": {
+      "n": 1764,
+      "mean": 5.8
+     },
+     "45-60": {
+      "n": 1383,
+      "mean": 9.9
+     },
+     "60-75": {
+      "n": 591,
+      "mean": 13.9
+     }
+    }
+   },
+   "outlier_kinds": {
+    "mirror (sign flipped)": 63,
+    "other": 278,
+    "pinned at end-fire": 360,
+    "truth was its 2nd/3rd direction": 104
+   }
+  },
+  "Angle2 (fixed)": {
+   "reads_total": 8420,
+   "in_scope": 8211,
+   "read_outliers": 1167,
+   "read_outliers_pct": 14.2,
+   "scenarios": 96,
+   "scenarios_dropped": 1,
+   "reads_in_dropped_scenarios": 19,
+   "kept": 7025,
+   "kept_pct": 85.6,
+   "score": {
+    "n": 7025,
+    "mean_err": 11.0,
+    "median_err": 8.4,
+    "within_10_pct": 56.1,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 1654,
+      "mean": 1.1
+     },
+     "15-30": {
+      "n": 1751,
+      "mean": 2.4
+     },
+     "30-45": {
+      "n": 1647,
+      "mean": 4.1
+     },
+     "45-60": {
+      "n": 1315,
+      "mean": 5.8
+     },
+     "60-75": {
+      "n": 476,
+      "mean": 8.5
+     }
+    }
+   },
+   "outlier_kinds": {
+    "mirror (sign flipped)": 123,
+    "other": 547,
+    "pinned at end-fire": 327,
+    "truth was its 2nd/3rd direction": 170
+   }
+  },
+  "Angle2 (before fix)": {
+   "reads_total": 8420,
+   "in_scope": 8211,
+   "read_outliers": 1830,
+   "read_outliers_pct": 22.3,
+   "scenarios": 96,
+   "scenarios_dropped": 3,
+   "reads_in_dropped_scenarios": 80,
+   "kept": 6301,
+   "kept_pct": 76.7,
+   "score": {
+    "n": 6301,
+    "mean_err": 12.3,
+    "median_err": 10.2,
+    "within_10_pct": 49.0,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 1544,
+      "mean": 0.8
+     },
+     "15-30": {
+      "n": 1598,
+      "mean": 1.7
+     },
+     "30-45": {
+      "n": 1461,
+      "mean": 1.6
+     },
+     "45-60": {
+      "n": 1113,
+      "mean": 3.3
+     },
+     "60-75": {
+      "n": 416,
+      "mean": 6.6
+     }
+    }
+   },
+   "outlier_kinds": {
+    "mirror (sign flipped)": 221,
+    "other": 822,
+    "pinned at end-fire": 493,
+    "truth was its 2nd/3rd direction": 294
+   }
+  },
+  "common": {
+   "schemes": [
+    "GccPhat",
+    "Angle2 (fixed)"
+   ],
+   "reads": 6630,
+   "GccPhat": {
+    "n": 6630,
+    "mean_err": 10.0,
+    "median_err": 7.0,
+    "within_10_pct": 62.5,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 1601,
+      "mean": 0.6
+     },
+     "15-30": {
+      "n": 1679,
+      "mean": 2.4
+     },
+     "30-45": {
+      "n": 1535,
+      "mean": 5.4
+     },
+     "45-60": {
+      "n": 1181,
+      "mean": 10.2
+     },
+     "60-75": {
+      "n": 457,
+      "mean": 14.1
+     }
+    }
+   },
+   "Angle2 (fixed)": {
+    "n": 6630,
+    "mean_err": 10.6,
+    "median_err": 8.1,
+    "within_10_pct": 57.7,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 1601,
+      "mean": 1.1
+     },
+     "15-30": {
+      "n": 1679,
+      "mean": 2.2
+     },
+     "30-45": {
+      "n": 1535,
+      "mean": 3.7
+     },
+     "45-60": {
+      "n": 1181,
+      "mean": 5.7
+     },
+     "60-75": {
+      "n": 457,
+      "mean": 8.8
+     }
+    }
+   }
+  }
+ },
+ "dechorate_measured": {
+  "GccPhat": {
+   "reads_total": 19008,
+   "in_scope": 13464,
+   "read_outliers": 385,
+   "read_outliers_pct": 2.9,
+   "scenarios": 561,
+   "scenarios_dropped": 19,
+   "reads_in_dropped_scenarios": 189,
+   "kept": 12890,
+   "kept_pct": 95.7,
+   "score": {
+    "n": 12890,
+    "mean_err": 3.1,
+    "median_err": 1.2,
+    "within_10_pct": 91.8,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 3130,
+      "mean": -1.6
+     },
+     "15-30": {
+      "n": 4073,
+      "mean": 0.3
+     },
+     "30-45": {
+      "n": 2392,
+      "mean": 2.0
+     },
+     "45-60": {
+      "n": 2551,
+      "mean": 0.6
+     },
+     "60-75": {
+      "n": 744,
+      "mean": -1.4
+     }
+    }
+   },
+   "outlier_kinds": {
+    "mirror (sign flipped)": 45,
+    "on a reflective surface's echo": 158,
+    "other": 69,
+    "pinned at end-fire": 21,
+    "truth was its 2nd/3rd direction": 92
+   }
+  },
+  "Angle2 (before fix)": {
+   "reads_total": 19008,
+   "in_scope": 13464,
+   "read_outliers": 1089,
+   "read_outliers_pct": 8.1,
+   "scenarios": 561,
+   "scenarios_dropped": 0,
+   "reads_in_dropped_scenarios": 0,
+   "kept": 12375,
+   "kept_pct": 91.9,
+   "score": {
+    "n": 12375,
+    "mean_err": 8.4,
+    "median_err": 5.6,
+    "within_10_pct": 68.8,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 3071,
+      "mean": -0.1
+     },
+     "15-30": {
+      "n": 4043,
+      "mean": -1.7
+     },
+     "30-45": {
+      "n": 2388,
+      "mean": -1.8
+     },
+     "45-60": {
+      "n": 2262,
+      "mean": -3.5
+     },
+     "60-75": {
+      "n": 611,
+      "mean": -3.5
+     }
+    }
+   },
+   "outlier_kinds": {
+    "mirror (sign flipped)": 144,
+    "on a reflective surface's echo": 117,
+    "other": 347,
+    "pinned at end-fire": 162,
+    "truth was its 2nd/3rd direction": 319
+   }
+  },
+  "common": {
+   "schemes": [
+    "GccPhat",
+    "Angle2 (before fix)"
+   ],
+   "reads": 11903,
+   "GccPhat": {
+    "n": 11903,
+    "mean_err": 3.0,
+    "median_err": 1.1,
+    "within_10_pct": 92.1,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 3035,
+      "mean": -1.6
+     },
+     "15-30": {
+      "n": 3911,
+      "mean": 0.3
+     },
+     "30-45": {
+      "n": 2175,
+      "mean": 1.9
+     },
+     "45-60": {
+      "n": 2171,
+      "mean": 0.4
+     },
+     "60-75": {
+      "n": 611,
+      "mean": -1.4
+     }
+    }
+   },
+   "Angle2 (before fix)": {
+    "n": 11903,
+    "mean_err": 8.3,
+    "median_err": 5.6,
+    "within_10_pct": 69.5,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 3035,
+      "mean": -0.0
+     },
+     "15-30": {
+      "n": 3911,
+      "mean": -1.5
+     },
+     "30-45": {
+      "n": 2175,
+      "mean": -1.1
+     },
+     "45-60": {
+      "n": 2171,
+      "mean": -3.6
+     },
+     "60-75": {
+      "n": 611,
+      "mean": -3.5
+     }
+    }
+   }
+  }
+ },
+ "dechorate_geometry": {
+  "GccPhat": {
+   "reads_total": 19008,
+   "in_scope": 15312,
+   "read_outliers": 318,
+   "read_outliers_pct": 2.1,
+   "scenarios": 638,
+   "scenarios_dropped": 47,
+   "reads_in_dropped_scenarios": 911,
+   "kept": 14083,
+   "kept_pct": 92.0,
+   "score": {
+    "n": 14083,
+    "mean_err": 6.3,
+    "median_err": 4.4,
+    "within_10_pct": 78.9,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 3946,
+      "mean": -0.1
+     },
+     "15-30": {
+      "n": 3973,
+      "mean": 1.9
+     },
+     "30-45": {
+      "n": 2986,
+      "mean": 6.1
+     },
+     "45-60": {
+      "n": 1548,
+      "mean": 7.1
+     },
+     "60-75": {
+      "n": 1630,
+      "mean": 12.0
+     }
+    }
+   },
+   "outlier_kinds": {
+    "mirror (sign flipped)": 61,
+    "on a reflective surface's echo": 163,
+    "other": 49,
+    "pinned at end-fire": 21,
+    "truth was its 2nd/3rd direction": 24
+   }
+  },
+  "Angle2 (before fix)": {
+   "reads_total": 19008,
+   "in_scope": 15312,
+   "read_outliers": 1556,
+   "read_outliers_pct": 10.2,
+   "scenarios": 638,
+   "scenarios_dropped": 5,
+   "reads_in_dropped_scenarios": 68,
+   "kept": 13688,
+   "kept_pct": 89.4,
+   "score": {
+    "n": 13688,
+    "mean_err": 9.5,
+    "median_err": 6.9,
+    "within_10_pct": 63.9,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 3844,
+      "mean": 0.9
+     },
+     "15-30": {
+      "n": 4234,
+      "mean": -0.3
+     },
+     "30-45": {
+      "n": 2780,
+      "mean": 1.4
+     },
+     "45-60": {
+      "n": 1341,
+      "mean": -0.1
+     },
+     "60-75": {
+      "n": 1489,
+      "mean": 1.3
+     }
+    }
+   },
+   "outlier_kinds": {
+    "mirror (sign flipped)": 177,
+    "on a reflective surface's echo": 176,
+    "other": 632,
+    "pinned at end-fire": 265,
+    "truth was its 2nd/3rd direction": 306
+   }
+  },
+  "common": {
+   "schemes": [
+    "GccPhat",
+    "Angle2 (before fix)"
+   ],
+   "reads": 12693,
+   "GccPhat": {
+    "n": 12693,
+    "mean_err": 5.9,
+    "median_err": 4.2,
+    "within_10_pct": 81.6,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 3831,
+      "mean": -0.2
+     },
+     "15-30": {
+      "n": 3777,
+      "mean": 1.9
+     },
+     "30-45": {
+      "n": 2654,
+      "mean": 5.8
+     },
+     "45-60": {
+      "n": 1312,
+      "mean": 6.9
+     },
+     "60-75": {
+      "n": 1119,
+      "mean": 11.5
+     }
+    }
+   },
+   "Angle2 (before fix)": {
+    "n": 12693,
+    "mean_err": 9.0,
+    "median_err": 6.6,
+    "within_10_pct": 65.9,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 3831,
+      "mean": 0.9
+     },
+     "15-30": {
+      "n": 3777,
+      "mean": -0.1
+     },
+     "30-45": {
+      "n": 2654,
+      "mean": 1.3
+     },
+     "45-60": {
+      "n": 1312,
+      "mean": -0.0
+     },
+     "60-75": {
+      "n": 1119,
+      "mean": -0.6
+     }
+    }
+   }
+  }
+ }
+}
