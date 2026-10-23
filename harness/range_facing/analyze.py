@@ -19,7 +19,9 @@ Step 2, the opener: per recording, the first onset of a talker alone (STARSS: so
 facing the array within 30 deg; dEchorate: every cut in turn, as it has no timeline). Every later read's predicted
 distance ratio is 10^((CDR_opener - CDR) / 20); its error is log2(predicted / true ratio). Scored as batch A scored
 range: same-talker pairs ordered (ratio >= 1.25 / 1.5 / 2), the spread between reads within 0.3 m of one spot, and
-the step between reads 2x apart, here in predicted doublings (and in dB, as batch A's).
+the step between reads 2x apart, here in predicted doublings (and in dB, as batch A's). Beside the law's error: the
+no-information baseline (every later read at the opener's distance) and, as a diagnostic only, the error with the
+CDR's own slope (fitted on the other recordings) in place of -20.
 A recording fails outright when its median |error| is over a doubling; its reads are set aside, and listed.
 
 Step 3 (LOCATA): CDR_band = a + b log10 r + c (facing / 180 deg), bootstrapped over recordings: c is how far each band
@@ -156,58 +158,88 @@ def val(r, band, comp=None):
     return comp(r)
 
 
+def loro_slopes(rows, band, comp=None):
+    """Per recording: the CDR's own dB per decade, from the other recordings of its dataset (each centred on its own
+    mean, so rooms' offsets don't count). A diagnostic of the law's -20, not a replacement for it."""
+    by = defaultdict(list)
+    for r in rows:
+        v = val(r, band, comp)
+        if v is not None:
+            by[(r['ds'], r['rec'])].append((math.log10(r['dist']), v))
+    cen = {}
+    for k, g in by.items():
+        x, y = np.array(g).T
+        cen[k] = (x - x.mean(), y - y.mean())
+    out = {}
+    for (ds, rec) in by:
+        X = np.concatenate([cen[k][0] for k in cen if k[0] == ds and k[1] != rec])
+        Y = np.concatenate([cen[k][1] for k in cen if k[0] == ds and k[1] != rec])
+        out[rec] = float(X @ Y / (X @ X))
+    return out
+
+
 def step2(rows, band, comp=None, ds_filter=None):
-    """Ratio error, ordering, spread, step, per dataset (and per room); recordings failing outright are set aside."""
+    """Ratio error, ordering, spread, step, per dataset; recordings failing outright are set aside. Beside the law's
+    error: the no-information baseline (every ratio 1: the opener's distance for everyone) and the error with the CDR's
+    own slope (loro_slopes) in place of -20."""
     errs = defaultdict(list)
     per_rec = {}
-    pred = {}
+    slopes = loro_slopes(rows, band, comp)
     for k, o, later in openers(rows):
         if ds_filter and later and later[0]['ds'] != ds_filter:
             continue
-        e = []
-        if o is None:          # dEchorate: every cut as the opener in turn
+        e = []                       # (read, dB below the opener, true log2 ratio)
+        if o is None:                # dEchorate: every cut as the opener in turn
             vals = [(r, val(r, band, comp)) for r in later]
             vals = [(r, v) for r, v in vals if v is not None]
-            for (ro, vo), (r, v) in combinations(vals, 2):
-                for (a, va), (b, vb) in (((ro, vo), (r, v)), ((r, v), (ro, vo))):
-                    e.append((vb, b, (va - vb) / 20 * LOG2_10 - math.log2(b['dist'] / a['dist'])))
-            for r, v in vals:
-                pred[r['id']] = v
+            for (ra, va), (rb, vb) in combinations(vals, 2):
+                e.append((rb, va - vb, math.log2(rb['dist'] / ra['dist'])))
+                e.append((ra, vb - va, math.log2(ra['dist'] / rb['dist'])))
         else:
             vo = val(o, band, comp)
             if vo is None:
                 continue
             for r in later:
                 v = val(r, band, comp)
-                if v is None:
-                    continue
-                pl2 = (vo - v) / 20 * LOG2_10
-                e.append((v, r, pl2 - math.log2(r['dist'] / o['dist'])))
-                pred[r['id']] = v
+                if v is not None:
+                    e.append((r, vo - v, math.log2(r['dist'] / o['dist'])))
         if not e:
             continue
         ds = (o or later[0])['ds']
-        med = st.median(abs(x[2]) for x in e)
+        law_e = [dl / 20 * LOG2_10 - tl for _, dl, tl in e]
+        med = st.median(abs(x) for x in law_e)
         per_rec[k] = {'ds': ds, 'room': later[0]['room'], 'n': len(e), 'median_abs_err_doublings': round(med, 2),
-                      'bias_doublings': round(st.median(x[2] for x in e), 2), 'fails': med > 1.0,
+                      'bias_doublings': round(st.median(law_e), 2), 'fails': med > 1.0,
                       'opener_dist_m': None if o is None else o['dist']}
         if med <= 1.0:
-            errs[ds].extend(e)
+            sl = min(slopes.get(k, -20.0), -0.5)
+            errs[ds].extend((r, x, -tl, dl / -sl * LOG2_10 - tl) for (r, dl, tl), x in zip(e, law_e))
     res = {}
     for ds, e in errs.items():
-        a = [abs(x[2]) for x in e]
+        a = [abs(x[1]) for x in e]
         res[ds] = {'reads': len(e), 'median_abs_err_doublings': round(st.median(a), 2),
-                   'median_factor': round(2 ** st.median(a), 2), 'bias_doublings': round(st.median(x[2] for x in e), 2),
+                   'median_factor': round(2 ** st.median(a), 2), 'bias_doublings': round(st.median(x[1] for x in e), 2),
                    'within_1.5x_pct': round(100 * np.mean([x <= math.log2(1.5) for x in a]), 1),
-                   'within_2x_pct': round(100 * np.mean([x <= 1 for x in a]), 1)}
-        bad = [x for x in e if abs(x[2]) > 1]
+                   'within_2x_pct': round(100 * np.mean([x <= 1 for x in a]), 1),
+                   'baseline_ratio1_median_abs_doublings': round(st.median(abs(x[2]) for x in e), 2),
+                   'baseline_ratio1_within_1.5x_pct': round(100 * np.mean([abs(x[2]) <= math.log2(1.5) for x in e]), 1),
+                   'own_slope_median_abs_doublings': round(st.median(abs(x[3]) for x in e), 2),
+                   'own_slope_within_1.5x_pct': round(100 * np.mean([abs(x[3]) <= math.log2(1.5) for x in e]), 1),
+                   'true_ratio_beyond_1.5x_pct': round(100 * np.mean([abs(x[2]) > math.log2(1.5) for x in e]), 1)}
+        far = [x for x in e if abs(x[2]) >= 1]        # reads at least 2x nearer or farther than the opener
+        if far:
+            res[ds]['reads_2x_from_opener'] = len(far)
+            res[ds]['law_median_abs_doublings_2x_from_opener'] = round(st.median(abs(x[1]) for x in far), 2)
+            res[ds]['own_slope_median_abs_doublings_2x_from_opener'] = round(st.median(abs(x[3]) for x in far), 2)
+        bad = [x for x in e if abs(x[1]) > 1]
         res[ds]['outliers_over_2x'] = len(bad)
         if ds != 'dechorate':
+            bad = [x[0] for x in bad]
             res[ds]['outliers_by_cause'] = {
-                'another talker active': sum(1 for x in bad if x[1].get('overlap')),
-                'facing away (>90 deg)': sum(1 for x in bad if (x[1]['facing'] or 0) > 90 and not x[1].get('overlap')),
-                'nearer than 1 m': sum(1 for x in bad if x[1]['dist'] < 1 and not x[1].get('overlap') and (x[1]['facing'] or 0) <= 90),
-                'other': sum(1 for x in bad if not x[1].get('overlap') and (x[1]['facing'] or 0) <= 90 and x[1]['dist'] >= 1)}
+                'another talker active': sum(1 for r in bad if r.get('overlap')),
+                'facing away (>90 deg)': sum(1 for r in bad if (r['facing'] or 0) > 90 and not r.get('overlap')),
+                'nearer than 1 m': sum(1 for r in bad if r['dist'] < 1 and not r.get('overlap') and (r['facing'] or 0) <= 90),
+                'other': sum(1 for r in bad if not r.get('overlap') and (r['facing'] or 0) <= 90 and r['dist'] >= 1)}
     failed = sorted(k for k, v in per_rec.items() if v['fails'])
     keep = {r['id'] for r in rows if r['rec'] not in failed}
     order = ordering(rows, band, comp, keep)
@@ -413,6 +445,19 @@ def main():
     rows = load(sys.argv[1])
     S = {'rows': {ds: sum(1 for r in rows if r['ds'] == ds) for ds in ('dechorate', 'starss23', 'locata')}}
     S['step1'] = step1(rows)
+    rir = json.loads((Path(sys.argv[1]) / 'dechorate_rir.json').read_text())
+    from scipy.stats import spearmanr
+    S['step1_dechorate_rc_vs_t60'] = {}
+    for b in ('MF', 'ALL', 'LF_raw', 'HF'):
+        rooms = sorted(S['step1']['dechorate'])
+        t60 = [rir[r]['t60']['LF' if b == 'LF_raw' else b] for r in rooms]
+        rc = [S['step1']['dechorate'][r][b]['rc_m_at_-20'] for r in rooms]
+        rc_rir = [S['step1']['dechorate'][r]['rir_drr']['LF' if b == 'LF_raw' else b]['rc_m_at_-20'] for r in rooms]
+        S['step1_dechorate_rc_vs_t60'][b] = {
+            't60_s': dict(zip(rooms, t60)), 'cdr_rc_m': dict(zip(rooms, rc)), 'rir_rc_m': dict(zip(rooms, rc_rir)),
+            'cdr_rc_spearman': round(float(spearmanr(t60, rc)[0]), 2), 'rir_rc_spearman': round(float(spearmanr(t60, rc_rir)[0]), 2),
+            'cdr_rc_loglog_slope': round(float(np.polyfit(np.log10(t60), np.log10(rc), 1)[0]), 2),
+            'rir_rc_loglog_slope': round(float(np.polyfit(np.log10(t60), np.log10(rc_rir), 1)[0]), 2)}   # Sabine: -0.5
     S['step2'] = {}
     for b in BANDS:
         s = step2(rows, b)

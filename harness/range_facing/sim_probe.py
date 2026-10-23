@@ -56,7 +56,7 @@ PAIR_M = 0.157                                                      # the phone'
 SIZES = {'small 3.5x4x2.6': (3.5, 4.0, 2.6), 'medium 5x6x2.8': (5.0, 6.0, 2.8),
          'large 8x10x3.2': (8.0, 10.0, 3.2), 'hall 12x15x4': (12.0, 15.0, 4.0)}
 RT60S = (0.25, 0.4, 0.6, 0.9)
-NOISE_DB = (50.0, 35.0, 20.0, 10.0, 0.0)
+NOISE_DB = (50.0, 35.0, 20.0, 10.0, 0.0, -10.0, -20.0)
 PROBE_GAIN_DB = 10.0
 DISTS = (0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 4.0)
 N_TALK = 4                                                          # EARS onsets per position
@@ -83,8 +83,7 @@ def self_path(y, dry, ntap=NTAP):
 def tail_read(y, dry, g, pre):
     """The room's part of one mic's recording: y less the outdoor self-path's prediction. Returns the room's band energy
     per unit dry band energy (noise corrected, from the PRE pre-roll), the direct path's (as a check on the volume), and
-    the echo time from the free decay after the announcement ends (10 ms envelope, -5 to -25 dB or 5 dB over the floor
-    if that comes first, x3: T20 as the truth's)."""
+    the echo time from the decay after the announcement ends (decay_fit)."""
     yb = band(y, *PROBE_BAND)
     noise_pw = float(np.mean(yb[:pre] ** 2))
     pred = fftconvolve(dry, g)[:len(y) - pre]
@@ -92,24 +91,34 @@ def tail_read(y, dry, g, pre):
     e_dry = float(np.sum(band(dry, *PROBE_BAND) ** 2))
     G_rev = bandE(res[pre:], noise_pw) / e_dry
     G_dir = bandE(np.concatenate([np.zeros(pre), pred])[pre:], 0.0) / e_dry
-    # free decay: from the dry's last 10 ms frame within 20 dB of its peak
+    T60 = decay_fit(band(res, *PROBE_BAND)[pre:], band(dry, *PROBE_BAND) ** 2, noise_pw)     # the room's part only
+    return G_rev, G_dir, T60, {}
+
+
+def decay_fit(yb, de, noise_pw):
+    """The echo time from the recording's fall after the last word, the dry signal known: the band power the room would
+    give, the dry's band power smeared by exp(-6 ln10 t / T60), is fitted in dB (level free) to the recording's 10 ms
+    envelope from the dry's last frame within 20 dB of its peak until 25 dB down or 5 dB over the noise floor."""
     blk = int(0.01 * SR)
-    de = band(dry, *PROBE_BAND) ** 2
     nb = len(de) // blk
     fe = 10 * np.log10(de[:nb * blk].reshape(nb, blk).mean(1) + 1e-30)
-    end = pre + (int(np.max(np.nonzero(fe > fe.max() - 20)[0])) + 1) * blk
-    t = yb[end:]
-    nt = len(t) // blk
-    db = 10 * np.log10((t[:nt * blk].reshape(nt, blk) ** 2).mean(1) + 1e-30)
+    i0 = int(np.max(np.nonzero(fe > fe.max() - 20)[0]))
+    nt = len(yb) // blk
+    ob = 10 * np.log10((yb[:nt * blk] ** 2).reshape(nt, blk).mean(1) + 1e-30)
     fl = 10 * np.log10(noise_pw + 1e-30)
-    T60 = None
-    i_hi = next((i for i in range(nt) if db[i] < db[0] - 5), None)
-    if i_hi is not None:
-        i_lo = next((i for i in range(i_hi, nt) if db[i] < max(fl + 5, db[0] - 25)), nt)    # T20, as the truth's
-        if i_lo - i_hi >= 4:
-            slope = np.polyfit(np.arange(i_hi, i_lo) * blk / SR, db[i_hi:i_lo], 1)[0]
-            T60 = -60.0 / slope if slope < 0 else None
-    return G_rev, G_dir, T60, {'decay_db_over_floor': round(float(db[0] - fl), 1)}
+    i1 = next((i for i in range(i0, nt) if ob[i] < max(fl + 5, ob[i0] - 25)), nt)
+    if i1 - i0 < 4:
+        return None
+    deb = de[:nb * blk].reshape(nb, blk).mean(1)                     # in 10 ms blocks: the smear is a slow envelope
+    best = None
+    for T in np.exp(np.linspace(math.log(0.08), math.log(4.0), 120)):
+        kern = np.exp(-6 * math.log(10) * (np.arange(int(min(3 * T, 6.0) * 100)) + 0.5) / 100 / T)
+        mb = 10 * np.log10(np.pad(np.convolve(deb, kern), (0, nt))[:nt] + 1e-30)
+        d = ob[i0:i1] - mb[i0:i1]
+        err = float(np.mean((d - d.mean()) ** 2))
+        if best is None or err < best[0]:
+            best = (err, float(T))
+    return best[1]
 
 
 def schroeder_t60(h):
