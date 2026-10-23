@@ -214,3 +214,16 @@ mixes channels, would.
 - **To re-make:** `python3 harness/zero_deg/pause_gcc.py <starss23 dir> <out>` (about 10 minutes on 4 cores, with
   `mic_dev` and `metadata_dev` unzipped in the STARSS23 dir), `sim_diffuse.py <out>`, and
   `odas_tapes.py tapes <out.json>`.
+
+## Logged reads on STARSS23 (same day, after the argmax change)
+`GccPhat.mjs` and `Angle2.mjs` now take the max after scoring every delay, return no read for a scan with no peak, and
+log every read that lands on 0 deg. Re-run on all 8,532 STARSS23 cuts:
+- **Final reads:** all 8,532 identical to `results/starss23/after_angle2_fix/`.
+- **Scans with no peak:** GccPhat logged 387, every one with every frequency's vote weighted to 0 by the pause (all
+  scores exactly 0). All fell in the settling half second, never at the lock. Before the change, each drew a +90 deg dot
+  for that frame. Angle2 logged none.
+- **Final reads at exactly 0 deg:** GccPhat 31 and Angle2 39, out of 8,532. For 19 of GccPhat's 31, the truth was within
+  6 deg. On STARSS, 0 deg isn't special.
+- **What a 0 deg read looks like in the log:** for example `{"score":19.04,"mean":14.92,"min":8.64,"share":0.634,
+  "width":[-73.4,60.1]}`. The winner barely clears the mean, and the peak spans most of the arc. That's a read with
+  almost no direction in it. Filter the house tapes' console for `[GccPhat] zero` and compare the widths.
