@@ -501,7 +501,10 @@ Score under the scoring rule; commit `results/stage2_dfn/` and `harness/stage2_d
 
 ## 17. Orientation from DFN run on each capsule separately
 
-QUEUED with the orientation work (Jay, 2026-10-23). Jay's earlier attempt fed L and R into DFN as two separate streams
+DROPPED (Jay, 2026-10-23): not worth crunching. Don't start this one. Step 3's single-channel cues (tilt, lsnr,
+coh_drr against facing, with distance as a covariate) move into the orientation work when it comes off hold.
+
+Jay's earlier attempt fed L and R into DFN as two separate streams
 and compared what it kept in each, to read the talker's facing. It didn't work. This brief finds out whether it could
 have, before spending more on it.
 
