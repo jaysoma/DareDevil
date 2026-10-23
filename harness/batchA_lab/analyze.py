@@ -2,7 +2,7 @@
 """Brief 13's tables from reads.jsonl.gz: wrong-lock rates, the cleaned score (Jay's rule), fingerprints, who falls
 first, the class catalogue, and the aliasing map.
 
-    python3 analyze.py reads.jsonl.gz OUT_DIR    -> OUT_DIR/summary.json, tables.md, catalogue.jsonl
+    python3 analyze.py reads.jsonl.gz OUT_DIR    -> OUT_DIR/summary.json, tables.md, catalogue.jsonl.gz
 
 Fingerprint: every cause-level read is paired with the SAME cut (placement, angle, onset) at baseline, and each clue's
 change is the median over pairs (rates: the change in percentage points). So a clue moves only because the cause did.
@@ -189,7 +189,7 @@ def main():
                         break
                 res['falls_first'][f'{fam}|{p}|{s}'] = first
     (out / 'summary.json').write_text(json.dumps(res, indent=1))
-    with open(out / 'catalogue.jsonl', 'w') as fh:
+    with gzip.open(out / 'catalogue.jsonl.gz', 'wt') as fh:
         for c in catalogue:
             fh.write(json.dumps(c) + '\n')
     tables(res, catalogue, out)
