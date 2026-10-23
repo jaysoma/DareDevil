@@ -714,8 +714,24 @@ nothing else). Use `src/geonar/cdr_direct.py`'s direction-free CDR as the DRR es
 4. **Coarse facing, as a ladder.** From HF minus LF CDR, with the opener as the facing reference, classify:
    toward or away (under or over 90 deg), then quadrants, then 45 deg steps. Give accuracy and chance on each rung, and
    stop at the first rung that fails. Distance is held as a covariate throughout.
-5. **Echo from the opener, only if metres are wanted later.** A blind echo-time estimate from the opener's word
-   endings. On dEchorate, check it against the known settings, and report whether it predicts r_c.
+5. **The phone's own announcement as a room probe** (Jay, 2026-10-23). The demo opens with Jay saying "Activate
+   DareDevil mode" and the phone answering "DareDevil mode activated" from its own speaker. The answer is a known
+   sound from a known place, so it measures the room's one unknown instead of guessing it:
+   - **The physics:** in a diffuse field the reverberant level of a source is L_W + 10 log10(4/A), the same everywhere
+     in the room. With the phone's sound power L_W known (calibrated once), the reverberant level at the phone gives
+     the absorption A, so r_c = sqrt(Q A / 16 pi), and the decay gives the echo time. Together with the opener, range
+     becomes rough metres.
+   - **No anechoic chamber needed.** The text-to-speech waveform is the dry signal. The phone's speaker level is
+     calibrated once at 1 m outdoors, where there are no walls.
+   - **Simulate first:** pyroomacoustics shoeboxes over a spread of sizes and echo times. The announcement comes from a
+     point source a few cm from the pair (a small phone speaker: weak below about 300 Hz, so use 0.5-4 kHz). Place
+     talkers (EARS speech) at known distances in the same room. Read A and r_c from the announcement's tail (after the
+     direct path and the book's reflection, past about 5 ms). Then check the predicted DRR-distance line against the
+     talkers' measured CDR. Report how far r_c is off, against room size, echo time and background noise level.
+   - **Real rooms:** if a measured-RIR set has short source-receiver distances (under 0.3 m), use it as the
+     co-located case. Name the set and its licence.
+   - **Write the protocol for Jay's own check:** the one-time outdoor calibration, then per room the announcement plus
+     a walk, and what each recording must contain.
 
 Score in Jay's spirit: report every room, set aside rooms that fail outright to study, and catalogue the outliers.
 Commit `results/range_facing/` and `harness/range_facing/` to a branch. `src/` stays unchanged.
