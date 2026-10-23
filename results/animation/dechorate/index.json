@@ -1,0 +1,57 @@
+[
+ {
+  "room": "000000",
+  "setups": 72,
+  "clips": 1728
+ },
+ {
+  "room": "000001",
+  "setups": 72,
+  "clips": 1728
+ },
+ {
+  "room": "000010",
+  "setups": 72,
+  "clips": 1728
+ },
+ {
+  "room": "000100",
+  "setups": 72,
+  "clips": 1728
+ },
+ {
+  "room": "001000",
+  "setups": 72,
+  "clips": 1728
+ },
+ {
+  "room": "010000",
+  "setups": 72,
+  "clips": 1728
+ },
+ {
+  "room": "011000",
+  "setups": 72,
+  "clips": 1728
+ },
+ {
+  "room": "011100",
+  "setups": 72,
+  "clips": 1728
+ },
+ {
+  "room": "011110",
+  "setups": 72,
+  "clips": 1728
+ },
+ {
+  "room": "011111",
+  "setups": 72,
+  "clips": 1728
+ },
+ {
+  "room": "020002",
+  "setups": 72,
+  "clips": 1728
+ }
+]

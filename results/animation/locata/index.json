@@ -1,0 +1,138 @@
+[
+ {
+  "recording": "dev_task3_recording1",
+  "talkers": [
+   "talker5"
+  ],
+  "events": 6,
+  "duration_s": 23.2
+ },
+ {
+  "recording": "dev_task3_recording2",
+  "talkers": [
+   "talker2"
+  ],
+  "events": 6,
+  "duration_s": 26.4
+ },
+ {
+  "recording": "dev_task3_recording3",
+  "talkers": [
+   "talker1"
+  ],
+  "events": 6,
+  "duration_s": 24.2
+ },
+ {
+  "recording": "dev_task4_recording1",
+  "talkers": [
+   "talker1",
+   "talker2"
+  ],
+  "events": 35,
+  "duration_s": 59.7
+ },
+ {
+  "recording": "dev_task4_recording2",
+  "talkers": [
+   "talker2",
+   "talker5"
+  ],
+  "events": 36,
+  "duration_s": 62.6
+ },
+ {
+  "recording": "dev_task4_recording3",
+  "talkers": [
+   "talker1",
+   "talker5"
+  ],
+  "events": 38,
+  "duration_s": 60.2
+ },
+ {
+  "recording": "eval_task3_recording1",
+  "talkers": [
+   "talker2"
+  ],
+  "events": 7,
+  "duration_s": 22.7
+ },
+ {
+  "recording": "eval_task3_recording2",
+  "talkers": [
+   "talker1"
+  ],
+  "events": 6,
+  "duration_s": 22.3
+ },
+ {
+  "recording": "eval_task3_recording3",
+  "talkers": [
+   "talker4"
+  ],
+  "events": 8,
+  "duration_s": 22.2
+ },
+ {
+  "recording": "eval_task3_recording4",
+  "talkers": [
+   "talker4"
+  ],
+  "events": 9,
+  "duration_s": 24.8
+ },
+ {
+  "recording": "eval_task3_recording5",
+  "talkers": [
+   "talker5"
+  ],
+  "events": 7,
+  "duration_s": 20.3
+ },
+ {
+  "recording": "eval_task4_recording1",
+  "talkers": [
+   "talker1",
+   "talker2"
+  ],
+  "events": 43,
+  "duration_s": 73.1
+ },
+ {
+  "recording": "eval_task4_recording2",
+  "talkers": [
+   "talker1",
+   "talker2"
+  ],
+  "events": 23,
+  "duration_s": 65.2
+ },
+ {
+  "recording": "eval_task4_recording3",
+  "talkers": [
+   "talker2",
+   "talker5"
+  ],
+  "events": 42,
+  "duration_s": 63.1
+ },
+ {
+  "recording": "eval_task4_recording4",
+  "talkers": [
+   "talker2",
+   "talker5"
+  ],
+  "events": 38,
+  "duration_s": 60.8
+ },
+ {
+  "recording": "eval_task4_recording5",
+  "talkers": [
+   "talker1",
+   "talker5"
+  ],
+  "events": 31,
+  "duration_s": 59.9
+ }
+]
