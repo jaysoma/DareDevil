@@ -585,6 +585,11 @@ in front of someone.
 
 ## 18. AMI: who said what, and to whom, from the words
 
+PARTIAL 2026-10-23: `results/linguistic/ami/report.md`.
+- **Done:** steps 1 and 3; facing adds about 10 points on picking which person is addressed.
+- **Step 2:** stand-ins only, which show the text-only path never names more than two speakers. The Fisher model's runs
+  still wait on `us.aws.cdn.hf.co`, which the network policy denies; so do diart-first and Whisper.
+
 READY 2026-10-23, once this session can read `jaysoma/FisherDiarization` (private; attach it the way this repo was
 attached). Read its README, `blends.py` and `stage3.py` first. Change nothing there; copy what you need into
 `harness/linguistic/` and replace its hard-coded `C:\` paths with arguments.

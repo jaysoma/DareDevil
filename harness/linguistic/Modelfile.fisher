@@ -1,0 +1,12 @@
+# DiarizationLM-8b-Fisher-v2, Q4_K_M -- the purpose-trained speaker-label corrector.
+# TEMPLATE is a RAW PASSTHROUGH on purpose: this is a completion-style finetune on base
+# Llama-3 (the card's usage tokenizes the bare hypothesis + " --> " with no chat template);
+# Ollama's default llama3 chat wrapper would bury the prompt in headers the finetune has
+# never seen. Stop at [eod], its trained end-of-diarization marker -- the card's own example
+# shows it rambling "[eod] [eod] <speaker:1" past the first one otherwise. num_ctx 4096
+# matches the training max sequence length (prompt cap is 6000 chars incl. " --> ").
+FROM ./DiarizationLM-8b-Fisher-v2.Q4_K_M.gguf
+TEMPLATE {{ .Prompt }}
+PARAMETER temperature 0
+PARAMETER stop [eod]
+PARAMETER num_ctx 4096
