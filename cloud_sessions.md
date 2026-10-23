@@ -208,3 +208,82 @@ never been scored.
 
 Score under the rule above, and catalogue every read set aside. Commit `results/first_reflection/` and the harness to a
 branch. Don't change Angle2's defaults.
+
+---
+
+# Batch A: why the angle locks onto a wrong direction, and can it tell when it has
+
+Jay, 2026-10-22: "My problem for weeks has been the scheme I choose seems to lock on to the wrong angle. NOT the
+reflection, just not correct." The goal is to render the limits of what the math can provide. Angle must be correct;
+range only consistent (the same spot reads the same, and further reads further), as a person judges it. So, at the
+moment of each read, using only what the math knows then, can it tell a bullseye from a miss?
+
+Human talkers only for geometry. dEchorate's loudspeakers are a control at most.
+
+**The shared spec, for briefs 9 and 10**
+
+*Record per read*, from a harness-side runner. Don't change `src/schemes/`, and add nothing that feeds back into the
+angle:
+- **GccPhat:** angles 1-3 with share and width; the tie flag; the vote total after pause weighting; and its read at the
+  first draw (43 ms), at 100 ms, at 250 ms and at the lock. Did it start right and drift, or start wrong?
+- **Angle2's onset:** the read, `edge`, `first` and `at3`, and the second family.
+- **Pause direction:** GccPhat's read of the 0.5 s before the onset, using the same `readSum`. That's whatever was
+  sounding before the voice.
+- **Signal clues:** the voice-over-pause level in dB, in the bands 300-1100 Hz, 1.1-3 kHz and 3-8 kHz.
+- **Truth:** direction, distance, and the talker's facing where the data has it. Also every other active source in
+  the cut, with its direction.
+
+*Classify every wrong read:* off by more than 10 deg for the moderate class, and more than 36 deg for the outlier
+class, per the scoring rule. A read can be several of these; report the overlaps:
+- **Mirror:** read ≈ -truth.
+- **End-fire pin:** |read| >= 85.
+- **Pause direction:** within 10 deg of what was sounding before the onset (a steady source).
+- **Another labelled source:** within 10 deg of one active at the time.
+- **0 deg pull:** |read| < 6 while |truth| > 15.
+- **Aliasing partner:** the read's delay and the truth's differ by one period of a frequency in the band, above c/2d,
+  that carries a large share of the voice.
+- **Truth was angle 2 or 3:** the right answer was in the scan, just not on top.
+- **Drift:** the early read was right and the lock wasn't.
+- **Facing:** the talker faced more than 120 deg away (where the data has facing).
+- **Other.**
+
+Give the catalogue per class with examples (file and time), so each class can be listened to.
+
+*Range, alongside, without touching the angle:* a separate script and a separate output file, from the same cut
+audio. The cues are the onset level (FiveMsAmplitude's 5 ms), the direction-free CDR per band
+(`src/geonar/cdr_direct.py`), and the floor/ceiling echo lag within the first 12 ms. Score consistency, not metres:
+- **Ordering:** the same talker, pairs whose true distances differ by 1.25x, 1.5x and 2x. Share correctly ordered.
+- **Repeatability:** the same talker within 0.3 m of the same spot. Spread of the cue.
+
+Score angle under the scoring rule at the top. Commit everything to a branch: no audio, but the truth and per-read
+records so brief 11 can run from the repo alone.
+
+## 9. Batch A on STARSS23 (16 rooms, real talkers)
+
+Cut with `harness/starss23/starss_cut.py`, all six pairs. Record the speech onsets, and also the other classes' onsets
+(footsteps, door, knock, phone and so on) under a separate label, since Stage 1 renders every sound. STARSS has no
+facing truth. Truth for other active sources comes from the metadata frames around each onset. The array is a rigid
+sphere: compare leans with `results/starss23/report.md` section 2, and don't call the sphere's lean wrong. Commit to
+`results/batchA/starss23/`.
+
+## 10. Batch A on LOCATA (one room, human talkers, tracked position and facing)
+
+Data: https://zenodo.org/records/3630471, `dev.zip` (6.2 GB), plus `eval.zip` (13 GB) if its ground truth is
+included. Use the tasks with human talkers and a static array: 3 (one moving talker) and 4 (several moving talkers).
+Use the DICIT array's pairs at 16 cm (the phone is 15.7 cm) and 8 cm. Truth is the OptiTrack position and orientation
+of each talker, and onsets come from each source's voice-activity record. The talker's facing relative to the array is
+in the data, so the facing class is real here. With several talkers in task 4, the "another labelled source" class is
+the multi-talker case. Commit to `results/batchA/locata/`.
+
+## 11. After 9 and 10: commit or dim, chosen on one dataset and tested on the other
+
+Read both batch A results.
+1. **Find the simplest rule:** one or two thresholds on the recorded clues that splits reads into "commit" (drawn
+   solid) and "dim". Choose it on STARSS23 and test it untouched on LOCATA, then the other way round.
+2. **Report the curve:** the share of reads committed against the share of those within 10 deg, for each rule and each
+   direction of the cross-test. A rule that only works on the data it was chosen on is tuned, not general: say so.
+3. **Name the leading wrong-angle classes** and whether the rule catches them.
+4. **Range:** which cue is consistent in both datasets, and whether committing on the angle rule also picks the reads
+   whose range is consistent.
+
+Commit `results/batchA/report.md` to a branch.
