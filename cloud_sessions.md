@@ -674,3 +674,70 @@ them even in principle. Only the words can. This brief builds a test set with kn
 Report every condition, set aside failing ones to study, and catalogue the false accepts by kind. Commit the set's
 recipe (not third-party text that its licence doesn't allow redistributing), `results/device_directed/` and
 `harness/device_directed/` to a branch.
+
+---
+
+# Range and facing, now that the bearing is settled
+
+Jay (2026-10-23): the bearing is where it needs to be. Range comes off hold. The demo setup is fixed: the phone with a
+hard-cover book flush behind it. Jay speaks first, facing the phone, at a distance nobody is told. Range is relative,
+anchored on that opening utterance (HANDOFF.md: "relative units anchored on the opening utterance, no metres").
+Facing: an exact angle isn't needed. What's needed is that a talker who turns mid-sentence doesn't get flung out 5 m.
+A coarse facing class (even 45 deg steps) would be a bonus.
+
+## 20. Range from the opening utterance, and keeping a turned head from flinging it
+
+The physics: in a room, the direct-to-reverberant ratio falls 6 dB per doubling of distance, DRR = 20 log10(r_c / r).
+The slope is fixed; r_c (the critical distance) is the room's one unknown. Relative range needs no r_c at all: a
+talker whose DRR sits 6 dB under the opener's is twice as far. Facing away lowers the direct sound, mostly at high
+frequencies, so it lowers the DRR and reads as distance. Low frequencies are the omnidirectional yardstick (Jay).
+Don't search for a new equation: test this one.
+
+Data: LOCATA (tracked distance and head orientation, real talkers, one room; batch A's harness fetches it), STARSS23
+(16 rooms with labelled distances, no facing), and dEchorate (one room, 11 absorption settings: the echo changes and
+nothing else). Use `src/geonar/cdr_direct.py`'s direction-free CDR as the DRR estimate, per band: LF 0.1-1 kHz, MF
+1-4 kHz, HF 4-8 kHz, and all bands.
+
+1. **The law, per room.** CDR per band against log distance: the slope (expected -20 dB per decade), the scatter, and
+   r_c, per STARSS23 room, for LOCATA, and per dEchorate setting. How much does r_c vary across rooms? Does it follow
+   the echo time across dEchorate's settings?
+2. **Anchor on the opener.** Per recording, take the first utterance of a talker alone and, on LOCATA, facing the
+   array within 30 deg (STARSS23 has no facing truth: take its first lone speech onset and say so). Call its distance
+   1. Predict every later read's distance ratio as 10^((DRR_opener - DRR) / 20), per band. Score the ratio error, and
+   the ordering and same-spot spread as batch A scored range. Compare with batch A's CDR numbers.
+3. **Turned heads.** On LOCATA, with distance held fixed (regress on log distance), how much does each band's CDR move
+   with head orientation? LF should move least.
+   - **The flinging test:** pairs of reads of one talker less than 0.3 m apart but facing differently. How far does the
+     predicted range jump, per band?
+   - **Two compensations:** range from the LF band alone, and range from all bands corrected by a facing estimate (HF
+     minus LF). Score both against step 2.
+4. **Coarse facing, as a ladder.** From HF minus LF CDR, with the opener as the facing reference, classify:
+   toward or away (under or over 90 deg), then quadrants, then 45 deg steps. Give accuracy and chance on each rung, and
+   stop at the first rung that fails. Distance is held as a covariate throughout.
+5. **Echo from the opener, only if metres are wanted later.** A blind echo-time estimate from the opener's word
+   endings. On dEchorate, check it against the known settings, and report whether it predicts r_c.
+
+Score in Jay's spirit: report every room, set aside rooms that fail outright to study, and catalogue the outliers.
+Commit `results/range_facing/` and `harness/range_facing/` to a branch. `src/` stays unchanged.
+
+## 21. When to re-read within an utterance: angle, range and facing
+
+LOCATA's truth runs continuously while people walk and talk, so update policies can be scored against where the
+talker actually was. Brief 10 found the talker moves a median 2.1 deg (90th percentile 6.6) during GccPhat's half
+second.
+
+1. **How fast things move while someone talks.** From LOCATA's truth, during voiced speech: the change in bearing,
+   distance and head orientation over 0.25, 0.5 and 1 s.
+2. **Angle.** A fresh read at every new onset, as shipped (GccPhat, and Angle2 at its own onset per brief 11). Within
+   an utterance, a sliding half-second GccPhat read every 0.25 or 0.5 s. The held position moves only when a new read
+   passes brief 11's dim rule (margin >= 0.2, not on a directional pause read) and differs from the held one by more
+   than 5, 10 or 15 deg.
+   - **Score each policy over time against the truth:** time-weighted error, number of moves (jitter), and lag behind
+     real moves.
+3. **Range.** Per utterance, against a sliding 0.5 s and 1 s CDR, with the shipped bands and the LF band alone. Score
+   them the same way. No rate clamp: Jay removed it on 2026-09-30, because it made every scheme drift outward alike.
+4. **Facing.** Per phrase (between pauses) against per utterance, using brief 20's HF minus LF cue if it has landed,
+   else report the truth's own rate of change only.
+
+Copies of the schemes go under `harness/`; `src/` stays unchanged. Commit `results/resample/` and
+`harness/resample/` to a branch.
