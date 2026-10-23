@@ -15,8 +15,9 @@ and the join is `harness/batchA/join/`.
    - **Angle2:** reading from its own onset, instead of 100 ms before it, is the one change that helps on both
      datasets. LOCATA within 10 deg goes from 64% to 73%, with outliers from 18% to 13%. STARSS gains 1.4 points on
      speech. Mostly it fixes the cause it targets, another voice in the pause.
-   - **GccPhat:** locking early, at 100 ms, loses evidence. It does nothing on LOCATA and costs 11 points on STARSS23.
-     So the final set is shipped GccPhat with Angle2 read at its own onset.
+   - **GccPhat:** locking early loses evidence. At 100 ms it does nothing on LOCATA and costs 11 points on STARSS23; at
+     250 ms it gains 1.6 points on LOCATA and loses 4 on STARSS23. So the final set is shipped GccPhat with Angle2
+     read at its own onset.
 3. **Commit or dim.** The rule search's picks don't transfer, but one simple rule does.
    - **The search's picks:** a rule chosen on STARSS23 carries to LOCATA. One chosen on LOCATA is tuned: on STARSS23
      it commits only a quarter of reads.
@@ -114,7 +115,7 @@ of it. Every one is in `moved.jsonl.gz`, with its id, file and time, its reads a
 |---|---|---|---|---|
 | **STARSS23 GccPhat, speech:** shipped | 53.8% | 17.2% | 82.3%, 6.4 deg | |
 | onset100 | 42.9% | 26.2% | 72.8%, 7.8 deg | 2,471 / 5,812 |
-| onset250 | ONSET250_GS | | | |
+| onset250 | 49.5% | 20.6% | 79.3%, 6.8 deg | 1,979 / 3,313 |
 | **STARSS23 GccPhat, other sounds:** shipped | 47.0% | 25.0% | 75.0%, 6.8 deg | |
 | onset100 | 43.6% | 28.4% | 70.4%, 7.3 deg | 835 / 1,093 |
 | **STARSS23 Angle2, speech:** shipped | 43.3% | 23.3% | 75.5%, 8.2 deg | |
@@ -123,7 +124,7 @@ of it. Every one is in `moved.jsonl.gz`, with its id, file and time, its reads a
 | onset100 | 46.1% | 24.3% | 75.2%, 7.3 deg | 613 / 679 |
 | **LOCATA GccPhat:** shipped | 73.0% | 11.3% | 88.7%, 5.2 deg | |
 | onset100 | 73.5% | 11.0% | 89.0%, 5.0 deg | 61 / 58 |
-| onset250 | ONSET250_LG | | | |
+| onset250 | **74.6%** | 11.3% | 88.7%, 5.0 deg | 49 / 38 |
 | **LOCATA Angle2:** shipped | 64.4% | 18.4% | 81.6%, 5.2 deg | |
 | onset100 | **72.7%** | **12.9%** | 87.1%, 5.3 deg | 98 / 42 |
 
@@ -135,7 +136,8 @@ of it. Every one is in `moved.jsonl.gz`, with its id, file and time, its reads a
 - **GccPhat doesn't gain from an early lock.** The summed half second is what gives it its accuracy. On STARSS23 there's
   a second cost: its onsets come from 100 ms label frames and can be early, so an early lock often reads the pause. On
   LOCATA, whose onsets are its own voice-activity record, the early lock is level with the half second.
-  ONSET250_TEXT
+  At 250 ms, halfway, GccPhat is again worse on STARSS23 (49.5% against 53.8% within 10 deg) and 1.6 points better on
+  LOCATA. A tuned gain on one quiet room isn't general.
 - **The final set:** shipped GccPhat, and Angle2 from `onset100`. Section 3 is scored on it.
 
 ## 3. Commit or dim

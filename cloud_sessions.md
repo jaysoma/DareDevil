@@ -320,6 +320,10 @@ the multi-talker case. Commit to `results/batchA/locata/`.
 
 ## 11. After 9, 10 and 13: join, fix, choose commit-or-dim, then one held-out run
 
+DONE 2026-10-23: `results/batchA/report.md`. Angle2 read at its own onset helps on both datasets; GccPhat's early
+lock doesn't. One rule transfers: commit when margin >= 0.2 and the read isn't on a directional pause read. The
+held-out exam can't run: STARSS23's evaluation set ships without labels.
+
 READY 2026-10-23: 9, 10 and 13 are merged to `main`. Two things they found that this brief must respect:
 - **The two schemes agreeing isn't a safe confidence clue on its own.** Under a steady directional source or a
   common-mode signal, both lock onto the same wrong direction (lab, section 3), and Angle2's `edge` flag is set on those
