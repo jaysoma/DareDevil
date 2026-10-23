@@ -156,6 +156,26 @@ only frames in the pauses between Whisper segments, 0.5 s clear of each: 37,651 
 **That's a comparison across methods, not a result.** ODAS is SRP-PHAT on its own grid and frame, read through its
 tracker; GCC-PHAT is not run here on the phone's audio. The phone's audio isn't in this repo.
 
+## Correction (same day): one tape is a mono duplicate
+Section 3 counted every tape, including the three that `agent_task_truth_recovery.md` excludes: walk-194532 (a mono
+duplicate, both channels identical) and walk-195454 and walk-212347 (dead capsule pairs). walk-194532 reads exactly
+0.0 deg with E = 1.00 on 100% of its frames: identical channels have zero delay and perfect coherence.
+
+| ODAS, pauses | all 29 tapes | without the 3 excluded tapes |
+|---|---|---|
+| top pot within 6 deg of 0 | 24.4% | 19.0% |
+| top pot exactly 0.0 | 17.1% | 11.2% |
+| active tracks within 6 deg of 0 | 45.7% | 44.2% |
+
+The active-track figure, the original 47%, barely moves, so the conclusion stands. The pot shares above were
+inflated by that tape.
+
+**Why ODAS says exactly 0.0.** ODAS snaps every peak to a point of its scan sphere: 65 distinct angles appear in these
+files, with the nearest neighbours of 0.0 at -2.3 and +3.8. Point 0 of that sphere is the pole (0, 0, 1)
+(`src/init/space.c`, confirmed by building it). For a two-capsule pair, every point with the same delay scores the same.
+`mod_ssl.c` starts its search at point 0 and keeps the first of equal scores, so any zero-delay win, or a frame where
+nothing beats point 0, reports x = 0 and asin(0) = 0.0 exactly. ODAS's tracks are smoothed and spread over about +-3 deg.
+
 ## Next: the decisive test, on the phone's audio
 Run `python3 harness/zero_deg/phone_pause.py <dir with the tapes' .raw files>` where the tapes live. It measures the
 same pause shares at 0, 100, 300 and 1100 Hz, frame by frame and summed, at 157 mm and 48 kHz, plus the pause
