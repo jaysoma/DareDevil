@@ -1,0 +1,2594 @@
+<title>Render</title>
+<style>
+  /* THE TRUTH PAGE'S LOOK, WITHOUT ITS CONTROLS (Jay, 2026-09-24: "clone the truth page... I like
+     the way this looks a little better. Don't need any of the buttons in the left panel, and keep
+     the mouse scroll zoom"). Same palette, same renderer, same 100 px per metre and wheel zoom --
+     so a metre on this page is a metre on that one. What is gone is every editing control: this
+     page only plays a recording back. */
+  :root { --bg:#f6f4ee; --ink:#1d1f24; --wall:#2b2f38; --furn:#b6884a; --furnfill:#e8d3ae; --muted:#8a8f99; --ray:#ffffff;
+          --phone:#3a6ea5; --me:#2a7de1; --dot:#c58a4a; }
+  html, body { height:100%; } body { margin:0; background:var(--bg); color:var(--ink); font:13px system-ui, sans-serif; overflow:hidden; }
+  svg { width:100vw; height:100vh; display:block; cursor:grab; }
+  svg.drag { cursor:grabbing; }
+  #bar { position:fixed; left:0; right:0; bottom:0; height:46px; display:flex; align-items:center; gap:12px;
+         padding:0 16px; background:rgba(246,244,238,.96); border-top:1px solid #e0dacb; z-index:4; }
+  #bar button { font:inherit; padding:4px 12px; font-weight:700; }
+  #seek { flex:1; width:100%; margin:0; position:relative; z-index:2; }
+  /* THE GATE OPENS, DRAWN TO SCALE (Jay, 2026-09-30). Jay reads these tapes by dragging the slider
+     frame by frame, so the one thing worth marking is where each utterance begins -- and the bracket
+     is 0.5 s wide because that is BOOT_S, the window the bearing decision is actually made from.
+     Inside a bracket the scheme is gathering evidence; outside it the value is held. */
+  #seekwrap { flex:1; position:relative; display:block; }
+  #onsets { position:absolute; left:0; right:0; top:50%; height:14px; margin-top:-7px; pointer-events:none; z-index:1; }
+  #onsets i { position:absolute; top:0; height:14px; background:rgba(127,212,255,.30); border-left:2px solid #2f7fa8; box-sizing:border-box; }
+  #head { position:fixed; left:16px; top:12px; z-index:4; color:var(--muted); font-size:12px; line-height:1.5; }
+  /* Hidden, not removed (Jay, 2026-10-07): the per-tape mirror/move/turn are saved through its readout. */
+  #head { display:none; }
+  /* THE RANGE SCALE AS A SLIDER (Jay, 2026-10-14: "I don't have a mouse with a wheel. Can we have a vertical slider on the
+     top left of the page to expand or shrink the unit to range scale?"). The same RAD_K shift+wheel turns, on a log scale
+     over the wheel's own 0.01-100; top is longer. */
+  #radk { position:fixed; left:16px; top:12px; z-index:6; display:flex; flex-direction:column; align-items:center; gap:6px;
+          padding:8px 6px; background:rgba(246,244,238,.85); border-radius:6px; color:#1d1f24; font-size:12px; }
+  #radkslider { writing-mode:vertical-lr; direction:rtl; height:240px; width:32px; margin:0; touch-action:none; }
+  /* THE DFN MASK, LIVE (Jay, 2026-10-07): MaskView's view, playing -- the 32-band ERB gain map as heard so far */
+  #maskpanel { position:fixed; right:16px; bottom:56px; width:min(620px, calc(100vw - 32px)); z-index:5; display:none;
+               background:#151520; color:#c9c9d6; border-radius:8px; padding:6px 8px 4px; font:11px ui-monospace,monospace; }
+  #maskpanel canvas { width:100%; height:270px; display:block; }
+  /* THE SPEECH SPECTROGRAM, LIVE (Jay, 2026-10-07): magma, 0-8 kHz, the last 5 s heard -- top left, where the readout was */
+  #specpanel { position:fixed; left:16px; top:12px; width:min(560px, calc(50vw - 40px)); z-index:5; display:none;
+               background:#000004; color:#c9c9d6; border-radius:8px; padding:6px 8px 4px; font:11px ui-monospace,monospace; }
+  #specpanel canvas { width:100%; height:170px; display:block; }
+  #maskpanel .k { display:flex; gap:12px; margin-top:3px; }
+  #maskpanel .k i { display:inline-block; width:10px; height:3px; vertical-align:middle; margin-right:4px; }
+  #head b { color:var(--ink); font-size:13px; }
+  /* Recording and scheme selection belongs beside the playback transport. */
+  #ctl { display:flex; align-items:center; gap:10px; font-size:12px; }
+  #ctl label[hidden] { display:none; }
+  #seekwrap { min-width:80px; }
+  @media (max-width:800px) {
+    #bar { height:auto; min-height:46px; flex-wrap:wrap; padding:6px 12px; gap:8px; }
+    #ctl { flex:1; } #ctl select { max-width:160px; }
+  }
+  #ctl label { display:flex; align-items:center; gap:6px; margin:3px 0; }
+  #ctl input[type=range] { width:96px; }
+  #ctl select { font:inherit; font-size:12px; max-width:210px; }
+  #cap { position:fixed; left:16px; bottom:58px; max-width:46%; z-index:4; font-size:15px; line-height:1.45;
+         color:#2f2a20; background:rgba(246,244,238,.92); padding:6px 10px; border-left:3px solid var(--me); }
+    /* THE DECODE, BESIDE THE ROOM (Jay, 2026-09-29). The caption shows one line at the playhead;
+       this shows the whole recording at once, which is what reading a walk for range actually
+       needs -- every burst is one stop, so the list IS the walk. Right-hand side because the
+       head, controls and caption already own the left. */
+    #script { position:fixed; right:16px; top:12px; width:330px; max-height:calc(100vh - 120px);
+              overflow-y:auto; z-index:4; font-size:12px; line-height:1.4;
+              background:rgba(246,244,238,.94); border:1px solid #e0dacb; padding:8px 10px; }
+    #script h4 { margin:0 0 6px; font-size:12px; color:var(--muted); font-weight:600; }
+    #script .b { padding:5px 6px; margin:0 -6px; cursor:pointer; border-left:3px solid transparent; }
+    #script .b:hover { background:rgba(42,125,225,.07); }
+    #script .b.on { background:rgba(42,125,225,.13); border-left-color:var(--me); }
+    #script .t { color:var(--muted); font-variant-numeric:tabular-nums; margin-right:6px; }
+    #script .none { color:var(--muted); font-style:italic; }
+  /* THE SPEECH COMES FROM THE DOT (Jay, 2026-10-05: "comic-book style speech bubble to render speech from
+     position dot. Get rid of the decode on the bottom left and top right. This is the way it's supposed
+     to work."). The caption and the decode list are hidden, not deleted: drawScript and the caption
+     update still run against them harmlessly. Each bubble is tinted by its phrase's voice brightness
+     (Jay: "colour the speech bubble by pitch") -- --bh is the hue, set per bubble. */
+  #cap, #script { display:none !important; }
+  #bubbles { position:fixed; left:0; top:0; width:0; height:0; z-index:3; pointer-events:none; }
+  .bub { --bh:210; position:fixed; max-width:260px; padding:7px 11px; color:#1d1f24;
+         background:hsl(var(--bh) 85% 93%); border:2px solid hsl(var(--bh) 55% 38%); border-radius:14px;
+         font:600 14px/1.35 'Comic Neue','Segoe UI',system-ui,sans-serif;
+         box-shadow:2px 3px 0 rgba(29,31,36,.18); white-space:normal; }
+  /* THE COMIC STUB IS BACK (Jay, 2026-10-10: "the tip of the speech bubble is kind of annoying ... resume the
+     screenshot"). The long aimed .tail was correct and ugly: a wedge crossing the map. A stub only works if the
+     bubble is NEXT TO the dot, so placement below keeps it there and flips the stub to whichever corner faces it. */
+  .bub::after { content:''; position:absolute; left:14px; bottom:-12px; width:16px; height:12px;
+                background:hsl(var(--bh) 85% 93%); border-left:2px solid hsl(var(--bh) 55% 38%);
+                border-bottom:2px solid hsl(var(--bh) 55% 38%); transform:skewX(-35deg); border-bottom-left-radius:3px; }
+  /* THE GHOST (2026-10-06): the same words at the arrival a near-tie did not take -- dashed, flat, faint. */
+  .bub.ghost { border-style:dashed; box-shadow:none; background:hsl(var(--bh) 60% 96%); color:#5a5f6a; font-weight:500; }
+  .bub.ghost::after { border-left-style:dashed; border-bottom-style:dashed; }
+  /* TURNED AWAY (Jay, 2026-10-10): the talker is not addressing the phone; the bubble fades with the disc. */
+  .bub.turned { opacity:0.45; }
+  .bub.flip::after { left:auto; right:14px; transform:skewX(35deg); border-left:none;
+                     border-right:2px solid hsl(var(--bh) 55% 38%); border-bottom-left-radius:0; border-bottom-right-radius:3px; }
+  /* THE TAIL POINTS AT THE TALKER (Jay, 2026-10-10: "render the speech bubble with the tip pointing at the
+     position"). The comic stub above is fixed to the bubble's own bottom-left corner, so as soon as a bubble is
+     flipped to the other side or pushed upward to clear an older one, it points at nothing. This one is drawn per
+     frame instead: a tapered triangle whose BASE sits on the bubble's border and whose APEX is the position itself,
+     however far the bubble had to move. --bh is inherited from its bubble so it carries the same voice colour. */
+  .tail { position:fixed; left:0; top:0; height:9px; transform-origin:0 50%; pointer-events:none; z-index:2;
+          background:hsl(var(--bh) 55% 38%); clip-path:polygon(0 0, 0 100%, 100% 50%); }
+  .tail.ghost { opacity:0.45; }
+</style>
+<svg id="g"><g id="stat"></g><g id="live"></g></svg>
+<div id="bubbles"></div>
+<div id="head"></div><div id="radk"><span>range</span><input type="range" id="radkslider" min="-2" max="2" step="0.01" value="0" aria-label="range scale"><span id="radkval">&times;1.00</span></div><div id="buildstate" role="status" style="position:fixed;left:16px;bottom:60px;z-index:5;background:#f6f4ee;padding:5px 8px"></div>
+<!-- TWO SELECTORS AND NOTHING ELSE (Jay, 2026-10-04: "don't need any of the controls on the upper
+     left, maybe just a selector for which room and which run").
+     The checkboxes are HIDDEN rather than deleted. Every one of them is read by name further down
+     (showlane.checked, sound.checked, showrays.checked), so removing the markup would not simplify
+     the page, it would throw on load. Hidden they keep their defaults, the page behaves as if all
+     three were ticked, and putting any of them back is deleting one word. -->
+
+<div id="cap"></div>
+<div id="specpanel"><canvas id="speccv" height="170"></canvas><div id="specrd">&nbsp;</div></div>
+<div id="maskpanel"><canvas id="maskcv" height="270"></canvas>
+  <div class="k"><span><i style="background:#8a8aa2"></i>raw</span><span><i style="background:#34d399"></i>mask mean</span>
+  <span><i style="background:#f59e0b"></i>lsnr</span><span><i style="background:#fb7185"></i>LF</span><span><i style="background:#a3e635"></i>MF</span><span><i style="background:#38bdf8"></i>HF mask</span><span><i style="background:#ffffff"></i>tilt</span></div>
+  <div class="k"><span id="maskrd"></span></div></div>
+  <div id="script"></div>
+<div id="bar">
+  <button id="play">play</button>
+<div id="ctl">
+  <label>run <select id="tape"><option value="">loading...</option></select></label>
+  <label>scheme <select id="scheme"><option value="">loading...</option></select></label>
+  <label id="openingctl" hidden>opening <input id="openingm" type="number" min="0.01" step="0.01" style="width:64px" placeholder="metres"> m</label>
+  <span id="feed" hidden></span>
+  <label hidden><input type="checkbox" id="showlane" checked> DareDevil's ray</label>
+  <label hidden><input type="checkbox" id="sound" checked> sound</label>
+  <label><input type="checkbox" id="showrays" checked> positions</label>
+  <label><input type="checkbox" id="showonset" checked> Onsets</label>
+  <label title="put the puck on the Onsets layer's pick instead of the math host's bearing"><input type="checkbox" id="puckonset"> puck on onset</label>
+  <label title="while any new read settles (an utterance start or a re-read) -- off: hold the dot and move it once at the lock (a fresh dot after a silence appears at its lock); on: let it wobble"><input type="checkbox" id="rereadwobble"> wobble</label>
+</div>
+  <span id="seekwrap"><input id="seek" type="range" min="0" max="1" step="0.01" value="0"><span id="onsets"></span></span>
+  <span><span id="tnow">0.0</span> / <span id="tdur">0.0</span> s</span>
+</div>
+<!-- RangeMath libraries: generated start -->
+<script>
+// Generated by node build-rangemath-libs.cjs from RangeMath/_lib/UnitsToMeters.js
+// Source SHA256: 51fbe315d0eb270bc1da00a0ade3c41c9513572ae976e4b2a4260d654f80575f
+/*
+ * UnitsToMeters -- the one place an amplitude becomes a distance.
+ *
+ * Split out of RangeMath/RotationTracker.js (2026-10-05, Jay's call: "split it out into 3 and call
+ * them Rotation, Range and UnitsToMeters"). The original file is untouched and still works.
+ *
+ * WHAT THIS IS. Every Stage-1 scheme measures a steered onset AMPLITUDE and then has to say how far
+ * away that is. The conversion is the whole of the unit system: the opening utterance is assumed to
+ * be at `open_m` and everything else scales from it, so a unit becomes a metre here and nowhere
+ * else. See geonar-opening-gives-no-distance -- no known distance is ever fed in, which is why this
+ * takes `f` rather than a calibration.
+ *
+ * BEHAVIOUR IS PRESERVED EXACTLY. This is a move, not a fix. Two things in it are known to be wrong
+ * and are deliberately left alone so the split can be verified against the original byte for byte:
+ *
+ *   THE LAW FORKS.  With open_m present the law is om/amp -- inverse, correct, 1/r. With open_m
+ *                   ABSENT it silently switches to a LINEAR map across RAY_FAR..RAY_NEAR, which is a
+ *                   different physical model, not a degraded version of the same one. The fallback
+ *                   exists so a tape with no potamp entry still draws something rather than nothing.
+ *                   If schemes are ever changed to return units (u) and the multiply moves to one
+ *                   boundary, this fork disappears entirely: nothing needs converting until the end.
+ *
+ *   THE CLAMP IS AN ADMISSIBILITY GATE WEARING A CONVERSION'S CLOTHES.  Output is clamped to
+ *                   RAY_NEAR..RAY_FAR, so this function also decides who is too close to draw. It
+ *                   clamps at 1.0 m while the standing rule is that nothing under 1.5 m is
+ *                   admissible, so the clamp and the rule disagree today. Fixing that is a policy
+ *                   decision about placement, not a change to arithmetic, and it does not belong
+ *                   inside a unit conversion.
+ */
+class UnitsToMeters {
+  static openingAnchor(anchors) {
+    const anchor = Array.isArray(anchors) ? anchors[0] : null;
+    return anchor && Number.isFinite(anchor.r) && anchor.r > 0 ? anchor : null;
+  }
+  // A measured distance ratio is already in range units: multiply once, with no inversion/clamp.
+  // Missing conversion data stays missing; no assumed opening distance substitutes for it.
+  static fromUnits(units, metresPerUnit) {
+    if (!Number.isFinite(units) || units <= 0 || !Number.isFinite(metresPerUnit) || metresPerUnit <= 0) return null;
+    const metres = units * metresPerUnit;
+    return Number.isFinite(metres) ? metres : null;
+  }
+  /* The display span. RAY_* bound the conversion; AMP_MAX scales the no-open_m fallback. */
+  static RAY_NEAR = 1.0;
+  static RAY_FAR = 8.0;
+  static AMP_MAX = 2.5;
+
+  /* amp -> metres. `f` is the frame, read only for its open_m. Verbatim from
+   * RotationTracker.RangeScheme._metres, which is itself "see Wavefront._metres". */
+  static metres(amp, f) {
+    const U = UnitsToMeters;
+    const om = (f && typeof f.open_m === "number" && f.open_m > 0) ? f.open_m : null;
+    if (om !== null && amp > 0) return Math.max(U.RAY_NEAR, Math.min(U.RAY_FAR, om / amp));
+    return U.RAY_FAR - (U.RAY_FAR - U.RAY_NEAR) * (amp / U.AMP_MAX);
+  }
+}
+
+if (typeof module !== "undefined" && module.exports) module.exports = UnitsToMeters;
+
+</script>
+<!-- RangeMath libraries: generated end -->
+<script src="roomdraw.js"></script>
+<script src="speaker2d-schemes.js"></script>   <!-- declares SCHEMES; rangemath.js pushes into it -->
+<script src="rangemath.js"></script>
+<script src="rangelab-bench.js"></script>
+<script src="rangesteady.js"></script>    <!-- steady(Scheme): range held and re-read on a move; ?steady=1 -->
+<script>
+var Q = new URLSearchParams(location.search);
+// VIEW SWITCHES (2026-10-06, the rotation tape): &ghost=all draws the second arrival always, faded by its
+// strength; &steps=off holds the onset's lock as the main. Carried across tape and scheme changes.
+var VIEWQ = (Q.get('ghost') === 'all' ? '&ghost=all' : '') + (Q.get('steps') === 'off' ? '&steps=off' : '');
+var RUN = (Q.get('run') || '').replace(/-(firstms|phone|gated|causal|firstonset|live)$/, '');
+// These recordings have saved phone gate/ODAS data and prepared first-ms bearings.
+var PREPARED_RUNS = {};
+function preparedRun(name) { return name; }
+// THE SCHEME: the URL first, then the last one picked on this browser, then Presenter. Before
+// 2026-09-29 only the URL counted, and a tape picked from the dropdown without ?scheme= in the bar
+// silently went back to Presenter every time.
+var REMEMBERED_SCHEME = '';
+try { REMEMBERED_SCHEME = localStorage.getItem('playback.scheme') || ''; } catch (e) { REMEMBERED_SCHEME = ''; }
+// THE DEFAULT IS A SCHEME IN THE PICKER, NOT A NAME FROM 2026-09 (Jay, 2026-09-30: "selecting any
+// item in the drop-down defaults to presenter"). This was the literal string 'presenter', which
+// still matches Presenter.js exactly -- so a page with no ?scheme= and nothing in localStorage ran
+// a scheme that is NOT in the picker, the dropdown showed something else, and every tape change
+// carried the stale name forward. Cloning this page made it certain: the new localStorage key is
+// empty by definition, so the hardcoded fallback fired every single load.
+//
+// Naming the page's own scheme keeps the default honest and visible. If it is ever retired the
+// no-match fallback below picks the first scheme declaring `current`, so the page cannot end up
+// running something absent from its own dropdown again.
+// LIVE STREAM (2026-10-07): any scheme on the benchmark stream; CdrLoudness is the bar to beat.
+var SCHEME = Q.get('scheme') || 'cdrloudness';
+// Unconfirmed reflections (Bearing() withheld the angle) are hidden by default: on walk-212347 their delays run
+// 3-292 ms -- ghosts at 26-103 m, the voice changing rather than an echo. &reflections=all draws them faint.
+var SHOW_UNCONFIRMED = Q.get('reflections') === 'all';
+
+var STEADY = Q.get('steady') !== '0';
+var C_SELF = false;                                   // the running scheme holds its own position (no steady wrapper)                 // rangesteady.js wraps the scheme by default (Jay, 2026-09-26); &steady=0 is the raw stream
+
+var T = { objects: [], outline: [], dots: [] };     // the room, from the Truth page's own save
+var MEDIA_RUN = RUN;
+var OD = null;                                      // the fixture: frames, phone pose, marked stops
+var EST = null;                                     // time -> {deg, range, mode} from the scheme
+// ODAS'S 2ND CANDIDATE, THROUGH THE SAME SCHEME (Jay, 2026-10-07): the scheme run a second time with its bearing input
+// (dir_deg) replaced by the stream's odas2_deg -- the strongest DareDevil pot >= 10 deg from the strongest -- so its
+// position is the scheme's own math on that candidate. Drawn violet. &odas2=0 hides it.
+var EST2 = null, SHOW_ODAS2 = Q.get('odas') === '1';   // OFF (Jay, 2026-10-07: "get rid of the ODAS1 and ODAS2 position dots"); &odas=1 shows them
+// ALL FOUR STAGE-1 RAYS ON THE DFN PAGE (Jay, 2026-10-07): ODAS's top 4 distinct candidates (odas_deg[0..3]), each run
+// through the scheme the same way, in slightly different violets. Other schemes keep ODAS 2 alone.
+var ODAS_RAYS = [];                   // the scheme-pass ODAS dots are replaced by ODAS_POS (two rays from beams, below)
+var ODAS_POS = [];                    // per utterance: { from, idx, rays: [{ deg, db }, { deg, db }] } -- see twoRays()
+var ODAS_COL = ['#6d28d9', '#a21caf', '#4338ca', '#9333ea'];
+var ESTK = [];
+var RANGE_UNIT = "m";
+var OPENING_ANCHOR = null;
+var UNIT_M = 2;                                     // what one UNIT of distance is on the plan: the opening position (Jay, 2026-09-26)
+var WORDS = [];
+var BURSTS = [], CUR_BURST = -2;
+var LANE = null;                                     // the one DareDevil lane the disc follows
+var g = document.getElementById('g');
+
+// ---- the view: Truth's, verbatim, minus the panel -----------------------------------------------
+var ppm = 100, W = 0, H = 0, ZOOM = 1, ZOOMED_AT = null, PAN = { x: 0, y: 0 };
+var OX = 0, OY = 0;
+// JAY'S LIVING ROOM BEHIND HIS OWN TAPES (Jay, 2026-10-05: "use the living room image as the
+// background ... only load the background for MY living room recordings ... if I can drag the phone
+// around and zoom the phone's radius, I can view and size it to see if it's mostly right"). A real
+// tape whose stops were placed on the Truth map (they carry x, y) was recorded in that room, so it is
+// drawn in the Truth map's own frame -- unrotated, the phone on its marked spot facing the way it was
+// marked -- with the room behind it. PH_OFF moves the phone (and everything it places) against the
+// room; RAD_K scales every range it draws, i.e. how many metres one unit really is. The stops never
+// move: they are where he stood. Sims and unplaced tapes keep the phone-at-the-top view.
+var LIVING = false, PH_OFF = { x: 0, y: 0 }, RAD_K = 1;
+// PH_ROT turns the phone's facing (shift+drag, Jay 2026-10-05: some tapes' facing was marked wrong);
+// MIRROR flips the DRAWN bearings left-right (view only, M or the checkbox) so a suspected R-L swap can
+// be judged against the rings by eye. Neither touches the scheme: it still scores the bearing it measured.
+var PH_ROT = 0, MIRROR = false;
+// Known capture swap on 212347. Existing cached bearings need correction;
+// newly computed canonical L,R bearings advertise their order and skip it.
+var CAPTURE_BEARING_SIGN = 1;
+function captureBearingSign(od, name) {
+  return name.replace(/-(firstms|phone|gated|causal)$/, '') === 'walk-212347' &&
+         od.bearing_channel_order !== 'LR' ? -1 : 1;
+}
+function X(x) { return OX + x * ppm; }
+function Y(y) { return OY - y * ppm; }
+function iX(px) { return (px - OX) / ppm; }
+function iY(py) { return (OY - py) / ppm; }
+function svgPt(e) { var q = g.createSVGPoint(); q.x = e.clientX; q.y = e.clientY; var m = g.getScreenCTM(); return m ? q.matrixTransform(m.inverse()) : { x: e.clientX, y: e.clientY }; }
+function bounds() {
+  // SIZED TO WHAT IS DRAWN, NOT TO THE WALLS (Jay, 2026-10-04: "size the bounding box of the room to
+  // my screen and remove the bounding box altogether"). The view is fitted to the phone and the
+  // marked positions, so the picture fills the screen whatever the room is -- and with the phone in
+  // a corner facing into the room, it lands bottom-left on its own rather than being forced there.
+  var ph = phonePose(), st = (OD && OD.truth && OD.truth.stops) || [], dt = (OD && OD.truth && OD.truth.dots) || [];
+  var px = [ph.x], py = [ph.y];
+  st.forEach(function (q) { if (typeof q.x === 'number') { px.push(q.x); py.push(q.y); } });
+  dt.forEach(function (q) { if (typeof q.x === 'number') { px.push(q.x); py.push(q.y); } });
+  if (LIVING && T.outline && T.outline.length >= 3) {
+    // the living room: the whole room is the picture, plus anything marked outside its walls
+    T.outline.forEach(function (v) { px.push(v[0]); py.push(v[1]); });
+    return [Math.min.apply(null, px) - 0.4, Math.max.apply(null, px) + 0.4,
+            Math.min.apply(null, py) - 0.4, Math.max.apply(null, py) + 0.4];
+  }
+  if (px.length > 2) {
+    var pad = 1.2;      // metres of air around the outermost thing shown
+    return [Math.min.apply(null, px) - pad, Math.max.apply(null, px) + pad,
+            Math.min.apply(null, py) - pad, Math.max.apply(null, py) + pad];
+  }
+  var pts = (T.outline && T.outline.length >= 3) ? T.outline.slice() : null;
+  if (!pts) return [-4, 4, -1, 10];
+  var xs = pts.map(function (v) { return v[0]; }), ys = pts.map(function (v) { return v[1]; });
+  var b = [Math.min.apply(null, xs), Math.max.apply(null, xs), Math.min.apply(null, ys), Math.max.apply(null, ys)];
+  var give = 0.16 * Math.max(b[1] - b[0], b[3] - b[2]), o = T.objects || [];
+  if (o.length) {
+    b[0] = Math.max(b[0] - give, Math.min(b[0], Math.min.apply(null, o.map(function (q) { return q.x; }))));
+    b[1] = Math.min(b[1] + give, Math.max(b[1], Math.max.apply(null, o.map(function (q) { return q.x + q.w; }))));
+    b[2] = Math.max(b[2] - give, Math.min(b[2], Math.min.apply(null, o.map(function (q) { return q.y; }))));
+    b[3] = Math.min(b[3] + give, Math.max(b[3], Math.max.apply(null, o.map(function (q) { return q.y + q.d; }))));
+  }
+  return b;
+}
+// THE VIEWPORT IS READ ON EVENTS, NEVER PER FRAME (2026-09-24). fit() used to read innerWidth and
+// innerHeight inside the animation loop, immediately after the previous frame had written
+// innerHTML -- and reading either one forces the browser to finish laying out the whole SVG
+// before it can answer. Sixty forced reflows a second over a room full of nodes is a layout-thrash
+// loop, and it stuttered exactly as you would expect. Nothing in here changes unless the window
+// resizes, the wheel turns or the map is dragged, so it runs on those and nowhere else.
+// THE SCALE FITS THE ROOM'S MARKED POSITIONS TO THE WINDOW (2026-10-05). With the phone top-centre the
+// fan opens downward, so the widest stop sets the horizontal fit and the deepest the vertical one.
+// A fixed 100 px per metre left a 3 m room in a corner of a wide screen. The wheel zoom multiplies it.
+var TOP_M = 70;
+function basePpm() {
+  if (LIVING) {
+    var lb = bounds();
+    return Math.max(20, Math.min((W - 60) / Math.max(0.5, lb[1] - lb[0]), (H - 60) / Math.max(0.5, lb[3] - lb[2])));
+  }
+  var ph = phonePose(), st = (OD && OD.truth && OD.truth.stops) || [], dt = (OD && OD.truth && OD.truth.dots) || [];
+  var mx = 1.0, my = 1.0, pad = 0.8;
+  st.concat(dt).forEach(function (q) { if (typeof q.x === 'number') { mx = Math.max(mx, Math.abs(q.x - ph.x)); my = Math.max(my, ph.y - q.y); } });
+  return Math.max(20, Math.min((W - 120) / (2 * (mx + pad)), (H - TOP_M - 50) / (my + pad)));
+}
+function fit() {
+  ppm = basePpm() * ZOOM;
+  if (ZOOMED_AT) { OX = ZOOMED_AT.px - ZOOMED_AT.rx * ppm; OY = ZOOMED_AT.py + ZOOMED_AT.ry * ppm; ZOOMED_AT = null; return; }
+  var b = bounds(), bw = Math.max(0.5, b[1] - b[0]), bh = Math.max(0.5, b[3] - b[2]);
+  var aw = Math.max(80, W - 52), ah = Math.max(80, H - 52);
+  OX = 26 + (aw - bw * ppm) / 2 - b[0] * ppm + PAN.x;
+  OY = 26 + (ah + bh * ppm) / 2 + b[2] * ppm + PAN.y;
+  // ANCHORED, NOT CENTRED (Jay, 2026-10-04: "I wanted the phone defaulted to the far left of the
+  // screen facing the right"). Centring the bounding box put the phone wherever the far stops
+  // happened to leave room for it, so the same room drew in a different place every time the
+  // talker's furthest position changed. Pinning it to a fixed left margin and the vertical middle
+  // makes the picture read the same from run to run, and the arc opens rightwards into the space.
+  // PAN still applies on top, so dragging works exactly as before.
+  // PHONE TOP-CENTRE (Jay, 2026-10-05), replacing far-left (10-04): the fan opens downward across
+  // the full width. PAN still applies on top, so dragging works exactly as before.
+  // The living room is centred as a room instead (see LIVING).
+  if (LIVING) return;
+  var ph = phonePose();
+  OX = (W / 2) - ph.x * ppm + PAN.x;
+  OY = TOP_M + ph.y * ppm + PAN.y;
+}
+
+// ---- where the phone is, and where the scheme says he is ----------------------------------------
+function phonePose() {
+  var p = OD && OD.truth && OD.truth.phone;
+  return p ? { x: p.x + PH_OFF.x, y: p.y + PH_OFF.y, ang: (p.angle || 0) + PH_ROT } : { x: PH_OFF.x, y: PH_OFF.y, ang: PH_ROT };
+}
+// The Truth page's convention: a dot's bearing is atan2(dx, dy) minus the phone's facing, with 0
+// pointing up the page. Inverting it puts a range and a bearing back on the map. RAD_K is the
+// living-room radius scale (1 everywhere else).
+function place(range, bearingDeg) {
+  var p = phonePose(), a = (p.ang + CAPTURE_BEARING_SIGN * (MIRROR ? -bearingDeg : bearingDeg)) * Math.PI / 180, r = range * RAD_K;
+  return { x: p.x + r * Math.sin(a), y: p.y + r * Math.cos(a) };
+}
+// THE TRUTH IS IN METRES AND DOES NOT MOVE (Jay, 2026-10-10: "how do I know the actual position of the
+// speaker?"). Same geometry as place(), deliberately WITHOUT RAD_K: that is the unit-to-metre guess the
+// shift+wheel turns, and a truth that moved with it would be no truth at all. So the live dot slides under
+// the wheel and the marker stays -- and the scale at which they coincide IS the correct conversion.
+function placeTrue(range, bearingDeg) {
+  var p = phonePose(), a = (p.ang + CAPTURE_BEARING_SIGN * (MIRROR ? -bearingDeg : bearingDeg)) * Math.PI / 180;
+  return { x: p.x + range * Math.sin(a), y: p.y + range * Math.cos(a) };
+}
+// The turn being spoken now, when the recording carries its own exact positions (a simulated tape).
+function truthNow(tt) {
+  var segs = (DEC && DEC.segments) || [];
+  for (var i = 0; i < segs.length; i++) {
+    var q = segs[i];
+    if (q.truth && tt >= q.start - 0.05 && tt <= q.end + 0.4) return q;
+  }
+  return null;
+}
+
+// THE DISC IS SPRUNG, NOT SNAPPED (Jay: "hopefully it will be stable and travel smoothly"). A
+// per-hop estimate is mostly the tracker's own scatter, and a dot that twitches reads as broken
+// even when the numbers are good -- a stable estimate that is uniformly a little wrong reads as
+// correct, which is the presentation rule this project settled on months ago. Critically damped,
+// so it catches up without overshooting and never oscillates.
+var disc = { x: null, y: null, vx: 0, vy: 0, trail: [], oiT: -99, spokeT: -99 };
+// WHERE EACH THING WAS SAID (2026-10-05). HIST is the drawn disc over time, so a phrase can be pinned to
+// where it was spoken and stay there after the dot moves on. SPOTS are earlier utterances' places, kept
+// as fading dots -- render only, no identity: a conversation reads as dots lighting up in turn rather
+// than one dot leaping about. Places closer than SPOT_MERGE_M are one spot.
+var HIST = [], SPOTS = [];
+// SPOT_FADE_S 0 TURNS THE LINGERING SPOTS OFF (Jay, 2026-10-10: "the most annoying thing is the leftover
+// circle after each utterance"). They were added when a dot leaping between talkers was all there was to
+// see; with each turn now carrying its own bubble, its tail on the position and -- on a sim -- a truth
+// ring, they are redundant and they clutter. Set this back above 0 to bring them back.
+var SPOT_MERGE_M = 0.35, SPOT_FADE_S = 0, BUB_HOLD_S = 2.2;
+function histAt(time) {
+  if (!HIST.length || time < HIST[0][0] - 0.5) return null;
+  var lo = 0, hi = HIST.length - 1;
+  while (lo < hi) { var m = (lo + hi + 1) >> 1; if (HIST[m][0] <= time) lo = m; else hi = m - 1; }
+  return HIST[lo];
+}
+function addSpot(x, y) {
+  if (x === null || y === null) return;
+  for (var i = 0; i < SPOTS.length; i++) {
+    if (Math.hypot(SPOTS[i].x - x, SPOTS[i].y - y) < SPOT_MERGE_M) { SPOTS[i].x = x; SPOTS[i].y = y; SPOTS[i].t = t; return; }
+  }
+  SPOTS.push({ x: x, y: y, t: t });
+}
+// THE VOICE'S COLOUR, LIVE (Jay, 2026-10-05: "colour the speech bubble by pitch ... a moving number
+// obviously, but it really does give an excellent visual"). centroid_hz is Jay's SpectralCentroid recipe
+// (2048 Hann, 300-8000 Hz, magnitude-weighted), per hop. While a phrase is spoken its bubble takes the
+// median of the last CENT_WIN_S, on a log scale from CENT_LO (deep, blue) to CENT_HI (bright, red) --
+// 1.0-4.5 kHz is the 10th-90th percentile of speech on walk-205043 --
+// eased per frame so it moves with the voice without flickering; when the phrase ends the colour holds.
+// Brightness rides on pitch, so two voices read as two colours with no identity.
+var CENT_LO = 1000, CENT_HI = 4500, CENT_WIN_S = 0.35, CENT_EASE = 0.25, CENT = null;
+// FACING, FROM ODAS' BRIGHTNESS (Jay, 2026-10-11: "have the render for facing be whatever the calculation using bright
+// gives us"). geonar_track_levels computes, per separated track, sqrt(accD/n)/sqrt(acc/n) -- high-weighted energy over
+// total, a spectral centroid in disguise -- because a mouth radiates evenly at 250 Hz and sharply forward by 4 kHz, so
+// turning away robs a voice of its treble while dividing out distance and vocal effort. It arrives in odas.json's own
+// frames, which this page already holds as OD.frames.
+//
+// THE CALIBRATION IS ONE TAPE AND SIX STOPS (walk-125621, all at 2 m): facing read 0.2464 and 0.2210, 90 deg read
+// 0.1732, 180 deg read 0.1689. So BRIGHT_FACE/BRIGHT_AWAY below are a straight line through two medians of three
+// readings each -- indicative, not fitted, and it SATURATES: 90 and 180 are indistinguishable at 0.17, so the scale
+// stops at 90. Range leaks in too (facing at 4 m read 0.1984, like a turned talker at 2 m). Treat the number as
+// "how far off the phone", not as a measurement.
+//
+// AND THE SIGN IS NOT RECOVERABLE. Brightness is a magnitude: it says how far off-axis, never which way round. So the
+// render follows the standing rule for an ambiguity (Jay: "if there's a perfect tie, render them both") -- the V is
+// drawn at +mag and again, dimmed, at -mag, the two coinciding when the talker faces the phone and opening into a
+// cone as they turn.
+var FACE_WIN_S = 0.5, BRIGHT_MATCH_DEG = 25, BRIGHT = null, FACE_BASE = null, FACE_CACHE = {};
+// ENERGY FIRST, THE RATIO ONCE (Jay, 2026-10-11: "not sure what averaging to use, but probably not median").
+// `bright` is ALREADY a ratio per hop -- sqrt(accD/n)/sqrt(acc/n) -- and ratios do not average. Power adds linearly, so
+// a window's brightness is the summed high-weighted energy over the summed total energy, divided once, which is the
+// same rule CdrRange follows ("summed per band over the first 0.8 s, the ratio taken once per band"). A median of
+// per-hop ratios also lets a near-silent hop vote as loudly as a shouted one. Both accumulators are recoverable from
+// what ODAS writes: `level` is sqrt(acc/n) and `bright * level` is sqrt(accD/n), so
+//     bright(window) = sqrt( SUM (bright_i * level_i)^2 / SUM level_i^2 )
+function ratioOf(rows) {
+  var hi = 0, tot = 0;
+  for (var i = 0; i < rows.length; i++) { var h = rows[i].b * rows[i].l; hi += h * h; tot += rows[i].l * rows[i].l; }
+  return tot > 0 ? Math.sqrt(hi / tot) : null;
+}
+// THE FIRST ONSET RAY (Jay, 2026-10-11: "we need to pick the ODAS ray that is the very first onset ray"). ODAS carries
+// several separated sources at once and only one of them is the direct path -- the rest are reflections and the other
+// talker, and they arrive LATER. So the ray is chosen by ARRIVAL, not by resemblance: the first track to go active in
+// the utterance's window is the direct, and that track's id is then followed for the rest of the window. Its bearing
+// breaks a tie only between two tracks that start on the same frame; it never replaces the bearing we measured.
+function windowRows(t0, deg) {
+  var t1 = t0 + FACE_WIN_S, rows = [], id = null;
+  for (var i = 0; i < BRIGHT.length && id === null; i++) {
+    if (BRIGHT[i][0] < t0 || BRIGHT[i][0] > t1) continue;
+    var ts = BRIGHT[i][1], first = null, best = Infinity;
+    for (var k = 0; k < ts.length; k++) {
+      if (ts[k].act <= 0) continue;
+      if (first === null) first = ts[k];
+      if (Number.isFinite(ts[k].deg) && Number.isFinite(deg)) {
+        var d = Math.abs(((ts[k].deg - deg + 540) % 360) - 180);
+        if (d < best) { best = d; first = ts[k]; }
+      }
+    }
+    if (first) id = (first.id === undefined || first.id === null) ? -1 : first.id;
+  }
+  for (var j = 0; j < BRIGHT.length; j++) {
+    if (BRIGHT[j][0] < t0 || BRIGHT[j][0] > t1) continue;
+    var tt = BRIGHT[j][1];
+    for (var q = 0; q < tt.length; q++) {
+      if (id === -1 || tt[q].id === id) { rows.push(tt[q]); break; }
+    }
+  }
+  return rows;
+}
+function brightInit() {
+  if (!BRIGHT) {
+    BRIGHT = []; FACE_CACHE = {}; FACE_BASE = null;
+    var pool = [];
+    ((OD && OD.frames) || []).forEach(function (f) {
+      if (f.t === null || f.t === undefined) return;
+      var ts = [];
+      (f.tracks || []).forEach(function (tr) {
+        // NO `talking` FILTER HERE (2026-10-11): the window is an utterance's OWN opening half second, which the gate
+        // and the pitch split have already called speech, and ODAS' talking flag lags the onset -- requiring it left
+        // 20 of 26 utterances with nothing to read. The flag is not needed once the window comes from the onset.
+        if (typeof tr.bright === 'number' && typeof tr.level === 'number')
+          ts.push({ id: tr.id, deg: (typeof tr.dir_deg === 'number') ? tr.dir_deg : tr.deg, b: tr.bright, l: tr.level,
+                    act: +(tr.activity || 0) });
+      });
+      if (ts.length) { BRIGHT.push([f.t, ts]); ts.forEach(function (x) { pool.push(x); }); }
+    });
+  }
+}
+// Facing for an utterance, read from ITS FIRST WINDOW OF SPEECH and held (Jay: "we need to sample the ms that is
+// handed by the Conductor, which will be the first window of speech") -- the same discipline as the bearing, which
+// reads its 0.5 s packet from the onset and holds it, rather than a window sliding under the playhead. The track is
+// the one nearest OUR first-arrival bearing, never ODAS' own ordering.
+// THE ANCHOR IS THE SPEAKER'S OWN FIRST UTTERANCE (Jay, 2026-10-11: "we should compare bright to the first
+// utterance"), and NO MEDIAN ANYWHERE (his standing rule). Brightness is corrupted by three things besides facing --
+// voice, distance and room -- and all three are held constant between a speaker and their own opening, which no
+// tape-wide statistic can do: on walk-231705 and walk-215800, the same person at the same 2 m in the same room gave
+// baselines of 0.773 and 0.2406, a factor of three apart, so only the ratio to one's own first utterance travels.
+//
+// WHAT IT CAN AND CANNOT SAY, measured on walk-125621 and walk-215800 against labelled rotations:
+//   facing         1.000, 1.013, 1.143      <- the return to facing repeats its own anchor
+//   270 deg        0.791, 0.802             <- always the brightest TURNED reading, on both tapes
+//   90 / 180 deg   0.379, 0.355, 0.516, 0.665
+// Facing separates from turned with no overlap. How FAR turned does not: the 90-versus-180 ordering flips between the
+// two tapes, so no angle is claimed. Three states to about 90 degrees is the whole of what the cue supports.
+var FACE_FACING = 0.95, FACE_TURNED = 0.70;
+function facingFor(utt, deg) {
+  brightInit();
+  if (!BRIGHT.length || utt === null || utt === undefined) return null;
+  var key = utt + '|' + (Number.isFinite(deg) ? Math.round(deg) : 'x');
+  if (FACE_CACHE[key] !== undefined) return FACE_CACHE[key];
+  var ons = (OD && OD.onsets) || [];
+  var on = ons.find(function (o) { return o.index === utt; });
+  if (!on || !ons.length) return null;          // frames/onsets land asynchronously -- ask again next frame, never cache a no
+  if (FACE_BASE === null) {                                     // the tape's first utterance, read once
+    var r0 = windowRows(ons[0].t_s, null);
+    FACE_BASE = r0.length >= 3 ? ratioOf(r0) : null;
+  }
+  if (!FACE_BASE) return null;
+  var rows = windowRows(on.t_s, deg);
+  if (rows.length < 3) return null;
+  var b = ratioOf(rows);
+  if (b === null) return null;
+  var k = b / FACE_BASE;
+  // 270 READS BRIGHT BECAUSE THE SPEAKER IS COMING BACK ROUND (Jay: a known, repeated pattern, so it is factored for
+  // rather than reported as an anomaly). Between FACE_TURNED and FACE_FACING a reading is either facing or the 270
+  // side, and the FIRST REFLECTION decides which -- the same evidence that already breaks the left/right sign.
+  var state = k >= FACE_FACING ? 'facing' : (k >= FACE_TURNED ? 'either' : 'turned');
+  return (FACE_CACHE[key] = { state: state, k: k, bright: b });
+}
+var DEC = null;          // the decode (or, for a sim, the scene script): its centroid series and per-turn truth
+function centInit() {
+  if (!CENT) {
+    CENT = [];
+    ((OD && OD.frames) || []).forEach(function (f) {
+      var tr = f.tracks && f.tracks[0];
+      if (tr && typeof tr.centroid_hz === 'number' && tr.onset_idx !== null && tr.onset_idx !== undefined) CENT.push([f.t, tr.centroid_hz]);
+    });
+    // A SIMULATED TAPE HAS NO FIXTURE, so there are no frames and no centroid_hz -- every bubble came
+    // out the same default blue (Jay, 2026-10-10). The script file carries the series instead, measured
+    // off the rendered wav, in the same [t, hz] shape the frames would have given.
+    if (!CENT.length && DEC && DEC.centroid && DEC.centroid.length) CENT = DEC.centroid;
+  }
+}
+function hueAt(t0, t1) {
+  centInit();
+  var lo = 0, hi = CENT.length;                                       // CENT is in time order: bisect to t0
+  while (lo < hi) { var m = (lo + hi) >> 1; if (CENT[m][0] < t0) lo = m + 1; else hi = m; }
+  var v = [];
+  for (var i = lo; i < CENT.length && CENT[i][0] <= t1; i++) v.push(CENT[i][1]);
+  if (v.length < 3) return null;
+  v.sort(function (a, b) { return a - b; });
+  var c = v[v.length >> 1];
+  var x = (Math.log(c) - Math.log(CENT_LO)) / (Math.log(CENT_HI) - Math.log(CENT_LO));
+  return { hue: 230 - 230 * Math.max(0, Math.min(1, x)), hz: c };
+}
+var SPRING = 9, TRAIL_S = 3.0, VMAX_MS = 1.5;   // metres per second a person walks
+// SPRING WAS 26 (Jay, 2026-10-04: "make the position dot glide rather than teleport"). Critically
+// damped, 26 is a 0.2 s time constant -- most of a two-metre move is over in a third of a second,
+// which reads as a jump. 9 gives 0.33 s and settles in about a second and a half: visibly a glide.
+var RAY_S = 1.4;        // how long the onset ray and its distance stay up after an arrival
+var GLOW_S = 0.45;      // how long the dot keeps glowing after the last speaking frame
+// THE PUCK FADES OUT COMPLETELY WHEN SPEECH STOPS (Jay, 2026-10-20: "Have the puck fade out completely. Because we haven't
+// even gotten to multi-speaker yet when there would be more than one positional dot rendered"). In a silence it no longer
+// sits at 'held': from the last frame the talker was heard it fades from its speaking strength to nothing over
+// PUCK_FADE_S -- the span its speech bubble fades over -- and stays gone until the next utterance draws it again.
+var PUCK_FADE_S = BUB_HOLD_S;
+var GLIDE_S = 0.3;   // a NEW arrival glides to its place this long, unclamped -- cosmetic, not a walk (Jay, 2026-09-29)
+
+// THE LOUDEST BEAM OVER A TRAILING WINDOW (2026-09-25). Three rules have been tried here. Taking
+// whichever track was most active in the current frame flip-flopped: the bearing jumped 51 degrees
+// at p90 between redraws. Following ONE lane for the whole tape, the id present in the most frames,
+// is perfectly stable and commits to a single arrival for the entire recording -- on walk-165255
+// that lane is right at three of four stops and 62 degrees wrong at the fourth, with no way out.
+//
+// The rule now is the beam carrying the most ENERGY over a trailing 0.75 s. The direct arrival's
+// beam is the louder one: measured over frames where two tracks are live and truth says which is
+// which, the louder channel IS the direct arrival 78% of the time, 83% inside 5 m, falling to 61%
+// past 10 m as the reverberant field overtakes the direct sound. 78% is far too weak to decide per
+// hop, but the difference is consistently signed and only 0.12 dB in the median, so accumulating it
+// over 70 frames makes it decisive while the selection changes at most once every four seconds.
+//
+// MEASURED, share of frames whose bearing lands within 15 degrees of Jay's marked positions:
+//   walk-165255   74% -> 92%   (92% is the ORACLE -- the best any per-frame rule could reach)
+//   walk-205606   54% -> 77%   (oracle 93%)
+//   walk-210054   25% -> 26%   (oracle 47%)
+// and identical on walk-195454, 211959, 194940 and 203939, because DareDevil holds a SINGLE track
+// for 100% of talking frames on those four. No selection rule can move them; that is thetaNew's
+// job, and its own measurement says the slot ceiling is not what withholds the second track.
+function bearingAt(time, e) { return e && Number.isFinite(e.deg) ? e.deg : null; }
+function rangeLabel(e) {
+  if (screenMode()) return '';                                   // a share of the screen: no metres, no units to print
+  // while the walking limit holds the dot short of the scheme's position, say both: where it is, and where it's going
+  var held = (WALK && RANGE_UNIT !== 'u') ? Math.hypot(WALK.x, WALK.y) : null;   // WALK is held unscaled
+  if (held !== null && !e.settling && Math.abs(held - e.range) > 0.01)
+    return (held * RAD_K).toFixed(2) + ' m, walking to ' + (e.range * RAD_K).toFixed(2) + ' m';
+  return RANGE_UNIT === 'u' ? e.range.toFixed(3) + ' u' : (e.range * RAD_K).toFixed(2) + ' m' +
+    (Number.isFinite(e.units) ? ' (' + e.units.toFixed(3) + ' u)' : '');
+}
+
+// WALKING PACE (Jay, 2026-10-07: "Position dot can't teleport more than [walking pace]" -- it holds through someone
+// turning and then talking, when the lock can land on a reflection). A new position (a new utterance's lock) may
+// move at most WALK_MPS x the time since the last one; farther, and the dot only gets that far along the line to it,
+// closing the rest on later utterances. Measured in the talker's own range and bearing from the phone (range x the
+// view scale), so dragging or turning the phone never trips it. Seeking backwards starts it afresh.
+var WALK_MPS = Number(Q.get('walk')) > 0 ? Number(Q.get('walk')) : 1.5, WALK = null;
+// HELD IN THE TALKER'S OWN RANGE, NOT IN DRAWN METRES (Jay, 2026-10-09: "Shift-mouse-wheel-scroll should mimic the function
+// from the earlier render page"; "If I change the phone position, facing angle, or distance ratio, it shouldn't break
+// anything"). Held as range x RAD_K, a shift+wheel change of the distance ratio was swallowed until the next position
+// arrived -- the dot never moved. Held unscaled, place() applies the current ratio and the dot follows the wheel at once;
+// at a fixed ratio the positions are the same as before. The walking allowance is in drawn metres, so it is divided by
+// the ratio. A seek starts it afresh (WALK = null): a jump in time is not a walk.
+function walkLimit(e, time) {
+  var deg = bearingAt(time, e), r = e.range, a = deg * Math.PI / 180;
+  var x = r * Math.sin(a), y = r * Math.cos(a), key = e.range + '|' + deg;
+  // THE ONSET IS WHERE THE TALKER IS (Jay, 2026-10-20: "Shouldn't the blue dot be on one of the rays?"): with "puck on
+  // onset" ticked, the puck goes straight to the held onset. The walking limit was there to stop a lock on a reflection from
+  // dragging the dot; the onset is now told from its reflection directly, and a walk between two directions left the dot
+  // on neither ray. Unticking it brings the limit back, starting from where the dot is.
+  if (e.onset) { WALK = { key: key, x: x, y: y, t: time }; return { range: e.range, deg: deg }; }
+  // A READ STILL SETTLING IS NOT A WALK (Jay, 2026-10-20: "after x-ms, we render a dot, and it wobbles around until it
+  // stabilizes"): GccPhat renews its read every 10.7 ms until its lock, and the limit would have turned that wobble into
+  // a 1.5 m/s crawl. Each settling read is drawn as it is; WALK is left alone, so the lock is judged against the last one.
+  if (e.settling) return { range: e.range, deg: deg };
+  if (!WALK || time < WALK.t - 0.5) { WALK = { key: key, x: x, y: y, t: time }; return { range: e.range, deg: deg }; }
+  if (key !== WALK.key) {                                    // a new position from the scheme
+    var dx = x - WALK.x, dy = y - WALK.y, d = Math.hypot(dx, dy), can = WALK_MPS * Math.max(0, time - WALK.t) / RAD_K;
+    if (d > can && d > 0) { x = WALK.x + dx * can / d; y = WALK.y + dy * can / d; }
+    WALK = { key: key, x: x, y: y, t: time };
+  }
+  return { range: Math.hypot(WALK.x, WALK.y), deg: Math.atan2(WALK.x, WALK.y) * 180 / Math.PI };
+}
+function step(dt) {
+  var e = renderNow();
+  if (!e || !Number.isFinite(e.range) || !Number.isFinite(e.deg)) return;
+  var wl = walkLimit(e, t);
+  var p = place(wl.range, wl.deg);
+  // NO GLIDE BETWEEN UTTERANCES (Jay, 2026-10-07: "each new utterance is a new speaker, glide travel doesn't make sense. I
+  // mean who's travelling?"). Any new position -- a new utterance's lock, or a switch -- is drawn there at once, at rest,
+  // its trail restarted; nothing animates between two positions.
+  var tkey = wl.range.toFixed(4) + '|' + wl.deg.toFixed(3);
+  if (disc.tkey !== tkey) {
+    if (disc.tkey !== undefined) { disc.x = p.x; disc.y = p.y; disc.vx = 0; disc.vy = 0; disc.trail = []; }
+    disc.tkey = tkey;
+  }
+  if (disc.x === null || (HIST.length && t < HIST[HIST.length - 1][0] - 0.5)) { HIST.length = 0; SPOTS.length = 0; }
+  if (disc.x === null) { disc.x = p.x; disc.y = p.y; }
+  // A NEW ARRIVAL SNAPS (2026-09-29, same call as the series limiter above): the first frame of a new
+  // `oi` puts the disc where the talker is, at rest. The spring and the walking-pace clamp below then
+  // govern every frame inside that utterance, as before. disc.oi is the arrival the disc last drew.
+  // ...and GLIDES rather than teleports (Jay: "when I said travel I meant glide"): for GLIDE_S the
+  // walking-pace clamp below is lifted and the spring alone carries the disc to the new place --
+  // about a third of a second, whatever the distance. Placement is the arrival; the glide is cosmetic.
+  if (e.oi !== null && e.oi !== undefined && e.oi !== disc.oi) {
+    if (disc.oi !== undefined && disc.oi !== null) addSpot(disc.x, disc.y);   // where the last utterance ended
+    disc.oi = e.oi; disc.oiT = t;
+  }
+  // THE MAIN AND THE REFLECTION SWITCH, THEY DO NOT TRAVEL (Jay, 2026-10-06: "don't render a glide travel.
+  // Just switch the dimmed dot and speech bubble"). When the scheme moves its main arrival inside a window
+  // the disc is put straight there, at rest, and its trail restarts -- nobody walked between the two.
+  if (e.mv !== null && e.mv !== undefined && e.mv !== disc.mv) {
+    if (disc.mv !== undefined && disc.mv !== null && e.oi === disc.oi) {
+      disc.x = p.x; disc.y = p.y; disc.vx = 0; disc.vy = 0; disc.trail = [];
+    }
+    disc.mv = e.mv;
+  }
+  if (e.mode !== 'silent') disc.spokeT = t;      // the last frame the talker was actually heard
+  var k = SPRING, c = 2 * Math.sqrt(k);
+  disc.vx += (-k * (disc.x - p.x) - c * disc.vx) * dt;
+  disc.vy += (-k * (disc.y - p.y) - c * disc.vy) * dt;
+
+  // TRAVEL, NOT TELEPORT (Jay's call, 2026-09-25). Coming out of a freeze the target can be metres
+  // away, and the spring alone would cover that in about four tenths of a second -- ten metres per
+  // second, which is a person being fired from a cannon. Clamping the disc's SPEED instead makes the
+  // resume a walk. It is deliberately a straight line: we know he got from one position to the other
+  // on foot, we do not know his route, and inventing one would be theatre.
+  //
+  // This is 2D, which the range limiter in Presenter cannot be, so it also covers the angular half
+  // of a resume -- the bearing arrives all at once and the disc still walks to it.
+  // THE CLAMP IS GONE (Jay, 2026-09-30). A scheme that holds its reading (StableCentroid) locks a
+  // value 0.4 s into an utterance; with the glide over at 0.3 s the disc then WALKED the rest of
+  // the way at 1.5 m/s -- nine seconds to 17 m -- and every scheme looked like the same slow drift
+  // outward, because the drift was this line. The spring alone carries the disc to the scheme's
+  // place: a snap-and-hold reads as a snap-and-hold, a wrong value reads as wrong, immediately.
+
+  disc.x += disc.vx * dt; disc.y += disc.vy * dt;
+
+  // A held position is not a travelled one, so the trail does not grow through a silence. It still
+  // ages out normally, and the travel that follows the freeze IS drawn, because those frames are live.
+  // HIST row: [t, x, y, ghostX, ghostY, uncertain]. The ghost is placed, not sprung: it is the other
+  // candidate's bearing at the drawn range, and it only exists while its window lasts.
+  var gp = (e.ghost !== null && e.ghost !== undefined) ? (Number.isFinite(e.ghostRange) ? place(e.ghostRange, e.ghost) : null) : null;
+  disc.ghost = gp; disc.ghostR = gp ? e.ghostR : null;
+  // [7]: a tie -- the two arrivals coincide, and both are drawn as reflections (drawBubbles reads it for the main bubble)
+  if (e.mode !== 'silent') HIST.push([t, disc.x, disc.y, gp ? gp.x : null, gp ? gp.y : null, e.mode === 'uncertain', gp ? e.ghostR : null, e.tie !== null && e.tie !== undefined]);
+  if (e.mode !== 'silent') {
+    disc.trail.push({ x: disc.x, y: disc.y, t: t });
+    while (disc.trail.length && t - disc.trail[0].t > TRAIL_S) disc.trail.shift();
+  }
+}
+
+function est2At(time, E) {
+  if (!E || !E.length || time < E[0].t) return null;
+  var lo = 0, hi = E.length - 1;
+  while (lo < hi - 1) { var m = (lo + hi) >> 1; if (E[m].t <= time) lo = m; else hi = m; }
+  var r = E[hi].t <= time ? E[hi] : E[lo];
+  return (Math.abs(r.t - time) > 0.4) ? null : r;
+}
+
+// ---- drawing: two layers, because one was rebuilding the room sixty times a second ---------------
+// The first cut rebuilt the whole SVG every animation frame -- walls, furniture, labels, the lot --
+// which on a room this size is thousands of nodes parsed per frame and the timeline juddered to a
+// halt. The room, the phone and the marked dots only change when the VIEW changes or the playhead
+// crosses into another stop, so they get their own layer and are left alone. The disc, its ray and
+// its trail are a handful of nodes and are the only thing redrawn per frame.
+var STAT_KEY = '';
+// One bracket per gate open: a 2px line at the onset and a 0.5 s band after it, positioned as a
+// percentage of the tape so it tracks the slider at any window width. Onsets come from the fixture
+// (top-level `onsets`, else the distinct onset_t_s on the tracks) -- nothing is recomputed here.
+var BOOT_S = 0.001;
+function drawOnsets(od) {
+  var host = document.getElementById('onsets');
+  if (!host) return;
+  host.innerHTML = '';
+  var dur = od.duration || 0;
+  if (!dur) return;
+  var ts = [];
+  if (od.onsets && od.onsets.length) {
+    od.onsets.forEach(function (o) {
+      var v = (typeof o === 'number') ? o : (o.t_s !== undefined ? o.t_s : o.t);
+      if (typeof v === 'number') ts.push(v);
+    });
+  }
+  if (!ts.length) {
+    var seen = {};
+    (od.frames || []).forEach(function (f) {
+      (f.tracks || []).forEach(function (tr) {
+        if (typeof tr.onset_t_s === 'number' && !seen[tr.onset_t_s]) { seen[tr.onset_t_s] = 1; ts.push(tr.onset_t_s); }
+      });
+    });
+  }
+  ts.sort(function (a, b) { return a - b; });
+  ts.forEach(function (t0) {
+    if (!(t0 >= 0 && t0 <= dur)) return;
+    var el = document.createElement('i');
+    el.style.left = (100 * t0 / dur).toFixed(3) + '%';
+    el.style.width = (100 * Math.min(BOOT_S, dur - t0) / dur).toFixed(3) + '%';
+    el.title = 'gate open ' + t0.toFixed(2) + ' s  (' + BOOT_S + ' s decision window)';
+    host.appendChild(el);
+  });
+}
+
+function drawStatic() {
+  // THE ROOM BOX IS GONE (Jay, 2026-10-04). What matters on this page is where the phone is looking
+  // and where the people are; a rectangle around them was furniture for the eye. Walls can come back
+  // as an option the day a reflection has to be explained.
+  // ...except in Jay's own living room, where the room is the reference the picture is judged against
+  var s = (LIVING && T.outline && T.outline.length >= 3 && typeof RoomDraw !== 'undefined')
+        ? '<g opacity="0.75">' + RoomDraw.draw(T, false, null, X, Y, ppm) + '</g>' : '';
+  var stops = (OD && OD.truth && OD.truth.stops) || [];
+  stops.forEach(function (st, i) {
+    if (typeof st.x !== 'number') return;
+    var live = (t >= st.t0 && t <= st.t1);
+    s += '<circle cx="' + X(st.x) + '" cy="' + Y(st.y) + '" r="' + (live ? 11 : 8) + '" fill="none" stroke="var(--dot)" stroke-width="' + (live ? 2.5 : 1.2) + '" opacity="' + (live ? 0.95 : 0.4) + '"/>';
+    s += '<text x="' + (X(st.x) + 14) + '" y="' + (Y(st.y) + 4) + '" fill="var(--dot)" font-size="11" opacity="' + (live ? 0.95 : 0.5) + '">' + (i + 1) + '</text>';
+  });
+  // THE PHONE IS A V (Jay, 2026-10-04: "like a rendered V, like the top view from my phone"), and the
+  // single facing line it replaces is gone. The half-angle is not decorative: 50 degrees is the
+  // bearing gate the range scheme itself requires ("direct margin >= 12 dB and bearing inside +-50
+  // deg gives 9/9"), so the wedge IS the region where a placement is claimable. It reaches to the
+  // far edge of what is drawn, so the eye reads a field of view rather than a short stub.
+  var p = phonePose(), FOV = 50;
+  var bb = bounds(), reach = Math.hypot(bb[1] - bb[0], bb[3] - bb[2]);
+  var vA = (p.ang - FOV) * Math.PI / 180, vB = (p.ang + FOV) * Math.PI / 180;
+  var ax = X(p.x + reach * Math.sin(vA)), ay = Y(p.y + reach * Math.cos(vA));
+  var bx = X(p.x + reach * Math.sin(vB)), by = Y(p.y + reach * Math.cos(vB));
+  s += '<path d="M' + X(p.x) + ',' + Y(p.y) + ' L' + ax + ',' + ay + ' L' + bx + ',' + by + ' Z" ' +
+       'fill="var(--phone)" opacity="0.055"/>';
+  s += '<line x1="' + X(p.x) + '" y1="' + Y(p.y) + '" x2="' + ax + '" y2="' + ay + '" stroke="var(--phone)" stroke-width="1.1" opacity="0.5"/>';
+  s += '<line x1="' + X(p.x) + '" y1="' + Y(p.y) + '" x2="' + bx + '" y2="' + by + '" stroke="var(--phone)" stroke-width="1.1" opacity="0.5"/>';
+  s += '<circle data-ph="1" cx="' + X(p.x) + '" cy="' + Y(p.y) + '" r="7" fill="var(--phone)"/>';
+  if (LIVING) s += '<circle data-ph="1" cx="' + X(p.x) + '" cy="' + Y(p.y) + '" r="16" fill="var(--phone)" fill-opacity="0.12" ' +
+                   'stroke="var(--phone)" stroke-opacity="0.5" style="cursor:grab"><title>drag anywhere moves the phone; shift+drag turns it; shift+scroll sizes its range; ctrl+drag pans</title></circle>';
+  s += '<text x="' + (X(p.x) + 12) + '" y="' + (Y(p.y) + 18) + '" fill="var(--phone)" font-size="11">phone</text>';
+  document.getElementById('stat').innerHTML = s;
+}
+
+// STAGE-1 RAYS ARE GONE (Jay, 2026-09-26: "bearing is steady on its own, so all the code to render
+// those can be ripped out"). The candidate families and their slider drew DareDevil's raw arrivals
+// behind the disc while the bearing was being fought for; with the gate and the denoiser in front of
+// it the bearing holds by itself, and the disc plus its one ray is the whole picture.
+//
+// ODAS'S OWN RAYS ARE BACK, AS A CHECK (Jay, 2026-10-12: "see if at least ONE Stage1 ray from ODAS tracks me during my
+// utterances" -- "Yes need to watch it" -- "just use ODAS and not DFN" -- "Display the selected ODAS ray ... and make its
+// length a ratio of the Amplitude we preserved ... the shift mouse wheel-scroll will be able to expand and contract it"
+// -- "Render dashed red, and also 2nd candidate Stage1 Ray, for close-ties so I can see"). geonar/odas_rays.py writes
+// them to <tape>/odasrays.json (fetched on open through /geonar/odasrays, which runs it when needed): per ODAS hop,
+// every candidate [deg, E] and every tracked source [id, deg, activity, level]. Nothing is smoothed and nothing is
+// taken across hops; the hop under the playhead is drawn as it is.
+//   SELECTED   each source ODAS tracks: red, dashed, 1 / level long as a share of the screen (screenRange: the same
+//              rule as an anchorless range) -- that hop's amplitude alone, louder is nearer. NO REFERENCE LEVEL (Jay:
+//              "Do NOT use loudest. We are now drifting."); shift+wheel (RAD_K) is the only calibration.
+//              `level` is the amplitude geonar_track_levels() keeps per track slot -- the one ODAS used to throw away.
+//   THE REST   ODAS's 1st and 2nd candidates and its other tracked sources were drawn too, then taken off (Jay,
+//              2026-10-12: "The other ODAS rays, we don't need for now"). The data still carries them (pots, tracks).
+// THE ODAS RAY IS THE FIRST ARRIVAL OF THE UTTERANCE (Jay, 2026-10-12: "Which is the ODAS ray?" -- "If we can pick by
+// absolute first arrival, that's what I'm looking for" -- "in a live stream we'll never know when the onset happens.
+// So ... we just stream to ODAS continuously and only render (and pick) beams when an utterance happens" -- "earliest
+// arrival beam at each utterance, and hold angle until next utterance. For range, keep updating as long as it
+// increases within that utterance" -- "stretching further and freeze at furthest").
+//
+// THE ANGLE COMES FROM ODAS'S CANDIDATES, NOT ITS TRACKS (Jay: "at 19s, it doesn't switch to the next position till
+// about 25s, then at 56s, confusing echoes, it def picks the wrong ray" -- "Let's try that. If this ends up not working
+// out (using ODAS) we'll go back to using our own GCC-PHAT scheme"). Picking the first TRACK to go active failed twice on
+// walk-203939, both times the tracker's doing: it named no source at Jay's new spot until 5.5 s after he spoke there,
+// though its candidates sat on him (+34 deg against a +38 mark) from the first step; and at 56 s it re-lit his previous
+// spot's track on echoes 1.3 s in, while the first steps' candidates said +82 deg (a +74 mark). Candidates are fresh
+// every 10.7 ms and remember nothing. So, per utterance -- the Conductor's onsets, from the positions file:
+//   ANGLE   the strongest candidate on the first ODAS frame that starts at or after the onset (step i's frame spans
+//           hops i-1 and i), the absolute first arrival. Held, through the utterance and past its end, until the next
+//           utterance's arrives -- every onset has one now, the Siri ding included.
+//   RANGE   candidates carry no amplitude, so it is read from a tracked source within ODAS_NEAR_DEG of that angle (the
+//           nearest, active at or above theta_inactive, ODAS's own line): 1 / its level, the amplitude ODAS keeps per
+//           track. It stretches to the furthest read and freezes there, held to the next beam. Until such a track
+//           exists the beam is drawn at its angle with no range dot. Nothing is smoothed; worked out once per
+//           utterance, so a seek lands on the same picture.
+var ODAS_FIRST = {}, ODAS_NEAR_DEG = 10;           // Angle's SEP_DEG: closer than this is the same direction
+function odasBeam(od8, ons, k) {
+  var key = ons[k].index + '|' + ons[k].t_s;
+  if (ODAS_FIRST[key] !== undefined) return ODAS_FIRST[key];
+  var i1 = Math.min(od8.pots.length, k + 1 < ons.length ? Math.round(ons[k + 1].t_s / od8.hop_s) : od8.pots.length);
+  var i = Math.ceil(ons[k].t_s / od8.hop_s) + 1, c = null;
+  for (; i < i1; i++) {
+    var ps = od8.pots[i] || [];
+    for (var j = 0; j < ps.length; j++) if (!c || ps[j][1] > c[1]) c = ps[j];
+    if (c) break;
+  }
+  if (!c) return (ODAS_FIRST[key] = null);
+  var b = { deg: c[0], from: i, hops: [], vals: [], id: null };
+  for (var h = b.from; h < i1; h++) {
+    var r = od8.tracks[h] || [], tr = null;
+    for (var q = 0; q < r.length; q++) {
+      var dd = Math.abs(r[q][1] - b.deg);
+      if (dd <= ODAS_NEAR_DEG && r[q][2] >= od8.theta_inactive && r[q][3] > 0 && (!tr || dd < Math.abs(tr[1] - b.deg))) tr = r[q];
+    }
+    if (!tr) continue;                                         // no track there yet, or not active: no read
+    var v = 1 / tr[3];
+    if (b.vals.length && v <= b.vals[b.vals.length - 1]) continue;   // not further: the range stays out
+    b.hops.push(h); b.vals.push(v); b.id = tr[0];              // further: it stretches
+  }
+  return (ODAS_FIRST[key] = b);
+}
+// The beam at ODAS hop i: the latest utterance whose first arrival has been heard by then, so a held beam stays until
+// the next one arrives. inv is null until a track near its angle has given it a range.
+function odasBeamAt(od8, i) {
+  if (!Number.isFinite(od8.theta_inactive)) return null;
+  var ons = (POS && POS.onsets) || [];
+  for (var k = ons.length - 1; k >= 0; k--) {
+    if (Math.round(ons[k].t_s / od8.hop_s) > i) continue;
+    var b = odasBeam(od8, ons, k);
+    if (!b || i < b.from) continue;                            // none, or not heard yet: the one before holds
+    var inv = null, id = null;
+    for (var m = 0; m < b.hops.length && b.hops[m] <= i; m++) { inv = b.vals[m]; id = b.id; }
+    return { deg: b.deg, inv: inv, id: id };
+  }
+  return null;
+}
+function odasRaysSvg(p0, len) {
+  var od8 = OD && OD.odasRays, box = document.getElementById('showodas');
+  if (!od8 || !od8.pots || !box || !box.checked) return '';
+  var i = Math.max(0, Math.min(od8.pots.length - 1, Math.round(t / od8.hop_s)));
+  var ax = X(p0.x), ay = Y(p0.y), s = '', held = odasBeamAt(od8, i);
+  if (held) {                                                  // the beam: its first-arrival angle, its furthest range
+    var ranged = Number.isFinite(held.inv);                    // no track near it yet: the angle alone, no dot
+    var q = place(ranged ? screenRange(held.inv) : len, held.deg), qh = { x: X(q.x), y: Y(q.y) };
+    s += '<line x1="' + ax + '" y1="' + ay + '" x2="' + qh.x + '" y2="' + qh.y + '" stroke="#dc2626" stroke-width="3"' +
+         ' stroke-dasharray="8 5" opacity="' + (ranged ? '0.95' : '0.6') + '"/>';
+    if (ranged) s += '<circle cx="' + qh.x + '" cy="' + qh.y + '" r="5.5" fill="#dc2626" opacity="0.95"/>';
+    s += '<text x="' + (qh.x + 8) + '" y="' + (qh.y + 4) + '" fill="#dc2626" font-size="12">ODAS' + (ranged ? ' T' + held.id : '') + '</text>';
+  }
+  return s;
+}
+
+// ANGLE ON EVERY FRAME (Jay, 2026-10-19: "I'll need it rendered in the render page. Even if we can get to a point of a
+// tie between actual onset and 1st reflection, we'd be almost there"). geonar/angle_rays.py writes <tape>/anglerays.json
+// (fetched on open through /geonar/anglerays, which runs it when needed): for every 21 ms frame, 10.7 ms apart, that
+// clears 10 dB over the 1.1-8 kHz floor, Angle's strongest direction (the 0 deg ghost rule applied) and its second -- a
+// peak at least SEP_DEG away holding at least TIE_SHARE of the vote, Angle's own tie. Drawn at the frame now playing:
+// the strongest a solid cyan ray, the second a dashed amber one; the strongest reads of the last half second stay as
+// faint cyan spokes, so a stand shows as a bundle and a flicker as a fan.
+// RANGE FROM ODAS'S AMPLITUDE, IN dB (Jay, 2026-10-19: "if there's an ODAS output file from this walk, try using the
+// amplitude for range" -- "let's use dB as a unit of range scaled logarithmically"). At a frame, ODAS's tracked source
+// within ODAS_NEAR_DEG of the ray, active at or above its own theta_inactive, the nearest in angle, gives 1 / its level.
+// 0 dB is THE FIRST SOUND's own level (Jay's units of the first onset); a sound N dB quieter than it sits N dB further
+// out, every dB the same step on screen, so twice as far (6 dB) is always one step whatever the distance. RAD_K (the
+// slider / wheel) sets the step. Per frame, nothing held; no source near the ray, no dot.
+function odasInvNear(deg, tt) {
+  var od8 = OD && OD.odasRays;
+  if (!od8 || !od8.tracks || !Number.isFinite(od8.theta_inactive)) return null;
+  var r = od8.tracks[Math.max(0, Math.min(od8.tracks.length - 1, Math.round(tt / od8.hop_s)))] || [], tr = null;
+  for (var q = 0; q < r.length; q++) {
+    var dd = Math.abs(r[q][1] - deg);
+    if (dd <= ODAS_NEAR_DEG && r[q][2] >= od8.theta_inactive && r[q][3] > 0 && (!tr || dd < Math.abs(tr[1] - deg))) tr = r[q];
+  }
+  return tr ? 1 / tr[3] : null;
+}
+// THE SIDE OF A SOUND (Jay, 2026-10-19: "the signal that arrives at either L or R mic first is the quadrant of the actual
+// position"). Each sound -- a run of frames that clear the 10 dB -- takes its side from its FIRST read: which capsule heard
+// it first. A ray on the other side later in that sound is a reflection and is not drawn: the frame keeps its strongest
+// if that is on the sound's side, else its second if that is, else nothing. A sound whose first read is within
+// ANGLE_ZERO_DEG of 0 has no side, and keeps both.
+var ANGLE_ZERO_DEG = 2;
+function angleSides(ar) {
+  if (ar.sides) return ar.sides;
+  var sides = new Array(ar.reads.length), side = 0;
+  for (var k = 0; k < ar.reads.length; k++) {
+    var r = ar.reads[k];
+    if (!r) { sides[k] = null; continue; }
+    if (k === 0 || !ar.reads[k - 1]) side = Math.abs(r[0]) <= ANGLE_ZERO_DEG ? 0 : (r[0] > 0 ? 1 : -1);
+    sides[k] = side;
+  }
+  return (ar.sides = sides);
+}
+function onSide(deg, side) { return side === 0 || (deg > 0 ? 1 : -1) === side; }
+function angleKept(ar, k) {
+  var r = ar.reads[k];
+  if (!r) return null;
+  var side = angleSides(ar)[k];
+  if (onSide(r[0], side)) return { deg: r[0], other: (r[2] !== null && onSide(r[2], side)) ? r[2] : null };
+  if (r[2] !== null && onSide(r[2], side)) return { deg: r[2], other: null };
+  return null;
+}
+var ANGLE_DB_REF = null;
+function angleDbRef(ar) {
+  if (ANGLE_DB_REF !== null) return ANGLE_DB_REF;
+  if (!(OD && OD.odasRays)) return null;
+  for (var k = 0; k < ar.reads.length; k++) {
+    var a = angleKept(ar, k);
+    if (!a) continue;
+    var inv = odasInvNear(a.deg, k * ar.hop_s);
+    if (Number.isFinite(inv)) return (ANGLE_DB_REF = 20 * Math.log10(inv));
+  }
+  return null;
+}
+function dbStepPx() { return 0.012 * Math.min(W, H) * (Number.isFinite(RAD_K) && RAD_K > 0 ? RAD_K : 1); }
+function dbBasePx() { return 0.25 * Math.min(W, H); }
+function dbRange(inv, ar) {
+  var ref = angleDbRef(ar);
+  if (!Number.isFinite(inv) || ref === null || !(ppm > 0)) return null;
+  return Math.max(6, dbBasePx() + (20 * Math.log10(inv) - ref) * dbStepPx()) / ppm;
+}
+// ANGLE ON EVERY FRAME (Jay, 2026-10-19: "I'll need it rendered in the render page. Even if we can get to a point of a
+// tie between actual onset and 1st reflection, we'd be almost there"). geonar/angle_rays.py writes <tape>/anglerays.json
+// (fetched on open through /geonar/anglerays, which runs it when needed): for every 21 ms frame, 10.7 ms apart, that
+// clears 10 dB over the 1.1-8 kHz floor, Angle's strongest direction (the 0 deg ghost rule applied) and its second -- a
+// peak at least SEP_DEG away holding at least TIE_SHARE of the vote, Angle's own tie. Drawn at the frame now playing, on
+// its sound's side only: the kept ray solid cyan, the other one dashed amber, each with its dB dot; the kept reads of the
+// last half second stay as faint cyan spokes, so a stand shows as a bundle and a flicker as a fan.
+function angleRaysSvg(p0, len) {
+  var ar = OD && OD.angleRays, box = document.getElementById('showangle');
+  if (!ar || !ar.reads || !box || !box.checked) return '';
+  var i = Math.floor(t / ar.hop_s), back = Math.round(0.5 / ar.hop_s), ax = X(p0.x), ay = Y(p0.y), s = '';
+  if (angleDbRef(ar) !== null) {                               // the dB rings: 0 dB is the first sound, 6 dB apart
+    for (var db = -6; db <= 30; db += 6) {
+      var rp = dbBasePx() + db * dbStepPx();
+      if (rp < 6) continue;
+      s += '<circle cx="' + ax + '" cy="' + ay + '" r="' + rp.toFixed(1) + '" fill="none" stroke="#64748b" stroke-width="0.7" opacity="0.35"/>';
+      s += '<text x="' + (ax + 4) + '" y="' + (ay + rp - 3).toFixed(1) + '" fill="#64748b" font-size="10" opacity="0.8">' +
+           (db === 0 ? '0 dB = 1st sound' : (db > 0 ? db + ' dB quieter' : (-db) + ' dB louder')) + '</text>';
+    }
+  }
+  for (var j = Math.max(0, i - back); j < i && j < ar.reads.length; j++) {
+    var aj = angleKept(ar, j);
+    if (!aj) continue;
+    var qj = place(len, aj.deg);
+    s += '<line x1="' + ax + '" y1="' + ay + '" x2="' + X(qj.x) + '" y2="' + Y(qj.y) + '" stroke="#22d3ee" stroke-width="1"' +
+         ' opacity="' + (0.06 + 0.3 * (j - i + back) / back).toFixed(2) + '"/>';
+  }
+  var a = (i >= 0 && i < ar.reads.length) ? angleKept(ar, i) : null;
+  if (a) {
+    var q1 = place(len, a.deg), d1 = dbRange(odasInvNear(a.deg, t), ar);
+    s += '<line x1="' + ax + '" y1="' + ay + '" x2="' + X(q1.x) + '" y2="' + Y(q1.y) + '" stroke="#22d3ee" stroke-width="3"/>';
+    s += '<text x="' + (X(q1.x) + 8) + '" y="' + (Y(q1.y) + 4) + '" fill="#22d3ee" font-size="12">Angle ' + (a.deg > 0 ? '+' : '') + a.deg.toFixed(1) + '\u00b0</text>';
+    if (Number.isFinite(d1)) { var p1 = place(d1, a.deg); s += '<circle cx="' + X(p1.x) + '" cy="' + Y(p1.y) + '" r="7" fill="#22d3ee" stroke="#ffffff" stroke-width="1.5"/>'; }
+    if (a.other !== null) {
+      var q2 = place(len, a.other), d2 = dbRange(odasInvNear(a.other, t), ar);
+      s += '<line x1="' + ax + '" y1="' + ay + '" x2="' + X(q2.x) + '" y2="' + Y(q2.y) + '" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="7 5"/>';
+      s += '<text x="' + (X(q2.x) + 8) + '" y="' + (Y(q2.y) + 4) + '" fill="#f59e0b" font-size="12">2nd ' + (a.other > 0 ? '+' : '') + a.other.toFixed(1) + '\u00b0</text>';
+      if (Number.isFinite(d2)) { var p2 = place(d2, a.other); s += '<circle cx="' + X(p2.x) + '" cy="' + Y(p2.y) + '" r="6" fill="#f59e0b"/>'; }
+    }
+  }
+  return s;
+}
+
+// EVERY SOUND'S ONSET AND FIRST REFLECTION (Jay, 2026-10-20: "I just want accurate onset and 1st reflection" -- "if the
+// first onset and reflection are indistinguishable, I'm ok with rendering both as dimmed speech bubbles"). From the same
+// anglerays.json, its `sounds` (Dictate geonar/angle_rays.py, each sound's first frame through Voice's RangeMath/Angle2.mjs
+// readSound, over the whole tape): per sound [t_s, decided, onset_deg, onset_share, second_deg, second_score, lag_ms].
+// Drawn: the onset HELD FOR THE UTTERANCE (onsetFor, the puck's own pick) -- told apart, a solid green ray and the first
+// reflection a dashed one at half strength with its delay in the label; undecided, both dashed and dim with a question
+// mark. The puck sits on the onset ray, the faded bubble on the other. The onsets told apart in the last ONSET_TRAIL_S
+// stay as faint green spokes, so a stand shows as a bundle.
+var ONSET_HOLD_S = 1.0, ONSET_TRAIL_S = 3.0, ONSET_C = '#4ade80';
+// ALL OF THE UTTERANCE'S ONSETS, EACH AT ITS OWN ANGLE (Jay, 2026-10-21: "At this point, just render all incoming onsets
+// of the same utterance at the angle they come in from"). Every sound inside the utterance now playing -- from the math
+// host's onset (ONSET_LEAD_S early) to its last heard frame, never past the next onset -- is one green spoke at its onset
+// angle: solid when its onset and first reflection were told apart, dashed when not. Nothing is picked. Each spoke is also
+// drawn behind the phone, faint (Jay: "the limits are features to be rendered"): two mics hear one delay from both sides.
+// The spokes fade with the puck in the silence after; the next utterance starts afresh. The held pick's labelled rays and
+// the 3 s trail that stood here are onsetSvgPick below, uncalled; onsetFor still places the puck when "puck on onset" is on.
+function onsetSvg(p0, len) {
+  var ar = OD && OD.angleRays, box = document.getElementById('showonset'), on = OD && OD.onsets;
+  if (!ar || !ar.sounds || !ar.sounds.length || !box || !box.checked || !on || !on.length) return '';
+  var u = -1;
+  for (var i = 0; i < on.length; i++) { if (on[i].t_s - ONSET_LEAD_S <= t) u = i; else break; }
+  if (u < 0) return '';
+  var pf = RENDER.speaking ? 1 : Math.max(0, Math.min(1, 1 - (t - disc.spokeT) / PUCK_FADE_S));
+  if (!(pf > 0.01)) return '';
+  var S = ar.sounds, ax = X(p0.x), ay = Y(p0.y), s = '';
+  var t0 = on[u].t_s - ONSET_LEAD_S, t1 = Math.min(u + 1 < on.length ? on[u + 1].t_s - ONSET_LEAD_S : Infinity, RENDER.speaking ? t : disc.spokeT);
+  var lo = 0, hi = S.length;
+  while (lo < hi) { var m = (lo + hi) >> 1; if (S[m][0] < t0) lo = m + 1; else hi = m; }
+  for (var k = lo; k < S.length && S[k][0] <= t1; k++) {
+    if (!Number.isFinite(S[k][2])) continue;
+    var told = !!S[k][1], op = (told ? 0.8 : 0.5) * pf, q = place(len, S[k][2]), b = place(len, 180 - S[k][2]);
+    s += '<line x1="' + ax + '" y1="' + ay + '" x2="' + X(q.x) + '" y2="' + Y(q.y) + '" stroke="' + ONSET_C + '" stroke-width="1.6"' +
+         (told ? '' : ' stroke-dasharray="7 5"') + ' opacity="' + op.toFixed(2) + '"/>';
+    s += '<line x1="' + ax + '" y1="' + ay + '" x2="' + X(b.x) + '" y2="' + Y(b.y) + '" stroke="' + ONSET_C + '" stroke-width="1"' +
+         ' stroke-dasharray="3 5" opacity="' + (op * 0.35).toFixed(2) + '"/>';
+  }
+  return s;
+}
+// the held pick's labelled rays and the 3 s trail, drawn by onsetSvg until 2026-10-21; left uncalled
+function onsetSvgPick(p0, len) {
+  var ar = OD && OD.angleRays, box = document.getElementById('showonset');
+  if (!ar || !ar.sounds || !ar.sounds.length || !box || !box.checked) return '';
+  var S = ar.sounds, ax = X(p0.x), ay = Y(p0.y), s = '', lo = 0, hi = S.length - 1, k = -1;
+  while (lo <= hi) { var m = (lo + hi) >> 1; if (S[m][0] <= t) { k = m; lo = m + 1; } else hi = m - 1; }
+  for (var j = k; j >= 0 && t - S[j][0] <= ONSET_TRAIL_S; j--) {
+    if (!S[j][1]) continue;
+    var qj = place(len, S[j][2]);
+    s += '<line x1="' + ax + '" y1="' + ay + '" x2="' + X(qj.x) + '" y2="' + Y(qj.y) + '" stroke="' + ONSET_C + '" stroke-width="1.2"' +
+         ' opacity="' + (0.08 + 0.32 * (1 - (t - S[j][0]) / ONSET_TRAIL_S)).toFixed(2) + '"/>';
+  }
+  // THE RAYS ARE THE ONSET PICK (Jay, 2026-10-20: "Shouldn't the blue dot be on one of the rays?"): what is drawn is the
+  // onset held for the utterance -- onsetFor(), the pick the puck and the bubbles use when "puck on onset" is ticked -- not
+  // the sound playing this instant. Solid when told apart, dashed when not. Unticked (the default since GccPhat became
+  // the bearing), the rays stay as a comparison and the puck is the math host's.
+  var cur = onsetFor(t);
+  if (!cur) return s;
+  // the held onset's rays fade out with the puck in a silence (2026-10-20), over the same PUCK_FADE_S
+  var pf = RENDER.speaking ? 1 : Math.max(0, Math.min(1, 1 - (t - disc.spokeT) / PUCK_FADE_S));
+  if (pf <= 0.01) return s;
+  var sgn = function (d) { return (d > 0 ? '+' : '') + d.toFixed(0) + '°'; };
+  var arrival = function (deg, solid, width, op, label) {
+    op *= pf;
+    var q = place(len, deg);
+    s += '<line x1="' + ax + '" y1="' + ay + '" x2="' + X(q.x) + '" y2="' + Y(q.y) + '" stroke="' + ONSET_C + '" stroke-width="' + width + '"' +
+         (solid ? '' : ' stroke-dasharray="7 5"') + ' opacity="' + op.toFixed(2) + '"/>';
+    s += '<text x="' + (X(q.x) + 8) + '" y="' + (Y(q.y) + 4) + '" fill="' + ONSET_C + '" font-size="12" opacity="' + op.toFixed(2) + '">' + label + '</text>';
+  };
+  if (cur.told) {
+    arrival(cur.deg, true, 3, 0.9, 'onset ' + sgn(cur.deg));
+    if (cur.other !== null) arrival(cur.other, false, 2, 0.45, '1st reflection ' + sgn(cur.other) +
+      (cur.lag === null ? '' : cur.lag >= 0 ? ', first heard ' + cur.lag + ' ms later' : ', first heard ' + (-cur.lag) + ' ms earlier'));
+  } else {
+    arrival(cur.deg, false, 2, 0.6, 'onset? ' + sgn(cur.deg));
+    if (cur.other !== null) arrival(cur.other, false, 2, 0.35, 'or ' + sgn(cur.other) + '?');
+  }
+  return s;
+}
+
+function drawLive() {
+  var e = renderNow(), s = '';
+  var p0 = phonePose();
+
+  // THE RAYS REACH PAST THE DISC, always -- a ray that stops short of the position it supports
+  // reads as a different measurement rather than the same one seen two ways.
+  var RAY_M = Math.max(6, (e && e.range ? e.range : 4) + 3);
+  // THE ODAS AND ANGLE RAY LAYERS ARE GONE (Jay, 2026-10-21: "we can get rid of the Angle rays, and ODAS rays checkbox.
+  // Don't render them anymore. So the time slider can stretch its legs further"). odasRaysSvg and angleRaysSvg stay
+  // in the file, uncalled; the angle file is still fetched on open, for the Onsets layer.
+  s += onsetSvg(p0, RAY_M);
+
+  // THE RAY IS AN EVENT, NOT A STATE (Jay, 2026-10-04: "I don't need the radial line from the phone
+  // at all times, just for the onset, where the calculated distance can flash with the line"). It
+  // appears when an arrival lands and fades over RAY_S, so what the eye catches is the MOMENT a
+  // measurement was taken rather than a permanent spoke.
+  //
+  // AND IT ENDS AT THE DOT (Jay, 2026-10-04: "holy beam scatter Batman ... make the beam just between
+  // the phone and speaker and end at the speaker dot"). It used to be drawn to place(RAY_M, e.deg) --
+  // the RAW per-frame bearing, extended past the disc. The disc reads the same number but through a
+  // spring, so the two disagreed by whatever that frame's jitter was: on a lane taken from the loudest
+  // pot of a single hop, the bearing moves a median 40 degrees hop to hop and the beam looked manic
+  // while the dot sat still. Drawing to the disc makes the ray inherit the smoothing, and it is the
+  // same measurement seen once rather than twice. The earlier "rays reach past the disc, always" note
+  // was written when the ray carried a different candidate; it does not now.
+  var _ray = Math.max(0, 1 - (t - disc.oiT) / RAY_S);          // 1 at the arrival, 0 by RAY_S
+  var _pf = (e && e.mode === 'silent') ? Math.max(0, Math.min(1, 1 - (t - disc.spokeT) / PUCK_FADE_S)) : 1;   // the puck's fade
+  var _flash = Math.pow(_ray, 0.45);                            // bright early, then decays
+  if (document.getElementById('showlane').checked && e && _ray > 0.01 && disc.x !== null) {
+    var _ax = X(p0.x), _ay = Y(p0.y), _bx = X(disc.x), _by = Y(disc.y);
+    var _dx = _bx - _ax, _dy = _by - _ay, _L = Math.hypot(_dx, _dy) || 1;
+    // a breath of space at each end, so the line touches neither the phone nor the dot
+    var GAP_PHONE = 11, GAP_DOT = 17;
+    if (_L > GAP_PHONE + GAP_DOT + 6) {
+      var _ux = _dx / _L, _uy = _dy / _L;
+      var _x1 = _ax + _ux * GAP_PHONE, _y1 = _ay + _uy * GAP_PHONE;
+      var _x2 = _bx - _ux * GAP_DOT,   _y2 = _by - _uy * GAP_DOT;
+      s += '<line x1="' + _x1.toFixed(1) + '" y1="' + _y1.toFixed(1) + '" x2="' + _x2.toFixed(1) +
+           '" y2="' + _y2.toFixed(1) + '" stroke="var(--me)" stroke-width="' +
+           (0.7 + 0.8 * _flash).toFixed(2) + '" opacity="' + (0.85 * _flash).toFixed(2) +
+           '" stroke-linecap="round"/>';
+      if (e.range !== null && e.range !== undefined) {
+        // the distance flashes with the line, set just off the midpoint of what is actually drawn
+        var _mx = (_x1 + _x2) / 2, _my = (_y1 + _y2) / 2;
+        s += '<text x="' + _mx.toFixed(1) + '" y="' + (_my - 5).toFixed(1) + '" font-size="' +
+             (9 + 5 * _flash).toFixed(1) + '" fill="var(--me)" opacity="' + (0.95 * _flash).toFixed(2) +
+             '" text-anchor="middle" pointer-events="none" ' +
+             'style="paint-order:stroke;stroke:var(--bg);stroke-width:3px">' + rangeLabel(e) + '</text>';
+      }
+    }
+  }
+  // Keep the CDR reading visible when its line is too short or has faded.
+  if (e && Number.isFinite(e.range) && Number.isFinite(e.units) && disc.x !== null && _pf > 0.01 &&
+      (_ray <= 0.01 || Math.hypot(X(disc.x) - X(p0.x), Y(disc.y) - Y(p0.y)) <= 34)) {
+    s += '<text x="' + (X(disc.x) + 18).toFixed(1) + '" y="' + (Y(disc.y) + 24).toFixed(1) +
+      '" font-size="12" fill="var(--me)" opacity="' + _pf.toFixed(2) + '" style="paint-order:stroke;stroke:var(--bg);stroke-width:3px">' + rangeLabel(e) + '</text>';
+  }
+  // EVERY STAGE-1 CANDIDATE, NOT JUST THE CHOSEN ONE (Jay, 2026-09-30). A scheme that implements
+  // rays(f) gets one dot per candidate, sized and placed by whatever it put in `r` and `e`. The
+  // main disc still draws on top, so "what the scheme picked" and "what it picked FROM" are one view.
+  // GOOD FOR A DEMO, IN THE WAY WHEN CHECKING (Jay, 2026-09-30). Eight candidate rays make the
+  // point that the scheme chooses from a field; they also bury the one disc whose position is
+  // being judged. Remembered per browser, because whichever mode you are in you stay in it.
+  if (e && e.rays && document.getElementById('showrays').checked) {
+    // WHAT TWO MICS CANNOT TELL APART, DRAWN (Jay, 2026-10-21: "the limits are features to be rendered, not math problems
+    // to be solved"). A ray with a width (GccPhat's angles 1-3) is shaded across it -- arrivals too close to part are one
+    // wide wedge -- and the same wedge is mirrored across the mic axis, dashed, its angle number primed: front and back
+    // give one delay, so each angle is also behind the phone. place(r, 180 - deg) is that mirror, with or without M.
+    var wedge = function (r, a, b, op, back) {          // bearings a..b (a <= b) out to range r
+      if (!(Number.isFinite(a) && Number.isFinite(b) && a <= b)) return '';   // never a loop without an end
+      var d = 'M' + X(p0.x).toFixed(1) + ' ' + Y(p0.y).toFixed(1);
+      for (var g = a; ; g = Math.min(b, g + 3)) { var wq = place(r, g); d += ' L' + X(wq.x).toFixed(1) + ' ' + Y(wq.y).toFixed(1); if (g >= b) break; }
+      var k = 0.4 + 0.6 * op;
+      return '<path d="' + d + ' Z" fill="var(--ink)" fill-opacity="' + ((back ? 0.05 : 0.10) * k).toFixed(3) + '" stroke="var(--ink)" stroke-width="1"' +
+             ' stroke-opacity="' + ((back ? 0.25 : 0.4) * k).toFixed(2) + '"' + (back ? ' stroke-dasharray="4 4"' : '') + '/>';
+    };
+    for (var ri = 0; ri < e.rays.length; ri++) {
+      var ry = e.rays[ri];
+      if (typeof ry.deg !== 'number' || typeof ry.r !== 'number') continue;
+      var rp = place(ry.r, ry.deg);
+      var op = (typeof ry.w === 'number') ? Math.max(0.15, Math.min(1, ry.w)) : 0.5;
+      if (Array.isArray(ry.width)) {
+        s += wedge(ry.r, ry.width[0], ry.width[1], op, false) + wedge(ry.r, 180 - ry.width[1], 180 - ry.width[0], op, true);
+        var bp = place(ry.r, 180 - ry.deg);
+        s += '<line x1="' + X(p0.x) + '" y1="' + Y(p0.y) + '" x2="' + X(bp.x) + '" y2="' + Y(bp.y) + '" stroke="var(--ink)" stroke-width="1.2"' +
+             ' stroke-dasharray="4 4" opacity="' + (0.25 + 0.4 * op).toFixed(2) + '"/>';
+        s += '<text x="' + (X(bp.x) + 9) + '" y="' + (Y(bp.y) - 7) + '" font-size="9" fill="var(--ink)" opacity="' + (0.4 + 0.4 * op).toFixed(2) + '">' + ry.rank + '′</text>';
+      }
+      // WHITE ON A CREAM PAGE NEEDS A CASING (2026-09-30). The rays are drawn white by Jay's call,
+      // and #ffffff on #f6f4ee is very nearly zero contrast -- so every stroke gets a dark casing
+      // underneath and every dot a dark rim. Opacity carries amplitude on the CASING rather than on
+      // the white, which keeps a quiet ray legible instead of erasing it.
+      var cas = (0.25 + 0.65 * op).toFixed(2);
+      s += '<line x1="' + X(p0.x) + '" y1="' + Y(p0.y) + '" x2="' + X(rp.x) + '" y2="' + Y(rp.y) +
+           '" stroke="var(--ink)" stroke-width="3" opacity="' + (op * 0.30).toFixed(2) + '"/>';
+      s += '<line x1="' + X(p0.x) + '" y1="' + Y(p0.y) + '" x2="' + X(rp.x) + '" y2="' + Y(rp.y) +
+           '" stroke="var(--ray)" stroke-width="1.4" opacity="' + cas + '"/>';
+      var rr = (4 + 6 * op).toFixed(1);
+      s += '<circle cx="' + X(rp.x) + '" cy="' + Y(rp.y) + '" r="' + rr +
+           '" fill="var(--ray)" opacity="0.95" stroke="var(--ink)" stroke-width="1.6" stroke-opacity="' + cas + '"/>';
+      s += '<text x="' + (X(rp.x) + 9) + '" y="' + (Y(rp.y) - 7) + '" font-size="9" fill="var(--ink)" opacity="0.95" ' +
+           'style="paint-order:stroke;stroke:var(--ray);stroke-width:3px">' +
+           (ry.tag || (ry.deg.toFixed(0) + '°')) + (typeof ry.e === 'number' ? ('  ' + ry.e.toFixed(2)) : '') + '</text>';
+    }
+  }
+
+  // (the echo is drawn as a dimmed bubble by drawBubbles, through the ghost; the dashed bounce drawing is gone -- Jay, 2026-10-10)
+  for (var si = 0; SPOT_FADE_S > 0 && si < SPOTS.length; si++) {
+    var sp = SPOTS[si], age = t - sp.t;
+    if (age < 0 || age >= SPOT_FADE_S) continue;
+    if (disc.x !== null && Math.hypot(sp.x - disc.x, sp.y - disc.y) < 0.25) continue;   // that place is live
+    var so = 0.55 * (1 - age / SPOT_FADE_S);
+    s += '<circle cx="' + X(sp.x) + '" cy="' + Y(sp.y) + '" r="10" fill="var(--me)" opacity="' + (so * 0.35).toFixed(2) +
+         '"/><circle cx="' + X(sp.x) + '" cy="' + Y(sp.y) + '" r="10" fill="none" stroke="var(--me)" stroke-width="1.6" opacity="' + so.toFixed(2) + '"/>';
+  }
+  if (e && disc.x !== null && _pf > 0.01) {
+    var dim = e.mode === 'silent' ? 0.85 * _pf : (e.mode === 'beyond') ? 0.45 : (e.mode === 'uncertain') ? 0.4 : 0.85;
+    // TURNED AWAY IS DRAWN DIM (Jay, 2026-10-10: "render the position dimmed to indicate facing away, since they are not
+    // paying attention to the demo anyway"). The facing signature marks the utterance; the disc and its glow fade to the
+    // held level. Its range is drawn as read -- turned away, CDR reads long (1.9-2.9 u on walk-125621) and no multiplier
+    // is applied -- so the dimming is also the eye's cue that the range is not to be trusted.
+    if (RENDER.turned && e.mode !== 'silent') dim = 0.4;
+    // BREATHING radius (see below), computed here because the tie disc draws with it before the main disc does
+    var br = 13 + 1.6 * Math.sin(2 * Math.PI * (performance.now() / 2400));
+    if (disc.ghost && e.mode !== 'silent' && e.tie !== null && e.tie !== undefined) {   // a tie: the second position, a full disc of its own
+      s += '<circle cx="' + X(disc.ghost.x) + '" cy="' + Y(disc.ghost.y) + '" r="' + br.toFixed(1) + '" fill="var(--me)" opacity="' + (dim * 0.35).toFixed(2) + '"/>';
+      s += '<circle cx="' + X(disc.ghost.x) + '" cy="' + Y(disc.ghost.y) + '" r="' + br.toFixed(1) + '" fill="none" stroke="var(--me)" stroke-width="2.5" stroke-dasharray="6 4" opacity="' + dim + '"/>';
+      s += '<text x="' + (X(disc.ghost.x) + 17) + '" y="' + (Y(disc.ghost.y) - 12) + '" fill="var(--me)" font-size="11" opacity="0.7">tie · ' + (e.tie >= 0 ? '+' : '') + e.tie.toFixed(0) + '°</text>';
+    } else if (disc.ghost && e.mode !== 'silent') {                   // the echo: a dashed ring, faded by its strength
+      var gr = (typeof disc.ghostR === 'number') ? Math.min(1, disc.ghostR) : 1;
+      s += '<circle cx="' + X(disc.ghost.x) + '" cy="' + Y(disc.ghost.y) + '" r="12" fill="none" stroke="var(--me)" stroke-width="1.6" stroke-dasharray="4 3" opacity="' + (0.1 + 0.3 * gr).toFixed(2) + '"/>';
+      if (Q.get('ghost') === 'all' && typeof disc.ghostR === 'number')
+        s += '<text x="' + (X(disc.ghost.x) + 15) + '" y="' + (Y(disc.ghost.y) + 4) + '" fill="var(--me)" font-size="11" opacity="0.7">' + disc.ghostR.toFixed(2) + '</text>';
+    }
+    for (var i = 1; i < disc.trail.length; i++) {
+      var age = Math.max(0, Math.min(1, (t - disc.trail[i].t) / TRAIL_S));
+      s += '<line x1="' + X(disc.trail[i - 1].x) + '" y1="' + Y(disc.trail[i - 1].y) + '" x2="' + X(disc.trail[i].x) + '" y2="' + Y(disc.trail[i].y) + '" stroke="var(--me)" stroke-width="2" opacity="' + ((1 - age) * 0.3 * _pf).toFixed(2) + '"/>';
+    }
+    // BREATHING (Jay, 2026-09-29): a held dot is alive, not inert. A slow radius pulse -- 2.4 s
+    // period, +/-1.6 px -- on the wall clock, so it breathes while paused too. It says nothing about
+    // the estimate; it only says the disc is being drawn on purpose.
+    // THE ACTIVE SPEAKER GLOWS (Jay, 2026-10-04, copying the conversation page). A soft halo while
+    // the talker is actually being heard, decaying over GLOW_S once they stop, so the eye knows
+    // which dot is live without reading any text. A held dot keeps breathing but stops glowing.
+    var _glow = Math.max(0, 1 - (t - disc.spokeT) / GLOW_S);
+    if (RENDER.turned) _glow *= 0.4;
+    if (_glow > 0.01) {
+      for (var gi = 3; gi >= 1; gi--) {
+        s += '<circle cx="' + X(disc.x) + '" cy="' + Y(disc.y) + '" r="' + (br + gi * 7).toFixed(1) +
+             '" fill="var(--me)" opacity="' + (0.13 * _glow / gi).toFixed(3) + '"/>';
+      }
+    }
+    // WHERE THE TALKER ACTUALLY IS, when the recording knows: a hollow ring at the true metres with the
+    // speaker's name, drawn UNDER the live dot so the gap between the two is the error, read off directly.
+    var _tr = truthNow(t);
+    if (_tr) {
+      var tp = placeTrue(_tr.truth.r, _tr.truth.deg);
+      var miss = Math.hypot(X(tp.x) - X(disc.x), Y(tp.y) - Y(disc.y));
+      s += '<circle cx="' + X(tp.x) + '" cy="' + Y(tp.y) + '" r="11" fill="none" stroke="#0f766e" stroke-width="2" opacity="0.85"/>';
+      s += '<circle cx="' + X(tp.x) + '" cy="' + Y(tp.y) + '" r="2.5" fill="#0f766e" opacity="0.85"/>';
+      s += '<text x="' + (X(tp.x) + 14) + '" y="' + (Y(tp.y) + 4) + '" fill="#0f766e" font-size="11" font-weight="600">' +
+           _tr.speaker + ' · ' + _tr.truth.r.toFixed(2) + ' m ' + (_tr.truth.deg >= 0 ? '+' : '') + _tr.truth.deg.toFixed(0) + '°</text>';
+      if (miss > 14) s += '<line x1="' + X(tp.x) + '" y1="' + Y(tp.y) + '" x2="' + X(disc.x) + '" y2="' + Y(disc.y) +
+                          '" stroke="#0f766e" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>';
+    }
+    // BOTH AS REFLECTIONS WHEN THEY COINCIDE (Jay, 2026-10-11): in a tie the first arrival is drawn exactly as the tied
+    // second is -- the same dashed disc -- because neither can be called the onset.
+    var _tieNow = e.mode !== 'silent' && e.tie !== null && e.tie !== undefined;
+    s += '<circle cx="' + X(disc.x) + '" cy="' + Y(disc.y) + '" r="' + br.toFixed(1) + '" fill="var(--me)" opacity="' + (dim * 0.35).toFixed(2) + '"/>';
+    s += '<circle cx="' + X(disc.x) + '" cy="' + Y(disc.y) + '" r="' + br.toFixed(1) + '" fill="none" stroke="var(--me)" stroke-width="2.5"' + (_tieNow ? ' stroke-dasharray="6 4"' : '') + ' opacity="' + dim + '"/>';
+    if (_tieNow) s += '<text x="' + (X(disc.x) + 17) + '" y="' + (Y(disc.y) - 12) + '" fill="var(--me)" font-size="11" opacity="0.7">tie · ' + (RENDER.bearing >= 0 ? '+' : '') + RENDER.bearing.toFixed(0) + '°</text>';
+    // THE CHEVRON POINTS AT THE FIRST REFLECTION (Jay, 2026-10-10, "just for kicks"). NOT a facing estimate -- we do not
+    // produce a facing angle, only a turned/facing/null judgement that is known to misfire. This is the measured bearing
+    // of the SECOND arrival, drawn from the dot toward where that echo appears to come from, with its lag. Whether it
+    // tracks the way a talker is pointed is the open question; a mouth throws its highs forward, so the wall a speaker
+    // faces should answer loudest -- if that holds, this arrow is a facing cue and the chevron earns its name.
+    // THE FACING V (Jay, 2026-10-11: "a V opening to the direction, not a semi-circle ... mouth of the V points to
+    // direction, sitting behind the dot"). Its apex is behind the talker and its arms open the way they are facing, so
+    // the dot sits in the mouth. The direction is ODAS' BRIGHTNESS, not the echo: facingFor() turns the treble-to-total
+    // ratio into degrees off the phone, and since that ratio is a magnitude with no sign, the V is drawn at +deg and
+    // again faintly at -deg -- one arrow when someone faces the phone, a widening cone as they turn.
+    var _fc = facingFor(RENDER.utt, RENDER.bearing);
+    if (_fc) {
+      var _cx = X(disc.x), _cy = Y(disc.y), _pp = phonePose();
+      var _toPh = Math.atan2(Y(_pp.y) - _cy, X(_pp.x) - _cx);      // screen angle from the talker to the phone
+      var _vee = function (ang, op) {
+        var u = [Math.cos(ang), Math.sin(ang)], v = [-u[1], u[0]];
+        var ax = _cx - u[0] * br * 1.75, ay = _cy - u[1] * br * 1.75;        // apex, behind the dot
+        var p1x = ax + u[0] * br * 1.95 + v[0] * br * 1.45, p1y = ay + u[1] * br * 1.95 + v[1] * br * 1.45;
+        var p2x = ax + u[0] * br * 1.95 - v[0] * br * 1.45, p2y = ay + u[1] * br * 1.95 - v[1] * br * 1.45;
+        s += '<polyline points="' + p1x.toFixed(1) + ',' + p1y.toFixed(1) + ' ' + ax.toFixed(1) + ',' + ay.toFixed(1) +
+             ' ' + p2x.toFixed(1) + ',' + p2y.toFixed(1) + '" fill="none" stroke="var(--me)" stroke-width="' +
+             Math.max(2, br * 0.3).toFixed(1) + '" stroke-linecap="round" stroke-linejoin="round" opacity="' +
+             op.toFixed(2) + '"/>';
+      };
+      // THE FIRST REFLECTION BREAKS THE TIE (Jay, 2026-10-11: "for bright not having which way, just have it point at
+      // first reflection, if not facing mostly forward"). Brightness gives the magnitude and no sign, so of the two
+      // candidate facings the one nearer the echo's own bearing is taken -- a mouth throws its treble forward, so the
+      // surface a talker faces is the one that answers. Mostly forward (under FACE_FWD) there is nothing to break:
+      // both candidates are nearly the same arrow and it simply points at the phone.
+      // THREE STATES, NO ANGLE. Facing: one V at the phone. Turned: one V pointed away. Either: brightness cannot
+      // separate "facing" from "coming back round through 270", so the first reflection decides -- the surface a
+      // mouth throws its treble at is the one it is pointed toward.
+      var _away = _toPh + Math.PI, _aim = _toPh, _lab = 'facing';
+      if (_fc.state === 'turned') { _aim = _away; _lab = 'turned away'; }
+      else if (_fc.state === 'either') {
+        _aim = _toPh; _lab = 'facing?';
+        if (e.echo && Number.isFinite(e.echo.x) && Number.isFinite(e.echo.y)) {
+          var _eang = Math.atan2(Y(e.echo.y) - _cy, X(e.echo.x) - _cx);
+          var _near = function (a1) { return Math.abs(((a1 - _eang + Math.PI * 3) % (Math.PI * 2)) - Math.PI); };
+          if (_near(_away) < _near(_toPh)) { _aim = _away; _lab = 'turned (echo)'; }
+          else _lab = 'facing (echo)';
+        }
+      }
+      _vee(_aim, (_fc.state === 'either' ? 0.55 : 0.85) * dim);
+      s += '<text x="' + _cx.toFixed(1) + '" y="' + (_cy + br + 15).toFixed(1) + '" fill="var(--me)" font-size="10" ' +
+           'opacity="' + (0.6 * _pf).toFixed(2) + '" text-anchor="middle">' + _lab + ' · ' + _fc.k.toFixed(2) + '×</text>';
+    }
+    // no 'held' label any more: a silent puck is fading out (2026-10-20)
+    if (e.mode !== 'silent' && RENDER.turned) s += '<text x="' + (X(disc.x) + 17) + '" y="' + (Y(disc.y) - 12) + '" fill="#c2410c" font-size="11" opacity="0.85">turned</text>';
+    if (e.mode === 'beyond') s += '<text x="' + (X(disc.x) + 17) + '" y="' + (Y(disc.y) - 12) + '" fill="var(--me)" font-size="11" opacity="0.6">beyond</text>';
+  }
+  // ODAS's candidates, each placed by the same scheme: violets, snapped (no spring), no bubble
+  // THE TALKER'S FACING, TRUTH (Jay, 2026-10-07: "give the speaker a chevron so I can see which way she's facing"). From the
+  // live stop's own label: "facing phone" = toward the phone, "facing laptop" = toward the laptop (2.8 m out on the phone's
+  // boresight in these sims), "turned +X" = X degrees counter-clockwise from facing the phone -- the sims' convention,
+  // checked against sim_truth.json's talker yaw. Drawn at her true position while the stop is live; tapes whose labels
+  // carry no facing get none.
+  var stopsT = (OD && OD.truth && Array.isArray(OD.truth.stops)) ? OD.truth.stops : [];
+  var liveStop = stopsT.find(function (st) { return typeof st.x === 'number' && t >= st.t0 && t <= st.t1; });
+  if (liveStop) {
+    var lab = String(liveStop.label || ''), pp = phonePose(), aim = null;
+    var toPh = Math.atan2(pp.y - liveStop.y, pp.x - liveStop.x);              // math angle, room frame
+    var mt = lab.match(/turned\s*([+-]?\d+(?:\.\d+)?)/i);
+    if (/facing phone/i.test(lab)) aim = toPh;
+    else if (/facing laptop/i.test(lab)) {
+      var la = pp.ang * Math.PI / 180, lx = pp.x + 2.8 * Math.sin(la), ly = pp.y + 2.8 * Math.cos(la);
+      aim = Math.atan2(ly - liveStop.y, lx - liveStop.x);
+    } else if (mt) aim = toPh + parseFloat(mt[1]) * Math.PI / 180;
+    if (aim !== null) {
+      var ux = Math.cos(aim), uy = Math.sin(aim), vx = -uy, vy = ux, cx0 = liveStop.x, cy0 = liveStop.y;
+      var tipx = cx0 + 0.55 * ux, tipy = cy0 + 0.55 * uy, bx = cx0 + 0.15 * ux, by = cy0 + 0.15 * uy;
+      s += '<polyline points="' + X(bx + 0.28 * vx) + ',' + Y(by + 0.28 * vy) + ' ' + X(tipx) + ',' + Y(tipy) + ' ' + X(bx - 0.28 * vx) + ',' + Y(by - 0.28 * vy) +
+           '" fill="none" stroke="#db2777" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>';
+      s += '<circle cx="' + X(cx0) + '" cy="' + Y(cy0) + '" r="4" fill="#db2777" opacity="0.9"/>';
+      s += '<text x="' + (X(cx0) + 10) + '" y="' + (Y(cy0) - 10) + '" fill="#db2777" font-size="11">' + lab.replace(/^OPENING\s*/, '').replace(/^Sally\s*/, '') + '</text>';
+    }
+  }
+  var cur = null;
+  for (var oi2 = 0; oi2 < ODAS_POS.length && ODAS_POS[oi2].from <= t; oi2++) cur = ODAS_POS[oi2];
+  var eM = renderNow();
+  if (SHOW_ODAS2 && cur && eM && Number.isFinite(eM.range)) {
+    // RELATIVE, NOT ABSOLUTE (2026-10-07): one 10 ms reading swings +-10 dB with effort and with the sound that starts the
+    // word (walk-212347's opening onset read 20 dB over the next stop), so each ray's power against a fixed opening flung
+    // the dots 20+ m out. The two rays' powers from the SAME 10 ms are effort-free against each other: ODAS 1 stands at
+    // the main dot's distance on its own bearing, ODAS 2 at that x 10^((ray1 dB - ray2 dB)/20) -- 6 dB weaker, twice as far.
+    cur.rays.forEach(function (ray, k) {
+      var m = eM.range * Math.pow(10, (cur.rays[0].db - ray.db) / 20);
+      if (!Number.isFinite(m) || m <= 0) return;
+      var q2 = place(m, ray.deg), col = ODAS_COL[k];
+      s += '<circle cx="' + X(q2.x) + '" cy="' + Y(q2.y) + '" r="10" fill="' + col + '" opacity="0.25"/>';
+      s += '<circle cx="' + X(q2.x) + '" cy="' + Y(q2.y) + '" r="10" fill="none" stroke="' + col + '" stroke-width="2" opacity="0.9"/>';
+      s += '<text x="' + (X(q2.x) + 14) + '" y="' + (Y(q2.y) + 4) + '" fill="' + col + '" font-size="11">ODAS ' + (k + 1) + ' ' + (m * RAD_K).toFixed(1) + ' m</text>';
+    });
+  }
+  if (SHOW_ODAS2) ESTK.forEach(function (S) {
+    var e2 = est2At(t, S.est);
+    if (!e2) return;
+    var q2 = place(e2.range, e2.deg), col = ODAS_COL[S.k % ODAS_COL.length];
+    s += '<circle cx="' + X(q2.x) + '" cy="' + Y(q2.y) + '" r="10" fill="' + col + '" opacity="0.25"/>';
+    s += '<circle cx="' + X(q2.x) + '" cy="' + Y(q2.y) + '" r="10" fill="none" stroke="' + col + '" stroke-width="2" opacity="0.9"/>';
+    s += '<text x="' + (X(q2.x) + 14) + '" y="' + (Y(q2.y) + 4) + '" fill="' + col + '" font-size="11">ODAS ' + (S.k + 1) + '</text>';
+  });
+  document.getElementById('live').innerHTML = s;
+}
+
+var CAP_TXT = '';
+// THE BUBBLES. Every decoded phrase on screen at the playhead, typed out as it is spoken, pinned to where
+// the dot was while it was said (and frozen there once it ends), fading BUB_HOLD_S after. Screen points
+// come from the SVG's own transform, so zoom, pan and a dragged phone all carry the bubbles with them.
+var BUB_EL = {};
+// THE TAIL, AIMED (2026-10-10). One tapered triangle per bubble: its base sits on the bubble's border at the point
+// nearest the talker, its apex IS the talker's screen position. Because both the bubble and this live in the same
+// fixed-position overlay, no transform is involved -- screen pixels throughout -- and the bubble can be flipped or
+// pushed as far up the stack as the collision rule likes without the tail ever ceasing to point at the right place.
+function tailTo(key, left, top, bw, bh, sp, hue, op, ghost) {
+  var el = BUB_EL[key];
+  if (!el) { el = document.createElement('div'); BUB_EL[key] = el; document.getElementById('bubbles').appendChild(el); }
+  var cx = left + bw / 2, cy = top + bh / 2;
+  var dx = sp.x - cx, dy = sp.y - cy, len = Math.hypot(dx, dy);
+  if (len < 1) { el.style.display = 'none'; return; }
+  // where the line from the bubble's centre to the talker leaves the bubble's own rectangle
+  var sx = dx === 0 ? Infinity : (bw / 2) / Math.abs(dx), sy = dy === 0 ? Infinity : (bh / 2) / Math.abs(dy);
+  var s = Math.min(sx, sy), bx = cx + dx * s, by = cy + dy * s;
+  el.className = 'tail' + (ghost ? ' ghost' : '');
+  el.style.display = '';
+  el.style.setProperty('--bh', Math.round(hue === undefined ? 210 : hue));
+  el.style.width = Math.max(0, Math.hypot(sp.x - bx, sp.y - by)).toFixed(0) + 'px';
+  el.style.transform = 'translate(' + bx.toFixed(1) + 'px,' + (by - 4.5).toFixed(1) + 'px) rotate(' +
+                       (Math.atan2(sp.y - by, sp.x - bx) * 180 / Math.PI).toFixed(1) + 'deg)';
+  el.style.opacity = op.toFixed(2);
+}
+function drawBubbles() {
+  var box = document.getElementById('bubbles');
+  if (!box) return;
+  var m = g.getScreenCTM(), seen = {}, placed = [], vis = [];
+  for (var i = 0; i < WORDS.length; i++) {
+    var q = WORDS[i];
+    if (t < q.start || t > q.stop + BUB_HOLD_S || !q.text) continue;
+    var h = histAt(Math.min(t, q.stop));
+    if (!h || h[1] === null) continue;
+    vis.push({ i: i, q: q, h: h });
+  }
+  vis.sort(function (a, b) { return b.q.start - a.q.start; });          // newest first, older ones stack above
+  vis.forEach(function (v) {
+    var q = v.q, words = String(q.text).trim().split(/\s+/);
+    var frac = Math.max(0, Math.min(1, (t - q.start) / Math.max(0.3, q.stop - q.start)));
+    var txt = words.slice(0, Math.max(1, Math.ceil(frac * words.length))).join(' ');
+    var op = (t > q.stop) ? Math.max(0, 1 - (t - q.stop) / BUB_HOLD_S) : 1;
+    var pt = g.createSVGPoint(); pt.x = X(v.h[1]); pt.y = Y(v.h[2]);
+    var sp = m ? pt.matrixTransform(m) : pt;
+    var el = BUB_EL[v.i];
+    if (!el) {
+      el = document.createElement('div'); el.className = 'bub'; box.appendChild(el); BUB_EL[v.i] = el;
+      q.hueLive = undefined;
+    }
+    if (t <= q.stop || q.hueLive === undefined) {                       // speaking: the colour moves with it
+      var hc = hueAt(Math.min(t, q.stop) - CENT_WIN_S, Math.min(t, q.stop));
+      if (hc) {
+        q.hueLive = (q.hueLive === undefined) ? hc.hue : q.hueLive + CENT_EASE * (hc.hue - q.hueLive);
+        q.hz = hc.hz;
+      }
+    }
+    el.style.setProperty('--bh', Math.round(q.hueLive === undefined ? 210 : q.hueLive));
+    if (el.textContent !== txt) el.textContent = txt;
+    var bw = el.offsetWidth || 160, bh = el.offsetHeight || 34;
+    // ANCHORED ON THE DOT, NOT BESIDE IT (Jay, 2026-10-10: "move its position relative to the dot with each position
+    // change"). The stub sits 14 px in from a bottom corner and hangs 12 px below, so the bubble is placed for the stub
+    // to land ON the talker: bottom edge just above them, that corner over them, and flipped to the other corner when
+    // the bubble would run off the right. Because `vis` is newest-first, the live bubble always gets this spot and only
+    // older ones climb out of its way.
+    var flip = sp.x + bw - 22 > innerWidth - 8;
+    var left = flip ? sp.x - bw + 8 : sp.x - 8, top = sp.y - bh - 30;   // nudged up and right (Jay, 2026-10-10)
+    for (var k = 0; k < placed.length; k++) {                           // older bubbles from the same place climb
+      var o = placed[k];
+      if (Math.abs(o.left - left) < bw && top + bh > o.top - 6 && top < o.top + o.h) top = o.top - 6 - bh;
+    }
+    placed.push({ left: left, top: top, h: bh });
+    // in a tie (v.h[7]) the first arrival's words are a reflection's too: dashed and faded the way the tied second's are,
+    // at full strength (the second fades by its share of this one) -- neither is drawn as the onset
+    var _tie = v.h[7] === true;
+    el.className = 'bub' + (_tie ? ' ghost' : '') + (flip ? ' flip' : '') + (RENDER.turned ? ' turned' : '');   // turned away: the words fade with the dot
+    top = Math.max(4, top);
+    el.style.left = left.toFixed(0) + 'px'; el.style.top = top.toFixed(0) + 'px';
+    el.style.opacity = (_tie ? op * 0.45 : op).toFixed(2);
+    seen[v.i] = true;
+    // THE GHOST BUBBLE: the same words, dimmed, at the arrival the near-tie did not take.
+    if (v.h[3] !== null && v.h[3] !== undefined) {
+      var gk = v.i + 'g', ge = BUB_EL[gk];
+      if (!ge) { ge = document.createElement('div'); box.appendChild(ge); BUB_EL[gk] = ge; }
+      ge.style.setProperty('--bh', Math.round(q.hueLive === undefined ? 210 : q.hueLive));
+      if (ge.textContent !== txt) ge.textContent = txt;
+      var gpt = g.createSVGPoint(); gpt.x = X(v.h[3]); gpt.y = Y(v.h[4]);
+      var gsp = m ? gpt.matrixTransform(m) : gpt;
+      var gw = ge.offsetWidth || 160, gh = ge.offsetHeight || 34;
+      var gflip = gsp.x + gw - 22 > innerWidth - 8;
+      var gleft = gflip ? gsp.x - gw + 8 : gsp.x - 8, gtop = gsp.y - gh - 30;
+      for (var gk2 = 0; gk2 < placed.length; gk2++) {
+        var go = placed[gk2];
+        if (Math.abs(go.left - gleft) < gw && gtop + gh > go.top - 6 && gtop < go.top + go.h) gtop = go.top - 6 - gh;
+      }
+      placed.push({ left: gleft, top: gtop, h: gh });
+      ge.className = 'bub ghost' + (gflip ? ' flip' : '');
+      gtop = Math.max(4, gtop);
+      ge.style.left = gleft.toFixed(0) + 'px'; ge.style.top = gtop.toFixed(0) + 'px';
+      var gq = (typeof v.h[6] === 'number') ? Math.min(1, v.h[6]) : 1;   // faded by the ghost's strength against the main
+      ge.style.opacity = (op * (0.12 + 0.33 * gq)).toFixed(2);
+      seen[gk] = true;
+    }
+  });
+  for (var key in BUB_EL) if (!seen[key]) { BUB_EL[key].remove(); delete BUB_EL[key]; }
+}
+function layout() { W = innerWidth; H = innerHeight - 46; fit(); }
+
+function draw() {
+  // the static layer is rebuilt only when something it depends on actually moved
+  var stops = (OD && OD.truth && OD.truth.stops) || [];
+  var liveStop = -1;
+  for (var i = 0; i < stops.length; i++) if (t >= stops[i].t0 && t <= stops[i].t1) { liveStop = i; break; }
+  var key = [W, H, ppm.toFixed(2), OX.toFixed(1), OY.toFixed(1), liveStop, (T.objects || []).length,
+             PH_OFF.x.toFixed(3), PH_OFF.y.toFixed(3), RAD_K.toFixed(3), PH_ROT.toFixed(2), MIRROR].join('|');
+  if (key !== STAT_KEY) {
+    g.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    STAT_KEY = key;
+    drawStatic();
+  }
+  drawLive();
+  drawBubbles();
+  var w = WORDS.filter(function (q) { return t >= q.start && t <= q.stop + 1.0; }).slice(-1)[0];
+  var txt = w ? w.text : '';
+  if (txt !== CAP_TXT) {
+    CAP_TXT = txt;
+    var c = document.getElementById('cap');
+    c.textContent = txt; c.style.display = txt ? 'block' : 'none';
+  }
+  // WHICH BURST THE PLAYHEAD IS IN. Recomputed every frame, written to the DOM only when it
+  // CHANGES -- sixty class swaps a second is what made the seek bar judder before.
+  var bi = -1;
+  for (var qi = 0; qi < BURSTS.length; qi++) { if (t >= BURSTS[qi].t0 && t <= BURSTS[qi].t1) { bi = qi; break; } }
+  if (bi !== CUR_BURST) {
+    CUR_BURST = bi;
+    var rows = document.querySelectorAll('#script .b');
+    for (var r2 = 0; r2 < rows.length; r2++) rows[r2].className = (r2 === bi) ? 'b on' : 'b';
+    if (bi >= 0 && rows[bi]) rows[bi].scrollIntoView({ block: 'nearest' });
+  }
+  document.getElementById('tnow').textContent = t.toFixed(1);
+}
+
+// A BURST IS A STOP. whisper_tape groups segments split by GAP_S of silence -- the same rule
+// stops_from_dots uses to decide one position ended and the next began -- so the Nth row here is
+// the Nth place Jay stood, and clicking it jumps playback to the moment he spoke from there.
+function drawScript(decoded) {
+  var el = document.getElementById('script');
+  if (!el) return;
+  if (!BURSTS.length) {
+    el.innerHTML = '<h4>decode</h4><div class="none">' +
+      (decoded ? 'decoded, but no bursts' : 'not decoded yet') + '</div>';
+    return;
+  }
+  var h = '<h4>decode &middot; ' + BURSTS.length + ' bursts</h4>';
+  for (var i = 0; i < BURSTS.length; i++) {
+    var b = BURSTS[i];
+    h += '<div class="b" data-t="' + b.t0 + '"><span class="t">' +
+         b.t0.toFixed(1) + '-' + b.t1.toFixed(1) + 's</span>' +
+         String(b.text || '').split('&').join('&amp;').split('<').join('&lt;') + '</div>';
+  }
+  el.innerHTML = h;
+  var rows = el.querySelectorAll('.b');
+  for (var k = 0; k < rows.length; k++) {
+    rows[k].addEventListener('click', function () {
+      t = +this.getAttribute('data-t');
+      disc.x = null; disc.trail.length = 0;
+      document.getElementById('seek').value = t;
+      CUR_BURST = -2;
+    });
+  }
+  CUR_BURST = -2;
+}
+
+// ---- transport -----------------------------------------------------------------------------------
+// NOT PLAYING ON LOAD (Jay, 2026-09-29: "don't play on load. I usually use the slider.") The clock
+// only advances once the play button is pressed; the slider works either way.
+var t = 0, playing = false, last = performance.now(), DUR = 0, lastSeek = 0;
+// THE TAPE PLAYS WITH THE TIMELINE (Jay, 2026-10-04). While it is playing the AUDIO is the clock --
+// `t` is read from the element rather than integrated from requestAnimationFrame -- so the picture
+// cannot drift from the sound no matter how long it runs or how the browser throttles frames. With
+// the sound off, or before the file has buffered, the old wall-clock integration carries it.
+var AUD = null, SOUND = true;
+try { SOUND = (localStorage.getItem('playback.sound') !== '0'); } catch (e) {}
+function audioReady() { return AUD && SOUND && AUD.readyState >= 2 && isFinite(AUD.duration); }
+// THE ANIMATION LOOP -- the render's only loop (Jay, 2026-10-09: "the render page itself will have a loop only for its own
+// animation"). It reads Render's properties every frame and never learns when they changed.
+function frame(now) {
+  var dt = Math.min(0.1, (now - last) / 1000); last = now;
+  if (playing && DUR > 0) {
+    if (audioReady() && !AUD.paused) { dt = Math.max(0, AUD.currentTime - t); t = AUD.currentTime; }
+    else t += dt;
+    if (t > DUR) { t = 0; disc.x = null; disc.trail.length = 0; if (AUD) { try { AUD.currentTime = 0; } catch (e) {} } }
+    // the range input redraws its thumb on every assignment; sixty a second is what made the bar
+    // itself judder, and ten is smooth to the eye
+    if (now - lastSeek > 100) { document.getElementById('seek').value = t; lastSeek = now; }
+  }
+  positionsAt(t);
+  step(dt);
+  draw();
+  drawMask();
+  drawSpec();
+  requestAnimationFrame(frame);
+}
+document.getElementById('play').addEventListener('click', function () {
+  playing = !playing; this.textContent = playing ? 'pause' : 'play';
+  if (!AUD) return;
+  if (playing && SOUND) { try { AUD.currentTime = t; } catch (e) {} AUD.play().catch(function () {}); }
+  else AUD.pause();
+});
+(function () {
+  var sc = document.getElementById('sound');
+  if (!sc) return;
+  sc.checked = SOUND;
+  sc.addEventListener('change', function () {
+    SOUND = this.checked;
+    try { localStorage.setItem('playback.sound', SOUND ? '1' : '0'); } catch (e) {}
+    if (!AUD) return;
+    if (SOUND && playing) { try { AUD.currentTime = t; } catch (e) {} AUD.play().catch(function () {}); }
+    else AUD.pause();
+  });
+})();
+(function () {
+  var rc = document.getElementById('showrays');
+  if (!rc) return;
+  // its own key (2026-10-09): the box inherited 'playback.rays', which an old session had left at 0, so the positions
+  // never drew ("reflections also not appearing at all")
+  try { rc.checked = (localStorage.getItem('render.positions') !== '0'); } catch (e) {}
+  rc.addEventListener('change', function () {
+    try { localStorage.setItem('render.positions', this.checked ? '1' : '0'); } catch (e) {}
+  });
+})();
+(function () {
+  var nc = document.getElementById('showonset');
+  if (!nc) return;
+  try { nc.checked = (localStorage.getItem('render.onsets') !== '0'); } catch (e) {}
+  nc.addEventListener('change', function () {
+    try { localStorage.setItem('render.onsets', this.checked ? '1' : '0'); } catch (e) {}
+  });
+})();
+// PUCK ON ONSET, OFF BY DEFAULT (2026-10-20: GccPhat is the bearing, "Ok we can try this as the bearing"): the puck is the
+// math host's bearing; ticked, it goes back on the Onsets layer's pick (which needs Onsets on too). Remembered per browser.
+(function () {
+  var pc = document.getElementById('puckonset');
+  if (!pc) return;
+  try { pc.checked = (localStorage.getItem('render.puckonset') === '1'); } catch (e) {}
+  pc.addEventListener('change', function () {
+    try { localStorage.setItem('render.puckonset', this.checked ? '1' : '0'); } catch (e) {}
+  });
+})();
+// WOBBLE ON RE-READ, OFF BY DEFAULT (Jay, 2026-10-21: "Maybe we hold and move once" -- "I'll try both ways"). Remembered per browser.
+(function () {
+  var rw = document.getElementById('rereadwobble');
+  if (!rw) return;
+  try { rw.checked = (localStorage.getItem('render.rereadwobble') === '1'); } catch (e) {}
+  rw.addEventListener('change', function () {
+    try { localStorage.setItem('render.rereadwobble', this.checked ? '1' : '0'); } catch (e) {}
+  });
+})();
+
+// A SEEK DRAWS THAT MOMENT (Jay, 2026-10-09: "Dragging the timeline back and forth should render correctly if it's already
+// been processed"): the next frame takes the positions at the new time (positionsAt), and the dot is put there at rest.
+document.getElementById('seek').addEventListener('input', function () {
+  t = +this.value; disc.x = null; disc.trail.length = 0; WALK = null;
+  disc.spokeT = -99;                       // a seek into a silence shows no puck (it would otherwise linger until caught up)
+  if (AUD) { try { AUD.currentTime = Math.max(0, Math.min(t, (AUD.duration || t))); } catch (e) {} }
+});
+g.addEventListener('wheel', function (e) {
+  e.preventDefault();
+  if (e.shiftKey) {
+    // THE RANGE SCALE IS NOT A LIVING-ROOM FEATURE (Jay, 2026-10-10: "shift-mouse-scroll doesn't expand or contract
+    // the unit to meter conversion"). This was gated on LIVING, which is set FALSE for every tape whose name starts
+    // with sim-, so on a simulated tape shift+wheel fell straight through to plain zoom. LIVING means "draw the
+    // fallback living-room map"; RAD_K is how many metres a range unit is drawn as. Two unrelated things, one flag.
+    // the phone's radius: every drawn range times RAD_K (shift turns the wheel sideways in some browsers)
+    var dd = e.deltaY || e.deltaX;
+    // 0.01-100 (was 0.25-4, Jay 2026-10-12: "cannot even shift-mouse-scroll to reign it back in")
+    RAD_K = Math.min(100, Math.max(0.01, RAD_K * (dd < 0 ? 1.05 : 1 / 1.05)));
+    disc.x = null; disc.trail.length = 0; calHud();
+    return;
+  }
+  var q = svgPt(e), rx = iX(q.x), ry = iY(q.y);
+  ZOOM = Math.min(8, Math.max(0.15, ZOOM * (e.deltaY < 0 ? 1.15 : 1 / 1.15)));
+  ZOOMED_AT = { px: q.x, py: q.y, rx: rx, ry: ry };
+  layout();
+}, { passive: false });
+// the slider turns the same RAD_K as shift+wheel; radkSync() puts it back in step whenever RAD_K moves elsewhere
+document.getElementById('radkslider').addEventListener('input', function () {
+  RAD_K = Math.pow(10, +this.value);
+  disc.x = null; disc.trail.length = 0; calHud();
+});
+function radkSync() {
+  var sl = document.getElementById('radkslider'), v = document.getElementById('radkval');
+  if (sl && document.activeElement !== sl) sl.value = Math.log10(RAD_K);
+  if (v) v.textContent = '×' + (RAD_K < 10 ? RAD_K.toFixed(2) : RAD_K.toFixed(1));
+}
+// ALIGNING THE ROOM LIVES ON THE TRUTH PAGE (Jay, 2026-09-28: "this should have been implemented on
+// the truth page instead"). That is where a tape is picked and its marks are rendered, and where the
+// Save already puts the room in the global file and the dots in the tape's own -- so the player stays
+// a player and keeps pan and zoom meaning only pan and zoom.
+var panning = null, phDrag = null, phTurn = false;
+function turnTo(e) {
+  // the facing points at the cursor: Truth's convention, 0 = up the page, 90 = right, atan2(dx, dy)
+  var q = svgPt(e), p = OD && OD.truth && OD.truth.phone;
+  if (!p) return;
+  var dx = iX(q.x) - (p.x + PH_OFF.x), dy = iY(q.y) - (p.y + PH_OFF.y);
+  if (Math.hypot(dx, dy) < 0.05) return;
+  var want = Math.atan2(dx, dy) * 180 / Math.PI;
+  PH_ROT = ((want - (p.angle || 0)) % 360 + 540) % 360 - 180;
+  disc.x = null; disc.trail.length = 0; calHud();
+}
+g.addEventListener('pointerdown', function (e) {
+  if (LIVING && e.shiftKey) { phTurn = true; g.classList.add('drag'); turnTo(e); return; }
+  // THE ROOM STAYS PUT, THE PHONE MOVES (Jay, 2026-10-05: "dragging the mouse (without shift) drags the
+  // phone position. room map can stay static"). On a living-room tape any plain drag moves the phone by
+  // the drag, wherever it starts; ctrl+drag still pans the view.
+  if (LIVING && !e.ctrlKey) {
+    var q0 = svgPt(e);
+    phDrag = { rx: iX(q0.x), ry: iY(q0.y), ox: PH_OFF.x, oy: PH_OFF.y };
+    g.classList.add('drag');
+    return;
+  }
+  panning = { x: e.clientX, y: e.clientY, ox: PAN.x, oy: PAN.y }; g.classList.add('drag');
+});
+g.addEventListener('pointermove', function (e) {
+  if (phTurn) { turnTo(e); return; }
+  if (phDrag) {
+    var q1 = svgPt(e);
+    PH_OFF.x = phDrag.ox + (iX(q1.x) - phDrag.rx); PH_OFF.y = phDrag.oy + (iY(q1.y) - phDrag.ry);
+    disc.x = null; disc.trail.length = 0; calHud();
+    return;
+  }
+  if (!panning) return; PAN.x = panning.ox + (e.clientX - panning.x); PAN.y = panning.oy + (e.clientY - panning.y); layout();
+});
+addEventListener('pointerup', function () { panning = null; phDrag = null; phTurn = false; g.classList.remove('drag'); });
+addEventListener('keydown', function (e) {
+  if (!LIVING || e.target && /input|select|textarea/i.test(e.target.tagName)) return;
+  if (e.key === 'm' || e.key === 'M') { MIRROR = !MIRROR; disc.x = null; disc.trail.length = 0; calHud(); }
+});
+// DOUBLE-CLICK THE PHONE FLIPS LEFT-RIGHT (Jay, 2026-10-07): the same view mirror as M, remembered per tape.
+g.addEventListener('dblclick', function (e) {
+  if (!(e.target && e.target.closest && e.target.closest('[data-ph]'))) return;
+  e.preventDefault();
+  MIRROR = !MIRROR; disc.x = null; disc.trail.length = 0; calHud();
+});
+// THE CALIBRATION READOUT: what the drag and the radius have done, in the numbers they stand for
+// REMEMBERED PER TAPE (Jay, 2026-10-05: "I MOSTLY have the top mic facing left, but I space sometimes").
+// Which way the phone lay is a property of the recording, so the mirror, the turn, the move and the
+// radius are kept per tape in this browser and come back when the tape is reopened. Reset clears them.
+function calKey() { return 'playback.cal.' + (MEDIA_RUN || RUN || ''); }
+function calSave() { try { localStorage.setItem(calKey(), JSON.stringify({ off: PH_OFF, rad: RAD_K, rot: PH_ROT, mirror: MIRROR })); } catch (e) {} }
+function calLoad() {
+  try {
+    var c = JSON.parse(localStorage.getItem(calKey()) || 'null');
+    // A DERIVED TAPE (2026-10-06: walk-205043-deecho is walk-205043 with a device's echo taken out) lay
+    // exactly where its source did, so until it has a calibration of its own it borrows the source's.
+    if (!c && RUN && /-(gated|causal|phone|deecho|firstms|live)$/.test(RUN))
+      c = JSON.parse(localStorage.getItem('playback.cal.' + RUN.replace(/-(gated|causal|phone|deecho|firstms|live)$/, '')) || 'null');
+    if (!c) return;
+    if (c.off && typeof c.off.x === 'number') PH_OFF = { x: c.off.x, y: c.off.y };
+    if (typeof c.rad === 'number') RAD_K = c.rad;
+    if (typeof c.rot === 'number') PH_ROT = c.rot;
+    MIRROR = !!c.mirror;
+  } catch (e) {}
+}
+function calHud() {
+  radkSync();
+  var el = document.getElementById('calhud');
+  if (!el || !LIVING) return;
+  calSave();
+  var p = OD && OD.truth && OD.truth.phone, face = ((p && p.angle) || 0) + PH_ROT;
+  el.innerHTML = 'living room &middot; drag moves the phone &middot; shift+drag turns it &middot; shift+scroll sizes its range &middot; ctrl+drag pans: <b>&times;' + RAD_K.toFixed(2) +
+    '</b>' + (RANGE_UNIT === 'u' ? ' (view scale; metre conversion not set)' : ' (1 u = ' + (RAD_K * UNIT_M).toFixed(2) + ' m)') + ' &middot; moved <b>' + (PH_OFF.x >= 0 ? '+' : '') + PH_OFF.x.toFixed(2) + ', ' +
+    (PH_OFF.y >= 0 ? '+' : '') + PH_OFF.y.toFixed(2) + ' m</b> &middot; facing <b>' + Math.round(face) + '&deg; (' + (PH_ROT >= 0 ? '+' : '') + Math.round(PH_ROT) + '&deg;)</b>' +
+    ' &middot; <label style="cursor:pointer"><input type="checkbox" id="calmirror"' + (MIRROR ? ' checked' : '') + '> mirror bearings (view, M)</label>' +
+    ' &middot; <a href="#" id="calreset">reset</a>';
+  var rs = document.getElementById('calreset');
+  if (rs) rs.onclick = function (ev) { ev.preventDefault(); PH_OFF = { x: 0, y: 0 }; RAD_K = 1; PH_ROT = 0; MIRROR = false; disc.x = null; disc.trail.length = 0; calHud(); };
+  var mc = document.getElementById('calmirror');
+  if (mc) mc.onchange = function () { MIRROR = this.checked; disc.x = null; disc.trail.length = 0; calHud(); };
+}
+addEventListener('resize', function () { PAN.x = PAN.y = 0; layout(); });
+
+// ---- load ------------------------------------------------------------------------------------------
+// NO RUN NAMED? TAKE THE NEWEST ONE THAT HAS BEEN MARKED (2026-09-24). Opening the page bare
+// used to read `frames` off a 404 body and die with "cannot read properties of undefined",
+// which says nothing about what went wrong. The tape list is already served and already knows
+// which tapes carry dots, so the bare page opens on the most recent of those.
+function pickRun() {
+  if (RUN) return Promise.resolve(RUN);
+  return fetch('geonar/tapes', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
+    var withDots = (j.tapes || []).filter(function (q) { return q.dots; });
+    return (withDots[0] || (j.tapes || [])[0] || {}).name || '';
+  }).catch(function () { return ''; });
+}
+
+// THE SAME LIST THE TRUTH PAGE MARKS FROM (2026-09-25): every tape that carries a decode, newest
+// first, with how many positions have been marked on it. Switching reloads with ?run=, which is
+// simpler and less breakable than tearing down a running playback in place.
+fetch('geonar/tapes', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
+  var sel = document.getElementById('tape');
+  sel.innerHTML = '';
+  // ONE ROW PER RECORDING, FEED ON A RADIO (Jay, 2026-09-30). The route returns a row per BUILD, so
+  // every tape appeared twice -- once continuous, once gated -- which is the same recording listed
+  // as two things. Group by recording; the radio picks which pass to load. Continuous is
+  // <tape>/odas.json (DareDevil fed the whole tape, 1 track held across 92 s); gated is
+  // <tape>-phone (the handset fed only through the gate, which spawns 6).
+  var _feeds = {}, _row = {};
+  (j.tapes || []).forEach(function (r) {
+    var base = r.name.replace(/-(phone|gated|causal)$/, '');
+    var kind = (r.name === base) ? 'continuous' : (r.name.slice(-6) === '-phone' ? 'gated' : null);
+    if (!kind) return;
+    (_feeds[base] = _feeds[base] || {})[kind] = r.name;
+    if (!_row[base] || kind === 'continuous') _row[base] = r;   // prefer the recording's own row
+  });
+  var _me = RUN.replace(/-(phone|gated|causal)$/, '');
+  var _mode = (RUN.slice(-6) === '-phone') ? 'gated' : 'continuous';
+  var fw = document.getElementById('feed');
+  if (fw) {
+    fw.innerHTML = '';
+    ['continuous', 'gated'].forEach(function (k) {
+      var have = _feeds[_me] && _feeds[_me][k];
+      var l = document.createElement('label');
+      l.style.opacity = have ? '1' : '0.35';
+      l.innerHTML = '<input type="radio" name="feed"' + (k === _mode ? ' checked' : '') +
+                    (have ? '' : ' disabled') + '> ' + k;
+      l.querySelector('input').addEventListener('change', function () {
+        if (have) location.search = '?run=' + encodeURIComponent(have) +
+                                    VIEWQ;
+      });
+      fw.appendChild(l);
+    });
+  }
+    // ONE LABEL AND ONE ORDER, SHARED WITH THE OTHER PAGE (Jay, 2026-09-30: "The drop-downs of
+    // speaker and truth are either not the same or misaligned. Too many for me to comb through to
+    // match."). Both pages list the same 65 recordings, but Truth took the endpoint's order and
+    // Speakers sorted reverse-alphabetically, so the same tape sat in two different places and the
+    // labels differed in punctuation. Sorted NEWEST FIRST by day then clock -- a plain name sort is
+    // not chronological, because the names carry a time but not a date and 'radio' sorts before
+    // 'walk'. Any change here must be made in BOTH pages or they drift again.
+  function _clock(n) { var m = /(\d{2})(\d{2})(\d{2})(?:-\w+)?$/.exec(n); return m ? m[1] + m[2] + m[3] : '000000'; }
+  function _key(n, day) { return (day || '') + ' ' + _clock(n); }
+  function _label(n, r) {
+    var m = /(\d{2})(\d{2})(\d{2})(?:-\w+)?$/.exec(n);
+    return n + '  ' + (r.day || '') + (m ? ' ' + m[1] + ':' + m[2] + ':' + m[3] : '')
+         + (r.secs ? ' (' + Math.round(r.secs) + ' s)' : '')
+         + (r.dots ? ' - ' + r.dots + ' dots' : ' - unmarked');
+  }
+  Object.keys(_feeds).sort(function (a, b) {
+    return _key(b, (_row[b] || {}).day) < _key(a, (_row[a] || {}).day) ? -1 : 1;
+  }).forEach(function (base) {
+    var r = _row[base] || { name: base };
+    var o = document.createElement('option');
+    o.value = base;
+    // THE ID FIRST (Jay, 2026-09-28: "the drop down has timestamps rather than these ids we use").
+    // The value was always the name; only the label hid it, so a run could not be found by the one
+    // string every other tool in this stack calls it by. The clock is taken from the trailing six
+    // digits rather than fixed slices, because those assumed a five-character prefix and turned
+    // radio-134014 into "-1:34:01".
+    o.textContent = _label(base, r);
+    sel.appendChild(o);
+  });
+  Object.keys(PREPARED_RUNS).forEach(function (base) {
+    if (!_row[base]) return;
+    var option = document.createElement('option');
+    option.value = PREPARED_RUNS[base];
+    option.textContent = base + ' · first-ms / phone bearings';
+    sel.appendChild(option);
+  });
+  if (RUN && /-firstms$/.test(RUN)) {
+    if (!Array.prototype.some.call(sel.options, function (o) { return o.value === RUN; })) {
+      var prepared = document.createElement('option');
+      prepared.value = RUN; prepared.textContent = RUN; sel.appendChild(prepared);
+    }
+    _me = RUN;
+  }
+  sel.value = _me || (sel.options[0] && sel.options[0].value) || '';
+  sel.addEventListener('change', function () {
+    var f = _feeds[this.value] || {};
+    var want = f[_mode] || f.continuous || f.gated || this.value;   // keep the feed across a tape change
+    location.search = '?run=' + encodeURIComponent(want) + VIEWQ;
+  });
+}).catch(function () {});
+
+// NO SCHEME PICKER (Jay, 2026-10-09: the render page is not in charge). The Conductor's stream feeds Bearing and CdrRange,
+// the two schemes in play; which schemes run is the Conductor's business, not the page's.
+(function () {
+  var ss = document.getElementById('scheme');
+  if (!ss) return;
+  ss.innerHTML = '<option>Conductor \u2192 math host</option>';
+  ss.disabled = true;
+})();
+
+
+// THE OPENING DISTANCE, for display only (Jay, 2026-09-26: distance is shown in units of the opening position). The range
+// scheme answers in opening units; a unit becomes metres here when an opening distance is known, else it stays units and
+// is drawn at view scale, labelled u (Jay, 2026-10-09: never converted, never dropped).
+function openingSetup(od) {
+  OPENING_ANCHOR = UnitsToMeters.openingAnchor(od.anchors);
+  var savedOpening = null;
+  try { savedOpening = Number(localStorage.getItem('playback.opening.' + MEDIA_RUN)); } catch (e) {}
+  var requestedOpening = Number(Q.get('opening_m'));
+  var override = requestedOpening > 0 && Number.isFinite(requestedOpening) ? requestedOpening : savedOpening;
+  if (override > 0 && Number.isFinite(override)) OPENING_ANCHOR = { r: override, src: 'entered opening anchor' };
+  UNIT_M = OPENING_ANCHOR ? OPENING_ANCHOR.r : null;
+  RANGE_UNIT = UNIT_M === null ? 'u' : 'm';
+  var opening = document.getElementById('openingm');
+  document.getElementById('openingctl').hidden = false;
+  opening.value = UNIT_M === null ? '' : UNIT_M;
+  if (!opening.dataset.bound) { opening.dataset.bound = '1'; opening.addEventListener('change', function () {
+    var value = Number(opening.value);
+    if (opening.value && (!Number.isFinite(value) || value <= 0)) return;
+    try { if (opening.value) localStorage.setItem('playback.opening.' + MEDIA_RUN, String(value)); else localStorage.removeItem('playback.opening.' + MEDIA_RUN); } catch (e) {}
+    var query = new URLSearchParams(location.search);
+    query.delete('opening_m'); query.delete('scheme'); query.set('run', RUN); query.set('t', t.toFixed(3));
+    location.search = '?' + query.toString();
+  }); }
+}
+
+// THE RENDER'S PROPERTIES (Jay, 2026-10-09: "Bearing and Range (and maybe later orientation or other properties) should be
+// settable in render, and all math schemes that feed render set these properties. Render itself is in an animation loop
+// that uses these values and is completely blind to when they change"). The schemes below set them; step() and drawLive()
+// read them every frame through renderNow(), and nothing in the drawing knows when or why a value changed.
+var RENDER = { bearing: null, reflection: null, units: null, speaking: false, utt: null, positions: [] };
+// EVERY POSITION BEARING KEEPS (Jay, 2026-10-09: "Bearing stamps all of them as a confidence index ... the render page can
+// have a ... UI something ... that informs how many positions to render" -- "every one of those bearings should be fed
+// into the Range function so it serves as the perfect debug tool"). Each one the math host recorded, [id, deg, hits,
+// units], is drawn as a candidate (the `positions` box): #1 the first arrival, #2 on the reflections in the order they
+// were found, each at its own range -- one with no range sits on the anchor's ring, marked -- and sized by its hits
+// against the most-found. MIN_HITS (the "min hits" slider) hides what has held less; nothing here computes anything.
+// The dot is the most-found position. The hold (HOLD_MS, the "hold" slider) is the math's: changing it re-runs the pass.
+// MIN_HITS is a share (0..1) of the utterance's strongest position's hits (Jay: "slide to see all the reflections for a
+// position"); 0 draws every arrival the walk keeps. HOLD_MS is the walk's, in milliseconds of the utterance's audio.
+// THE SLIDERS ARE GONE (Jay, 2026-10-10: "I do not want the sliders min conf and hold to influence the math"). Every
+// position the reader keeps is drawn, and a position lives for its utterance (no hold is sent, the math takes none).
+var MIN_HITS = 0, HOLD_STEPS = [null, 25, 50, 100, 200, 500, 1000, 2000], HOLD_MS = null;
+// A RANGE WITH NO ANCHOR IS A SHARE OF THE SCREEN (Jay, 2026-10-12: "Take off the anchor ... Remove anchor from
+// calculation. Just use Amplitude as a ratio of screen size"; the amplitude: "Position's own 5 ms"). A range named in
+// SCREEN_RANGES answers 1 / amplitude with nothing to compare it to, so it has no metres: an amplitude of SCREEN_AMP
+// draws at half the screen's shorter side, louder nearer, and shift+wheel (RAD_K) is its only calibration. SCREEN_AMP is
+// a fixed drawing reference, never read from the tape being drawn: 0.004, -48 dBFS, the phone tapes' speech level
+// (measured 2026-10-05, -48..-51 dBFS), so a talker starts on the screen. Returned in plan metres so place(), the wheel
+// and the bubbles apply unchanged; the zoom cancels out, so the length is the screen's, not the room's. ODAS's red ray
+// uses the same rule.
+var SCREEN_RANGES = { FiveMsAmplitude: true }, SCREEN_AMP = 0.004;
+function screenMode() { return !!(POS && POS.math && SCREEN_RANGES[POS.math.range]); }
+function screenRange(invAmp) {
+  return Number.isFinite(invAmp) && ppm > 0 ? invAmp * SCREEN_AMP * 0.5 * Math.min(W, H) / ppm : null;
+}
+function unitsToRange(u) {
+  if (!Number.isFinite(u)) return null;
+  if (screenMode()) return screenRange(u);
+  var m = UnitsToMeters.fromUnits(u, UNIT_M);
+  return m === null ? u : m;
+}
+// THE PUCK FOLLOWS THE ONSET (Jay, 2026-10-20: "Can you set the blue puck to move to what we think is the onset? Rather
+// than whatever it's doing now? and how about we hold the position until the next utterance? ... speech bubble should
+// render solid where we think onset is, and faded where we think reflection is"). With the Onsets layer on, an utterance's
+// bearing is the onset of its sounds (anglerays.json `sounds`, Angle2's whole-tape read): the utterance's first sound as
+// soon as it starts, then -- once -- the first sound in it whose onset and first reflection were told apart, and that is
+// held, through the silence after, until the next utterance has a sound. A sound up to ONSET_LEAD_S before the math host's
+// utterance start belongs to it (the two find starts their own ways). The range stays the range scheme's. The first
+// reflection (or, undecided, the other direction) is the ghost, never a tie: the same words in a faded bubble there,
+// ONSET_GHOST_R strong; the main bubble stays solid on the puck. SINCE 2026-10-20 (GccPhat as the bearing) this takes the
+// puck only when "puck on onset" is ticked; otherwise the puck is the math host's and the Onsets layer draws rays only.
+var ONSET_LEAD_S = 0.05, ONSET_GHOST_R = 0.6;
+// THE UTTERANCE'S DIRECTION-FIRST ONSET WINS (Jay, 2026-10-20: "go ahead and apply that change, and we'll see how it
+// behaves"): anglerays.json `utterances` (Angle2.readUtterance through geonar/angle_rays.py) -- per Conductor utterance
+// [t_s, onset_deg, first_s, at3_s, refl_deg, refl_first_s], the first direction to recur three times from 100 ms before
+// the onset and the next one as its reflection. It takes its utterance from at3_s, the moment it can be known; until then
+// the utterance before holds. An utterance it has nothing for falls back to the sounds' reads below.
+var ONSET_U_MATCH_S = 0.002;
+function uttOnset(ar, t_s) {
+  var U = ar.utterances;
+  if (!U) return null;
+  for (var i = 0; i < U.length; i++) if (Math.abs(U[i][0] - t_s) < ONSET_U_MATCH_S) return U[i];
+  return null;
+}
+function onsetFor(time) {
+  var ar = OD && OD.angleRays, box = document.getElementById('showonset'), on = OD && OD.onsets;
+  if (!ar || !ar.sounds || !ar.sounds.length || !box || !box.checked || !on || !on.length) return null;
+  var S = ar.sounds, u = -1;
+  for (var i = 0; i < on.length; i++) { if (on[i].t_s - ONSET_U_MATCH_S - 0.1 <= time) u = i; else break; }
+  for (; u >= 0; u--) {                                           // an utterance with no onset yet keeps the one before
+    var uo = uttOnset(ar, on[u].t_s);
+    if (uo) {
+      if (uo[3] > time) continue;                                 // its direction has not recurred three times yet
+      return { deg: uo[1], other: uo[4], told: true, at: uo[3], utt: on[u].index, rule: 'first to recur',
+               lag: (uo[4] !== null && uo[5] !== null) ? Math.round((uo[5] - uo[2]) * 100000) / 100 : null };
+    }
+    var t0 = on[u].t_s - ONSET_LEAD_S, t1 = u + 1 < on.length ? on[u + 1].t_s - ONSET_LEAD_S : Infinity;
+    if (time < t0) continue;
+    var lo = 0, hi = S.length;
+    while (lo < hi) { var m = (lo + hi) >> 1; if (S[m][0] < t0) lo = m + 1; else hi = m; }
+    var first = null, told = null;
+    for (var k = lo; k < S.length && S[k][0] < t1 && S[k][0] <= time; k++) {
+      if (!first) first = S[k];
+      if (S[k][1]) { told = S[k]; break; }
+    }
+    var pick = told || first;
+    if (pick) return { deg: pick[2], other: pick[4], lag: pick[6], told: !!pick[1], at: pick[0], utt: on[u].index };
+  }
+  return null;
+}
+function puckOnOnset() { var b = document.getElementById('puckonset'); return !!(b && b.checked); }
+function rereadWobble() { var b = document.getElementById('rereadwobble'); return !!(b && b.checked); }
+function renderNow() {
+  var onset = puckOnOnset() ? onsetFor(t) : null;
+  // HOLD THROUGH EVERY NEW READ (Jay, 2026-10-21: "Ok implement that"): with "wobble" unticked, a read still settling -- an
+  // utterance start or a re-read -- is not drawn. The dot stays on the last lock while it is still showing and moves once
+  // when the new read locks; after a silence long enough for the puck to fade, the new dot appears at its lock.
+  var holdDeg = null;
+  if (!rereadWobble() && (RENDER.settling || (!Number.isFinite(RENDER.bearing) && Number.isFinite(RENDER.held)))) {
+    var alive = Number.isFinite(RENDER.held) && (t - disc.spokeT) < PUCK_FADE_S;
+    if (!alive && !onset) return null;
+    if (alive) holdDeg = RENDER.held;
+  }
+  if (!Number.isFinite(RENDER.units) || (!Number.isFinite(RENDER.bearing) && holdDeg === null && !onset)) return null;
+  var range = unitsToRange(RENDER.units);
+  var ps = RENDER.positions || [], most = 0, rays = [];
+  for (var i = 0; i < ps.length; i++) most = Math.max(most, ps[i][2]);
+  for (var i = 0; i < ps.length; i++) {
+    var q = ps[i];
+    if (most && q[2] < MIN_HITS * most) continue;
+    var has = Number.isFinite(q[3]), qu = has ? q[3] : 1;
+    // GccPhat's angles 1-3 carry a width (q[6]): drawn out to this utterance's range, labelled angle number · deg · share
+    if (Array.isArray(q[6]) && Number.isFinite(q[1])) rays.push({ deg: q[1], r: range, w: most ? q[2] / most : 1, width: q[6], rank: q[0],
+                tag: q[0] + ' · ' + (q[1] >= 0 ? '+' : '') + q[1].toFixed(0) + '° · ' + (q[2] / 500).toFixed(2) });
+    else rays.push({ deg: q[1], r: unitsToRange(qu), w: most ? q[2] / most : 1,
+                tag: '#' + q[0] + ' · ' + q[2] + (has ? '' : ' · no range'), e: has ? q[3] : undefined });
+  }
+  // THE ECHO AS A DIMMED BUBBLE (Jay, 2026-10-10: "my speech in speech bubbles and the echo bubbles appear dimmed at their
+  // position"): the echo's bearing and range go out as the page's ghost, so the bubble mechanism puts the same words,
+  // dashed and faded, where the echo sits; nothing else is drawn for it.
+  var echo = echoOf(RENDER.bearing, range, ps);
+  // A TIE (Jay, 2026-10-10: "If there's a perfect tie between 2 angles, render them both"): position #2 flagged as a
+  // tie is a second position at this utterance's range, drawn at full strength with its own bubble, not an echo.
+  var tie = null;
+  for (var ti = 0; ti < ps.length; ti++) if (ps[ti][0] === 2 && ps[ti][5] === true && Number.isFinite(ps[ti][1])) { tie = ps[ti][1]; break; }
+  var res = { deg: holdDeg !== null ? holdDeg : RENDER.bearing, range: range, units: RENDER.units,
+           settling: holdDeg !== null ? false : RENDER.settling === true,
+           mode: RENDER.speaking ? 'held' : 'silent', oi: RENDER.utt, rays: (rays.length && holdDeg === null) ? rays : null,   // a held dot draws no rays: they are the read still settling
+           ghost: tie !== null ? tie : (echo ? echo.deg : null), ghostRange: tie !== null ? range : (echo ? echo.range : null),
+           // the second bubble's brightness is its share against the direct's (Jay: "bright or dim based on dB")
+           // THE ECHO TOO IS JUDGED AGAINST THE DIRECT (Jay, 2026-10-10: "I am rarely seeing wall reflections"): /500 was the
+           // walk's scale (hits in ms of coherence); the summed reader's hits are its share x 500, 50-115, so every echo
+           // drew at 15-20% opacity. Its share over the direct's is what the tie uses, and what the eye should see.
+           ghostR: tie !== null ? tieStrength(ps) : (echo ? tieStrength(ps) : null), tie: tie, mv: null, echo: echo };
+  if (onset) {                                                    // the onset's place, held; its reflection faded
+    res.deg = onset.deg; res.tie = null; res.echo = null; res.onset = onset;
+    if (onset.other !== null && Number.isFinite(onset.other)) {
+      res.ghost = onset.other;
+      res.ghostRange = (onset.told && Number.isFinite(onset.lag) && onset.lag > 0) ? range + 343 * onset.lag / 1000 : range;
+      res.ghostR = ONSET_GHOST_R;
+    } else { res.ghost = null; res.ghostRange = null; res.ghostR = null; }
+  }
+  return res;
+}
+// THE ECHO (Jay, 2026-10-10: "calculate the bearing and range for the first reflection and render the position of it
+// like an echo" -- "at its actual position rather than using the room outline. We won't have a room map for the demo").
+// The reader's second arrival (position #2, kept only when it comes without a mirror twin) gives the echo's bearing,
+// and its lag after the direct (position #2's fifth value, ms) gives its extra path: c x lag. The echo's apparent
+// position is on its bearing at the talker's distance plus that path -- the mirror image of the talker in whatever
+// reflected it. The wall that would make it is the perpendicular bisector between the talker and the image: drawn as
+// a short "implied wall" through their midpoint, and -- when the page has a room outline -- marked as coinciding when
+// a real wall runs within WALL_FIT_M of that midpoint on that line. The outline never places the echo; it only grades it.
+// Units: the extra path is in metres; the talker's range is in metres when the opening distance is known, else in
+// opening units, and then the metres are added as if 1 u = 1 m (the label says so with "~").
+var WALL_FIT_M = 0.4;
+function tieStrength(ps) {   // the tied second's coherence over the direct's, 0..1
+  var a = null, b = null;
+  for (var i = 0; i < ps.length; i++) { if (ps[i][0] === 1) a = ps[i][2]; if (ps[i][0] === 2) b = ps[i][2]; }
+  return (a > 0 && b > 0) ? Math.max(0.2, Math.min(1, b / a)) : 1;
+}
+function echoOf(deg, range, ps) {
+  var sec = null;
+  for (var i = 0; i < ps.length; i++) if (ps[i][0] === 2 && Number.isFinite(ps[i][1])) { sec = ps[i]; break; }
+  if (!sec || !Number.isFinite(deg) || !Number.isFinite(range)) return null;
+  var lag = Number.isFinite(sec[4]) ? sec[4] : null;
+  if (lag === null) return null;
+  var extra = 343 * lag / 1000, approx = UNIT_M === null;             // metres of extra path; range is in u when no opening distance
+  // a share of the screen has no metres to add a path to: the echo stands at its OWN amplitude's length instead
+  var erange = screenMode() ? unitsToRange(sec[3]) : range + extra;
+  if (!Number.isFinite(erange)) return null;
+  var ph = phonePose(), tk = place(range, deg), im = place(erange, sec[1]);
+  var mx = (tk.x + im.x) / 2, my = (tk.y + im.y) / 2, vx = im.x - tk.x, vy = im.y - tk.y, L = Math.hypot(vx, vy) || 1;
+  var wx = -vy / L, wy = vx / L;                                     // along the implied wall (perpendicular to talker->image)
+  var coincides = false;
+  if (T.outline && T.outline.length >= 3) {
+    for (var k = 0; k < T.outline.length; k++) {
+      var a = T.outline[k], b = T.outline[(k + 1) % T.outline.length];
+      var dx = b[0] - a[0], dy = b[1] - a[1], L2 = dx * dx + dy * dy || 1, t = Math.max(0, Math.min(1, ((mx - a[0]) * dx + (my - a[1]) * dy) / L2));
+      var d = Math.hypot(mx - (a[0] + t * dx), my - (a[1] + t * dy));
+      var par = Math.abs((dx * wx + dy * wy) / Math.sqrt(L2));      // 1 when the real wall runs along the implied one
+      if (d <= WALL_FIT_M && par >= 0.9) { coincides = true; break; }
+    }
+  }
+  return { deg: sec[1], range: erange, lag_ms: lag, extra_m: extra, x: im.x, y: im.y, mx: mx, my: my, wx: wx, wy: wy, approx: approx, coincides: coincides, strength: sec[2] };
+}
+
+// THE POSITIONS, PLAYED BACK (Jay, 2026-10-09: "Render should not hold the math schemes. It's meant to be agnostic." --
+// "the processing stage of a tape included generating a json file that instructs the position for each frame. So
+// playback is a cinch."). The math host (Voice/math.mjs, Node) runs the schemes over the Conductor's stream when the tape
+// is processed and writes what they set, step by step in tape time, to the tape's positions file. Render holds no math:
+// on open it has the tape processed, loads the file, and positionsAt() sets Render's properties from the step the
+// playhead is in -- playing, pausing and seeking alike. A property stays null until a scheme first sets it, so there is
+// no position until there is one.
+var MATH = { state: 'idle', error: null, done: 0 }, POS = null;
+function positionsAt(time) {
+  var tl = POS && POS.timeline, s = null;
+  if (tl && tl.length && time >= tl[0].at) {
+    var lo = 0, hi = tl.length - 1;
+    while (lo < hi) { var m = (lo + hi + 1) >> 1; if (tl[m].at <= time) lo = m; else hi = m - 1; }
+    s = tl[lo];
+  }
+  var b = s ? s.bearing : null, u = s ? s.units : null, changed = (b !== RENDER.bearing || u !== RENDER.units);
+  RENDER.bearing = b; RENDER.units = u; RENDER.speaking = s ? s.speaking : false; RENDER.utt = s ? s.utt : null;
+  RENDER.reflection = null;
+  RENDER.positions = (s && Array.isArray(s.positions)) ? s.positions : [];
+  RENDER.turned = s ? (s.turned === true) : false;      // the facing signature says this utterance is turned: the position is held
+  RENDER.settling = s ? (s.settling === true) : false;  // the bearing is a read still growing (GccPhat before its lock)
+  RENDER.held = (s && Number.isFinite(s.held)) ? s.held : null;   // a re-read settling: the last lock (Conductor v11 phrases)
+  if (changed) streamMessage();
+}
+// The tape's math pass, when its positions are not current (for this hold): the host sends only how far it has got.
+async function mathProcess() {
+  MATH = { state: 'processing', error: null, done: 0 };
+  streamMessage();
+  try {
+    var r = await fetch('math/process?name=' + encodeURIComponent(RUN) + (HOLD_MS ? '&hold=' + HOLD_MS : ''), { cache: 'no-store' });
+    if (!r.ok) { var j = await r.json().catch(function () { return {}; }); throw new Error(j.error || ('math host ' + r.status)); }
+    // SERVER-SENT EVENTS, one per event ("data: {...}" and a blank line): the :80 gateway streams only event-streams
+    var reader = r.body.getReader(), dec = new TextDecoder(), rest = '';
+    for (;;) {
+      var chunk = await reader.read();                 // waits until the host sends; never asks
+      if (chunk.done) break;
+      rest += dec.decode(chunk.value, { stream: true });
+      var events = rest.split('\n\n'); rest = events.pop();
+      for (var i = 0; i < events.length; i++) {
+        var data = events[i].split('\n').filter(function (l) { return l.indexOf('data: ') === 0; })
+                            .map(function (l) { return l.slice(6); }).join('\n');
+        if (!data) continue;
+        var it = JSON.parse(data);
+        if (it.event === 'progress' && it.of) progressShow(it.at / it.of);
+        else if (it.event === 'error') throw new Error(it.error);
+      }
+    }
+  } catch (e) { MATH.error = e.message; }
+}
+async function loadPositions() {
+  try {
+    var r = await fetch('math/positions?name=' + encodeURIComponent(RUN), { cache: 'no-store' });
+    var j = await r.json();
+    if (!r.ok) throw new Error(j.error || ('positions ' + r.status));
+    POS = j; MATH.state = 'ready';
+    if (window.reloadAngleRays) window.reloadAngleRays();      // the Conductor's record now exists: its utterance onsets
+    if (OD) {
+      OD.onsets = (j.onsets || []).slice();
+      // a tape the index never measured has no length of its own: the positions file knows it (the slider was stuck at 0)
+      if (!(DUR > 0) && j.duration_s > 0) { OD.duration = DUR = j.duration_s; document.getElementById('seek').max = DUR; document.getElementById('tdur').textContent = DUR.toFixed(1); }
+      drawOnsets(OD);
+    }
+  } catch (e) { MATH.error = e.message; }
+}
+// A TAPE'S FIRST CLICK (Jay, 2026-10-09: "if a tile click has an unprocessed tape, just play it at 100x and scrollbar,
+// pause/play, whatever are disabled. That will take no time, and then it can actually be played in real time"; then
+// "just have a progress bar and only start after processed"). The math host processes an unprocessed tape at full speed
+// -- the Conductor at ~110x real time, the schemes as its items arrive -- and sends only how far it has got; a processed
+// tape answers at once. Then the positions are loaded, the controls come back, and the tape plays in real time.
+async function prepare() {
+  controls(false);
+  progressShow(0);
+  await mathProcess();
+  progressHide();
+  if (!MATH.error) await loadPositions();
+  controls(true);
+  streamMessage();
+  // PLAYS ON OPEN, AS BEFORE. If the browser will not start sound unasked, the play button starts it.
+  if (AUD && !MATH.error) AUD.play().then(function () { playing = true; document.getElementById('play').textContent = 'pause'; })
+                              .catch(function () { streamMessage(); });
+}
+function controls(on) {
+  ['play', 'seek'].forEach(function (id) { var el = document.getElementById(id); if (el) el.disabled = !on; });
+}
+// THE TWO SLIDERS (Jay, 2026-10-09: "a slider for how strongly to hold, and a slider for confidence threshold to render").
+// The threshold only filters what is drawn, at once. The hold changes what the math computes: on release the tape is
+// processed again with it (a second or two) and its positions reloaded; the playhead carries on.
+(function () {
+  var mh = document.getElementById('minhits'), mv = document.getElementById('minhitsv');
+  if (mh) mh.addEventListener('input', function () { MIN_HITS = (+this.value) / 100; mv.textContent = this.value + '%'; });
+  var hd = document.getElementById('hold'), hv = document.getElementById('holdv');
+  var holdText = function (h) { return h === null ? 'utterance' : h + ' ms'; };
+  if (hd) {
+    hd.addEventListener('input', function () { hv.textContent = holdText(HOLD_STEPS[+this.value]); });
+    hd.addEventListener('change', async function () {
+      HOLD_MS = HOLD_STEPS[+this.value];
+      progressShow(0);
+      await mathProcess();
+      progressHide();
+      if (!MATH.error) await loadPositions();
+      streamMessage();
+    });
+  }
+})();
+function progressShow(frac) {
+  var p = document.getElementById('procbar');
+  if (!p) {
+    p = document.createElement('progress'); p.id = 'procbar'; p.max = 1;
+    p.style.cssText = 'position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(60vw,520px);height:14px;z-index:9';
+    document.body.appendChild(p);
+  }
+  p.hidden = false;
+  p.value = Math.max(0, Math.min(1, frac || 0));
+  MATH.done = p.value;
+  streamMessage();
+}
+function progressHide() { var p = document.getElementById('procbar'); if (p) p.hidden = true; }
+function streamMessage() {
+  var el = document.getElementById('buildstate'), pos = document.getElementById('fopos');
+  // THE BEARING THE PAGE DRAWS (2026-10-21, after "Cannot read properties of null (reading 'toFixed')" stopped the frame
+  // loop): renderNow's own result -- the onset's, a held lock or the math host's. The math host's bearing is empty at an
+  // utterance start until its first read, while "puck on onset" can already draw a dot there.
+  var _e = pos ? renderNow() : null;
+  if (pos) pos.textContent = _e
+    ? 'bearing ' + (Number.isFinite(_e.deg) ? _e.deg.toFixed(1) : '-') + '\u00b0 \u00b7 range ' + RENDER.units.toFixed(3) + ' u' + (RENDER.speaking ? ' \u00b7 speaking' : ' \u00b7 held')
+    : 'waiting for first speech arrival';
+  if (!el) return;
+  el.textContent = 'Render \u00b7 ' + (MATH.error ? 'math stopped: ' + MATH.error
+    : MATH.state === 'processing' ? 'processing the tape \u00b7 ' + Math.round(100 * (MATH.done || 0)) + '%'
+    : MATH.state === 'ready' ? 'Bearing + ' + ((POS.math && POS.math.range) || '?') + ' \u00b7 hold ' +
+        (POS.hold_ms ? POS.hold_ms + ' ms' : 'utterance') + ' \u00b7 ' + (RENDER.positions || []).length + ' positions \u00b7 ' + POS.timeline.length + ' steps'
+    : '') +
+    (UNIT_M === null ? ' \u00b7 range in opening units (enter the opening distance for metres)' : '') +
+    (AUD && AUD.paused && !playing ? ' \u00b7 press play to listen' : '');
+}
+// THE DFN MASK (Jay, 2026-10-07: "Can we have MaskView render a real-time view of the ERB gain map on the page it plays
+// the DFN scheme?"). maskview.py's bake -- DFN3 on the raw L+R mono, its 32 ERB gains and lsnr per 10 ms frame -- read
+// from /maskview-data. DFN3 looks 2 frames ahead, so frame k is HEARD at (k+3) * 10 ms: the panel never draws past
+// that, and every stream frame is stamped with the latest heard DFN frame (mask32, lsnr) for the scheme.
+var MASK = null, MASK_LOOKAHEAD = 2, MASK_WIN = 5;
+// The colour scale's ceiling: a gain at or above it is full colour. 1 = MaskView's own 0..1; the wheel over the panel
+// moves it if a quiet tape needs lifting.
+var MASK_CEIL = 1.0;
+var SHOW_MASK = /^dfn/i.test(SCHEME) || Q.get('mask') === '1';
+function maskB64(s) { var r = atob(s), a = new Uint8Array(r.length); for (var i = 0; i < r.length; i++) a[i] = r.charCodeAt(i); return a; }
+async function maskOpen(name) {
+  try {
+    var d = await (await fetch('maskview-data?name=' + encodeURIComponent(name), { cache: 'no-store' })).json();
+    if (!d || !d.n || !d.mask32) { maskNote('no DFN mask baked for ' + name + ' yet (geonar/maskview.py)'); return null; }
+    var dec = function (key, lo, hi) { var a = maskB64(d[key]), o = new Float32Array(a.length); for (var i = 0; i < a.length; i++) o[i] = lo + a[i] / 255 * (hi - lo); return o; };
+    var mm = function (a) { var lo = 1e9, hi = -1e9; for (var i = 0; i < a.length; i++) { if (a[i] < lo) lo = a[i]; if (a[i] > hi) hi = a[i]; } return [lo, hi]; };
+    MASK = { n: d.n, fm: d.frame_ms / 1000, nb: d.mask_bands || 32, g: maskB64(d.mask32),
+             raw: dec('raw_db', d.db_lo, d.db_hi), mean: dec('mask_mean', 0, 1), lsnr: dec('lsnr', d.lsnr_lo, d.lsnr_hi),
+             lfdb: dec('lf_db', d.db_lo, d.db_hi), mfdb: dec('mf_db', d.db_lo, d.db_hi), hfdb: dec('hf_db', d.db_lo, d.db_hi) };
+    // NORMAL dB (Jay, 2026-10-07: "can the DFN biz include normal dB?"). maskview's levels are 10 log10 of the summed power
+    // spectrum of a Hann-windowed 10 ms frame, un-normalised. RMS against digital full scale is that minus
+    // 10 log10(N^2 * mean(hann^2) / 2) = 46.4 dB for N = 480 (one-sided Parseval). Same offset for the three bands.
+    MASK.dbfs = -10 * Math.log10(480 * 480 * 0.375 / 2);
+    MASK.rawR = mm(MASK.raw); MASK.meanR = mm(MASK.mean); MASK.lsnrR = mm(MASK.lsnr);
+    // THE 3-BAND MASK AND THE MASK TILT (Jay, 2026-10-07). DFN3's ERB bands (48 kHz, fft 960, lowest first):
+    // LF = bands 1-9 (0.1-1 kHz), MF = 10-19 (1-4 kHz), HF = 20-24 (4-8.5 kHz) -- the panel's own LF/MF/HF ranges.
+    // Each is the plain mean gain of its bands in that frame. Tilt = 20 log10(HF / LF): the mask is a MAGNITUDE gain,
+    // so dB of amplitude; negative = DFN cutting the highs relative to the lows. On LOCATA the HF-vs-LF mask tilt
+    // tracked range (rho -0.5..-0.67 against distance), not facing.
+    var bandMean = function (k, b0, b1) { var a = 0; for (var b = b0; b <= b1; b++) a += MASK.g[b * MASK.n + k]; return a / 255 / (b1 - b0 + 1); };
+    MASK.lf = new Float32Array(MASK.n); MASK.mf = new Float32Array(MASK.n); MASK.hf = new Float32Array(MASK.n); MASK.tilt = new Float32Array(MASK.n);
+    for (var k = 0; k < MASK.n; k++) {
+      MASK.lf[k] = bandMean(k, 1, 9); MASK.mf[k] = bandMean(k, 10, 19); MASK.hf[k] = bandMean(k, 20, 24);
+      MASK.tilt[k] = 20 * Math.log10(Math.max(MASK.hf[k], 1e-3) / Math.max(MASK.lf[k], 1e-3));
+    }
+    if (SHOW_MASK) document.getElementById('maskpanel').style.display = 'block';
+    return MASK;
+  } catch (e) { maskNote('DFN mask failed to load: ' + (e && e.message ? e.message : e)); return null; }
+}
+// THE PANEL NEVER GOES QUIETLY BLANK (2026-10-07): on a DFN page with no mask it says so instead of not appearing.
+function maskNote(msg) {
+  if (!SHOW_MASK) return;
+  document.getElementById('maskpanel').style.display = 'block';
+  document.getElementById('maskrd').textContent = msg;
+}
+// the last DFN frame whose gains were final by time t
+function maskHeard(t) { return MASK ? Math.min(MASK.n - 1, Math.floor(t / MASK.fm) - 1 - MASK_LOOKAHEAD) : -1; }
+function maskStamp(fx) {
+  if (!MASK) return;
+  fx.frames.forEach(function (fr) {
+    var k = maskHeard(fr.t);
+    fr.tracks.forEach(function (tr) {
+      if (k < 0) { tr.mask32 = null; tr.lsnr = null; return; }
+      var g = new Array(MASK.nb);
+      for (var b = 0; b < MASK.nb; b++) g[b] = MASK.g[b * MASK.n + k] / 255;      // band-major, as baked
+      tr.mask32 = g; tr.lsnr = MASK.lsnr[k]; tr.dfn_t = (k + 1) * MASK.fm;
+    });
+  });
+}
+var maskImg = null;
+function drawMask() {
+  if (!MASK || !SHOW_MASK) return;
+  var c = document.getElementById('maskcv'), g = c.getContext('2d');
+  var W = c.clientWidth, H = c.height; if (c.width !== W) c.width = W;
+  g.fillStyle = '#151520'; g.fillRect(0, 0, W, H);
+  var kHi = maskHeard(t), cols = Math.round(MASK_WIN / MASK.fm), k0 = kHi - cols + 1;
+  if (!maskImg || maskImg.width !== cols) maskImg = new ImageData(cols, MASK.nb);
+  var px = maskImg.data;
+  for (var x = 0; x < cols; x++) {
+    var k = k0 + x;
+    for (var b = 0; b < MASK.nb; b++) {
+      var o = ((MASK.nb - 1 - b) * cols + x) * 4;                // lowest ERB band at the bottom
+      if (k < 0 || k > kHi) { px[o] = 21; px[o + 1] = 21; px[o + 2] = 32; px[o + 3] = 255; continue; }
+      var v = Math.min(1, MASK.g[b * MASK.n + k] / 255 / MASK_CEIL);   // gain 0..ceiling: dark -> teal -> pale yellow
+      px[o] = Math.round(20 + 235 * v * v); px[o + 1] = Math.round(24 + 211 * v); px[o + 2] = Math.round(48 + 120 * v - 60 * v * v); px[o + 3] = 255;
+    }
+  }
+  var off = drawMask.off || (drawMask.off = document.createElement('canvas'));
+  off.width = cols; off.height = MASK.nb; off.getContext('2d').putImageData(maskImg, 0, 0);
+  var top = 4, mh = 170;                                   // the heatmap; the band strip sits under it
+  g.imageSmoothingEnabled = false; g.drawImage(off, 0, top, W, mh);
+  // MaskView's three lines, scaled against the whole tape so nothing rescales while it plays
+  [[MASK.raw, MASK.rawR, '#8a8aa2', 1.2], [MASK.mean, MASK.meanR, '#34d399', 1.6], [MASK.lsnr, MASK.lsnrR, '#f59e0b', 1.4]].forEach(function (L) {
+    g.strokeStyle = L[2]; g.lineWidth = L[3]; g.beginPath(); var on = false;
+    for (var x = 0; x < cols; x++) {
+      var k = k0 + x; if (k < 0 || k > kHi) continue;
+      var y = top + mh - (L[0][k] - L[1][0]) / Math.max(1e-9, L[1][1] - L[1][0]) * mh;
+      if (!on) { g.moveTo(x / cols * W, y); on = true; } else g.lineTo(x / cols * W, y);
+    }
+    g.stroke();
+  });
+  // gate onsets and a 1 s time grid
+  g.fillStyle = 'rgba(255,255,255,0.35)';
+  for (var s0 = Math.ceil((k0 * MASK.fm)); s0 <= kHi * MASK.fm; s0++) { var xg = (s0 / MASK.fm - k0) / cols * W; g.fillRect(xg, top + mh, 1, 4); g.fillText(s0 + 's', xg + 2, top + mh + 13); }
+  // THE BAND STRIP: LF / MF / HF mask on a fixed 0..1 scale, the tilt on a fixed -24..+12 dB scale with its 0 dB line
+  var y0 = top + mh + 18, sh = H - y0 - 4;
+  g.fillStyle = '#1c1c2a'; g.fillRect(0, y0, W, sh);
+  var TLO = -24, THI = 12, yT0 = y0 + sh - (0 - TLO) / (THI - TLO) * sh;
+  g.strokeStyle = 'rgba(255,255,255,0.25)'; g.setLineDash([3, 3]); g.lineWidth = 1; g.beginPath(); g.moveTo(0, yT0); g.lineTo(W, yT0); g.stroke(); g.setLineDash([]);
+  g.fillStyle = 'rgba(255,255,255,0.4)'; g.fillText('0 dB', 2, yT0 - 2);
+  [[MASK.lf, 0, 1, '#fb7185', 1.3], [MASK.mf, 0, 1, '#a3e635', 1.3], [MASK.hf, 0, 1, '#38bdf8', 1.3], [MASK.tilt, TLO, THI, '#ffffff', 1.5]].forEach(function (L) {
+    g.strokeStyle = L[3]; g.lineWidth = L[4]; g.beginPath(); var on = false;
+    for (var x = 0; x < cols; x++) {
+      var k = k0 + x; if (k < 0 || k > kHi) continue;
+      var v = Math.max(0, Math.min(1, (L[0][k] - L[1]) / (L[2] - L[1])));
+      var y = y0 + sh - v * sh;
+      if (!on) { g.moveTo(x / cols * W, y); on = true; } else g.lineTo(x / cols * W, y);
+    }
+    g.stroke();
+  });
+  (OD && OD.onsets || []).forEach(function (o) { var xo = (o.gate_t_s / MASK.fm - k0) / cols * W; if (xo >= 0 && xo <= W) { g.fillStyle = '#7aa2f7'; g.fillRect(xo, top, 1.5, mh); } });
+  g.fillStyle = 'rgba(138,138,162,0.9)'; g.font = '10px ui-monospace,monospace';     // the grey line's scale, in dBFS
+  g.fillText((MASK.rawR[1] + MASK.dbfs).toFixed(0) + ' dBFS', W - 62, top + 10);
+  g.fillText((MASK.rawR[0] + MASK.dbfs).toFixed(0) + ' dBFS', W - 62, top + mh - 3);
+  if (kHi < 0) document.getElementById('maskrd').textContent = 'waiting for the first heard DFN frame -- press play';
+  else document.getElementById('maskrd').textContent = (kHi * MASK.fm).toFixed(2) + ' s  level ' + (MASK.raw[kHi] + MASK.dbfs).toFixed(1) + ' dBFS (LF ' +
+    (MASK.lfdb[kHi] + MASK.dbfs).toFixed(0) + ' MF ' + (MASK.mfdb[kHi] + MASK.dbfs).toFixed(0) + ' HF ' + (MASK.hfdb[kHi] + MASK.dbfs).toFixed(0) + ')  mask ' +
+    MASK.mean[kHi].toFixed(3) + '  lsnr ' + (MASK.lsnr[kHi] >= 0 ? '+' : '') + MASK.lsnr[kHi].toFixed(1) + ' dB   gains LF ' + MASK.lf[kHi].toFixed(2) +
+    ' MF ' + MASK.mf[kHi].toFixed(2) + ' HF ' + MASK.hf[kHi].toFixed(2) + '  tilt ' + (MASK.tilt[kHi] >= 0 ? '+' : '') + MASK.tilt[kHi].toFixed(1) + ' dB';
+}
+document.getElementById('maskpanel').addEventListener('wheel', function (e) {
+  e.preventDefault(); e.stopPropagation();                       // the map's own zoom stays off the panel
+  MASK_CEIL = Math.max(0.02, Math.min(1, MASK_CEIL * (e.deltaY > 0 ? 1.25 : 0.8)));
+}, { passive: false });
+// THE SPECTROGRAM (Jay, 2026-10-07: "a spectrogram of the user's speech on the page as they speak"). Magma -- perceptually
+// uniform, the research default alongside viridis -- on a dB scale 70 dB deep, linear 0-8 kHz, a 1024-point (21 ms) Hann
+// frame every 10 ms (DFN's grid), the L+R mix. Only what has been heard: the window ends at the playhead, and the top of
+// the scale is the loudest column heard so far, never the tape's.
+var SPEC = { audio: null, N: 1024, HOP: 480, cols: [], top: -Infinity, win: null, fftRe: null, fftIm: null, rev: null };
+var MAGMA = [[0, 0, 4], [28, 16, 68], [79, 18, 123], [129, 37, 129], [181, 54, 122], [229, 80, 100], [251, 135, 97], [254, 194, 135], [252, 253, 191]];
+function magma(v) {
+  v = Math.max(0, Math.min(1, v)) * (MAGMA.length - 1); var i = Math.min(MAGMA.length - 2, Math.floor(v)), f = v - i, a = MAGMA[i], b = MAGMA[i + 1];
+  return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f, a[2] + (b[2] - a[2]) * f];
+}
+function specCol(k) {                                            // the dB spectrum of 10 ms column k, cached
+  if (SPEC.cols[k] !== undefined) return SPEC.cols[k];
+  var N = SPEC.N, A = SPEC.audio, s0 = k * SPEC.HOP;
+  if (!SPEC.win) {
+    SPEC.win = new Float64Array(N); SPEC.rev = new Uint32Array(N); SPEC.fftRe = new Float64Array(N); SPEC.fftIm = new Float64Array(N);
+    for (var n = 0; n < N; n++) SPEC.win[n] = 0.5 - 0.5 * Math.cos(2 * Math.PI * n / (N - 1));
+    for (var n2 = 0, bits = Math.log2(N); n2 < N; n2++) { var r = 0; for (var b2 = 0; b2 < bits; b2++) r |= ((n2 >> b2) & 1) << (bits - 1 - b2); SPEC.rev[n2] = r; }
+  }
+  if (!A || s0 + N > A.L.length) return (SPEC.cols[k] = null);
+  var re = SPEC.fftRe, im = SPEC.fftIm;
+  for (var n3 = 0; n3 < N; n3++) { var j = SPEC.rev[n3]; re[j] = (A.L[s0 + n3] + A.R[s0 + n3]) / 65536 * SPEC.win[n3]; im[j] = 0; }
+  for (var size = 2; size <= N; size <<= 1) {                    // radix-2 in place
+    var half = size >> 1, step = -2 * Math.PI / size;
+    for (var i0 = 0; i0 < N; i0 += size) for (var m = 0; m < half; m++) {
+      var wr = Math.cos(step * m), wi = Math.sin(step * m), a = i0 + m, b = a + half;
+      var tr = re[b] * wr - im[b] * wi, ti = re[b] * wi + im[b] * wr;
+      re[b] = re[a] - tr; im[b] = im[a] - ti; re[a] += tr; im[a] += ti;
+    }
+  }
+  var nb = Math.floor(8000 * N / 48000), out = new Float32Array(nb), mx = -Infinity;
+  for (var q = 0; q < nb; q++) { out[q] = 10 * Math.log10(re[q] * re[q] + im[q] * im[q] + 1e-20); if (out[q] > mx) mx = out[q]; }
+  if (mx > SPEC.top) SPEC.top = mx;
+  return (SPEC.cols[k] = out);
+}
+var specImg = null;
+function drawSpec() {
+  if (!SPEC.audio) return;
+  var c = document.getElementById('speccv'), g = c.getContext('2d'), W = c.clientWidth, H = c.height;
+  if (c.width !== W) c.width = W;
+  var kHi = Math.floor((t * 48000 - SPEC.N) / SPEC.HOP), cols = Math.round(5 * 48000 / SPEC.HOP), k0 = kHi - cols + 1;
+  var nb = Math.floor(8000 * SPEC.N / 48000);
+  if (!specImg || specImg.width !== cols) specImg = new ImageData(cols, nb);
+  for (var kk = Math.max(0, k0 - 1); kk <= kHi; kk++) specCol(kk);          // the scale's top only ever rises with what is heard
+  var px = specImg.data, top = SPEC.top, lo = top - 70;
+  for (var x = 0; x < cols; x++) {
+    var k = k0 + x, col = (k >= 0 && k <= kHi) ? SPEC.cols[k] : null;
+    for (var y = 0; y < nb; y++) {
+      var o = ((nb - 1 - y) * cols + x) * 4, rgb = col ? magma((col[y] - lo) / 70) : [0, 0, 4];
+      px[o] = rgb[0]; px[o + 1] = rgb[1]; px[o + 2] = rgb[2]; px[o + 3] = 255;
+    }
+  }
+  var off = drawSpec.off || (drawSpec.off = document.createElement('canvas'));
+  off.width = cols; off.height = nb; off.getContext('2d').putImageData(specImg, 0, 0);
+  g.imageSmoothingEnabled = false; g.drawImage(off, 0, 0, W, H);
+  g.fillStyle = 'rgba(255,255,255,0.55)'; g.font = '10px ui-monospace,monospace';
+  [1000, 2000, 4000, 6000, 8000].forEach(function (hz) { var yy = H - hz / 8000 * H; g.fillRect(0, yy, 4, 1); g.fillText(hz / 1000 + 'k', 6, Math.max(10, yy + 4)); });
+  // SPEECH START AND STOP, TIME-ALIGNED (Jay, 2026-10-07). A column is a 21 ms window, drawn at its CENTRE, so a time T sits
+  // at fractional column (T*48000 - N/2)/HOP. Start = the tap's onset (sample-exact); stop = the segmentation's turn end,
+  // shown only once the gate has decided the utterance is over -- until then the span runs open to the playhead.
+  var xAt = function (T) { return ((T * 48000 - SPEC.N / 2) / SPEC.HOP - k0) / cols * W; };
+  var tapOn = {}; (OD && OD.live_onsets || []).forEach(function (u) { if (u.onset_t_s != null) tapOn[u.index] = u.onset_t_s; });
+  var now = null;
+  (OD && OD.onsets || []).forEach(function (o2) {
+    var st0 = (tapOn[o2.index] != null) ? tapOn[o2.index] : null;
+    if (st0 === null || st0 > t) return;
+    var closed = o2.speech_end_s != null && o2.last_close_t_s != null && o2.last_close_t_s <= t;
+    var en = closed ? o2.speech_end_s : t, xs = xAt(st0), xe = xAt(en);
+    if (xe < 0 || xs > W) { if (st0 <= t && (!closed || en >= t - 5)) now = { s: st0, e: closed ? en : null }; return; }
+    g.fillStyle = 'rgba(255,255,255,0.10)'; g.fillRect(Math.max(0, xs), 0, Math.min(W, xe) - Math.max(0, xs), H);
+    if (xs >= 0) { g.fillStyle = '#a3e635'; g.fillRect(xs - 1, 0, 2, H); }
+    if (closed && xe <= W) { g.fillStyle = '#fb7185'; g.fillRect(xe - 1, 0, 2, H); }
+    now = { s: st0, e: closed ? en : null };
+  });
+  document.getElementById('specrd').textContent = 'magma · 0-8 kHz · 70 dB · ' + Math.max(0, t).toFixed(2) + ' s' +
+    (now ? '   speech ' + now.s.toFixed(3) + ' s -> ' + (now.e != null ? now.e.toFixed(3) + ' s' : 'speaking') : '');
+}
+fetch('geonar/truth', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
+  if (j && j.outline) T = j;
+}).catch(function () {}).then(pickRun).then(async function (name) {
+  name = preparedRun(name);
+  RUN = name;
+  if (name) {
+    AUD = new Audio('geonar/tapewav?name=' + encodeURIComponent(name));
+    AUD.preload = 'auto';
+    AUD.addEventListener('error', function () { AUD = null; });
+  }
+  var _sel = document.getElementById('tape');
+  if (_sel && RUN) _sel.value = RUN;
+  if (!RUN) throw new Error('no recording named, and none on disk carries marked positions');
+  // THE TAPE'S STATIC FACTS, read once: its length, its saved pose and marked positions. What MOVES -- the gate, the
+  // bearing, the range -- comes down the Conductor's stream and nowhere else.
+  var saved = await fetch('geonar/tapes?name=' + encodeURIComponent(RUN), { cache: 'no-store' })
+    .then(function (r) { return r.json(); }).catch(function () { return {}; });
+  var od = { media_name: RUN, duration: (saved && saved.secs) || 0, frames: [], onsets: [], truth: {}, anchors: [],
+             bearing_channel_order: 'LR' };
+  var dots = saved && saved.dots, phone = Array.isArray(dots) && dots.find(function (d) { return String(d.label || '').toLowerCase() === 'phone'; });
+  // A TAPE WITH NO SAVED POSE DRAWS IN THE LIVING ROOM ANYWAY (Jay, 2026-10-10: "use the living room background, I
+  // think they're all living room. I can place the phone and orient it"): the global truth's phone dot stands in, and
+  // the page's own drag / turn (kept per tape in the browser) moves it from there.
+  if (!(phone && Number.isFinite(phone.x) && Number.isFinite(phone.y))) {
+    var gp = (T.dots || []).find(function (d) { return String(d.label || '').toLowerCase() === 'phone'; });
+    if (gp && Number.isFinite(gp.x) && Number.isFinite(gp.y)) { phone = gp; dots = [gp]; }
+  }
+  if (phone && Number.isFinite(phone.x) && Number.isFinite(phone.y)) {
+    od.truth.phone = { x: phone.x, y: phone.y, angle: Number(phone.angle) || 0 };
+    od.truth.dots = dots.filter(function (d) { return String(d.label || '').toLowerCase() !== 'phone'; });
+    if (od.truth.dots.length) {
+      var first = od.truth.dots[0], opening = Math.hypot(first.x - phone.x, first.y - phone.y);
+      if (Number.isFinite(opening) && opening > 0) od.anchors = [{ r: opening, src: RUN + '/truth.json: saved phone to first marked position' }];
+    }
+    // THE MARKED POSITIONS IN TIME: the decode's Nth burst is the Nth marked dot (the pairing stops_from_dots makes)
+    od.truth.stops = od.truth.dots.map(function (d, i) {
+      var b = (saved.bursts || [])[i];
+      return b ? Object.assign({}, d, { t0: b.t0, t1: b.t1 }) : null;
+    }).filter(Boolean);
+  }
+  return od;
+}).then(function (od) {
+  OD = od;
+  // THE ODAS FRAMES, WHICH geonar/tapes DOES NOT CARRY (2026-10-11). That route answers with the tape's record --
+  // name, secs, bursts, dots -- and no frames at all, so every page feature reading OD.frames was silently dead on a
+  // real tape: the bubble hue (centroid_hz) and now the facing V (bright). /rangelab-fixture serves <tape>/odas.json
+  // itself, which is where those live. Fetched beside everything else and attached when it lands; the caches are
+  // cleared so the two series rebuild from it.
+  if (!(od.frames && od.frames.length)) {
+    fetch('rangelab-fixture?name=' + encodeURIComponent(RUN), { cache: 'no-store' })
+      .then(function (r) { return r.json(); })
+      .then(function (fx) {
+        if (fx && fx.frames && fx.frames.length) { OD.frames = fx.frames; CENT = null; BRIGHT = null; }
+      })
+      .catch(function () {});
+  }
+  // THE ANGLE FILE, PROCESSED ON OPEN (its rays layer is gone since 2026-10-21; the Onsets layer reads its sounds and
+  // utterances): /geonar/anglerays runs Dictate's geonar/angle_rays.py
+  // when this walk's file is missing or stale (a few seconds the first time) and serves <tape>/anglerays.json.
+  (function () {
+    var box = document.getElementById('showangle'), txt = box && box.nextSibling;
+    var say = function (s) { if (txt) txt.textContent = ' Angle rays' + s; };
+    // the Onsets layer rides on the same file (its `sounds`): its label says how many sounds were told apart
+    var obox = document.getElementById('showonset'), otxt = obox && obox.nextSibling;
+    var osay = function (s) { if (otxt) otxt.textContent = ' Onsets' + s; };
+    // ASKED AGAIN ONCE THE MATH PASS IS DONE (2026-10-20): on a tape's first open the Conductor records its utterances during
+    // that pass, after this file was built; the route rebuilds the file when the record is newer (main.py watches it), so
+    // the second ask brings the utterances' direction-first onsets. A current file comes straight back.
+    var load = function () {
+      say(' (processing...)'); osay(' (processing...)');
+      fetch('geonar/anglerays?name=' + encodeURIComponent(RUN), { cache: 'no-store' })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          if (j && j.reads) { OD.angleRays = j; say(''); }
+          else say(' (none: ' + String((j && j.error) || 'no rays').slice(-80) + ')');
+          if (j && j.sounds && j.sounds.length) {
+            var told = j.sounds.filter(function (x) { return x[1]; }).length;
+            osay(' (' + told + ' of ' + j.sounds.length + ' told apart' + (j.utterances && j.utterances.length ? ', ' + j.utterances.length + ' utterance onsets' : '') + ')');
+          } else osay(' (none' + (j && j.sounds_error ? ': ' + String(j.sounds_error).slice(-80) : '') + ')');
+        })
+        .catch(function (e) { say(' (failed: ' + e + ')'); osay(' (failed)'); });
+    };
+    window.reloadAngleRays = load;
+    load();
+  })();
+  // ODAS'S RAYS ARE NO LONGER FETCHED (Jay, 2026-10-21: the layer is gone), so opening a walk no longer runs ODAS.
+  MEDIA_RUN = RUN;
+  CAPTURE_BEARING_SIGN = captureBearingSign(od, MEDIA_RUN);
+  // a real tape carries no room of its own: the living room is the global one loaded above (T)
+  LIVING = !/^sim-/.test(RUN) && !(od.truth && od.truth.outline && od.truth.outline.length >= 3) &&
+           !!(T.outline && T.outline.length >= 3) &&
+           !!(od.truth && od.truth.phone && Number.isFinite(od.truth.phone.x) && Number.isFinite(od.truth.phone.y));
+  // PHONE AT THE LEFT, LOOKING RIGHT (Jay, 2026-10-04). The phone's boresight is +y in the world,
+  // which the page draws up the screen, so a scene renders bottom-up. Rotating the WORLD once, here,
+  // turns boresight into screen-right and leaves every drawing routine untouched -- which matters,
+  // because X() and Y() take one coordinate each and a rotation mixes the two, so doing it in the
+  // transform would mean changing every call site. Rotating the canvas with an SVG transform was the
+  // other option and would have turned every label on its side.
+  //
+  // (x, y) -> (y, -x) is the quarter turn that sends +y to +x. The phone's own angle takes the same
+  // turn, so place() keeps agreeing with the dots without knowing anything happened.
+  (function rotateWorld(t) {
+    // PHONE AT THE TOP, LOOKING DOWN (Jay, 2026-10-05: "should we render the page with the phone at
+    // the top for a wider facing ... I'd say the first"). Line of sight is the front half-plane -- a
+    // semicircle twice as wide as it is deep, which is a widescreen's shape; phone-left (10-04) drew it
+    // twice as TALL as wide and left the screen's width empty. A HALF TURN, (x,y) -> (-x,-y): boresight
+    // (+y, up the page in Y()) becomes down the page, and a half turn is a rotation, not a mirror, so the
+    // phone's right still draws on the viewer's left -- as when someone faces you. The wedge is drawn
+    // from the phone's ANGLE, so the angle turns with the coordinates (+180).
+    if (!t || LIVING) return;      // the living room keeps the Truth map's own frame
+    var R = function (p) { if (p && typeof p.x === 'number') { p.x = -p.x; p.y = -p.y; } };
+    R(t.phone);
+    if (t.phone) t.phone.angle = ((typeof t.phone.angle === 'number') ? t.phone.angle : 0) + 180;
+    (t.stops || []).forEach(R);
+    (t.dots || []).forEach(R);
+    if (t.outline) t.outline = t.outline.map(function (v) { return [-v[0], -v[1]]; });
+    (t.objects || []).forEach(function (o) {
+      // a box is an origin plus extents: the half turn moves the origin to the opposite corner
+      o.x = -(o.x + (o.w || 0)); o.y = -(o.y + (o.d || 0));
+    });
+  })(od.truth);
+  // THE TAPE'S OWN ROOM, when it brought one (2026-10-04). Simulated tapes are rendered in a room of
+  // their own and carry its outline in their truth; every real recording was made in the one room
+  // the global file describes and carries none, so this is a no-op for them.
+  if (od.truth && od.truth.outline && od.truth.outline.length >= 3) {
+    T = {
+      room_w: od.truth.room_w || T.room_w, room_d: od.truth.room_d || T.room_d,
+      phone_from_wall: T.phone_from_wall, phone_along: T.phone_along,
+      outline: od.truth.outline, objects: od.truth.objects || [], openings: od.truth.openings || [],
+      links: [], dots: [], corrections: []
+    };
+  }
+  DUR = od.duration || 0;
+  var requestedTime = Number(Q.get('t'));
+  t = Number.isFinite(requestedTime) ? Math.max(0, Math.min(DUR, requestedTime)) : 0;
+  document.getElementById('seek').value = t;
+  if (AUD) { try { AUD.currentTime = t; } catch (e) {} }
+  document.getElementById('seek').max = DUR;
+  drawOnsets(od);
+  document.getElementById('tdur').textContent = DUR.toFixed(1);
+  openingSetup(od);
+  WORDS = [];
+  // A variant fixture (walk-xxxx-gated) has no scene of its own: the words belong to the tape, not to
+  // how it was processed. Strip the suffix so a gated run still shows its callouts.
+  // -phone ADDED 2026-09-28: a phone-gated build is a derivation of its tape (the handset's gate joined
+  // to the desktop's levels), so it shares the tape's words exactly as -gated and -causal do.
+  var SCENE = MEDIA_RUN.replace(/-(gated|causal|phone)$/, '');
+  return fetch('speaker2d-scene?name=' + encodeURIComponent(SCENE), { cache: 'no-store' })
+    .then(function (r) { return r.json(); })
+    // A SIMULATED TAPE'S SCENE CARRIES MORE THAN WORDS (2026-10-10): the exact position of every turn and
+    // the centroid series the bubble hue needs, neither of which a sim has a fixture to supply. The scene
+    // route serves the file verbatim, so it arrives intact; the decode below replaces this only if a real
+    // Whisper decode exists for the tape.
+    .then(function (sc) { WORDS = sc.words || []; if (sc && (sc.segments || sc.centroid)) { DEC = sc; CENT = null; } })
+    .catch(function () {})
+    // WHISPER WINS WHERE IT EXISTS (Jay, 2026-09-29). scene.json's words are the handset's Android
+    // recogniser, which drops whole bursts -- and no tape recorded since 09-24 has a scene at all,
+    // so those played back with no text at all. The decode is the same audio read properly; where it
+    // exists it REPLACES the captions rather than merging, because merging two transcripts of one
+    // recording doubles the text everywhere they agree.
+    .then(function () {
+      return fetch('geonar/decode?name=' + encodeURIComponent(MEDIA_RUN), { cache: 'no-store' })
+        .then(function (r) { return r.json(); })
+        .then(function (dc) {
+          if (dc && (dc.segments || []).length) { DEC = dc; CENT = null; }   // a real decode wins; a sim keeps its scene
+          BURSTS = (dc && dc.bursts) || [];
+          var segs = (dc && dc.segments) || [];
+          if (segs.length) {
+            WORDS = segs.map(function (q) { return { start: q.start, stop: q.end, text: q.text }; });
+          }
+          drawScript(dc && dc.decoded);
+        })
+        .catch(function () { BURSTS = []; drawScript(false); });
+    });
+}).then(function () {
+  document.getElementById('head').innerHTML =
+    '<b>' + RUN + '</b> &nbsp; Conductor &rarr; math host &rarr; Render<br>' +
+    ((OD && OD.truth && OD.truth.phone) ? ('phone ' + OD.truth.phone.x.toFixed(2) + ', ' + OD.truth.phone.y.toFixed(2) + ' m facing ' + Math.round(OD.truth.phone.angle) + '&deg; &nbsp;&middot;&nbsp; ' + ((OD.truth.stops || []).length) + ' marked positions') : 'this tape has no saved phone pose -- mark it on the Truth page') +
+    '<br><span id="fopos">waiting for first speech arrival</span>' +
+    (OPENING_ANCHOR ? ' &middot; opening anchor ' + OPENING_ANCHOR.r.toFixed(2) + ' m (' + OPENING_ANCHOR.src + '); 1 u = ' + UNIT_M.toFixed(2) + ' m before view scale' : RANGE_UNIT === 'u' ? ' &middot; range in opening units; enter the opening distance to convert to metres' : '') + ' &middot; scroll to zoom &middot; drag to pan' +
+    (LIVING ? '<br><span id="calhud"></span>' : '');
+  if (LIVING) calLoad();
+  calHud();
+  layout();
+  if (SHOW_MASK) maskOpen(RUN);
+  streamMessage();
+  prepare();
+  requestAnimationFrame(frame);
+}).catch(function (e) {
+  document.getElementById('head').innerHTML = '<b>' + (RUN || '(no tape)') + '</b><br>' + (e && e.message ? e.message : e) +
+    '<br>open with ?run=walk-HHMMSS, or mark a tape on the Truth page first';
+  requestAnimationFrame(frame);
+});
+</script>
