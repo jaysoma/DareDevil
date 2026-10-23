@@ -561,3 +561,44 @@ have, before spending more on it.
    Render.html's note says the tilt tracked range, not facing, on LOCATA, so separating the two is the point.
 
 Score under the scoring rule; commit `results/orientation_dfn/` to a branch.
+
+---
+
+# Stage 3/4 groundwork: linguistic context
+
+Jay (2026-10-23): "Linguistic context is the way." A blind listener knows he's being addressed from his name, from
+who answers whom, and from what's being said, not from which way the talker faces. With every word decoded (Jay's
+raw-audio route into Android's SpeechRecognizer decodes all talkers, TV and radio included), the words themselves can
+say who said what, and to whom. Head orientation, even if solved perfectly, is a permanent "maybe" for whatever sits
+in front of someone.
+
+## 18. AMI: who said what, and to whom, from the words
+
+DRAFT, waiting on Jay: the Fisher model's name and source, and his labeling script that turns its two-speaker split
+into 1-N speakers. Put the script in `harness/linguistic/` when he shares it. Don't start until this line is gone.
+
+Data: the AMI Meeting Corpus (https://groups.inf.ed.ac.uk/ami/corpus/): real meetings of about four people, with
+word-level transcripts that give every word's speaker and time. Check what the manual annotations hold before
+relying on them: dialogue acts with an addressee on a subset of meetings, and focus of attention (where each person
+looks) on a subset. If the AMI host is blocked by the network policy, try the Hugging Face copy (`edinburghcstr/ami`)
+for transcripts and audio; if neither is reachable, report that and stop. Commit derived scores only, never audio.
+
+1. **Who said what, from the words alone.** Cut each meeting into windows (2, 5 and 10 minutes). Strip the speaker
+   labels and timing, keep the word order, and run Jay's pipeline.
+   - **Score:** word-level speaker accuracy after the best one-to-one mapping of its labels to AMI's speakers, the
+     number of speakers it finds against the number who spoke, and turn-boundary accuracy.
+   - **Break it down** by the number of active speakers in the window (2 to 5), by overlap, and by short replies
+     ("yeah", "mm-hmm"), which carry little context.
+   - **Baseline:** everything to the window's most talkative speaker.
+2. **The same with recognised text, if the audio is reachable.** Run Whisper on the far-field array mixdown, map its
+   words to AMI's speakers by time, and repeat step 1. The gap between steps 1 and 2 is what recognition errors cost.
+3. **To whom: words against facing.** On meetings with both addressee and focus-of-attention labels, predict each
+   dialogue act's addressee two ways, then both together:
+   - **Words:** names and vocatives, question-and-answer pairs, and who takes the next turn.
+   - **Facing:** the annotated focus of attention of the speaker during the act.
+   - **Score:** accuracy against the annotated addressee, split into "the group" and "one person", with chance for
+     each.
+   This is the direct test of the Tampere question: does facing add anything once the words are known?
+
+Score in Jay's spirit: report every meeting, set aside meetings that fail outright to study separately, and catalogue
+the failures by kind. Commit `results/linguistic/ami/` and `harness/linguistic/` to a branch.
