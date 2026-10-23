@@ -18,8 +18,8 @@ GCC-PHAT's peak to 0. A simulated ideal diffuse field agrees: at most 16-23% nea
 phone's 157 mm, never 47%.
 
 **So low-frequency diffuse noise is unlikely to be the phone's 0 deg.** On the phone, ODAS's 0 deg peaks get sharper
-as the frame gets stronger: in the strongest quarter of pause frames, 50% sit within 6 deg of 0 and 41% exactly on
-0.0. On STARSS the strongest quarter gives 11%. A peak that tightens on zero lag as the frame gets stronger is what a
+as the frame gets stronger: in the strongest quarter of pause frames, 30% sit within 6 deg of 0 and 18% exactly on
+0.0 (corrected; see "Second correction"). On STARSS the strongest quarter gives 11%. A peak that tightens on zero lag as the frame gets stronger is what a
 signal identical in both channels does: electrical crosstalk, a shared codec path, or one channel leaking into the
 other. That's the brief's other suspect. `harness/zero_deg/phone_pause.py` settles it on the phone's own audio (see
 "Next").
@@ -169,6 +169,24 @@ duplicate, both channels identical) and walk-195454 and walk-212347 (dead capsul
 
 The active-track figure, the original 47%, barely moves, so the conclusion stands. The pot shares above were
 inflated by that tape.
+
+**Second correction (2026-10-23): the strength split also counted the excluded tapes.** walk-194532's frames are all
+exactly 0.0 with E = 1.00, so they land in the strongest quarter. Re-run without the 3 tapes
+(`odas_tapes_excluded.json`, 32,108 pause frames over 26 tapes):
+
+| ODAS top pot, pauses, without the 3 excluded tapes | within 6 deg of 0 | exactly 0.0 |
+|---|---|---|
+| weakest quarter of frames | 13.0% | 7.4% |
+| second quarter | 15.7% | 8.9% |
+| third quarter | 17.3% | 10.2% |
+| strongest quarter | **29.9%** (was 50.3%) | **18.4%** (was 40.8%) |
+| all frames | 19.0% | 11.2% |
+
+The trend holds: the share near 0 still rises with frame strength, and the strongest quarter is still about three times
+STARSS's 11%. But it's 30%, not 50%. Section 3's table and bullets keep the uncorrected 50% and 41% as first run; the Answer at the
+top now uses the corrected figures.
+Brief 13's lab found that a signal identical in both channels makes the 0 deg pull and diffuse noise doesn't
+(`results/batchA/lab/report.md`), which points the same way.
 
 **Why ODAS says exactly 0.0.** ODAS snaps every peak to a point of its scan sphere: 65 distinct angles appear in these
 files, with the nearest neighbours of 0.0 at -2.3 and +3.8. Point 0 of that sphere is the pole (0, 0, 1)

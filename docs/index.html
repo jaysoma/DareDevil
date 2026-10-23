@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DareDevil</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a one-column research note. Findings as numbered claims, each with its number, its chart and its source
+   file; the two-capsule pair drawn once in the header as the project's emblem. */
+:root {
+  --paper: #f4f5f8;
+  --paper-2: #e9ebf1;
+  --ink: #171922;
+  --ink-2: #4b4f5d;
+  --rule: #d0d4de;
+  --accent: #b45309;
+  --link: #0e6b63;
+  --s1: #2a78d6;
+  --s2: #eb6834;
+  --ref: #8b8f9c;
+  --font-display: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1016; --paper-2: #181a24; --ink: #e5e6ed; --ink-2: #a4a7b5; --rule: #2b2d3b;
+    --accent: #f59e0b; --link: #5eead4; --s1: #3987e5; --s2: #d95926; --ref: #7c8090; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1016; --paper-2: #181a24; --ink: #e5e6ed; --ink-2: #a4a7b5; --rule: #2b2d3b;
+  --accent: #f59e0b; --link: #5eead4; --s1: #3987e5; --s2: #d95926; --ref: #7c8090; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 56px;
+}
+.wrap { max-width: 860px; margin: 0 auto; display: grid; gap: 40px; }
+a { color: var(--link); text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+code { font-family: var(--font-data); font-size: .88em; background: var(--paper-2); padding: 1px 5px; border-radius: 4px; }
+header { display: grid; gap: 14px; }
+.top { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.pair { width: 132px; height: 40px; flex: none; }
+.eyebrow { font-family: var(--font-data); font-size: 12px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-2); }
+h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(40px, 7vw, 64px); line-height: 1; margin: 0; letter-spacing: .01em; }
+.thesis { font-size: clamp(18px, 2.4vw, 21px); line-height: 1.45; margin: 0; max-width: 40ch; text-wrap: balance; }
+.lede { margin: 0; max-width: 68ch; color: var(--ink-2); }
+.facts { display: flex; flex-wrap: wrap; gap: 6px 16px; font-family: var(--font-data); font-size: 12.5px; color: var(--ink-2); list-style: none; margin: 0; padding: 0; }
+.facts b { color: var(--ink); font-weight: 500; }
+.letter { border: 1px solid var(--rule); background: var(--paper-2); border-radius: 10px; padding: 16px 18px; display: grid; gap: 8px; }
+.letter p { margin: 0; max-width: 68ch; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: 28px; line-height: 1.15; margin: 0; text-wrap: balance; }
+.finding { display: grid; gap: 12px; padding-top: 22px; border-top: 1px solid var(--rule); }
+.finding .n { font-family: var(--font-data); font-size: 12px; color: var(--accent); letter-spacing: .06em; }
+.finding h3 { font-family: var(--font-display); font-weight: 600; font-size: 24px; line-height: 1.15; margin: 0; text-wrap: balance; }
+.finding p { margin: 0; max-width: 68ch; }
+.nums { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.num { background: var(--paper-2); border-radius: 8px; padding: 10px 12px; min-width: 0; }
+.num b { display: block; font-family: var(--font-display); font-weight: 600; font-size: 28px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.num span { font-size: 13px; color: var(--ink-2); line-height: 1.35; display: block; }
+.chart { overflow-x: auto; }
+.chart svg { display: block; max-width: 100%; height: auto; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-family: var(--font-data); font-size: 12px; color: var(--ink-2); }
+.legend i { display: inline-block; width: 18px; height: 0; border-top: 2.5px solid; vertical-align: middle; margin-right: 6px; }
+.src { font-family: var(--font-data); font-size: 12.5px; color: var(--ink-2); }
+table { border-collapse: collapse; font-size: 14px; width: 100%; min-width: 520px; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-family: var(--font-data); font-weight: 500; font-size: 12px; color: var(--ink-2); letter-spacing: .03em; }
+td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; }
+.tablewrap { overflow-x: auto; }
+ul.plain { margin: 0; padding-left: 18px; display: grid; gap: 6px; max-width: 68ch; }
+footer { border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13.5px; color: var(--ink-2); display: grid; gap: 6px; }
+footer p { margin: 0; max-width: 80ch; }
+</style>
+<style>
+.cell-hi { font-weight: 600; color: var(--accent); }
+td small { color: var(--ink-2); font-size: 12px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="top">
+      <svg class="pair" viewBox="0 0 132 40" aria-hidden="true">
+        <line x1="10" y1="20" x2="122" y2="20" stroke="var(--rule)" stroke-width="2"/>
+        <circle cx="10" cy="20" r="7" fill="var(--accent)"/><circle cx="122" cy="20" r="7" fill="var(--accent)"/>
+        <text x="66" y="14" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink-2)">157 mm</text>
+      </svg>
+      <div class="eyebrow">Two capsules · one 2022 phone · public benchmarks</div>
+    </div>
+    <h1>DareDevil</h1>
+    <p class="thesis">What can two microphones on an old phone tell you about where people are speaking from, using only signal processing?</p>
+    <p class="lede">DareDevil is a live app that draws what a two-microphone phone hears: each sound where the pair heard it come from, speech as a bubble and everything else as rings. It's built to show the limits of the math honestly, in a room it has never heard, with nothing beyond the phone's own two capsules. These are its first results on public data with independent ground truth: 16 real rooms in STARSS23, tracked walking talkers in LOCATA, and labelled echoes in dEchorate.</p>
+    <ul class="facts">
+      <li><b>Device</b> Galaxy Z Flip4, unfolded</li>
+      <li><b>Pair</b> 2 capsules, 157 mm</li>
+      <li><b>Capture</b> raw, 48 kHz</li>
+      <li><b>Bearing</b> GCC-PHAT and a precedence onset read</li>
+      <li><b>Author</b> <a href="https://github.com/jaysoma">jaysoma</a></li>
+    </ul>
+  </header>
+
+  <div class="letter">
+    <p><b>For researchers working on speaker orientation and localisation.</b> In July, Turi, Politis, Sudarsanam and Virtanen published <a href="https://arxiv.org/abs/2607.02129">"Speaker head orientation estimation with a single microphone array using phase spectrogram features"</a>, motivated in part by a device telling which device a command is directed to. I'm working from the other end: a bearing from two capsules, in plain signal processing. One result below ties the two together. On LOCATA, at the phone's spacing, a talker alone and facing the array was never misread; alone and facing away, most reads were more than 10° off (Finding 3). Facing decides when a two-mic bearing can be trusted. Much of this was measured on STARSS23, from Tampere University and Sony. I'd value anyone's eyes on it, and on what survives when an array is cut down to a single pair.</p>
+  </div>
+
+  <section class="finding" aria-labelledby="f1">
+    <div class="n">FINDING 1 · STARSS23, MIC FORMAT, ALL 6 PAIRS</div>
+    <h3 id="f1">Pairwise GCC-PHAT on STARSS23 reads wide, and the rigid sphere accounts for all of it</h3>
+    <p>On 1,422 single-talker speech onsets across 16 rooms, GCC-PHAT on each capsule pair of the MIC format leans away from 0°: about +5° at 30–45° and +19° at 45–60°. Pushing the same directions through the rigid-sphere response in the STARSS23 README, with no room at all, reproduces that lean band by band to within about 1°. Real rooms add essentially no lean to GCC-PHAT here. Diffraction around the baffle lengthens the delay between capsules, and the free-field formula reads that as a wider angle.</p>
+    <div class="legend"><span><i style="border-color:var(--s1)"></i>GCC-PHAT, real rooms</span><span><i style="border-color:var(--ink-2);border-top-style:dashed"></i>rigid sphere, no room (simulated)</span><span><i style="border-color:var(--ref);border-top-style:dotted"></i>free field, no room</span></div>
+    <div class="chart" id="c-sphere"></div>
+    <div class="src">Signed error along the truth's side, pairs 1–2 and 3–4; 60–90° has only 42 reads. Every later STARSS23 score is measured against this sphere reference, so the array's lean isn't counted as error. Source: <a href="https://github.com/jaysoma/DareDevil/blob/main/results/starss23/report.md">results/starss23/report.md</a>, <a href="https://github.com/jaysoma/DareDevil/blob/main/harness/starss23/analysis/sphere_sim.py">sphere_sim.py</a></div>
+  </section>
+
+  <section class="finding" aria-labelledby="f2">
+    <div class="n">FINDING 2 · STARSS23, EVERY ONSET OF EVERY CLASS</div>
+    <h3 id="f2">When the bearing is wrong, it has usually locked onto another sound that was also there</h3>
+    <p>Every labelled onset in 16 rooms was read through all six pairs: 44,988 reads. Three in four speech onsets had another labelled source active around them. Of GCC-PHAT's wrong speech reads (more than 10° off), 54% sit on the direction that filled the half-second before the onset, or on another labelled source, each at about 2.5 times its chance rate. That's two-thirds of its outliers. Most wrong reads are wrong from the start: 83% were already wrong at the first 43 ms draw.</p>
+    <div class="legend"><span><i style="border-color:var(--s1);border-top-width:8px;width:14px"></i>share of GCC-PHAT's wrong speech reads</span><span><i style="border-color:var(--ink);border-top-width:2px;width:2px;height:12px;border-top:none;border-left:2px solid var(--ink)"></i>chance rate</span></div>
+    <div class="chart" id="c-classes"></div>
+    <div class="src">14,182 wrong reads of 30,710 in scope. A read can carry several classes, so the bars add to more than 100%. Source: <a href="https://github.com/jaysoma/DareDevil/blob/main/results/batchA/starss23/report.md">results/batchA/starss23/report.md</a></div>
+  </section>
+
+  <section class="finding" aria-labelledby="f3">
+    <div class="n">FINDING 3 · LOCATA, TRACKED TALKERS, 160 MM PAIR</div>
+    <h3 id="f3">At the phone's spacing, a talker alone and facing the array was never misread</h3>
+    <p>LOCATA's DICIT array has a pair 160 mm apart, against the phone's 157 mm, and OptiTrack gives each talker's head position and facing. On 341 onsets from walking talkers, GCC-PHAT missed by more than 10° on none of the 52 where the talker was alone and facing the array. The two causes of wrong reads were the other talker speaking during the read, and the talker facing away: with the direct sound turned away, the reflections take over.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Who else was talking</th><th class="r">facing the array (within 60°)</th><th class="r">facing away (over 120°)</th></tr></thead>
+      <tbody>
+        <tr><td>Nobody</td><td class="r"><span class="cell-hi">0%</span> <small>n=52</small></td><td class="r">62% <small>n=16</small></td></tr>
+        <tr><td>Another talker, only in the pause before</td><td class="r">8% <small>n=25</small></td><td class="r">56% <small>n=9</small></td></tr>
+        <tr><td>Another talker, during the read</td><td class="r">21% <small>n=84</small></td><td class="r">74% <small>n=27</small></td></tr>
+      </tbody>
+    </table></div>
+    <div class="src">Share of GCC-PHAT reads more than 10° off. One room; the facing-away cells are small. Source: <a href="https://github.com/jaysoma/DareDevil/blob/main/results/batchA/locata/report.md">results/batchA/locata/report.md</a></div>
+  </section>
+
+  <section class="finding" aria-labelledby="f4">
+    <div class="n">FINDING 4 · PRECEDENCE READ, STARSS23 AND IMAGE-SOURCE ROOMS</div>
+    <h3 id="f4">A precedence read is pulled toward 0° when its gate opens late, and counting only clean, rising windows removes most of the pull</h3>
+    <p>The onset read (3 ms windows, 1 ms apart; the first direction to recur wins) is within 1° in free field. In real rooms it read up to 19° nearer 0° than GCC-PHAT on the same cuts. Ablations in simulated rooms showed the cause: in noise, after a previous phrase's tail, or with the onset label off by up to 100 ms, the energy gate opens tens of ms into the word. By then the floor, ceiling, front-wall and back-wall images, all nearer 0° than the talker for a horizontal pair, are in every window. Counting only windows that are rising and dominated by one wave fixed most of it on the real cuts.</p>
+    <div class="nums">
+      <div class="num"><b>15.0° → 10.8°</b><span>median error, all 8,420 reads</span></div>
+      <div class="num"><b>37% → 47%</b><span>within 10° of the tracker</span></div>
+      <div class="num"><b>72%</b><span>of reads find a clean onset; those read 8.6°, beside GCC-PHAT's 9.2°</span></div>
+    </div>
+    <div class="legend"><span><i style="border-color:var(--s2);border-top-style:dashed"></i>before</span><span><i style="border-color:var(--s2);border-top-width:3.5px"></i>after, clean onset (72%)</span><span><i style="border-color:var(--s2);border-top-style:dotted"></i>after, the rest (28%)</span></div>
+    <div class="chart" id="c-pull"></div>
+    <div class="src">Precedence read minus GCC-PHAT on the same cut, along the truth's side. Source: <a href="https://github.com/jaysoma/DareDevil/blob/main/results/angle2_pull.md">results/angle2_pull.md</a></div>
+  </section>
+
+  <section class="finding" aria-labelledby="f5">
+    <div class="n">FINDING 5 · SCORED UNDER A STATED RULE</div>
+    <h3 id="f5">Accuracy of the working machinery, with every outlier set aside and catalogued, never hidden</h3>
+    <p>Only true angles within ±75° are scored. A read off by more than 36° is set aside as an outlier, and a scenario (one room through one pair, one talker in one recording, or one dEchorate setup) whose remaining reads average more than 22.5° off is dropped whole. The share kept is always reported beside the score, and every outlier is catalogued by kind: mirror, end-fire pin, echo capture, another source, the pause's direction.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Data</th><th>Scheme</th><th class="r">kept</th><th class="r">mean</th><th class="r">median</th><th class="r">within 10°</th></tr></thead>
+      <tbody>
+        <tr><td>STARSS23, single talker</td><td>GCC-PHAT</td><td class="r">90.1%</td><td class="r">10.6°</td><td class="r">7.6°</td><td class="r">60%</td></tr>
+        <tr><td>STARSS23, single talker</td><td>precedence, fixed</td><td class="r">85.6%</td><td class="r">11.0°</td><td class="r">8.4°</td><td class="r">56%</td></tr>
+        <tr><td>STARSS23, all speech, vs sphere</td><td>GCC-PHAT</td><td class="r">82.3%</td><td class="r">9.5°</td><td class="r">6.4°</td><td class="r">65%</td></tr>
+        <tr><td>LOCATA, 160 mm pair</td><td>GCC-PHAT</td><td class="r">87.7%</td><td class="r">7.5°</td><td class="r">5.2°</td><td class="r">83%</td></tr>
+        <tr><td>LOCATA, 160 mm pair</td><td>precedence, fixed</td><td class="r">81.1%</td><td class="r">7.0°</td><td class="r">4.8°</td><td class="r">82%</td></tr>
+        <tr><td>dEchorate, 155 mm pairs</td><td>GCC-PHAT</td><td class="r">95.7%</td><td class="r">3.1°</td><td class="r">1.2°</td><td class="r">92%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="src">The first two rows are against the geometric angle, so they include the sphere's lean. dEchorate is a loudspeaker in a lab room, scored against its RIRs' measured direct-path delays. Sources: <a href="https://github.com/jaysoma/DareDevil/blob/main/results/clean/report.md">results/clean/report.md</a>, <a href="https://github.com/jaysoma/DareDevil/blob/main/results/batchA/starss23/report.md">batchA/starss23</a>, <a href="https://github.com/jaysoma/DareDevil/blob/main/results/batchA/locata/report.md">batchA/locata</a>, <a href="https://github.com/jaysoma/DareDevil/blob/main/harness/scoring/clean_score.py">clean_score.py</a></div>
+  </section>
+
+  <section class="finding" aria-labelledby="f6">
+    <div class="n">FINDING 6 · THE PHONE'S 0° IN SILENCE</div>
+    <h3 id="f6">The phone's pull toward 0° in pauses looks like a signal common to both channels, not the room</h3>
+    <p>In the phone's own recordings, 44% of tracked directions during pauses sit within 6° of 0°, and the share rises with frame strength: 13% of the weakest quarter of pause frames, 30% of the strongest. In STARSS23's pauses, GCC-PHAT peaks land within 6° of 0° 10.5% of the time, against 9.5% for a null with no coherence between capsules, although low-frequency diffuse noise is present in every room (coherence 0.99 below 300 Hz). A controlled lab run with human speech then added one cause at a time. A signal identical in both channels produced the 0° pull (76–90% of GCC-PHAT's wrong reads under it), and diffuse noise almost never did (0–5%). That points at the phone's capture path; the test on its own audio is written and waiting.</p>
+    <p>Along the way: with two capsules, ODAS reports exactly 0.0° for any zero-delay win, because its scan sphere's first point is the pole and ties keep the first point.</p>
+    <div class="src">Sources: <a href="https://github.com/jaysoma/DareDevil/blob/main/results/zero_deg/report.md">results/zero_deg/report.md</a>, <a href="https://github.com/jaysoma/DareDevil/blob/main/results/batchA/lab/report.md">results/batchA/lab/report.md</a></div>
+  </section>
+
+  <section class="finding" aria-labelledby="f7">
+    <div class="n">FINDING 7 · WHICH READS TO TRUST</div>
+    <h3 id="f7">The app needs to know which reads are right, and the clues are there, but none is enough alone</h3>
+    <p>A live display doesn't need every read to be right. It needs to draw the right ones solid and dim the rest. On STARSS23 single-talker onsets, the two schemes agreeing within 5° with a clean onset picks out about a third of the reads, and those are much better than the rest.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Reads</th><th class="r">share</th><th class="r">GCC-PHAT median</th><th class="r">within 10°</th></tr></thead>
+      <tbody>
+        <tr><td>Agree within 5°, clean onset</td><td class="r">35%</td><td class="r">6.0°</td><td class="r">69%</td></tr>
+        <tr><td>Disagree</td><td class="r">59%</td><td class="r">11.4°</td><td class="r">45%</td></tr>
+        <tr><td>No clean onset</td><td class="r">28%</td><td class="r">14.0°</td><td class="r">38%</td></tr>
+      </tbody>
+    </table></div>
+    <p>The lab adds a caution. Under a steady directional source or a signal common to both channels, both schemes lock onto the same wrong direction, so agreement can't be the whole rule. In the lab, dimming any read within 10° of a strongly directional pause caught 83% of GCC-PHAT's wrong reads, and dimmed 10% of its right ones. On LOCATA, the best single clue, the margin between GCC-PHAT's first and second peaks, separates right from wrong at an AUC of 0.72. The rule will be chosen on one dataset, tested untouched on the other, and run once on the STARSS23 evaluation set.</p>
+    <div class="src">The table's rows overlap; shares are of all 8,420 reads, raw error against the geometric angle. Sources: <a href="https://github.com/jaysoma/DareDevil/blob/main/harness/scoring/agree_table.py">agree_table.py</a>, <a href="https://github.com/jaysoma/DareDevil/blob/main/results/batchA/lab/report.md">batchA/lab</a>, <a href="https://github.com/jaysoma/DareDevil/blob/main/results/batchA/locata/report.md">batchA/locata</a></div>
+  </section>
+
+  <section class="finding" aria-labelledby="f8">
+    <div class="n">FINDING 8 · WHAT DIDN'T WORK</div>
+    <h3 id="f8">Negative results, stated plainly</h3>
+    <ul class="plain">
+      <li><b>A scan's second and third peaks aren't a backup for the talker.</b> When GCC-PHAT's first angle misses on STARSS23, its second or third peak lands on the talker 5.0% of the time, against 14.6% by chance.</li>
+      <li><b>The precedence read's "first reflection" isn't the reflection.</b> On dEchorate's labelled echoes it hits the earliest distinct echo 16% of the time, against 12% by chance, and it arrives a median 3 ms after the onset in every wall setting, including all-absorbing. That's the window length, not the room.</li>
+      <li><b>Spatial aliasing caused no wrong locks in the lab,</b> at 157 mm or 69 mm, and raising the analysis band's low edge only hurt, in the reflective room.</li>
+      <li><b>For relative range, only the direct-to-reverberant ratio is consistent.</b> On LOCATA it orders 78% of pairs of reads twice as far apart, and its spread at one spot (1.3 dB) is about half the step. The first 5 ms of level is at chance (54%), and a cepstral echo lag finds the pitch period, not the floor.</li>
+    </ul>
+    <div class="src">Sources: <a href="https://github.com/jaysoma/DareDevil/blob/main/results/starss23/report.md">starss23</a>, <a href="https://github.com/jaysoma/DareDevil/blob/main/results/dechorate/report.md">dechorate</a>, <a href="https://github.com/jaysoma/DareDevil/blob/main/results/batchA/lab/report.md">batchA/lab</a>, <a href="https://github.com/jaysoma/DareDevil/blob/main/results/batchA/locata/report.md">batchA/locata</a></div>
+  </section>
+
+  <section class="finding" aria-labelledby="f9">
+    <div class="n">LOOK INSIDE</div>
+    <h3 id="f9">What DeepFilterNet3 keeps, frame by frame</h3>
+    <p>DeepFilterNet3's <code>enhance()</code> returns only cleaned audio. Called directly, it also gives its 32-band gain mask and its own speech-to-noise estimate, <code>lsnr</code>. On the author's recordings, <code>lsnr</code> crossed 0 dB at each speech start, close to the app's onset detector, and DFN3's two-frame look-ahead makes it a speech gate about 30 ms behind live. The Mask View lets you scrub one 194 s walk.</p>
+    <p><a href="maskview.html">Open the Mask View →</a></p>
+  </section>
+
+  <section class="finding" aria-labelledby="f10">
+    <div class="n">NEXT</div>
+    <h3 id="f10">Planned, in order</h3>
+    <ul class="plain">
+      <li><b>Commit or dim:</b> the simplest rule that predicts a correct read, chosen on STARSS23 and tested untouched on LOCATA, then the other way round, then run once on the STARSS23 evaluation set, which nothing has touched.</li>
+      <li><b>"That came off the wall":</b> first-reflection angle and lag, from a direct-path-cancelling read, scored against dEchorate's labelled echoes.</li>
+      <li><b>Orientation from reflections:</b> as a talker turns, the echoes don't move, but the faced wall's echo gets brighter. Planned on LOCATA's tracked head orientation.</li>
+      <li><b>Several talkers at once:</b> streaming diarization to say who is speaking, with the bearing taken at each talker's own onsets.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Everything is reproducible from <a href="https://github.com/jaysoma/DareDevil">github.com/jaysoma/DareDevil</a>: harnesses, per-read records and truth (no audio). Data: <a href="https://zenodo.org/records/7880637">STARSS23</a> (Politis et al., Tampere University and Sony), <a href="https://zenodo.org/record/3630471">LOCATA</a> (Evers et al.), <a href="https://zenodo.org/records/6576203">dEchorate</a> (Di Carlo et al.), EARS speech (Richter et al.). Tools: <a href="https://github.com/Rikorose/DeepFilterNet">DeepFilterNet</a>, <a href="https://github.com/introlab/odas">ODAS</a>.</p>
+    <p>The analysis harnesses and runs were built with Claude (Anthropic) cloud sessions, under the author's direction. Every number above links to the report and script that produced it.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(t, a, p) { var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; }
+  function txt(p, x, y, s, anchor, fill) { var e = el('text', { x: x, y: y, 'text-anchor': anchor || 'middle', 'font-family': 'IBM Plex Mono, monospace', 'font-size': 11, fill: fill || 'var(--ink-2)' }, p); e.textContent = s; return e; }
+  function width(host) { return Math.max(300, Math.min(860, host.clientWidth || 640)); }
+  function lines(id, ymin, ymax, ticks, series, unit) {
+    var host = document.getElementById(id); host.textContent = '';
+    var W = width(host), H = 230, x0 = 46, x1 = W - 12, y0 = 10, y1 = H - 30;
+    var B = ['0\u201315\u00b0', '15\u201330\u00b0', '30\u201345\u00b0', '45\u201360\u00b0', '60\u201390\u00b0'];
+    var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, width: W, height: H, role: 'img' }, host);
+    var sx = function (i) { return x0 + (x1 - x0) * (i + .5) / B.length; }, sy = function (v) { return y1 - (y1 - y0) * (v - ymin) / (ymax - ymin); };
+    ticks.forEach(function (t) {
+      el('line', { x1: x0, x2: x1, y1: sy(t), y2: sy(t), stroke: 'var(--rule)', 'stroke-width': t === 0 ? 1.4 : .8 }, svg);
+      txt(svg, x0 - 6, sy(t) + 4, (t > 0 ? '+' : '') + t + unit, 'end');
+    });
+    B.forEach(function (b, i) { txt(svg, sx(i), H - 10, b); });
+    series.forEach(function (s) {
+      var d = s.v.map(function (v, i) { return (i ? 'L' : 'M') + sx(i).toFixed(1) + ' ' + sy(v).toFixed(1); }).join(' ');
+      el('path', { d: d, fill: 'none', stroke: s.c, 'stroke-width': s.w || 2.2, 'stroke-dasharray': s.dash || '', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, svg);
+      if (s.dots) s.v.forEach(function (v, i) { el('circle', { cx: sx(i), cy: sy(v), r: 4, fill: s.c, stroke: 'var(--paper)', 'stroke-width': 2 }, svg); });
+    });
+    var t = el('title', {}, svg); t.textContent = series.map(function (s) { return s.name + ': ' + s.v.join(', '); }).join('; ');
+  }
+  function bars(id, rows, max) {
+    var host = document.getElementById(id); host.textContent = '';
+    var W = width(host), narrow = W < 560, x0 = narrow ? 0 : 230, x1 = W - 52, lab = narrow ? 16 : 0, rowH = narrow ? 40 : 30;
+    var H = rows.length * rowH + 22, h = 16;
+    var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, width: W, height: H, role: 'img' }, host);
+    var sx = function (v) { return x0 + (x1 - x0) * v / max; };
+    [0, 20, 40].forEach(function (t) { el('line', { x1: sx(t), x2: sx(t), y1: 2, y2: H - 18, stroke: 'var(--rule)', 'stroke-width': .8 }, svg); txt(svg, sx(t), H - 4, t + '%', t === 0 ? 'start' : 'middle'); });
+    rows.forEach(function (r, i) {
+      var y = 4 + i * rowH + lab;
+      if (narrow) txt(svg, 0, y - 5, r.name, 'start', 'var(--ink)'); else txt(svg, x0 - 10, y + 12, r.name, 'end', 'var(--ink)');
+      el('rect', { x: x0, y: y, width: Math.max(1.5, sx(r.v) - x0), height: h, rx: 3, fill: r.hi ? 'var(--s1)' : 'var(--ref)' }, svg);
+      txt(svg, sx(r.v) + 6, y + 12, r.v.toFixed(1) + '%', 'start', 'var(--ink)');
+      if (r.chance != null) el('line', { x1: sx(r.chance), x2: sx(r.chance), y1: y - 3, y2: y + h + 3, stroke: 'var(--ink)', 'stroke-width': 2 }, svg);
+    });
+    var t = el('title', {}, svg); t.textContent = rows.map(function (r) { return r.name + ' ' + r.v + '%' + (r.chance != null ? ' (chance ' + r.chance + '%)' : ''); }).join('; ');
+  }
+  function draw() {
+    lines('c-sphere', -5, 30, [0, 10, 20, 30], [
+      { name: 'free field', v: [0, 0, -0.2, -0.3, -0.8], c: 'var(--ref)', dash: '2 5' },
+      { name: 'rigid sphere, no room', v: [0.3, 1.1, 4.9, 18.9, 27.4], c: 'var(--ink-2)', dash: '7 5' },
+      { name: 'GCC-PHAT, real rooms', v: [1.7, 1.6, 5.4, 19.0, 26.8], c: 'var(--s1)', dots: true }
+    ], '\u00b0');
+    bars('c-classes', [
+      { name: 'either of the next two', v: 53.7, hi: true },
+      { name: 'the pause\u2019s direction', v: 40.9, chance: 16.1, hi: true },
+      { name: 'another labelled source', v: 36.6, chance: 15.1, hi: true },
+      { name: 'right at 43 ms, then drifted', v: 17.2 },
+      { name: 'talker was peak 2 or 3', v: 16.6, chance: 12.4 },
+      { name: 'pinned at end-fire', v: 15.7 },
+      { name: 'pulled to 0\u00b0', v: 6.7 },
+      { name: 'mirror image', v: 6.1 },
+      { name: 'aliasing partner', v: 0.7 },
+      { name: 'none of these', v: 26.0 }
+    ], 60);
+    lines('c-pull', -32, 4, [0, -10, -20, -30], [
+      { name: 'after, the rest', v: [0.1, -2.4, -10.8, -12.0, -29.9], c: 'var(--s2)', dash: '2 5' },
+      { name: 'before', v: [-0.2, -1.7, -4.3, -7.6, -19.2], c: 'var(--s2)', dash: '7 5' },
+      { name: 'after, clean onset', v: [0.2, -0.5, -0.6, -1.6, 0], c: 'var(--s2)', w: 3.5, dots: true }
+    ], '\u00b0');
+  }
+  draw();
+  var lastW = 0, timer;
+  window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(function () { var w = document.getElementById('c-sphere').clientWidth; if (w !== lastW) { lastW = w; draw(); } }, 150); });
+})();
+</script>
+
+</html>

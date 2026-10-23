@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>walk-205043 Mask View</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a lab-bench page. Prose on cool paper; the instrument itself is a dark screen in both themes, in the
+   palette of DareDevil's Render page (its mask panel, its amber lsnr, its green mask mean). */
+:root {
+  --paper: #f3f4f7;
+  --paper-2: #e8eaf0;
+  --ink: #181a22;
+  --ink-2: #4a4e5c;
+  --rule: #cfd3dd;
+  --link: #0e6b63;
+  --screen: #151520;
+  --screen-2: #1c1c2a;
+  --screen-ink: #c9c9d6;
+  --screen-dim: #7d7d92;
+  --lsnr: #f59e0b;
+  --mask: #34d399;
+  --onset: #e7e7f0;
+  --gate: #8a8aa2;
+  --focus: #f59e0b;
+  --font-display: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1016; --paper-2: #171822; --ink: #e4e5ec; --ink-2: #a3a6b4; --rule: #2a2c3a; --link: #5eead4;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1016; --paper-2: #171822; --ink: #e4e5ec; --ink-2: #a3a6b4; --rule: #2a2c3a; --link: #5eead4;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+}
+.wrap { max-width: 1080px; margin: 0 auto; display: grid; gap: 22px; }
+a { color: var(--link); }
+a:focus-visible, button:focus-visible, input:focus-visible, li[tabindex]:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+header { display: grid; gap: 8px; }
+.eyebrow { font-family: var(--font-data); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
+h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 5vw, 44px); line-height: 1.05; margin: 0; text-wrap: balance; letter-spacing: .005em; }
+.lede { max-width: 68ch; color: var(--ink-2); margin: 0; }
+.specs { display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--font-data); font-size: 12.5px; color: var(--ink-2); margin: 0; padding: 0; list-style: none; }
+.specs li { white-space: nowrap; }
+.specs b { color: var(--ink); font-weight: 500; }
+
+.bench { background: var(--screen); color: var(--screen-ink); border-radius: 10px; padding: 14px 14px 12px; display: grid; gap: 10px; min-width: 0; }
+.bench h2 { font-family: var(--font-data); font-weight: 500; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--screen-dim); margin: 0; }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-family: var(--font-data); font-size: 12px; color: var(--screen-ink); }
+.legend i { display: inline-block; width: 14px; height: 3px; vertical-align: middle; margin-right: 6px; border-radius: 2px; }
+.legend .heat { width: 46px; height: 8px; background: linear-gradient(90deg, rgb(20,24,48), rgb(79,77,108), rgb(152,130,138), rgb(255,235,108)); }
+canvas { display: block; width: 100%; touch-action: none; }
+#ov { height: 64px; cursor: pointer; border-radius: 4px; }
+#det { height: 300px; border-radius: 4px; cursor: crosshair; }
+#strip { height: 70px; border-radius: 4px; }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; font-family: var(--font-data); font-size: 12.5px; }
+.controls button { font: inherit; color: var(--screen-ink); background: var(--screen-2); border: 1px solid #34344a; border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+.controls button[aria-pressed="true"] { border-color: var(--lsnr); color: #fff; }
+.seg { display: inline-flex; border: 1px solid #34344a; border-radius: 6px; overflow: hidden; }
+.seg button { border: 0; border-radius: 0; padding: 6px 10px; }
+.seg button + button { border-left: 1px solid #34344a; }
+#pos { flex: 1 1 220px; min-width: 0; accent-color: var(--lsnr); }
+#clock { font-variant-numeric: tabular-nums; min-width: 12ch; }
+.readout { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 8px; }
+.readout div { background: var(--screen-2); border-radius: 6px; padding: 7px 9px; min-width: 0; }
+.readout span { display: block; font-family: var(--font-data); font-size: 11px; color: var(--screen-dim); letter-spacing: .04em; text-transform: uppercase; }
+.readout b { font-family: var(--font-data); font-weight: 500; font-size: 15px; font-variant-numeric: tabular-nums; color: #fff; }
+.said { font-family: var(--font-data); font-size: 13px; color: var(--screen-ink); min-height: 2.6em; margin: 0; }
+.said em { font-style: normal; color: var(--screen-dim); }
+
+.cols { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 22px; }
+@media (max-width: 760px) { .cols { grid-template-columns: minmax(0, 1fr); } #det { height: 240px; } }
+section h2 { font-family: var(--font-display); font-weight: 600; font-size: 22px; margin: 0 0 8px; text-wrap: balance; }
+section p, section li { max-width: 68ch; }
+section ul { padding-left: 18px; margin: 0; display: grid; gap: 6px; }
+.caution { font-size: 13.5px; color: var(--ink-2); border-left: 2px solid var(--rule); padding-left: 10px; margin: 10px 0 0; }
+.transcript { list-style: none; padding: 0; margin: 0; max-height: 420px; overflow-y: auto; border: 1px solid var(--rule); border-radius: 8px; background: var(--paper-2); }
+.transcript li { display: grid; grid-template-columns: 5.2ch minmax(0, 1fr); gap: 10px; padding: 6px 10px; border-bottom: 1px solid var(--rule); cursor: pointer; font-size: 14px; }
+.transcript li:last-child { border-bottom: 0; }
+.transcript li time { font-family: var(--font-data); font-size: 12.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; padding-top: 1px; }
+.transcript li.now { background: color-mix(in srgb, var(--lsnr) 18%, transparent); }
+.transcript li.phone { color: var(--ink-2); font-style: italic; }
+footer { font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--rule); padding-top: 12px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+#status { font-family: var(--font-data); font-size: 12.5px; color: var(--screen-dim); }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><a href="index.html" style="color:inherit">← DareDevil results</a> · DeepFilterNet3 internals · one walk</div>
+    <h1>walk-205043 Mask View</h1>
+    <p class="lede">A Galaxy Z Flip4 listened in Jay's living room for 194 seconds while he talked and walked around it. DeepFilterNet3 normally hands back only cleaned audio and throws the rest away. Here its inner outputs are kept: the 32-band gain map it would apply (how much of each band it judged worth keeping) and its own running estimate of speech-to-noise, <code>lsnr</code>. Drag the window, press play, or click any line of the transcript.</p>
+    <ul class="specs">
+      <li><b>Phone</b> Galaxy Z Flip4, unfolded</li>
+      <li><b>Pair</b> 2 capsules, 157 mm</li>
+      <li><b>Capture</b> raw, 48 kHz</li>
+      <li><b>Model</b> DFN3 on the L+R mixdown</li>
+      <li><b>Grid</b> 10 ms × 32 ERB bands</li>
+      <li><b>Length</b> 193.7 s · 19,366 frames</li>
+    </ul>
+  </header>
+
+  <div class="bench" aria-label="Mask viewer">
+    <div class="row" style="justify-content:space-between">
+      <h2>Whole walk · lsnr envelope, onsets, phrases</h2>
+      <span id="status">loading the bake…</span>
+    </div>
+    <canvas id="ov" aria-label="Whole-walk overview; click or drag to move the window"></canvas>
+    <div class="row" style="justify-content:space-between">
+      <h2>Window · mean gain and lsnr</h2>
+      <div class="legend">
+        <span><i style="background:var(--mask)"></i>mean gain (0–1, left)</span>
+        <span><i style="background:var(--lsnr)"></i>lsnr (dB, right; 0 dB dashed)</span>
+        <span><i style="background:var(--onset)"></i>MF onset</span>
+      </div>
+    </div>
+    <canvas id="det" aria-label="Mean gain and lsnr for the current window"></canvas>
+    <div class="row" style="justify-content:space-between">
+      <h2>Band means · LF 0.1–1 kHz · MF 1–4 kHz · HF 4–8.5 kHz · tilt HF/LF</h2>
+      <div class="legend">
+        <span><i style="background:#7dd3fc"></i>LF</span>
+        <span><i style="background:#c4b5fd"></i>MF</span>
+        <span><i style="background:#fda4af"></i>HF</span>
+        <span><i style="background:#e7e7f0"></i>tilt (dB)</span>
+      </div>
+    </div>
+    <canvas id="strip" aria-label="LF, MF and HF mean gains and the HF to LF tilt"></canvas>
+    <div class="controls">
+      <button id="play" type="button" aria-pressed="false">Play</button>
+      <div class="seg" role="group" aria-label="Window length">
+        <button type="button" data-win="5">5 s</button><button type="button" data-win="10" aria-pressed="true">10 s</button><button type="button" data-win="20">20 s</button>
+      </div>
+      <label for="pos" class="sr">Position</label>
+      <input id="pos" type="range" min="0" max="193.6" step="0.01" value="0">
+      <span id="clock">0.00 s</span>
+    </div>
+    <div class="readout" aria-live="polite">
+      <div><span>time</span><b id="r-t">–</b></div>
+      <div><span>lsnr</span><b id="r-l">–</b></div>
+      <div><span>mean gain</span><b id="r-m">–</b></div>
+      <div><span>LF · MF · HF</span><b id="r-b">–</b></div>
+      <div><span>tilt HF/LF</span><b id="r-tilt">–</b></div>
+    </div>
+    <p class="said" id="said"><em>Transcript at the cursor appears here.</em></p>
+  </div>
+
+  <div class="cols">
+    <section>
+      <h2>What to look for</h2>
+      <ul>
+        <li><b>lsnr against the onsets.</b> The amber line is DFN's own guess at speech-to-noise. Watch where it crosses the dashed 0 dB line relative to the white onset marks from the app's own onset detector; the grey ticks are when its gate decided.</li>
+        <li><b>Where the gain map lights up.</b> Bright bands are what DFN kept. Across this walk the most-kept bands sit around 1–2.5 kHz, where speech carries its formants.</li>
+        <li><b>The phone talking.</b> At 6.08 s and 14.36 s the phone itself says "Scanning heartbeat signature" and "Begin test recording". It's speech to DFN, from a speaker between the capsules.</li>
+        <li><b>A quiet tape.</b> Across the walk, lsnr averages −4.4 dB and sits above 0 dB in 32% of frames. Jay's raw tapes sit around −48 to −51 dBFS, quiet enough that DFN partly treats them as noise.</li>
+      </ul>
+      <h2 style="margin-top:20px">Jay's bench notes</h2>
+      <ul>
+        <li>lsnr as a speech track worked on his house tapes: it crossed 0 dB at every speech start, within 16 ms of the MF onset, and never in gaps.</li>
+        <li>The mask as a speech track missed a soft first word and opened on footsteps.</li>
+        <li>Weighting the 5 ms angle read by the mask strengthened the ghost direction instead of the voice.</li>
+        <li>Nothing normalises the input level. On LOCATA, normalising raised lsnr from −5.4 to +3.3 dB.</li>
+      </ul>
+      <p class="caution">Jay's caution: anything upstream in his pipeline could explain these. They're being re-tested on public datasets with independent truth.</p>
+    </section>
+    <section>
+      <h2>Transcript</h2>
+      <ol class="transcript" id="tx" aria-label="Transcript; select a line to jump there"></ol>
+      <p class="caution" style="margin-top:12px">About this bake: the raw and per-band level tracks are left out. The bake stored them on a scale that clipped everything above about −51 dBFS, so most frames sat on the ceiling. <code>maskview.py</code> now uses a wider range, and the next bake brings them back.</p>
+    </section>
+  </div>
+
+  <footer>
+    <span>Code and data: <a href="https://github.com/jaysoma/DareDevil/tree/main/dfn">github.com/jaysoma/DareDevil/dfn</a></span>
+    <span>Live page: <a href="https://github.com/jaysoma/DareDevil/tree/main/render">render/</a></span>
+    <span>Model: <a href="https://github.com/Rikorose/DeepFilterNet">DeepFilterNet</a> by Hendrik Schröter et al. (MIT / Apache-2.0), unmodified</span>
+  </footer>
+</div>
+
+<style>.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
+<script>
+(function () {
+  var D = null, N = 0, FM = 0.01, G = null, LS = null, MM = null, LF = null, MF = null, HF = null, TILT = null;
+  var LSLO = -16, LSHI = 36;
+  var view = { t0: 0, win: 10 }, cursor = 0, playing = false, last = 0;
+  var ov = document.getElementById('ov'), det = document.getElementById('det'), strip = document.getElementById('strip');
+  var pos = document.getElementById('pos'), clock = document.getElementById('clock'), playBtn = document.getElementById('play');
+  var status = document.getElementById('status');
+
+  function b64(s) { var r = atob(s), a = new Uint8Array(r.length); for (var i = 0; i < r.length; i++) a[i] = r.charCodeAt(i); return a; }
+  function dec(key, lo, hi) { var a = b64(D[key]), o = new Float32Array(a.length); for (var i = 0; i < a.length; i++) o[i] = lo + a[i] / 255 * (hi - lo); return o; }
+  function fit(c) { var dpr = Math.min(2, window.devicePixelRatio || 1), w = Math.max(1, Math.round(c.clientWidth * dpr)), h = Math.max(1, Math.round(c.clientHeight * dpr)); if (c.width !== w || c.height !== h) { c.width = w; c.height = h; } return dpr; }
+  function heat(v) { return [Math.round(20 + 235 * v * v), Math.round(24 + 211 * v), Math.round(48 + 120 * v - 60 * v * v)]; }
+  function fmt(t) { return t.toFixed(2) + ' s'; }
+
+  fetch('walk-205043.json').then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(function (d) {
+    D = d; N = d.n; FM = d.frame_ms / 1000; LSLO = d.lsnr_lo; LSHI = d.lsnr_hi;
+    G = b64(d.mask32); LS = dec('lsnr', d.lsnr_lo, d.lsnr_hi); MM = dec('mask_mean', 0, 1);
+    LF = new Float32Array(N); MF = new Float32Array(N); HF = new Float32Array(N); TILT = new Float32Array(N);
+    var bm = function (k, b0, b1) { var a = 0; for (var b = b0; b <= b1; b++) a += G[b * N + k]; return a / 255 / (b1 - b0 + 1); };
+    for (var k = 0; k < N; k++) { LF[k] = bm(k, 1, 9); MF[k] = bm(k, 10, 19); HF[k] = bm(k, 20, 24); TILT[k] = 20 * Math.log10(Math.max(HF[k], 1e-3) / Math.max(LF[k], 1e-3)); }
+    pos.max = (N * FM - 0.01).toFixed(2);
+    buildTranscript();
+    status.textContent = N.toLocaleString() + ' frames · ' + d.onsets.length + ' onsets · ' + d.decode.length + ' phrases';
+    setView(5.5, false); cursor = 6.2; draw();
+  }).catch(function (e) { status.textContent = 'Could not load the bake (' + e.message + '). Reload the page to try again.'; });
+
+  function setView(center, keepCursor) {
+    var T = N * FM; view.t0 = Math.max(0, Math.min(T - view.win, center - view.win / 2));
+    if (!keepCursor) cursor = Math.max(view.t0, Math.min(view.t0 + view.win, center));
+  }
+
+  function drawOverview() {
+    var dpr = fit(ov), g = ov.getContext('2d'), W = ov.width, H = ov.height, T = N * FM;
+    g.fillStyle = '#151520'; g.fillRect(0, 0, W, H);
+    var y = function (v) { return H - 6 * dpr - (v - LSLO) / (LSHI - LSLO) * (H - 12 * dpr); };
+    // the 0 dB line
+    g.strokeStyle = 'rgba(245,158,11,.35)'; g.setLineDash([4 * dpr, 4 * dpr]); g.lineWidth = dpr; g.beginPath(); g.moveTo(0, y(0)); g.lineTo(W, y(0)); g.stroke(); g.setLineDash([]);
+    // lsnr min/max envelope per pixel column
+    g.strokeStyle = '#f59e0b'; g.lineWidth = Math.max(1, dpr);
+    for (var x = 0; x < W; x++) {
+      var k0 = Math.floor(x / W * N), k1 = Math.max(k0 + 1, Math.floor((x + 1) / W * N)), lo = 1e9, hi = -1e9;
+      for (var k = k0; k < k1 && k < N; k++) { if (LS[k] < lo) lo = LS[k]; if (LS[k] > hi) hi = LS[k]; }
+      g.beginPath(); g.moveTo(x + .5, y(hi)); g.lineTo(x + .5, y(lo) + .5); g.stroke();
+    }
+    // phrases and onsets
+    g.fillStyle = 'rgba(201,201,214,.55)';
+    D.decode.forEach(function (s) { g.fillRect(s.t / T * W, 0, Math.max(1, dpr), 5 * dpr); });
+    g.fillStyle = '#e7e7f0';
+    D.onsets.forEach(function (o) { g.fillRect(o.t_s / T * W, H - 5 * dpr, Math.max(1, dpr), 5 * dpr); });
+    // the window
+    var wx = view.t0 / T * W, ww = view.win / T * W;
+    g.fillStyle = 'rgba(255,255,255,.08)'; g.fillRect(wx, 0, ww, H);
+    g.strokeStyle = 'rgba(255,255,255,.7)'; g.lineWidth = dpr; g.strokeRect(wx + .5, .5, ww - 1, H - 1);
+  }
+
+  var img = null, off = document.createElement('canvas');
+  function drawDetail() {
+    var dpr = fit(det), g = det.getContext('2d'), W = det.width, H = det.height;
+    var k0 = Math.floor(view.t0 / FM), cols = Math.round(view.win / FM), axis = 46 * dpr, plotW = W - axis - 34 * dpr, top = 6 * dpr, mh = H - top - 22 * dpr;
+    g.fillStyle = '#151520'; g.fillRect(0, 0, W, H);
+    // lines only (Jay, 2026-10-23): no gain-map pixels; mean gain on the left scale, lsnr on the right
+    g.font = (11 * dpr) + 'px "IBM Plex Mono", ui-monospace, monospace'; g.textAlign = 'right'; g.textBaseline = 'middle';
+    [0, 0.25, 0.5, 0.75, 1].forEach(function (v) {
+      var yy = top + mh - v * mh; g.fillStyle = 'rgba(255,255,255,.06)'; g.fillRect(axis, yy, plotW, 1);
+      g.fillStyle = '#34d399'; g.fillText(v.toFixed(2), axis - 6 * dpr, yy);
+    });
+    // lines: mean gain (0..1, left scale) and lsnr (right scale)
+    var xs = function (k) { return axis + (k - k0 + .5) / cols * plotW; };
+    var ym = function (v) { return top + mh - v * mh; }, yl = function (v) { return top + mh - (v - LSLO) / (LSHI - LSLO) * mh; };
+    g.strokeStyle = 'rgba(245,158,11,.45)'; g.setLineDash([5 * dpr, 4 * dpr]); g.lineWidth = dpr; g.beginPath(); g.moveTo(axis, yl(0)); g.lineTo(axis + plotW, yl(0)); g.stroke(); g.setLineDash([]);
+    [[MM, ym, '#34d399', 1.6], [LS, yl, '#f59e0b', 1.6]].forEach(function (L) {
+      g.strokeStyle = L[2]; g.lineWidth = L[3] * dpr; g.beginPath(); var on = false;
+      for (var x = 0; x < cols; x++) { var k = k0 + x; if (k < 0 || k >= N) continue; var yy = L[1](L[0][k]); if (!on) { g.moveTo(xs(k), yy); on = true; } else g.lineTo(xs(k), yy); }
+      g.stroke();
+    });
+    g.textAlign = 'left'; g.fillStyle = '#f59e0b';
+    [-10, 0, 10, 20, 30].forEach(function (v) { if (v >= LSLO && v <= LSHI) g.fillText((v > 0 ? '+' : '') + v, axis + plotW + 5 * dpr, yl(v)); });
+    // onsets and gate decisions
+    D.onsets.forEach(function (o) {
+      var x = axis + (o.t_s - view.t0) / view.win * plotW; if (x < axis || x > axis + plotW) return;
+      g.fillStyle = '#e7e7f0'; g.fillRect(x, top, Math.max(1, dpr), mh);
+      if (o.gate_t_s != null) { var gx = axis + (o.gate_t_s - view.t0) / view.win * plotW; if (gx >= axis && gx <= axis + plotW) { g.fillStyle = '#8a8aa2'; g.fillRect(gx, top + mh - 8 * dpr, Math.max(1, dpr), 8 * dpr); } }
+    });
+    // time grid
+    g.fillStyle = '#7d7d92'; g.textAlign = 'center'; g.textBaseline = 'top';
+    var step = view.win <= 5 ? 0.5 : (view.win <= 10 ? 1 : 2);
+    for (var s = Math.ceil(view.t0 / step) * step; s <= view.t0 + view.win + 1e-6; s += step) {
+      var tx = axis + (s - view.t0) / view.win * plotW; g.fillRect(tx, top + mh, 1, 4 * dpr); g.fillText(s.toFixed(step < 1 ? 1 : 0) + 's', tx, top + mh + 6 * dpr);
+    }
+    // the cursor
+    var cx = axis + (cursor - view.t0) / view.win * plotW;
+    if (cx >= axis && cx <= axis + plotW) { g.fillStyle = playing ? '#f59e0b' : '#ffffff'; g.fillRect(cx - dpr / 2, top, Math.max(1.5, dpr * 1.5), mh); }
+    det._geom = { axis: axis / dpr, plotW: plotW / dpr };
+  }
+
+  function drawStrip() {
+    var dpr = fit(strip), g = strip.getContext('2d'), W = strip.width, H = strip.height;
+    var k0 = Math.floor(view.t0 / FM), cols = Math.round(view.win / FM), axis = 46 * dpr, plotW = W - axis - 34 * dpr, top = 4 * dpr, h = H - 8 * dpr;
+    g.fillStyle = '#1c1c2a'; g.fillRect(0, 0, W, H);
+    var xs = function (k) { return axis + (k - k0 + .5) / cols * plotW; };
+    var yg = function (v) { return top + h - v * h; }, TLO = -24, THI = 12, yt = function (v) { return top + h - (Math.max(TLO, Math.min(THI, v)) - TLO) / (THI - TLO) * h; };
+    g.strokeStyle = 'rgba(255,255,255,.25)'; g.setLineDash([3 * dpr, 3 * dpr]); g.lineWidth = dpr; g.beginPath(); g.moveTo(axis, yt(0)); g.lineTo(axis + plotW, yt(0)); g.stroke(); g.setLineDash([]);
+    [[LF, yg, '#7dd3fc'], [MF, yg, '#c4b5fd'], [HF, yg, '#fda4af'], [TILT, yt, '#e7e7f0']].forEach(function (L) {
+      g.strokeStyle = L[2]; g.lineWidth = 1.3 * dpr; g.beginPath(); var on = false;
+      for (var x = 0; x < cols; x++) { var k = k0 + x; if (k < 0 || k >= N) continue; var yy = L[1](L[0][k]); if (!on) { g.moveTo(xs(k), yy); on = true; } else g.lineTo(xs(k), yy); }
+      g.stroke();
+    });
+    g.font = (11 * dpr) + 'px "IBM Plex Mono", ui-monospace, monospace'; g.fillStyle = '#7d7d92'; g.textAlign = 'right'; g.textBaseline = 'middle';
+    g.fillText('0 dB', axis - 6 * dpr, yt(0));
+    var cx = axis + (cursor - view.t0) / view.win * plotW;
+    if (cx >= axis && cx <= axis + plotW) { g.fillStyle = playing ? '#f59e0b' : '#ffffff'; g.fillRect(cx - dpr / 2, top, Math.max(1.5, dpr * 1.5), h); }
+  }
+
+  function readout() {
+    var k = Math.max(0, Math.min(N - 1, Math.floor(cursor / FM)));
+    document.getElementById('r-t').textContent = fmt(cursor);
+    document.getElementById('r-l').textContent = (LS[k] > 0 ? '+' : '') + LS[k].toFixed(1) + ' dB';
+    document.getElementById('r-m').textContent = MM[k].toFixed(2);
+    document.getElementById('r-b').textContent = LF[k].toFixed(2) + ' · ' + MF[k].toFixed(2) + ' · ' + HF[k].toFixed(2);
+    document.getElementById('r-tilt').textContent = (TILT[k] > 0 ? '+' : '') + TILT[k].toFixed(1) + ' dB';
+    var cur = null, idx = -1;
+    D.decode.forEach(function (s, i) { if (s.t <= cursor + 1e-6) { cur = s; idx = i; } });
+    var said = document.getElementById('said');
+    if (cur) { said.innerHTML = ''; var em = document.createElement('em'); em.textContent = cur.t.toFixed(2) + ' s  '; said.appendChild(em); said.appendChild(document.createTextNode(cur.text.trim())); }
+    var items = document.querySelectorAll('#tx li');
+    items.forEach(function (li, i) { li.classList.toggle('now', i === idx); });
+    clock.textContent = fmt(cursor); pos.value = cursor.toFixed(2);
+  }
+
+  function draw() { if (!D) return; drawOverview(); drawDetail(); drawStrip(); readout(); }
+
+  function buildTranscript() {
+    var ol = document.getElementById('tx');
+    D.decode.forEach(function (s) {
+      var li = document.createElement('li'); li.tabIndex = 0;
+      var tm = document.createElement('time'); tm.textContent = s.t.toFixed(1);
+      var tx = document.createElement('span'); tx.textContent = s.text.trim();
+      if (/^(Scanning heartbeat signature|Begin test recording)/.test(s.text.trim())) { li.classList.add('phone'); tx.textContent += '  (the phone)'; }
+      li.appendChild(tm); li.appendChild(tx);
+      var go = function () { stop(); setView(s.t + view.win * 0.35, true); cursor = s.t; draw(); };
+      li.addEventListener('click', go);
+      li.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+      ol.appendChild(li);
+    });
+  }
+
+  // overview: click or drag to move the window
+  var dragging = false;
+  function ovAt(e) { var r = ov.getBoundingClientRect(), t = (e.clientX - r.left) / r.width * N * FM; stop(); setView(t, false); cursor = Math.max(0, Math.min(N * FM, t)); draw(); }
+  ov.addEventListener('pointerdown', function (e) { if (!D) return; dragging = true; ov.setPointerCapture(e.pointerId); ovAt(e); });
+  ov.addEventListener('pointermove', function (e) { if (dragging) ovAt(e); });
+  ov.addEventListener('pointerup', function () { dragging = false; });
+  // detail: the cursor follows the pointer; a click pins it
+  function detT(e) { var r = det.getBoundingClientRect(), gm = det._geom || { axis: 46, plotW: r.width - 80 }; return view.t0 + (e.clientX - r.left - gm.axis) / gm.plotW * view.win; }
+  det.addEventListener('pointermove', function (e) { if (!D || playing) return; var t = detT(e); if (t >= view.t0 && t <= view.t0 + view.win) { cursor = t; draw(); } });
+  det.addEventListener('pointerdown', function (e) { if (!D) return; stop(); var t = detT(e); cursor = Math.max(view.t0, Math.min(view.t0 + view.win, t)); draw(); });
+
+  pos.addEventListener('input', function () { if (!D) return; stop(); var t = parseFloat(pos.value); setView(t, true); cursor = t; draw(); });
+  document.querySelectorAll('.seg button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.seg button').forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+      view.win = parseFloat(b.dataset.win); setView(cursor, true); draw();
+    });
+  });
+
+  function tick(ts) {
+    if (!playing) return;
+    var dt = last ? (ts - last) / 1000 : 0; last = ts; cursor += dt;
+    if (cursor >= N * FM) { cursor = N * FM - 0.01; stop(); draw(); return; }
+    if (cursor > view.t0 + view.win * 0.8 || cursor < view.t0) setView(cursor + view.win * 0.3, true);
+    draw(); requestAnimationFrame(tick);
+  }
+  function stop() { playing = false; last = 0; playBtn.textContent = 'Play'; playBtn.setAttribute('aria-pressed', 'false'); }
+  playBtn.addEventListener('click', function () {
+    if (!D) return;
+    if (playing) { stop(); draw(); return; }
+    playing = true; last = 0; playBtn.textContent = 'Pause'; playBtn.setAttribute('aria-pressed', 'true'); requestAnimationFrame(tick);
+  });
+  window.addEventListener('resize', draw);
+})();
+</script>
+
+</html>

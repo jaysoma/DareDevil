@@ -310,6 +310,13 @@ the multi-talker case. Commit to `results/batchA/locata/`.
 
 ## 11. After 9, 10 and 13: join, fix, choose commit-or-dim, then one held-out run
 
+READY 2026-10-23: 9, 10 and 13 are merged to `main`. Two things they found that this brief must respect:
+- **The two schemes agreeing isn't a safe confidence clue on its own.** Under a steady directional source or a
+  common-mode signal, both lock onto the same wrong direction (lab, section 3), and Angle2's `edge` flag is set on those
+  wrong onsets too. Test any rule that uses agreement or `edge` against the lab's coherent causes as well.
+- **Facing is a real cause on LOCATA.** Alone and facing away, GccPhat is more than 10 deg off on 62% of reads. The
+  phone has no facing truth at run time, so a rule may use only clues recorded at the moment of the read.
+
 Read all three results.
 1. **Attribute.** Match each real wrong lock from 9 and 10 to the cause whose fingerprint (from 13) it carries. Rank
    the causes by their share of wrong locks on real talkers, per dataset.

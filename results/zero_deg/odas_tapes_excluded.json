@@ -1,0 +1,148 @@
+{
+ "pause_frames": 32108,
+ "guard_s": 0.5,
+ "top_pot_near0_pct": 19.0,
+ "top_pot_exactly0_pct": 11.2,
+ "by_energy_quartile": [
+  {
+   "E": [
+    0.0,
+    0.098
+   ],
+   "near0_pct": 13.0,
+   "exactly0_pct": 7.4
+  },
+  {
+   "E": [
+    0.098,
+    0.111
+   ],
+   "near0_pct": 15.7,
+   "exactly0_pct": 8.9
+  },
+  {
+   "E": [
+    0.111,
+    0.129
+   ],
+   "near0_pct": 17.3,
+   "exactly0_pct": 10.2
+  },
+  {
+   "E": [
+    0.129,
+    null
+   ],
+   "near0_pct": 29.9,
+   "exactly0_pct": 18.4
+  }
+ ],
+ "active_tracks": 7595,
+ "active_tracks_near0_pct": 44.2,
+ "per_tape": {
+  "walk-002736": {
+   "pause_frames": 481,
+   "top_pot_near0_pct": 13.7
+  },
+  "walk-111830": {
+   "pause_frames": 1255,
+   "top_pot_near0_pct": 23.1
+  },
+  "walk-114614": {
+   "pause_frames": 477,
+   "top_pot_near0_pct": 16.8
+  },
+  "walk-125621": {
+   "pause_frames": 2475,
+   "top_pot_near0_pct": 19.2
+  },
+  "walk-154655": {
+   "pause_frames": 1751,
+   "top_pot_near0_pct": 15.8
+  },
+  "walk-155937": {
+   "pause_frames": 1099,
+   "top_pot_near0_pct": 12.7
+  },
+  "walk-165255": {
+   "pause_frames": 576,
+   "top_pot_near0_pct": 17.2
+  },
+  "walk-170343": {
+   "pause_frames": 1226,
+   "top_pot_near0_pct": 20.7
+  },
+  "walk-180036": {
+   "pause_frames": 281,
+   "top_pot_near0_pct": 8.2
+  },
+  "walk-194940": {
+   "pause_frames": 67,
+   "top_pot_near0_pct": 23.9
+  },
+  "walk-203939": {
+   "pause_frames": 1688,
+   "top_pot_near0_pct": 8.1
+  },
+  "walk-204738": {
+   "pause_frames": 170,
+   "top_pot_near0_pct": 67.1
+  },
+  "walk-204753": {
+   "pause_frames": 1171,
+   "top_pot_near0_pct": 28.3
+  },
+  "walk-205043": {
+   "pause_frames": 218,
+   "top_pot_near0_pct": 17.0
+  },
+  "walk-205606": {
+   "pause_frames": 656,
+   "top_pot_near0_pct": 19.2
+  },
+  "walk-210054": {
+   "pause_frames": 844,
+   "top_pot_near0_pct": 20.0
+  },
+  "walk-211959": {
+   "pause_frames": 5122,
+   "top_pot_near0_pct": 17.8
+  },
+  "walk-213150": {
+   "pause_frames": 2445,
+   "top_pot_near0_pct": 12.1
+  },
+  "walk-214241": {
+   "pause_frames": 401,
+   "top_pot_near0_pct": 23.9
+  },
+  "walk-214457": {
+   "pause_frames": 2644,
+   "top_pot_near0_pct": 18.2
+  },
+  "walk-221126": {
+   "pause_frames": 1917,
+   "top_pot_near0_pct": 17.7
+  },
+  "walk-223157": {
+   "pause_frames": 2305,
+   "top_pot_near0_pct": 24.7
+  },
+  "walk-224459": {
+   "pause_frames": 381,
+   "top_pot_near0_pct": 14.4
+  },
+  "walk-225729": {
+   "pause_frames": 1443,
+   "top_pot_near0_pct": 31.6
+  },
+  "walk-225905": {
+   "pause_frames": 375,
+   "top_pot_near0_pct": 39.2
+  },
+  "walk-233828": {
+   "pause_frames": 640,
+   "top_pot_near0_pct": 17.7
+  }
+ }
+}
