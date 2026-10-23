@@ -721,7 +721,9 @@ nothing else). Use `src/geonar/cdr_direct.py`'s direction-free CDR as the DRR es
      in the room. With the phone's sound power L_W known (calibrated once), the reverberant level at the phone gives
      the absorption A, so r_c = sqrt(Q A / 16 pi), and the decay gives the echo time. Together with the opener, range
      becomes rough metres.
-   - **No anechoic chamber needed.** The text-to-speech waveform is the dry signal. The phone's speaker level is
+   - **No anechoic chamber needed.** The text-to-speech waveform is the dry signal:
+     `probe/daredevil_mode_activated.wav` (pocket-tts, unprocessed; `probe/README.md` says how it was made). The phone
+     plays this exact file, so the emitted signal is the same every time. The phone's speaker level is
      calibrated once at 1 m outdoors, where there are no walls.
    - **Simulate first:** pyroomacoustics shoeboxes over a spread of sizes and echo times. The announcement comes from a
      point source a few cm from the pair (a small phone speaker: weak below about 300 Hz, so use 0.5-4 kHz). Place
