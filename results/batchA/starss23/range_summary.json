@@ -1,0 +1,96 @@
+{
+ "talker": "one file, one speech class, one source index (STARSS has no talker identity across files)",
+ "cues": {
+  "1 / amplitude, first 5 ms": {
+   "unit": "dB",
+   "ordering": {
+    "1.25x": {
+     "pairs": 45101,
+     "correct_pct": 56.0
+    },
+    "1.5x": {
+     "pairs": 23080,
+     "correct_pct": 57.6
+    },
+    "2.0x": {
+     "pairs": 11082,
+     "correct_pct": 61.1
+    }
+   },
+   "repeatability_same_spot_0.3m": {
+    "pairs": 355773,
+    "median_abs_diff": 6.38,
+    "p90_abs_diff": 17.34
+   },
+   "difference_at_2x_distance": {
+    "pairs": 11082,
+    "median_abs_diff": 4.63
+   }
+  },
+  "direction-free CDR": {
+   "unit": "dB",
+   "ordering": {
+    "1.25x": {
+     "pairs": 45020,
+     "correct_pct": 63.5
+    },
+    "1.5x": {
+     "pairs": 23044,
+     "correct_pct": 66.4
+    },
+    "2.0x": {
+     "pairs": 11067,
+     "correct_pct": 71.6
+    }
+   },
+   "repeatability_same_spot_0.3m": {
+    "pairs": 355914,
+    "median_abs_diff": 1.4,
+    "p90_abs_diff": 3.84
+   },
+   "difference_at_2x_distance": {
+    "pairs": 11082,
+    "median_abs_diff": 1.4
+   }
+  },
+  "early echo lag": {
+   "unit": "ms",
+   "ordering": {
+    "1.25x": {
+     "pairs": 43678,
+     "correct_pct": 52.6
+    },
+    "1.5x": {
+     "pairs": 22330,
+     "correct_pct": 55.4
+    },
+    "2.0x": {
+     "pairs": 10748,
+     "correct_pct": 54.1
+    }
+   },
+   "repeatability_same_spot_0.3m": {
+    "pairs": 355914,
+    "median_abs_diff": 1.17,
+    "p90_abs_diff": 4.96
+   },
+   "difference_at_2x_distance": {
+    "pairs": 11082,
+    "median_abs_diff": 2.38
+   }
+  }
+ },
+ "echo_lag_ms_histogram": {
+  "1-2": 15057,
+  "2-3": 3094,
+  "3-4": 3802,
+  "4-5": 5543,
+  "5-6": 3143,
+  "6-7": 1970,
+  "7-8": 1636,
+  "8-9": 1155,
+  "9-10": 352,
+  "10-11": 49,
+  "11-12": 7
+ }
+}
