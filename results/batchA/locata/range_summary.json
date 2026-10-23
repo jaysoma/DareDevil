@@ -1,0 +1,125 @@
+{
+ "160mm": {
+  "level_db": {
+   "ordering": {
+    "1.25x": {
+     "pairs": 547,
+     "correct": 0.506
+    },
+    "1.5x": {
+     "pairs": 313,
+     "correct": 0.537
+    },
+    "2x": {
+     "pairs": 223,
+     "correct": 0.543
+    }
+   },
+   "repeat_median_abs_diff": 8.36,
+   "repeat_pairs": 380,
+   "step_2x_median_abs_diff": 9.88
+  },
+  "cdr_db": {
+   "ordering": {
+    "1.25x": {
+     "pairs": 547,
+     "correct": 0.57
+    },
+    "1.5x": {
+     "pairs": 313,
+     "correct": 0.623
+    },
+    "2x": {
+     "pairs": 223,
+     "correct": 0.78
+    }
+   },
+   "repeat_median_abs_diff": 1.3,
+   "repeat_pairs": 380,
+   "step_2x_median_abs_diff": 2.48
+  },
+  "echo_lag_ms": {
+   "ordering": {
+    "1.25x": {
+     "pairs": 547,
+     "correct": 0.559
+    },
+    "1.5x": {
+     "pairs": 313,
+     "correct": 0.604
+    },
+    "2x": {
+     "pairs": 223,
+     "correct": 0.507
+    }
+   },
+   "repeat_median_abs_diff": 1.48,
+   "repeat_pairs": 380,
+   "step_2x_median_abs_diff": 1.79
+  }
+ },
+ "80mm": {
+  "level_db": {
+   "ordering": {
+    "1.25x": {
+     "pairs": 547,
+     "correct": 0.494
+    },
+    "1.5x": {
+     "pairs": 313,
+     "correct": 0.534
+    },
+    "2x": {
+     "pairs": 223,
+     "correct": 0.552
+    }
+   },
+   "repeat_median_abs_diff": 8.79,
+   "repeat_pairs": 380,
+   "step_2x_median_abs_diff": 9.35
+  },
+  "cdr_db": {
+   "ordering": {
+    "1.25x": {
+     "pairs": 547,
+     "correct": 0.572
+    },
+    "1.5x": {
+     "pairs": 313,
+     "correct": 0.569
+    },
+    "2x": {
+     "pairs": 223,
+     "correct": 0.713
+    }
+   },
+   "repeat_median_abs_diff": 0.87,
+   "repeat_pairs": 380,
+   "step_2x_median_abs_diff": 1.69
+  },
+  "echo_lag_ms": {
+   "ordering": {
+    "1.25x": {
+     "pairs": 547,
+     "correct": 0.543
+    },
+    "1.5x": {
+     "pairs": 313,
+     "correct": 0.562
+    },
+    "2x": {
+     "pairs": 223,
+     "correct": 0.552
+    }
+   },
+   "repeat_median_abs_diff": 1.09,
+   "repeat_pairs": 380,
+   "step_2x_median_abs_diff": 2.25
+  }
+ },
+ "echo_lag_vs_floor": {
+  "n": 682,
+  "within_0.25ms": 0.065,
+  "median_abs_diff_ms": 1.719
+ }
+}

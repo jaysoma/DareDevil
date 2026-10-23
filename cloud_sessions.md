@@ -294,6 +294,10 @@ sphere: compare leans with `results/starss23/report.md` section 2, and don't cal
 
 ## 10. Batch A on LOCATA (one room, human talkers, tracked position and facing)
 
+DONE in a 2026-10-23 cloud session: `results/batchA/locata/report.md`. Alone and facing the array, GccPhat never
+missed; the other talker speaking during the read and facing away make the wrong locks. Only the CDR is a
+consistent range cue. Don't start this one.
+
 Data: https://zenodo.org/records/3630471, `dev.zip` (6.2 GB), plus `eval.zip` (13 GB) if its ground truth is
 included. Use the tasks with human talkers and a static array: 3 (one moving talker) and 4 (several moving talkers).
 Use the DICIT array's pairs at 16 cm (the phone is 15.7 cm) and 8 cm. Truth is the OptiTrack position and orientation

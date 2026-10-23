@@ -1,0 +1,153 @@
+{
+ "GccPhat": {
+  "reads_total": 341,
+  "in_scope": 341,
+  "read_outliers": 35,
+  "read_outliers_pct": 10.3,
+  "scenarios": 24,
+  "scenarios_dropped": 0,
+  "reads_in_dropped_scenarios": 0,
+  "kept": 306,
+  "kept_pct": 89.7,
+  "score": {
+   "n": 306,
+   "mean_err": 7.3,
+   "median_err": 5.2,
+   "within_10_pct": 81.4,
+   "lean_mean_by_band": {
+    "0-15": {
+     "n": 85,
+     "mean": -0.5
+    },
+    "15-30": {
+     "n": 110,
+     "mean": -4.2
+    },
+    "30-45": {
+     "n": 70,
+     "mean": -4.0
+    },
+    "45-60": {
+     "n": 38,
+     "mean": -5.1
+    },
+    "60-75": {
+     "n": 0,
+     "mean": null
+    }
+   }
+  },
+  "outlier_kinds": {
+   "mirror (sign flipped)": 6,
+   "other": 14,
+   "truth was its 2nd/3rd direction": 15
+  }
+ },
+ "Angle2": {
+  "reads_total": 340,
+  "in_scope": 340,
+  "read_outliers": 61,
+  "read_outliers_pct": 17.9,
+  "scenarios": 24,
+  "scenarios_dropped": 0,
+  "reads_in_dropped_scenarios": 0,
+  "kept": 279,
+  "kept_pct": 82.1,
+  "score": {
+   "n": 279,
+   "mean_err": 7.5,
+   "median_err": 5.4,
+   "within_10_pct": 75.6,
+   "lean_mean_by_band": {
+    "0-15": {
+     "n": 80,
+     "mean": -1.0
+    },
+    "15-30": {
+     "n": 97,
+     "mean": -2.9
+    },
+    "30-45": {
+     "n": 63,
+     "mean": -4.6
+    },
+    "45-60": {
+     "n": 36,
+     "mean": -3.1
+    },
+    "60-75": {
+     "n": 0,
+     "mean": null
+    }
+   }
+  },
+  "outlier_kinds": {
+   "mirror (sign flipped)": 13,
+   "other": 32,
+   "truth was its 2nd/3rd direction": 16
+  }
+ },
+ "common": {
+  "schemes": [
+   "GccPhat",
+   "Angle2"
+  ],
+  "reads": 268,
+  "GccPhat": {
+   "n": 268,
+   "mean_err": 7.3,
+   "median_err": 5.2,
+   "within_10_pct": 81.3,
+   "lean_mean_by_band": {
+    "0-15": {
+     "n": 78,
+     "mean": -0.8
+    },
+    "15-30": {
+     "n": 96,
+     "mean": -4.0
+    },
+    "30-45": {
+     "n": 60,
+     "mean": -4.6
+    },
+    "45-60": {
+     "n": 31,
+     "mean": -3.2
+    },
+    "60-75": {
+     "n": 0,
+     "mean": null
+    }
+   }
+  },
+  "Angle2": {
+   "n": 268,
+   "mean_err": 7.4,
+   "median_err": 5.3,
+   "within_10_pct": 76.9,
+   "lean_mean_by_band": {
+    "0-15": {
+     "n": 78,
+     "mean": -1.0
+    },
+    "15-30": {
+     "n": 96,
+     "mean": -2.9
+    },
+    "30-45": {
+     "n": 60,
+     "mean": -5.1
+    },
+    "45-60": {
+     "n": 31,
+     "mean": -2.8
+    },
+    "60-75": {
+     "n": 0,
+     "mean": null
+    }
+   }
+  }
+ }
+}

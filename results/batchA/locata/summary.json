@@ -1,0 +1,2594 @@
+{
+ "rule": {
+  "scope_deg": 75.0,
+  "read_outlier_deg": 36.0,
+  "scenario_mean_deg": 22.5,
+  "scenario_outlier_share": 0.5
+ },
+ "160mm": {
+  "GccPhat": {
+   "reads_total": 341,
+   "in_scope": 341,
+   "read_outliers": 42,
+   "read_outliers_pct": 12.3,
+   "scenarios": 24,
+   "scenarios_dropped": 0,
+   "reads_in_dropped_scenarios": 0,
+   "kept": 299,
+   "kept_pct": 87.7,
+   "score": {
+    "n": 299,
+    "mean_err": 7.5,
+    "median_err": 5.2,
+    "within_10_pct": 83.3,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 85,
+      "mean": -0.6
+     },
+     "15-30": {
+      "n": 106,
+      "mean": -3.9
+     },
+     "30-45": {
+      "n": 71,
+      "mean": -4.0
+     },
+     "45-60": {
+      "n": 34,
+      "mean": -3.0
+     },
+     "60-75": {
+      "n": 0,
+      "mean": null
+     }
+    }
+   },
+   "outlier_kinds": {
+    "mirror (sign flipped)": 6,
+    "other": 13,
+    "truth was its 2nd/3rd direction": 23
+   }
+  },
+  "Angle2": {
+   "reads_total": 339,
+   "in_scope": 339,
+   "read_outliers": 64,
+   "read_outliers_pct": 18.9,
+   "scenarios": 24,
+   "scenarios_dropped": 0,
+   "reads_in_dropped_scenarios": 0,
+   "kept": 275,
+   "kept_pct": 81.1,
+   "score": {
+    "n": 275,
+    "mean_err": 7.0,
+    "median_err": 4.8,
+    "within_10_pct": 82.2,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 78,
+      "mean": 0.2
+     },
+     "15-30": {
+      "n": 94,
+      "mean": -1.2
+     },
+     "30-45": {
+      "n": 65,
+      "mean": -5.8
+     },
+     "45-60": {
+      "n": 34,
+      "mean": -3.9
+     },
+     "60-75": {
+      "n": 1,
+      "mean": 15.4
+     }
+    }
+   },
+   "outlier_kinds": {
+    "mirror (sign flipped)": 18,
+    "other": 39,
+    "truth was its 2nd/3rd direction": 7
+   }
+  },
+  "common": {
+   "schemes": [
+    "GccPhat",
+    "Angle2"
+   ],
+   "reads": 260,
+   "GccPhat": {
+    "n": 260,
+    "mean_err": 7.5,
+    "median_err": 5.2,
+    "within_10_pct": 82.7,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 78,
+      "mean": -0.9
+     },
+     "15-30": {
+      "n": 92,
+      "mean": -4.4
+     },
+     "30-45": {
+      "n": 58,
+      "mean": -4.3
+     },
+     "45-60": {
+      "n": 29,
+      "mean": -0.9
+     },
+     "60-75": {
+      "n": 0,
+      "mean": null
+     }
+    }
+   },
+   "Angle2": {
+    "n": 260,
+    "mean_err": 6.7,
+    "median_err": 4.7,
+    "within_10_pct": 83.5,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 78,
+      "mean": 0.2
+     },
+     "15-30": {
+      "n": 92,
+      "mean": -1.3
+     },
+     "30-45": {
+      "n": 58,
+      "mean": -5.1
+     },
+     "45-60": {
+      "n": 29,
+      "mean": -2.1
+     },
+     "60-75": {
+      "n": 0,
+      "mean": null
+     }
+    }
+   }
+  }
+ },
+ "80mm": {
+  "GccPhat": {
+   "reads_total": 341,
+   "in_scope": 341,
+   "read_outliers": 35,
+   "read_outliers_pct": 10.3,
+   "scenarios": 24,
+   "scenarios_dropped": 0,
+   "reads_in_dropped_scenarios": 0,
+   "kept": 306,
+   "kept_pct": 89.7,
+   "score": {
+    "n": 306,
+    "mean_err": 7.3,
+    "median_err": 5.2,
+    "within_10_pct": 81.4,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 85,
+      "mean": -0.5
+     },
+     "15-30": {
+      "n": 110,
+      "mean": -4.2
+     },
+     "30-45": {
+      "n": 70,
+      "mean": -4.0
+     },
+     "45-60": {
+      "n": 38,
+      "mean": -5.1
+     },
+     "60-75": {
+      "n": 0,
+      "mean": null
+     }
+    }
+   },
+   "outlier_kinds": {
+    "mirror (sign flipped)": 6,
+    "other": 14,
+    "truth was its 2nd/3rd direction": 15
+   }
+  },
+  "Angle2": {
+   "reads_total": 340,
+   "in_scope": 340,
+   "read_outliers": 61,
+   "read_outliers_pct": 17.9,
+   "scenarios": 24,
+   "scenarios_dropped": 0,
+   "reads_in_dropped_scenarios": 0,
+   "kept": 279,
+   "kept_pct": 82.1,
+   "score": {
+    "n": 279,
+    "mean_err": 7.5,
+    "median_err": 5.4,
+    "within_10_pct": 75.6,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 80,
+      "mean": -1.0
+     },
+     "15-30": {
+      "n": 97,
+      "mean": -2.9
+     },
+     "30-45": {
+      "n": 63,
+      "mean": -4.6
+     },
+     "45-60": {
+      "n": 36,
+      "mean": -3.1
+     },
+     "60-75": {
+      "n": 0,
+      "mean": null
+     }
+    }
+   },
+   "outlier_kinds": {
+    "mirror (sign flipped)": 13,
+    "other": 32,
+    "truth was its 2nd/3rd direction": 16
+   }
+  },
+  "common": {
+   "schemes": [
+    "GccPhat",
+    "Angle2"
+   ],
+   "reads": 268,
+   "GccPhat": {
+    "n": 268,
+    "mean_err": 7.3,
+    "median_err": 5.2,
+    "within_10_pct": 81.3,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 78,
+      "mean": -0.8
+     },
+     "15-30": {
+      "n": 96,
+      "mean": -4.0
+     },
+     "30-45": {
+      "n": 60,
+      "mean": -4.6
+     },
+     "45-60": {
+      "n": 31,
+      "mean": -3.2
+     },
+     "60-75": {
+      "n": 0,
+      "mean": null
+     }
+    }
+   },
+   "Angle2": {
+    "n": 268,
+    "mean_err": 7.4,
+    "median_err": 5.3,
+    "within_10_pct": 76.9,
+    "lean_mean_by_band": {
+     "0-15": {
+      "n": 78,
+      "mean": -1.0
+     },
+     "15-30": {
+      "n": 96,
+      "mean": -2.9
+     },
+     "30-45": {
+      "n": 60,
+      "mean": -5.1
+     },
+     "45-60": {
+      "n": 31,
+      "mean": -2.8
+     },
+     "60-75": {
+      "n": 0,
+      "mean": null
+     }
+    }
+   }
+  }
+ },
+ "catalogue": {
+  "gcc 160mm moderate": {
+   "reads": 50,
+   "classes": {
+    "truth_was_2nd_3rd": 29,
+    "drift": 27,
+    "facing": 22,
+    "another_source": 22,
+    "pause_direction": 20,
+    "zero_pull": 14,
+    "mirror": 2,
+    "other": 1
+   },
+   "overlaps": {
+    "drift": 5,
+    "drift+truth_was_2nd_3rd": 4,
+    "facing+truth_was_2nd_3rd+zero_pull": 4,
+    "another_source+drift+pause_direction": 3,
+    "facing": 2,
+    "another_source+pause_direction+truth_was_2nd_3rd+zero_pull": 2,
+    "another_source+drift+truth_was_2nd_3rd": 2,
+    "another_source+facing+pause_direction": 2,
+    "another_source+drift+facing+truth_was_2nd_3rd": 2,
+    "another_source+pause_direction": 2,
+    "drift+facing+zero_pull": 1,
+    "facing+pause_direction+zero_pull": 1
+   },
+   "examples": {
+    "zero_pull": [
+     {
+      "id": "dev_task3_rec1/talker5/160/9.729",
+      "file": "dev/task3/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 9.729,
+      "truth": -26.91,
+      "read": -1.43
+     },
+     {
+      "id": "dev_task3_rec2/talker2/160/8.870",
+      "file": "dev/task3/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 8.87,
+      "truth": -32.83,
+      "read": 1.91
+     },
+     {
+      "id": "dev_task3_rec3/talker1/160/8.406",
+      "file": "dev/task3/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 8.406,
+      "truth": -32.58,
+      "read": -2.87
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/43.545",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 43.545,
+      "truth": -18.73,
+      "read": 5.26
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/58.468",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 58.468,
+      "truth": -33.7,
+      "read": -4.3
+     }
+    ],
+    "drift": [
+     {
+      "id": "dev_task3_rec1/talker5/160/9.729",
+      "file": "dev/task3/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 9.729,
+      "truth": -26.91,
+      "read": -1.43
+     },
+     {
+      "id": "dev_task3_rec3/talker1/160/8.406",
+      "file": "dev/task3/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 8.406,
+      "truth": -32.58,
+      "read": -2.87
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/6.615",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 6.615,
+      "truth": 17.92,
+      "read": 6.7
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/6.174",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 6.174,
+      "truth": 9.69,
+      "read": 22.54
+     },
+     {
+      "id": "dev_task4_rec2/talker5/160/22.054",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 22.054,
+      "truth": -2.61,
+      "read": 7.66
+     }
+    ],
+    "facing": [
+     {
+      "id": "dev_task3_rec1/talker5/160/9.729",
+      "file": "dev/task3/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 9.729,
+      "truth": -26.91,
+      "read": -1.43
+     },
+     {
+      "id": "dev_task3_rec2/talker2/160/8.870",
+      "file": "dev/task3/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 8.87,
+      "truth": -32.83,
+      "read": 1.91
+     },
+     {
+      "id": "dev_task3_rec3/talker1/160/8.406",
+      "file": "dev/task3/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 8.406,
+      "truth": -32.58,
+      "read": -2.87
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/34.740",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 34.74,
+      "truth": 44.53,
+      "read": 73.4
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/9.636",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 9.636,
+      "truth": 53.06,
+      "read": 64.16
+     }
+    ],
+    "pause_direction": [
+     {
+      "id": "dev_task3_rec2/talker2/160/8.870",
+      "file": "dev/task3/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 8.87,
+      "truth": -32.83,
+      "read": 1.91
+     },
+     {
+      "id": "dev_task3_rec3/talker1/160/8.406",
+      "file": "dev/task3/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 8.406,
+      "truth": -32.58,
+      "read": -2.87
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/43.545",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 43.545,
+      "truth": -18.73,
+      "read": 5.26
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/58.468",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 58.468,
+      "truth": -33.7,
+      "read": -4.3
+     },
+     {
+      "id": "dev_task4_rec2/talker5/160/30.894",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 30.894,
+      "truth": -45.06,
+      "read": -22.54
+     }
+    ],
+    "truth_was_2nd_3rd": [
+     {
+      "id": "dev_task3_rec3/talker1/160/8.406",
+      "file": "dev/task3/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 8.406,
+      "truth": -32.58,
+      "read": -2.87
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/43.545",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 43.545,
+      "truth": -18.73,
+      "read": 5.26
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/6.615",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 6.615,
+      "truth": 17.92,
+      "read": 6.7
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/19.281",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 19.281,
+      "truth": 0.13,
+      "read": -16.96
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/6.174",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 6.174,
+      "truth": 9.69,
+      "read": 22.54
+     }
+    ],
+    "another_source": [
+     {
+      "id": "dev_task4_rec1/talker1/160/43.545",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 43.545,
+      "truth": -18.73,
+      "read": 5.26
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/6.615",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 6.615,
+      "truth": 17.92,
+      "read": 6.7
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/19.281",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 19.281,
+      "truth": 0.13,
+      "read": -16.96
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/58.468",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 58.468,
+      "truth": -33.7,
+      "read": -4.3
+     },
+     {
+      "id": "dev_task4_rec2/talker5/160/30.894",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 30.894,
+      "truth": -45.06,
+      "read": -22.54
+     }
+    ],
+    "mirror": [
+     {
+      "id": "eval_task4_rec1/talker1/160/71.043",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 71.043,
+      "truth": -16.04,
+      "read": 13.98
+     },
+     {
+      "id": "eval_task4_rec3/talker2/160/12.445",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 12.445,
+      "truth": -20.76,
+      "read": 11.54
+     }
+    ],
+    "other": [
+     {
+      "id": "eval_task4_rec4/talker2/160/33.386",
+      "file": "eval/task4/recording4/dicit/audio_array_dicit.wav",
+      "time_s": 33.386,
+      "truth": -25.12,
+      "read": -9.59
+     }
+    ]
+   }
+  },
+  "gcc 160mm outlier": {
+   "reads": 42,
+   "classes": {
+    "another_source": 33,
+    "pause_direction": 30,
+    "truth_was_2nd_3rd": 25,
+    "drift": 16,
+    "facing": 15,
+    "zero_pull": 12,
+    "mirror": 6
+   },
+   "overlaps": {
+    "another_source+drift+pause_direction+truth_was_2nd_3rd": 6,
+    "another_source+pause_direction": 4,
+    "another_source+mirror+pause_direction": 3,
+    "another_source+drift+truth_was_2nd_3rd": 2,
+    "another_source+pause_direction+truth_was_2nd_3rd": 2,
+    "another_source+facing+pause_direction+truth_was_2nd_3rd": 2,
+    "facing+truth_was_2nd_3rd": 2,
+    "another_source+drift+truth_was_2nd_3rd+zero_pull": 2,
+    "another_source+facing+pause_direction+zero_pull": 2,
+    "another_source+mirror+pause_direction+truth_was_2nd_3rd": 1,
+    "another_source+pause_direction+truth_was_2nd_3rd+zero_pull": 1,
+    "another_source+facing+truth_was_2nd_3rd": 1
+   },
+   "examples": {
+    "another_source": [
+     {
+      "id": "dev_task4_rec1/talker2/160/15.309",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 15.309,
+      "truth": -26.5,
+      "read": 42.45
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/3.081",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 3.081,
+      "truth": 28.99,
+      "read": -37.47
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/39.454",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 39.454,
+      "truth": -23.89,
+      "read": 37.47
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/57.342",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 57.342,
+      "truth": -25.71,
+      "read": 30.55
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/14.339",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 14.339,
+      "truth": -44.33,
+      "read": 1.43
+     }
+    ],
+    "truth_was_2nd_3rd": [
+     {
+      "id": "dev_task4_rec1/talker2/160/15.309",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 15.309,
+      "truth": -26.5,
+      "read": 42.45
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/3.081",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 3.081,
+      "truth": 28.99,
+      "read": -37.47
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/39.454",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 39.454,
+      "truth": -23.89,
+      "read": 37.47
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/14.339",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 14.339,
+      "truth": -44.33,
+      "read": 1.43
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/18.315",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 18.315,
+      "truth": -51.8,
+      "read": -11.54
+     }
+    ],
+    "drift": [
+     {
+      "id": "dev_task4_rec1/talker2/160/15.309",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 15.309,
+      "truth": -26.5,
+      "read": 42.45
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/54.163",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 54.163,
+      "truth": -43.86,
+      "read": -2.87
+     },
+     {
+      "id": "dev_task4_rec2/talker5/160/44.281",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 44.281,
+      "truth": -39.78,
+      "read": 32.23
+     },
+     {
+      "id": "dev_task4_rec3/talker5/160/14.175",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 14.175,
+      "truth": -46.5,
+      "read": -4.3
+     },
+     {
+      "id": "eval_task4_rec1/talker1/160/59.310",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 59.31,
+      "truth": 46.63,
+      "read": 5.74
+     }
+    ],
+    "mirror": [
+     {
+      "id": "dev_task4_rec1/talker2/160/3.081",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 3.081,
+      "truth": 28.99,
+      "read": -37.47
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/57.342",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 57.342,
+      "truth": -25.71,
+      "read": 30.55
+     },
+     {
+      "id": "dev_task4_rec2/talker5/160/44.281",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 44.281,
+      "truth": -39.78,
+      "read": 32.23
+     },
+     {
+      "id": "dev_task4_rec3/talker5/160/46.532",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 46.532,
+      "truth": -36.28,
+      "read": 29.45
+     },
+     {
+      "id": "eval_task4_rec1/talker1/160/43.986",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 43.986,
+      "truth": -23.09,
+      "read": 14.48
+     }
+    ],
+    "pause_direction": [
+     {
+      "id": "dev_task4_rec1/talker2/160/3.081",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 3.081,
+      "truth": 28.99,
+      "read": -37.47
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/39.454",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 39.454,
+      "truth": -23.89,
+      "read": 37.47
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/57.342",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 57.342,
+      "truth": -25.71,
+      "read": 30.55
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/14.339",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 14.339,
+      "truth": -44.33,
+      "read": 1.43
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/54.163",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 54.163,
+      "truth": -43.86,
+      "read": -2.87
+     }
+    ],
+    "zero_pull": [
+     {
+      "id": "dev_task4_rec2/talker2/160/14.339",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 14.339,
+      "truth": -44.33,
+      "read": 1.43
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/21.881",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 21.881,
+      "truth": -50.84,
+      "read": 2.87
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/54.163",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 54.163,
+      "truth": -43.86,
+      "read": -2.87
+     },
+     {
+      "id": "dev_task4_rec3/talker5/160/14.175",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 14.175,
+      "truth": -46.5,
+      "read": -4.3
+     },
+     {
+      "id": "dev_task4_rec3/talker5/160/16.730",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 16.73,
+      "truth": -46.99,
+      "read": -5.26
+     }
+    ],
+    "facing": [
+     {
+      "id": "dev_task4_rec2/talker2/160/18.315",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 18.315,
+      "truth": -51.8,
+      "read": -11.54
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/21.881",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 21.881,
+      "truth": -50.84,
+      "read": 2.87
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/54.163",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 54.163,
+      "truth": -43.86,
+      "read": -2.87
+     },
+     {
+      "id": "dev_task4_rec2/talker5/160/25.311",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 25.311,
+      "truth": 4.48,
+      "read": -38.07
+     },
+     {
+      "id": "dev_task4_rec2/talker5/160/41.568",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 41.568,
+      "truth": -47.05,
+      "read": -7.18
+     }
+    ]
+   }
+  },
+  "gcc 80mm moderate": {
+   "reads": 57,
+   "classes": {
+    "facing": 25,
+    "drift": 25,
+    "pause_direction": 24,
+    "another_source": 23,
+    "truth_was_2nd_3rd": 9,
+    "zero_pull": 7,
+    "other": 4,
+    "mirror": 2
+   },
+   "overlaps": {
+    "drift": 10,
+    "facing": 7,
+    "another_source+facing+pause_direction": 4,
+    "other": 4,
+    "drift+facing+pause_direction": 2,
+    "another_source": 2,
+    "pause_direction": 2,
+    "another_source+pause_direction+zero_pull": 2,
+    "drift+facing": 2,
+    "another_source+drift": 2,
+    "another_source+drift+pause_direction": 2,
+    "another_source+pause_direction": 2
+   },
+   "examples": {
+    "pause_direction": [
+     {
+      "id": "dev_task3_rec2/talker2/80/8.870",
+      "file": "dev/task3/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 8.87,
+      "truth": -32.86,
+      "read": -13.98
+     },
+     {
+      "id": "dev_task3_rec3/talker1/80/8.406",
+      "file": "dev/task3/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 8.406,
+      "truth": -32.6,
+      "read": -18.46
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/3.771",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 3.771,
+      "truth": -33.56,
+      "read": -23.06
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/58.468",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 58.468,
+      "truth": -33.7,
+      "read": -3.82
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/30.894",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 30.894,
+      "truth": -45.08,
+      "read": -22.02
+     }
+    ],
+    "facing": [
+     {
+      "id": "dev_task3_rec2/talker2/80/8.870",
+      "file": "dev/task3/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 8.87,
+      "truth": -32.86,
+      "read": -13.98
+     },
+     {
+      "id": "dev_task3_rec3/talker1/80/8.406",
+      "file": "dev/task3/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 8.406,
+      "truth": -32.6,
+      "read": -18.46
+     },
+     {
+      "id": "dev_task4_rec1/talker1/80/34.740",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 34.74,
+      "truth": 44.56,
+      "read": 57.32
+     },
+     {
+      "id": "dev_task4_rec1/talker1/80/9.636",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 9.636,
+      "truth": 53.08,
+      "read": 68.96
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/30.894",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 30.894,
+      "truth": -45.08,
+      "read": -22.02
+     }
+    ],
+    "drift": [
+     {
+      "id": "dev_task3_rec3/talker1/80/8.406",
+      "file": "dev/task3/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 8.406,
+      "truth": -32.6,
+      "read": -18.46
+     },
+     {
+      "id": "dev_task4_rec1/talker1/80/11.708",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 11.708,
+      "truth": 54.66,
+      "read": 65.28
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/22.054",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 22.054,
+      "truth": -2.61,
+      "read": 7.66
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/36.742",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 36.742,
+      "truth": -49.42,
+      "read": -21.51
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/54.859",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 54.859,
+      "truth": -26.86,
+      "read": -15.96
+     }
+    ],
+    "another_source": [
+     {
+      "id": "dev_task4_rec1/talker2/80/19.281",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 19.281,
+      "truth": 0.13,
+      "read": -15.96
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/58.468",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 58.468,
+      "truth": -33.7,
+      "read": -3.82
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/30.894",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 30.894,
+      "truth": -45.08,
+      "read": -22.02
+     },
+     {
+      "id": "dev_task4_rec3/talker1/80/14.350",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 14.35,
+      "truth": -10.42,
+      "read": -40.54
+     },
+     {
+      "id": "dev_task4_rec3/talker1/80/16.749",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 16.749,
+      "truth": -14.37,
+      "read": -40.54
+     }
+    ],
+    "zero_pull": [
+     {
+      "id": "dev_task4_rec2/talker2/80/58.468",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 58.468,
+      "truth": -33.7,
+      "read": -3.82
+     },
+     {
+      "id": "eval_task3_rec3/talker4/80/18.115",
+      "file": "eval/task3/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 18.115,
+      "truth": -22.11,
+      "read": -4.3
+     },
+     {
+      "id": "eval_task3_rec5/talker5/80/16.673",
+      "file": "eval/task3/recording5/dicit/audio_array_dicit.wav",
+      "time_s": 16.673,
+      "truth": -25.28,
+      "read": -5.74
+     },
+     {
+      "id": "eval_task3_rec5/talker5/80/17.558",
+      "file": "eval/task3/recording5/dicit/audio_array_dicit.wav",
+      "time_s": 17.558,
+      "truth": -18.25,
+      "read": -1.43
+     },
+     {
+      "id": "eval_task4_rec2/talker1/80/42.024",
+      "file": "eval/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 42.024,
+      "truth": -23.11,
+      "read": -5.74
+     }
+    ],
+    "truth_was_2nd_3rd": [
+     {
+      "id": "dev_task4_rec2/talker5/80/41.568",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 41.568,
+      "truth": -47.06,
+      "read": -13
+     },
+     {
+      "id": "dev_task4_rec3/talker1/80/14.350",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 14.35,
+      "truth": -10.42,
+      "read": -40.54
+     },
+     {
+      "id": "dev_task4_rec3/talker5/80/35.562",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 35.562,
+      "truth": -1.75,
+      "read": 28.36
+     },
+     {
+      "id": "dev_task4_rec3/talker5/80/37.114",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 37.114,
+      "truth": -1.85,
+      "read": 28.9
+     },
+     {
+      "id": "eval_task4_rec3/talker2/80/12.445",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 12.445,
+      "truth": -20.77,
+      "read": 13.98
+     }
+    ],
+    "other": [
+     {
+      "id": "dev_task4_rec3/talker1/80/18.887",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 18.887,
+      "truth": -31.78,
+      "read": -16.96
+     },
+     {
+      "id": "eval_task4_rec3/talker2/80/14.204",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 14.204,
+      "truth": -30.2,
+      "read": -13.98
+     },
+     {
+      "id": "eval_task4_rec5/talker5/80/13.544",
+      "file": "eval/task4/recording5/dicit/audio_array_dicit.wav",
+      "time_s": 13.544,
+      "truth": -37.52,
+      "read": -27.28
+     },
+     {
+      "id": "eval_task4_rec5/talker5/80/23.437",
+      "file": "eval/task4/recording5/dicit/audio_array_dicit.wav",
+      "time_s": 23.437,
+      "truth": 30.15,
+      "read": 51.57
+     }
+    ],
+    "mirror": [
+     {
+      "id": "eval_task4_rec1/talker1/80/71.043",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 71.043,
+      "truth": -16.05,
+      "read": 8.63
+     },
+     {
+      "id": "eval_task4_rec3/talker2/80/12.445",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 12.445,
+      "truth": -20.77,
+      "read": 13.98
+     }
+    ]
+   }
+  },
+  "gcc 80mm outlier": {
+   "reads": 35,
+   "classes": {
+    "another_source": 30,
+    "pause_direction": 24,
+    "truth_was_2nd_3rd": 20,
+    "drift": 12,
+    "facing": 9,
+    "mirror": 6,
+    "zero_pull": 6
+   },
+   "overlaps": {
+    "another_source+pause_direction+truth_was_2nd_3rd": 5,
+    "another_source+pause_direction": 4,
+    "another_source+drift+pause_direction": 3,
+    "another_source+drift": 2,
+    "another_source+facing+pause_direction+truth_was_2nd_3rd": 2,
+    "another_source+mirror+pause_direction+truth_was_2nd_3rd": 2,
+    "another_source+drift+mirror+truth_was_2nd_3rd": 1,
+    "another_source+pause_direction+truth_was_2nd_3rd+zero_pull": 1,
+    "another_source+facing+truth_was_2nd_3rd": 1,
+    "another_source+facing+zero_pull": 1,
+    "another_source+facing+mirror+pause_direction+truth_was_2nd_3rd": 1,
+    "another_source+drift+pause_direction+truth_was_2nd_3rd": 1
+   },
+   "examples": {
+    "another_source": [
+     {
+      "id": "dev_task4_rec1/talker1/80/39.226",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 39.226,
+      "truth": 37.32,
+      "read": -17.96
+     },
+     {
+      "id": "dev_task4_rec1/talker2/80/15.309",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 15.309,
+      "truth": -26.5,
+      "read": 33.94
+     },
+     {
+      "id": "dev_task4_rec1/talker2/80/3.081",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 3.081,
+      "truth": 29.0,
+      "read": -39.3
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/14.339",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 14.339,
+      "truth": -44.34,
+      "read": 2.87
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/18.315",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 18.315,
+      "truth": -51.82,
+      "read": -10.08
+     }
+    ],
+    "drift": [
+     {
+      "id": "dev_task4_rec1/talker1/80/39.226",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 39.226,
+      "truth": 37.32,
+      "read": -17.96
+     },
+     {
+      "id": "dev_task4_rec1/talker2/80/15.309",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 15.309,
+      "truth": -26.5,
+      "read": 33.94
+     },
+     {
+      "id": "dev_task4_rec3/talker1/80/48.209",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 48.209,
+      "truth": 8.81,
+      "read": -28.36
+     },
+     {
+      "id": "eval_task4_rec1/talker1/80/35.883",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 35.883,
+      "truth": 58.88,
+      "read": 18.97
+     },
+     {
+      "id": "eval_task4_rec1/talker1/80/59.310",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 59.31,
+      "truth": 46.64,
+      "read": 6.7
+     }
+    ],
+    "mirror": [
+     {
+      "id": "dev_task4_rec1/talker2/80/15.309",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 15.309,
+      "truth": -26.5,
+      "read": 33.94
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/44.281",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 44.281,
+      "truth": -39.8,
+      "read": 35.69
+     },
+     {
+      "id": "dev_task4_rec3/talker5/80/8.615",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 8.615,
+      "truth": -32.82,
+      "read": 30.55
+     },
+     {
+      "id": "eval_task4_rec1/talker1/80/43.986",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 43.986,
+      "truth": -23.1,
+      "read": 15.47
+     },
+     {
+      "id": "eval_task4_rec4/talker5/80/12.692",
+      "file": "eval/task4/recording4/dicit/audio_array_dicit.wav",
+      "time_s": 12.692,
+      "truth": 24.67,
+      "read": -30
+     }
+    ],
+    "truth_was_2nd_3rd": [
+     {
+      "id": "dev_task4_rec1/talker2/80/15.309",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 15.309,
+      "truth": -26.5,
+      "read": 33.94
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/14.339",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 14.339,
+      "truth": -44.34,
+      "read": 2.87
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/18.315",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 18.315,
+      "truth": -51.82,
+      "read": -10.08
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/6.299",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 6.299,
+      "truth": -41.33,
+      "read": 27.82
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/25.311",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 25.311,
+      "truth": 4.48,
+      "read": -36.87
+     }
+    ],
+    "pause_direction": [
+     {
+      "id": "dev_task4_rec1/talker2/80/3.081",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 3.081,
+      "truth": 29.0,
+      "read": -39.3
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/14.339",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 14.339,
+      "truth": -44.34,
+      "read": 2.87
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/6.299",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 6.299,
+      "truth": -41.33,
+      "read": 27.82
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/9.325",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 9.325,
+      "truth": -43.2,
+      "read": 15.47
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/25.311",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 25.311,
+      "truth": 4.48,
+      "read": -36.87
+     }
+    ],
+    "zero_pull": [
+     {
+      "id": "dev_task4_rec2/talker2/80/14.339",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 14.339,
+      "truth": -44.34,
+      "read": 2.87
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/21.881",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 21.881,
+      "truth": -50.86,
+      "read": 3.82
+     },
+     {
+      "id": "eval_task3_rec1/talker2/80/14.339",
+      "file": "eval/task3/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 14.339,
+      "truth": -47.84,
+      "read": -2.39
+     },
+     {
+      "id": "eval_task4_rec3/talker2/80/26.624",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 26.624,
+      "truth": -44.2,
+      "read": -2.39
+     },
+     {
+      "id": "eval_task4_rec3/talker5/80/2.148",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 2.148,
+      "truth": -47.12,
+      "read": 5.26
+     }
+    ],
+    "facing": [
+     {
+      "id": "dev_task4_rec2/talker2/80/18.315",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 18.315,
+      "truth": -51.82,
+      "read": -10.08
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/21.881",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 21.881,
+      "truth": -50.86,
+      "read": 3.82
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/25.311",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 25.311,
+      "truth": 4.48,
+      "read": -36.87
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/44.281",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 44.281,
+      "truth": -39.8,
+      "read": 35.69
+     },
+     {
+      "id": "eval_task3_rec1/talker2/80/14.339",
+      "file": "eval/task3/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 14.339,
+      "truth": -47.84,
+      "read": -2.39
+     }
+    ]
+   }
+  },
+  "a2 160mm moderate": {
+   "reads": 49,
+   "classes": {
+    "pause_direction": 26,
+    "truth_was_2nd_3rd": 22,
+    "another_source": 20,
+    "facing": 18,
+    "zero_pull": 6,
+    "other": 6,
+    "mirror": 3
+   },
+   "overlaps": {
+    "facing": 8,
+    "other": 6,
+    "another_source+pause_direction": 5,
+    "truth_was_2nd_3rd": 4,
+    "another_source+pause_direction+truth_was_2nd_3rd": 4,
+    "another_source+pause_direction+truth_was_2nd_3rd+zero_pull": 3,
+    "another_source+facing+pause_direction": 3,
+    "pause_direction+truth_was_2nd_3rd": 3,
+    "another_source+facing+pause_direction+truth_was_2nd_3rd": 2,
+    "mirror+pause_direction": 2,
+    "facing+truth_was_2nd_3rd": 2,
+    "facing+pause_direction+zero_pull": 1
+   },
+   "examples": {
+    "facing": [
+     {
+      "id": "dev_task3_rec1/talker5/160/9.729",
+      "file": "dev/task3/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 9.729,
+      "truth": -26.91,
+      "read": -16.79
+     },
+     {
+      "id": "dev_task3_rec2/talker2/160/8.870",
+      "file": "dev/task3/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 8.87,
+      "truth": -32.83,
+      "read": -1.91
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/34.740",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 34.74,
+      "truth": 44.53,
+      "read": 33.75
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/9.636",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 9.636,
+      "truth": 53.06,
+      "read": 68.96
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/54.163",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 54.163,
+      "truth": -43.86,
+      "read": -18.8
+     }
+    ],
+    "truth_was_2nd_3rd": [
+     {
+      "id": "dev_task3_rec2/talker2/160/6.350",
+      "file": "dev/task3/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 6.35,
+      "truth": -7.76,
+      "read": 14.15
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/53.375",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 53.375,
+      "truth": -3.66,
+      "read": -20.83
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/58.468",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 58.468,
+      "truth": -33.7,
+      "read": -4.46
+     },
+     {
+      "id": "dev_task4_rec3/talker5/160/54.302",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 54.302,
+      "truth": -40.25,
+      "read": -14.81
+     },
+     {
+      "id": "dev_task4_rec3/talker5/160/55.967",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 55.967,
+      "truth": -43.61,
+      "read": -10.89
+     }
+    ],
+    "pause_direction": [
+     {
+      "id": "dev_task3_rec2/talker2/160/8.870",
+      "file": "dev/task3/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 8.87,
+      "truth": -32.83,
+      "read": -1.91
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/31.094",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 31.094,
+      "truth": 12.88,
+      "read": -0.64
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/53.375",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 53.375,
+      "truth": -3.66,
+      "read": -20.83
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/58.468",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 58.468,
+      "truth": -33.7,
+      "read": -4.46
+     },
+     {
+      "id": "dev_task4_rec2/talker5/160/30.894",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 30.894,
+      "truth": -45.06,
+      "read": -22.89
+     }
+    ],
+    "zero_pull": [
+     {
+      "id": "dev_task3_rec2/talker2/160/8.870",
+      "file": "dev/task3/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 8.87,
+      "truth": -32.83,
+      "read": -1.91
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/58.468",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 58.468,
+      "truth": -33.7,
+      "read": -4.46
+     },
+     {
+      "id": "eval_task4_rec1/talker2/160/17.425",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 17.425,
+      "truth": 16.09,
+      "read": -5.1
+     },
+     {
+      "id": "eval_task4_rec2/talker1/160/7.159",
+      "file": "eval/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 7.159,
+      "truth": -17.79,
+      "read": -4.46
+     },
+     {
+      "id": "eval_task4_rec3/talker2/160/12.445",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 12.445,
+      "truth": -20.76,
+      "read": 3.18
+     }
+    ],
+    "another_source": [
+     {
+      "id": "dev_task4_rec1/talker1/160/31.094",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 31.094,
+      "truth": 12.88,
+      "read": -0.64
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/53.375",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 53.375,
+      "truth": -3.66,
+      "read": -20.83
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/58.468",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 58.468,
+      "truth": -33.7,
+      "read": -4.46
+     },
+     {
+      "id": "dev_task4_rec2/talker5/160/30.894",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 30.894,
+      "truth": -45.06,
+      "read": -22.89
+     },
+     {
+      "id": "dev_task4_rec3/talker5/160/32.814",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 32.814,
+      "truth": 1.33,
+      "read": -11.54
+     }
+    ],
+    "other": [
+     {
+      "id": "dev_task4_rec1/talker1/160/43.545",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 43.545,
+      "truth": -18.73,
+      "read": -31.48
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/10.981",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 10.981,
+      "truth": -28.86,
+      "read": -18.8
+     },
+     {
+      "id": "eval_task4_rec1/talker1/160/63.731",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 63.731,
+      "truth": 66.06,
+      "read": 81.45
+     },
+     {
+      "id": "eval_task4_rec2/talker2/160/44.747",
+      "file": "eval/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 44.747,
+      "truth": -33.51,
+      "read": -20.83
+     },
+     {
+      "id": "eval_task4_rec3/talker2/160/53.360",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 53.36,
+      "truth": 5.74,
+      "read": 19.47
+     }
+    ],
+    "mirror": [
+     {
+      "id": "eval_task4_rec1/talker1/160/71.043",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 71.043,
+      "truth": -16.04,
+      "read": 12.84
+     },
+     {
+      "id": "eval_task4_rec2/talker2/160/39.895",
+      "file": "eval/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 39.895,
+      "truth": -11.98,
+      "read": 15.47
+     },
+     {
+      "id": "eval_task4_rec5/talker5/160/33.361",
+      "file": "eval/task4/recording5/dicit/audio_array_dicit.wav",
+      "time_s": 33.361,
+      "truth": -14.95,
+      "read": 9.59
+     }
+    ]
+   }
+  },
+  "a2 160mm outlier": {
+   "reads": 64,
+   "classes": {
+    "another_source": 49,
+    "pause_direction": 47,
+    "mirror": 18,
+    "facing": 13,
+    "truth_was_2nd_3rd": 11,
+    "zero_pull": 6,
+    "other": 3,
+    "aliasing_partner": 1
+   },
+   "overlaps": {
+    "another_source+pause_direction": 18,
+    "another_source+mirror+pause_direction": 9,
+    "another_source+pause_direction+truth_was_2nd_3rd": 5,
+    "another_source+facing+pause_direction": 3,
+    "facing": 3,
+    "another_source+mirror+pause_direction+truth_was_2nd_3rd": 3,
+    "other": 3,
+    "another_source+pause_direction+zero_pull": 3,
+    "mirror": 2,
+    "another_source+mirror": 2,
+    "facing+pause_direction": 2,
+    "pause_direction": 2
+   },
+   "examples": {
+    "mirror": [
+     {
+      "id": "dev_task3_rec2/talker2/160/18.116",
+      "file": "dev/task3/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 18.116,
+      "truth": 22.83,
+      "read": -17.46
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/28.075",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 28.075,
+      "truth": -26.0,
+      "read": 20.83
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/24.187",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 24.187,
+      "truth": 31.41,
+      "read": -39.3
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/3.081",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 3.081,
+      "truth": 28.99,
+      "read": -38.48
+     },
+     {
+      "id": "dev_task4_rec3/talker1/160/45.572",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 45.572,
+      "truth": 25.68,
+      "read": -32.23
+     }
+    ],
+    "another_source": [
+     {
+      "id": "dev_task4_rec1/talker1/160/28.075",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 28.075,
+      "truth": -26.0,
+      "read": 20.83
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/37.176",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 37.176,
+      "truth": 49.18,
+      "read": -24.27
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/49.897",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 49.897,
+      "truth": -50.07,
+      "read": 16.13
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/24.187",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 24.187,
+      "truth": 31.41,
+      "read": -39.3
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/3.081",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 3.081,
+      "truth": 28.99,
+      "read": -38.48
+     }
+    ],
+    "pause_direction": [
+     {
+      "id": "dev_task4_rec1/talker1/160/37.176",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 37.176,
+      "truth": 49.18,
+      "read": -24.27
+     },
+     {
+      "id": "dev_task4_rec1/talker1/160/49.897",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 49.897,
+      "truth": -50.07,
+      "read": 16.13
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/24.187",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 24.187,
+      "truth": 31.41,
+      "read": -39.3
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/3.081",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 3.081,
+      "truth": 28.99,
+      "read": -38.48
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/39.454",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 39.454,
+      "truth": -23.89,
+      "read": 40.12
+     }
+    ],
+    "truth_was_2nd_3rd": [
+     {
+      "id": "dev_task4_rec1/talker1/160/49.897",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 49.897,
+      "truth": -50.07,
+      "read": 16.13
+     },
+     {
+      "id": "dev_task4_rec1/talker2/160/39.454",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 39.454,
+      "truth": -23.89,
+      "read": 40.12
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/14.339",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 14.339,
+      "truth": -44.33,
+      "read": 1.27
+     },
+     {
+      "id": "dev_task4_rec3/talker5/160/46.532",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 46.532,
+      "truth": -36.28,
+      "read": 30
+     },
+     {
+      "id": "eval_task4_rec1/talker2/160/2.904",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 2.904,
+      "truth": 16.7,
+      "read": -23.58
+     }
+    ],
+    "zero_pull": [
+     {
+      "id": "dev_task4_rec2/talker2/160/14.339",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 14.339,
+      "truth": -44.33,
+      "read": 1.27
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/21.881",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 21.881,
+      "truth": -50.84,
+      "read": 0.64
+     },
+     {
+      "id": "eval_task4_rec3/talker2/160/26.624",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 26.624,
+      "truth": -44.17,
+      "read": 1.27
+     },
+     {
+      "id": "eval_task4_rec3/talker5/160/2.148",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 2.148,
+      "truth": -47.1,
+      "read": 5.1
+     },
+     {
+      "id": "eval_task4_rec3/talker5/160/5.524",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 5.524,
+      "truth": -52.01,
+      "read": 5.74
+     }
+    ],
+    "facing": [
+     {
+      "id": "dev_task4_rec2/talker2/160/18.315",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 18.315,
+      "truth": -51.8,
+      "read": -8.95
+     },
+     {
+      "id": "dev_task4_rec2/talker2/160/21.881",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 21.881,
+      "truth": -50.84,
+      "read": 0.64
+     },
+     {
+      "id": "dev_task4_rec2/talker5/160/25.311",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 25.311,
+      "truth": 4.48,
+      "read": -38.48
+     },
+     {
+      "id": "dev_task4_rec2/talker5/160/33.896",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 33.896,
+      "truth": -49.95,
+      "read": 7.66
+     },
+     {
+      "id": "dev_task4_rec2/talker5/160/36.742",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 36.742,
+      "truth": -49.41,
+      "read": 7.02
+     }
+    ],
+    "other": [
+     {
+      "id": "eval_task4_rec1/talker1/160/31.759",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 31.759,
+      "truth": 42.85,
+      "read": 81.45
+     },
+     {
+      "id": "eval_task4_rec1/talker2/160/59.339",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 59.339,
+      "truth": 2.04,
+      "read": -62.73
+     },
+     {
+      "id": "eval_task4_rec1/talker2/160/61.994",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 61.994,
+      "truth": 1.38,
+      "read": 40.96
+     }
+    ],
+    "aliasing_partner": [
+     {
+      "id": "eval_task4_rec3/talker5/160/55.014",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 55.014,
+      "truth": 45.46,
+      "read": -31.48
+     }
+    ]
+   }
+  },
+  "a2 80mm moderate": {
+   "reads": 68,
+   "classes": {
+    "pause_direction": 32,
+    "other": 24,
+    "another_source": 20,
+    "facing": 14,
+    "truth_was_2nd_3rd": 10,
+    "zero_pull": 5,
+    "mirror": 4
+   },
+   "overlaps": {
+    "other": 24,
+    "another_source+pause_direction": 9,
+    "pause_direction": 7,
+    "facing": 5,
+    "another_source+pause_direction+truth_was_2nd_3rd+zero_pull": 3,
+    "another_source+facing+pause_direction": 3,
+    "facing+pause_direction": 3,
+    "another_source": 2,
+    "truth_was_2nd_3rd": 2,
+    "another_source+pause_direction+truth_was_2nd_3rd": 2,
+    "facing+pause_direction+truth_was_2nd_3rd": 1,
+    "mirror+pause_direction": 1
+   },
+   "examples": {
+    "facing": [
+     {
+      "id": "dev_task3_rec2/talker2/80/8.870",
+      "file": "dev/task3/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 8.87,
+      "truth": -32.86,
+      "read": -20.15
+     },
+     {
+      "id": "dev_task4_rec1/talker1/80/9.636",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 9.636,
+      "truth": 53.08,
+      "read": 75.16
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/54.163",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 54.163,
+      "truth": -43.88,
+      "read": -18.8
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/30.894",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 30.894,
+      "truth": -45.08,
+      "read": -21.51
+     },
+     {
+      "id": "dev_task4_rec3/talker5/80/32.814",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 32.814,
+      "truth": 1.33,
+      "read": -12.19
+     }
+    ],
+    "other": [
+     {
+      "id": "dev_task4_rec1/talker1/80/11.708",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 11.708,
+      "truth": 54.66,
+      "read": 65.66
+     },
+     {
+      "id": "dev_task4_rec1/talker1/80/22.750",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 22.75,
+      "truth": -39.17,
+      "read": -27.1
+     },
+     {
+      "id": "dev_task4_rec1/talker2/80/10.981",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 10.981,
+      "truth": -28.87,
+      "read": -18.8
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/51.808",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 51.808,
+      "truth": -11.16,
+      "read": 0
+     },
+     {
+      "id": "dev_task4_rec3/talker1/80/18.887",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 18.887,
+      "truth": -31.78,
+      "read": -10.89
+     }
+    ],
+    "pause_direction": [
+     {
+      "id": "dev_task4_rec1/talker1/80/17.629",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 17.629,
+      "truth": 7.72,
+      "read": -6.38
+     },
+     {
+      "id": "dev_task4_rec1/talker1/80/31.094",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 31.094,
+      "truth": 12.91,
+      "read": 1.91
+     },
+     {
+      "id": "dev_task4_rec1/talker1/80/41.520",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 41.52,
+      "truth": 14.97,
+      "read": -1.27
+     },
+     {
+      "id": "dev_task4_rec1/talker2/80/29.800",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 29.8,
+      "truth": 3.68,
+      "read": -7.66
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/25.247",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 25.247,
+      "truth": -47.1,
+      "read": -29.27
+     }
+    ],
+    "another_source": [
+     {
+      "id": "dev_task4_rec1/talker1/80/17.629",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 17.629,
+      "truth": 7.72,
+      "read": -6.38
+     },
+     {
+      "id": "dev_task4_rec1/talker1/80/31.094",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 31.094,
+      "truth": 12.91,
+      "read": 1.91
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/58.468",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 58.468,
+      "truth": -33.7,
+      "read": -3.82
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/30.894",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 30.894,
+      "truth": -45.08,
+      "read": -21.51
+     },
+     {
+      "id": "dev_task4_rec3/talker5/80/32.814",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 32.814,
+      "truth": 1.33,
+      "read": -12.19
+     }
+    ],
+    "truth_was_2nd_3rd": [
+     {
+      "id": "dev_task4_rec2/talker2/80/54.163",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 54.163,
+      "truth": -43.88,
+      "read": -18.8
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/58.468",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 58.468,
+      "truth": -33.7,
+      "read": -3.82
+     },
+     {
+      "id": "eval_task4_rec1/talker1/80/29.295",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 29.295,
+      "truth": 21.62,
+      "read": -12.19
+     },
+     {
+      "id": "eval_task4_rec2/talker2/80/5.327",
+      "file": "eval/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 5.327,
+      "truth": 10.7,
+      "read": 26.39
+     },
+     {
+      "id": "eval_task4_rec3/talker2/80/12.445",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 12.445,
+      "truth": -20.77,
+      "read": 4.46
+     }
+    ],
+    "zero_pull": [
+     {
+      "id": "dev_task4_rec2/talker2/80/58.468",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 58.468,
+      "truth": -33.7,
+      "read": -3.82
+     },
+     {
+      "id": "eval_task4_rec2/talker1/80/42.024",
+      "file": "eval/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 42.024,
+      "truth": -23.11,
+      "read": -3.18
+     },
+     {
+      "id": "eval_task4_rec2/talker1/80/7.159",
+      "file": "eval/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 7.159,
+      "truth": -17.8,
+      "read": -1.27
+     },
+     {
+      "id": "eval_task4_rec3/talker2/80/12.445",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 12.445,
+      "truth": -20.77,
+      "read": 4.46
+     },
+     {
+      "id": "eval_task4_rec5/talker5/80/41.702",
+      "file": "eval/task4/recording5/dicit/audio_array_dicit.wav",
+      "time_s": 41.702,
+      "truth": -27.54,
+      "read": -2.55
+     }
+    ],
+    "mirror": [
+     {
+      "id": "eval_task3_rec1/talker2/80/11.749",
+      "file": "eval/task3/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 11.749,
+      "truth": -10.48,
+      "read": 2.55
+     },
+     {
+      "id": "eval_task3_rec1/talker2/80/21.587",
+      "file": "eval/task3/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 21.587,
+      "truth": -10.63,
+      "read": 1.91
+     },
+     {
+      "id": "eval_task4_rec1/talker1/80/29.295",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 29.295,
+      "truth": 21.62,
+      "read": -12.19
+     },
+     {
+      "id": "eval_task4_rec1/talker2/80/17.425",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 17.425,
+      "truth": 16.09,
+      "read": -6.38
+     }
+    ]
+   }
+  },
+  "a2 80mm outlier": {
+   "reads": 61,
+   "classes": {
+    "pause_direction": 49,
+    "another_source": 43,
+    "truth_was_2nd_3rd": 21,
+    "mirror": 13,
+    "facing": 12,
+    "zero_pull": 7,
+    "other": 5
+   },
+   "overlaps": {
+    "another_source+pause_direction": 10,
+    "another_source+pause_direction+truth_was_2nd_3rd": 10,
+    "another_source+mirror+pause_direction": 6,
+    "pause_direction": 6,
+    "other": 5,
+    "facing+pause_direction": 4,
+    "another_source+mirror+pause_direction+truth_was_2nd_3rd": 4,
+    "another_source+pause_direction+zero_pull": 3,
+    "another_source+facing+truth_was_2nd_3rd": 2,
+    "another_source+mirror+truth_was_2nd_3rd": 1,
+    "another_source+pause_direction+truth_was_2nd_3rd+zero_pull": 1,
+    "another_source+facing+zero_pull": 1
+   },
+   "examples": {
+    "pause_direction": [
+     {
+      "id": "dev_task4_rec1/talker1/80/26.228",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 26.228,
+      "truth": -42.31,
+      "read": 23.58
+     },
+     {
+      "id": "dev_task4_rec1/talker1/80/34.740",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 34.74,
+      "truth": 44.56,
+      "read": -14.15
+     },
+     {
+      "id": "dev_task4_rec1/talker1/80/49.897",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 49.897,
+      "truth": -50.1,
+      "read": 16.13
+     },
+     {
+      "id": "dev_task4_rec1/talker2/80/24.187",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 24.187,
+      "truth": 31.42,
+      "read": -36.87
+     },
+     {
+      "id": "dev_task4_rec1/talker2/80/3.081",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 3.081,
+      "truth": 29.0,
+      "read": -41.81
+     }
+    ],
+    "another_source": [
+     {
+      "id": "dev_task4_rec1/talker1/80/26.228",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 26.228,
+      "truth": -42.31,
+      "read": 23.58
+     },
+     {
+      "id": "dev_task4_rec1/talker1/80/28.075",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 28.075,
+      "truth": -26.05,
+      "read": 19.47
+     },
+     {
+      "id": "dev_task4_rec1/talker1/80/49.897",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 49.897,
+      "truth": -50.1,
+      "read": 16.13
+     },
+     {
+      "id": "dev_task4_rec1/talker2/80/24.187",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 24.187,
+      "truth": 31.42,
+      "read": -36.87
+     },
+     {
+      "id": "dev_task4_rec1/talker2/80/3.081",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 3.081,
+      "truth": 29.0,
+      "read": -41.81
+     }
+    ],
+    "mirror": [
+     {
+      "id": "dev_task4_rec1/talker1/80/28.075",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 28.075,
+      "truth": -26.05,
+      "read": 19.47
+     },
+     {
+      "id": "dev_task4_rec1/talker2/80/24.187",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 24.187,
+      "truth": 31.42,
+      "read": -36.87
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/41.568",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 41.568,
+      "truth": -47.06,
+      "read": 37.67
+     },
+     {
+      "id": "dev_task4_rec3/talker1/80/45.572",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 45.572,
+      "truth": 25.72,
+      "read": -28.54
+     },
+     {
+      "id": "dev_task4_rec3/talker5/80/3.443",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 3.443,
+      "truth": -31.39,
+      "read": 30
+     }
+    ],
+    "truth_was_2nd_3rd": [
+     {
+      "id": "dev_task4_rec1/talker1/80/28.075",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 28.075,
+      "truth": -26.05,
+      "read": 19.47
+     },
+     {
+      "id": "dev_task4_rec1/talker1/80/49.897",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 49.897,
+      "truth": -50.1,
+      "read": 16.13
+     },
+     {
+      "id": "dev_task4_rec1/talker2/80/3.081",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 3.081,
+      "truth": 29.0,
+      "read": -41.81
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/14.339",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 14.339,
+      "truth": -44.34,
+      "read": 0
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/18.315",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 18.315,
+      "truth": -51.82,
+      "read": -10.24
+     }
+    ],
+    "facing": [
+     {
+      "id": "dev_task4_rec1/talker1/80/34.740",
+      "file": "dev/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 34.74,
+      "truth": 44.56,
+      "read": -14.15
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/18.315",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 18.315,
+      "truth": -51.82,
+      "read": -10.24
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/21.881",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 21.881,
+      "truth": -50.86,
+      "read": 0
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/25.311",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 25.311,
+      "truth": 4.48,
+      "read": -32.23
+     },
+     {
+      "id": "dev_task4_rec2/talker5/80/33.896",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 33.896,
+      "truth": -49.97,
+      "read": 9.59
+     }
+    ],
+    "zero_pull": [
+     {
+      "id": "dev_task4_rec2/talker2/80/14.339",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 14.339,
+      "truth": -44.34,
+      "read": 0
+     },
+     {
+      "id": "dev_task4_rec2/talker2/80/21.881",
+      "file": "dev/task4/recording2/dicit/audio_array_dicit.wav",
+      "time_s": 21.881,
+      "truth": -50.86,
+      "read": 0
+     },
+     {
+      "id": "eval_task4_rec3/talker5/80/2.148",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 2.148,
+      "truth": -47.12,
+      "read": 2.55
+     },
+     {
+      "id": "eval_task4_rec3/talker5/80/44.604",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 44.604,
+      "truth": -41.74,
+      "read": 4.46
+     },
+     {
+      "id": "eval_task4_rec3/talker5/80/55.014",
+      "file": "eval/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 55.014,
+      "truth": 45.48,
+      "read": -2.55
+     }
+    ],
+    "other": [
+     {
+      "id": "dev_task4_rec3/talker5/80/8.615",
+      "file": "dev/task4/recording3/dicit/audio_array_dicit.wav",
+      "time_s": 8.615,
+      "truth": -32.82,
+      "read": 17.46
+     },
+     {
+      "id": "eval_task4_rec1/talker1/80/26.251",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 26.251,
+      "truth": -24.47,
+      "read": 38.48
+     },
+     {
+      "id": "eval_task4_rec1/talker1/80/63.731",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 63.731,
+      "truth": 66.08,
+      "read": 14.81
+     },
+     {
+      "id": "eval_task4_rec1/talker2/80/59.339",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 59.339,
+      "truth": 2.04,
+      "read": 60.07
+     },
+     {
+      "id": "eval_task4_rec1/talker2/80/63.708",
+      "file": "eval/task4/recording1/dicit/audio_array_dicit.wav",
+      "time_s": 63.708,
+      "truth": 1.79,
+      "read": 77.9
+     }
+    ]
+   }
+  }
+ },
+ "checks": {
+  "gcc_reads": 682,
+  "replica_agrees": 682,
+  "gcc_err": 0,
+  "a2_err": 0,
+  "gcc_none": 0,
+  "a2_none": 3
+ }
+}
