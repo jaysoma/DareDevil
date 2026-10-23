@@ -1,0 +1,1727 @@
+{
+ "counts": {
+  "requests": {
+   "inplace directive": 502,
+   "spliced directive": 502,
+   "inplace commit": 85,
+   "spliced commit": 85,
+   "inplace ask": 33,
+   "spliced ask": 33
+  },
+  "car_in_calls_windows": 328,
+  "brief19_phrases": {
+   "stream": 30000,
+   "instruction": 520,
+   "hard_to_person": 160,
+   "hard_subject": 160,
+   "hard_foreign": 160
+  }
+ },
+ "step1_accept": {
+  "keyword|1": {
+   "inplace|all": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "inplace|directive": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "inplace|ask": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "inplace|commit": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "spliced|all": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "spliced|directive": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "spliced|ask": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "spliced|commit": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "b19_generated": {
+    "to_person": 20.0,
+    "subject": 3.8,
+    "foreign": 0.6,
+    "hits": 8.8
+   }
+  },
+  "keyword|10": {
+   "inplace|all": [
+    0.9,
+    {
+     "car": 0.0,
+     "kitchen": 1.1,
+     "watch": 0.8,
+     "general": 1.8
+    }
+   ],
+   "inplace|directive": [
+    0.8,
+    {
+     "car": 0.0,
+     "kitchen": 1.0,
+     "watch": 1.0,
+     "general": 1.2
+    }
+   ],
+   "inplace|ask": [
+    3.0,
+    {
+     "car": 0.0,
+     "kitchen": 3.0,
+     "watch": 0.0,
+     "general": 9.1
+    }
+   ],
+   "inplace|commit": [
+    0.9,
+    {
+     "car": 0.0,
+     "kitchen": 1.2,
+     "watch": 0.0,
+     "general": 2.4
+    }
+   ],
+   "spliced|all": [
+    0.9,
+    {
+     "car": 0.0,
+     "kitchen": 1.1,
+     "watch": 0.8,
+     "general": 1.8
+    }
+   ],
+   "spliced|directive": [
+    0.8,
+    {
+     "car": 0.0,
+     "kitchen": 1.0,
+     "watch": 1.0,
+     "general": 1.2
+    }
+   ],
+   "spliced|ask": [
+    3.0,
+    {
+     "car": 0.0,
+     "kitchen": 3.0,
+     "watch": 0.0,
+     "general": 9.1
+    }
+   ],
+   "spliced|commit": [
+    0.9,
+    {
+     "car": 0.0,
+     "kitchen": 1.2,
+     "watch": 0.0,
+     "general": 2.4
+    }
+   ],
+   "b19_generated": {
+    "to_person": 51.9,
+    "subject": 21.2,
+    "foreign": 2.5,
+    "hits": 32.7
+   }
+  },
+  "shape_ngram|1": {
+   "inplace|all": [
+    0.2,
+    {
+     "car": 0.3,
+     "kitchen": 0.2,
+     "watch": 0.2,
+     "general": 0.2
+    }
+   ],
+   "inplace|directive": [
+    0.1,
+    {
+     "car": 0.2,
+     "kitchen": 0.2,
+     "watch": 0.0,
+     "general": 0.2
+    }
+   ],
+   "inplace|ask": [
+    0.8,
+    {
+     "car": 3.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "inplace|commit": [
+    0.3,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 1.2,
+     "general": 0.0
+    }
+   ],
+   "spliced|all": [
+    0.2,
+    {
+     "car": 0.3,
+     "kitchen": 0.2,
+     "watch": 0.2,
+     "general": 0.2
+    }
+   ],
+   "spliced|directive": [
+    0.1,
+    {
+     "car": 0.2,
+     "kitchen": 0.2,
+     "watch": 0.0,
+     "general": 0.2
+    }
+   ],
+   "spliced|ask": [
+    0.8,
+    {
+     "car": 3.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "spliced|commit": [
+    0.3,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 1.2,
+     "general": 0.0
+    }
+   ],
+   "b19_generated": {
+    "to_person": 43.1,
+    "subject": 22.5,
+    "foreign": 0.0,
+    "hits": 82.9
+   }
+  },
+  "shape_ngram|10": {
+   "inplace|all": [
+    2.3,
+    {
+     "car": 1.6,
+     "kitchen": 1.1,
+     "watch": 2.4,
+     "general": 3.9
+    }
+   ],
+   "inplace|directive": [
+    1.8,
+    {
+     "car": 1.8,
+     "kitchen": 1.0,
+     "watch": 1.6,
+     "general": 2.8
+    }
+   ],
+   "inplace|ask": [
+    5.3,
+    {
+     "car": 3.0,
+     "kitchen": 0.0,
+     "watch": 6.1,
+     "general": 12.1
+    }
+   ],
+   "inplace|commit": [
+    3.8,
+    {
+     "car": 0.0,
+     "kitchen": 2.4,
+     "watch": 5.9,
+     "general": 7.1
+    }
+   ],
+   "spliced|all": [
+    2.3,
+    {
+     "car": 1.6,
+     "kitchen": 1.1,
+     "watch": 2.4,
+     "general": 3.9
+    }
+   ],
+   "spliced|directive": [
+    1.8,
+    {
+     "car": 1.8,
+     "kitchen": 1.0,
+     "watch": 1.6,
+     "general": 2.8
+    }
+   ],
+   "spliced|ask": [
+    5.3,
+    {
+     "car": 3.0,
+     "kitchen": 0.0,
+     "watch": 6.1,
+     "general": 12.1
+    }
+   ],
+   "spliced|commit": [
+    3.8,
+    {
+     "car": 0.0,
+     "kitchen": 2.4,
+     "watch": 5.9,
+     "general": 7.1
+    }
+   ],
+   "b19_generated": {
+    "to_person": 74.4,
+    "subject": 58.1,
+    "foreign": 0.0,
+    "hits": 92.1
+   }
+  },
+  "contrast_ngram|1": {
+   "inplace|all": [
+    0.2,
+    {
+     "car": 0.5,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.3
+    }
+   ],
+   "inplace|directive": [
+    0.1,
+    {
+     "car": 0.4,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.2
+    }
+   ],
+   "inplace|ask": [
+    0.8,
+    {
+     "car": 3.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "inplace|commit": [
+    0.3,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 1.2
+    }
+   ],
+   "spliced|all": [
+    0.2,
+    {
+     "car": 0.5,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.5
+    }
+   ],
+   "spliced|directive": [
+    0.1,
+    {
+     "car": 0.4,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.2
+    }
+   ],
+   "spliced|ask": [
+    0.8,
+    {
+     "car": 3.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "spliced|commit": [
+    0.6,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 2.4
+    }
+   ],
+   "b19_generated": {
+    "to_person": 50.6,
+    "subject": 30.6,
+    "foreign": 0.0,
+    "hits": 83.8
+   }
+  },
+  "contrast_ngram|10": {
+   "inplace|all": [
+    2.4,
+    {
+     "car": 2.7,
+     "kitchen": 2.1,
+     "watch": 1.8,
+     "general": 2.9
+    }
+   ],
+   "inplace|directive": [
+    1.6,
+    {
+     "car": 2.2,
+     "kitchen": 1.8,
+     "watch": 1.0,
+     "general": 1.4
+    }
+   ],
+   "inplace|ask": [
+    6.1,
+    {
+     "car": 3.0,
+     "kitchen": 3.0,
+     "watch": 3.0,
+     "general": 15.2
+    }
+   ],
+   "inplace|commit": [
+    5.6,
+    {
+     "car": 5.9,
+     "kitchen": 3.5,
+     "watch": 5.9,
+     "general": 7.1
+    }
+   ],
+   "spliced|all": [
+    3.4,
+    {
+     "car": 4.2,
+     "kitchen": 3.2,
+     "watch": 2.4,
+     "general": 3.9
+    }
+   ],
+   "spliced|directive": [
+    2.5,
+    {
+     "car": 3.4,
+     "kitchen": 2.6,
+     "watch": 1.6,
+     "general": 2.4
+    }
+   ],
+   "spliced|ask": [
+    9.8,
+    {
+     "car": 9.1,
+     "kitchen": 6.1,
+     "watch": 6.1,
+     "general": 18.2
+    }
+   ],
+   "spliced|commit": [
+    6.5,
+    {
+     "car": 7.1,
+     "kitchen": 5.9,
+     "watch": 5.9,
+     "general": 7.1
+    }
+   ],
+   "b19_generated": {
+    "to_person": 81.9,
+    "subject": 71.2,
+    "foreign": 0.6,
+    "hits": 94.6
+   }
+  },
+  "contrast_ngram_past|1": {
+   "inplace|all": [
+    0.1,
+    {
+     "car": 0.2,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.2
+    }
+   ],
+   "inplace|directive": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.2
+    }
+   ],
+   "inplace|ask": [
+    0.8,
+    {
+     "car": 3.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "inplace|commit": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "spliced|all": [
+    0.2,
+    {
+     "car": 0.3,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.3
+    }
+   ],
+   "spliced|directive": [
+    0.1,
+    {
+     "car": 0.2,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.2
+    }
+   ],
+   "spliced|ask": [
+    0.8,
+    {
+     "car": 3.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "spliced|commit": [
+    0.3,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 1.2
+    }
+   ],
+   "b19_generated": {
+    "to_person": 43.8,
+    "subject": 28.7,
+    "foreign": 0.0,
+    "hits": 83.1
+   }
+  },
+  "contrast_ngram_past|10": {
+   "inplace|all": [
+    2.1,
+    {
+     "car": 3.1,
+     "kitchen": 1.1,
+     "watch": 1.3,
+     "general": 2.9
+    }
+   ],
+   "inplace|directive": [
+    1.4,
+    {
+     "car": 2.8,
+     "kitchen": 0.8,
+     "watch": 0.4,
+     "general": 1.6
+    }
+   ],
+   "inplace|ask": [
+    4.5,
+    {
+     "car": 3.0,
+     "kitchen": 0.0,
+     "watch": 3.0,
+     "general": 12.1
+    }
+   ],
+   "inplace|commit": [
+    5.3,
+    {
+     "car": 4.7,
+     "kitchen": 3.5,
+     "watch": 5.9,
+     "general": 7.1
+    }
+   ],
+   "spliced|all": [
+    2.9,
+    {
+     "car": 3.4,
+     "kitchen": 2.4,
+     "watch": 1.9,
+     "general": 3.7
+    }
+   ],
+   "spliced|directive": [
+    1.8,
+    {
+     "car": 2.6,
+     "kitchen": 1.6,
+     "watch": 1.0,
+     "general": 2.2
+    }
+   ],
+   "spliced|ask": [
+    9.8,
+    {
+     "car": 9.1,
+     "kitchen": 6.1,
+     "watch": 6.1,
+     "general": 18.2
+    }
+   ],
+   "spliced|commit": [
+    6.2,
+    {
+     "car": 5.9,
+     "kitchen": 5.9,
+     "watch": 5.9,
+     "general": 7.1
+    }
+   ],
+   "b19_generated": {
+    "to_person": 76.2,
+    "subject": 63.1,
+    "foreign": 0.0,
+    "hits": 93.5
+   }
+  },
+  "shape_embed|1": {
+   "inplace|all": [
+    0.2,
+    {
+     "car": 0.0,
+     "kitchen": 0.6,
+     "watch": 0.0,
+     "general": 0.2
+    }
+   ],
+   "inplace|directive": [
+    0.2,
+    {
+     "car": 0.0,
+     "kitchen": 0.6,
+     "watch": 0.0,
+     "general": 0.2
+    }
+   ],
+   "inplace|ask": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "inplace|commit": [
+    0.3,
+    {
+     "car": 0.0,
+     "kitchen": 1.2,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "spliced|all": [
+    0.2,
+    {
+     "car": 0.0,
+     "kitchen": 0.6,
+     "watch": 0.0,
+     "general": 0.2
+    }
+   ],
+   "spliced|directive": [
+    0.2,
+    {
+     "car": 0.0,
+     "kitchen": 0.6,
+     "watch": 0.0,
+     "general": 0.2
+    }
+   ],
+   "spliced|ask": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "spliced|commit": [
+    0.3,
+    {
+     "car": 0.0,
+     "kitchen": 1.2,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "b19_generated": {
+    "to_person": 46.9,
+    "subject": 35.6,
+    "foreign": 0.0,
+    "hits": 61.0
+   }
+  },
+  "shape_embed|10": {
+   "inplace|all": [
+    3.8,
+    {
+     "car": 3.9,
+     "kitchen": 7.7,
+     "watch": 1.3,
+     "general": 2.1
+    }
+   ],
+   "inplace|directive": [
+    4.0,
+    {
+     "car": 4.2,
+     "kitchen": 8.8,
+     "watch": 1.6,
+     "general": 1.6
+    }
+   ],
+   "inplace|ask": [
+    3.8,
+    {
+     "car": 0.0,
+     "kitchen": 9.1,
+     "watch": 0.0,
+     "general": 6.1
+    }
+   ],
+   "inplace|commit": [
+    2.1,
+    {
+     "car": 3.5,
+     "kitchen": 1.2,
+     "watch": 0.0,
+     "general": 3.5
+    }
+   ],
+   "spliced|all": [
+    3.8,
+    {
+     "car": 3.9,
+     "kitchen": 7.7,
+     "watch": 1.3,
+     "general": 2.1
+    }
+   ],
+   "spliced|directive": [
+    4.0,
+    {
+     "car": 4.2,
+     "kitchen": 8.8,
+     "watch": 1.6,
+     "general": 1.6
+    }
+   ],
+   "spliced|ask": [
+    3.8,
+    {
+     "car": 0.0,
+     "kitchen": 9.1,
+     "watch": 0.0,
+     "general": 6.1
+    }
+   ],
+   "spliced|commit": [
+    2.1,
+    {
+     "car": 3.5,
+     "kitchen": 1.2,
+     "watch": 0.0,
+     "general": 3.5
+    }
+   ],
+   "b19_generated": {
+    "to_person": 88.1,
+    "subject": 69.4,
+    "foreign": 1.9,
+    "hits": 89.4
+   }
+  },
+  "contrast_embed|1": {
+   "inplace|all": [
+    0.2,
+    {
+     "car": 0.5,
+     "kitchen": 0.5,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "inplace|directive": [
+    0.2,
+    {
+     "car": 0.4,
+     "kitchen": 0.4,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "inplace|ask": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "inplace|commit": [
+    0.6,
+    {
+     "car": 1.2,
+     "kitchen": 1.2,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "spliced|all": [
+    2.3,
+    {
+     "car": 2.3,
+     "kitchen": 6.6,
+     "watch": 0.2,
+     "general": 0.3
+    }
+   ],
+   "spliced|directive": [
+    2.7,
+    {
+     "car": 2.6,
+     "kitchen": 7.8,
+     "watch": 0.2,
+     "general": 0.4
+    }
+   ],
+   "spliced|ask": [
+    0.8,
+    {
+     "car": 0.0,
+     "kitchen": 3.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "spliced|commit": [
+    0.6,
+    {
+     "car": 1.2,
+     "kitchen": 1.2,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "b19_generated": {
+    "to_person": 83.1,
+    "subject": 72.5,
+    "foreign": 1.9,
+    "hits": 89.2
+   }
+  },
+  "contrast_embed|10": {
+   "inplace|all": [
+    4.4,
+    {
+     "car": 5.3,
+     "kitchen": 6.3,
+     "watch": 2.4,
+     "general": 3.4
+    }
+   ],
+   "inplace|directive": [
+    4.1,
+    {
+     "car": 4.8,
+     "kitchen": 5.8,
+     "watch": 2.6,
+     "general": 3.4
+    }
+   ],
+   "inplace|ask": [
+    3.8,
+    {
+     "car": 3.0,
+     "kitchen": 9.1,
+     "watch": 0.0,
+     "general": 3.0
+    }
+   ],
+   "inplace|commit": [
+    5.9,
+    {
+     "car": 9.4,
+     "kitchen": 8.2,
+     "watch": 2.4,
+     "general": 3.5
+    }
+   ],
+   "spliced|all": [
+    19.6,
+    {
+     "car": 28.1,
+     "kitchen": 27.4,
+     "watch": 10.2,
+     "general": 12.6
+    }
+   ],
+   "spliced|directive": [
+    20.1,
+    {
+     "car": 28.9,
+     "kitchen": 27.9,
+     "watch": 11.2,
+     "general": 12.5
+    }
+   ],
+   "spliced|ask": [
+    19.7,
+    {
+     "car": 33.3,
+     "kitchen": 27.3,
+     "watch": 3.0,
+     "general": 15.2
+    }
+   ],
+   "spliced|commit": [
+    16.2,
+    {
+     "car": 21.2,
+     "kitchen": 24.7,
+     "watch": 7.1,
+     "general": 11.8
+    }
+   ],
+   "b19_generated": {
+    "to_person": 95.6,
+    "subject": 92.5,
+    "foreign": 13.1,
+    "hits": 98.5
+   }
+  },
+  "contrast_embed_past|1": {
+   "inplace|all": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.2,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "inplace|directive": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "inplace|ask": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "inplace|commit": [
+    0.3,
+    {
+     "car": 0.0,
+     "kitchen": 1.2,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "spliced|all": [
+    0.4,
+    {
+     "car": 0.2,
+     "kitchen": 1.5,
+     "watch": 0.2,
+     "general": 0.0
+    }
+   ],
+   "spliced|directive": [
+    0.4,
+    {
+     "car": 0.2,
+     "kitchen": 1.4,
+     "watch": 0.2,
+     "general": 0.0
+    }
+   ],
+   "spliced|ask": [
+    0.8,
+    {
+     "car": 0.0,
+     "kitchen": 3.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "spliced|commit": [
+    0.3,
+    {
+     "car": 0.0,
+     "kitchen": 1.2,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "b19_generated": {
+    "to_person": 56.9,
+    "subject": 40.0,
+    "foreign": 0.0,
+    "hits": 71.7
+   }
+  },
+  "contrast_embed_past|10": {
+   "inplace|all": [
+    0.6,
+    {
+     "car": 0.6,
+     "kitchen": 0.3,
+     "watch": 0.8,
+     "general": 0.5
+    }
+   ],
+   "inplace|directive": [
+    0.5,
+    {
+     "car": 0.8,
+     "kitchen": 0.2,
+     "watch": 1.0,
+     "general": 0.2
+    }
+   ],
+   "inplace|ask": [
+    0.0,
+    {
+     "car": 0.0,
+     "kitchen": 0.0,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "inplace|commit": [
+    0.9,
+    {
+     "car": 0.0,
+     "kitchen": 1.2,
+     "watch": 0.0,
+     "general": 2.4
+    }
+   ],
+   "spliced|all": [
+    2.7,
+    {
+     "car": 2.6,
+     "kitchen": 5.6,
+     "watch": 1.9,
+     "general": 0.8
+    }
+   ],
+   "spliced|directive": [
+    2.9,
+    {
+     "car": 2.4,
+     "kitchen": 6.2,
+     "watch": 2.4,
+     "general": 0.8
+    }
+   ],
+   "spliced|ask": [
+    5.3,
+    {
+     "car": 9.1,
+     "kitchen": 9.1,
+     "watch": 0.0,
+     "general": 3.0
+    }
+   ],
+   "spliced|commit": [
+    0.6,
+    {
+     "car": 1.2,
+     "kitchen": 1.2,
+     "watch": 0.0,
+     "general": 0.0
+    }
+   ],
+   "b19_generated": {
+    "to_person": 85.6,
+    "subject": 80.6,
+    "foreign": 2.5,
+    "hits": 92.3
+   }
+  }
+ },
+ "step1_paired": {
+  "keyword": {
+   "median_inplace_minus_spliced": 0.0,
+   "share_lower_in_place": 0.0,
+   "n": 2480
+  },
+  "shape_ngram": {
+   "median_inplace_minus_spliced": 0.0,
+   "share_lower_in_place": 0.0,
+   "n": 2480
+  },
+  "contrast_ngram": {
+   "median_inplace_minus_spliced": -0.1276,
+   "share_lower_in_place": 73.9,
+   "n": 2480
+  },
+  "contrast_ngram_past": {
+   "median_inplace_minus_spliced": -0.0819,
+   "share_lower_in_place": 66.3,
+   "n": 2480
+  },
+  "shape_embed": {
+   "median_inplace_minus_spliced": 0.0,
+   "share_lower_in_place": 0.0,
+   "n": 2480
+  },
+  "contrast_embed": {
+   "median_inplace_minus_spliced": -0.0724,
+   "share_lower_in_place": 86.1,
+   "n": 2480
+  },
+  "contrast_embed_past": {
+   "median_inplace_minus_spliced": -0.0576,
+   "share_lower_in_place": 76.1,
+   "n": 2480
+  }
+ },
+ "step1_device_shaped": {
+  "pairs": 93,
+  "requests": 88,
+  "accepted_contrast_embed_10fa_inplace": 43.0,
+  "accepted_contrast_embed_10fa_spliced": 96.8,
+  "accepted_contrast_embed_1fa_inplace": 6.5,
+  "accepted_contrast_embed_1fa_spliced": 45.2
+ },
+ "request_words": {
+  "directive": 7.0,
+  "ask": 8.0,
+  "commit": 7.0,
+  "b19_instructions": 7.0,
+  "b19_to_person": 11.0
+ },
+ "cue_rates": {
+  "b19 instructions": {
+   "vocative": 0.0,
+   "you": 6.3,
+   "first_person": 1.2,
+   "past_reported": 1.9,
+   "bare_imperative": 42.5,
+   "n": 520
+  },
+  "b19 stream phrases": {
+   "vocative": 0.3,
+   "you": 11.3,
+   "first_person": 2.0,
+   "past_reported": 9.7,
+   "bare_imperative": 1.3,
+   "n": 30000
+  },
+  "b19 to_person (generated)": {
+   "vocative": 10.6,
+   "you": 13.8,
+   "first_person": 20.0,
+   "past_reported": 18.1,
+   "bare_imperative": 0.0,
+   "n": 160
+  },
+  "b19 subject (generated)": {
+   "vocative": 7.5,
+   "you": 16.2,
+   "first_person": 3.1,
+   "past_reported": 20.0,
+   "bare_imperative": 3.8,
+   "n": 160
+  },
+  "b19 foreign (real)": {
+   "vocative": 1.2,
+   "you": 23.1,
+   "first_person": 1.2,
+   "past_reported": 21.2,
+   "bare_imperative": 0.0,
+   "n": 160
+  },
+  "real directive": {
+   "vocative": 0.0,
+   "you": 50.2,
+   "first_person": 3.6,
+   "past_reported": 3.2,
+   "bare_imperative": 13.5,
+   "n": 502
+  },
+  "real ask": {
+   "vocative": 0.0,
+   "you": 100.0,
+   "first_person": 0.0,
+   "past_reported": 9.1,
+   "bare_imperative": 0.0,
+   "n": 33
+  },
+  "real commit": {
+   "vocative": 0.0,
+   "you": 30.6,
+   "first_person": 41.2,
+   "past_reported": 1.2,
+   "bare_imperative": 17.6,
+   "n": 85
+  },
+  "car in calls (SLURP car tests)": {
+   "vocative": 0.0,
+   "you": 8.5,
+   "first_person": 2.4,
+   "past_reported": 0.6,
+   "bare_imperative": 50.0,
+   "n": 328
+  }
+ },
+ "step2_veto": {
+  "none": {
+   "1": {
+    "hits": 91.9,
+    "to_person": 85.0,
+    "subject": 78.8,
+    "foreign": 1.9,
+    "real_requests": 0.3
+   },
+   "10": {
+    "hits": 98.3,
+    "to_person": 98.1,
+    "subject": 95.0,
+    "foreign": 20.0,
+    "real_requests": 4.4
+   }
+  },
+  "vocative": {
+   "1": {
+    "hits": 91.9,
+    "to_person": 78.8,
+    "subject": 74.4,
+    "foreign": 1.2,
+    "real_requests": 0.3
+   },
+   "10": {
+    "hits": 98.3,
+    "to_person": 87.5,
+    "subject": 87.5,
+    "foreign": 18.8,
+    "real_requests": 4.4
+   }
+  },
+  "you": {
+   "1": {
+    "hits": 86.5,
+    "to_person": 77.5,
+    "subject": 67.5,
+    "foreign": 1.2,
+    "real_requests": 0.1
+   },
+   "10": {
+    "hits": 92.7,
+    "to_person": 84.4,
+    "subject": 81.2,
+    "foreign": 15.6,
+    "real_requests": 2.8
+   }
+  },
+  "first_person": {
+   "1": {
+    "hits": 91.0,
+    "to_person": 66.9,
+    "subject": 77.5,
+    "foreign": 1.9,
+    "real_requests": 0.2
+   },
+   "10": {
+    "hits": 97.1,
+    "to_person": 78.1,
+    "subject": 91.9,
+    "foreign": 19.4,
+    "real_requests": 4.2
+   }
+  },
+  "past_reported": {
+   "1": {
+    "hits": 90.6,
+    "to_person": 71.9,
+    "subject": 63.7,
+    "foreign": 1.2,
+    "real_requests": 0.3
+   },
+   "10": {
+    "hits": 96.9,
+    "to_person": 81.2,
+    "subject": 76.9,
+    "foreign": 14.4,
+    "real_requests": 4.6
+   }
+  },
+  "first_person+past_reported": {
+   "1": {
+    "hits": 89.6,
+    "to_person": 53.8,
+    "subject": 62.5,
+    "foreign": 1.2,
+    "real_requests": 0.2
+   },
+   "10": {
+    "hits": 95.8,
+    "to_person": 61.3,
+    "subject": 74.4,
+    "foreign": 15.0,
+    "real_requests": 4.4
+   }
+  },
+  "all four": {
+   "1": {
+    "hits": 84.4,
+    "to_person": 44.4,
+    "subject": 50.0,
+    "foreign": 0.0,
+    "real_requests": 0.1
+   },
+   "10": {
+    "hits": 90.6,
+    "to_person": 48.1,
+    "subject": 56.9,
+    "foreign": 9.4,
+    "real_requests": 3.1
+   }
+  }
+ },
+ "step2_combo": {
+  "contrast only": {
+   "coefficients_fold0": {
+    "bias": -13.105,
+    "contrast": 6.184
+   },
+   "coefficients_fold1": {
+    "bias": -13.464,
+    "contrast": 6.282
+   },
+   "1": {
+    "hits": 92.3,
+    "to_person": 85.6,
+    "subject": 78.8,
+    "foreign": 1.9,
+    "real_requests": 0.3
+   },
+   "10": {
+    "hits": 98.5,
+    "to_person": 98.1,
+    "subject": 96.2,
+    "foreign": 18.1,
+    "real_requests": 4.3
+   }
+  },
+  "+ vocative": {
+   "coefficients_fold0": {
+    "bias": -13.104,
+    "contrast": 6.185,
+    "vocative": -1.886
+   },
+   "coefficients_fold1": {
+    "bias": -13.46,
+    "contrast": 6.281,
+    "vocative": -1.643
+   },
+   "1": {
+    "hits": 92.3,
+    "to_person": 84.4,
+    "subject": 77.5,
+    "foreign": 1.9,
+    "real_requests": 0.3
+   },
+   "10": {
+    "hits": 98.5,
+    "to_person": 96.2,
+    "subject": 95.0,
+    "foreign": 18.1,
+    "real_requests": 4.3
+   }
+  },
+  "+ you": {
+   "coefficients_fold0": {
+    "bias": -12.863,
+    "contrast": 6.256,
+    "you": -2.059
+   },
+   "coefficients_fold1": {
+    "bias": -13.094,
+    "contrast": 6.254,
+    "you": -2.079
+   },
+   "1": {
+    "hits": 91.9,
+    "to_person": 84.4,
+    "subject": 77.5,
+    "foreign": 1.2,
+    "real_requests": 0.1
+   },
+   "10": {
+    "hits": 98.7,
+    "to_person": 96.2,
+    "subject": 96.2,
+    "foreign": 15.0,
+    "real_requests": 3.2
+   }
+  },
+  "+ first_person": {
+   "coefficients_fold0": {
+    "bias": -13.141,
+    "contrast": 6.239,
+    "first_person": -1.356
+   },
+   "coefficients_fold1": {
+    "bias": -13.504,
+    "contrast": 6.348,
+    "first_person": -1.688
+   },
+   "1": {
+    "hits": 92.1,
+    "to_person": 84.4,
+    "subject": 78.8,
+    "foreign": 1.9,
+    "real_requests": 0.2
+   },
+   "10": {
+    "hits": 98.5,
+    "to_person": 96.9,
+    "subject": 96.2,
+    "foreign": 17.5,
+    "real_requests": 4.2
+   }
+  },
+  "+ past_reported": {
+   "coefficients_fold0": {
+    "bias": -13.122,
+    "contrast": 6.187,
+    "past_reported": 0.282
+   },
+   "coefficients_fold1": {
+    "bias": -13.599,
+    "contrast": 6.331,
+    "past_reported": 0.98
+   },
+   "1": {
+    "hits": 92.1,
+    "to_person": 85.6,
+    "subject": 79.4,
+    "foreign": 1.2,
+    "real_requests": 0.3
+   },
+   "10": {
+    "hits": 98.3,
+    "to_person": 98.1,
+    "subject": 96.9,
+    "foreign": 21.9,
+    "real_requests": 4.1
+   }
+  },
+  "+ bare_imperative": {
+   "coefficients_fold0": {
+    "bias": -13.143,
+    "contrast": 6.087,
+    "bare_imperative": 0.885
+   },
+   "coefficients_fold1": {
+    "bias": -13.933,
+    "contrast": 6.327,
+    "bare_imperative": 1.541
+   },
+   "1": {
+    "hits": 93.3,
+    "to_person": 86.2,
+    "subject": 78.1,
+    "foreign": 1.9,
+    "real_requests": 0.5
+   },
+   "10": {
+    "hits": 98.8,
+    "to_person": 98.1,
+    "subject": 96.2,
+    "foreign": 18.1,
+    "real_requests": 5.2
+   }
+  },
+  "all cues": {
+   "coefficients_fold0": {
+    "bias": -12.882,
+    "contrast": 6.241,
+    "vocative": -2.096,
+    "you": -1.951,
+    "first_person": -1.28,
+    "past_reported": 0.125,
+    "bare_imperative": 0.333
+   },
+   "coefficients_fold1": {
+    "bias": -13.655,
+    "contrast": 6.367,
+    "vocative": -1.584,
+    "you": -1.669,
+    "first_person": -1.057,
+    "past_reported": 1.011,
+    "bare_imperative": 1.167
+   },
+   "1": {
+    "hits": 91.9,
+    "to_person": 83.1,
+    "subject": 76.9,
+    "foreign": 1.9,
+    "real_requests": 0.2
+   },
+   "10": {
+    "hits": 98.8,
+    "to_person": 95.6,
+    "subject": 93.1,
+    "foreign": 17.5,
+    "real_requests": 3.8
+   }
+  }
+ },
+ "step3": {
+  "keyword": {
+   "at_brief19_car_thresholds": {
+    "1": {
+     "hits": 12.2,
+     "real_requests_accepted": 0.0,
+     "calls_fa_per_hour": 0.35
+    },
+    "10": {
+     "hits": 32.0,
+     "real_requests_accepted": 0.0,
+     "calls_fa_per_hour": 2.6
+    }
+   },
+   "p_instruction_above_request": 0.831
+  },
+  "shape_ngram": {
+   "at_brief19_car_thresholds": {
+    "1": {
+     "hits": 85.4,
+     "real_requests_accepted": 0.3,
+     "calls_fa_per_hour": 0.49
+    },
+    "10": {
+     "hits": 96.0,
+     "real_requests_accepted": 1.6,
+     "calls_fa_per_hour": 5.34
+    }
+   },
+   "p_instruction_above_request": 0.994
+  },
+  "contrast_ngram": {
+   "at_brief19_car_thresholds": {
+    "1": {
+     "hits": 93.3,
+     "real_requests_accepted": 0.5,
+     "calls_fa_per_hour": 0.91
+    },
+    "10": {
+     "hits": 97.3,
+     "real_requests_accepted": 2.7,
+     "calls_fa_per_hour": 6.18
+    }
+   },
+   "p_instruction_above_request": 0.996
+  },
+  "contrast_ngram_past": {
+   "at_brief19_car_thresholds": {
+    "1": {
+     "hits": 89.9,
+     "real_requests_accepted": 0.2,
+     "calls_fa_per_hour": 0.77
+    },
+    "10": {
+     "hits": 97.3,
+     "real_requests_accepted": 3.1,
+     "calls_fa_per_hour": 5.48
+    }
+   },
+   "p_instruction_above_request": 0.996
+  },
+  "shape_embed": {
+   "at_brief19_car_thresholds": {
+    "1": {
+     "hits": 87.2,
+     "real_requests_accepted": 0.0,
+     "calls_fa_per_hour": 0.21
+    },
+    "10": {
+     "hits": 96.6,
+     "real_requests_accepted": 3.9,
+     "calls_fa_per_hour": 10.04
+    }
+   },
+   "p_instruction_above_request": 0.989
+  },
+  "contrast_embed": {
+   "at_brief19_car_thresholds": {
+    "1": {
+     "hits": 97.0,
+     "real_requests_accepted": 0.5,
+     "calls_fa_per_hour": 0.56
+    },
+    "10": {
+     "hits": 99.4,
+     "real_requests_accepted": 5.3,
+     "calls_fa_per_hour": 10.39
+    }
+   },
+   "p_instruction_above_request": 0.999
+  },
+  "contrast_embed_past": {
+   "at_brief19_car_thresholds": {
+    "1": {
+     "hits": 86.0,
+     "real_requests_accepted": 0.0,
+     "calls_fa_per_hour": 0.21
+    },
+    "10": {
+     "hits": 96.0,
+     "real_requests_accepted": 0.6,
+     "calls_fa_per_hour": 9.06
+    }
+   },
+   "p_instruction_above_request": 0.999
+  },
+  "combo: contrast only": {
+   "at_calls_fa": {
+    "1": {
+     "hits": 97.9,
+     "real_requests_accepted": 0.5
+    },
+    "10": {
+     "hits": 99.4,
+     "real_requests_accepted": 5.2
+    }
+   },
+   "p_instruction_above_request": 0.999
+  },
+  "combo: all cues": {
+   "at_calls_fa": {
+    "1": {
+     "hits": 97.9,
+     "real_requests_accepted": 1.0
+    },
+    "10": {
+     "hits": 99.4,
+     "real_requests_accepted": 5.3
+    }
+   },
+   "p_instruction_above_request": 0.999
+  }
+ },
+ "catalogue_summary": {
+  "accepted_pairs": 108,
+  "requests": 79,
+  "by_kind": {
+   "directive": 83,
+   "commit": 20,
+   "ask": 5
+  },
+  "by_device": {
+   "general": 21,
+   "kitchen": 39,
+   "watch": 15,
+   "car": 33
+  },
+  "with_any_person_cue": 50.9,
+  "by_cue": {
+   "bare_imperative": 32,
+   "you": 49,
+   "first_person": 9
+  },
+  "words_median": 7.0
+ }
+}
