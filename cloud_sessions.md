@@ -382,3 +382,44 @@ facing reference built from enrolment utterances. Its constants are frozen for h
 
 Score under the scoring rule above, with outliers catalogued. Commit `results/orientation_dov/` and the harness to a
 branch. No audio in the repo.
+
+## 14. Orientation from which wall lights up
+
+Jay's idea (2026-10-22): the talker under a microscope (raw audio, DFN masks) showed no repeatable rotation pattern.
+What does change consistently as a talker turns is the reflections. Any room reduces to four walls, so the talker's
+facing should be decidable at 0, 90, 180 and 270 deg.
+
+**The physics, made precise.**
+- **The directions don't move.** When a talker turns in place, the image sources (the reflections' directions and
+  delays) stay put, because they depend only on where the talker stands and where the walls are.
+- **The brightness does.** The mouth beams high frequencies forward (10-20 dB front to back above about 2 kHz), so the
+  wall the talker faces returns a brighter echo.
+- **Low frequencies are the yardstick.** They radiate nearly equally in every direction, so in each echo the ratio of
+  high to low frequencies says how directly the mouth was pointed at that wall.
+- **The cue:** among the early reflections, which one has the highest high-to-low ratio, measured against the direct
+  sound's own ratio.
+
+**The two-mic catch, to handle explicitly.**
+- **Side walls** (perpendicular to the mic axis) put their echoes at clearly different angles.
+- **Front wall, back wall, floor and ceiling** all mirror the talker without changing its offset along the axis. Their
+  echoes read near the talker's angle and differ mainly in delay.
+- **So "which wall" needs angle and lag together.** That's brief 8's problem: keep the 12 ms limit.
+
+**Steps.**
+1. **LOCATA, tasks 3 and 4** (human talkers, OptiTrack head orientation, static DICIT array, 16 cm pair; the data is
+   on Zenodo 3630471, as in brief 10). Get the room's dimensions and the array's pose from the LOCATA documentation; if
+   they're missing, say so and stop. For each speech onset, compute the first-order image sources from the talker's
+   tracked position. Measure each image source's echo in the pair's signals at its predicted delay and angle. Speech
+   isn't a click, so use a matched filter or the direct-sound-cancelled residual as `Angle2.readSound` does. Record
+   each echo's level and high-to-low ratio (1.1-2 kHz against 4-8 kHz), relative to the direct sound.
+2. **Predict the facing quadrant** relative to the room: the wall whose echo is brightest relative to the direct, with
+   the direct-to-echo balance deciding "toward the array" against "away". Score it against the tracked head
+   orientation as a 4-class accuracy (chance is 25%) plus a confusion matrix. Report it next to RotationTracker on the
+   same onsets.
+3. **Mechanism check on dEchorate.** Loudspeakers aren't heads, but sources 4 and 5 face walls with labelled echoes. Does
+   the faced wall's echo come out brightest? A check, not a geometry result.
+4. **Where it breaks.** By talker distance from each wall, by angle, and by whether the faced wall is a side wall or a
+   front/back wall: the two-mic catch above.
+
+Score under the scoring rule, catalogue every set-aside read, and commit `results/orientation_reflections/` and
+`harness/orientation_reflections/` to a branch.
