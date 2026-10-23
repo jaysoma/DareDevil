@@ -34,6 +34,8 @@ FAMILIES = {   # cause family -> levels from mildest to most severe
     'band_lo': ['band_lo:300', 'band_lo:1100', 'band_lo:2000'],
     'no_pause': ['no_pause'],
 }
+for _f in ('steady_pink', 'steady_voice', 'common_mode', 'diffuse'):          # cause 6 with a sound in the pause
+    FAMILIES[f'no_pause+{_f}'] = [f'no_pause+{c}' for c in FAMILIES[_f]]
 CAUSES = ['baseline'] + [c for v in FAMILIES.values() for c in v]
 KINDS = ['mirror', 'endfire', 'pause_direction', 'other_source', 'zero_pull', 'aliasing', 'truth_in_2_3', 'drift',
          'other']
@@ -98,7 +100,7 @@ def main():
             if not rows:
                 continue
             for s in SCHEMES:
-                if cause == 'no_pause' and s == 'a2':
+                if cause.startswith('no_pause') and s == 'a2':
                     continue
                 got = [(r, read_of(r, s)) for r in rows]
                 got = [(r, x) for r, x in got if x is not None]
@@ -161,6 +163,17 @@ def main():
                             fp[c].append((float(c1[c]) - float(c0[c])) * (100 if c in RATE_CLUES else 1))
                     res['fingerprint'][k] = {c: (round(st.mean(v), 1) if c in RATE_CLUES else round(st.median(v), 2))
                                              for c, v in fp.items()}
+    # absolute clues per cause x placement: what the read knew, scheme-free
+    res['clues_abs'] = {}
+    for (cause, p), rows in R.items():
+        cl = [clues(r, 'gcc') for r in rows]
+        pd = [(r.get('pause_deg'), r['truth']) for r in rows]
+        res['clues_abs'][f'{cause}|{p}'] = {
+            **{c: (pct([x[c] for x in cl if x[c] is not None]) if c in RATE_CLUES else med([x[c] for x in cl]))
+               for c in cl[0]},
+            'pause_near_talker': pct([d is not None and abs(d - t['deg']) <= 10 for d, t in pd]),
+            'pause_near_other': pct([d is not None and any(abs(d - o['deg']) <= 10 for o in t['others']) for d, t in pd]),
+            'pause_near_0': pct([d is not None and abs(d) < 6 for d, t in pd])}
     # who falls first
     for fam, levels in FAMILIES.items():
         for p in PLACEMENTS:
@@ -223,6 +236,16 @@ def tables(res, catalogue, out):
                            f"({x['read_outliers']} out, {x['scenarios_dropped']} sc.)")
             rows.append(row)
         L.append(tbl(['cause'] + P, rows))
+    L.append('\n## Cause 6 with a sound in the pause: GccPhat off by >10 deg / >36 deg, %, with the pause weighting -> without\n')
+    rows = []
+    for fam in ('steady_pink', 'steady_voice', 'common_mode', 'diffuse'):
+        for c in FAMILIES[fam]:
+            row = [c]
+            for p in P:
+                a, b = res['rates'].get(f'{c}|{p}|gcc'), res['rates'].get(f'no_pause+{c}|{p}|gcc')
+                row.append(f"{a['over10_pct']}/{a['over36_pct']} -> {b['over10_pct']}/{b['over36_pct']}" if a and b else '')
+            rows.append(row)
+    L.append(tbl(['cause'] + P, rows))
     L.append('\n## Who falls first: the mildest level at which reads off by >10 deg rise 5 points over baseline\n')
     rows = []
     for fam in FAMILIES:
@@ -234,21 +257,51 @@ def tables(res, catalogue, out):
     L.append(tbl(['cause'] + P, rows))
     clist = ['gcc_share', 'gcc_width', 'gcc_tie', 'gcc_votes', 'gcc_early_vs_lock', 'a2_edge', 'a2_first_ms', 'agree5',
              'pause_share', 'snr_mf', 'snr_hf1', 'snr_hf2']
+    L.append('\n## Fingerprint: each clue\'s change against the same cut at baseline, median over placements\n')
+    L.append('(per placement, the median change over cuts; tie, edge and agreement as the change in % points. Clues are '
+             'properties of the cut and run, so this is GccPhat\'s read set; Angle2\'s is the same where both read)\n')
+    rows = []
+    for c in CAUSES[1:]:
+        ks = [f'{c}|{p}|gcc' for p in P if f'{c}|{p}|gcc' in res['fingerprint']]
+        if not ks:
+            continue
+        row = [c]
+        for cl in clist:
+            v = [res['fingerprint'][k].get(cl) for k in ks]
+            v = [x for x in v if x is not None]
+            row.append(round(st.median(v), 2) if v else None)
+        rows.append(row)
+    L.append(tbl(['cause'] + clist, rows))
+    alist = clist + ['pause_near_talker', 'pause_near_other', 'pause_near_0']
+    L.append('\n## Clues as they stand (not changes), median over placements of each placement\'s median / rate\n')
+    rows = []
+    for c in CAUSES:
+        ks = [f'{c}|{p}' for p in P if f'{c}|{p}' in res['clues_abs']]
+        if not ks:
+            continue
+        row = [c]
+        for cl in alist:
+            v = [res['clues_abs'][k].get(cl) for k in ks]
+            v = [x for x in v if x is not None]
+            row.append(round(st.median(v), 2) if v else None)
+        rows.append(row)
+    L.append(tbl(['cause'] + alist, rows))
+    wl = ['gcc_share', 'gcc_width', 'gcc_tie', 'agree5', 'a2_edge', 'pause_share']
     for s, name in SCHEMES.items():
-        L.append(f'\n## Fingerprint, {name}\'s reads: change against the same cut at baseline, pooled over placements\n')
-        L.append('(medians of the change; tie, edge and agreement as the change in % points)\n')
+        L.append(f'\n## {name}: clues on its right reads -> its wrong reads (>10 deg), all placements pooled by median\n')
         rows = []
-        for c in CAUSES[1:]:
-            ks = [f'{c}|{p}|{s}' for p in P if f'{c}|{p}|{s}' in res['fingerprint']]
+        for c in CAUSES:
+            ks = [f'{c}|{p}|{s}' for p in P if f'{c}|{p}|{s}' in res['wrong_vs_right']]
             if not ks:
                 continue
             row = [c]
-            for cl in clist:
-                v = [res['fingerprint'][k].get(cl) for k in ks]
-                v = [x for x in v if x is not None]
-                row.append(round(st.median(v), 2) if v else None)
+            for cl in wl:
+                pr = [res['wrong_vs_right'][k].get(cl, [None, None]) for k in ks]
+                a = [x[0] for x in pr if x[0] is not None]
+                b = [x[1] for x in pr if x[1] is not None]
+                row.append(f"{round(st.median(a), 2) if a else '-'} -> {round(st.median(b), 2) if b else '-'}")
             rows.append(row)
-        L.append(tbl(['cause'] + clist, rows))
+        L.append(tbl(['cause'] + wl, rows))
     for s, name in SCHEMES.items():
         L.append(f'\n## Kinds of {name}\'s wrong reads (>10 deg), all placements: count of wrong reads carrying each kind\n')
         rows = []

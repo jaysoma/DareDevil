@@ -28,16 +28,22 @@ BASE_RUNS = ([('baseline', SRC, [], 300, 1100)]
              + [('no_pause', SRC, ['--nopause', '--gcc-only'], 300, 1100)])
 
 
+# cause 6 where it can matter: the pause holds a sound. The same cuts as those sets (the same seed), GccPhat only.
+NP_AUDIO = [a for a in AUDIO if a.split(':')[0] in ('steady_pink', 'steady_voice', 'common_mode', 'diffuse')]
+
+
 def job(arg):
-    placement, audio, ears, interf, rirs, work = arg
+    placement, audio, ears, interf, rirs, work, np_only = arg
     tag = f"{placement}_{audio.replace(':', '_')}"
-    rec = Path(work) / 'rec' / f'{tag}.jsonl'
+    rec = Path(work) / 'rec' / f"{tag}{'_np' if np_only else ''}.jsonl"
     if rec.exists():
         return tag
     cuts = Path(work) / f'cuts_{tag}.jsonl'
     subprocess.run([sys.executable, str(H / 'lab_cut.py'), ears, interf, rirs, '--placement', placement, '--cause', audio,
                     '--out', str(cuts), '--seed', str(zlib.crc32(tag.encode()) % 10 ** 6)], check=True, stderr=subprocess.DEVNULL)
     runs = BASE_RUNS if audio == 'baseline' else [(audio, SRC, [], 300, 1100)]
+    if np_only:
+        runs = [(f'no_pause+{audio}', SRC, ['--nopause', '--gcc-only'], 300, 1100)]
     spec = []
     for cause, sdir, extra, glo, alo in runs:
         pred = Path(work) / f'pred_{tag}_{cause.replace(":", "_")}.jsonl'
@@ -50,7 +56,7 @@ def job(arg):
     tmp = rec.with_suffix('.tmp')
     tmp.unlink(missing_ok=True)
     subprocess.run([sys.executable, str(H / 'records.py'), str(cuts), str(sp), str(tmp)], check=True)
-    with open(Path(work) / 'truth' / f'{tag}.jsonl', 'w') as ft:
+    with open(Path(work) / 'truth' / f'{tag}.jsonl', 'w') if not np_only else open(os.devnull, 'w') as ft:
         for l in open(cuts):
             c = json.loads(l)
             for k in ('L', 'R'):
@@ -68,7 +74,8 @@ def main():
     ears, interf, rirs, work, out = sys.argv[1:6]
     for sub in ('rec', 'truth'):
         (Path(work) / sub).mkdir(parents=True, exist_ok=True)
-    jobs = [(p, a, ears, interf, rirs, work) for a in AUDIO for p in PLACEMENTS]
+    jobs = ([(p, a, ears, interf, rirs, work, False) for a in AUDIO for p in PLACEMENTS]
+            + [(p, a, ears, interf, rirs, work, True) for a in NP_AUDIO for p in PLACEMENTS])
     with Pool(os.cpu_count()) as pool:
         for _ in pool.imap_unordered(job, jobs):
             pass
@@ -77,6 +84,8 @@ def main():
         for p in PLACEMENTS:
             for a in AUDIO:
                 fo.write(open(Path(work) / 'rec' / f"{p}_{a.replace(':', '_')}.jsonl").read())
+            for a in NP_AUDIO:
+                fo.write(open(Path(work) / 'rec' / f"{p}_{a.replace(':', '_')}_np.jsonl").read())
     with gzip.open(Path(out) / 'truth.jsonl.gz', 'wt') as fo:
         for p in PLACEMENTS:
             for a in AUDIO:
