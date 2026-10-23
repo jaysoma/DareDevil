@@ -199,12 +199,12 @@ never been scored.
    - **Both at once:** the real test.
    - **Chance:** as `results/dechorate/report.md` computed it.
    - **The decided share:** reported with every score.
-3. **Lag limit.** `MAX_GAP_MS` is 12, and dEchorate's single-wall echoes arrive 8-13 ms after the direct sound. Re-run
-   with 25 ms as a variant, and report both.
+3. **Lag limit.** Keep `MAX_GAP_MS` at 12, Jay's limit: don't chase echoes beyond it. Report which labelled echoes fall
+   outside the window, so a miss there isn't counted against the method.
 4. **Place the wall.** Where angle and lag are both right, use the true source distance (a stand-in for the range the
    app doesn't have yet) with the direct angle, the echo angle and the lag. That gives the image source, and from it
    the reflecting wall's position. Report how far that lands from the real wall: this is the "it came off that wall"
    test.
 
 Score under the rule above, and catalogue every read set aside. Commit `results/first_reflection/` and the harness to a
-branch. Don't change Angle2's defaults: report variants side by side.
+branch. Don't change Angle2's defaults.
