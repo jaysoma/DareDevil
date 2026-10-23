@@ -320,8 +320,21 @@ READY 2026-10-23: 9, 10 and 13 are merged to `main`. Two things they found that 
 Read all three results.
 1. **Attribute.** Match each real wrong lock from 9 and 10 to the cause whose fingerprint (from 13) it carries. Rank
    the causes by their share of wrong locks on real talkers, per dataset.
-2. **Fix the top two causes, in a copy.** Change a copy of the schemes under `harness/fixes/`; leave `src/schemes/`
-   alone. Re-score 9's and 10's reads with the copy, and report every read that moved in or out of 10 deg.
+2. **Render each sound at its own onset, in a copy.** Jay (2026-10-23): "Don't outsmart it, just render it. If I'm in
+   the middle of 'Friends, Romans, countrymen' and someone's cellphone dings, render it, and then back to me: 'Lend me
+   your ears.'" So:
+   - **No vetoes.** Don't skip a peak because it matches the pause or another source, and don't pick "the talker's"
+     peak by rule.
+   - **No source separation** (DUET or similar). Who is talking is diart's job, in Stage 2.
+   - **The fix to test:** each onset gets its own read from its own first milliseconds, so a sound that starts later
+     can't outvote it, and one that started earlier is read at its own onset instead of being summed in. The data
+     says there's room: GccPhat's 43-100 ms read was right in 16 of LOCATA's 42 outliers, and 17% of STARSS23's wrong
+     locks started right and drifted.
+   - **Scoring:** every onset against its own source, speech and other sounds alike. A read of the ding at the ding's
+     onset is right.
+
+   Change a copy of the schemes under `harness/fixes/`; leave `src/schemes/` alone. Re-score 9's and 10's reads with
+   the copy, and report every read that moved in or out of 10 deg.
 3. **Commit or dim.** Choose the simplest rule (one or two thresholds on the recorded clues) on STARSS23, and test it
    untouched on LOCATA. Then the other way round. Plot the share of reads committed against the share of those within
    10 deg. A rule that works only where it was chosen is tuned, not general: say so.
