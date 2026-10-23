@@ -507,6 +507,9 @@ Commit `results/stage2_diart/` and `harness/stage2_diart/` to a branch.
 
 ## 16. DFN's internals: a live speech gate, and why the mask helped the ghost
 
+DONE in a 2026-10-23 cloud session: `results/stage2_dfn/report.md`.
+Don't start this one.
+
 Read `dfn/README.md` and `dfn/dfn_shared.py`. Use the stock DeepFilterNet3 with Jay's shared operator: one model pass,
 the same mask and deep filter on both channels, and the attenuation limit at 12 dB as the app ships. Run on batch A's
 human-talker cuts (STARSS23, and LOCATA with its per-source voice activity), keyed by batch A's `id`.
