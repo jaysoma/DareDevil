@@ -13,7 +13,7 @@ Tests (cloud_sessions.md, brief 16):
                False opens: share of gap frames over 0 dB, and opens per minute of gap (gaps: no labelled event, 300 ms
                after the last and 100 ms before the next; LOCATA: no talker's VAD). Non-speech onsets (STARSS23's other
                classes, no speech labelled from 0.5 s before to 0.5 s after): the share that open the gate within 0.5 s.
-  3 MASK GATE  the same with the mask (mean over 300 Hz - 8 kHz) over MASK_OPEN as the gate; the soft-first-word miss
+  3 MASK GATE  the same with the mask (mean over 300 Hz - 8 kHz) over 0.2-0.5 as the gate (GATES); the soft-first-word miss
                rate by the onset's MF voice-over-pause quartile.
   4 GHOST      GccPhat's votes weighted by the mask from (a) the L+R mixdown (`mix`), (b) capsule L (`cap`), (c) none
                (`raw`): batch A's classes per variant (aliasing partner, 0 deg pull, other, ...), and every read that
@@ -43,7 +43,10 @@ import build_records as lclass                                               # n
 
 HOP_S = 0.01
 LEVELS = ['raw', 'norm']
-MASK_OPEN = 0.5
+# the gates tried: lsnr over 0 dB (Jay's), and the mask (mixdown, mean over 300 Hz - 8 kHz) over a sweep of thresholds,
+# since nothing fixes the mask's; plus lsnr at -5 and +5 dB to show how sensitive its 0 dB is
+GATES = ([('lsnr', 'lsnr', 0.0), ('lsnr-5', 'lsnr', -5.0), ('lsnr+5', 'lsnr', 5.0)]
+         + [(f'mask{t}', 'mask_mix', t) for t in (0.2, 0.3, 0.4, 0.5)])
 NONSPEECH = {'footsteps', 'door/cupboard', 'knock', 'telephone', 'clapping', 'domestic sounds', 'bell', 'water tap',
              'laughter', 'music', 'musical instrument'}
 
@@ -108,8 +111,17 @@ res = {'cost': {
             'and the ISTFT'}}
 
 # ------------------------------------------------------------------------------------------------------- 2, 3 gates
+_ACT = {}
+
+
 def activity(j, n_frames):
-    """(speech[T], gap[T]) on DFN's 10 ms grid."""
+    """(speech[T], gap[T]) on DFN's 10 ms grid (cached: LOCATA's VAD files hold one line per sample)."""
+    if (j['tag'], n_frames) not in _ACT:
+        _ACT[j['tag'], n_frames] = _activity(j, n_frames)
+    return _ACT[j['tag'], n_frames]
+
+
+def _activity(j, n_frames):
     speech = np.zeros(n_frames, bool)
     anyev = np.zeros(n_frames, bool)
     if j['dataset'] == 'starss23':
@@ -159,7 +171,8 @@ for tag, j in jobs.items():
         continue
     ds = j['dataset']
     speech, gap = activity(j, len(fr['raw']['lsnr']))
-    lev[ds]['speech_dbfs'].append(float(fr['raw']['speech_db']))
+    if not np.isnan(float(fr['raw']['speech_db'])):
+        lev[ds]['speech_dbfs'].append(float(fr['raw']['speech_db']))
     lev[ds]['gain_db'].append(20 * math.log10(float(fr['norm']['gain'])))
     for lv in LEVELS:
         for name, m in (('speech', speech), ('gap', gap)):
@@ -176,7 +189,7 @@ gate = {}
 soft = defaultdict(list)
 for lv in LEVELS:
     for ds in ('starss23', 'locata'):
-        for gname, key, thr in (('lsnr', 'lsnr', 0.0), ('mask', 'mask_mix', MASK_OPEN)):
+        for gname, key, thr in GATES:
             on_state, lat, mf_diff, gap_open, gap_eps, gap_min, other_open = Counter(), [], [], [], 0, 0.0, []
             for tag, j in jobs.items():
                 if j['dataset'] != ds:
@@ -379,3 +392,74 @@ with gzip.open(OUT / 'reads.jsonl.gz', 'wt') as fh:
     for l in out_reads:
         fh.write(json.dumps(l) + '\n')
 print(json.dumps({k: res[k] for k in ('cost', 'replica_check', 'operator')}, indent=1))
+
+
+# ------------------------------------------------------------------------------------------------------------ tables
+def tbl(head, rows):
+    o = ['| ' + ' | '.join(map(str, head)) + ' |', '|' + '---|' * len(head)]
+    return '\n'.join(o + ['| ' + ' | '.join('' if v is None else str(v) for v in r) + ' |' for r in rows])
+
+
+T = []
+T.append('## 1. Level: lsnr (dB), median per recording and pair\n')
+rows = []
+for ds, d in res['level'].items():
+    for k in ('speech_dbfs', 'gain_db', 'lsnr_speech_raw', 'lsnr_speech_norm', 'lsnr_gap_raw', 'lsnr_gap_norm',
+              'lsnr_speech_moved_db'):
+        if k in d:
+            rows.append([ds, k, d[k]['median'], d[k]['p10'], d[k]['p90'], d[k]['min'], d[k]['max'], d[k]['n']])
+T.append(tbl(['data', 'quantity', 'median', 'p10', 'p90', 'min', 'max', 'n'], rows))
+T.append('\n## 2-3. The gates: lsnr over 0 dB (and -5, +5), and the mixdown mask over 0.2-0.5\n')
+rows = []
+for k, g in sorted(res['gate'].items()):
+    rows.append(k.split('|') + [g['speech_onsets'], g['opened_pct'], g['already_open_pct'], g['missed_pct'],
+                                g['latency_s']['median'], g['latency_s']['within_100ms_pct'],
+                                g['vs_mf_onset_s']['median'], g['vs_mf_onset_s']['within_50ms_pct'],
+                                g['gap_open_pct'], g['gap_opens_per_min'], g['nonspeech_onsets'],
+                                g['nonspeech_open_pct']])
+T.append(tbl(['data', 'level', 'gate', 'speech onsets', 'opened %', 'already open %', 'missed %', 'latency median s',
+              'within 100 ms %', 'vs MF onset median s', 'within 50 ms of MF %', 'gap frames open %',
+              'gap opens / min', 'non-speech onsets', 'non-speech opened %'], rows))
+T.append('\n### Non-speech onsets that open the gate, by class (STARSS23): n, % opened\n')
+rows = []
+for k, g in sorted(res['gate'].items()):
+    if k.startswith('starss23'):
+        rows.append(k.split('|')[1:] + ['; '.join(f'{c} {n} / {p}' for c, (n, p) in g['nonspeech_by_class'].items())])
+T.append(tbl(['level', 'gate', 'class n / % opened'], rows))
+T.append('\n### Soft first words (STARSS23 pair 1-2): % of speech onsets open within 300 ms, by MF voice-over-pause '
+         'quartile (softest first)\n')
+T.append(tbl(['level|gate', 'quartile edges dB', 'Q1', 'Q2', 'Q3', 'Q4'],
+             [[k, v['mf_snr_quartile_edges_db']] + v['open_within_300ms_pct_by_quartile']
+              for k, v in sorted(res['soft_first_word'].items())]))
+T.append('\n## 4-5. GccPhat by variant: raw pair (none), mask from the mixdown (mix), from capsule L (cap), DFN pair '
+         '(dfn), at each level\n')
+rows = []
+for k, v in sorted(res['variants'].items()):
+    c = v['clean']
+    rows.append(k.split('|') + [v['reads'], v['over10_pct'], v['over36_pct'], v['kinds']['aliasing'],
+                                v['kinds']['zero_pull'], v['kinds']['other'], v['moved_in'], v['moved_out'],
+                                c['kept_pct'], c['mean'], c['median'], c['within10']])
+T.append(tbl(['data', 'variant', 'reads', '>10 %', '>36 %', 'aliasing', '0 deg pull', 'other', 'moved in', 'moved out',
+              'kept %', 'mean', 'median', 'within 10 %'], rows))
+T.append('\n### Every class, wrong reads (>10 deg)\n')
+T.append(tbl(['data|variant'] + KINDS, [[k] + [v['kinds'][c] for c in KINDS] for k, v in sorted(res['variants'].items())]))
+T.append('\n## 4. Mechanism: the mask in bands where L and R cancel (in-phase ratio < 0.25) and add (> 0.75), norm level\n')
+T.append(tbl(['data', 'reads', 'cancel share', 'mix: cancel / add', 'cap: cancel / add', 'mix - cap in cancel bands',
+              'mix - cap in add bands', 'corr(mix - cap, in-phase)', '% positive'],
+             [[ds, m['reads'], m['median_cancel_share'], m['mask_in_cancel_vs_add_bands']['mix'],
+               m['mask_in_cancel_vs_add_bands']['cap'], m['mix_minus_cap_in_cancel_bands'],
+               m['mix_minus_cap_in_add_bands'], m['median_corr_mix_minus_cap_vs_inphase'],
+               m['share_corr_mix_minus_cap_positive']] for ds, m in res['mechanism'].items()]))
+T.append('\n## 5. The shared operator: GccPhat on the DFN pair against the raw pair, read by read\n')
+T.append(tbl(['data|level', 'reads', 'same within 1 deg %', 'within 5 %', 'moved > 10 deg %', 'median |change|'],
+             [[k, v['reads'], v['same_within_1deg_pct'], v['within_5deg_pct'], v['moved_over_10deg_pct'],
+               v['median_abs_change']] for k, v in sorted(res['operator'].items())]))
+T.append('\n## 6. Clues: GccPhat\'s right reads against its wrong ones (speech onsets, raw variant). AUC: the chance a '
+         'wrong read has the lower clue (0.5 = no signal)\n')
+T.append(tbl(['data|level|clue', 'right median', 'wrong median', 'AUC', 'right n', 'wrong n'],
+             [[k, v['right_median'], v['wrong_median'], v['auc_low_means_wrong'], v['n_right'], v['n_wrong']]
+              for k, v in sorted(res['clues'].items())]))
+T.append('\n## 7. Cost\n')
+T.append(tbl(['audio s', 'DFN s per audio s, mixdown pass + shared operator', 'capsule pass'],
+             [[res['cost']['audio_s'], res['cost']['rtf_mixdown_pass'], res['cost']['rtf_capsule_pass']]]))
+(OUT / 'tables.md').write_text('\n'.join(T) + '\n')
