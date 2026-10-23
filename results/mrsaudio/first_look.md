@@ -30,3 +30,9 @@ Hugging Face as `verstar/MRSAudio`, CC BY 4.0 on the card). Script: `harness/mrs
   back the law it was given.
 - **Untested:** the CDR estimator's diffuse model assumes two bare mics. Between a head's ears the room's diffuse sound
   is less coherent, so the estimator will split direct from room differently. The anchor may cancel some of that.
+
+## Decision (2026-10-23)
+- **Parked for Stage 1.** The ears are a head, not a phone, so its angle and range numbers wouldn't speak for the
+  phone either way.
+- **Kept for Stage 2:** two talkers per drama, hundreds of labelled utterances each, with positions while they walk.
+  A test bed for whether CAM++'s embedding moves with where the talker stands.
