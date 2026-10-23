@@ -645,6 +645,11 @@ the failures by kind. Commit `results/linguistic/ami/` and `harness/linguistic/`
 
 ## 19. Device-directed words in a stream: does the instruction's shape find it?
 
+DONE in a 2026-10-23 cloud session: `results/device_directed/report.md`. Shape finds the instructions and Jay's
+contrast makes it better (MiniLM: 89% at 1 false accept per hour, keywords 9%); a foreign-phrase control shows
+it is not just spotting the splice. But the same instructions said to a person pass almost as often: words alone
+don't say who they are for. Don't start this one.
+
 READY 2026-10-23. Text only: no audio, no GPU, no Fisher model needed.
 
 Jay's proposal: every device decodes every word, and each one listens only for words shaped like its own
