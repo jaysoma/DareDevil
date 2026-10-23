@@ -439,8 +439,8 @@ Stage 1 stays first; these queue behind batch A.
   accepted the user conditions for `pyannote/segmentation`, `pyannote/segmentation-3.0` and `pyannote/embedding`. Diart
   runs out of the box (`pip install diart`, its own defaults): that's what worked best for Jay, and every modified
   version did worse. Never commit model weights.
-- **Brief 16 (DFN) waits on Jay's DeepFilterNet fork,** the one hacked to expose internal data that was being thrown
-  away, with a note on what each exposed field is. A private repo attached to the session is fine.
+- **Brief 16 (DFN) is ready.** Jay's scripts in `dfn/` wrap the stock DeepFilterNet3 (`pip install deepfilternet`),
+  so no fork is needed. Read `dfn/README.md` first: his findings there are the hypotheses to test.
 
 Both briefs run on the same human-talker data as batch A, keyed by batch A's read `id`, and write separate files. They
 add fields; they never change batch A's records.
@@ -465,14 +465,36 @@ add fields; they never change batch A's records.
 
 Commit `results/stage2_diart/` and `harness/stage2_diart/` to a branch.
 
-## 16. DFN's internals as clues for the angle
+## 16. DFN's internals: a live speech gate, and why the mask helped the ghost
 
-1. **Run Jay's DFN fork on one capsule** of every batch A cut. Record what it exposes per frame: the per-band gains or
-   masks, its local SNR estimate, and anything else, under a separate key `dfn`.
-2. **As commit-or-dim clues:** add the DFN fields to brief 11's rule search, and report whether they beat the clues
-   batch A already records.
-3. **As a vote gate, in a copy only** (`harness/fixes/`, never `src/schemes/`): weight each GccPhat frequency by DFN's
-   speech mask for that band and frame, and re-score batch A's cuts. Report every read that moved in or out of 10 deg.
-4. **Cost:** DFN's processing time per second of audio, against the live budget.
+Read `dfn/README.md` and `dfn/dfn_shared.py`. Use the stock DeepFilterNet3 with Jay's shared operator: one model pass,
+the same mask and deep filter on both channels, and the attenuation limit at 12 dB as the app ships. Run on batch A's
+human-talker cuts (STARSS23, and LOCATA with its per-source voice activity), keyed by batch A's `id`.
 
-Commit `results/stage2_dfn/` and `harness/stage2_dfn/` to a branch.
+1. **Level first.** Run every test twice: as recorded, and with one fixed gain per recording that brings active speech
+   to about -26 dBFS. A fixed gain changes neither phase nor the ratio between channels; never use time-varying AGC.
+   Report how much `lsnr` moves (Jay saw -5.4 to +3.3 dB on LOCATA).
+2. **`lsnr` as a live speech gate.**
+   - **Onsets:** when does it cross 0 dB, against the true speech onsets (LOCATA voice activity; STARSS labels at
+     100 ms) and against `attacks.py`'s MF onset?
+   - **False opens:** how often does it cross 0 dB in gaps, and on STARSS's non-speech classes (footsteps, door,
+     knock, phone)? Stage 1 draws speech as a bubble and everything else as rings, so this is the switch.
+   - **Latency:** measure DFN3's real look-ahead, and compare it with diart's 500 ms.
+3. **The mask as a speech track:** replicate Jay's finding of a missed soft first word and opening on footsteps, with
+   rates.
+4. **Why mask-weighting helped the ghost.** The hypothesis to test: the L+R mixdown cancels the bands where the two
+   channels are out of phase, so a mask computed from it under-weights those bands. What's left over-represents bands
+   where the true delay and its aliasing partners line up. In a copy under `harness/fixes/`, weight GccPhat's votes by
+   the mask computed from:
+   - (a) the L+R mixdown
+   - (b) one capsule
+   - (c) no mask
+
+   Count batch A's aliasing-partner, 0 deg pull and "other" classes for each, and every read that moves in or out of
+   10 deg.
+5. **The shared operator,** checked on real cuts: GccPhat on the DFN pair against the raw pair, read by read. Is the
+   bearing preserved, as the math says it should be for a stationary talker?
+6. **Clues for brief 11:** `lsnr` at the onset, and the mask's share of the band, as commit-or-dim clues.
+7. **Cost:** processing time per second of audio, against the live budget.
+
+Score under the scoring rule; commit `results/stage2_dfn/` and `harness/stage2_dfn/` to a branch.
