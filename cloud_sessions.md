@@ -185,6 +185,10 @@ Commit `results/dechorate_arrival/` (report, summary, catalogue) and the harness
 
 ## 8. First reflection: does `Angle2.readSound` find the echo, its angle and its lag?
 
+DONE in a 2026-10-23 cloud session: `results/first_reflection/report.md`. No: angle and lag together are at chance
+on dEchorate and LOCATA; the lag sits near the 1 ms window edge in any room. The true floor-echo lag would order
+distance on LOCATA, but readSound doesn't measure it. Don't start this one.
+
 Read HANDOFF.md, `results/dechorate/report.md` (section 3) and `src/schemes/Angle2.mjs`. `readSound` cancels the
 direct sound, then looks for the earliest positive, delayed copy of the voice in what remains: a direction and a lag.
 Only `readUtterance`'s second family was scored before, and that turned out to be a window artifact. `readSound` has
