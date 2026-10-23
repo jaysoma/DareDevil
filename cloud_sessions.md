@@ -328,6 +328,9 @@ Commit `results/batchA/report.md` to a branch.
 
 ## 13. Mechanism lab: which cause makes a wrong lock, and its fingerprint
 
+DONE in a 2026-10-23 cloud session: `results/batchA/lab/report.md` (records in `results/batchA/lab/reads.jsonl.gz`).
+Don't start this one.
+
 Read HANDOFF.md, `results/angle2_pull.md`, `results/zero_deg/report.md` and the batch A spec above. The speech is
 human (EARS, via `harness/dechorate/ears_fetch.py`). Only the placement is synthetic: exact fractional delays at
 157 mm and 69 mm in free field, and dEchorate's measured RIRs (155 mm pair) in configuration 000000 (all absorbing)
