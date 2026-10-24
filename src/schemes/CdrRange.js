@@ -53,6 +53,39 @@ class RangeScheme {
 
   static BOOT_S = 0.5;               // the bearing's decision window
   static RANGE_S = 0.8;              // the range's single read before the steps (kept for the record; STEPS_S below rules)
+  // ONE RANGE READ, THEN ONE FACING CALL, PER UTTERANCE (Jay's option b, 2026-10-24, brief H; Conductor v14).
+  //   THE FRAMES. The Conductor hands an utterance's CDR frames from onset + SETTLE_S (0.13 s) until their window ends
+  //   FACING_READ_S after the onset; each `cdrf` is the three range bands' direct and diffuse powers (dB, 1.1-2, 2-4,
+  //   4-8 kHz) and then the facing call's low band, 0.1-1.1 kHz, unfloored. A frame's place in the utterance is its hop
+  //   from the onset, k = FIRST_HOP + its hops after the utterance's first frame (hop 13 is the first that starts by
+  //   SETTLE_S); its window ends (k HOP + NFFT) / SR after the onset.
+  //   THE RANGE (0.5 s) sums only the frames that end by RANGE_READ_S (hops 13-42, 30 frames: brief 21's one read) and
+  //   draws once, on hop 42, exactly the statistic it drew before. Later frames never enter it.
+  //   THE FACING CALL (2.0 s) sums CDR 4-8 kHz and CDR 0.1-1.1 kHz over every frame that ends by FACING_READ_S (hops
+  //   13-183) and, on hop 183, takes the contrast (4-8 minus 0.1-1.1). Below FACING_THR_DB it is "turned", else
+  //   "facing". An utterance that closes before its hop 183 gets no call: facing() stays null, as it is before 2 s.
+  //   Brief G: one 2-4 s utterance scores 75% balanced, the half-second read 63% (results/rotation/utterance/report.md).
+  //   THE CORRECTION. A turn lowers the range statistic 1.8-2.5 dB, so a turned talker is drawn 1.2-1.3x farther (round 1).
+  //   When the call is turned, the range is corrected once: statistic + FACING_K x (FACING_THR_DB - contrast), and the dot
+  //   moves that once more. A facing call leaves it exactly where the 0.5 s read put it. The opener is corrected the same
+  //   way, so a turned opener doesn't skew the unit.
+  //   FACING_K, fitted in brief H (results/rotation/inapp/report.md) with the read and the contrast from their own spans:
+  //   1.1 on all of Jay's walks (0.8-2.0 with each walk left out: the fling is flat in k from about 0.8 to 1.5). The gain
+  //   is small because only about a quarter of utterances reach 2 s: a turned talker's throw falls 0.33 -> 0.31 doublings
+  //   (left out; 0.28 in-sample), at 82.0 -> 81.3% of ladder pairs. Brief E's same-half-second version cut it to 0.19,
+  //   at 72%.
+  //   FACING_THR_DB: results/rotation/fixed_threshold.txt (-1.25 to -1.00 dB left out by walk); 81% on LOCATA (brief D).
+  //   The cue can't tell 120 deg from 90: "turned" means past about side-on.
+  // RANGE_READ_S and FACING_READ_S are the Conductor's own; FIRST_HOP, HOP, NFFT and SR are its CDR instrument's.
+  static RANGE_READ_S = 0.5;
+  static FACING_READ_S = 2.0;
+  static FACING_THR_DB = -1.0;
+  static FACING_K = 1.1;
+  static SR = 48000;
+  static HOP = 512;
+  static NFFT = 2048;
+  static FIRST_HOP = 13;             // ceil(SETTLE_S x SR / HOP): the first frame the Conductor hands
+  static _lastHop(s) { return Math.floor((s * RangeScheme.SR - RangeScheme.NFFT) / RangeScheme.HOP); }   // 0.5 s: 42, 2 s: 183
   // THE LAW, SET BY THE OPENING (2026-10-05). dB of CDR per 20 dB/decade of distance; 1 = free field.
   // Free field is right where everyone stands 1.5-3.5 m out and too steep over long spans: in the sim
   // halls a talker at 7 m was drawn at ~4. The room's own slope follows the OPENING's CDR (rho +0.72
@@ -334,7 +367,8 @@ class RangeScheme {
 
   static _window(t0) {
     return { t0: t0, degs: [], bank: [], ev: [], locked: false, deg: null, next: 0, kind: null, tie: false, ghost: null, ghostR: null, moves: 0, fa: null, src: null,
-             free: { d: [0, 0, 0], r: [0, 0, 0], n: 0 }, base: null, poolDeg: null, opening: false };
+             free: { d: [0, 0, 0], r: [0, 0, 0], n: 0 }, base: null, poolDeg: null, opening: false,
+             face: { d: [0, 0], r: [0, 0], n: 0 }, facing: null, contrast: null, corr: 0 };   // 4-8 kHz and 0.1-1.1 kHz to 2 s
   }
 
   /* this window's reading: its own band powers plus the pool it joined at its first draw */
@@ -346,9 +380,9 @@ class RangeScheme {
       s.d[b] = c.free.d[b] + (c.base ? c.base.d[b] : 0);
       s.r[b] = c.free.r[b] + (c.base ? c.base.r[b] : 0);
     }
-    return (R.RANGE_FROM === "direct")
-      ? { v: R._directDb(s), sum: s, kind: "direct" }
-      : { v: R._free(s), sum: s, kind: "free" };
+    if (R.RANGE_FROM === "direct") return { v: R._directDb(s), sum: s, kind: "direct" };
+    const v = R._free(s);
+    return { v: v === null ? null : v + c.corr, sum: s, kind: "free" };   // corr: the 2 s call's, 0 unless turned
   }
 
   _show(v, kind, c, f) {
@@ -385,6 +419,8 @@ class RangeScheme {
     }
     const dirDeg = typeof t.dir_deg === "number" ? t.dir_deg : NaN;
     const c = this.cur, el = f.t - c.t0, steps = R.STEPS_S;
+    const k = R.FIRST_HOP + Math.round(el * R.SR / R.HOP);           // this frame's hop from the onset
+    const kRange = R._lastHop(R.RANGE_READ_S), kFace = R._lastHop(R.FACING_READ_S);
     if (onsetOnly && c.fa === null && Number.isFinite(t.onset_deg)) {
       c.fa = t.onset_deg; c.deg = c.fa; c.src = "onset";
       this.pos = { deg: c.fa };
@@ -400,12 +436,19 @@ class RangeScheme {
     }
     // NO CEILING ON THE ACCUMULATION: it used to stop at the last step age (8 s) because nothing
     // redrew past it. A running window keeps summing until the utterance ends or the bearing moves.
-    if (Array.isArray(t.cdrf) && t.cdrf.length === 6 && el < steps[steps.length - 1]) {
+    // THE CEILING IS BACK (2026-10-24, Conductor v14): the range sums only the frames that end by RANGE_READ_S, now
+    // that the frames run on to FACING_READ_S for the facing call (see RANGE_READ_S).
+    if (Array.isArray(t.cdrf) && t.cdrf.length >= 6 && k <= kRange) {
       for (let b = 0; b < 3; b++) { c.free.d[b] += Math.pow(10, t.cdrf[2 * b] / 10); c.free.r[b] += Math.pow(10, t.cdrf[2 * b + 1] / 10); }
       c.free.n++;
     }
-    // THE STEPS: the only frames on which the dot moves.
-    while (c.next < steps.length && el >= steps[c.next]) {
+    if (Array.isArray(t.cdrf) && t.cdrf.length >= 8 && k <= kFace) {  // the facing call's two bands: 4-8 kHz, 0.1-1.1 kHz
+      c.face.d[0] += Math.pow(10, t.cdrf[4] / 10); c.face.r[0] += Math.pow(10, t.cdrf[5] / 10);
+      c.face.d[1] += Math.pow(10, t.cdrf[6] / 10); c.face.r[1] += Math.pow(10, t.cdrf[7] / 10);
+      c.face.n++;
+    }
+    // THE STEPS: the only frames on which the dot moves. The first is the range read's last frame (hop 42, 0.5 s).
+    while (c.next < steps.length && (c.next === 0 ? k >= kRange : el >= steps[c.next])) {
       if (c.next === 0) {
         // THE FIRST STEP: the bearing locks, and the window decides whether it stands where the pool
         // does. Direction-free CDR when the fixture carries it, else the old steered statistic, once.
@@ -477,6 +520,17 @@ class RangeScheme {
         }
       }
     }
+    // THE FACING CALL, ON THE 2 S FRAME (hop 183), ONCE: and if turned, the range's one correction (see RANGE_READ_S).
+    if (c.facing === null && c.kind === "free" && c.face.n > 0 && k >= kFace) {
+      const db = function (d, r) { return 10 * Math.log10(Math.max(d, 1e-30) / Math.max(r, 1e-30)); };
+      c.contrast = db(c.face.d[0], c.face.r[0]) - db(c.face.d[1], c.face.r[1]);
+      c.facing = c.contrast < R.FACING_THR_DB ? "turned" : "facing";
+      if (c.facing === "turned") {
+        c.corr = R.FACING_K * (R.FACING_THR_DB - c.contrast);
+        const rd = R._reading(c);
+        if (rd && rd.v !== null) this._show(rd.v, rd.kind, c, f);
+      }
+    }
     // ONE READING PER ONSET, HELD (Jay, 2026-10-06: "at every onset, we calculate range right on the
     // same onset. And we hold it there for now."). The range is drawn once, at the lock, from the
     // onset's own evidence -- then it holds for the rest of the window exactly as the bearing does.
@@ -502,7 +556,11 @@ class RangeScheme {
   ghostRatio(f) { return (this.ghost(f) === null) ? null : this.cur.ghostR; }
   /* counts every in-window switch of the main arrival; the page SNAPS the dot when it changes, no glide */
   moveId(f) { return this.mv; }
-  facing(f) { return null; }
+  /* the utterance's facing call: "facing", "turned", or null before its 2 s frame and for an utterance shorter than
+   * that; held after the utterance closes, until the next one opens (see RANGE_READ_S) */
+  facing(f) { return this.cur ? this.cur.facing : null; }
+  /* the contrast behind that call, dB (CDR 4-8 kHz minus CDR 0.1-1.1 kHz), or null when there is no call */
+  facingContrast(f) { return this.cur && this.cur.facing !== null ? this.cur.contrast : null; }
   rays(f) { return null; }
   acousticMode(f) {
     const t = f && f.track;
