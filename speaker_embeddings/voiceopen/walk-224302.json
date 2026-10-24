@@ -1,0 +1,89 @@
+{
+ "enrol_s": 5.04,
+ "enrol_utts": [
+  0
+ ],
+ "enrol_min_s": 5.0,
+ "model": "campplus_zh_en_advanced.onnx",
+ "min_score_s": 0.4,
+ "spans_from": "siri_gate",
+ "utts": [
+  {
+   "oi": 0,
+   "t": 1.986,
+   "dur": 5.043,
+   "cos": 1.0,
+   "enrolled": true
+  },
+  {
+   "oi": 1,
+   "t": 8.363,
+   "dur": 2.2,
+   "cos": 0.3334,
+   "enrolled": false
+  },
+  {
+   "oi": 2,
+   "t": 16.39,
+   "dur": 1.675,
+   "cos": 0.345,
+   "enrolled": false
+  },
+  {
+   "oi": 3,
+   "t": 31.703,
+   "dur": 17.444,
+   "cos": 0.3483,
+   "enrolled": false
+  },
+  {
+   "oi": 4,
+   "t": 56.975,
+   "dur": 17.734,
+   "cos": 0.313,
+   "enrolled": false
+  },
+  {
+   "oi": 5,
+   "t": 81.598,
+   "dur": 16.674,
+   "cos": 0.3782,
+   "enrolled": false
+  },
+  {
+   "oi": 6,
+   "t": 108.134,
+   "dur": 18.212,
+   "cos": 0.43,
+   "enrolled": false
+  },
+  {
+   "oi": 7,
+   "t": 132.563,
+   "dur": 7.319,
+   "cos": 0.3109,
+   "enrolled": false
+  },
+  {
+   "oi": 8,
+   "t": 140.883,
+   "dur": 3.512,
+   "cos": 0.2538,
+   "enrolled": false
+  },
+  {
+   "oi": 9,
+   "t": 151.443,
+   "dur": 18.519,
+   "cos": 0.485,
+   "enrolled": false
+  },
+  {
+   "oi": 10,
+   "t": 175.797,
+   "dur": 28.757,
+   "cos": 0.5713,
+   "enrolled": false
+  }
+ ]
+}

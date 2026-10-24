@@ -1,0 +1,238 @@
+{
+ "name": "walk-215800",
+ "source": "Dictate/captures/geonar/walk-215800-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "duration_s": 146.38,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 5.42,
+   "text": "Two meters right in front of the phone facing the phone."
+  },
+  {
+   "t0": 9.66,
+   "t1": 11.94,
+   "text": "Rotated clockwise 90 degrees."
+  },
+  {
+   "t0": 16,
+   "t1": 16.2,
+   "text": "Rotated clockwise 90 degrees."
+  },
+  {
+   "t0": 16.2,
+   "t1": 17.52,
+   "text": "Rotated clockwise 90 degrees."
+  },
+  {
+   "t0": 22.04,
+   "t1": 23.9,
+   "text": "Rotated clockwise 90 degrees."
+  },
+  {
+   "t0": 26.34,
+   "t1": 29.58,
+   "text": "Rotate clockwise 90 degrees."
+  },
+  {
+   "t0": 29.58,
+   "t1": 34.56,
+   "text": "Same distance now facing the phone."
+  },
+  {
+   "t0": 35.9,
+   "t1": 38.92,
+   "text": "Four meters."
+  },
+  {
+   "t0": 39.62,
+   "t1": 40.04,
+   "text": "Facing the phone."
+  },
+  {
+   "t0": 40.46,
+   "t1": 43.22,
+   "text": "Talking while I rotate clockwise slowly."
+  },
+  {
+   "t0": 44.26,
+   "t1": 46.3,
+   "text": "Still talking while I rotate"
+  },
+  {
+   "t0": 46.9,
+   "t1": 47.8,
+   "text": "now facing the phone."
+  },
+  {
+   "t0": 49.02,
+   "t1": 51.72,
+   "text": "Rotate camera clockwise slowly."
+  },
+  {
+   "t0": 51.72,
+   "t1": 55.7,
+   "text": "Ro-Rost-tee-1-talk-19-n-n-knot-picing-com."
+  },
+  {
+   "t0": 60.34,
+   "t1": 66.12,
+   "text": "What I'm a piece from the one side of the top mic?"
+  },
+  {
+   "t0": 68.78,
+   "t1": 69.08,
+   "text": "Mike."
+  },
+  {
+   "t0": 70.16,
+   "t1": 71.64,
+   "text": "Road 8993."
+  },
+  {
+   "t0": 72.22,
+   "t1": 75.06,
+   "text": "Yeah, yeah."
+  },
+  {
+   "t0": 75.38,
+   "t1": 75.62,
+   "text": "Ro-day-nibis, please."
+  },
+  {
+   "t0": 75.62,
+   "t1": 76.48,
+   "text": "Ro-2-993."
+  },
+  {
+   "t0": 76.64,
+   "t1": 76.78,
+   "text": "Ro-9-2-9-3-6."
+  },
+  {
+   "t0": 78.38,
+   "t1": 80,
+   "text": "Rotary 9 degrees"
+  },
+  {
+   "t0": 80,
+   "t1": 80.76,
+   "text": "please"
+  },
+  {
+   "t0": 82.38,
+   "t1": 83.86,
+   "text": "Rotate 90 degrees and grease"
+  },
+  {
+   "t0": 83.86,
+   "t1": 84.58,
+   "text": "and now please look on"
+  },
+  {
+   "t0": 84.58,
+   "t1": 87.62,
+   "text": "for this contact, contact"
+  },
+  {
+   "t0": 87.62,
+   "t1": 89.76,
+   "text": "rotate in place"
+  },
+  {
+   "t0": 89.76,
+   "t1": 91.66,
+   "text": "on the same spot"
+  },
+  {
+   "t0": 91.66,
+   "t1": 93.4,
+   "text": "clock, clockwise"
+  },
+  {
+   "t0": 93.4,
+   "t1": 94.56,
+   "text": "while talking."
+  },
+  {
+   "t0": 98.24,
+   "t1": 100.32,
+   "text": "45 degrees from the"
+  },
+  {
+   "t0": 100.32,
+   "t1": 101.82,
+   "text": "bar bike"
+  },
+  {
+   "t0": 101.82,
+   "t1": 102.8,
+   "text": "base to board"
+  },
+  {
+   "t0": 102.8,
+   "t1": 103.06,
+   "text": "direct"
+  },
+  {
+   "t0": 106.78,
+   "t1": 108.18,
+   "text": "Okay, okay, 90 degrees."
+  },
+  {
+   "t0": 109,
+   "t1": 111.8,
+   "text": "Okay, okay, 90 degrees."
+  },
+  {
+   "t0": 112.52,
+   "t1": 113.92,
+   "text": "Okay, okay, 90 degrees."
+  },
+  {
+   "t0": 114,
+   "t1": 114.92,
+   "text": "Rotate 90 degrees."
+  },
+  {
+   "t0": 115.54,
+   "t1": 118.06,
+   "text": "Okay, okay."
+  },
+  {
+   "t0": 118.4,
+   "t1": 121.68,
+   "text": "Okay, okay, okay, is 4, 4, 45 feet, front, front, front, front, fine."
+  },
+  {
+   "t0": 124.04,
+   "t1": 128.12,
+   "text": "Now, rotate, well, talking in the same, the same spot."
+  },
+  {
+   "t0": 128.6,
+   "t1": 132.34,
+   "text": "I guess I, I should say, say, I have about 4, 4 meters, meters."
+  },
+  {
+   "t0": 134.22,
+   "t1": 136.76,
+   "text": "Now, now, walking, walking slowly towards, and walking."
+  },
+  {
+   "t0": 136.76,
+   "t1": 138.66,
+   "text": "words of phone, talking at the same, sing,"
+  },
+  {
+   "t0": 138.94,
+   "t1": 139.14,
+   "text": "that's all."
+  },
+  {
+   "t0": 139.72,
+   "t1": 140.52,
+   "text": "Oh, ha, no, ha, me."
+  }
+ ]
+}

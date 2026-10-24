@@ -57,16 +57,31 @@ links to the report that produced it; the limits are stated with them.
 - **Inside a phone call** (the speakerphone case), instructions are found 90-100% of the time at 10 per hour.
 - **Open: who the instruction is for.** The same instructions rewritten as said to a person ("I'll text Sam that
   ...", "Dave, can you ...") are accepted 83% of the time at 1 per hour. Those rewrites were spliced in from outside,
-  though, so they were as foreign to the surrounding talk as the real instructions. Brief 22 tests real requests to
-  people in their own context, and adds the cues that say who words are for.
+  though, so they were as foreign to the surrounding talk as the real instructions. Section 3 has the real test.
+
+## 3. Real requests to people, where they were said (Switchboard)
+`results/who_for/report.md` (brief 22). 620 real requests from one caller to the other (directives, "can you ..."
+questions, "I'll ..." commitments), left in their own calls, scored with brief 19's methods and thresholds unchanged.
+- **They're rarely taken for device instructions:** Jay's contrast accepts 4.4% at 10 false accepts per hour and 0.2%
+  at 1 per hour. Brief 19's 83-96% for to-a-person phrases was mostly an artefact of generating them from device
+  commands and splicing them in.
+- **Context does the work Jay said it would:** the same words spliced into another call are accepted 19.6% of the
+  time. For 86% of request-and-device pairs they score lower in their own conversation than spliced elsewhere.
+- **The speakerphone case on real calls:** car instructions spliced into Switchboard calls score above real requests
+  in other calls 99.9% of the time. At the car's 1-per-hour threshold, 97% of instructions are found and 0.5% of real
+  requests accepted. Those that pass are mostly talk about operating a gadget, or asking the other caller to hold on:
+  ambiguous to a human too.
+- **Grammar cues ("you", "I'll", names) add little on real speech** (3 points or less), because the hard cases are rare
+  and the cues fire on device commands too.
+- **Limits:** text, not recogniser output; telephone conversation, one corpus; AMI's requests weren't reachable.
 
 ## What this supports, and what it doesn't yet
 - **Supported:** for a device, the words alone find instructions in ongoing speech at about one false accept per
   hour, from text, with a model small enough for a phone. Orientation isn't needed for that step.
 - **Supported:** among people in a meeting, facing earns a modest place. It's worth about 10 points when choosing
   which person is addressed, and nothing when deciding whether the whole group is.
-- **Not yet shown:** that words alone separate "an instruction to the device" from "the same request said to a
-  person", in real speech. That's brief 22.
+- **Now shown, on real telephone speech:** words in their context separate an instruction to a device from a request
+  to a person. 97% of instructions found, 0.5% of real requests accepted (brief 22).
 - **Not tested here:** an acoustic orientation estimate in place of annotated gaze, and recogniser errors (both sets
   use reference text).
 

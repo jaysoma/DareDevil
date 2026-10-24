@@ -1,0 +1,76 @@
+43 stops at 11 spots in 10 walks; speech per stop 7.3 s on average
+
+## CDR hi - lo (4-8 vs 0.1-1.1 kHz)
+- half-second jitter (sd of one window about its stop): 2.3 dB; pooled over a stop's ~15 windows: ~0.6 dB
+- facing 90 against the spot's facing 0: mean -1.7 dB, sd 1.5, n 16, below facing 0 in 15 of 16
+- facing 135 against the spot's facing 0: mean -3.2 dB, sd 1.0, n 2, below facing 0 in 2 of 2
+- facing 180 against the spot's facing 0: mean -2.7 dB, sd 1.1, n 9, below facing 0 in 9 of 9
+- spots where facing away reads below facing the phone: 9 of 9
+
+## CDR hi - mid (4-8 vs 1.1-2 kHz)
+- half-second jitter (sd of one window about its stop): 2.3 dB; pooled over a stop's ~15 windows: ~0.6 dB
+- facing 90 against the spot's facing 0: mean -1.3 dB, sd 1.3, n 16, below facing 0 in 12 of 16
+- facing 135 against the spot's facing 0: mean -1.0 dB, sd 0.3, n 2, below facing 0 in 2 of 2
+- facing 180 against the spot's facing 0: mean -1.0 dB, sd 1.8, n 9, below facing 0 in 6 of 9
+- spots where facing away reads below facing the phone: 6 of 9
+
+## level tilt (4-8 vs 1.1-2 kHz)
+- half-second jitter (sd of one window about its stop): 8.8 dB; pooled over a stop's ~15 windows: ~2.3 dB
+- facing 90 against the spot's facing 0: mean -1.9 dB, sd 3.0, n 16, below facing 0 in 12 of 16
+- facing 135 against the spot's facing 0: mean -2.2 dB, sd 0.9, n 2, below facing 0 in 2 of 2
+- facing 180 against the spot's facing 0: mean -2.3 dB, sd 3.9, n 9, below facing 0 in 6 of 9
+- spots where facing away reads below facing the phone: 6 of 9
+
+## range stat (mean CDR 1.1-8 kHz)
+- half-second jitter (sd of one window about its stop): 1.0 dB; pooled over a stop's ~15 windows: ~0.3 dB
+- facing 90 against the spot's facing 0: mean -1.8 dB, sd 0.8, n 16, below facing 0 in 16 of 16
+- facing 135 against the spot's facing 0: mean -2.3 dB, sd 0.6, n 2, below facing 0 in 2 of 2
+- facing 180 against the spot's facing 0: mean -2.5 dB, sd 1.1, n 9, below facing 0 in 9 of 9
+- spots where facing away reads below facing the phone: 9 of 9
+
+Per stop, against the spot's facing 0 (dB):
+| walk | spot | facing | speech (s) | CDR hi - lo | CDR hi - mid | level tilt | range stat |
+|---|---|---|---|---|---|---|---|
+| 030615 | 2m | 0 | 7.5 | -0.6 | +1.1 | -0.3 | -0.6 |
+| 030615 | 2m | 90 | 12.0 | -5.4 | -2.7 | -5.7 | -3.3 |
+| 030615 | 2m | 180 | 12.0 | -4.2 | -2.0 | -5.9 | -3.4 |
+| 030615 | 2m | 90 | 10.5 | -2.4 | -2.9 | -1.2 | -3.5 |
+| 030615 | 2m | 0 | 13.0 | +0.6 | -1.1 | +0.3 | +0.6 |
+| 122038 | 2m | 90 | 2.0 | -1.4 | -0.5 | +4.9 | -1.3 |
+| 122038 | 2m | 180 | 2.5 | -2.3 | +0.2 | +3.4 | -0.9 |
+| 122038 | 2m | 0 | 3.5 | +0.0 | +0.0 | +0.0 | +0.0 |
+| 125621 | 2m | 180 | 2.0 | -2.7 | +0.4 | -7.0 | -3.3 |
+| 125621 | 2m | 90 | 5.5 | -2.9 | -0.4 | -2.8 | -2.1 |
+| 125621 | 2m | 0 | 5.5 | +0.0 | +0.0 | +0.0 | +0.0 |
+| 125621 | 4m | 0 | 4.0 | +0.0 | +0.0 | +0.0 | +0.0 |
+| 125621 | 4m | 90 | 3.0 | +2.2 | +0.1 | -3.9 | -1.6 |
+| 125621 | 4m | 180 | 8.5 | -1.2 | +1.8 | +1.3 | -2.9 |
+| 171645 | 2m | 0 | 3.5 | -0.4 | -0.6 | +2.9 | +1.0 |
+| 171645 | 2m | 90 | 2.5 | -0.8 | -1.0 | -3.0 | -1.3 |
+| 171645 | 2m | 180 | 4.0 | -1.4 | -0.5 | +2.6 | -2.4 |
+| 171645 | 2m | 90 | 4.5 | -0.6 | +0.9 | +1.1 | -1.6 |
+| 171645 | 2m | 0 | 3.0 | +0.4 | +0.6 | -2.9 | -1.0 |
+| 213304 | 6m | 0 | 2.5 | +1.8 | +1.1 | +5.7 | -0.0 |
+| 213304 | 6m | 90 | 5.0 | -2.1 | -1.7 | -3.8 | -1.4 |
+| 213304 | 6m | 180 | 4.0 | -2.7 | -1.9 | -6.9 | -1.3 |
+| 213304 | 6m | 90 | 5.5 | -1.9 | -1.7 | -6.3 | -0.8 |
+| 213304 | 6m | 0 | 4.0 | -1.8 | -1.1 | -5.7 | +0.0 |
+| 215800 | 2m | 0 | 2.5 | -1.7 | +1.0 | -1.9 | -0.5 |
+| 215800 | 2m | 90 | 1.5 | -1.8 | -3.2 | -3.4 | -2.6 |
+| 215800 | 2m | 180 | 1.5 | -3.5 | -4.9 | -5.4 | -3.3 |
+| 215800 | 2m | 90 | 1.5 | -1.2 | -3.4 | -3.8 | -1.1 |
+| 215800 | 2m | 0 | 3.5 | +1.7 | -1.0 | +1.9 | +0.5 |
+| 221126 | 6m | 0 | 4.0 | +0.0 | +0.0 | +0.0 | +0.0 |
+| 224302 | 6m | 0 | 25.0 | +0.0 | +0.0 | +0.0 | +0.0 |
+| 224302 | 6m | 90 | 11.5 | -0.9 | -1.4 | +2.9 | -1.2 |
+| 231705 | 2m | 0 | 14.0 | +0.0 | +0.0 | +0.0 | +0.0 |
+| 231705 | 2m | 90 | 10.0 | -2.8 | -1.9 | -2.1 | -2.5 |
+| 231705 | 2m | 180 | 12.5 | -4.5 | -1.6 | -2.3 | -4.0 |
+| 231705 | 2m | 135 | 12.0 | -4.2 | -1.4 | -3.1 | -2.9 |
+| 231705 | 2m | 90 | 22.5 | -2.8 | -0.9 | -2.9 | -1.5 |
+| 231921 | 5m | 0 | 10.0 | +1.0 | +0.1 | -2.3 | +0.2 |
+| 231921 | 5m | 90 | 8.5 | -1.4 | +0.9 | +1.1 | -1.6 |
+| 231921 | 5m | 180 | 14.0 | -2.1 | -0.7 | -0.5 | -1.1 |
+| 231921 | 5m | 135 | 9.0 | -2.3 | -0.7 | -1.3 | -1.7 |
+| 231921 | 5m | 90 | 10.5 | -1.2 | +0.1 | -0.8 | -1.0 |
+| 231921 | 5m | 0 | 8.0 | -1.0 | -0.1 | +2.3 | -0.2 |

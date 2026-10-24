@@ -1,0 +1,20 @@
+facing | takes | PER on "six fresh beers in the fridge" | key consonants heard right | blur: mean entropy, bits
+2 m:
+    0 |  2 |   16% |   79% | 0.992
+   90 |  8 |   26% |   70% | 1.272
+  135 |  2 |   29% |   64% | 1.272
+  180 |  4 |   42% |   54% | 1.506
+5 m:
+    0 |  6 |   37% |   52% | 1.559
+   90 |  6 |   54% |   40% | 1.868
+  135 |  3 |   61% |   33% | 1.879
+  180 |  5 |   48% |   49% | 1.681
+
+key consonants heard right, all takes, facing (0) against turned (90-180):
+  s (six)      facing   88% (n 8)   turned   89% (n 28)
+  f (fresh)    facing   38% (n 8)   turned    7% (n 28)
+  ʃ (fresh)    facing  100% (n 8)   turned   93% (n 28)
+  b (beers)    facing   38% (n 8)   turned   54% (n 28)
+  f (fridge)   facing    0% (n 8)   turned    0% (n 28)
+  z (beers)    facing  100% (n 8)   turned   86% (n 28)
+  dʒ (fridge)  facing   50% (n 8)   turned   43% (n 28)

@@ -651,7 +651,8 @@ the failures by kind. Commit `results/linguistic/ami/` and `harness/linguistic/`
 DONE in a 2026-10-23 cloud session: `results/device_directed/report.md`. Shape finds the instructions and Jay's
 contrast makes it better (MiniLM: 89% at 1 false accept per hour, keywords 9%); a foreign-phrase control shows
 it is not just spotting the splice. But the same instructions said to a person pass almost as often: words alone
-don't say who they are for. Don't start this one.
+don't say who they are for. A small general model asked directly does far worse (Qwen2.5-1.5B: 12% at 1/h; 0.5B
+answers by line position). Don't start this one.
 
 READY 2026-10-23. Text only: no audio, no GPU, no Fisher model needed.
 
@@ -759,6 +760,12 @@ Commit `results/range_facing/` and `harness/range_facing/` to a branch. `src/` s
 
 ## 21. When to re-read within an utterance: angle, range and facing
 
+DONE in a 2026-10-23 cloud session: `results/resample/report.md`. Angle: re-read every 0.25 s and move only on
+the dim rule and > 5 deg (moving talkers 50% -> 61% within 10 deg, lag halved, ~36 moves/min). Range: keep one
+read per utterance; sliding CDR is worse. Facing turns ~25 deg within an utterance, but brief 20's HF - LF cue
+barely reads it under any cadence (AUC 0.61-0.64, follows real turns ~chance): the cue, not the cadence, is the
+limit. Don't start this one.
+
 READY 2026-10-23. The network policy now allows the Hugging Face CDN (`us.aws.cdn.hf.co`,
 `cdn-lfs.huggingface.co`) and `openaipublic.azureedge.net`.
 
@@ -783,6 +790,9 @@ Copies of the schemes go under `harness/`; `src/` stays unchanged. Commit `resul
 `harness/resample/` to a branch.
 
 ## 22. Who it's for: real requests to people, in their own context
+
+DONE in a 2026-10-23 cloud session (Switchboard only: AMI's annotation host is blocked here; step 4 waits on brief
+19's general-model follow-up): `results/who_for/report.md`. Don't start this one.
 
 READY 2026-10-23. Text only. Builds on brief 19 (`results/device_directed/report.md`, `harness/device_directed/`).
 

@@ -1,0 +1,83 @@
+{
+ "name": "walk-122038",
+ "source": "Dictate/captures/geonar/walk-122038-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "the tape's own -words.json (handset recogniser), reshaped for the decode route",
+ "duration_s": 103.43,
+ "segments": [
+  {
+   "t0": 9.72,
+   "t1": 12.17,
+   "text": "I am now 90 degrees to the right."
+  },
+  {
+   "t0": 16.21,
+   "t1": 18.26,
+   "text": "I am now facing away from the phone."
+  },
+  {
+   "t0": 22.52,
+   "t1": 24.78,
+   "text": "I have now 90 degrees facing left."
+  },
+  {
+   "t0": 27.04,
+   "t1": 28.04,
+   "text": "Facing the phone again."
+  },
+  {
+   "t0": 29.52,
+   "t1": 30.28,
+   "text": "In the phone again."
+  },
+  {
+   "t0": 34.62,
+   "t1": 47.28,
+   "text": "Talking while I'm rotating clockwise. I am now rotating clockwise two meters fro"
+  },
+  {
+   "t0": 55.22,
+   "t1": 59.29,
+   "text": "Now, I'm rotating counterclockwise from the phone."
+  },
+  {
+   "t0": 60.72,
+   "t1": 62.27,
+   "text": "Same level of."
+  },
+  {
+   "t0": 62.82,
+   "t1": 66.78,
+   "text": "Talking same voice, same rate."
+  },
+  {
+   "t0": 67.9,
+   "t1": 68.82,
+   "text": "I see the phone again."
+  },
+  {
+   "t0": 77.31,
+   "t1": 81.12,
+   "text": "I'm rotating clockwise accountable wise 90 degrees."
+  },
+  {
+   "t0": 83.32,
+   "t1": 83.92,
+   "text": "Walking."
+  },
+  {
+   "t0": 85.12,
+   "t1": 88.6,
+   "text": "To an a straight line on the side of the top cap."
+  },
+  {
+   "t0": 92.72,
+   "t1": 97.62,
+   "text": "I'm now rotating to face the phone at 45 degrees at about four meters."
+  },
+  {
+   "t0": 100.12,
+   "t1": 103.43,
+   "text": "Walking towards the phone and our two meters of 45 degrees."
+  }
+ ]
+}

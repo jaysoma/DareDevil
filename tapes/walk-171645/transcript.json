@@ -1,0 +1,93 @@
+{
+ "name": "walk-171645",
+ "source": "Dictate/captures/geonar/walk-171645-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "the tape's own -words.json (handset recogniser), reshaped for the decode route",
+ "duration_s": 142.42,
+ "segments": [
+  {
+   "t0": 2.83,
+   "t1": 6.83,
+   "text": "Right now, I'm about two meters in front of the phone, right in the seventh."
+  },
+  {
+   "t0": 6.83,
+   "t1": 13.39,
+   "text": "Rotate 90 degrees clockwise, same position."
+  },
+  {
+   "t0": 13.39,
+   "t1": 19.86,
+   "text": "Rotate 90 degrees clockwise, facing away from the phone."
+  },
+  {
+   "t0": 19.86,
+   "t1": 30.08,
+   "text": "Rotate 90 degrees clockwise, same position, about two meters."
+  },
+  {
+   "t0": 30.08,
+   "t1": 33.04,
+   "text": "Darn it, I just faced the phone just now."
+  },
+  {
+   "t0": 33.04,
+   "t1": 38.76,
+   "text": "And now, back to facing the phone."
+  },
+  {
+   "t0": 38.76,
+   "t1": 45.56,
+   "text": "This is about five meters facing the phone."
+  },
+  {
+   "t0": 45.56,
+   "t1": 60.25,
+   "text": "Rotate 90 degrees facing away from the phone, 90 degrees."
+  },
+  {
+   "t0": 60.25,
+   "t1": 65.58,
+   "text": "And now facing the phone again at about five meters."
+  },
+  {
+   "t0": 65.58,
+   "t1": 72.8,
+   "text": "Now, sitting down."
+  },
+  {
+   "t0": 72.8,
+   "t1": 78.21,
+   "text": "I'm about five meters from the phone."
+  },
+  {
+   "t0": 78.21,
+   "t1": 80.37,
+   "text": "Can't estimate the angle."
+  },
+  {
+   "t0": 80.37,
+   "t1": 93.73,
+   "text": "I'm on the side of, sitting down, about 2.5 meters on the side of the top mic."
+  },
+  {
+   "t0": 93.73,
+   "t1": 98.71,
+   "text": "Now, standing up from that same position."
+  },
+  {
+   "t0": 98.71,
+   "t1": 107.13,
+   "text": "Now, standing from the position where I sat first."
+  },
+  {
+   "t0": 107.13,
+   "t1": 136.59,
+   "text": "Facing about, now facing the phone."
+  },
+  {
+   "t0": 136.59,
+   "t1": 142.42,
+   "text": "I'm walking straight towards the phone, right along the center."
+  }
+ ]
+}

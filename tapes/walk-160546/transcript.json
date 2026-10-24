@@ -1,0 +1,78 @@
+{
+ "name": "walk-160546",
+ "source": "Dictate/captures/geonar/walk-160546-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "duration_s": 77,
+ "segments": [
+  {
+   "t0": 5.64,
+   "t1": 10.56,
+   "text": "I came directly to the phone right now, about maybe 1.25 meters."
+  },
+  {
+   "t0": 11.5,
+   "t1": 14.16,
+   "text": "And just kind of looking at the phone."
+  },
+  {
+   "t0": 16.06,
+   "t1": 19.64,
+   "text": "Now I'm rotating counter blockwise as I'm talking."
+  },
+  {
+   "t0": 20.06,
+   "t1": 21.52,
+   "text": "Hopefully this will do something good."
+  },
+  {
+   "t0": 22.74,
+   "t1": 25.5,
+   "text": "Since we have no idea what to do with rotation."
+  },
+  {
+   "t0": 25.72,
+   "t1": 26.04,
+   "text": "Or do we?"
+  },
+  {
+   "t0": 26.22,
+   "t1": 28.16,
+   "text": "Do we actually know what to do with rotation?"
+  },
+  {
+   "t0": 28.56,
+   "t1": 29.98,
+   "text": "Well, this will probably be."
+  },
+  {
+   "t0": 30,
+   "t1": 35.5,
+   "text": "the instructive so there I just did an entire circle and I just ended up right back where I started."
+  },
+  {
+   "t0": 39.78,
+   "t1": 48.34,
+   "text": "Okay, now I had the corner of the TV stick. Yeah, I'm at the right corner of the TV stick. That's right."
+  },
+  {
+   "t0": 52.64,
+   "t1": 59.98,
+   "text": "Now I am at the angle wall, middle of the angle wall, looking at the phone, you know, originally we're going to go and"
+  },
+  {
+   "t0": 60,
+   "t1": 62.5,
+   "text": "you have to just not have to look at the form of the side."
+  },
+  {
+   "t0": 68.32,
+   "t1": 73.16,
+   "text": "Now I'm leaning on the wall of the lobby room and I think this will be the last position."
+  },
+  {
+   "t0": 73.74,
+   "t1": 76.38,
+   "text": "So let's see what comes out of this."
+  }
+ ]
+}

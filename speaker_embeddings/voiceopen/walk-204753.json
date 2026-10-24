@@ -1,0 +1,88 @@
+{
+ "enrol_s": 10.01,
+ "enrol_utts": [
+  0
+ ],
+ "enrol_min_s": 5.0,
+ "model": "campplus_zh_en_advanced.onnx",
+ "min_score_s": 0.4,
+ "utts": [
+  {
+   "oi": 0,
+   "t": 4.827,
+   "dur": 10.01,
+   "cos": 1.0,
+   "enrolled": true
+  },
+  {
+   "oi": 1,
+   "t": 20.975,
+   "dur": 9.681,
+   "cos": 0.6902,
+   "enrolled": false
+  },
+  {
+   "oi": 2,
+   "t": 38.294,
+   "dur": 0.757,
+   "cos": 0.1443,
+   "enrolled": false
+  },
+  {
+   "oi": 3,
+   "t": 38.717,
+   "dur": 7.064,
+   "cos": 0.4573,
+   "enrolled": false
+  },
+  {
+   "oi": 4,
+   "t": 45.995,
+   "dur": 2.218,
+   "cos": 0.5597,
+   "enrolled": false
+  },
+  {
+   "oi": 5,
+   "t": 55.28,
+   "dur": 6.704,
+   "cos": 0.6593,
+   "enrolled": false
+  },
+  {
+   "oi": 6,
+   "t": 62.407,
+   "dur": 1.614,
+   "cos": 0.5324,
+   "enrolled": false
+  },
+  {
+   "oi": 7,
+   "t": 70.952,
+   "dur": 9.741,
+   "cos": 0.642,
+   "enrolled": false
+  },
+  {
+   "oi": 8,
+   "t": 80.935,
+   "dur": 4.089,
+   "cos": 0.6573,
+   "enrolled": false
+  },
+  {
+   "oi": 9,
+   "t": 87.624,
+   "dur": 1.677,
+   "cos": 0.4134,
+   "enrolled": false
+  },
+  {
+   "oi": 10,
+   "t": 91.162,
+   "dur": 1.776,
+   "cos": 0.473,
+   "enrolled": false
+  }
+ ]
+}

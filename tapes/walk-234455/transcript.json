@@ -1,0 +1,63 @@
+{
+ "name": "walk-234455",
+ "source": "Dictate/captures/geonar/walk-234455-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "duration_s": 64.15,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 8.5,
+   "text": "Alright, this would be the run that is in my bedroom office."
+  },
+  {
+   "t0": 8.7,
+   "t1": 12.92,
+   "text": "I am, uh, hmm, well, maybe two and a half meters from the phone, I would say."
+  },
+  {
+   "t0": 13.82,
+   "t1": 15.88,
+   "text": "Sitting in the bed, two and a half meters from the phone."
+  },
+  {
+   "t0": 18.3,
+   "t1": 19.66,
+   "text": "Now three meters from the phone."
+  },
+  {
+   "t0": 21.82,
+   "t1": 22.72,
+   "text": "Sitting here for a second?"
+  },
+  {
+   "t0": 25.5,
+   "t1": 28.36,
+   "text": "I'm gonna lay down with the bed, which I'm walking doorstep on."
+  },
+  {
+   "t0": 28.36,
+   "t1": 44,
+   "text": "now laying on the bed, I would say two and a half meters on directly towards the top mic, except laying down, so I am pointed at the ceiling."
+  },
+  {
+   "t0": 44.84,
+   "t1": 51.04,
+   "text": "All right, I'm just gonna walk across the length of the phone."
+  },
+  {
+   "t0": 51.56,
+   "t1": 53.8,
+   "text": "Walk the other way across the length of the phone."
+  },
+  {
+   "t0": 54.34,
+   "t1": 58.34,
+   "text": "Now I am half a meter from the center of the phone."
+  },
+  {
+   "t0": 58.36,
+   "t1": 64.12,
+   "text": "turning around 180 degrees walking towards my chair which is three meters"
+  }
+ ]
+}

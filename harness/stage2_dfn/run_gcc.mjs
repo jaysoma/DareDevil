@@ -21,7 +21,7 @@ const PREROLL = 512, CHUNK = 512;
 const i16 = (b64) => { const b = Buffer.from(b64, 'base64'); return new Int16Array(b.buffer, b.byteOffset, b.length / 2); };
 
 function read(mod, L, R, base, on, voteMask = null) {
-  const s = mod.createStream(base, { readFrom: on - PREROLL, ...(voteMask ? { voteMask } : {}) });
+  const s = mod.createStream(base, { readFrom: on - PREROLL, reread: false, ...(voteMask ? { voteMask } : {}) });
   const track = { '43': null, '100': null, '250': null, lock: null };
   let o = null;
   for (let i = 0; i < L.length; i += CHUNK) {

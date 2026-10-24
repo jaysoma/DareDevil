@@ -1,0 +1,11 @@
+{
+ "source": "EARS (github.com/facebookresearch/ears_dataset), transcripts.json",
+ "licence": "CC BY-NC 4.0",
+ "note": "The text of each EARS file used in the dEchorate cuts. A cut holds 2 s around one onset, so only part of the text.",
+ "transcripts": {
+  "sentences_01_regular": "I will not stay here. God, we simply must dress the character. Stay, stay, I will go myself. May one ask what it is for. He rushed to the window and opened the movable pane.",
+  "sentences_02_regular": "It might happen, he added with an involuntary smile. It is sold, sir, was again his laconic reply. And you must have some water, my dear fellow. What is that flying about? Who wants a dead cert for the Gold cup?",
+  "sentences_15_regular": "They were all sitting in her room. So that's how it stands. He did not know why he embraced it. Why don't you speak, cousin? I didn't tell a tale.",
+  "sentences_16_regular": "My head aches dreadfully now. Not to say every word. I have only found out. He is trying to discover something. I have done my duty."
+ }
+}

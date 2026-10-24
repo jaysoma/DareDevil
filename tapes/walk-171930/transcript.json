@@ -1,0 +1,18 @@
+{
+ "name": "walk-171930",
+ "source": "Dictate/captures/geonar/walk-171930-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "the tape's own -words.json (handset recogniser), reshaped for the decode route",
+ "duration_s": 53.44,
+ "segments": [
+  {
+   "t0": 2.93,
+   "t1": 27.26,
+   "text": "Okay, second round. Meters from the phone. Rotate at 90 degrees. Rotate at 90 degrees. Now facing away from the phone. Rotate at 90 degrees. And now facing the phone again, approximately."
+  },
+  {
+   "t0": 27.26,
+   "t1": 53.44,
+   "text": "I'm slightly off the center towards the bottom half. Now sitting down facing 90 degrees counterclockwise to now standing up again, same position, same orientation."
+  }
+ ]
+}

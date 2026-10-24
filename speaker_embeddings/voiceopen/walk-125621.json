@@ -1,0 +1,201 @@
+{
+ "enrol_s": 10.34,
+ "enrol_utts": [
+  0,
+  1
+ ],
+ "enrol_min_s": 5.0,
+ "model": "campplus_zh_en_advanced.onnx",
+ "min_score_s": 0.4,
+ "utts": [
+  {
+   "oi": 0,
+   "t": 8.104,
+   "dur": 4.826,
+   "cos": 0.8649,
+   "enrolled": true
+  },
+  {
+   "oi": 1,
+   "t": 16.336,
+   "dur": 5.514,
+   "cos": 0.8593,
+   "enrolled": true
+  },
+  {
+   "oi": 2,
+   "t": 25.838,
+   "dur": 6.942,
+   "cos": 0.8002,
+   "enrolled": false
+  },
+  {
+   "oi": 3,
+   "t": 37.227,
+   "dur": 5.303,
+   "cos": 0.7458,
+   "enrolled": false
+  },
+  {
+   "oi": 4,
+   "t": 46.38,
+   "dur": 1.3,
+   "cos": 0.1423,
+   "enrolled": false
+  },
+  {
+   "oi": 5,
+   "t": 49.335,
+   "dur": 4.725,
+   "cos": 0.6898,
+   "enrolled": false
+  },
+  {
+   "oi": 6,
+   "t": 58.226,
+   "dur": 4.734,
+   "cos": 0.7939,
+   "enrolled": false
+  },
+  {
+   "oi": 7,
+   "t": 66.457,
+   "dur": 3.473,
+   "cos": 0.6584,
+   "enrolled": false
+  },
+  {
+   "oi": 8,
+   "t": 71.269,
+   "dur": 1.421,
+   "cos": 0.5312,
+   "enrolled": false
+  },
+  {
+   "oi": 9,
+   "t": 75.382,
+   "dur": 4.678,
+   "cos": 0.5427,
+   "enrolled": false
+  },
+  {
+   "oi": 10,
+   "t": 87.085,
+   "dur": 0.175,
+   "cos": null,
+   "enrolled": false
+  },
+  {
+   "oi": 11,
+   "t": 89.466,
+   "dur": 0.774,
+   "cos": 0.535,
+   "enrolled": false
+  },
+  {
+   "oi": 12,
+   "t": 91.347,
+   "dur": 1.843,
+   "cos": 0.5376,
+   "enrolled": false
+  },
+  {
+   "oi": 13,
+   "t": 94.001,
+   "dur": 1.129,
+   "cos": 0.5399,
+   "enrolled": false
+  },
+  {
+   "oi": 14,
+   "t": 96.032,
+   "dur": 3.948,
+   "cos": 0.7272,
+   "enrolled": false
+  },
+  {
+   "oi": 15,
+   "t": 102.284,
+   "dur": 2.816,
+   "cos": 0.4283,
+   "enrolled": false
+  },
+  {
+   "oi": 16,
+   "t": 106.772,
+   "dur": 0.408,
+   "cos": 0.1465,
+   "enrolled": false
+  },
+  {
+   "oi": 17,
+   "t": 108.632,
+   "dur": 8.198,
+   "cos": 0.6971,
+   "enrolled": false
+  },
+  {
+   "oi": 18,
+   "t": 118.009,
+   "dur": 1.321,
+   "cos": 0.3264,
+   "enrolled": false
+  },
+  {
+   "oi": 19,
+   "t": 123.18,
+   "dur": 1.88,
+   "cos": 0.5703,
+   "enrolled": false
+  },
+  {
+   "oi": 20,
+   "t": 127.99,
+   "dur": 1.47,
+   "cos": 0.4285,
+   "enrolled": false
+  },
+  {
+   "oi": 21,
+   "t": 130.411,
+   "dur": 3.409,
+   "cos": 0.4574,
+   "enrolled": false
+  },
+  {
+   "oi": 22,
+   "t": 136.48,
+   "dur": 2.33,
+   "cos": 0.5183,
+   "enrolled": false
+  },
+  {
+   "oi": 23,
+   "t": 142.55,
+   "dur": 2.74,
+   "cos": 0.7275,
+   "enrolled": false
+  },
+  {
+   "oi": 24,
+   "t": 146.29,
+   "dur": 0.11,
+   "cos": null,
+   "enrolled": false
+  },
+  {
+   "oi": 25,
+   "t": 147.27,
+   "dur": 2.52,
+   "cos": 0.1877,
+   "enrolled": false
+  },
+  {
+   "oi": 26,
+   "t": 151.45,
+   "dur": 1.0,
+   "cos": null,
+   "enrolled": false
+  }
+ ]
+}

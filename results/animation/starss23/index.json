@@ -1,0 +1,1346 @@
+[
+ {
+  "recording": "fold4_room23_mix001",
+  "room": "room23",
+  "duration_s": 60.7,
+  "events": 18,
+  "speech_events": 16,
+  "sources": 6
+ },
+ {
+  "recording": "fold4_room23_mix002",
+  "room": "room23",
+  "duration_s": 44.7,
+  "events": 11,
+  "speech_events": 8,
+  "sources": 7
+ },
+ {
+  "recording": "fold4_room23_mix003",
+  "room": "room23",
+  "duration_s": 42.0,
+  "events": 8,
+  "speech_events": 8,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room23_mix004",
+  "room": "room23",
+  "duration_s": 102.2,
+  "events": 40,
+  "speech_events": 35,
+  "sources": 8
+ },
+ {
+  "recording": "fold4_room23_mix005",
+  "room": "room23",
+  "duration_s": 72.9,
+  "events": 28,
+  "speech_events": 22,
+  "sources": 5
+ },
+ {
+  "recording": "fold4_room23_mix006",
+  "room": "room23",
+  "duration_s": 104.7,
+  "events": 37,
+  "speech_events": 32,
+  "sources": 7
+ },
+ {
+  "recording": "fold4_room23_mix007",
+  "room": "room23",
+  "duration_s": 126.0,
+  "events": 41,
+  "speech_events": 32,
+  "sources": 8
+ },
+ {
+  "recording": "fold4_room23_mix008",
+  "room": "room23",
+  "duration_s": 53.0,
+  "events": 2,
+  "speech_events": 0,
+  "sources": 2
+ },
+ {
+  "recording": "fold4_room23_mix009",
+  "room": "room23",
+  "duration_s": 65.0,
+  "events": 1,
+  "speech_events": 0,
+  "sources": 2
+ },
+ {
+  "recording": "fold4_room23_mix010",
+  "room": "room23",
+  "duration_s": 71.0,
+  "events": 6,
+  "speech_events": 2,
+  "sources": 6
+ },
+ {
+  "recording": "fold4_room23_mix011",
+  "room": "room23",
+  "duration_s": 115.0,
+  "events": 14,
+  "speech_events": 7,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room23_mix012",
+  "room": "room23",
+  "duration_s": 95.0,
+  "events": 15,
+  "speech_events": 6,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room23_mix013",
+  "room": "room23",
+  "duration_s": 60.0,
+  "events": 6,
+  "speech_events": 1,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room23_mix014",
+  "room": "room23",
+  "duration_s": 120.1,
+  "events": 34,
+  "speech_events": 25,
+  "sources": 8
+ },
+ {
+  "recording": "fold4_room24_mix001",
+  "room": "room24",
+  "duration_s": 178.8,
+  "events": 51,
+  "speech_events": 41,
+  "sources": 5
+ },
+ {
+  "recording": "fold4_room24_mix002",
+  "room": "room24",
+  "duration_s": 105.4,
+  "events": 37,
+  "speech_events": 22,
+  "sources": 7
+ },
+ {
+  "recording": "fold4_room24_mix003",
+  "room": "room24",
+  "duration_s": 97.3,
+  "events": 29,
+  "speech_events": 19,
+  "sources": 8
+ },
+ {
+  "recording": "fold4_room24_mix004",
+  "room": "room24",
+  "duration_s": 95.1,
+  "events": 28,
+  "speech_events": 22,
+  "sources": 7
+ },
+ {
+  "recording": "fold4_room24_mix005",
+  "room": "room24",
+  "duration_s": 137.3,
+  "events": 54,
+  "speech_events": 46,
+  "sources": 6
+ },
+ {
+  "recording": "fold4_room24_mix006",
+  "room": "room24",
+  "duration_s": 141.0,
+  "events": 65,
+  "speech_events": 47,
+  "sources": 6
+ },
+ {
+  "recording": "fold4_room24_mix007",
+  "room": "room24",
+  "duration_s": 89.0,
+  "events": 3,
+  "speech_events": 3,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room24_mix008",
+  "room": "room24",
+  "duration_s": 97.0,
+  "events": 5,
+  "speech_events": 3,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room24_mix009",
+  "room": "room24",
+  "duration_s": 77.4,
+  "events": 24,
+  "speech_events": 22,
+  "sources": 5
+ },
+ {
+  "recording": "fold4_room24_mix010",
+  "room": "room24",
+  "duration_s": 71.1,
+  "events": 28,
+  "speech_events": 20,
+  "sources": 5
+ },
+ {
+  "recording": "fold4_room24_mix011",
+  "room": "room24",
+  "duration_s": 63.3,
+  "events": 20,
+  "speech_events": 15,
+  "sources": 7
+ },
+ {
+  "recording": "fold4_room24_mix012",
+  "room": "room24",
+  "duration_s": 156.8,
+  "events": 17,
+  "speech_events": 10,
+  "sources": 6
+ },
+ {
+  "recording": "fold4_room24_mix013",
+  "room": "room24",
+  "duration_s": 57.2,
+  "events": 36,
+  "speech_events": 21,
+  "sources": 9
+ },
+ {
+  "recording": "fold4_room24_mix014",
+  "room": "room24",
+  "duration_s": 125.1,
+  "events": 52,
+  "speech_events": 34,
+  "sources": 9
+ },
+ {
+  "recording": "fold4_room24_mix015",
+  "room": "room24",
+  "duration_s": 40.9,
+  "events": 15,
+  "speech_events": 13,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room24_mix016",
+  "room": "room24",
+  "duration_s": 79.8,
+  "events": 27,
+  "speech_events": 21,
+  "sources": 7
+ },
+ {
+  "recording": "fold4_room10_mix001",
+  "room": "room10",
+  "duration_s": 134.0,
+  "events": 18,
+  "speech_events": 14,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room10_mix002",
+  "room": "room10",
+  "duration_s": 140.0,
+  "events": 34,
+  "speech_events": 30,
+  "sources": 3
+ },
+ {
+  "recording": "fold4_room10_mix003",
+  "room": "room10",
+  "duration_s": 134.5,
+  "events": 23,
+  "speech_events": 19,
+  "sources": 5
+ },
+ {
+  "recording": "fold4_room10_mix004",
+  "room": "room10",
+  "duration_s": 143.0,
+  "events": 28,
+  "speech_events": 24,
+  "sources": 5
+ },
+ {
+  "recording": "fold4_room10_mix005",
+  "room": "room10",
+  "duration_s": 110.5,
+  "events": 15,
+  "speech_events": 13,
+  "sources": 3
+ },
+ {
+  "recording": "fold4_room10_mix006",
+  "room": "room10",
+  "duration_s": 166.5,
+  "events": 24,
+  "speech_events": 21,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room10_mix007",
+  "room": "room10",
+  "duration_s": 139.0,
+  "events": 27,
+  "speech_events": 23,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room10_mix008",
+  "room": "room10",
+  "duration_s": 142.5,
+  "events": 31,
+  "speech_events": 24,
+  "sources": 5
+ },
+ {
+  "recording": "fold4_room10_mix009",
+  "room": "room10",
+  "duration_s": 158.0,
+  "events": 68,
+  "speech_events": 52,
+  "sources": 6
+ },
+ {
+  "recording": "fold4_room15_mix001",
+  "room": "room15",
+  "duration_s": 162.4,
+  "events": 1,
+  "speech_events": 0,
+  "sources": 1
+ },
+ {
+  "recording": "fold4_room15_mix002",
+  "room": "room15",
+  "duration_s": 177.8,
+  "events": 8,
+  "speech_events": 0,
+  "sources": 1
+ },
+ {
+  "recording": "fold4_room15_mix003",
+  "room": "room15",
+  "duration_s": 271.0,
+  "events": 18,
+  "speech_events": 0,
+  "sources": 3
+ },
+ {
+  "recording": "fold4_room15_mix004",
+  "room": "room15",
+  "duration_s": 282.9,
+  "events": 15,
+  "speech_events": 0,
+  "sources": 3
+ },
+ {
+  "recording": "fold4_room15_mix005",
+  "room": "room15",
+  "duration_s": 125.1,
+  "events": 19,
+  "speech_events": 13,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room15_mix006",
+  "room": "room15",
+  "duration_s": 293.1,
+  "events": 125,
+  "speech_events": 104,
+  "sources": 6
+ },
+ {
+  "recording": "fold4_room15_mix007",
+  "room": "room15",
+  "duration_s": 229.2,
+  "events": 114,
+  "speech_events": 56,
+  "sources": 8
+ },
+ {
+  "recording": "fold4_room15_mix008",
+  "room": "room15",
+  "duration_s": 149.2,
+  "events": 48,
+  "speech_events": 38,
+  "sources": 9
+ },
+ {
+  "recording": "fold4_room15_mix009",
+  "room": "room15",
+  "duration_s": 221.7,
+  "events": 88,
+  "speech_events": 71,
+  "sources": 11
+ },
+ {
+  "recording": "fold4_room15_mix010",
+  "room": "room15",
+  "duration_s": 562.6,
+  "events": 44,
+  "speech_events": 0,
+  "sources": 3
+ },
+ {
+  "recording": "fold4_room16_mix001",
+  "room": "room16",
+  "duration_s": 214.4,
+  "events": 81,
+  "speech_events": 71,
+  "sources": 7
+ },
+ {
+  "recording": "fold4_room16_mix002",
+  "room": "room16",
+  "duration_s": 126.8,
+  "events": 35,
+  "speech_events": 31,
+  "sources": 5
+ },
+ {
+  "recording": "fold4_room16_mix003",
+  "room": "room16",
+  "duration_s": 131.2,
+  "events": 60,
+  "speech_events": 47,
+  "sources": 8
+ },
+ {
+  "recording": "fold4_room16_mix004",
+  "room": "room16",
+  "duration_s": 137.4,
+  "events": 57,
+  "speech_events": 47,
+  "sources": 8
+ },
+ {
+  "recording": "fold4_room16_mix005",
+  "room": "room16",
+  "duration_s": 50.6,
+  "events": 29,
+  "speech_events": 16,
+  "sources": 10
+ },
+ {
+  "recording": "fold4_room16_mix006",
+  "room": "room16",
+  "duration_s": 172.0,
+  "events": 78,
+  "speech_events": 73,
+  "sources": 5
+ },
+ {
+  "recording": "fold4_room16_mix007",
+  "room": "room16",
+  "duration_s": 200.1,
+  "events": 64,
+  "speech_events": 64,
+  "sources": 3
+ },
+ {
+  "recording": "fold4_room16_mix008",
+  "room": "room16",
+  "duration_s": 42.2,
+  "events": 10,
+  "speech_events": 6,
+  "sources": 5
+ },
+ {
+  "recording": "fold4_room16_mix009",
+  "room": "room16",
+  "duration_s": 81.1,
+  "events": 27,
+  "speech_events": 19,
+  "sources": 6
+ },
+ {
+  "recording": "fold4_room16_mix010",
+  "room": "room16",
+  "duration_s": 129.2,
+  "events": 52,
+  "speech_events": 35,
+  "sources": 13
+ },
+ {
+  "recording": "fold4_room16_mix011",
+  "room": "room16",
+  "duration_s": 174.1,
+  "events": 54,
+  "speech_events": 49,
+  "sources": 5
+ },
+ {
+  "recording": "fold4_room16_mix012",
+  "room": "room16",
+  "duration_s": 138.7,
+  "events": 70,
+  "speech_events": 47,
+  "sources": 8
+ },
+ {
+  "recording": "fold4_room16_mix013",
+  "room": "room16",
+  "duration_s": 114.1,
+  "events": 91,
+  "speech_events": 44,
+  "sources": 14
+ },
+ {
+  "recording": "fold4_room16_mix014",
+  "room": "room16",
+  "duration_s": 91.0,
+  "events": 25,
+  "speech_events": 19,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room2_mix001",
+  "room": "room2",
+  "duration_s": 144.2,
+  "events": 42,
+  "speech_events": 40,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room2_mix002",
+  "room": "room2",
+  "duration_s": 270.5,
+  "events": 59,
+  "speech_events": 55,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room2_mix003",
+  "room": "room2",
+  "duration_s": 249.0,
+  "events": 64,
+  "speech_events": 61,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room2_mix004",
+  "room": "room2",
+  "duration_s": 167.5,
+  "events": 45,
+  "speech_events": 44,
+  "sources": 3
+ },
+ {
+  "recording": "fold4_room2_mix005",
+  "room": "room2",
+  "duration_s": 181.0,
+  "events": 68,
+  "speech_events": 62,
+  "sources": 4
+ },
+ {
+  "recording": "fold4_room2_mix006",
+  "room": "room2",
+  "duration_s": 347.0,
+  "events": 46,
+  "speech_events": 44,
+  "sources": 3
+ },
+ {
+  "recording": "fold4_room8_mix001",
+  "room": "room8",
+  "duration_s": 202.0,
+  "events": 51,
+  "speech_events": 40,
+  "sources": 7
+ },
+ {
+  "recording": "fold4_room8_mix002",
+  "room": "room8",
+  "duration_s": 186.0,
+  "events": 45,
+  "speech_events": 35,
+  "sources": 9
+ },
+ {
+  "recording": "fold4_room8_mix003",
+  "room": "room8",
+  "duration_s": 209.0,
+  "events": 54,
+  "speech_events": 35,
+  "sources": 11
+ },
+ {
+  "recording": "fold4_room8_mix004",
+  "room": "room8",
+  "duration_s": 102.5,
+  "events": 35,
+  "speech_events": 29,
+  "sources": 7
+ },
+ {
+  "recording": "fold4_room8_mix005",
+  "room": "room8",
+  "duration_s": 164.5,
+  "events": 38,
+  "speech_events": 36,
+  "sources": 5
+ },
+ {
+  "recording": "fold4_room8_mix006",
+  "room": "room8",
+  "duration_s": 223.5,
+  "events": 67,
+  "speech_events": 54,
+  "sources": 6
+ },
+ {
+  "recording": "fold4_room8_mix007",
+  "room": "room8",
+  "duration_s": 130.5,
+  "events": 20,
+  "speech_events": 14,
+  "sources": 7
+ },
+ {
+  "recording": "fold4_room8_mix008",
+  "room": "room8",
+  "duration_s": 163.0,
+  "events": 22,
+  "speech_events": 12,
+  "sources": 10
+ },
+ {
+  "recording": "fold4_room8_mix009",
+  "room": "room8",
+  "duration_s": 356.0,
+  "events": 72,
+  "speech_events": 63,
+  "sources": 7
+ },
+ {
+  "recording": "fold3_room21_mix001",
+  "room": "room21",
+  "duration_s": 85.7,
+  "events": 36,
+  "speech_events": 30,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room21_mix002",
+  "room": "room21",
+  "duration_s": 138.8,
+  "events": 54,
+  "speech_events": 50,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room21_mix003",
+  "room": "room21",
+  "duration_s": 116.9,
+  "events": 41,
+  "speech_events": 38,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room21_mix004",
+  "room": "room21",
+  "duration_s": 32.6,
+  "events": 18,
+  "speech_events": 14,
+  "sources": 6
+ },
+ {
+  "recording": "fold3_room21_mix005",
+  "room": "room21",
+  "duration_s": 67.2,
+  "events": 22,
+  "speech_events": 22,
+  "sources": 2
+ },
+ {
+  "recording": "fold3_room21_mix006",
+  "room": "room21",
+  "duration_s": 37.9,
+  "events": 8,
+  "speech_events": 8,
+  "sources": 2
+ },
+ {
+  "recording": "fold3_room21_mix007",
+  "room": "room21",
+  "duration_s": 76.8,
+  "events": 18,
+  "speech_events": 17,
+  "sources": 3
+ },
+ {
+  "recording": "fold3_room21_mix008",
+  "room": "room21",
+  "duration_s": 153.3,
+  "events": 43,
+  "speech_events": 40,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room21_mix009",
+  "room": "room21",
+  "duration_s": 110.3,
+  "events": 8,
+  "speech_events": 0,
+  "sources": 3
+ },
+ {
+  "recording": "fold3_room21_mix010",
+  "room": "room21",
+  "duration_s": 94.5,
+  "events": 7,
+  "speech_events": 2,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room21_mix011",
+  "room": "room21",
+  "duration_s": 58.6,
+  "events": 4,
+  "speech_events": 0,
+  "sources": 3
+ },
+ {
+  "recording": "fold3_room21_mix012",
+  "room": "room21",
+  "duration_s": 153.8,
+  "events": 66,
+  "speech_events": 50,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room21_mix013",
+  "room": "room21",
+  "duration_s": 65.0,
+  "events": 24,
+  "speech_events": 23,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room21_mix014",
+  "room": "room21",
+  "duration_s": 68.0,
+  "events": 24,
+  "speech_events": 21,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room21_mix015",
+  "room": "room21",
+  "duration_s": 113.7,
+  "events": 36,
+  "speech_events": 33,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room21_mix016",
+  "room": "room21",
+  "duration_s": 73.8,
+  "events": 23,
+  "speech_events": 22,
+  "sources": 3
+ },
+ {
+  "recording": "fold3_room21_mix017",
+  "room": "room21",
+  "duration_s": 132.1,
+  "events": 34,
+  "speech_events": 31,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room21_mix018",
+  "room": "room21",
+  "duration_s": 130.0,
+  "events": 36,
+  "speech_events": 31,
+  "sources": 7
+ },
+ {
+  "recording": "fold3_room21_mix019",
+  "room": "room21",
+  "duration_s": 49.0,
+  "events": 14,
+  "speech_events": 14,
+  "sources": 3
+ },
+ {
+  "recording": "fold3_room21_mix020",
+  "room": "room21",
+  "duration_s": 127.2,
+  "events": 14,
+  "speech_events": 6,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room21_mix021",
+  "room": "room21",
+  "duration_s": 130.0,
+  "events": 14,
+  "speech_events": 2,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room21_mix022",
+  "room": "room21",
+  "duration_s": 174.0,
+  "events": 64,
+  "speech_events": 51,
+  "sources": 7
+ },
+ {
+  "recording": "fold3_room21_mix023",
+  "room": "room21",
+  "duration_s": 109.5,
+  "events": 20,
+  "speech_events": 12,
+  "sources": 3
+ },
+ {
+  "recording": "fold3_room21_mix024",
+  "room": "room21",
+  "duration_s": 82.8,
+  "events": 11,
+  "speech_events": 7,
+  "sources": 3
+ },
+ {
+  "recording": "fold3_room21_mix025",
+  "room": "room21",
+  "duration_s": 243.0,
+  "events": 86,
+  "speech_events": 70,
+  "sources": 9
+ },
+ {
+  "recording": "fold3_room21_mix026",
+  "room": "room21",
+  "duration_s": 259.7,
+  "events": 48,
+  "speech_events": 34,
+  "sources": 8
+ },
+ {
+  "recording": "fold3_room21_mix027",
+  "room": "room21",
+  "duration_s": 111.3,
+  "events": 18,
+  "speech_events": 3,
+  "sources": 7
+ },
+ {
+  "recording": "fold3_room21_mix028",
+  "room": "room21",
+  "duration_s": 100.0,
+  "events": 20,
+  "speech_events": 3,
+  "sources": 6
+ },
+ {
+  "recording": "fold3_room21_mix029",
+  "room": "room21",
+  "duration_s": 206.1,
+  "events": 72,
+  "speech_events": 56,
+  "sources": 8
+ },
+ {
+  "recording": "fold3_room22_mix001",
+  "room": "room22",
+  "duration_s": 73.8,
+  "events": 30,
+  "speech_events": 26,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room22_mix002",
+  "room": "room22",
+  "duration_s": 118.2,
+  "events": 48,
+  "speech_events": 43,
+  "sources": 7
+ },
+ {
+  "recording": "fold3_room22_mix003",
+  "room": "room22",
+  "duration_s": 69.6,
+  "events": 20,
+  "speech_events": 16,
+  "sources": 6
+ },
+ {
+  "recording": "fold3_room22_mix004",
+  "room": "room22",
+  "duration_s": 102.3,
+  "events": 41,
+  "speech_events": 26,
+  "sources": 10
+ },
+ {
+  "recording": "fold3_room22_mix005",
+  "room": "room22",
+  "duration_s": 133.5,
+  "events": 44,
+  "speech_events": 33,
+  "sources": 9
+ },
+ {
+  "recording": "fold3_room22_mix006",
+  "room": "room22",
+  "duration_s": 60.1,
+  "events": 23,
+  "speech_events": 22,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room22_mix007",
+  "room": "room22",
+  "duration_s": 122.8,
+  "events": 11,
+  "speech_events": 5,
+  "sources": 6
+ },
+ {
+  "recording": "fold3_room22_mix008",
+  "room": "room22",
+  "duration_s": 95.0,
+  "events": 14,
+  "speech_events": 2,
+  "sources": 10
+ },
+ {
+  "recording": "fold3_room22_mix009",
+  "room": "room22",
+  "duration_s": 82.3,
+  "events": 43,
+  "speech_events": 27,
+  "sources": 10
+ },
+ {
+  "recording": "fold3_room22_mix010",
+  "room": "room22",
+  "duration_s": 225.0,
+  "events": 116,
+  "speech_events": 81,
+  "sources": 11
+ },
+ {
+  "recording": "fold3_room22_mix011",
+  "room": "room22",
+  "duration_s": 184.1,
+  "events": 81,
+  "speech_events": 61,
+  "sources": 9
+ },
+ {
+  "recording": "fold3_room12_mix001",
+  "room": "room12",
+  "duration_s": 252.4,
+  "events": 103,
+  "speech_events": 97,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room12_mix002",
+  "room": "room12",
+  "duration_s": 223.0,
+  "events": 69,
+  "speech_events": 66,
+  "sources": 3
+ },
+ {
+  "recording": "fold3_room12_mix003",
+  "room": "room12",
+  "duration_s": 353.4,
+  "events": 95,
+  "speech_events": 87,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room12_mix004",
+  "room": "room12",
+  "duration_s": 333.6,
+  "events": 106,
+  "speech_events": 98,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room12_mix005",
+  "room": "room12",
+  "duration_s": 92.6,
+  "events": 35,
+  "speech_events": 30,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room12_mix006",
+  "room": "room12",
+  "duration_s": 152.8,
+  "events": 88,
+  "speech_events": 82,
+  "sources": 6
+ },
+ {
+  "recording": "fold3_room12_mix007",
+  "room": "room12",
+  "duration_s": 245.2,
+  "events": 153,
+  "speech_events": 104,
+  "sources": 11
+ },
+ {
+  "recording": "fold3_room12_mix008",
+  "room": "room12",
+  "duration_s": 243.4,
+  "events": 158,
+  "speech_events": 124,
+  "sources": 9
+ },
+ {
+  "recording": "fold3_room12_mix009",
+  "room": "room12",
+  "duration_s": 101.8,
+  "events": 40,
+  "speech_events": 27,
+  "sources": 10
+ },
+ {
+  "recording": "fold3_room12_mix010",
+  "room": "room12",
+  "duration_s": 186.0,
+  "events": 7,
+  "speech_events": 0,
+  "sources": 3
+ },
+ {
+  "recording": "fold3_room13_mix001",
+  "room": "room13",
+  "duration_s": 260.8,
+  "events": 110,
+  "speech_events": 95,
+  "sources": 6
+ },
+ {
+  "recording": "fold3_room13_mix002",
+  "room": "room13",
+  "duration_s": 289.3,
+  "events": 93,
+  "speech_events": 82,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room13_mix003",
+  "room": "room13",
+  "duration_s": 202.1,
+  "events": 85,
+  "speech_events": 68,
+  "sources": 10
+ },
+ {
+  "recording": "fold3_room13_mix004",
+  "room": "room13",
+  "duration_s": 150.9,
+  "events": 48,
+  "speech_events": 34,
+  "sources": 12
+ },
+ {
+  "recording": "fold3_room13_mix005",
+  "room": "room13",
+  "duration_s": 52.1,
+  "events": 14,
+  "speech_events": 9,
+  "sources": 7
+ },
+ {
+  "recording": "fold3_room13_mix006",
+  "room": "room13",
+  "duration_s": 305.6,
+  "events": 105,
+  "speech_events": 89,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room13_mix007",
+  "room": "room13",
+  "duration_s": 244.1,
+  "events": 74,
+  "speech_events": 60,
+  "sources": 12
+ },
+ {
+  "recording": "fold3_room13_mix008",
+  "room": "room13",
+  "duration_s": 234.9,
+  "events": 85,
+  "speech_events": 68,
+  "sources": 13
+ },
+ {
+  "recording": "fold3_room13_mix009",
+  "room": "room13",
+  "duration_s": 386.7,
+  "events": 137,
+  "speech_events": 116,
+  "sources": 11
+ },
+ {
+  "recording": "fold3_room14_mix001",
+  "room": "room14",
+  "duration_s": 98.3,
+  "events": 48,
+  "speech_events": 39,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room14_mix002",
+  "room": "room14",
+  "duration_s": 71.2,
+  "events": 27,
+  "speech_events": 19,
+  "sources": 8
+ },
+ {
+  "recording": "fold3_room14_mix003",
+  "room": "room14",
+  "duration_s": 34.6,
+  "events": 21,
+  "speech_events": 12,
+  "sources": 6
+ },
+ {
+  "recording": "fold3_room14_mix004",
+  "room": "room14",
+  "duration_s": 59.0,
+  "events": 32,
+  "speech_events": 23,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room4_mix001",
+  "room": "room4",
+  "duration_s": 123.5,
+  "events": 29,
+  "speech_events": 18,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room4_mix004",
+  "room": "room4",
+  "duration_s": 147.9,
+  "events": 19,
+  "speech_events": 13,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room4_mix005",
+  "room": "room4",
+  "duration_s": 103.0,
+  "events": 7,
+  "speech_events": 0,
+  "sources": 3
+ },
+ {
+  "recording": "fold3_room4_mix006",
+  "room": "room4",
+  "duration_s": 176.5,
+  "events": 40,
+  "speech_events": 37,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room4_mix007",
+  "room": "room4",
+  "duration_s": 222.0,
+  "events": 54,
+  "speech_events": 50,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room4_mix008",
+  "room": "room4",
+  "duration_s": 161.5,
+  "events": 24,
+  "speech_events": 17,
+  "sources": 6
+ },
+ {
+  "recording": "fold3_room6_mix001",
+  "room": "room6",
+  "duration_s": 217.0,
+  "events": 55,
+  "speech_events": 45,
+  "sources": 7
+ },
+ {
+  "recording": "fold3_room6_mix002",
+  "room": "room6",
+  "duration_s": 255.0,
+  "events": 55,
+  "speech_events": 43,
+  "sources": 7
+ },
+ {
+  "recording": "fold3_room6_mix003",
+  "room": "room6",
+  "duration_s": 318.5,
+  "events": 93,
+  "speech_events": 83,
+  "sources": 7
+ },
+ {
+  "recording": "fold3_room6_mix004",
+  "room": "room6",
+  "duration_s": 287.0,
+  "events": 71,
+  "speech_events": 68,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room6_mix005",
+  "room": "room6",
+  "duration_s": 270.5,
+  "events": 27,
+  "speech_events": 21,
+  "sources": 6
+ },
+ {
+  "recording": "fold3_room6_mix006",
+  "room": "room6",
+  "duration_s": 97.5,
+  "events": 30,
+  "speech_events": 24,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room6_mix007",
+  "room": "room6",
+  "duration_s": 209.5,
+  "events": 31,
+  "speech_events": 29,
+  "sources": 3
+ },
+ {
+  "recording": "fold3_room7_mix001",
+  "room": "room7",
+  "duration_s": 147.0,
+  "events": 52,
+  "speech_events": 45,
+  "sources": 7
+ },
+ {
+  "recording": "fold3_room7_mix002",
+  "room": "room7",
+  "duration_s": 321.5,
+  "events": 70,
+  "speech_events": 62,
+  "sources": 7
+ },
+ {
+  "recording": "fold3_room7_mix003",
+  "room": "room7",
+  "duration_s": 214.5,
+  "events": 65,
+  "speech_events": 61,
+  "sources": 5
+ },
+ {
+  "recording": "fold3_room7_mix004",
+  "room": "room7",
+  "duration_s": 324.5,
+  "events": 102,
+  "speech_events": 80,
+  "sources": 8
+ },
+ {
+  "recording": "fold3_room7_mix005",
+  "room": "room7",
+  "duration_s": 255.0,
+  "events": 85,
+  "speech_events": 71,
+  "sources": 7
+ },
+ {
+  "recording": "fold3_room7_mix006",
+  "room": "room7",
+  "duration_s": 333.5,
+  "events": 131,
+  "speech_events": 117,
+  "sources": 6
+ },
+ {
+  "recording": "fold3_room9_mix001",
+  "room": "room9",
+  "duration_s": 175.5,
+  "events": 36,
+  "speech_events": 34,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room9_mix002",
+  "room": "room9",
+  "duration_s": 162.5,
+  "events": 34,
+  "speech_events": 32,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room9_mix003",
+  "room": "room9",
+  "duration_s": 161.0,
+  "events": 41,
+  "speech_events": 38,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room9_mix004",
+  "room": "room9",
+  "duration_s": 141.5,
+  "events": 65,
+  "speech_events": 60,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room9_mix005",
+  "room": "room9",
+  "duration_s": 225.0,
+  "events": 47,
+  "speech_events": 43,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room9_mix006",
+  "room": "room9",
+  "duration_s": 145.5,
+  "events": 31,
+  "speech_events": 28,
+  "sources": 4
+ },
+ {
+  "recording": "fold3_room9_mix007",
+  "room": "room9",
+  "duration_s": 157.5,
+  "events": 62,
+  "speech_events": 60,
+  "sources": 3
+ },
+ {
+  "recording": "fold3_room9_mix008",
+  "room": "room9",
+  "duration_s": 211.5,
+  "events": 94,
+  "speech_events": 81,
+  "sources": 5
+ }
+]

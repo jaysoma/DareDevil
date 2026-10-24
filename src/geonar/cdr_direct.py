@@ -152,12 +152,17 @@ def cdr_free_db(dirp, difp):
 
 
 class CdrFreeStream:
-    """The existing direction-free estimator, retaining PSD state between raw frames."""
-    def __init__(self, baseline_m, bands=FREE_BANDS):
+    """The existing direction-free estimator, retaining PSD state between raw frames.
+
+    UNFLOORED BANDS (2026-10-24, brief H): `unfloored` bands follow `bands` in the output, masked from their own low edge
+    rather than from c/2d. Below c/2d the diffuse field is coherent across the pair too, so their CDR is ill-conditioned
+    (brief 20) -- the facing contrast's 0.1-1.1 kHz band is read this way on purpose and is never a range band."""
+    def __init__(self, baseline_m, bands=FREE_BANDS, unfloored=()):
         self.win = np.hanning(NFFT)
         f = np.fft.rfftfreq(NFFT, 1.0 / SR)
         self.gn = np.sinc(2*f*baseline_m/C)
-        self.masks = [(f >= max(lo, C/(2*baseline_m))) & (f < hi) for lo, hi in bands]
+        self.masks = [(f >= max(lo, C/(2*baseline_m))) & (f < hi) for lo, hi in bands] + \
+                     [(f >= lo) & (f < hi) for lo, hi in unfloored]
         self.psd = None
 
     def frame(self, raw):

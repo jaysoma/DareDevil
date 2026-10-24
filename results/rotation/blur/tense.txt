@@ -1,0 +1,20 @@
+opening callouts: 46 after, 0 before/during, 0 unclear (of 46)
+
+| rule | measure | stops scored | toward cases | 90 vs facing 0 | 180 | AUC | left-out balanced | facing-0 agreement, dB rms | same on the pairs every rule keeps |
+|---|---|---|---|---|---|---|---|---|---|
+| all | CDR hi - lo | 37 | 10 | -1.7 (15/16) | -2.7 (9/9) | 0.75 | 71% (6/10, 22/27) | 2.47 | 2.38 (n 6) |
+| all | CDR range stat | 37 | 10 | -1.8 (16/16) | -2.5 (9/9) | 0.91 | 78% (7/10, 23/27) | 1.13 | 0.90 (n 6) |
+| all | onset tilt 40 | 30 | 10 | -7.0 (12/12) | -8.0 (4/6) | 0.75 | 62% (6/10, 13/20) | 5.69 | 6.00 (n 8) |
+| dropped | CDR hi - lo | 29 | 6 | -1.6 (12/14) | -2.2 (7/7) | 0.75 | 56% (2/6, 18/23) | 1.71 | 1.71 (n 6) |
+| dropped | CDR range stat | 29 | 6 | -1.8 (14/14) | -2.3 (7/7) | 0.88 | 68% (4/6, 16/23) | 1.20 | 1.20 (n 6) |
+| dropped | onset tilt 40 | 27 | 8 | -5.5 (12/12) | -5.4 (3/5) | 0.74 | 61% (3/8, 16/19) | 5.70 | 5.70 (n 8) |
+| tense | CDR hi - lo | 37 | 10 | -1.7 (15/16) | -2.7 (9/9) | 0.75 | 71% (6/10, 22/27) | 2.47 | 2.38 (n 6) |
+| tense | CDR range stat | 37 | 10 | -1.8 (16/16) | -2.5 (9/9) | 0.91 | 78% (7/10, 23/27) | 1.13 | 0.90 (n 6) |
+| tense | onset tilt 40 | 30 | 10 | -7.0 (12/12) | -8.0 (4/6) | 0.75 | 62% (6/10, 13/20) | 5.69 | 6.00 (n 8) |
+
+The callout against the rest of its stop (dB), and the baseline: a same-length stretch just after the callout against the rest after it.
+| measure | tag | n | callout minus rest: mean | rms | baseline n | baseline rms |
+|---|---|---|---|---|---|---|
+| CDR hi - lo | after | 26 | +0.19 | 1.57 | 13 | 1.51 |
+| CDR range stat | after | 26 | -0.21 | 0.71 | 13 | 0.91 |
+| onset tilt 40 | after | 14 | -1.24 | 8.37 | 13 | 13.32 |

@@ -1,0 +1,614 @@
+[
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 0,
+"per": 0.10526315789473684,
+"keys": {
+"s (six)": true,
+"f (fresh)": true,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 0.7204637199489848,
+"heard": "ðɛssɪksfɹɛʃbɪzɪnðəbɹɪdʒðɛɹssɪksfɹɛʃbɪzɪnðəbɹɪdʒðɛ"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 0,
+"per": 0.21052631578947367,
+"keys": {
+"s (six)": true,
+"f (fresh)": true,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.2631327565525434,
+"heard": "ɛssɪksfɹɛʃbɪzɪnðəbɪpɹɪntʃɚ"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 90,
+"per": 0.15789473684210525,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.2165326721666236,
+"heard": "ðɛzssɪkspɹɛʃbiːzɪnðəbɹæðɛssɪkspɹɛʃbiːzɪnðəbɹɪdʒðɛz"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 90,
+"per": 0.3157894736842105,
+"keys": {
+"s (six)": true,
+"f (fresh)": true,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.1932818689475153,
+"heard": "ssɪksfɹɛʃɚbɪzɪnðəbɚʃɪ"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 180,
+"per": 0.42105263157894735,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.2582963593267666,
+"heard": "ðɛɹɑːɹsɪksbɹæʃbiːvzɪnðəbɜːʒəðɛ"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 180,
+"per": 0.42105263157894735,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.8393254108019685,
+"heard": "ɛsɪstpæʃɪzɪnðəɹɪʃə"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 180,
+"per": 0.3684210526315789,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.299350156760875,
+"heard": "ðɛɹɑːɹsɪkspænʃbɪzɪnðəbɜːdʒ"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 180,
+"per": 0.47368421052631576,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": false,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.6258327603504115,
+"heard": "ðɛsɪksæʃəbeɪɹzɪnðəbɜːdʒ"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 135,
+"per": 0.2631578947368421,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.194427987829318,
+"heard": "ðɛsɪkspɹɛʃbzɪnðəpɛɹɪʃðɛɹssɪkspɹæʃbɪzɪnðəpæɹɪðɛ"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 135,
+"per": 0.3157894736842105,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.3488727317798386,
+"heard": "æsɪkspɹæʃbiːzɪnðəbæɹdʒ"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 90,
+"per": 0.3157894736842105,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.1747531557237545,
+"heard": "ðɛɹsɪksbɹæʃbɪzɪnðəbɜːdʒ"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 90,
+"per": 0.2631578947368421,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.4505349465608242,
+"heard": "ðɛsɪkspɹæʃbɪzɪnðəbɹɪɹɪʃ"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 90,
+"per": 0.21052631578947367,
+"keys": {
+"s (six)": true,
+"f (fresh)": true,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.3355540419671355,
+"heard": "ðɛzsɪksfɹɛʃbɪzɪnðəpɚdʒ"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 90,
+"per": 0.2631578947368421,
+"keys": {
+"s (six)": false,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.2270228323486696,
+"heard": "ðɛzɪkspɹɛʃbɪzɪnðəpɹeɪdʒðɛ"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 90,
+"per": 0.3157894736842105,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.3507952450378182,
+"heard": "æɹsɪkspɹɛʃbiːɚzɪnðəbɜːdʒðɛɹ"
+},
+{
+"walk": "walk-231705",
+"dist": 2,
+"facing": 90,
+"per": 0.21052631578947367,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.22558651526289,
+"heard": "ɛsɪkspɹæʃbɪzɪnðəbɹɪdʒ"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 0,
+"per": 0.3684210526315789,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.6138959806211424,
+"heard": "ðɛzsɪksʌʃɪzɪnðəbɹɪʃ"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 0,
+"per": 0.47368421052631576,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.6790080826745564,
+"heard": "ðɛɹɚzssɪkspʌnʃɪzɪnðəpɛɹʃ"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 0,
+"per": 0.42105263157894735,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.6131066234683045,
+"heard": "ðɛɹzssɪkspɹʌʃɪzɪnðəpɚlʒən"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 90,
+"per": 0.5789473684210527,
+"keys": {
+"s (six)": false,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.881829683044906,
+"heard": "ðɛɹzɪkspɹæʃbiːzɪdɚbɜːʃəðɛɹz"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 90,
+"per": 0.5789473684210527,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.6798201516094404,
+"heard": "sɪkspæʃjɪzɪnbɜː"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 90,
+"per": 0.6842105263157895,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": false,
+"dʒ (fridge)": false
+},
+"blur": 2.671313205147287,
+"heard": "dæsɪspɹæʃpi5sləpɜːs."
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 180,
+"per": 0.3684210526315789,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": false,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.5410278909566628,
+"heard": "ðɛsɪksɹʌntʃbiːzɪnðəɹeɪdʒðɛ"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 180,
+"per": 0.5789473684210527,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.9097114955261172,
+"heard": "ðɛɹsɪsæʃjɪzeɪdɚbɹɪdʒ"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 180,
+"per": 0.5263157894736842,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.6003153350987465,
+"heard": "ðæsɪkspɹæʃɚjɪɹzɪnbɚð"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 180,
+"per": 0.3157894736842105,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.4934900362044263,
+"heard": "ðɛsɪkspɹæʃbɪzɪnðəpæɹɪ"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 180,
+"per": 0.631578947368421,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": false,
+"dʒ (fridge)": false
+},
+"blur": 1.8604124426776276,
+"heard": "ɐsɪsbɹʌʃɐpɪzɪnbɜːʃɚ"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 135,
+"per": 0.5263157894736842,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.8688912776219322,
+"heard": "ðɛɹsɪsɹæʃjɜːzɪnbɜːdʒðæ"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 135,
+"per": 0.631578947368421,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": false,
+"dʒ (fridge)": false
+},
+"blur": 2.1035529984257475,
+"heard": "ɛsɪksæʃɪzɪbɚʃə"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 135,
+"per": 0.6842105263157895,
+"keys": {
+"s (six)": false,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": false,
+"dʒ (fridge)": false
+},
+"blur": 1.664659909087806,
+"heard": "ðæztɪsɹæʃəpɪzɪnbɜːʒə"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 90,
+"per": 0.3684210526315789,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.5330552288969719,
+"heard": "ðɛɹɚsɪkspɹɛʃzɪnðəɜːʃðɛ"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 90,
+"per": 0.5789473684210527,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.8122799961743352,
+"heard": "æsɪksbæʃeɪzɪnbɜː"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 90,
+"per": 0.47368421052631576,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": false
+},
+"blur": 1.6305427175623366,
+"heard": "ðɛɹɚsɪkspɛʃəldɪzɪnðəbɜːd"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 0,
+"per": 0.42105263157894735,
+"keys": {
+"s (six)": false,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.623156681275721,
+"heard": "ðɛzɪkspæʃɪɹzɪnðəbɜːdʒ"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 0,
+"per": 0.15789473684210525,
+"keys": {
+"s (six)": true,
+"f (fresh)": true,
+"ʃ (fresh)": true,
+"b (beers)": true,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.38315409000813,
+"heard": "ðɛɹsɪksfɹæʃbeɪzɪnðəbɹɪdʒ"
+},
+{
+"walk": "walk-231921",
+"dist": 5,
+"facing": 0,
+"per": 0.3684210526315789,
+"keys": {
+"s (six)": true,
+"f (fresh)": false,
+"ʃ (fresh)": true,
+"b (beers)": false,
+"f (fridge)": false,
+"z (beers)": true,
+"dʒ (fridge)": true
+},
+"blur": 1.4427268386620606,
+"heard": "ðɛɹsɪkspɹɛʃɚjɪzɪnðəbɚdʒ"
+}
+]

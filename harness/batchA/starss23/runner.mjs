@@ -103,7 +103,7 @@ for await (const line of rl) {
                 pair_mm: r2(d * 1000), gcc: null, a2: null, pause_deg: null, snr_db: null };
   // GccPhat, the stream as the Conductor drives it, with the read snapshotted as the audio grows
   try {
-    const from = on - PREROLL, s = Gcc.createStream(d, { readFrom: from });
+    const from = on - PREROLL, s = Gcc.createStream(d, { readFrom: from, reread: false });
     const track = { 43: null, 100: null, 250: null, lock: null };
     let o = null, firstDraw = false;
     for (let i = 0; i < L.length; i += CHUNK) {

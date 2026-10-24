@@ -28,7 +28,7 @@ const i16 = (b64) => { const b = Buffer.from(b64, 'base64'); return new Int16Arr
 
 function gccRead(L, R, base, readFrom, startAt = 0) {
   // readFrom null: the stream starts at the first sample pushed and has no pause to weigh against
-  const s = Gcc.createStream(base, readFrom === null ? {} : { readFrom });
+  const s = Gcc.createStream(base, readFrom === null ? { reread: false } : { readFrom, reread: false });
   const track = { '43': null, '100': null, '250': null, lock: null };
   const t0 = readFrom === null ? startAt : readFrom;
   let o = null;

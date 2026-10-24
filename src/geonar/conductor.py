@@ -44,7 +44,12 @@ from geonar.attacks import Attacks, settings as attack_settings, MF_HZ, ROOM_MS,
 from geonar.bandfloor import BandFloor, settings as floor_settings
 from geonar.cdr_direct import CdrFreeStream, HOP as CDR_HOP, NFFT as CDR_NFFT
 
-VERSION = 12                                 # 12: the ears' quiet count rides through flickers (attacks.HOLD_MS), and
+VERSION = 14                                 # 14: the CDR frames carry a fourth band (0.1-1.1 kHz, unfloored) and run to
+                                             #     FACING_READ_S, for the facing call; the range still reads its first
+                                             #     RANGE_READ_S. The opener's CDR starts cold at its onset, like the rest
+                                             # 13: the range is handed only its utterance's first RANGE_READ_S of CDR
+                                             #     frames, then nothing until the next utterance: one read, held
+                                             # 12: the ears' quiet count rides through flickers (attacks.HOLD_MS), and
                                              #     the bearing is handed the pause before each read (BEARING_HISTORY)
                                              # 11: a recogniser begin inside an open utterance, snapped to its onset by
                                              #     the ears' own rule, starts a new bearing read (a 'phrase' item)
@@ -116,6 +121,27 @@ PHONE_R = -1.1     # OFF (2026-10-11). The sign-of-correlation test was measured
                    # -17 to -45 for every human stretch, which is physical rather than tuned: a driver centimetres
                    # from the capsules cannot be matched by a talker a metre out.
 SETTLE_S = 0.13    # ~ the PSD memory: ALPHA 0.92 per 10.7 ms hop
+# ONE RANGE READ PER UTTERANCE, FROM ITS FIRST HALF SECOND (Jay, 2026-10-23: "for holds and general re-sampling ... just
+# implement it"). Brief 21 (results/resample/report.md s3) scored range policies against LOCATA's tracked distance:
+# the CDR of the utterance's first half second, held, was within 25% of the truth 51% of the time; sliding 0.5 s and
+# 1 s windows managed 30-35%, and followed a real 20% change of distance about as often as a coin. People move about 5%
+# a second; the CDR's scatter over half a second is far bigger. So the range is handed the frames whose window ENDS by
+# onset + RANGE_READ_S (from SETTLE_S on, as before), then nothing more for that utterance: the range reads once and
+# holds by construction. A new phrase inside the utterance doesn't reopen it (Jay, 2026-10-21: "maybe we leave range
+# unchanged"). Render's notes say CdrRange sums the first 0.8 s; this makes that 0.5 s. None hands every frame, as v12.
+# v14: the frames now run on to FACING_READ_S (below), so the Conductor no longer ends the range's read: CdrRange commits
+# its range from the frames that end by RANGE_READ_S and nothing after (CdrRange.RANGE_READ_S, the same number).
+RANGE_READ_S = 0.5
+# ONE FACING CALL PER UTTERANCE, ONCE 2 S OF SPEECH IS IN (Jay's option b, 2026-10-24, brief H). The call is the contrast CDR
+# 4-8 kHz minus CDR 0.1-1.1 kHz, turned below about -1 dB. Brief G (results/rotation/utterance/report.md): one 2-4 s
+# utterance calls it at 75%, the half-second range read at 63%, and longer speech adds nothing. So the frames run until
+# their window ends FACING_READ_S after the onset, then stop for that utterance; one that closes first gets no call.
+# The fourth band, FACING_LOW_HZ, is read UNFLOORED (cdr_direct.CdrFreeStream's `unfloored`): below c/2d = 1.1 kHz the
+# diffuse field is coherent across the pair too, so it is ill-conditioned (brief 20) and never a range band -- only the
+# facing contrast's reference. Its direct and diffuse powers go after the three range bands' six values in `cdrf`, which
+# stay exactly as they were. None hands frames to RANGE_READ_S only, as v13.
+FACING_READ_S = 2.0
+FACING_LOW_HZ = (100.0, 1100.0)
 # THE ACTUAL ONSET (Jay, 2026-10-11: "it belongs in Conductor, so it hands Angle, Range and Orientation ACTUAL onset of
 # speech" -- "implement the walkback all the way till the beginning of the handed frame"). The gate's edge is EARLY:
 # segmentation-3.0 reads its 5 s window both ways and lifts the speech score on frames before the voice arrives, so on
@@ -253,10 +279,14 @@ class Conductor:
     def _open(self, onset, now, provisional=False, **extra):
         self.utt = {'index': self.count, 'onset': onset, 'read': max(0, onset - BEARING_PREROLL),
                     'sent': max(0, onset - BEARING_PREROLL - BEARING_HISTORY),
-                    'provisional': provisional, 'cdr': CdrFreeStream(self.baseline), 'next': onset}
+                    'provisional': provisional, 'cdr': self._cdr(), 'next': onset}
         self.count += 1
         self._out(to='render', event='open', utt=self.utt['index'], onset_s=onset / SR, decided_s=now / SR,
                   provisional=provisional, read_from_sample=max(0, onset - BEARING_PREROLL), **extra)
+
+    def _cdr(self):
+        """A cold CDR instrument: the three range bands, floored at c/2d, and the facing call's low band, unfloored."""
+        return CdrFreeStream(self.baseline, unfloored=(FACING_LOW_HZ,) if FACING_READ_S else ())
 
     def _close(self, end, now, **extra):
         self._due(self.utt, now, end=end)
@@ -318,6 +348,11 @@ class Conductor:
                               floor_db=self.band.value(), read_from_sample=max(0, onset - BEARING_PREROLL))
                     self.utt['onset'] = onset
                     self.utt['read'] = max(0, onset - BEARING_PREROLL)
+                    # ...AND THE CDR STARTS COLD THERE (v14). Until v13 the opener's instrument ran on from sample 0,
+                    # warm with the hiss and the chime, and handed frames the reader then cut at the onset. CdrRange
+                    # now times its reads from an utterance's first frame, which must be onset + SETTLE_S as on every
+                    # other utterance -- and the opener sets the unit. No frame was handed while provisional (_due).
+                    self.utt['cdr'], self.utt['next'] = self._cdr(), onset
                     edges = edges[edges.index(opens[0]) + 1:]
                 else:                           # no speech: the flag goes false here
                     self._close(now, now)
@@ -444,8 +479,15 @@ class Conductor:
                     self._out(to='bearing', utt=u['index'], onset_sample=u['onset'], start_sample=u['sent'], sr=SR,
                               n=upto - u['sent'], baseline_m=self.baseline, L=b64(pair[0]), R=b64(pair[1]))
             u['sent'] = upto
+        if u['provisional']:                    # v14: the session's first utterance has no onset yet, so no CDR frames:
+            return                              # they start cold at the onset the gate names (at)
         frames = []
+        last = FACING_READ_S or RANGE_READ_S
+        limit = u['onset'] + int(last * SR) if last else None
         while u['next'] + CDR_NFFT <= min(now, self.src.frames):
+            if limit is not None and u['next'] + CDR_NFFT > limit:     # the facing call has its read: nothing more
+                u['next'] = min(now, self.src.frames)
+                break
             l, r = self.src.raw(u['next'], CDR_NFFT)
             direct, diffuse = u['cdr'].frame(np.stack([l, r], axis=1) / 32768.0)
             if u['next'] >= u['onset'] + int(SETTLE_S * SR):   # the settling frames are the instrument's own business

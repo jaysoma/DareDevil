@@ -17,6 +17,9 @@ set with known answers and measures four kinds of method on it:
 - **Shape can't tell who it's meant for.** The same instructions said to a person are accepted almost as often as the
   real ones: 82-96% at 10 per hour, 51-83% at 1 per hour. So are remarks about the device's subject. Jay's speakerphone
   case ("Text Sam, I missed my flight") is the hard case, and on its words alone the methods here don't solve it.
+- **A small general model asked directly does far worse.** Qwen2.5-1.5B finds 12% of instructions at 1 false accept
+  per hour and 26% at 10. It also accepts commands said to a person as often as real ones. Qwen2.5-0.5B answers by line
+  position, not content, and finds almost nothing.
 
 ## The set (`harness/device_directed/build_set.py`; labels known by construction)
 - **Instructions:** SLURP's spoken commands (CC BY 4.0), grouped by device.
@@ -56,7 +59,7 @@ Each method scores every phrase for the window's own device.
 | shape and contrast (Jay's), n-gram | the device fit minus the fit to the surrounding stream (the English model with a cache of the window's words) | same | 0.17 ms |
 | shape only, MiniLM | mean cosine similarity to the device's 5 nearest training commands (all-MiniLM-L6-v2, 22M parameters, ONNX) | 90 MB fp32 (about 23 MB as int8) | 0.65 ms, plus 12.9 ms to encode a phrase (one thread, measured while the general model ran on the same CPU) |
 | shape and contrast (Jay's), MiniLM | that fit minus the similarity to the phrase's 5 nearest neighbours in the window | same | 0.47 ms, plus encoding |
-| general model asked | numbered window, "which line, if any, is someone speaking to the device?"; score = probability on that line's number (Qwen2.5-0.5B and 1.5B Instruct, 4-bit, llama.cpp) | 0.49 / 1.1 GB | see section 4 |
+| general model asked | numbered window, "which line, if any, is someone speaking to the device?"; score = probability on that line's number (Qwen2.5-0.5B and 1.5B Instruct, 4-bit, llama.cpp) | 0.49 / 1.1 GB | about 4.5 s per 31-line window on 4 CPU threads (0.15 s per phrase; section 4) |
 
 Each contrast method also runs with the past only (the phrases before, as a live device would hear them). That costs a
 little: with MiniLM, 72% instead of 89% at 1 per hour.
@@ -72,6 +75,8 @@ false accepts first reach 1 or 10 per hour across all its streams.
 | **shape and contrast (Jay's), n-gram** | 96% | 84% | 95% | 82% | 71% | 0.6% |
 | shape only, MiniLM | 92% | 61% | 89% | 88% | 69% | 1.9% |
 | **shape and contrast (Jay's), MiniLM** | **99%** | **89%** | **98.5%** | 96% | 93% | 13% |
+| general model asked, Qwen2.5-0.5B | 2% | 0% | 0.6% | 0.6% | 0.6% | 0.6% |
+| general model asked, Qwen2.5-1.5B | 36% | 12% | 26% | 28% | 18% | 0.6% |
 
 - **Contrast helps on both model types:** n-gram 83% to 84% at 1 per hour, and MiniLM 61% to 89%. It helps most where
   the shape model is fuzziest.
@@ -118,12 +123,29 @@ conversation around it, which would lower its contrast score. This set can't mea
 person-directed requests in their own context.
 
 ## 4. The general model asked directly
-**Still running when this was committed.** Qwen2.5-0.5B- and 1.5B-Instruct (4-bit, llama.cpp, 4 CPU threads) are
-scoring all 1,000 windows, at about 3 s per window for 0.5B and about 8 s for 1.5B. A first look at four windows:
-- **0.5B** spreads its probability almost evenly (no line above 0.11).
-- **1.5B** puts 0.2 on the right line in one window, and 0.52 on a neighbouring line in another.
+Qwen2.5-0.5B- and 1.5B-Instruct (4-bit GGUF, llama.cpp, 4 CPU threads) scored all 1,000 windows.
+- **The prompt:** each window's 31 lines, numbered, and "Which line, if any, is someone speaking directly to the
+  device ...? Answer with the line number, or 0 if none is."
+- **A phrase's score:** the probability the model puts on its line's number as the first answer (two-digit lines: first
+  digit times second).
+- **Its own answer:** its most likely line, unless "0" is likelier.
 
-Results are added in a follow-up commit.
+| model | size | time per window | hits at 1 FA/h | hits at 10 FA/h | its own answer: hits, false accepts per hour | own answer accepts: to a person / subject / foreign |
+|---|---|---|---|---|---|---|
+| Qwen2.5-0.5B | 0.49 GB | 2.9 s alone (4.9 s with the CPU shared) | 0% | 0.6% | 1.9%, 26 per hour | 2.5% / 2.5% / 3.8% |
+| Qwen2.5-1.5B | 1.1 GB | 4.6 s | 12% | 26% | 27%, 17 per hour | 29% / 21% / 5% |
+
+- **0.5B answers by position, not content.** Its top line is line 5 in 446 windows and line 14 in 269, whatever the
+  text. Its picks scatter around the true line with no fixed offset, so this isn't a numbering bug in the scorer. Its
+  1.9% is below the 1 in 31 a blind pick would get.
+- **1.5B reads the text a little.** By device at 10 per hour it finds 19-35% of the instructions, most in the songs
+  (where an instruction stands out from the verse) and least in the AMI meetings (8-30%).
+- **1.5B can't tell who it's for either.** Its own answer accepts 29% of the to-a-person rewrites, about the same rate
+  as real instructions (27%). The foreign control, at 5%, shows it isn't simply picking the odd line out.
+- **Cost:** about 0.15 s of 4-core CPU per phrase: some 860 times the n-gram contrast (0.17 ms), and 11 times MiniLM's
+  13 ms per phrase including encoding. On this task a model of this size, asked this way, is both the slowest method and,
+  apart from keyword spotting, the weakest. A larger model, or one fine-tuned on device commands, might do better; this
+  brief asked for one a phone could plausibly run.
 
 ## False accepts, by kind (at 10 per hour; `false_accepts.json` has examples)
 - **n-gram methods:** mostly very short phrases, two words or fewer ("Input.", "Potato.", "Hi."), whose few words carry
@@ -153,7 +175,8 @@ choice, and it raised n-gram shape from 74% to 92% at 10 per hour.
 ## Files
 - **Recipe:** `set_index.jsonl` (no third-party text: each window's source, block, splice position, SLURP id, and the
   generated hard negatives) and `keywords.json`.
-- **Scores:** `scores_<method>.jsonl` (per phrase, numbers only) and `cost.json` (size and time).
+- **Scores:** `scores_<method>.jsonl` (per phrase, numbers only; `scores_llm_*` also hold the model's probability of
+  "none") and `cost.json` (size and time).
 - **Evaluation:** `summary.json` (every operating point, device, stream and hard-negative kind), `curves.json` and
   `curves.png` (the full curves), and `false_accepts.json` (by kind, with examples).
 - **Tables:** `tables.md`.

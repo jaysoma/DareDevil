@@ -1,0 +1,58 @@
+{
+ "name": "walk-172045",
+ "source": "Dictate/captures/geonar/walk-172045-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "the tape's own -words.json (handset recogniser), reshaped for the decode route",
+ "duration_s": 104.77,
+ "segments": [
+  {
+   "t0": 4.91,
+   "t1": 14.64,
+   "text": "test three i am about 1.5 maybe two meters from the phone rotated 90 degrees this is a different"
+  },
+  {
+   "t0": 14.64,
+   "t1": 22.08,
+   "text": "room this is five bedroom rotated 90 degrees facing away from the phone rotated 90 degrees"
+  },
+  {
+   "t0": 24.34,
+   "t1": 30.82,
+   "text": "and now facing the phone again but i am not at the center this position is toward the top half of"
+  },
+  {
+   "t0": 30.82,
+   "t1": 40.03,
+   "text": "the mic i mean the top mic uh so a little bit more extreme angle just sat down my bed same position"
+  },
+  {
+   "t0": 40.99,
+   "t1": 49.44,
+   "text": "stood up again same position now i'm on the side of the bottom mic facing the phone"
+  },
+  {
+   "t0": 51.22,
+   "t1": 62.72,
+   "text": "rotated 90 degrees clockwise uh i am about 2.5 meters from the phone side of the bottom mic"
+  },
+  {
+   "t0": 62.72,
+   "t1": 69.46,
+   "text": "rotated 90 degrees facing away from the phone rotated 90 degrees same position"
+  },
+  {
+   "t0": 70.29,
+   "t1": 77.84,
+   "text": "rotated 90 degrees facing the phone again now i sat down about half a meter from my"
+  },
+  {
+   "t0": 77.84,
+   "t1": 93.65,
+   "text": "earlier position i'm about three meters from the phone standing up from that position i'm now one"
+  },
+  {
+   "t0": 93.65,
+   "t1": 104.77,
+   "text": "meter from the phone direct center"
+  }
+ ]
+}

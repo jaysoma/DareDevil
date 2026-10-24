@@ -21,7 +21,7 @@ for await (const line of rl) {
   const out = { idx: k++, file: c.file, onset_s: c.onset_s };
   // GccPhat: textbook sum over the first half second, its three angles at the lock
   try {
-    const s = Gcc.createStream(base, { readFrom: on - PREROLL });
+    const s = Gcc.createStream(base, { readFrom: on - PREROLL, reread: false });
     let o = null;
     for (let i = 0; i < L.length; i += CHUNK) o = s.push(L.subarray(i, i + CHUNK), R.subarray(i, i + CHUNK), i === 0 ? 0 : null);
     out.gcc = o && o.positions.length ? o.positions.map((p) => p.deg) : null;

@@ -1,0 +1,515 @@
+walk-231921 -- SpeechRecognizer partials and finals, times from the phone's tape clock (48 kHz frame / 48000)
++ extension   ~ correction (old -> new)   x hypothesis dropped, no final   . punctuation/case only   = repeat
+
+386 partials, 11 corrected an earlier word, 24 dropped the hypothesis, 0 finals changed the last partial
+
+    0.229 s  [utt 0] begin of speech
+    1.168 s  [utt 0] end of speech
+    1.233 s  [utt 0] error 7
+    8.222 s  [utt 1] begin of speech
+    8.755 s  partial  Current.                                                     + current
+    8.979 s  partial  Currently.                                                   + currently
+    9.342 s  partial  Currently about?                                             + about
+    9.579 s  partial  Currently about?                                             =
+    9.835 s  partial  Currently about 5.                                           + 5
+    9.962 s  partial  Currently about 5 m.                                         + m
+    9.982 s  partial  Currently, about 5 me.                                       + me
+   10.069 s  partial  Currently about 5 meters.                                    + meters
+   10.207 s  partial  Currently about 5 meters from.                               + from
+   10.433 s  partial  Currently about 5 meters from.                               =
+   10.539 s  partial  Currently about 5 meters from the.                           + the
+   10.562 s  partial  Currently about 5 meters from the.                           =
+   10.678 s  partial  Currently about 5 meters from the.                           =
+   10.688 s  partial  Currently about 5 meters from the front.                     + front
+   10.795 s  partial  Currently about 5 meters from the front.                     =
+   10.805 s  partial  Currently about 5 meters from the front of.                  + of
+   10.926 s  partial  Currently about 5 meters from the front of the.              + the
+   11.160 s  partial  Currently about 5 meters from the front of the.              =
+   11.335 s  [utt 1] end of speech
+   11.482 s  FINAL    Currently about 5 meters from the front of the.              =   (vs last partial)
+
+   13.872 s  [utt 2] begin of speech
+   14.749 s  partial  There.                                                       + there
+   14.899 s  partial  There's.                                                     + there's
+   15.135 s  partial  There are six.                                               x dropped "there's" (no final), restarted
+   15.231 s  partial  There's six.                                                 x dropped "there are six" (no final), restarted
+   15.368 s  partial  There's six.                                                 =
+   15.377 s  partial  There are six.                                               x dropped "there's six" (no final), restarted
+   15.627 s  partial  There are six fresh.                                         + fresh
+   16.022 s  partial  There are six fresh pi.                                      + pi
+   16.084 s  partial  There are six fresh piers.                                   + piers
+   16.191 s  partial  There are six fresh piers.                                   =
+   16.565 s  partial  There are six fresh piers in.                                + in
+   16.591 s  partial  There are six fresh piers in.                                =
+   16.683 s  partial  There are six fresh piers in the.                            + the
+   16.850 s  partial  There are six fresh piers in the fridge.                     + fridge
+   17.156 s  partial  There are six fresh piers in the fridge.                     =
+   17.320 s  [utt 2] end of speech
+   17.498 s  FINAL    There are six fresh piers in the fridge.                     =   (vs last partial)
+
+   17.670 s  [utt 3] begin of speech
+   18.443 s  partial  There.                                                       + there
+   18.567 s  partial  There are.                                                   + are
+   18.921 s  partial  There are six.                                               + six
+   19.051 s  partial  There are six.                                               =
+   19.157 s  partial  There are six.                                               =
+   19.401 s  partial  There are six fresh.                                         + fresh
+   19.513 s  partial  There are six fresh.                                         =
+   19.809 s  partial  There are six fresh be.                                      + be
+   19.914 s  partial  There are six fresh beers.                                   + beers
+   20.011 s  partial  There are six fresh beers.                                   =
+   20.161 s  partial  There are six fresh beers in.                                + in
+   20.389 s  partial  There are six fresh beers in.                                =
+   20.491 s  partial  There are six fresh beers in the.                            + the
+   20.739 s  partial  There are six fresh beers in the fridge.                     + fridge
+   20.760 s  partial  There are six fresh beers in the fridge.                     =
+   21.125 s  [utt 3] end of speech
+   21.279 s  FINAL    There are six fresh beers in the fridge.                     =   (vs last partial)
+
+   21.532 s  [utt 4] begin of speech
+   22.291 s  partial  There.                                                       + there
+   22.439 s  partial  There's.                                                     + there's
+   22.782 s  partial  There's six.                                                 + six
+   22.910 s  partial  There's six.                                                 =
+   23.026 s  partial  There's six.                                                 =
+   23.154 s  partial  There's sixth.                                               + sixth
+   23.273 s  partial  There's six fresh.                                           ~ "sixth" -> "six fresh"
+   23.390 s  partial  There's six fresh.                                           =
+   23.636 s  partial  There's six fresh be?                                        + be
+   23.669 s  partial  There's six fresh beers.                                     + beers
+   23.860 s  partial  There's six fresh beers.                                     =
+   24.234 s  partial  There's six fresh beers.                                     =
+   24.244 s  partial  There's six fresh beers in.                                  + in
+   24.470 s  partial  There's six fresh beers in the.                              + the
+   24.609 s  partial  There's six fresh beers in the fridge.                       + fridge
+   24.823 s  partial  There's six fresh beers in the fridge.                       =
+   25.128 s  [utt 4] end of speech
+   25.283 s  FINAL    There's six fresh beers in the fridge.                       =   (vs last partial)
+
+   29.253 s  [utt 5] begin of speech
+   29.799 s  partial  Rod.                                                         + rod
+   29.845 s  partial  Okay.                                                        x dropped "rod" (no final), restarted
+   30.026 s  partial  Roku.                                                        x dropped "okay" (no final), restarted
+   30.162 s  partial  Roku 90.                                                     + 90
+   30.408 s  partial  Roku 90°.                                                    .
+   30.621 s  partial  Roku 90°.                                                    =
+   30.842 s  [utt 5] end of speech
+   30.997 s  FINAL    Roku 90°.                                                    =   (vs last partial)
+
+   31.280 s  [utt 6] begin of speech
+   32.051 s  partial  There.                                                       + there
+   32.168 s  partial  There's.                                                     + there's
+   32.658 s  partial  There's six.                                                 + six
+   32.765 s  partial  There's six.                                                 =
+   33.011 s  partial  There's six fresh.                                           + fresh
+   33.239 s  partial  There's six fresh.                                           =
+   33.514 s  partial  There's six fresh be?                                        + be
+   33.523 s  partial  There's six fresh beers.                                     + beers
+   33.633 s  partial  There's six fresh beers.                                     =
+   33.877 s  partial  There's six fresh beers in the.                              + in the
+   33.983 s  partial  There's six fresh beers in.                                  ~ "the" -> ""
+   34.090 s  partial  There's six fresh beers in the.                              + the
+   34.099 s  partial  There's six fresh beers in the.                              =
+   34.466 s  partial  There's six fresh beers in the bridge.                       + bridge
+   34.688 s  partial  There's six fresh beers in the bridge.                       =
+   35.089 s  [utt 6] end of speech
+   35.374 s  [utt 6] begin of speech
+   35.374 s  [utt 6] begin of speech
+   35.375 s  FINAL    There's six fresh beers in the bridge.                       =   (vs last partial)
+
+   35.495 s  [utt 7] begin of speech
+   36.382 s  partial  Six.                                                         + six
+   36.595 s  partial  Sixth.                                                       + sixth
+   36.853 s  partial  Sixth fresh.                                                 + fresh
+   36.970 s  partial  Sixth fresh.                                                 =
+   37.205 s  partial  Sixth fresh.                                                 =
+   37.238 s  partial  Sixth fresh gear.                                            + gear
+   37.341 s  partial  Sixth fresh gears.                                           + gears
+   37.427 s  partial  Sixth fresh gears.                                           =
+   37.822 s  partial  Sixth fresh gears.                                           =
+   37.931 s  partial  Sixth fresh gears in.                                        + in
+   37.938 s  partial  Sixth fresh gears in.                                        =
+   38.038 s  partial  Sixth fresh gears in the?                                    + the
+   38.188 s  partial  Sixth fresh gears in the fridge.                             + fridge
+   38.570 s  [utt 7] end of speech
+   38.712 s  FINAL    Sixth fresh gears in the fridge.                             =   (vs last partial)
+
+   38.922 s  [utt 8] begin of speech
+   39.805 s  partial  It's.                                                        + it's
+   40.191 s  partial  It's six.                                                    + six
+   40.412 s  partial  It's six.                                                    =
+   40.435 s  partial  It's six fresh.                                              + fresh
+   40.777 s  partial  It's six fresh.                                              =
+   41.034 s  partial  It's six fresh be?                                           + be
+   41.145 s  partial  It's six fresh beers.                                        + beers
+   41.612 s  partial  It's six fresh beers in.                                     + in
+   41.728 s  partial  It's six fresh beers in.                                     =
+   41.738 s  partial  It's six fresh beers in the.                                 + the
+   41.985 s  partial  It's six fresh beers in the fridge.                          + fridge
+   42.208 s  partial  It's six fresh beers in the fridge.                          =
+   42.406 s  [utt 8] end of speech
+   42.552 s  FINAL    It's six fresh beers in the fridge.                          =   (vs last partial)
+
+   48.155 s  [utt 9] begin of speech
+   48.576 s  partial  Every.                                                       + every
+   48.714 s  partial  Every single.                                                + single
+   48.808 s  partial  Every single way.                                            + way
+   49.182 s  partial  Every single way.                                            =
+   49.279 s  partial  Every single way.                                            =
+   49.405 s  partial  Every single way.                                            =
+   49.656 s  partial  Every single way Power.                                      + power
+   49.775 s  partial  Every single way Powerball.                                  + powerball
+   49.904 s  partial  Every single way Powerball is.                               + is
+   50.240 s  partial  Every single way Powerball is.                               =
+   50.357 s  partial  Every single way Powerball is.                               =
+   50.485 s  partial  Every single way Powerball is closer.                        + closer
+   50.496 s  partial  Every single way Powerball is closer.                        =
+   50.604 s  partial  Every single way Powerball is closer to.                     + to
+   50.865 s  partial  Every single way Powerball is closer to meaning.             + meaning
+   51.106 s  partial  Every single way Powerball is closer to meaning.             =
+   51.116 s  partial  Every single way Powerball is closer to meaning than.        + than
+   51.215 s  partial  Every single way Powerball is closer to meaning than the.    + the
+   51.342 s  partial  Every single way Powerball is closer to meaning than the phone. + phone
+   51.452 s  partial  Every single way Powerball is closer to meaning than the phone. =
+   51.608 s  [utt 9] end of speech
+   51.788 s  FINAL    Every single way Powerball is closer to meaning than the phone. =   (vs last partial)
+
+   54.953 s  [utt 10] begin of speech
+   55.700 s  partial  There.                                                       + there
+   55.721 s  partial  There are.                                                   + are
+   56.095 s  partial  There are six.                                               + six
+   56.309 s  partial  There are six.                                               =
+   56.316 s  partial  There are six.                                               =
+   56.458 s  partial  There are six fresh.                                         + fresh
+   56.671 s  partial  There are six fresh.                                         =
+   57.051 s  partial  There are six fresh.                                         =
+   57.089 s  partial  There are six fresh beers.                                   + beers
+   57.419 s  partial  There are six fresh beers in.                                + in
+   57.656 s  partial  There are six fresh beers in.                                =
+   57.784 s  partial  There are six fresh beers in the.                            + the
+   58.032 s  partial  There are six fresh beers in the fridge.                     + fridge
+   58.429 s  [utt 10] end of speech
+   58.583 s  FINAL    There are six fresh beers in the fridge.                     =   (vs last partial)
+
+   58.724 s  [utt 11] begin of speech
+   59.594 s  partial  There.                                                       + there
+   59.837 s  partial  There six.                                                   + six
+   60.200 s  partial  There six.                                                   =
+   60.307 s  partial  There's sixth.                                               x dropped "there six" (no final), restarted
+   60.372 s  partial  There are six fresh.                                         x dropped "there's sixth" (no final), restarted
+   60.918 s  partial  There are six fresh years.                                   + years
+   60.927 s  partial  There are six fresh years.                                   =
+   61.407 s  partial  There are six fresh years in.                                + in
+   61.526 s  partial  There are six fresh years in the.                            + the
+   61.785 s  partial  There are six fresh years in the fridge.                     + fridge
+   62.001 s  partial  There are six fresh years in the fridge.                     =
+   62.171 s  [utt 11] end of speech
+   62.367 s  FINAL    There are six fresh years in the fridge.                     =   (vs last partial)
+
+   62.694 s  [utt 12] begin of speech
+   63.475 s  partial  There.                                                       + there
+   63.592 s  partial  There are.                                                   + are
+   63.946 s  partial  There are six.                                               + six
+   64.061 s  partial  There are six.                                               =
+   64.214 s  partial  There are six fresh.                                         + fresh
+   64.533 s  partial  There are six fresh.                                         =
+   64.813 s  partial  There are six fresh.                                         =
+   64.906 s  partial  There are six fresh be.                                      + be
+   65.035 s  partial  There are six fresh beer.                                    + beer
+   65.174 s  partial  There are six fresh beer spin.                               + spin
+   65.505 s  partial  There are six fresh beer spin.                               =
+   65.622 s  partial  There are six fresh beer spin.                               =
+   65.760 s  partial  There are six fresh beer spin.                               =
+   65.888 s  partial  There are six fresh beer spin fridge.                        + fridge
+   66.207 s  [utt 12] end of speech
+   66.381 s  FINAL    There are six fresh beer spin fridge.                        =   (vs last partial)
+
+   66.491 s  [utt 13] begin of speech
+   67.357 s  partial  There.                                                       + there
+   67.485 s  partial  There are.                                                   + are
+   67.720 s  partial  There are six.                                               + six
+   67.966 s  partial  There are six.                                               =
+   68.086 s  partial  There are six fresh.                                         + fresh
+   68.319 s  partial  There are six fresh.                                         =
+   68.576 s  partial  There are six fresh be.                                      + be
+   68.693 s  partial  There are six fresh beers.                                   + beers
+   69.057 s  partial  There are six fresh beers in.                                + in
+   69.176 s  partial  There are six fresh beers in.                                =
+   69.280 s  partial  There are six fresh beers in.                                =
+   69.399 s  partial  There are six fresh beers in the.                            + the
+   69.666 s  partial  There are six fresh beers in the bridge.                     + bridge
+   70.013 s  [utt 13] end of speech
+   70.117 s  FINAL    There are six fresh beers in the bridge.                     =   (vs last partial)
+
+   70.448 s  [utt 14] begin of speech
+   71.217 s  partial  Yes.                                                         + yes
+   71.710 s  partial  There's six.                                                 x dropped "yes" (no final), restarted
+   71.966 s  partial  Yes, sixth.                                                  x dropped "there's six" (no final), restarted
+   72.189 s  partial  Yes, sixth, fresh.                                           + fresh
+   72.565 s  partial  Yes, sixth fresh be?                                         + be
+   72.598 s  partial  Yes, sixth fresh beers.                                      + beers
+   72.789 s  partial  Yes, sixth fresh beers.                                      =
+   72.814 s  partial  Yes, sixth. Fresh beers in.                                  + in
+   73.130 s  partial  Yes, sixth. Fresh beers in.                                  =
+   73.140 s  partial  Yes, sixth. Fresh beers in the?                              + the
+   73.443 s  partial  Yes, sixth fresh beers in the bridge.                        + bridge
+   73.771 s  partial  Yes, sixth fresh beers in the bridge.                        =
+   73.896 s  [utt 14] end of speech
+   74.115 s  FINAL    Yes, sixth fresh beers in the bridge.                        =   (vs last partial)
+
+   78.218 s  [utt 15] begin of speech
+   78.867 s  partial  Ro.                                                          + ro
+   78.888 s  partial  Rot.                                                         + rot
+   79.015 s  partial  Rotate.                                                      + rotate
+   79.346 s  partial  45.                                                          x dropped "rotate" (no final), restarted
+   79.598 s  partial  45 degrees.                                                  + degrees
+   79.933 s  partial  45 degrees.                                                  =
+   80.102 s  [utt 15] end of speech
+   80.230 s  FINAL    45 degrees.                                                  =   (vs last partial)
+
+   80.351 s  [utt 16] begin of speech
+   80.893 s  partial  Not.                                                         + not
+   81.046 s  partial  Not que?                                                     + que
+   81.534 s  [utt 16] end of speech
+   81.632 s  [utt 16] error 7
+   84.434 s  [utt 17] begin of speech
+   85.087 s  partial  There.                                                       x dropped "not que" (no final), restarted
+   85.225 s  partial  There is.                                                    + is
+   85.332 s  partial  There are six.                                               ~ "is" -> "are six"
+   85.685 s  partial  There are six.                                               =
+   85.848 s  partial  There are six pressure.                                      + pressure
+   85.929 s  partial  There are six pressure.                                      =
+   86.423 s  partial  There are six pressure.                                      =
+   86.559 s  partial  There are six pressure beers.                                + beers
+   86.690 s  partial  There are six pressure beers in.                             + in
+   87.135 s  partial  There are six pressure beers in.                             =
+   87.253 s  partial  There are six pressure beers in the.                         + the
+   87.263 s  partial  There are six pressure beers in the.                         =
+   87.416 s  partial  There are six pressure beers in the bridge.                  + bridge
+   87.793 s  [utt 17] end of speech
+   87.995 s  FINAL    There are six pressure beers in the bridge.                  =   (vs last partial)
+
+   88.111 s  [utt 18] begin of speech
+   88.818 s  partial  There.                                                       + there
+   89.051 s  partial  There are.                                                   + are
+   89.176 s  partial  There are six.                                               + six
+   89.429 s  partial  There are six.                                               =
+   89.545 s  partial  There are six fresh.                                         + fresh
+   89.664 s  partial  There are six fresh.                                         =
+   89.783 s  partial  There are six fresh.                                         =
+   90.029 s  partial  There are six fresh p.                                       + p
+   90.144 s  partial  There are six fresh pears.                                   + pears
+   90.154 s  partial  There are six fresh pears.                                   =
+   90.496 s  partial  There are six fresh pears in.                                + in
+   90.625 s  partial  There are six fresh pears in.                                =
+   90.742 s  partial  There are six fresh pears in the.                            + the
+   91.004 s  partial  There are six fresh pears in the bridge.                     + bridge
+   91.106 s  partial  There are six fresh pears in the bridge.                     =
+   91.294 s  [utt 18] end of speech
+   91.429 s  FINAL    There are six fresh pears in the bridge.                     =   (vs last partial)
+
+   91.547 s  [utt 19] begin of speech
+   92.669 s  partial  The.                                                         + the
+   92.831 s  partial  There are six.                                               + there are six
+   92.926 s  partial  The six.                                                     x dropped "there are six" (no final), restarted
+   92.948 s  partial  The sixth.                                                   + sixth
+   93.211 s  partial  There are six fresh.                                         x dropped "the sixth" (no final), restarted
+   93.554 s  partial  The sixth fresh be?                                          x dropped "there are six fresh" (no final), restarted
+   93.678 s  partial  The sixth fresh beers?                                       + beers
+   94.144 s  partial  The sixth fresh beers?                                       =
+   94.240 s  partial  The sixth fresh beers in?                                    + in
+   94.249 s  partial  The sixth fresh beers in?                                    =
+   94.369 s  partial  The sixth fresh beers in the?                                + the
+   94.511 s  partial  The sixth fresh beers in the fridge?                         + fridge
+   94.845 s  [utt 19] end of speech
+   94.969 s  FINAL    The sixth fresh beers in the fridge?                         =   (vs last partial)
+
+   98.225 s  [utt 20] begin of speech
+   98.770 s  partial  Don't.                                                       + don't
+   98.923 s  partial  Don't take.                                                  + take
+   99.016 s  partial  Don't need.                                                  ~ "take" -> "need"
+   99.040 s  partial  Don't take the.                                              ~ "need" -> "take the"
+   99.155 s  partial  Rodentify.                                                   x dropped "don't take the" (no final), restarted
+   99.362 s  partial  Don't take the fourth time.                                  x dropped "rodentify" (no final), restarted
+   99.366 s  partial  Rodentify.                                                   x dropped "don't take the fourth time" (no final), restarted
+   99.499 s  partial  Don't take the fourth time to.                               x dropped "rodentify" (no final), restarted
+   99.616 s  partial  Don't take the fourth time to read.                          + read
+   99.865 s  partial  Don't take the fourth time to read so?                       + so
+  100.098 s  partial  Don't take the fourth time to read, so I'm.                  + i'm
+  100.209 s  partial  Don't take the fourth time to read, so I'm.                  =
+  100.344 s  partial  Don't take the fourth time to read, so I'm 90.               + 90
+  100.465 s  partial  Don't take the fourth time to read, so I'm 90 degrees.       + degrees
+  100.676 s  partial  Don't take the fourth time to read, so I'm 90 degrees.       =
+  100.988 s  [utt 20] end of speech
+  101.132 s  FINAL    Don't take the fourth time to read, so I'm 90 degrees.       =   (vs last partial)
+
+  101.373 s  [utt 21] begin of speech
+  102.503 s  partial  Fro.                                                         + fro
+  102.622 s  partial  From.                                                        + from
+  102.750 s  partial  From the?                                                    + the
+  103.079 s  [utt 21] end of speech
+  103.190 s  [utt 21] error 7
+  106.033 s  [utt 22] begin of speech
+  106.677 s  partial  There.                                                       x dropped "from the" (no final), restarted
+  106.826 s  partial  There is.                                                    + is
+  107.295 s  partial  There is six.                                                + six
+  107.412 s  partial  There is six.                                                =
+  107.550 s  partial  There is six fresh.                                          + fresh
+  107.893 s  partial  There is six fresh.                                          =
+  108.128 s  partial  There is six fresh be.                                       + be
+  108.163 s  partial  There is six fresh beers.                                    + beers
+  108.735 s  partial  There is six fresh beers.                                    =
+  108.745 s  partial  There is six fresh beers.                                    =
+  109.088 s  partial  There is six fresh beers in.                                 + in
+  109.322 s  partial  There is six fresh beers in the.                             + the
+  109.570 s  partial  There is six fresh beers in the fridge.                      + fridge
+  109.688 s  partial  There is six fresh beers in the fridge.                      =
+  109.906 s  [utt 22] end of speech
+  110.042 s  FINAL    There is six fresh beers in the fridge.                      =   (vs last partial)
+
+  110.159 s  [utt 23] begin of speech
+  110.824 s  partial  Here.                                                        + here
+  111.190 s  partial  Here is.                                                     + is
+  111.293 s  partial  Here, six.                                                   ~ "is" -> "six"
+  111.436 s  partial  Here, six.                                                   =
+  111.559 s  partial  Here, sixth.                                                 + sixth
+  111.795 s  partial  Here, sixth fresh.                                           + fresh
+  111.883 s  partial  Here, sixth fresh.                                           =
+  112.136 s  partial  Here, sixth fresh.                                           =
+  112.159 s  partial  Here, sixth fresh gear.                                      + gear
+  112.267 s  partial  Here, sixth fresh gears.                                     + gears
+  112.363 s  partial  Here, sixth fresh gears.                                     =
+  112.513 s  partial  Here, sixth fresh gears in.                                  + in
+  112.746 s  partial  Here, sixth fresh gears in.                                  =
+  112.856 s  partial  Here, sixth fresh gears in the?                              + the
+  113.132 s  partial  Here, sixth fresh gears in the fridge.                       + fridge
+  113.425 s  [utt 23] end of speech
+  113.575 s  FINAL    Here, sixth fresh gears in the fridge.                       =   (vs last partial)
+
+  113.691 s  [utt 24] begin of speech
+  114.803 s  partial  There.                                                       + there
+  115.060 s  partial  There are.                                                   + are
+  115.177 s  partial  There are six.                                               + six
+  115.422 s  partial  There are six.                                               =
+  115.569 s  partial  There are six fresh.                                         + fresh
+  115.680 s  partial  There are six fresh.                                         =
+  115.775 s  partial  There are six fresh.                                         =
+  116.022 s  partial  There are six fresh be.                                      + be
+  116.138 s  partial  There are six fresh fears.                                   ~ "be" -> "fears"
+  116.144 s  partial  There are six fresh fears.                                   =
+  116.527 s  partial  There are six fresh fears in.                                + in
+  116.747 s  partial  There are six fresh fears in.                                =
+  116.756 s  partial  There are six fresh beers in the.                            ~ "fears in" -> "beers in the"
+  117.043 s  partial  There are six fresh beers in the fridge.                     + fridge
+  117.371 s  [utt 24] end of speech
+  117.559 s  FINAL    There are six fresh beers in the fridge.                     =   (vs last partial)
+
+  123.175 s  [utt 25] begin of speech
+  123.720 s  partial  Fac.                                                         + fac
+  123.742 s  partial  Facing.                                                      + facing
+  123.838 s  partial  Facing phone.                                                + phone
+  124.061 s  partial  Facing phone again.                                          + again
+  124.347 s  [utt 25] end of speech
+  124.477 s  FINAL    Facing phone again.                                          =   (vs last partial)
+
+  126.107 s  [utt 26] begin of speech
+  126.759 s  partial  There.                                                       + there
+  126.889 s  partial  There are.                                                   + are
+  127.230 s  partial  There are six.                                               + six
+  127.362 s  partial  There are six.                                               =
+  127.476 s  partial  There are six fresh.                                         + fresh
+  127.843 s  partial  There are six fresh.                                         =
+  127.968 s  partial  There are six fresh be.                                      + be
+  128.096 s  partial  There are six fresh beers.                                   + beers
+  128.330 s  partial  There are six fresh beers in.                                + in
+  128.469 s  partial  There are six fresh beers in the.                            + the
+  128.555 s  partial  There are six fresh beers in.                                ~ "the" -> ""
+  128.566 s  partial  There are six fresh beers in the.                            + the
+  128.683 s  partial  There are six fresh beers in the.                            =
+  128.935 s  partial  There are six fresh beers in the fridge.                     + fridge
+  129.155 s  partial  There are six fresh beers in the fridge.                     =
+  129.285 s  [utt 26] end of speech
+  129.395 s  FINAL    There are six fresh beers in the fridge.                     =   (vs last partial)
+
+  129.808 s  [utt 27] begin of speech
+  130.589 s  partial  There.                                                       + there
+  130.717 s  partial  There's.                                                     + there's
+  130.938 s  partial  There are six.                                               x dropped "there's" (no final), restarted
+  130.953 s  partial  There's six.                                                 x dropped "there are six" (no final), restarted
+  131.083 s  partial  There are six.                                               x dropped "there's six" (no final), restarted
+  131.188 s  partial  There's sixth.                                               x dropped "there are six" (no final), restarted
+  131.207 s  partial  There's sixth.                                               =
+  131.316 s  partial  There are six fresh.                                         x dropped "there's sixth" (no final), restarted
+  131.808 s  partial  There are six fresh be.                                      + be
+  131.840 s  partial  There are six fresh beers.                                   + beers
+  131.915 s  partial  There are six fresh beers.                                   =
+  132.054 s  partial  There are six fresh beers in.                                + in
+  132.384 s  partial  There are six fresh beers in.                                =
+  132.394 s  partial  There are six fresh beers in the.                            + the
+  132.667 s  partial  There are six fresh beers in the fridge.                     + fridge
+  133.050 s  [utt 27] end of speech
+  133.221 s  FINAL    There are six fresh beers in the fridge.                     =   (vs last partial)
+
+  133.608 s  [utt 28] begin of speech
+  134.260 s  partial  There.                                                       + there
+  134.417 s  partial  There are.                                                   + are
+  134.750 s  partial  There are six.                                               + six
+  134.878 s  partial  There are six.                                               =
+  134.984 s  partial  There are sixth.                                             + sixth
+  135.033 s  partial  There are six brush.                                         ~ "sixth" -> "six brush"
+  135.337 s  partial  There are sixth Fresh.                                       ~ "six brush" -> "sixth fresh"
+  135.347 s  partial  There are sixth Fresh.                                       =
+  135.479 s  partial  There are sixth Fresh Beat.                                  + beat
+  135.594 s  partial  There are sixth Fresh Beaters.                               + beaters
+  135.957 s  partial  There are sixth Fresh Beaters in.                            + in
+  136.087 s  partial  There are sixth Fresh Beaters in.                            =
+  136.181 s  partial  There are sixth Fresh Beaters in.                            =
+  136.191 s  partial  There are sixth Fresh Beaters in the.                        + the
+  136.463 s  partial  There are sixth Fresh Beaters in the fridge.                 + fridge
+  136.557 s  partial  There are sixth Fresh Beaters in the fridge.                 =
+  136.795 s  partial  There are sixth Fresh Beaters in the fridge.                 =
+  136.905 s  [utt 28] end of speech
+  137.050 s  FINAL    There are sixth Fresh Beaters in the fridge.                 =   (vs last partial)
+
+  139.719 s  [utt 29] begin of speech
+  140.125 s  partial  And.                                                         + and
+  140.478 s  partial  And just.                                                    + just
+  140.630 s  partial  And just for.                                                + for
+  140.736 s  partial  And just for fun.                                            + fun
+  141.088 s  partial  And just for fun.                                            =
+  141.217 s  partial  And just for fun.                                            =
+  141.343 s  partial  And just for fun talking.                                    + talking
+  141.919 s  partial  And just for fun talking.                                    =
+  141.943 s  partial  And just for fun talking while.                              + while
+  142.178 s  partial  And just for fun talking while I'm.                          + i'm
+  142.413 s  partial  And just for fun talking while I'm app.                      + app
+  142.458 s  partial  And just for fun talking while I'm approach.                 + approach
+  142.550 s  partial  And just for fun talking while I'm approaching.              + approaching
+  142.785 s  partial  And just for fun talking while I'm approaching the.          + the
+  142.907 s  partial  And just for fun talking while I'm approaching the phone.    + phone
+  143.022 s  partial  And just for fun talking while I'm approaching the phone.    =
+  143.131 s  partial  And just for fun talking while I'm approaching the phone.    =
+  143.381 s  partial  And just for fun talking while I'm approaching the phone.    =
+  143.490 s  partial  And just for fun talking while I'm approaching the phone.    =
+  143.863 s  partial  And just for fun talking while I'm approaching the phone dead. + dead
+  143.986 s  partial  And just for fun talking while I'm approaching the phone dead on. + on
+  144.465 s  partial  And just for fun talking while I'm approaching the phone dead on. =
+  144.582 s  partial  And just for fun talking while I'm approaching the phone dead on. =
+  144.711 s  partial  And just for fun talking while I'm approaching the phone dead on dead. + dead
+  144.960 s  partial  And just for fun talking while I'm approaching the phone dead on dead center. + center
+  145.302 s  partial  And just for fun talking while I'm approaching the phone dead on dead center. =
+  145.542 s  partial  And just for fun talking while I'm approaching the phone dead on dead center. =
+  145.684 s  partial  And just for fun talking while I'm approaching the phone dead on dead center half. + half
+  145.787 s  partial  And just for fun talking while I'm approaching the phone dead on dead center, half a. + a
+  145.927 s  partial  And just for fun talking. While I'm approaching the phone dead on dead center, half a me. + me
+  146.033 s  partial  And just for fun talking while I'm approaching the phone dead on dead center, half a meter. + meter
+  146.151 s  partial  And just for fun talking. While I'm approaching the phone dead on dead center, half a meter now. + now
+  146.271 s  partial  And just for fun talking. While I'm approaching the phone dead on dead center, half a meter now. =
+  146.472 s  [utt 29] end of speech
+  146.760 s  [utt 29] begin of speech
+  146.761 s  FINAL    And just for fun talking. While I'm approaching the phone dead on dead center, half a meter now. =   (vs last partial)
+
+  146.884 s  [utt 30] begin of speech
+  147.250 s  [utt 30] end of speech
+  147.345 s  [utt 30] error 7
+  148.970 s  [utt 31] error 7

@@ -1,0 +1,13 @@
+left/right sign from 396 direct paths: +1, agreeing 96%
+
+true response: 172 wall echoes found (reflective walls, floor and ceiling left out); sector right 51%, guessing the commonest sector 34%
+  labelled \ read   left  front  right
+  left                17     36      5
+  front                2     51      2
+  right                5     34     20
+
+probe response: 175 wall echoes found (reflective walls, floor and ceiling left out); sector right 53%, guessing the commonest sector 35%
+  labelled \ read   left  front  right
+  left                19     35      7
+  front                2     52      2
+  right                6     31     21

@@ -1,0 +1,13 @@
+{"about": "Stops where Jay stands at one spot and one called facing, read from the decodes (2026-10-24). facing_deg is unsigned: 0 = facing the phone, 90 = side (left or right), 135, 180 = away. A stop runs from the callout made at that facing to the next callout; spans where he says he's about to turn, is turning, or walking are left out. dist_m is his own estimate. Walks with continuous turning (044350, 140956, 160546, 161331, 171542, 020305), walking (211436, 224459, 234212, 234455), garbled consonants (223157) or several turns inside one decode segment (171930, 172045) have no stops.",
+ "stops": {
+  "walk-231921": {"5m": [[7, 29, 0], [29, 47, 90], [47, 78, 180], [78, 98, 135], [98, 122, 90], [122, 137, 0]], "dist_m": {"5m": 5}},
+  "walk-231705": {"2m": [[0, 22, 0], [22, 36, 90], [36, 63, 180], [63, 84, 135], [84, 128, 90]], "dist_m": {"2m": 2}},
+  "walk-125621": {"2m": [[18, 25, 180], [25, 37, 90], [37, 45, 0]], "4m": [[45, 58, 0], [58, 66, 90], [66, 89, 180]], "dist_m": {"2m": 2, "4m": 4}},
+  "walk-171645": {"2m": [[3, 7, 0], [7, 13, 90], [13, 20, 180], [20, 30, 90], [30, 38, 0]], "dist_m": {"2m": 2}},
+  "walk-215800": {"2m": [[0, 10, 0], [10, 16, 90], [16, 22, 180], [22, 26, 90], [26, 36, 0]], "dist_m": {"2m": 2}},
+  "walk-122038": {"2m": [[10, 16, 90], [16, 23, 180], [23, 27, 90], [27, 35, 0]], "dist_m": {"2m": 2}},
+  "walk-030615": {"2m": [[4, 17, 0], [34, 56, 90], [73, 93, 180], [106, 123, 90], [123, 151, 0]], "dist_m": {"2m": 2}},
+  "walk-224302": {"6m": [[35, 78, 0], [78, 97, 90]], "dist_m": {"6m": 6}},
+  "walk-213304": {"6m": [[251, 269, 0], [269, 289, 90], [291, 312, 180], [312, 337, 90], [337, 356, 0]], "dist_m": {"6m": 6}},
+  "walk-221126": {"6m": [[161, 200, 0], [205, 221, 90], [221, 228, 0]], "dist_m": {"6m": 6}}
+ }}

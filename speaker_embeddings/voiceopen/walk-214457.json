@@ -1,0 +1,208 @@
+{
+ "enrol_s": 5.21,
+ "enrol_utts": [
+  0,
+  1
+ ],
+ "enrol_min_s": 5.0,
+ "model": "campplus_zh_en_advanced.onnx",
+ "min_score_s": 0.4,
+ "utts": [
+  {
+   "oi": 0,
+   "t": 1.594,
+   "dur": 1.946,
+   "cos": 0.6556,
+   "enrolled": true
+  },
+  {
+   "oi": 1,
+   "t": 4.535,
+   "dur": 3.265,
+   "cos": 0.7648,
+   "enrolled": true
+  },
+  {
+   "oi": 2,
+   "t": 8.091,
+   "dur": 2.539,
+   "cos": 0.6104,
+   "enrolled": false
+  },
+  {
+   "oi": 3,
+   "t": 10.912,
+   "dur": 0.808,
+   "cos": 0.192,
+   "enrolled": false
+  },
+  {
+   "oi": 4,
+   "t": 12.83,
+   "dur": 0.01,
+   "cos": null,
+   "enrolled": false
+  },
+  {
+   "oi": 5,
+   "t": 14.611,
+   "dur": 4.219,
+   "cos": 0.4045,
+   "enrolled": false
+  },
+  {
+   "oi": 6,
+   "t": 19.397,
+   "dur": 2.173,
+   "cos": 0.2996,
+   "enrolled": false
+  },
+  {
+   "oi": 7,
+   "t": 22.248,
+   "dur": 0.762,
+   "cos": 0.1948,
+   "enrolled": false
+  },
+  {
+   "oi": 8,
+   "t": 23.775,
+   "dur": 1.145,
+   "cos": 0.177,
+   "enrolled": false
+  },
+  {
+   "oi": 9,
+   "t": 26.377,
+   "dur": 3.803,
+   "cos": 0.3387,
+   "enrolled": false
+  },
+  {
+   "oi": 10,
+   "t": 31.04,
+   "dur": 1.09,
+   "cos": 0.2248,
+   "enrolled": false
+  },
+  {
+   "oi": 11,
+   "t": 33.433,
+   "dur": 4.487,
+   "cos": 0.3941,
+   "enrolled": false
+  },
+  {
+   "oi": 12,
+   "t": 38.736,
+   "dur": 2.133,
+   "cos": 0.1585,
+   "enrolled": false
+  },
+  {
+   "oi": 13,
+   "t": 42.15,
+   "dur": 0.56,
+   "cos": 0.1848,
+   "enrolled": false
+  },
+  {
+   "oi": 14,
+   "t": 43.374,
+   "dur": 0.306,
+   "cos": null,
+   "enrolled": false
+  },
+  {
+   "oi": 15,
+   "t": 44.851,
+   "dur": 2.509,
+   "cos": 0.3734,
+   "enrolled": false
+  },
+  {
+   "oi": 16,
+   "t": 47.884,
+   "dur": 5.396,
+   "cos": 0.4737,
+   "enrolled": false
+  },
+  {
+   "oi": 17,
+   "t": 54.777,
+   "dur": 1.103,
+   "cos": 0.2565,
+   "enrolled": false
+  },
+  {
+   "oi": 18,
+   "t": 56.772,
+   "dur": 3.558,
+   "cos": 0.3389,
+   "enrolled": false
+  },
+  {
+   "oi": 19,
+   "t": 60.766,
+   "dur": 2.274,
+   "cos": 0.188,
+   "enrolled": false
+  },
+  {
+   "oi": 20,
+   "t": 66.46,
+   "dur": 3.69,
+   "cos": 0.3432,
+   "enrolled": false
+  },
+  {
+   "oi": 21,
+   "t": 70.359,
+   "dur": 5.781,
+   "cos": 0.5701,
+   "enrolled": false
+  },
+  {
+   "oi": 22,
+   "t": 77.047,
+   "dur": 1.503,
+   "cos": 0.4471,
+   "enrolled": false
+  },
+  {
+   "oi": 23,
+   "t": 79.829,
+   "dur": 0.011,
+   "cos": null,
+   "enrolled": false
+  },
+  {
+   "oi": 24,
+   "t": 80.313,
+   "dur": 13.207,
+   "cos": 0.5129,
+   "enrolled": false
+  },
+  {
+   "oi": 25,
+   "t": 94.678,
+   "dur": 2.902,
+   "cos": 0.416,
+   "enrolled": false
+  },
+  {
+   "oi": 26,
+   "t": 98.484,
+   "dur": 0.566,
+   "cos": 0.167,
+   "enrolled": false
+  },
+  {
+   "oi": 27,
+   "t": 100.281,
+   "dur": 1.509,
+   "cos": 0.3312,
+   "enrolled": false
+  }
+ ]
+}

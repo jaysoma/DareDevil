@@ -1,0 +1,113 @@
+{
+ "name": "walk-211436",
+ "source": "Dictate/captures/geonar/walk-211436-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "the tape's own -words.json (handset recogniser), reshaped for the decode route",
+ "duration_s": 175.96,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 6,
+   "text": "Now, rotating clockwise while- I'm ready, Batman, tape is rolling."
+  },
+  {
+   "t0": 6,
+   "t1": 14,
+   "text": "Two meters from the center of the phone."
+  },
+  {
+   "t0": 14,
+   "t1": 20,
+   "text": "I am now walking backwards away from the phone while facing it."
+  },
+  {
+   "t0": 20,
+   "t1": 29,
+   "text": "Good. Settle first, then say the distance. Hold each spot ten seconds, same sentence, then the kitchen."
+  },
+  {
+   "t0": 29.88,
+   "t1": 33.88,
+   "text": "I'm about four meters dead center from the phone."
+  },
+  {
+   "t0": 39.88,
+   "t1": 47.72,
+   "text": "Now doing a circle in around the kitchen. Now I'm at nine degrees located clockwise in the kitchen"
+  },
+  {
+   "t0": 47.72,
+   "t1": 54.76,
+   "text": "talking the entire time and walking. I am now about seven meters, eight meters from the phone"
+  },
+  {
+   "t0": 54.76,
+   "t1": 58.96,
+   "text": "I'm walking in a circle in the kitchen."
+  },
+  {
+   "t0": 58.96,
+   "t1": 61.32,
+   "text": "Now I'm facing the phone again, holding here."
+  },
+  {
+   "t0": 74.6,
+   "t1": 77.12,
+   "text": "Now I'm walking straight towards the phone,"
+  },
+  {
+   "t0": 77.12,
+   "t1": 80.24,
+   "text": "turning 45 degrees,"
+  },
+  {
+   "t0": 80.24,
+   "t1": 82.64,
+   "text": "cloth-wise, holding here."
+  },
+  {
+   "t0": 82.64,
+   "t1": 84.64,
+   "text": "I'm about four meters from the phone."
+  },
+  {
+   "t0": 84.76,
+   "t1": 101.64,
+   "text": "Walking in the direction of 45 degrees, I'm towards the bottom cap, turning a few degrees."
+  },
+  {
+   "t0": 101.64,
+   "t1": 105.64,
+   "text": "I'm about 3 meters from the front, holding here."
+  },
+  {
+   "t0": 117.64,
+   "t1": 123.64,
+   "text": "Now I'm rotating a little bit, walking across the plane, horizontal plane for the film."
+  },
+  {
+   "t0": 123.64,
+   "t1": 129.64,
+   "text": "Crossing center, crossing center. Now I am on the left side, holding here."
+  },
+  {
+   "t0": 131.64,
+   "t1": 144.52,
+   "text": "270 degrees now i am walking towards the phone"
+  },
+  {
+   "t0": 145.96,
+   "t1": 150.44,
+   "text": "on the left side i am now one meter from the phone"
+  },
+  {
+   "t0": 150.44,
+   "t1": 164.04,
+   "text": "Counter-clockwise 90 degrees now. This is me, 90 degrees counter-clockwise."
+  },
+  {
+   "t0": 164.04,
+   "t1": 175.96,
+   "text": "Walking backwards across the horizontal plane of the phone, I am now one meter from the bottom cap."
+  }
+ ]
+}

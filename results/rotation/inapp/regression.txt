@@ -1,0 +1,8 @@
+Conductor v13 -> v14, CdrRange before brief H -> now (k 1.1), 11 walks
+frames: 0 of 21060 v13 range frames differ in their first six values from v14's (openers aside); the openers' 621 frames: 621 differ
+today: 559 of 719 drawn utterances matched to reads.json by onset; the 0.5 s statistic against brief E's 'today': largest gap 0.0008 dB over 559; the u it holds against option b's statistic in the tape's unit: largest gap 0.0019 dB
+held: 0 utterances without a turned call drew more than once; 0 drew more than twice
+option b: 143 2 s calls made, 143 expected (reads.json 'handed'); 0 mismatches in presence or verdict; contrast gap 0.0018 dB, correction gap 0.0019 dB
+v13 as committed (old CdrRange on v13): drew a range on 0 of 722 utterances
+the new CdrRange on a v13 stream: largest gap to its own v14 reading 0.0000 dB (openers aside), 0 facing calls (none expected: v13 has no fourth band and stops at 0.5 s)
+the old CdrRange on a v14 stream: drew on 0 utterances (it reads only 6-value cdrf)

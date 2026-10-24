@@ -1,0 +1,118 @@
+{
+ "name": "walk-234212",
+ "source": "Dictate/captures/geonar/walk-234212-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "duration_s": 83.7,
+ "segments": [
+  {
+   "t0": 7.04,
+   "t1": 9.62,
+   "text": "Now very close to the phone, about half a meter."
+  },
+  {
+   "t0": 10.6,
+   "t1": 16.8,
+   "text": "Half a meter on the side of the top mic."
+  },
+  {
+   "t0": 20.04,
+   "t1": 26.74,
+   "text": "Now about two meters from the phone on the bottom mic."
+  },
+  {
+   "t0": 26.74,
+   "t1": 27.26,
+   "text": "Side."
+  },
+  {
+   "t0": 30.62,
+   "t1": 32.04,
+   "text": "I'll take about three meters from the phone."
+  },
+  {
+   "t0": 32.22,
+   "t1": 34.34,
+   "text": "Still the bottom of the bottom 45 angle."
+  },
+  {
+   "t0": 35.8,
+   "t1": 38.42,
+   "text": "I'm going to walk towards the kitchen by facing away from the phone."
+  },
+  {
+   "t0": 39.46,
+   "t1": 41.74,
+   "text": "And I'm going towards the far wall, which is about,"
+  },
+  {
+   "t0": 42.46,
+   "t1": 45.2,
+   "text": "I would say I'll just turn around and I'm facing the phone."
+  },
+  {
+   "t0": 46.42,
+   "t1": 50.72,
+   "text": "And right now I am maybe seven meters,"
+  },
+  {
+   "t0": 51.56,
+   "t1": 52.36,
+   "text": "seven and a half meters."
+  },
+  {
+   "t0": 53.16,
+   "t1": 55.16,
+   "text": "Walking towards a lot of the far corner."
+  },
+  {
+   "t0": 56.14,
+   "t1": 56.72,
+   "text": "Which would be able to be."
+  },
+  {
+   "t0": 56.74,
+   "t1": 58.74,
+   "text": "I guess about 8 meters, maybe more."
+  },
+  {
+   "t0": 59.62,
+   "t1": 61.08,
+   "text": "Now walking towards the phone."
+  },
+  {
+   "t0": 63.14,
+   "t1": 65.16,
+   "text": "And now turning to my right diagonally,"
+  },
+  {
+   "t0": 65.34,
+   "t1": 67.02,
+   "text": "walking across the length of the phone."
+  },
+  {
+   "t0": 68.32,
+   "t1": 69.88,
+   "text": "And walking towards the phone,"
+  },
+  {
+   "t0": 70.92,
+   "t1": 73.4,
+   "text": "walking across the trunk to the bottom right to the top mic."
+  },
+  {
+   "t0": 74.26,
+   "t1": 75.86,
+   "text": "At about maybe half a meter."
+  },
+  {
+   "t0": 76.58,
+   "t1": 77.8,
+   "text": "Walking away from the phone."
+  },
+  {
+   "t0": 78.42,
+   "t1": 79.72,
+   "text": "Right now about 20 half meters."
+  }
+ ]
+}

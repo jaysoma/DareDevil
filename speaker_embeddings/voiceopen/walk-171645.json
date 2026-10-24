@@ -1,0 +1,146 @@
+{
+ "enrol_s": 8.59,
+ "enrol_utts": [
+  0,
+  1
+ ],
+ "enrol_min_s": 5.0,
+ "model": "campplus_zh_en_advanced.onnx",
+ "min_score_s": 0.4,
+ "spans_from": "siri_gate",
+ "utts": [
+  {
+   "oi": 0,
+   "t": 3.164,
+   "dur": 4.367,
+   "cos": 0.8578,
+   "enrolled": true
+  },
+  {
+   "oi": 1,
+   "t": 9.822,
+   "dur": 4.226,
+   "cos": 0.8153,
+   "enrolled": true
+  },
+  {
+   "oi": 2,
+   "t": 16.408,
+   "dur": 4.659,
+   "cos": 0.7089,
+   "enrolled": false
+  },
+  {
+   "oi": 3,
+   "t": 24.913,
+   "dur": 9.188,
+   "cos": 0.7326,
+   "enrolled": false
+  },
+  {
+   "oi": 4,
+   "t": 36.147,
+   "dur": 3.469,
+   "cos": 0.6409,
+   "enrolled": false
+  },
+  {
+   "oi": 5,
+   "t": 43.974,
+   "dur": 2.66,
+   "cos": 0.4907,
+   "enrolled": false
+  },
+  {
+   "oi": 6,
+   "t": 47.635,
+   "dur": 4.013,
+   "cos": 0.5455,
+   "enrolled": false
+  },
+  {
+   "oi": 7,
+   "t": 53.039,
+   "dur": 4.625,
+   "cos": 0.4838,
+   "enrolled": false
+  },
+  {
+   "oi": 8,
+   "t": 59.608,
+   "dur": 2.568,
+   "cos": 0.3973,
+   "enrolled": false
+  },
+  {
+   "oi": 9,
+   "t": 63.567,
+   "dur": 3.622,
+   "cos": 0.4834,
+   "enrolled": false
+  },
+  {
+   "oi": 10,
+   "t": 71.172,
+   "dur": 16.07,
+   "cos": 0.5902,
+   "enrolled": false
+  },
+  {
+   "oi": 11,
+   "t": 89.688,
+   "dur": 5.075,
+   "cos": 0.5006,
+   "enrolled": false
+  },
+  {
+   "oi": 12,
+   "t": 96.239,
+   "dur": 3.036,
+   "cos": 0.5657,
+   "enrolled": false
+  },
+  {
+   "oi": 13,
+   "t": 103.275,
+   "dur": 5.508,
+   "cos": 0.5513,
+   "enrolled": false
+  },
+  {
+   "oi": 14,
+   "t": 114.042,
+   "dur": 6.848,
+   "cos": 0.5238,
+   "enrolled": false
+  },
+  {
+   "oi": 15,
+   "t": 123.151,
+   "dur": 2.193,
+   "cos": 0.4812,
+   "enrolled": false
+  },
+  {
+   "oi": 16,
+   "t": 127.942,
+   "dur": 2.415,
+   "cos": 0.3235,
+   "enrolled": false
+  },
+  {
+   "oi": 17,
+   "t": 131.469,
+   "dur": 6.91,
+   "cos": 0.5228,
+   "enrolled": false
+  },
+  {
+   "oi": 18,
+   "t": 139.77,
+   "dur": 3.765,
+   "cos": 0.5349,
+   "enrolled": false
+  }
+ ]
+}
