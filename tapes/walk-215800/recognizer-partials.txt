@@ -1,0 +1,319 @@
+walk-215800 -- SpeechRecognizer partials and finals, times from the phone's tape clock (48 kHz frame / 48000)
++ extension   ~ correction (old -> new)   x hypothesis dropped, no final   . punctuation/case only   = repeat
+
+133 partials, 7 corrected an earlier word, 9 dropped the hypothesis, 0 finals changed the last partial
+
+    1.052 s  [utt 0] begin of speech
+    1.382 s  [utt 0] end of speech
+    1.458 s  [utt 0] begin of speech
+    1.467 s  [utt 0] error 7
+    1.587 s  [utt 1] begin of speech
+    2.099 s  [utt 1] end of speech
+    2.162 s  [utt 1] error 7
+    2.930 s  [utt 2] begin of speech
+    3.345 s  partial  Two.                                                         + two
+    3.575 s  partial  Two, me.                                                     + me
+    3.694 s  partial  Two meters.                                                  + meters
+    3.918 s  partial  Two meters, right?                                           + right
+    4.049 s  partial  Two meters right in?                                         + in
+    4.163 s  partial  Two meters right in?                                         =
+    4.174 s  partial  Two meters right in front.                                   + front
+    4.297 s  partial  Two meters right in front of.                                + of
+    4.413 s  partial  Two meters right in front of the.                            + the
+    4.550 s  partial  Two meters right in front of the phone.                      + phone
+    4.561 s  partial  Two meters right in front of the front.                      ~ "phone" -> "front"
+    4.660 s  partial  Two meters right in front of the phone.                      ~ "front" -> "phone"
+    4.778 s  partial  Two meters right in front of the front fac.                  ~ "phone" -> "front fac"
+    4.904 s  partial  Two meters right in front of the front facing.               + facing
+    5.009 s  partial  Two meters right in front of the front facing the.           + the
+    5.151 s  partial  Two meters right in front of the front facing the phone.     + phone
+    5.374 s  partial  Two meters right in front of the front facing the phone.     =
+    5.575 s  [utt 2] end of speech
+    5.669 s  [utt 2] begin of speech
+    5.675 s  FINAL    Two meters right in front of the front facing the phone.     =   (vs last partial)
+
+    9.786 s  [utt 3] begin of speech
+   10.296 s  partial  Rot.                                                         + rot
+   10.426 s  partial  Rotate.                                                      + rotate
+   10.552 s  partial  Rotate it.                                                   + it
+   10.864 s  [utt 3] end of speech
+   10.937 s  [utt 3] begin of speech
+   10.939 s  FINAL    Rotate it.                                                   =   (vs last partial)
+
+   11.069 s  [utt 4] begin of speech
+   11.543 s  partial  Path.                                                        + path
+   11.675 s  partial  Pathway.                                                     + pathway
+   11.768 s  partial  Pathways.                                                    + pathways
+   11.893 s  partial  Pathways. 90.                                                + 90
+   12.142 s  partial  Pathways, 90 degrees.                                        + degrees
+   12.245 s  partial  Pathways, 90 degrees.                                        =
+   12.354 s  partial  Pathways, 90 degrees.                                        =
+   12.575 s  [utt 4] end of speech
+   12.676 s  FINAL    Pathways, 90 degrees.                                        =   (vs last partial)
+
+   16.197 s  [utt 5] begin of speech
+   16.718 s  partial  Ro.                                                          + ro
+   18.152 s  [utt 5] end of speech
+   18.219 s  [utt 5] error 7
+   22.562 s  [utt 6] begin of speech
+   23.072 s  partial  Rot.                                                         + rot
+   23.179 s  partial  Rotate.                                                      + rotate
+   23.321 s  partial  Rotate the.                                                  + the
+   23.447 s  partial  Rotate the clock.                                            + clock
+   23.660 s  partial  Rotate the clockwise.                                        + clockwise
+   23.802 s  partial  Rotate the clockwise and?                                    + and
+   23.917 s  partial  Rotate the clockwise and I.                                  + i
+   24.036 s  partial  Rotate the clockwise and I need.                             + need
+   24.041 s  partial  Rotate the clockwise and I need.                             =
+   24.190 s  partial  Rotate the clockwise and I need grease.                      + grease
+   24.281 s  partial  Rotate the clockwise and I need grease.                      =
+   24.401 s  partial  Rotate the clockwise and I need grease.                      =
+   24.596 s  [utt 6] end of speech
+   24.677 s  FINAL    Rotate the clockwise and I need grease.                      =   (vs last partial)
+
+   24.794 s  [utt 7] begin of speech
+   25.311 s  [utt 7] end of speech
+   25.370 s  [utt 7] error 7
+   27.133 s  [utt 8] begin of speech
+   27.648 s  partial  Go.                                                          + go
+   27.759 s  partial  Go to.                                                       + to
+   27.769 s  partial  Go to the.                                                   + the
+   27.888 s  partial  Go to the clock.                                             + clock
+   28.134 s  partial  Go to the clockwise.                                         + clockwise
+   28.237 s  partial  Go to the clockwise.                                         =
+   28.376 s  partial  Go to the clockwise 90.                                      + 90
+   28.504 s  partial  Go to the clockwise 90.                                      =
+   28.618 s  partial  Go to the clockwise 90 degrees.                              + degrees
+   28.723 s  partial  Go to the clockwise 90 degrees.                              =
+   29.087 s  [utt 8] end of speech
+   29.161 s  FINAL    Go to the clockwise 90 degrees.                              =   (vs last partial)
+
+   29.831 s  [utt 9] begin of speech
+   30.716 s  partial  Same.                                                        + same
+   31.062 s  partial  Same distance.                                               + distance
+   31.299 s  partial  Same distance.                                               =
+   31.432 s  partial  Same distance now.                                           + now
+   31.691 s  partial  Same distance now, fac.                                      + fac
+   31.701 s  partial  Same distance now facing.                                    + facing
+   31.797 s  partial  Same distance now facing the?                                + the
+   32.020 s  partial  Same distance now facing the pump.                           + pump
+   32.322 s  [utt 9] end of speech
+   32.394 s  [utt 9] begin of speech
+   32.395 s  FINAL    Same distance now facing the pump.                           =   (vs last partial)
+
+   35.318 s  [utt 10] begin of speech
+   35.826 s  [utt 10] end of speech
+   35.910 s  [utt 10] begin of speech
+   35.911 s  [utt 10] error 7
+   36.029 s  [utt 11] begin of speech
+   37.565 s  [utt 11] end of speech
+   37.629 s  [utt 11] begin of speech
+   37.631 s  [utt 11] error 7
+   38.543 s  [utt 12] begin of speech
+   39.074 s  partial  Four.                                                        + four
+   39.305 s  partial  Four me?                                                     + me
+   39.309 s  partial  Four meters.                                                 + meters
+   39.693 s  partial  Four meters.                                                 =
+   39.899 s  partial  Four meters.                                                 =
+   40.022 s  partial  Four meters fac.                                             + fac
+   40.143 s  partial  Four meters facing.                                          + facing
+   40.258 s  partial  Four meters facing the.                                      + the
+   40.400 s  partial  Four meters facing the phone.                                + phone
+   40.635 s  partial  Four meters facing the phone.                                =
+   40.766 s  partial  Four meters facing the phone.                                =
+   40.877 s  partial  Four meters facing the phone.                                =
+   40.882 s  partial  Four meters facing the phone talking.                        + talking
+   41.001 s  partial  Four meters facing the phone talking.                        =
+   41.478 s  partial  Four meters facing the phone talking while.                  + while
+   41.598 s  partial  Four meters facing the phone talking while I'm.              + i'm
+   42.087 s  partial  Four meters facing the phone talking while I'm ro.           + ro
+   42.096 s  partial  Four meters facing the phone talking while I'm roast.        + roast
+   42.195 s  partial  Four meters facing the phone talking while I'm roast.        =
+   42.205 s  partial  Four meters facing the phone talking while I'm rotating.     ~ "roast" -> "rotating"
+   42.686 s  partial  Four meters facing the phone talking while I'm rotating clock. + clock
+   42.803 s  partial  Four meters facing the phone talking while I'm rotating clock. =
+   42.923 s  partial  Four meters facing the phone talking while I'm rotating clockwise. + clockwise
+   43.272 s  partial  Four meters facing the phone talking while I'm rotating clockwise. =
+   43.529 s  partial  Four meters facing the phone talking while I'm rotating clockwise slow. + slow
+   43.882 s  partial  Four meters facing the phone talking while I'm rotating clockwise slowly. + slowly
+   44.136 s  [utt 12] end of speech
+   44.214 s  FINAL    Four meters facing the phone talking while I'm rotating clockwise slowly. =   (vs last partial)
+
+   44.338 s  [utt 13] begin of speech
+   45.283 s  partial  Seal.                                                        + seal
+   45.640 s  partial  Seal, don't.                                                 + don't
+   47.941 s  [utt 13] begin of speech
+   48.573 s  [utt 13] end of speech
+   48.647 s  [utt 13] begin of speech
+   48.649 s  [utt 13] error 7
+   49.289 s  [utt 14] begin of speech
+   50.280 s  partial  Rot.                                                         x dropped "seal don't" (no final), restarted
+   50.401 s  partial  Rotate.                                                      + rotate
+   50.894 s  partial  En.                                                          x dropped "rotate" (no final), restarted
+   51.018 s  partial  Encount.                                                     + encount
+   52.433 s  [utt 14] end of speech
+   52.511 s  [utt 14] error 7
+   52.818 s  [utt 15] begin of speech
+   54.918 s  [utt 15] begin of speech
+   55.490 s  partial  Now!                                                         x dropped "encount" (no final), restarted
+   56.511 s  [utt 15] end of speech
+   56.581 s  [utt 15] begin of speech
+   56.584 s  [utt 15] error 7
+   56.711 s  [utt 16] begin of speech
+   58.215 s  [utt 16] end of speech
+   58.357 s  [utt 16] begin of speech
+   58.359 s  [utt 16] error 7
+   58.470 s  [utt 17] begin of speech
+   59.173 s  [utt 17] end of speech
+   59.860 s  [utt 17] error 7
+   59.984 s  [utt 18] begin of speech
+   60.144 s  [utt 18] end of speech
+   60.237 s  [utt 18] begin of speech
+   62.860 s  [utt 18] error 7
+   62.958 s  [utt 19] begin of speech
+   62.965 s  [utt 19] end of speech
+   62.972 s  [utt 19] begin of speech
+   63.141 s  [utt 19] begin of speech
+   65.861 s  [utt 19] error 7
+   65.965 s  [utt 20] begin of speech
+   66.106 s  [utt 20] end of speech
+   66.107 s  [utt 20] begin of speech
+   66.117 s  [utt 20] begin of speech
+   66.204 s  FINAL    Side by.                                                     x   (vs last partial)
+
+   66.315 s  [utt 21] begin of speech
+   67.010 s  partial  Mike.                                                        + mike
+   67.218 s  [utt 21] end of speech
+   67.283 s  FINAL    Mike.                                                        =   (vs last partial)
+
+   69.194 s  [utt 22] begin of speech
+   71.296 s  [utt 22] begin of speech
+   72.467 s  [utt 22] end of speech
+   72.541 s  [utt 22] begin of speech
+   72.544 s  [utt 22] error 7
+   72.671 s  [utt 23] begin of speech
+   73.176 s  [utt 23] end of speech
+   73.211 s  [utt 23] begin of speech
+   73.212 s  [utt 23] error 7
+   73.382 s  [utt 24] begin of speech
+   73.891 s  [utt 24] end of speech
+   73.931 s  [utt 24] begin of speech
+   73.932 s  [utt 24] error 7
+   74.093 s  [utt 25] begin of speech
+   74.640 s  [utt 25] end of speech
+   74.738 s  [utt 25] begin of speech
+   74.743 s  [utt 25] error 7
+   74.855 s  [utt 26] begin of speech
+   75.573 s  [utt 26] end of speech
+   75.685 s  [utt 26] begin of speech
+   75.685 s  [utt 26] begin of speech
+   76.244 s  [utt 26] error 7
+   76.344 s  [utt 27] begin of speech
+   77.612 s  [utt 27] end of speech
+   77.682 s  [utt 27] begin of speech
+   79.246 s  [utt 27] error 7
+   79.416 s  [utt 28] begin of speech
+   79.416 s  [utt 28] end of speech
+   79.418 s  [utt 28] begin of speech
+   79.432 s  [utt 28] begin of speech
+   79.432 s  [utt 28] end of speech
+   79.541 s  [utt 28] begin of speech
+   79.541 s  [utt 28] begin of speech
+   82.245 s  [utt 28] error 7
+   82.340 s  [utt 29] begin of speech
+   82.362 s  [utt 29] end of speech
+   82.477 s  partial  And.                                                         + and
+   82.575 s  [utt 29] begin of speech
+   82.575 s  [utt 29] end of speech
+   82.576 s  [utt 29] begin of speech
+   85.246 s  [utt 29] error 7
+   85.344 s  [utt 30] begin of speech
+   85.642 s  [utt 30] begin of speech
+   86.544 s  [utt 30] end of speech
+   88.247 s  [utt 30] error 7
+   88.351 s  [utt 31] begin of speech
+   88.359 s  [utt 31] end of speech
+   91.249 s  [utt 31] error 7
+   91.359 s  [utt 32] begin of speech
+   91.477 s  partial  Rotating in.                                                 x dropped "and" (no final), restarted
+   91.495 s  partial  Rotating in place.                                           + place
+   91.599 s  partial  Rotating in place space.                                     + space
+   91.704 s  partial  Rotating in place space.                                     =
+   91.961 s  partial  Rotating in place space.                                     =
+   92.194 s  partial  Rotating in place space.                                     =
+   92.442 s  partial  Rotating in place space box.                                 + box
+   92.819 s  [utt 32] end of speech
+   92.915 s  [utt 32] begin of speech
+   92.917 s  FINAL    Rotating in place space box.                                 =   (vs last partial)
+
+   93.018 s  [utt 33] begin of speech
+   98.783 s  [utt 33] begin of speech
+  100.506 s  partial  From.                                                        + from
+  100.754 s  partial  From the?                                                    + the
+  103.169 s  [utt 33] begin of speech
+  103.619 s  partial  Direct.                                                      x dropped "from the" (no final), restarted
+  103.981 s  partial  Direct d.                                                    + d
+  104.904 s  [utt 33] end of speech
+  104.965 s  [utt 33] error 7
+  107.355 s  [utt 34] begin of speech
+  108.829 s  [utt 34] end of speech
+  108.873 s  [utt 34] error 7
+  110.990 s  [utt 35] begin of speech
+  112.818 s  [utt 35] end of speech
+  112.881 s  [utt 35] error 7
+  114.226 s  [utt 36] begin of speech
+  115.753 s  [utt 36] end of speech
+  115.825 s  [utt 36] error 7
+  117.755 s  [utt 37] begin of speech
+  119.855 s  [utt 37] begin of speech
+  122.009 s  [utt 37] begin of speech
+  122.586 s  [utt 37] end of speech
+  122.636 s  [utt 37] error 7
+  124.348 s  [utt 38] begin of speech
+  126.439 s  [utt 38] begin of speech
+  127.283 s  partial  Talk.                                                        x dropped "direct d" (no final), restarted
+  127.292 s  partial  Talking.                                                     + talking
+  127.645 s  partial  Talking to?                                                  + to
+  127.925 s  partial  Talking to see the?                                          + see the
+  128.128 s  partial  Talking to see the same?                                     + same
+  129.087 s  [utt 38] end of speech
+  129.192 s  [utt 38] error 7
+  129.306 s  [utt 39] begin of speech
+  129.887 s  partial  I.                                                           x dropped "talking to see the same" (no final), restarted
+  129.891 s  partial  I guess.                                                     + guess
+  130.483 s  partial  I guess I?                                                   + i
+  130.492 s  partial  I guess I?                                                   =
+  130.847 s  partial  I guess I should.                                            + should
+  131.082 s  partial  I guess I should say.                                        + say
+  131.434 s  partial  I guess I should say.                                        =
+  131.690 s  partial  I guess I should say about?                                  + about
+  132.053 s  partial  I guess I should say.                                        ~ "about" -> ""
+  132.300 s  partial  I guess I should say about four.                             + about four
+  132.536 s  partial  I guess I should say about four me?                          + me
+  132.674 s  partial  I guess I should say about four meters.                      + meters
+  132.891 s  partial  I guess I should say about four meters.                      =
+  133.132 s  partial  I guess I should say about four meters.                      =
+  133.250 s  partial  I guess I should say about four meters.                      =
+  133.403 s  [utt 39] end of speech
+  133.659 s  [utt 39] begin of speech
+  133.660 s  FINAL    I guess I should say about four meters.                      =   (vs last partial)
+
+  133.775 s  [utt 40] begin of speech
+  134.186 s  [utt 40] end of speech
+  134.381 s  [utt 40] begin of speech
+  134.383 s  [utt 40] error 7
+  134.490 s  [utt 41] begin of speech
+  135.923 s  partial  Now!                                                         + now
+  138.214 s  [utt 41] begin of speech
+  138.930 s  partial  Has.                                                         x dropped "now" (no final), restarted
+  139.059 s  partial  The same.                                                    x dropped "has" (no final), restarted
+  139.320 s  partial  The same thing.                                              + thing
+  139.543 s  partial  The same thing that's?                                       + that's
+  139.658 s  partial  The same thing that's?                                       =
+  139.786 s  partial  The same vessel.                                             ~ "thing that's" -> "vessel"
+  140.360 s  partial  The same thing.                                              ~ "vessel" -> "thing"
+  140.957 s  partial  The same thing.                                              =
+  141.377 s  [utt 41] end of speech
+  141.501 s  FINAL    The same thing.                                              =   (vs last partial)
+
+  146.423 s  [utt 42] error 7

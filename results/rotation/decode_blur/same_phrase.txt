@@ -1,0 +1,11 @@
+2 m (walk-231705):  facing | takes | content words right | drops per phrase | corrections per phrase | longest wait for a word (s) | CDR contrast (dB)
+    0 |  3 |   81% | 0.00 | 2.00 | 1.16 | +1.6
+   90 |  9 |   92% | 0.38 | 2.06 | 0.87 | -1.7
+  135 |  3 |   69% | 0.00 | 2.50 | 1.07 | -2.2
+  180 |  4 |  100% | 0.00 | 2.00 | 0.84 | -3.1
+
+5 m (walk-231921):  facing | takes | content words right | drops per phrase | corrections per phrase | longest wait for a word (s) | CDR contrast (dB)
+    0 |  6 |   88% | 0.83 | 3.00 | 0.75 | -2.5
+   90 |  6 |   79% | 0.00 | 2.00 | 0.88 | -3.3
+  135 |  3 |   58% | 0.67 | 2.00 | 0.85 | -4.3
+  180 |  5 |   75% | 0.60 | 0.80 | 0.81 | -4.0
