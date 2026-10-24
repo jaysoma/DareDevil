@@ -1,0 +1,1042 @@
+{
+ "set_aside": {
+  "no_reference": 1,
+  "past_3sd": 0,
+  "kept": 108
+ },
+ "facing_logdist_r": 0.11342841177854592,
+ "close_far_blur_r": 0.47563916164860404,
+ "step1": {
+  "blur_added": {
+   "takes": [
+    {
+     "take": "dev_task3_rec2/talker2",
+     "band": "1.5-3 m",
+     "facing_mean": 0.21859978101238145,
+     "n_facing": 3,
+     "turned_minus_facing": 1.0044856080540965,
+     "n_turned": 3,
+     "up": 3,
+     "rho": 0.5952380952380953
+    },
+    {
+     "take": "dev_task3_rec2/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 0.015731876481958118,
+     "n_facing": 2,
+     "turned_minus_facing": 0.3353417893596657,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 1.0
+    },
+    {
+     "take": "dev_task3_rec3/talker1",
+     "band": "1.5-3 m",
+     "facing_mean": 0.1315274019875897,
+     "n_facing": 5,
+     "turned_minus_facing": 0.03523034618602297,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 0.3142857142857143
+    },
+    {
+     "take": "dev_task4_rec2/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 0.21313497253730151,
+     "n_facing": 2,
+     "turned_minus_facing": -0.13167412094125497,
+     "n_turned": 1,
+     "up": 0,
+     "rho": -1.0
+    },
+    {
+     "take": "eval_task3_rec1/talker2",
+     "band": "1.5-3 m",
+     "facing_mean": 0.14127056574213165,
+     "n_facing": 2,
+     "turned_minus_facing": 0.8804825208398506,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 0.5
+    },
+    {
+     "take": "eval_task3_rec1/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 0.16168734157531706,
+     "n_facing": 1,
+     "turned_minus_facing": -0.07987108479808264,
+     "n_turned": 2,
+     "up": 1,
+     "rho": 0.19999999999999998
+    },
+    {
+     "take": "eval_task3_rec2/talker1",
+     "band": "1.5-3 m",
+     "facing_mean": 0.0036348685569018713,
+     "n_facing": 2,
+     "turned_minus_facing": 0.5654053355840669,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 1.0
+    },
+    {
+     "take": "eval_task3_rec3/talker4",
+     "band": "1.5-3 m",
+     "facing_mean": 0.11948430770505698,
+     "n_facing": 3,
+     "turned_minus_facing": 0.16330181472870656,
+     "n_turned": 3,
+     "up": 2,
+     "rho": 0.4047619047619048
+    },
+    {
+     "take": "eval_task3_rec4/talker4",
+     "band": "1.5-3 m",
+     "facing_mean": 0.014778426548153423,
+     "n_facing": 4,
+     "turned_minus_facing": 0.04985788917161049,
+     "n_turned": 2,
+     "up": 2,
+     "rho": 0.33333333333333337
+    },
+    {
+     "take": "eval_task3_rec5/talker5",
+     "band": "1.5-3 m",
+     "facing_mean": 0.5493911768451605,
+     "n_facing": 1,
+     "turned_minus_facing": 0.11527409919668102,
+     "n_turned": 2,
+     "up": 1,
+     "rho": 0.5
+    },
+    {
+     "take": "eval_task4_rec2/talker1",
+     "band": "1.5-3 m",
+     "facing_mean": 0.43171256274077113,
+     "n_facing": 3,
+     "turned_minus_facing": 0.2230469713080875,
+     "n_turned": 3,
+     "up": 2,
+     "rho": 0.42857142857142866
+    },
+    {
+     "take": "eval_task4_rec2/talker2",
+     "band": "1.5-3 m",
+     "facing_mean": 0.329369409318003,
+     "n_facing": 3,
+     "turned_minus_facing": 0.37779423383855537,
+     "n_turned": 3,
+     "up": 3,
+     "rho": 0.38333333333333336
+    },
+    {
+     "take": "eval_task4_rec2/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 0.07277162159218731,
+     "n_facing": 1,
+     "turned_minus_facing": -0.15751448608573348,
+     "n_turned": 1,
+     "up": 0,
+     "rho": -0.7999999999999999
+    }
+   ],
+   "takes_up": 10,
+   "takes_n": 13,
+   "pieces_up": 18.0,
+   "pieces_n": 24,
+   "rho_sum": 5.759523809523811,
+   "p_perm": 0.0037996200379962005,
+   "by_band": {
+    "1.5-3 m": {
+     "up": 9,
+     "n": 9,
+     "mean_rise": 0.3794309798786309
+    },
+    "<1.5 m": {
+     "up": 1,
+     "n": 4,
+     "mean_rise": -0.00842947561635135
+    }
+   },
+   "bin_diffs": {
+    "45": {
+     "mean": 0.21126260612276404,
+     "sd": 0.5226468301910213,
+     "n": 15
+    },
+    "90": {
+     "mean": 0.10674804668006672,
+     "sd": 0.4582195970943891,
+     "n": 10
+    },
+    "135": {
+     "mean": 0.4240141863621934,
+     "sd": 0.5170209502985633,
+     "n": 14
+    }
+   }
+  },
+  "per": {
+   "takes": [
+    {
+     "take": "dev_task3_rec2/talker2",
+     "band": "1.5-3 m",
+     "facing_mean": 0.20555555555555557,
+     "n_facing": 3,
+     "turned_minus_facing": 0.29516908212560383,
+     "n_turned": 3,
+     "up": 2,
+     "rho": 0.5000000000000001
+    },
+    {
+     "take": "dev_task3_rec2/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 0.0,
+     "n_facing": 2,
+     "turned_minus_facing": 0.2777777777777778,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 0.8660254037844387
+    },
+    {
+     "take": "dev_task3_rec3/talker1",
+     "band": "1.5-3 m",
+     "facing_mean": 0.11902277039848197,
+     "n_facing": 5,
+     "turned_minus_facing": -0.11902277039848197,
+     "n_turned": 1,
+     "up": 0,
+     "rho": -0.21251185925162072
+    },
+    {
+     "take": "dev_task4_rec2/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 0.14646464646464646,
+     "n_facing": 2,
+     "turned_minus_facing": -0.07503607503607504,
+     "n_turned": 1,
+     "up": 0,
+     "rho": -1.0
+    },
+    {
+     "take": "eval_task3_rec1/talker2",
+     "band": "1.5-3 m",
+     "facing_mean": 0.09021739130434783,
+     "n_facing": 2,
+     "turned_minus_facing": 0.2943979933110368,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 1.0
+    },
+    {
+     "take": "eval_task3_rec1/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 0.2222222222222222,
+     "n_facing": 1,
+     "turned_minus_facing": -0.06029040404040403,
+     "n_turned": 2,
+     "up": 0,
+     "rho": -0.19999999999999998
+    },
+    {
+     "take": "eval_task3_rec2/talker1",
+     "band": "1.5-3 m",
+     "facing_mean": 0.02631578947368421,
+     "n_facing": 2,
+     "turned_minus_facing": 0.28137651821862353,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 1.0
+    },
+    {
+     "take": "eval_task3_rec3/talker4",
+     "band": "1.5-3 m",
+     "facing_mean": 0.1304093567251462,
+     "n_facing": 3,
+     "turned_minus_facing": 0.18560125804707847,
+     "n_turned": 3,
+     "up": 3,
+     "rho": 0.5714285714285715
+    },
+    {
+     "take": "eval_task3_rec4/talker4",
+     "band": "1.5-3 m",
+     "facing_mean": 0.09518557422969187,
+     "n_facing": 4,
+     "turned_minus_facing": 0.021481092436974797,
+     "n_turned": 2,
+     "up": 2,
+     "rho": 0.20083857810137354
+    },
+    {
+     "take": "eval_task3_rec5/talker5",
+     "band": "1.5-3 m",
+     "facing_mean": 0.4090909090909091,
+     "n_facing": 1,
+     "turned_minus_facing": 0.052714646464646436,
+     "n_turned": 2,
+     "up": 1,
+     "rho": 0.5
+    },
+    {
+     "take": "eval_task4_rec2/talker1",
+     "band": "1.5-3 m",
+     "facing_mean": 0.22037037037037036,
+     "n_facing": 3,
+     "turned_minus_facing": 0.09629629629629634,
+     "n_turned": 3,
+     "up": 2,
+     "rho": 0.28571428571428575
+    },
+    {
+     "take": "eval_task4_rec2/talker2",
+     "band": "1.5-3 m",
+     "facing_mean": 0.2052910052910053,
+     "n_facing": 3,
+     "turned_minus_facing": 0.051285188404863846,
+     "n_turned": 3,
+     "up": 2,
+     "rho": 0.26666666666666666
+    },
+    {
+     "take": "eval_task4_rec2/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 0.08108108108108109,
+     "n_facing": 1,
+     "turned_minus_facing": 0.052252252252252246,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 0.0
+    }
+   ],
+   "takes_up": 10,
+   "takes_n": 13,
+   "pieces_up": 16.0,
+   "pieces_n": 24,
+   "rho_sum": 5.078161646443715,
+   "p_perm": 0.0069965017491254375,
+   "by_band": {
+    "1.5-3 m": {
+     "up": 8,
+     "n": 9,
+     "mean_rise": 0.12881103387851578
+    },
+    "<1.5 m": {
+     "up": 2,
+     "n": 4,
+     "mean_rise": 0.04867588773838774
+    }
+   },
+   "bin_diffs": {
+    "45": {
+     "mean": 0.11796343776864933,
+     "sd": 0.2286479107230808,
+     "n": 15
+    },
+    "90": {
+     "mean": -0.003572370548177009,
+     "sd": 0.2305278414516943,
+     "n": 10
+    },
+    "135": {
+     "mean": 0.19002396756791892,
+     "sd": 0.18782085721732994,
+     "n": 14
+    }
+   }
+  },
+  "far_blur": {
+   "takes": [
+    {
+     "take": "dev_task3_rec2/talker2",
+     "band": "1.5-3 m",
+     "facing_mean": 0.9486848290995438,
+     "n_facing": 3,
+     "turned_minus_facing": 0.9821965771245124,
+     "n_turned": 3,
+     "up": 3,
+     "rho": 0.5476190476190477
+    },
+    {
+     "take": "dev_task3_rec2/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 0.5970343995312166,
+     "n_facing": 2,
+     "turned_minus_facing": 0.5160001974880055,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 1.0
+    },
+    {
+     "take": "dev_task3_rec3/talker1",
+     "band": "1.5-3 m",
+     "facing_mean": 0.8782475402208201,
+     "n_facing": 5,
+     "turned_minus_facing": 0.24671290865228235,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 0.08571428571428573
+    },
+    {
+     "take": "dev_task4_rec2/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 1.3697580992414768,
+     "n_facing": 2,
+     "turned_minus_facing": -0.6510784206141109,
+     "n_turned": 1,
+     "up": 0,
+     "rho": -1.0
+    },
+    {
+     "take": "eval_task3_rec1/talker2",
+     "band": "1.5-3 m",
+     "facing_mean": 0.9452523014071177,
+     "n_facing": 2,
+     "turned_minus_facing": 0.7816905251925219,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 0.5
+    },
+    {
+     "take": "eval_task3_rec1/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 1.0721282173017677,
+     "n_facing": 1,
+     "turned_minus_facing": -0.07904117927945464,
+     "n_turned": 2,
+     "up": 0,
+     "rho": -0.19999999999999998
+    },
+    {
+     "take": "eval_task3_rec2/talker1",
+     "band": "1.5-3 m",
+     "facing_mean": 0.8986243213444167,
+     "n_facing": 2,
+     "turned_minus_facing": 0.3252295324367447,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 0.6000000000000001
+    },
+    {
+     "take": "eval_task3_rec3/talker4",
+     "band": "1.5-3 m",
+     "facing_mean": 1.0077437786085792,
+     "n_facing": 3,
+     "turned_minus_facing": 0.10211488384401342,
+     "n_turned": 3,
+     "up": 2,
+     "rho": 0.4285714285714286
+    },
+    {
+     "take": "eval_task3_rec4/talker4",
+     "band": "1.5-3 m",
+     "facing_mean": 0.9407574531305,
+     "n_facing": 4,
+     "turned_minus_facing": -0.21428289349100793,
+     "n_turned": 2,
+     "up": 0,
+     "rho": -0.48333333333333334
+    },
+    {
+     "take": "eval_task3_rec5/talker5",
+     "band": "1.5-3 m",
+     "facing_mean": 1.314861680977011,
+     "n_facing": 1,
+     "turned_minus_facing": 0.4062207784333786,
+     "n_turned": 2,
+     "up": 1,
+     "rho": 0.5
+    },
+    {
+     "take": "eval_task4_rec2/talker1",
+     "band": "1.5-3 m",
+     "facing_mean": 1.3761746403671828,
+     "n_facing": 3,
+     "turned_minus_facing": 0.1649958858090885,
+     "n_turned": 3,
+     "up": 2,
+     "rho": 0.42857142857142866
+    },
+    {
+     "take": "eval_task4_rec2/talker2",
+     "band": "1.5-3 m",
+     "facing_mean": 1.0278543655320682,
+     "n_facing": 3,
+     "turned_minus_facing": 0.6009787265029072,
+     "n_turned": 3,
+     "up": 3,
+     "rho": 0.5
+    },
+    {
+     "take": "eval_task4_rec2/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 0.8709132745635454,
+     "n_facing": 1,
+     "turned_minus_facing": -0.05524017916551438,
+     "n_turned": 1,
+     "up": 0,
+     "rho": -0.7999999999999999
+    }
+   ],
+   "takes_up": 9,
+   "takes_n": 13,
+   "pieces_up": 15.0,
+   "pieces_n": 24,
+   "rho_sum": 4.107142857142858,
+   "p_perm": 0.04047976011994003,
+   "by_band": {
+    "1.5-3 m": {
+     "up": 8,
+     "n": 9,
+     "mean_rise": 0.37731743605604895
+    },
+    "<1.5 m": {
+     "up": 1,
+     "n": 4,
+     "mean_rise": -0.0673398953927686
+    }
+   },
+   "bin_diffs": {
+    "45": {
+     "mean": 0.19001780968527315,
+     "sd": 0.5586927303960952,
+     "n": 15
+    },
+    "90": {
+     "mean": 0.15413994722517724,
+     "sd": 0.6751612057955104,
+     "n": 10
+    },
+    "135": {
+     "mean": 0.3856119087789681,
+     "sd": 0.5552044831288367,
+     "n": 14
+    }
+   }
+  },
+  "blur_vad_added": {
+   "takes": [
+    {
+     "take": "dev_task3_rec2/talker2",
+     "band": "1.5-3 m",
+     "facing_mean": 0.1247562472177733,
+     "n_facing": 3,
+     "turned_minus_facing": 0.3652841605698964,
+     "n_turned": 3,
+     "up": 3,
+     "rho": 0.5476190476190477
+    },
+    {
+     "take": "dev_task3_rec2/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 0.010531912240276164,
+     "n_facing": 2,
+     "turned_minus_facing": 0.19878505407784863,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 1.0
+    },
+    {
+     "take": "dev_task3_rec3/talker1",
+     "band": "1.5-3 m",
+     "facing_mean": 0.03588970152860909,
+     "n_facing": 5,
+     "turned_minus_facing": -0.006898762623080555,
+     "n_turned": 1,
+     "up": 0,
+     "rho": 0.028571428571428574
+    },
+    {
+     "take": "dev_task4_rec2/talker2",
+     "band": "<1.5 m",
+     "facing_mean": -0.01887562895553782,
+     "n_facing": 2,
+     "turned_minus_facing": -0.013676250202660972,
+     "n_turned": 1,
+     "up": 0,
+     "rho": -0.5
+    },
+    {
+     "take": "eval_task3_rec1/talker2",
+     "band": "1.5-3 m",
+     "facing_mean": 0.031720419027838787,
+     "n_facing": 2,
+     "turned_minus_facing": 0.33257237688062574,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 0.5
+    },
+    {
+     "take": "eval_task3_rec1/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 0.06918857729423891,
+     "n_facing": 1,
+     "turned_minus_facing": -0.038355716164501064,
+     "n_turned": 2,
+     "up": 0,
+     "rho": -0.19999999999999998
+    },
+    {
+     "take": "eval_task3_rec2/talker1",
+     "band": "1.5-3 m",
+     "facing_mean": 0.010709103902061229,
+     "n_facing": 2,
+     "turned_minus_facing": 0.17123483661525848,
+     "n_turned": 1,
+     "up": 1,
+     "rho": 0.7999999999999999
+    },
+    {
+     "take": "eval_task3_rec3/talker4",
+     "band": "1.5-3 m",
+     "facing_mean": 0.04387933162287497,
+     "n_facing": 3,
+     "turned_minus_facing": 0.1013605782433497,
+     "n_turned": 3,
+     "up": 3,
+     "rho": 0.7380952380952381
+    },
+    {
+     "take": "eval_task3_rec4/talker4",
+     "band": "1.5-3 m",
+     "facing_mean": 0.03956033798926302,
+     "n_facing": 4,
+     "turned_minus_facing": 0.012974079123337492,
+     "n_turned": 2,
+     "up": 1,
+     "rho": 0.21666666666666667
+    },
+    {
+     "take": "eval_task3_rec5/talker5",
+     "band": "1.5-3 m",
+     "facing_mean": 0.26102334377526465,
+     "n_facing": 1,
+     "turned_minus_facing": 0.002787851239401562,
+     "n_turned": 2,
+     "up": 1,
+     "rho": 0.5
+    },
+    {
+     "take": "eval_task4_rec2/talker1",
+     "band": "1.5-3 m",
+     "facing_mean": 0.19218204282497717,
+     "n_facing": 3,
+     "turned_minus_facing": 0.08353686876141557,
+     "n_turned": 3,
+     "up": 2,
+     "rho": 0.39285714285714296
+    },
+    {
+     "take": "eval_task4_rec2/talker2",
+     "band": "1.5-3 m",
+     "facing_mean": 0.11017283873317764,
+     "n_facing": 3,
+     "turned_minus_facing": 0.24563264016083008,
+     "n_turned": 3,
+     "up": 3,
+     "rho": 0.5833333333333334
+    },
+    {
+     "take": "eval_task4_rec2/talker2",
+     "band": "<1.5 m",
+     "facing_mean": 0.029169770790666127,
+     "n_facing": 1,
+     "turned_minus_facing": -0.03961712523032063,
+     "n_turned": 1,
+     "up": 0,
+     "rho": -0.6000000000000001
+    }
+   ],
+   "takes_up": 9,
+   "takes_n": 13,
+   "pieces_up": 16.0,
+   "pieces_n": 24,
+   "rho_sum": 6.807142857142857,
+   "p_perm": 0.0014992503748125937,
+   "by_band": {
+    "1.5-3 m": {
+     "up": 8,
+     "n": 9,
+     "mean_rise": 0.1453871809967816
+    },
+    "<1.5 m": {
+     "up": 1,
+     "n": 4,
+     "mean_rise": 0.026783990620091493
+    }
+   },
+   "bin_diffs": {
+    "45": {
+     "mean": 0.11907382625083578,
+     "sd": 0.2573804570937567,
+     "n": 15
+    },
+    "90": {
+     "mean": 0.06305927781642022,
+     "sd": 0.23639862943212123,
+     "n": 10
+    },
+    "135": {
+     "mean": 0.16814732306831567,
+     "sd": 0.18930704051943567,
+     "n": 14
+    }
+   }
+  }
+ },
+ "survival": {
+  "weak fricative": {
+   "facing": [
+    0.875,
+    64
+   ],
+   "mid": [
+    0.5,
+    20
+   ],
+   "turned": [
+    0.5714285714285714,
+    42
+   ],
+   "takes_below": [
+    6,
+    9
+   ]
+  },
+  "strong fricative": {
+   "facing": [
+    0.9404761904761905,
+    84
+   ],
+   "mid": [
+    0.8571428571428571,
+    28
+   ],
+   "turned": [
+    0.734375,
+    64
+   ],
+   "takes_below": [
+    6,
+    9
+   ]
+  },
+  "stop": {
+   "facing": [
+    0.8953488372093024,
+    172
+   ],
+   "mid": [
+    0.8024691358024691,
+    81
+   ],
+   "turned": [
+    0.6697247706422018,
+    109
+   ],
+   "takes_below": [
+    7,
+    12
+   ]
+  },
+  "nasal": {
+   "facing": [
+    0.9782608695652174,
+    92
+   ],
+   "mid": [
+    0.8780487804878049,
+    41
+   ],
+   "turned": [
+    0.7605633802816901,
+    71
+   ],
+   "takes_below": [
+    6,
+    12
+   ]
+  },
+  "vowel": {
+   "facing": [
+    0.8695652173913043,
+    322
+   ],
+   "mid": [
+    0.7669172932330827,
+    133
+   ],
+   "turned": [
+    0.5972850678733032,
+    221
+   ],
+   "takes_below": [
+    11,
+    12
+   ]
+  }
+ },
+ "step2": {
+  "blur_added": {
+   "slopes": [
+    {
+     "take": "dev_task3_rec2/talker2",
+     "slope": 0.44445600548341585,
+     "n": 3,
+     "lo": 1.129111111111111,
+     "hi": 2.056
+    },
+    {
+     "take": "eval_task3_rec2/talker1",
+     "slope": -0.09146135927990236,
+     "n": 4,
+     "lo": 1.3466428571428573,
+     "hi": 2.2244705882352944
+    },
+    {
+     "take": "eval_task3_rec3/talker4",
+     "slope": 0.3519874923223576,
+     "n": 3,
+     "lo": 1.7126428571428571,
+     "hi": 2.5126875
+    },
+    {
+     "take": "eval_task3_rec4/talker4",
+     "slope": 0.16459732088267354,
+     "n": 3,
+     "lo": 1.5184090909090906,
+     "hi": 1.9765
+    },
+    {
+     "take": "eval_task3_rec5/talker5",
+     "slope": 0.5469620201309019,
+     "n": 3,
+     "lo": 0.9149,
+     "hi": 2.057611111111111
+    },
+    {
+     "take": "eval_task4_rec2/talker1",
+     "slope": 0.2751570669968304,
+     "n": 4,
+     "lo": 1.0364074074074074,
+     "hi": 1.5420416666666668
+    },
+    {
+     "take": "eval_task4_rec2/talker2",
+     "slope": 0.17522977010864785,
+     "n": 4,
+     "lo": 0.9023214285714285,
+     "hi": 2.2568
+    }
+   ],
+   "within_slope": 0.26561105685211855,
+   "n": 30,
+   "p_perm": 0.008995502248875561
+  },
+  "per": {
+   "slopes": [
+    {
+     "take": "dev_task3_rec2/talker2",
+     "slope": 0.34189187151823175,
+     "n": 3,
+     "lo": 1.129111111111111,
+     "hi": 2.056
+    },
+    {
+     "take": "eval_task3_rec2/talker1",
+     "slope": -0.28549566323300013,
+     "n": 4,
+     "lo": 1.3466428571428573,
+     "hi": 2.2244705882352944
+    },
+    {
+     "take": "eval_task3_rec3/talker4",
+     "slope": 0.05915430251578161,
+     "n": 3,
+     "lo": 1.7126428571428571,
+     "hi": 2.5126875
+    },
+    {
+     "take": "eval_task3_rec4/talker4",
+     "slope": -0.05607160010119457,
+     "n": 3,
+     "lo": 1.5184090909090906,
+     "hi": 1.9765
+    },
+    {
+     "take": "eval_task3_rec5/talker5",
+     "slope": 0.34147978719612965,
+     "n": 3,
+     "lo": 0.9149,
+     "hi": 2.057611111111111
+    },
+    {
+     "take": "eval_task4_rec2/talker1",
+     "slope": 0.3635364395440122,
+     "n": 4,
+     "lo": 1.0364074074074074,
+     "hi": 1.5420416666666668
+    },
+    {
+     "take": "eval_task4_rec2/talker2",
+     "slope": 0.10769772100952879,
+     "n": 4,
+     "lo": 0.9023214285714285,
+     "hi": 2.2568
+    }
+   ],
+   "within_slope": 0.13316210975862275,
+   "n": 30,
+   "p_perm": 0.04597701149425287
+  }
+ },
+ "step3": {
+  "blur_added": {
+   "as is": {
+    "n": 108,
+    "r2_facing": 0.17350601636810592,
+    "r2_distance": 0.05476029198338117,
+    "r2_both": 0.2119638654415028,
+    "r2_interaction": 0.22098376940533537,
+    "per_180deg": 0.7847670956348174,
+    "per_doubling": 0.27086545560139724,
+    "intercept": -0.13361517183800234
+   },
+   "within take": {
+    "n": 99,
+    "r2_facing": 0.21926407458420194,
+    "r2_distance": 0.14926228773965344,
+    "r2_both": 0.3288023778531013,
+    "r2_interaction": 0.3160759531850531,
+    "per_180deg": 0.7365574926425842,
+    "per_doubling": 0.3818143477379572,
+    "intercept": -1.009984346656475e-17
+   }
+  },
+  "per": {
+   "as is": {
+    "n": 108,
+    "r2_facing": 0.13627326100310466,
+    "r2_distance": 0.052867722332000544,
+    "r2_both": 0.1779726101626291,
+    "r2_interaction": 0.1813751020929938,
+    "per_180deg": 0.3281023138852998,
+    "per_doubling": 0.12157369723660891,
+    "intercept": 0.027431536432238446
+   },
+   "within take": {
+    "n": 99,
+    "r2_facing": 0.14891284614074463,
+    "r2_distance": 0.12847987997561927,
+    "r2_both": 0.2565406119173699,
+    "r2_interaction": 0.2412984173788818,
+    "per_180deg": 0.29413594042791874,
+    "per_doubling": 0.17111997165566478,
+    "intercept": -4.711363958765437e-18
+   }
+  }
+ },
+ "misfit_pieces": [
+  {
+   "take": "eval_task4_rec3/talker5",
+   "t0": 56.072,
+   "t1": 57.131,
+   "facing": 158.96363636363637,
+   "dist": 2.001181818181818,
+   "resid_sd": 3.324360211343865,
+   "close_blur": 1.2387172837045546,
+   "far_blur": 3.531467984814563,
+   "per": 0.8888888888888888,
+   "level_added": -5.966892940754079
+  },
+  {
+   "take": "dev_task4_rec2/talker5",
+   "t0": 44.716,
+   "t1": 45.65,
+   "facing": 90.06,
+   "dist": 2.0457,
+   "resid_sd": 2.7928455109091845,
+   "close_blur": 0.5868569871465523,
+   "far_blur": 2.354012017736741,
+   "per": 0.8571428571428571,
+   "level_added": -9.379429965018225
+  },
+  {
+   "take": "eval_task4_rec2/talker1",
+   "t0": 7.159,
+   "t1": 8.95,
+   "facing": 84.21666666666667,
+   "dist": 2.1780555555555554,
+   "resid_sd": 2.674823622371664,
+   "close_blur": 0.7973020402303052,
+   "far_blur": 2.5115681135357786,
+   "per": 0.6666666666666666,
+   "level_added": -5.353724146605103
+  },
+  {
+   "take": "dev_task3_rec2/talker2",
+   "t0": 9.441,
+   "t1": 10.95,
+   "facing": 164.76875,
+   "dist": 1.82475,
+   "resid_sd": 2.135960274512813,
+   "close_blur": 0.5880664712621185,
+   "far_blur": 2.347342981990739,
+   "per": 0.75,
+   "level_added": 2.1568935295866893
+  },
+  {
+   "take": "eval_task4_rec2/talker2",
+   "t0": 44.747,
+   "t1": 46.25,
+   "facing": 47.743750000000006,
+   "dist": 2.762125,
+   "resid_sd": 2.1241559690568734,
+   "close_blur": 0.9451213669596834,
+   "far_blur": 2.3509973103975867,
+   "per": 0.7647058823529411,
+   "level_added": -16.580790429979146
+  },
+  {
+   "take": "eval_task3_rec3/talker4",
+   "t0": 11.35,
+   "t1": 12.234,
+   "facing": 56.233333333333334,
+   "dist": 2.580222222222222,
+   "resid_sd": -2.0421644120819757,
+   "close_blur": 1.4038453918847917,
+   "far_blur": 0.9875601364473617,
+   "per": 0.3333333333333333,
+   "level_added": -1.3186886272631995
+  },
+  {
+   "take": "eval_task4_rec2/talker2",
+   "t0": 16.873,
+   "t1": 17.75,
+   "facing": 80.62222222222222,
+   "dist": 1.7126666666666666,
+   "resid_sd": 2.011415132299778,
+   "close_blur": 0.8094905516343889,
+   "far_blur": 2.1223506560982712,
+   "per": 0.6153846153846154,
+   "level_added": -15.88968754619701
+  },
+  {
+   "take": "dev_task3_rec1/talker5",
+   "t0": 6.897,
+   "t1": 8.75,
+   "facing": 105.30526315789474,
+   "dist": 1.423157894736842,
+   "resid_sd": 2.0032377315741217,
+   "close_blur": 0.837507742416344,
+   "far_blur": 2.1820232275458826,
+   "per": 0.7727272727272727,
+   "level_added": -2.7105878765896207
+  }
+ ],
+ "lag_check": {
+  "stretches": 101,
+  "mean_ms": 10.394890796619555,
+  "within_8_11_ms": 0.7128712871287128
+ }
+}
