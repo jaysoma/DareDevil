@@ -13,5 +13,6 @@
  "phone": "Samsung Galaxy Z Flip4, unfolded flat",
  "capsules": "top and bottom microphones, 157 mm apart (the pair ODAS reads)",
  "channel_order": "which capsule is the left channel varies by tape (top mostly left) -- see truth_inputs/poses.json mirror",
- "note": "metadata only; the audio stays on the recording machine at the path in file"
+ "note": "the audio is in this repo at in_repo: the same bytes as file, by the sha256 above",
+ "in_repo": "tapes/walk-125621/walk-125621.raw"
 }

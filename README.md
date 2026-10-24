@@ -9,7 +9,7 @@ its landmarks, where the phone sat, what he said and when, and what ODAS heard. 
 - `tapes/<tape>/transcript.json` -- the Whisper decode (distil-large-v3), segments with times: the words the Truth page shows.
 - `tapes/<tape>/odas.json` -- ODAS over the whole tape (today's geonar_odas.exe, the phone pipeline's settings: 157 mm
   baseline, 8 pots, 8 tracks, theta-inactive 0.60). No stops and no truth went into it.
-- `tapes/<tape>/audio-input.json` -- the audio's format, length and sha256. The audio itself is not in this repo.
+- `tapes/<tape>/audio-input.json` -- the audio's format, length and sha256. The audio of ten rotation walks is in the repo too, beside their metadata (`in_repo` names the file); the rest stays on the recording machine.
 
 `agent_task_truth_recovery.md` -- the brief for the agent that re-marks positions from these files.
 

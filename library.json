@@ -40,7 +40,8 @@
    "files": [
     "tapes/walk-030615/transcript.json",
     "tapes/walk-030615/odas.json",
-    "tapes/walk-030615/audio-input.json"
+    "tapes/walk-030615/audio-input.json",
+    "tapes/walk-030615/walk-030615.wav"
    ],
    "experiment": "talking",
    "held_voice_s": 0
@@ -92,7 +93,8 @@
    "files": [
     "tapes/walk-122038/transcript.json",
     "tapes/walk-122038/odas.json",
-    "tapes/walk-122038/audio-input.json"
+    "tapes/walk-122038/audio-input.json",
+    "tapes/walk-122038/walk-122038.raw"
    ],
    "experiment": "talking",
    "held_voice_s": 0
@@ -106,7 +108,8 @@
    "files": [
     "tapes/walk-125621/transcript.json",
     "tapes/walk-125621/odas.json",
-    "tapes/walk-125621/audio-input.json"
+    "tapes/walk-125621/audio-input.json",
+    "tapes/walk-125621/walk-125621.raw"
    ],
    "experiment": "talking",
    "held_voice_s": 0
@@ -231,7 +234,8 @@
    "files": [
     "tapes/walk-171645/transcript.json",
     "tapes/walk-171645/odas.json",
-    "tapes/walk-171645/audio-input.json"
+    "tapes/walk-171645/audio-input.json",
+    "tapes/walk-171645/walk-171645.raw"
    ],
    "experiment": "talking",
    "held_voice_s": 0
@@ -447,7 +451,8 @@
    "files": [
     "tapes/walk-213304/transcript.json",
     "tapes/walk-213304/odas.json",
-    "tapes/walk-213304/audio-input.json"
+    "tapes/walk-213304/audio-input.json",
+    "tapes/walk-213304/walk-213304.raw"
    ],
    "experiment": "held vowel",
    "held_voice_s": 76.9,
@@ -487,7 +492,8 @@
    "files": [
     "tapes/walk-215800/transcript.json",
     "tapes/walk-215800/odas.json",
-    "tapes/walk-215800/audio-input.json"
+    "tapes/walk-215800/audio-input.json",
+    "tapes/walk-215800/walk-215800.raw"
    ],
    "experiment": "talking",
    "held_voice_s": 1.6
@@ -501,7 +507,8 @@
    "files": [
     "tapes/walk-221126/transcript.json",
     "tapes/walk-221126/odas.json",
-    "tapes/walk-221126/audio-input.json"
+    "tapes/walk-221126/audio-input.json",
+    "tapes/walk-221126/walk-221126.wav"
    ],
    "experiment": "talking",
    "held_voice_s": 0
@@ -531,7 +538,8 @@
    "files": [
     "tapes/walk-224302/transcript.json",
     "tapes/walk-224302/odas.json",
-    "tapes/walk-224302/audio-input.json"
+    "tapes/walk-224302/audio-input.json",
+    "tapes/walk-224302/walk-224302.raw"
    ],
    "experiment": "talking",
    "held_voice_s": 0
@@ -584,7 +592,8 @@
    "files": [
     "tapes/walk-231705/transcript.json",
     "tapes/walk-231705/odas.json",
-    "tapes/walk-231705/audio-input.json"
+    "tapes/walk-231705/audio-input.json",
+    "tapes/walk-231705/walk-231705.raw"
    ],
    "experiment": "same phrase",
    "held_voice_s": 1.9,
@@ -600,7 +609,8 @@
    "files": [
     "tapes/walk-231921/transcript.json",
     "tapes/walk-231921/odas.json",
-    "tapes/walk-231921/audio-input.json"
+    "tapes/walk-231921/audio-input.json",
+    "tapes/walk-231921/walk-231921.raw"
    ],
    "experiment": "same phrase",
    "held_voice_s": 1.6,
@@ -652,5 +662,5 @@
    "room": "bedroom office"
   }
  ],
- "updated": "2026-10-24T00:57:52.684Z"
+ "updated": "2026-10-24T01:54:19.865Z"
 }
