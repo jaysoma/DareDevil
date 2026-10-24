@@ -1,0 +1,17 @@
+{
+ "name": "walk-140956",
+ "recorded": "2026-09-20T14:09:56-05:00",
+ "file": "Dictate/captures/geonar/tapes/walk-140956.raw",
+ "format": "raw PCM, no header: signed 16-bit little-endian, 2 channels interleaved",
+ "sample_rate": 48000,
+ "channels": 2,
+ "bits": 16,
+ "frames": 5337216,
+ "duration_s": 111.192,
+ "bytes": 21348864,
+ "sha256": "4b26881c3342699a7ab8fd6332161f9f5e8b777d3294774ab722e6c908964256",
+ "phone": "Samsung Galaxy Z Flip4, unfolded flat",
+ "capsules": "top and bottom microphones, 157 mm apart (the pair ODAS reads)",
+ "channel_order": "which capsule is the left channel varies by tape (top mostly left) -- see truth_inputs/poses.json mirror",
+ "note": "metadata only; the audio stays on the recording machine at the path in file"
+}

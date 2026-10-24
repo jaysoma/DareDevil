@@ -477,6 +477,41 @@
    "mirror": null,
    "status": "no pose: this walk has no truth file, so the phone's place, facing and capsule order were never marked",
    "source_file": null
+  },
+  "walk-020305": {
+   "phone": null,
+   "phone_h_m": null,
+   "mirror": null,
+   "status": "no pose: this walk has no truth file, so the phone's place, facing and capsule order were never marked",
+   "source_file": null
+  },
+  "walk-140956": {
+   "phone": null,
+   "phone_h_m": null,
+   "mirror": null,
+   "status": "no pose: this walk has no truth file, so the phone's place, facing and capsule order were never marked",
+   "source_file": null
+  },
+  "walk-171542": {
+   "phone": null,
+   "phone_h_m": null,
+   "mirror": null,
+   "status": "no pose: this walk has no truth file, so the phone's place, facing and capsule order were never marked",
+   "source_file": null
+  },
+  "walk-234212": {
+   "phone": null,
+   "phone_h_m": null,
+   "mirror": null,
+   "status": "no pose: this walk has no truth file, so the phone's place, facing and capsule order were never marked",
+   "source_file": null
+  },
+  "walk-234455": {
+   "phone": null,
+   "phone_h_m": null,
+   "mirror": null,
+   "status": "no pose: this walk has no truth file, so the phone's place, facing and capsule order were never marked",
+   "source_file": null
   }
  }
 }

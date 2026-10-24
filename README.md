@@ -23,3 +23,10 @@ Every walk whose decode has Jay rotating (rotate, clockwise, 90, facing away), f
 2026-10-23, is `rotation: true` in library.json. The ones added that day have no truth files, so their poses are null
 and say so; `room` is the room tape_index read off the decode, where it caught one (the bedroom office is not on this
 map). A folded walk (`folded_deg`) had its ODAS run on the folded chord instead of 157 mm.
+
+Each rotation walk carries `experiment`, what Jay does as he turns: `talking`, `same phrase` (one sentence or text over
+and over: "there's 6 fresh beers in the fridge", the Second Amendment), `consonants`, `held vowel`, or `walking, facing
+away`. They are read off the decode, except held vowels: Whisper writes nothing for a sustained vowel, so those come from
+the sound. `held_voice_s` is the seconds of voice that hold one steady pitch for 1.5 s or more (50 ms frames, the lag of
+the autocorrelation peak within 8% of its median, the frames voiced against the tape's own level range); talking rarely
+gets past a second or two, walk-213304 has 77 s.

@@ -15,6 +15,22 @@
    ]
   },
   {
+   "name": "walk-020305",
+   "recorded": "2026-09-18T02:03:05-05:00",
+   "recorded_note": "not in tape_index: the day is its tape file's",
+   "duration_s": 142.073,
+   "rotation": true,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-020305/transcript.json",
+    "tapes/walk-020305/odas.json",
+    "tapes/walk-020305/audio-input.json"
+   ],
+   "experiment": "talking",
+   "held_voice_s": 0,
+   "note": "a much smaller, carpeted room (as the decode describes it)"
+  },
+  {
    "name": "walk-030615",
    "recorded": "2026-10-10T03:06:15-05:00",
    "recorded_note": "no date in tape_index: the day is its tape file's",
@@ -25,7 +41,9 @@
     "tapes/walk-030615/transcript.json",
     "tapes/walk-030615/odas.json",
     "tapes/walk-030615/audio-input.json"
-   ]
+   ],
+   "experiment": "talking",
+   "held_voice_s": 0
   },
   {
    "name": "walk-044350",
@@ -37,7 +55,9 @@
     "tapes/walk-044350/transcript.json",
     "tapes/walk-044350/odas.json",
     "tapes/walk-044350/audio-input.json"
-   ]
+   ],
+   "experiment": "talking",
+   "held_voice_s": 0
   },
   {
    "name": "walk-111830",
@@ -73,7 +93,9 @@
     "tapes/walk-122038/transcript.json",
     "tapes/walk-122038/odas.json",
     "tapes/walk-122038/audio-input.json"
-   ]
+   ],
+   "experiment": "talking",
+   "held_voice_s": 0
   },
   {
    "name": "walk-125621",
@@ -85,7 +107,25 @@
     "tapes/walk-125621/transcript.json",
     "tapes/walk-125621/odas.json",
     "tapes/walk-125621/audio-input.json"
-   ]
+   ],
+   "experiment": "talking",
+   "held_voice_s": 0
+  },
+  {
+   "name": "walk-140956",
+   "recorded": "2026-09-20T14:09:56-05:00",
+   "recorded_note": "not in tape_index: the day is its tape file's",
+   "duration_s": 111.192,
+   "rotation": true,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-140956/transcript.json",
+    "tapes/walk-140956/odas.json",
+    "tapes/walk-140956/audio-input.json"
+   ],
+   "experiment": "same phrase",
+   "held_voice_s": 0,
+   "note": "reads the same text (the Second Amendment) as he turns"
   },
   {
    "name": "walk-154655",
@@ -122,7 +162,9 @@
     "tapes/walk-160546/transcript.json",
     "tapes/walk-160546/odas.json",
     "tapes/walk-160546/audio-input.json"
-   ]
+   ],
+   "experiment": "talking",
+   "held_voice_s": 0
   },
   {
    "name": "walk-161331",
@@ -136,7 +178,9 @@
     "tapes/walk-161331/transcript.json",
     "tapes/walk-161331/odas.json",
     "tapes/walk-161331/audio-input.json"
-   ]
+   ],
+   "experiment": "talking",
+   "held_voice_s": 1.8
   },
   {
    "name": "walk-165255",
@@ -163,6 +207,22 @@
    ]
   },
   {
+   "name": "walk-171542",
+   "recorded": "2026-09-18T17:15:42-05:00",
+   "recorded_note": "not in tape_index: the day is its tape file's",
+   "duration_s": 78.287,
+   "rotation": true,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-171542/transcript.json",
+    "tapes/walk-171542/odas.json",
+    "tapes/walk-171542/audio-input.json"
+   ],
+   "experiment": "talking",
+   "held_voice_s": 0,
+   "note": "\"I'm talking while rotating\""
+  },
+  {
    "name": "walk-171645",
    "recorded": "2026-09-15T17:16:45-05:00",
    "duration_s": 148.04,
@@ -172,7 +232,9 @@
     "tapes/walk-171645/transcript.json",
     "tapes/walk-171645/odas.json",
     "tapes/walk-171645/audio-input.json"
-   ]
+   ],
+   "experiment": "talking",
+   "held_voice_s": 0
   },
   {
    "name": "walk-171930",
@@ -184,7 +246,9 @@
     "tapes/walk-171930/transcript.json",
     "tapes/walk-171930/odas.json",
     "tapes/walk-171930/audio-input.json"
-   ]
+   ],
+   "experiment": "talking",
+   "held_voice_s": 4.2
   },
   {
    "name": "walk-172045",
@@ -197,7 +261,9 @@
     "tapes/walk-172045/transcript.json",
     "tapes/walk-172045/odas.json",
     "tapes/walk-172045/audio-input.json"
-   ]
+   ],
+   "experiment": "talking",
+   "held_voice_s": 1.8
   },
   {
    "name": "walk-180036",
@@ -330,7 +396,9 @@
     "tapes/walk-211436/transcript.json",
     "tapes/walk-211436/odas.json",
     "tapes/walk-211436/audio-input.json"
-   ]
+   ],
+   "experiment": "talking",
+   "held_voice_s": 0
   },
   {
    "name": "walk-211959",
@@ -380,7 +448,10 @@
     "tapes/walk-213304/transcript.json",
     "tapes/walk-213304/odas.json",
     "tapes/walk-213304/audio-input.json"
-   ]
+   ],
+   "experiment": "held vowel",
+   "held_voice_s": 76.9,
+   "note": "held vowels, from the sound rather than the decode: 36 stretches of one steady pitch, 77 s in all, between the distance calls"
   },
   {
    "name": "walk-214241",
@@ -417,7 +488,9 @@
     "tapes/walk-215800/transcript.json",
     "tapes/walk-215800/odas.json",
     "tapes/walk-215800/audio-input.json"
-   ]
+   ],
+   "experiment": "talking",
+   "held_voice_s": 1.6
   },
   {
    "name": "walk-221126",
@@ -429,20 +502,24 @@
     "tapes/walk-221126/transcript.json",
     "tapes/walk-221126/odas.json",
     "tapes/walk-221126/audio-input.json"
-   ]
+   ],
+   "experiment": "talking",
+   "held_voice_s": 0
   },
   {
    "name": "walk-223157",
    "recorded": "2026-09-21T22:31:57-05:00",
    "duration_s": 165.08,
-   "rotation": false,
-   "note": "decode garbled (\"wind road clock\" may be \"rotate clockwise\")",
+   "rotation": true,
+   "note": "says consonants as he turns; the decode garbles them (\"POP-T-T-T-T\", \"F... F...\") and \"rotate clockwise\" (\"wind road clock\")",
    "decode_model": "distil-large-v3",
    "files": [
     "tapes/walk-223157/transcript.json",
     "tapes/walk-223157/odas.json",
     "tapes/walk-223157/audio-input.json"
-   ]
+   ],
+   "experiment": "consonants",
+   "held_voice_s": 1.9
   },
   {
    "name": "walk-224302",
@@ -455,7 +532,9 @@
     "tapes/walk-224302/transcript.json",
     "tapes/walk-224302/odas.json",
     "tapes/walk-224302/audio-input.json"
-   ]
+   ],
+   "experiment": "talking",
+   "held_voice_s": 0
   },
   {
    "name": "walk-224459",
@@ -467,7 +546,9 @@
     "tapes/walk-224459/transcript.json",
     "tapes/walk-224459/odas.json",
     "tapes/walk-224459/audio-input.json"
-   ]
+   ],
+   "experiment": "talking",
+   "held_voice_s": 0
   },
   {
    "name": "walk-225729",
@@ -504,7 +585,10 @@
     "tapes/walk-231705/transcript.json",
     "tapes/walk-231705/odas.json",
     "tapes/walk-231705/audio-input.json"
-   ]
+   ],
+   "experiment": "same phrase",
+   "held_voice_s": 1.9,
+   "note": "repeats \"there's 6 fresh beers in the fridge\" as he turns"
   },
   {
    "name": "walk-231921",
@@ -517,7 +601,10 @@
     "tapes/walk-231921/transcript.json",
     "tapes/walk-231921/odas.json",
     "tapes/walk-231921/audio-input.json"
-   ]
+   ],
+   "experiment": "same phrase",
+   "held_voice_s": 1.6,
+   "note": "repeats \"there's 6 fresh beers in the fridge\" as he turns"
   },
   {
    "name": "walk-233828",
@@ -531,7 +618,39 @@
     "tapes/walk-233828/odas.json",
     "tapes/walk-233828/audio-input.json"
    ]
+  },
+  {
+   "name": "walk-234212",
+   "recorded": "2026-09-18T23:42:12-05:00",
+   "recorded_note": "not in tape_index: the day is its tape file's",
+   "duration_s": 83.704,
+   "rotation": true,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-234212/transcript.json",
+    "tapes/walk-234212/odas.json",
+    "tapes/walk-234212/audio-input.json"
+   ],
+   "experiment": "walking, facing away",
+   "held_voice_s": 0,
+   "note": "walks away from the phone facing away from it, then turns around to face it"
+  },
+  {
+   "name": "walk-234455",
+   "recorded": "2026-09-18T23:44:55-05:00",
+   "recorded_note": "not in tape_index: the day is its tape file's",
+   "duration_s": 64.146,
+   "rotation": true,
+   "decode_model": "distil-large-v3",
+   "files": [
+    "tapes/walk-234455/transcript.json",
+    "tapes/walk-234455/odas.json",
+    "tapes/walk-234455/audio-input.json"
+   ],
+   "experiment": "talking",
+   "held_voice_s": 0,
+   "room": "bedroom office"
   }
  ],
- "updated": "2026-10-24T00:27:05.643Z"
+ "updated": "2026-10-24T00:57:52.684Z"
 }

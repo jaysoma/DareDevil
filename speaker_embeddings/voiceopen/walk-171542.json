@@ -1,0 +1,54 @@
+{
+ "enrol_s": 6.73,
+ "enrol_utts": [
+  0
+ ],
+ "enrol_min_s": 5.0,
+ "model": "campplus_zh_en_advanced.onnx",
+ "min_score_s": 0.4,
+ "spans_from": "siri_gate",
+ "utts": [
+  {
+   "oi": 0,
+   "t": 3.812,
+   "dur": 6.726,
+   "cos": 1.0,
+   "enrolled": true
+  },
+  {
+   "oi": 1,
+   "t": 13.502,
+   "dur": 12.578,
+   "cos": 0.5309,
+   "enrolled": false
+  },
+  {
+   "oi": 2,
+   "t": 27.949,
+   "dur": 4.649,
+   "cos": 0.4325,
+   "enrolled": false
+  },
+  {
+   "oi": 3,
+   "t": 34.854,
+   "dur": 8.772,
+   "cos": 0.3932,
+   "enrolled": false
+  },
+  {
+   "oi": 4,
+   "t": 45.035,
+   "dur": 12.134,
+   "cos": 0.4914,
+   "enrolled": false
+  },
+  {
+   "oi": 5,
+   "t": 58.417,
+   "dur": 15.33,
+   "cos": 0.433,
+   "enrolled": false
+  }
+ ]
+}

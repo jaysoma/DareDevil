@@ -6,7 +6,8 @@ What CAM++ and TitaNet produced on Jay's walks, copied from `Dictate/captures/ge
 |---|---|
 | `voiceprint-jay-campplus.json` | Jay's CAM++ voiceprint: a 192-value centroid built from windows across 35 tapes, with how tightly the windows sit around it (median, p10 and p90 cosine). |
 | `voiceprints-jay-20260928.json` | Seven 192-value embeddings of Jay saying "hey Siri". The file does not name the model. |
-| `voiceopen/<walk>.json` | CAM++, from `geonar/voiceopen.py`: each tape enrols on its own opening, and every utterance gets a cosine score against that enrolment. Scores only, no vectors. |
+| `voiceopen/<walk>.json` | CAM++, from `geonar/voiceopen.py`: each tape enrols on its own opening, and every utterance gets a cosine score against that enrolment. Scores only, no vectors. The 18 rotation walks added 2026-10-23 had no fixtures, so their utterances are the phone's own gate record (each open edge to the next close), and their files say `"spans_from": "siri_gate"`. walk-140956 is missing: Jay reads one text straight through, so its gate opens once and there is no second utterance to score against the first. |
+| `campplus_zh_en_advanced.onnx` | The CAM++ model every CAM++ file here came from (28 MB, from `Whisper/models/diarize/`), run through sherpa-onnx's speaker-embedding extractor at 16 kHz. |
 | `titanet/walk-125621.npz` | TitaNet, from `geonar/titanet_emb.py`: embeddings for 25 utterances of the 360° rotation walk, as `emb` (25 × 192), `t`, `dur` and `oi`. |
 | `campplus_rttm/<walk>.campplus.rttm` | CAM++ speaker turns for five walks. |
 

@@ -1,0 +1,83 @@
+{
+ "name": "walk-020305",
+ "source": "Dictate/captures/geonar/walk-020305-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "duration_s": 142.07,
+ "segments": [
+  {
+   "t0": 1.56,
+   "t1": 10.3,
+   "text": "one meter facing directly the center of the phone this is a much smaller room and also it's"
+  },
+  {
+   "t0": 10.3,
+   "t1": 18.24,
+   "text": "carpet versus the main room which is hardwood and a lot bigger and a lot more echoey so the"
+  },
+  {
+   "t0": 18.24,
+   "t1": 28.9,
+   "text": "acoustics are going to be completely different two meters front of the phone facing front of the phone"
+  },
+  {
+   "t0": 30,
+   "t1": 35.56,
+   "text": "once again this is going to be a completely different acoustical environment not just"
+  },
+  {
+   "t0": 35.56,
+   "t1": 43.2,
+   "text": "because the carpet because there is a large bed which is a big you know it's a big like"
+  },
+  {
+   "t0": 43.2,
+   "t1": 52.52,
+   "text": "acoustic sink with sheets blankets pillows pillows also lots of pillows on the bed"
+  },
+  {
+   "t0": 54.02,
+   "t1": 59.98,
+   "text": "front of phone 3.5 meters so basically my range has varied my"
+  },
+  {
+   "t0": 60,
+   "t1": 63.72,
+   "text": "My bearing is exactly the same, which is dead center of the phone."
+  },
+  {
+   "t0": 64.14,
+   "t1": 74.5,
+   "text": "3.5 meters, facing the phone, same bearing, and right dead center of the phone in the same room,"
+  },
+  {
+   "t0": 74.76,
+   "t1": 76.68,
+   "text": "since we're trying to figure out range."
+  },
+  {
+   "t0": 83.8,
+   "t1": 89.94,
+   "text": "This is as far as I can get because the room is actually not that big, so I may be a little"
+  },
+  {
+   "t0": 90,
+   "t1": 119.48,
+   "text": "over three meters now the center of the phone i'm right at as far as i can get to the back of the room which is like i don't know 3.3 meters i guess now two meters from the phone dead center i'm going to do a rotation i'm going to talk while i rotate clockwise i'm sure it's going to sound"
+  },
+  {
+   "t0": 119.48,
+   "t1": 125.72,
+   "text": "different because this room is a lot more different now dead center"
+  },
+  {
+   "t0": 128.36,
+   "t1": 131.26,
+   "text": "counterclockwise there's a lot of cloth there's a lot of"
+  },
+  {
+   "t0": 131.26,
+   "t1": 138.06,
+   "text": "of tapestries on the wall which is going to just soak in all sound now dead center"
+  }
+ ]
+}
