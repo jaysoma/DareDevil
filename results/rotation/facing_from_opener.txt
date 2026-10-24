@@ -1,0 +1,4 @@
+9 walks; each stop against the walk's first facing-phone stop; threshold left out by walk
+facing the phone, called toward: 2 of 6
+turned (90-180), called turned: 24 of 27
+balanced accuracy 61% (chance 50%)

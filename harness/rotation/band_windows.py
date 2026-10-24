@@ -96,7 +96,7 @@ def main():
             print(w, 'no audio at', raw); continue
         x = np.fromfile(raw, dtype='<i2').reshape(-1, 2).astype(np.float32) / 32768.0
         folded = lib.get(w, {}).get('folded_deg')
-        baseline = 0.157 if not folded else 2 * 0.0785 * np.sin(np.radians(180 - folded) / 2)
+        baseline = 0.157 if not folded else 0.157 * np.sin(np.radians(folded) / 2)   # folded_deg is the hinge opening, 180 = flat (fold.json)
         t0, D, R, P, N = band_windows(x, baseline)
         doc = {'walk': w, 'baseline_m': round(float(baseline), 4), 'win_s': WIN_S, 'hops': N.tolist(),
                'bands': [{'name': b, 'lo_hz': lo, 'hi_hz': hi, 'floored': fl} for b, lo, hi, fl in BANDS],

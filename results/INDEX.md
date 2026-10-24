@@ -66,3 +66,6 @@ A separate thread from the corpora above. `addressee_findings.md` collects it fo
 | Words against facing (AMI) | words 60.2%, facing 56.7%, both 64.4% (always "the group" 57.9%); facing adds about 10 points to naming which person | `linguistic/ami/report.md` s3 | `linguistic/ami/addressee.json` |
 | Instructions in a stream | Jay's shape-and-contrast finds 89% at 1 false accept per hour (keywords 9%); the same request said to a person passes 83% | `device_directed/report.md` | `device_directed/summary.json`, `device_directed/curves.png` |
 | Pending | brief 22 (real requests to people in context), brief 19's small general model | | |
+
+## Jay's rotation walks
+- `results/rotation/facing_pooled.md`: pooled over a stop, the CDR's 4-8 minus 0.1-1.1 kHz contrast reads lower turned away at 9 of 9 spots (−3.1 dB) and to the side at 15 of 16 (−2.1 dB). Against a single opener stop, 61alanced.
