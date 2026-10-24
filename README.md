@@ -16,3 +16,10 @@ its landmarks, where the phone sat, what he said and when, and what ODAS heard. 
 Not included: marked positions (the old stops were paired with silence-separated bursts, which merges positions that are
 named without a 3 s pause), and the radio-broadcast walk (walk-153448). Positions are meant to be re-marked from the
 transcripts' words against `truth_inputs`.
+
+## Rotation walks
+
+Every walk whose decode has Jay rotating (rotate, clockwise, 90, facing away), found by grepping the transcripts on
+2026-10-23, is `rotation: true` in library.json. The ones added that day have no truth files, so their poses are null
+and say so; `room` is the room tape_index read off the decode, where it caught one (the bedroom office is not on this
+map). A folded walk (`folded_deg`) had its ODAS run on the folded chord instead of 157 mm.

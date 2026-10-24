@@ -1,0 +1,253 @@
+{
+ "name": "walk-213304",
+ "source": "Dictate/captures/geonar/walk-213304-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "duration_s": 428.03,
+ "segments": [
+  {
+   "t0": 3.62,
+   "t1": 8.12,
+   "text": "This is about 2 meters facing the phone right in the center."
+  },
+  {
+   "t0": 20.38,
+   "t1": 23.22,
+   "text": "This is about 3 meters facing the phone right in the center."
+  },
+  {
+   "t0": 42.08,
+   "t1": 43.54,
+   "text": "This is about 5 meters."
+  },
+  {
+   "t0": 46.04,
+   "t1": 46.76,
+   "text": "Basically the phone, right?"
+  },
+  {
+   "t0": 47.04,
+   "t1": 47.1,
+   "text": "This is that?"
+  },
+  {
+   "t0": 63.4,
+   "t1": 71.5,
+   "text": "In the kitchen now, this is about 7 meters maybe more."
+  },
+  {
+   "t0": 72.3,
+   "t1": 74.64,
+   "text": "Basically the phone right dead center."
+  },
+  {
+   "t0": 78.36,
+   "t1": 79.96,
+   "text": "I'm going to walk in a side center."
+  },
+  {
+   "t0": 80.8,
+   "t1": 81.62,
+   "text": "I'm going to walk in a second."
+  },
+  {
+   "t0": 90,
+   "t1": 94.8,
+   "text": "circle now and change my orientation range will also change."
+  },
+  {
+   "t0": 99.62,
+   "t1": 102.8,
+   "text": "I now rotated 90 degrees clockwise."
+  },
+  {
+   "t0": 121.28,
+   "t1": 124.04,
+   "text": "Walking two faces forward."
+  },
+  {
+   "t0": 124.9,
+   "t1": 137.94,
+   "text": "This is talking about."
+  },
+  {
+   "t0": 141,
+   "t1": 143.78,
+   "text": "This is me talking and rotated 90 degrees."
+  },
+  {
+   "t0": 144.68,
+   "t1": 147.18,
+   "text": "Now I'm going to rotate another 90 degrees clockwise."
+  },
+  {
+   "t0": 157.56,
+   "t1": 158.32,
+   "text": "Likewise."
+  },
+  {
+   "t0": 167.4,
+   "t1": 171.18,
+   "text": "Walking forward, four pieces, three pieces, actually."
+  },
+  {
+   "t0": 172.32,
+   "t1": 174.12,
+   "text": "Now rotating in a naked crease clockwise."
+  },
+  {
+   "t0": 197.3,
+   "t1": 199,
+   "text": "Parking forward."
+  },
+  {
+   "t0": 226.32,
+   "t1": 227.1,
+   "text": "I forgot"
+  },
+  {
+   "t0": 227.1,
+   "t1": 229.66,
+   "text": "I forgot I was supposed to call out after I changed."
+  },
+  {
+   "t0": 230,
+   "t1": 230.74,
+   "text": "I have now located."
+  },
+  {
+   "t0": 231.22,
+   "t1": 232.16,
+   "text": "I need reason."
+  },
+  {
+   "t0": 232.48,
+   "t1": 235.04,
+   "text": "I'm now based the phone at about eight meters."
+  },
+  {
+   "t0": 235.04,
+   "t1": 235.3,
+   "text": "meters."
+  },
+  {
+   "t0": 250.84,
+   "t1": 253.68,
+   "text": "Walk forward, facing about 6 meters."
+  },
+  {
+   "t0": 268.82,
+   "t1": 269.74,
+   "text": "Just rotated."
+  },
+  {
+   "t0": 270.1,
+   "t1": 271.28,
+   "text": "I need to please counterclockwise."
+  },
+  {
+   "t0": 271.42,
+   "t1": 273.8,
+   "text": "This is not I called it after I rotated."
+  },
+  {
+   "t0": 288.52,
+   "t1": 288.98,
+   "text": "Rotated."
+  },
+  {
+   "t0": 289.24,
+   "t1": 290.34,
+   "text": "90 degrees kind of clockwise."
+  },
+  {
+   "t0": 290.6,
+   "t1": 291.8,
+   "text": "Now, basing away from the phone."
+  },
+  {
+   "t0": 292.08,
+   "t1": 295,
+   "text": "We're only a damp old instructions and I shouldn't call them out."
+  },
+  {
+   "t0": 295,
+   "t1": 296.22,
+   "text": "after rotation."
+  },
+  {
+   "t0": 312.3,
+   "t1": 315.14,
+   "text": "Notated, 90 degrees, counterparparalyze, down,"
+  },
+  {
+   "t0": 315.52,
+   "t1": 320.28,
+   "text": "the basic, uh, I don't know, not increase."
+  },
+  {
+   "t0": 337.4,
+   "t1": 338.76,
+   "text": "Rout 90 degrees."
+  },
+  {
+   "t0": 339.06,
+   "t1": 339.86,
+   "text": "Down, face of the phone,"
+  },
+  {
+   "t0": 340.3,
+   "t1": 341.32,
+   "text": "about 5 meters."
+  },
+  {
+   "t0": 355.8,
+   "t1": 358.54,
+   "text": "Okay, 45 degrees counterclockwise."
+  },
+  {
+   "t0": 364.38,
+   "t1": 365.24,
+   "text": "Walkwise."
+  },
+  {
+   "t0": 365.42,
+   "t1": 368,
+   "text": "Walk diagonally."
+  },
+  {
+   "t0": 372.32,
+   "t1": 373.94,
+   "text": "Walk diagonally."
+  },
+  {
+   "t0": 375.02,
+   "t1": 375.98,
+   "text": "I am now on the side."
+  },
+  {
+   "t0": 376.3,
+   "t1": 379.94,
+   "text": "Three meters of the top cap, about 3 meters from the phone."
+  },
+  {
+   "t0": 379.94,
+   "t1": 382.94,
+   "text": "about 45 degrees maybe."
+  },
+  {
+   "t0": 398.46,
+   "t1": 403.68,
+   "text": "I'm now less than 3 meters from the phone, about 45 degrees"
+  },
+  {
+   "t0": 403.68,
+   "t1": 404.34,
+   "text": "on the other side."
+  },
+  {
+   "t0": 410.66,
+   "t1": 418.78,
+   "text": "I don't know."
+  }
+ ]
+}

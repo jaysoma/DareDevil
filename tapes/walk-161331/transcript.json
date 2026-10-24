@@ -1,0 +1,64 @@
+{
+ "name": "walk-161331",
+ "source": "Dictate/captures/geonar/walk-161331-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 57,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 6.02,
+   "text": "All right, I'm going to start about two meters away from the phone."
+  },
+  {
+   "t0": 6.16,
+   "t1": 7.22,
+   "text": "I'm facing the phone directly."
+  },
+  {
+   "t0": 8.22,
+   "t1": 13.76,
+   "text": "And I'm going to rotate clockwise this time slowly while I'm talking."
+  },
+  {
+   "t0": 14.16,
+   "t1": 20.82,
+   "text": "So let's see if we can actually maybe learn something from rotation."
+  },
+  {
+   "t0": 21.38,
+   "t1": 23.28,
+   "text": "And now I'm facing the bone again."
+  },
+  {
+   "t0": 27.48,
+   "t1": 31.68,
+   "text": "Now I'm at the corner of the angle wall, facing the phone."
+  },
+  {
+   "t0": 32.1,
+   "t1": 33.32,
+   "text": "So this is the second position."
+  },
+  {
+   "t0": 37.44,
+   "t1": 40.62,
+   "text": "Now I'm at the left glass shelf unit."
+  },
+  {
+   "t0": 41.36,
+   "t1": 43.44,
+   "text": "So facing the phone, talking, facing the phone."
+  },
+  {
+   "t0": 44.94,
+   "t1": 53.26,
+   "text": "Now I'm walking in the straight line to the quarter wall, but I'm still facing the front."
+  },
+  {
+   "t0": 53.28,
+   "t1": 56,
+   "text": "about the entire time here I am at the wall."
+  }
+ ]
+}

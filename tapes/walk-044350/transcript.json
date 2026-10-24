@@ -1,0 +1,169 @@
+{
+ "name": "walk-044350",
+ "source": "Dictate/captures/geonar/walk-044350-whisper.json (geonar/whisper_tape.py) -- the decode the Truth page shows",
+ "model": "distil-large-v3",
+ "language": "en",
+ "duration_s": 131.17,
+ "segments": [
+  {
+   "t0": 0,
+   "t1": 8,
+   "text": "I'm currently standing about 2.5 meters from directly center of the phone."
+  },
+  {
+   "t0": 8,
+   "t1": 11,
+   "text": "The whole point of this is to do movement."
+  },
+  {
+   "t0": 11,
+   "t1": 20,
+   "text": "So I'm going to rotate clockwise in the same spot right now."
+  },
+  {
+   "t0": 20,
+   "t1": 23,
+   "text": "End of rotation."
+  },
+  {
+   "t0": 23,
+   "t1": 29,
+   "text": "I'm going to start rotating counterclockwise while I'm talking, which is what is happening."
+  },
+  {
+   "t0": 29,
+   "t1": 41,
+   "text": "is happening right now slowly and a rotation I'm now going to move diagonally toward the top"
+  },
+  {
+   "t0": 41,
+   "t1": 49.8,
+   "text": "mic and I'm now directly in line with the top mic about two meters away moving back to the"
+  },
+  {
+   "t0": 49.8,
+   "t1": 58.6,
+   "text": "original spot which is now I'm going to move diagonally toward the bottom mic different angle"
+  },
+  {
+   "t0": 59,
+   "t1": 62,
+   "text": "I am now right in line with the bottom mic."
+  },
+  {
+   "t0": 62,
+   "t1": 65,
+   "text": "About less than me than me away."
+  },
+  {
+   "t0": 65,
+   "t1": 67,
+   "text": "I am now going to..."
+  },
+  {
+   "t0": 67,
+   "t1": 73,
+   "text": "I'm now walking across the front face of the phone."
+  },
+  {
+   "t0": 73,
+   "t1": 78,
+   "text": "I now..."
+  },
+  {
+   "t0": 78,
+   "t1": 84,
+   "text": "Rotating one, talking clockwise,"
+  },
+  {
+   "t0": 84,
+   "t1": 87,
+   "text": "and now facing the front of my mic."
+  },
+  {
+   "t0": 87,
+   "t1": 88,
+   "text": "Walking over, over."
+  },
+  {
+   "t0": 88,
+   "t1": 92,
+   "text": "Walking over the front face of the phone."
+  },
+  {
+   "t0": 92,
+   "t1": 95,
+   "text": "Now past the bone, phone."
+  },
+  {
+   "t0": 95,
+   "t1": 97,
+   "text": "Facing, no way, no way."
+  },
+  {
+   "t0": 97,
+   "t1": 100,
+   "text": "Rotating, any, camera clockwise, eyes."
+  },
+  {
+   "t0": 100,
+   "t1": 102,
+   "text": "Facing, odd in my mic."
+  },
+  {
+   "t0": 102,
+   "t1": 106,
+   "text": "I am now rotating, 80, 90 creed, crease,"
+  },
+  {
+   "t0": 106,
+   "t1": 108,
+   "text": "camera, wise, eyes."
+  },
+  {
+   "t0": 108,
+   "t1": 111,
+   "text": "Now I'm walking away away from the phone,"
+  },
+  {
+   "t0": 111,
+   "t1": 114,
+   "text": "back to the phone, walking away, away."
+  },
+  {
+   "t0": 114,
+   "t1": 116,
+   "text": "I'm out now three meters,"
+  },
+  {
+   "t0": 116,
+   "t1": 117,
+   "text": "away from the phone to phone,"
+  },
+  {
+   "t0": 117,
+   "t1": 119,
+   "text": "the phone went a back towards to where the phone."
+  },
+  {
+   "t0": 119,
+   "t1": 124,
+   "text": "Routing in counterclockwise to face the phone."
+  },
+  {
+   "t0": 124,
+   "t1": 127,
+   "text": "Walk, walking to the phone,"
+  },
+  {
+   "t0": 127,
+   "t1": 130,
+   "text": "it's very center right right now."
+  },
+  {
+   "t0": 130,
+   "t1": 131,
+   "text": "Less than happen."
+  }
+ ]
+}
