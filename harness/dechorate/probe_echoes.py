@@ -12,7 +12,7 @@ reflective in that setting). An echo is found when a picked peak lies within 0.3
 dEchorate's loudspeakers stand 1-4 m from the arrays; on the phone the speaker is on the array, so there every echo's
 delay is simply twice the wall's distance over c.
 
-    python3 probe_echoes.py <dechorate_rir_processed.hdf5>
+    python3 probe_echoes.py <dechorate_rir_processed.hdf5> [tts|chirp] [phat]
 """
 import json
 import sys
@@ -35,7 +35,7 @@ def deconv(y, p, lam=1e-3):
     return np.fft.irfft(Y * np.conj(P) / (np.abs(P) ** 2 + lam * np.mean(np.abs(P) ** 2)), n)
 
 
-def peaks(hl, hr, sign):
+def peaks(hl, hr, sign, phat=False):
     env = np.abs(hilbert(hl)) + np.abs(hilbert(hr))
     k = np.ones(5) / 5
     env = np.convolve(env, k, 'same')
@@ -56,8 +56,9 @@ def peaks(hl, hr, sign):
     for i, a in out:
         c = lo + i
         wl, wr = hl[c - L:c + L], hr[c - L:c + L]
-        n = 4 * L * up
-        cc = np.fft.irfft(np.fft.rfft(wl, n) * np.conj(np.fft.rfft(wr, n)), n)
+        n = 4 * L                                    # zero-pad against wrap, then interpolate the lag x16
+        X = np.fft.rfft(wl * np.hanning(len(wl)), n) * np.conj(np.fft.rfft(wr * np.hanning(len(wr)), n))
+        cc = np.fft.irfft(X / (np.abs(X) + 1e-12) if phat else X, n * up)
         m = int(D / C * SR * up) + up
         cc = np.concatenate([cc[-m:], cc[:m + 1]])
         tau = (np.argmax(cc) - m) / (SR * up)
@@ -66,8 +67,15 @@ def peaks(hl, hr, sign):
     return res, t0
 
 
-def main(h5):
-    probe, sr = sf.read(REPO / 'probe/daredevil_mode_activated.wav')
+def main(h5, kind='tts', phat=False):
+    global SOS
+    if kind == 'chirp':                    # a 0.5 s log sweep, 300 Hz-20 kHz, faded in and out
+        from scipy.signal import chirp
+        t = np.arange(int(0.5 * SR)) / SR
+        probe = chirp(t, 300, t[-1], 20000, method='logarithmic') * np.hanning(len(t)) ** 0.25
+        SOS = butter(4, [300, 20000], btype='band', fs=SR, output='sos')
+    else:
+        probe, sr = sf.read(REPO / 'probe/daredevil_mode_activated.wav')
     rng = np.random.default_rng(0)
     H = h5py.File(h5, 'r')
     tot = {}
@@ -88,7 +96,7 @@ def main(h5):
                 ys.append(y + rng.standard_normal(len(y)) * np.std(y) * 10 ** (-45 / 20))
             est = [sosfiltfilt(SOS, deconv(y, probe)[:len(h)]) for y, h in zip(ys, (hl, hr))]
             tru = [sosfiltfilt(SOS, h) for h in (hl, hr)]
-            ptrue, _ = peaks(*tru, sign); pest, _ = peaks(*est, sign)
+            ptrue, _ = peaks(*tru, sign, phat); pest, _ = peaks(*est, sign, phat)
             if su['truth'].get('deg_measured') is not None:
                 d0 = su['truth']['deg_measured']
             for e in su['truth']['echoes']:
@@ -118,9 +126,9 @@ def main(h5):
     out.append(f"\npicked peaks through the announcement: {np.mean([r['n_probe'] for r in ext]):.1f} per setup, of which"
                f" {np.sum([r['matched'] for r in ext]) / np.sum([r['n_probe'] for r in ext]) * 100:.0f}% sit on a labelled first-order echo")
     txt = '\n'.join(out)
-    (REPO / 'results/probe_echoes/summary.txt').write_text(txt + '\n')
+    (REPO / f'results/probe_echoes/summary_{kind}{"_phat" if phat else ""}.txt').write_text(txt + '\n')
     print(txt)
 
 
 if __name__ == '__main__':
-    main(sys.argv[1])
+    main(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else 'tts', len(sys.argv) > 3 and sys.argv[3] == 'phat')

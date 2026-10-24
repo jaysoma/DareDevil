@@ -3,9 +3,9 @@ reflective surfaces: found in the true response 58%, through the announcement 59
 absorbent  surfaces: found in the true response 42%, through the announcement 42% (n 1764)
 
 reflective surfaces found through the announcement, by surface:
-  ceiling    85% of 216   delay   2.7 ms   angle error when found  24.0 deg (front/back folded)
-  west       54% of 180   delay   9.6 ms   angle error when found  46.8 deg (front/back folded)
-  east       28% of 108   delay  10.9 ms   angle error when found  38.2 deg (front/back folded)
-  north      44% of 108   delay  13.0 ms   angle error when found  34.8 deg (front/back folded)
+  ceiling    85% of 216   delay   2.7 ms   angle error when found   6.1 deg (front/back folded)
+  west       54% of 180   delay   9.6 ms   angle error when found  25.8 deg (front/back folded)
+  east       28% of 108   delay  10.9 ms   angle error when found  18.0 deg (front/back folded)
+  north      44% of 108   delay  13.0 ms   angle error when found  13.8 deg (front/back folded)
 
 picked peaks through the announcement: 8.0 per setup, of which 34% sit on a labelled first-order echo
