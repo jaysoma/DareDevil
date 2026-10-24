@@ -1,0 +1,12 @@
+ding guard off: 0 of 1360 speech windows dropped
+  opener    T=1.0: 6/11 facing, 21/27 turned, 66%   T=1.5: 6/11 facing, 20/27 turned, 64%   T=2.0: 8/11 facing, 18/27 turned, 70%
+  running   T=1.0: 6/11 facing, 21/27 turned, 66%   T=1.5: 6/11 facing, 20/27 turned, 64%   T=2.0: 8/11 facing, 16/27 turned, 66%
+  90th pct  T=1.0: 8/11 facing, 19/27 turned, 72%   T=1.5: 9/11 facing, 16/27 turned, 71%   T=2.0: 9/11 facing, 11/27 turned, 61%
+ding guard at 12 dB: 18 of 1360 speech windows dropped
+  opener    T=1.0: 6/11 facing, 21/27 turned, 66%   T=1.5: 6/11 facing, 20/27 turned, 64%   T=2.0: 8/11 facing, 18/27 turned, 70%
+  running   T=1.0: 6/11 facing, 21/27 turned, 66%   T=1.5: 6/11 facing, 20/27 turned, 64%   T=2.0: 8/11 facing, 16/27 turned, 66%
+  90th pct  T=1.0: 8/11 facing, 19/27 turned, 72%   T=1.5: 9/11 facing, 16/27 turned, 71%   T=2.0: 9/11 facing, 11/27 turned, 61%
+ding guard at 10 dB: 22 of 1360 speech windows dropped
+  opener    T=1.0: 5/11 facing, 21/27 turned, 62%   T=1.5: 5/11 facing, 20/27 turned, 60%   T=2.0: 7/11 facing, 18/27 turned, 65%
+  running   T=1.0: 5/11 facing, 21/27 turned, 62%   T=1.5: 5/11 facing, 20/27 turned, 60%   T=2.0: 7/11 facing, 16/27 turned, 61%
+  90th pct  T=1.0: 8/11 facing, 19/27 turned, 72%   T=1.5: 9/11 facing, 16/27 turned, 71%   T=2.0: 9/11 facing, 11/27 turned, 61%
