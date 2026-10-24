@@ -25,6 +25,30 @@ of which way a talker faces? And can it be told apart from distance? Jay's model
 - **Survival by sound class:** weak fricatives (f, th, v), strong ones (s, sh, z), stops, nasals and vowels: the
   share heard right.
 
+## The recogniser beside it: the brain that fills in
+Jay's pipeline replays any tape through Android SpeechRecognizer and logs every partial on the tape clock
+(`tapes/<walk>/recognizer.json`; examples for walk-215800, 231705 and 231921). Replay every tape scored here, and per
+utterance measure:
+- **The events, classified first so the non-blur ones don't pollute the rest:**
+  - **false start:** begin, then no match with no partials, in the tape's first ~2 s. On 3 of 3 tapes so far this is
+    the phone's own ding and handling: the 4-8 kHz CDR is above 12 dB.
+  - **idle cycling:** no match every ~3 s with no partials, on room noise.
+  - **early flip:** the first words rewritten within the utterance's first second, then settled ("There's" -> "There
+    are six"). So far 24 of 26 rewrites on the clean walks, and not tied to facing.
+  - **rewrite or drop after the first second:** a blur candidate.
+  - **give-up:** partials, then no match. The strongest blur candidate.
+- **Delays:** the first partial's delay after speech begins (so far about 0.5 s at every facing), and the longest wait
+  for a new word.
+- **Repeats:** partials that resend the same text unchanged, per second of speech.
+- **Weird decodes (confabulation):** how far Android's words are from the sounds that actually arrived. Turn its final
+  text into phonemes (a pronouncing dictionary or espeak), and take the phoneme distance to what the no-language-model
+  decoder heard in the same span. Small means Android wrote what was there. Large means it invented ("Pathways" for
+  "rotated"). Where the true text is known, give words right as well.
+- **The gap between the two:** blur in what arrived (the phoneme decoder) against blur in what was understood
+  (Android). Does Android hide blur near and give way to it far, as the first look suggested?
+- **The noise floor:** replay one tape twice. Every recogniser measure has to beat the difference between two
+  identical replays.
+
 ## Data
 1. **Jay's rotation walks:**
    - **Stops:** every stop in `harness/rotation/facing_stops.json`, signed with brief A's
