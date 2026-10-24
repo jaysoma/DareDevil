@@ -9,9 +9,9 @@ Jay's walks gave one consistent pattern: turning dims the top of the direct soun
   stops.
 - **The shape:** almost all of the drop comes in the first 90 deg, flat to 270 and back by 360. The low band barely
   moves.
-- **Where it was measured:** Jay's house, with self-called facings, and the label-free reference scoring 64-78%.
+- **Where it was measured:** Jay's house, with self-called facings. One fixed threshold, no reference, scores 75%.
 - **Reports:** `results/rotation/colour/report.md`, `results/rotation/room_reference.md`,
-  `results/rotation/opener_reference.txt`.
+  `results/rotation/fixed_threshold.txt`.
 
 LOCATA tests it in another room with tracked heads: facing truth to the degree (so 45 deg steps can be seen), real
 distances, and a 160 mm pair close to the phone's 157 mm.
@@ -40,15 +40,14 @@ distances, and a 160 mm pair close to the phone's 157 mm.
 3. **Distance, with real truth.** On facing stretches only, fit the contrast and CdrRange's statistic (the mean CDR over
    1.1-8 kHz) against log10 tracked distance, per recording and over all. Brief 20 measured the range statistic at
    −7.6 dB per decade here. Does the contrast stay flat with distance, unlike in Jay's house?
-4. **The reference rule.**
-   - **The rule:** per recording, the reference is the first lone facing stretch (the opener) until 5 stretches
-     exist, then the 90th percentile of the stretches so far. A stretch reading more than 1.5 dB below the reference
-     is turned.
-   - **Scores:** balanced accuracy for toward (within 30 deg) against turned (90 deg or more), and for fade (120 deg
-     or more) against the rest.
-   - **Comparisons:** the opener alone, and the labelled reference (the recording's other facing stretches) as the
-     ceiling.
-5. **Beside Jay's walks:** one table putting LOCATA's numbers next to `room_reference.md` and `opener_reference.txt`.
+4. **No reference: one fixed threshold.** Every stretch is read on its own, as Stage 1 must (every utterance is a new
+   speaker). Score toward (within 30 deg) against turned (90 deg or more), and fade (120 deg or more) against the rest,
+   as balanced accuracy:
+   - **Jay's number, unchanged:** the contrast's threshold from his walks (`results/rotation/fixed_threshold.txt`,
+     about −1 dB).
+   - **LOCATA's own number:** chosen on the other recordings, left out by recording.
+   - **The ceiling:** the labelled per-recording reference (the recording's other facing stretches).
+5. **Beside Jay's walks:** one table putting LOCATA's numbers next to `results/rotation/fixed_threshold.txt`.
 
 ## Report
 `results/rotation/locata/report.md` and a numbers JSON. Open, in two sentences, with whether the pattern holds outside

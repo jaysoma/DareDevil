@@ -2,6 +2,29 @@
 
 Three independent crunches on Jay's rotation walks, one agent each. They share inputs and never write the same file.
 
+## Round 2 (2026-10-24): briefs D, E and G
+```
+git pull
+git worktree add ../dd-locata -b rotation-locata   # then: "Do harness/rotation/briefs/D_locata.md."
+git worktree add ../dd-range  -b rotation-range    # then: "Do harness/rotation/briefs/E_range.md."
+git worktree add ../dd-utt    -b rotation-utt      # then: "Do harness/rotation/briefs/G_utterance.md."
+```
+**What round 1 settled (read these before starting):**
+- **The shape:** turning dims the top of the direct sound against the bottom. At 4-8 kHz the direct sound falls about
+  5 dB by side-on, barely more to 180, and is back by 360: a wide, flat-bottomed U. Below 1 kHz facing barely moves
+  anything. `results/rotation/colour/report.md`.
+- **No reference is needed.** One fixed threshold on the contrast (CDR 4-8 kHz minus CDR 0.1-1.1 kHz, about −1 dB)
+  calls facing against turned at 75% on unseen walks. `results/rotation/fixed_threshold.txt`.
+  - **Why no reference:** in Stage 1 every utterance is a new speaker; the anchor is only range's unit.
+- **The callouts:** all were said after the turn, so keep them.
+- **The tape start:** each tape's first 2 s hold the phone's own ding and handling. Skip them (`HANDLING_S` in
+  `harness/rotation/facing_pooled.py`).
+- **Turning throws range off.** CdrRange's statistic reads 1.8 dB lower to the side and 2.5 dB lower away (every
+  stop), so a turned talker is drawn 1.2-1.3x farther. In Jay's house, called distance moves it only about −2.6 dB per
+  decade.
+- **Learned models leak the labels:** CAM++'s middle layers read the callouts' words, not the facing. Any learned model
+  must drop the callouts. Physics measures (the CDR) needn't. `results/rotation/campp/report.md`.
+
 ## Setup (once, from the DareDevil clone)
 ```
 git pull
