@@ -94,11 +94,29 @@ is what's left. That is a shift in which onsets count, not a delay in the room. 
 it is a lead, not a cue.
 
 ## The held-vowel control, walk-213304
-**There are no held vowels on this tape to measure.** The 36 "held" stretches (76.9 s) that `held_sounds.py` found,
-and that `library.json` labels this walk by, are mains hum. In all 36, the strongest 50-2000 Hz bin is 60 or
-120 Hz, and 27 of them sit within 2 dB of the tape's 20th-percentile 1.1-8 kHz power, between the callouts. The
-0-78 s ladder span is silent between the distance calls (2-4 dB over the floor above 500 Hz), and only 3% of its
-voiced windows overlap a "held" stretch. The 6 m facing stops (251-356 s) are talking, with 0-25% overlap.
+**Jay held vowels on this walk, but the tape didn't keep them, so there is nothing to measure.** He held them in the
+gaps between the distance calls (2026-10-24: "assume, YES"). The decode has no words there, as expected for vowels:
+
+| time (s) | decoded speech (Whisper) | the tape |
+|---|---|---|
+| 3.6-8.1 | "This is about 2 meters facing the phone right in the center." | speech |
+| 8.1-20.4 | — | room floor |
+| 20.4-23.2 | "This is about 3 meters facing the phone right in the center." | speech |
+| 23.2-42.1 | — | room floor |
+| 42.1-47.1 | "This is about 5 meters." / "Basically the phone, right?" / "This is that?" | speech |
+| 47.1-63.4 | — | room floor |
+| 63.4-74.6 | "In the kitchen now, this is about 7 meters maybe more." / "Basically the phone right dead center." | speech |
+
+The audio in those gaps is the room alone, though, not the decode's blind spot. From 500 Hz to 8 kHz it sits 2-4 dB
+over the floor, where a held vowel at 2-7 m would read about 20 dB up. So the capture lost his voice and kept the
+room. The tape runs on unbroken (428 s, hum throughout), so it looks less like a dropped link, which would leave zeros
+or cut time out, than like something on the phone blanking a steady voice. The phone's gate is one candidate,
+since a held vowel has no syllable rhythm. That is untested here.
+
+The 36 "held" stretches (76.9 s) that `held_sounds.py` found, and that `library.json`'s `held_voice_s` counts, are
+mains hum in those gaps, not the vowels. In all 36, the strongest 50-2000 Hz bin is 60 or 120 Hz, and 27 sit within
+2 dB of the tape's 20th-percentile 1.1-8 kHz power. The 6 m facing stops (251-356 s) are talking, with 0-25% overlap,
+so they stay in the scoring.
 
 What the hum shows instead is what a sound without syllable dips reads:
 
@@ -131,9 +149,9 @@ floor fits what talking shows here: even talking dips only 2-3.5 dB above the fl
 - Same walks, room and self-called facings as the bar.
 
 ## Questions for Jay
-1. **walk-213304, 0-78 s and the 6 m stops (251-356 s):** did you hold vowels on this walk? The tape has only
-   callouts there, and the 77 s that `held_sounds.py` counted is 60/120 Hz hum. If the held vowels are on another
-   tape, which one? That is where the control can be run.
+1. **The held vowels on walk-213304 (8-20, 23-42, 47-63 s) aren't on the tape.** Does the phone's gate or capture
+   path blank a steady voice? Until a tape keeps one, the held-vowel control can't run. A fresh walk holding "aaah" at
+   2 m would settle both.
 2. **`held_sounds.py` takes mains hum for a held vowel** (and its docstring's thresholds differ from its code's).
    Should it reject 60/120 Hz and require the 1.1-8 kHz power over the floor before `held_voice_s` is trusted? That is
    outside this brief's folders, so it's untouched.
