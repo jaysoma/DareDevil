@@ -94,3 +94,44 @@ a lively room or in a carpeted "sound-sink" room, blur won't divide the same way
 ## Report
 `results/stage3/blur/report.md` and a numbers JSON. Open with whether blur reads facing at scale, and whether it can
 be told apart from distance, in two sentences. Keep every untested explanation labelled as such.
+
+## Split for parallel agents (2026-10-24)
+Already done (cloud): Jay's 10 labelled walks, `harness/stage3/blur/walks_blur.py` -> `results/stage3/blur/walks.txt`.
+Each turned stop was compared with its own spot's facing stops:
+- **Kitchen:** blurrier at every turned stop, 15 of 15 (13 of 13 with the opening callout out), at 2 m and at 5-6 m.
+- **Living room:** mixed. At 2 m, 4 of 7. At 4 m on 125621, 0 of 2, where the facing stop itself reads very blurry
+  (2.79 bits).
+- **The other room (030615):** 3 of 3 with the callout out.
+- **The CDR contrast is lower** at 26 of 27.
+
+The misfits are 125621 at 4 m and 171645's short stops, both in the living room.
+
+```
+git pull
+git worktree add ../dd-n1 -b stage3-blur-walks       # "Do brief N, part N1 (harness/briefs/N_blur_at_scale.md)."
+git worktree add ../dd-n2 -b stage3-blur-locata      # "... part N2"
+git worktree add ../dd-n3 -b stage3-blur-recognizer  # "... part N3"
+git worktree add ../dd-n4 -b stage3-blur-models      # "... part N4"
+```
+Folders: `harness/stage3/blur/<n1|n2|n3|n4>/` and `results/stage3/blur/<n1|n2|n3|n4>/`. The rules above hold for
+all: within first, then count; strata apart; misfits named and studied; no pooled medians.
+
+- **N1, Jay's walks, all of them:**
+  - **Scope:** extend `walks_blur.py` to every rotation walk, signed facings
+    (`harness/rotation/colour/facing_stops_signed.json`) and the continuous turns (160546, 161331, 020305), with the
+    audio from Jay's box.
+  - **Study the misfits:** why do the living room spots, especially 125621 at 4 m and 171645, go the other way?
+    Look at the stops' length, their words, the level over the floor, and what's near them in `landmarks.json`.
+- **N2, LOCATA:**
+  - **Blur added by the trip:** far-field (160 mm pair, one mic) minus close-talk, per utterance.
+  - **The curves:** against tracked facing (45 deg bins) and distance, with the two-factor fit (Steps 1-3), reported
+    per recording first.
+- **N3, the recogniser (needs the phone):** replay the tapes N1 scores through Android and take every measure in "The
+  recogniser beside it":
+  - the event classes, delays, repeats and confabulation distance;
+  - the replay noise floor (one tape twice).
+- **N4, is it the model?** Rerun N1's stops and a LOCATA subset with a second phoneme decoder
+  (`facebook/wav2vec2-xlsr-53-espeak-cv-ft`, and Allosaurus if it installs). Does each decoder's blur rank the stops
+  the same way (rank correlation per recording)?
+- **After all four:** Step 4, Jay's model (facing from blur; range from dB corrected for it), on N1's and N2's
+  outputs, by whichever agent finishes first.
