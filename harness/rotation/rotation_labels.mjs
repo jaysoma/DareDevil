@@ -8,15 +8,14 @@ const OUT = 'C:/Projects/GithubRoot/geonar-truth';
 const T = (s) => `walk-${s}`;
 const EXPERIMENT = {
   talking: ['030615', '044350', '122038', '125621', '160546', '161331', '171645', '171930', '172045', '211436', '215800', '221126',
-    '224302', '224459', '020305', '171542', '234455'],
+    '224302', '224459', '020305', '171542', '234455', '213304'],
   'same phrase': ['231705', '231921', '140956'],
   consonants: ['223157'],
-  'held vowel': ['213304'],
   'walking, facing away': ['234212'],
 };
-const HELD = { '161331': 1.8, '171930': 4.2, '172045': 1.8, '213304': 76.9, '215800': 1.6, '231705': 1.9, '231921': 1.6, '223157': 1.9 };
+const HELD = { '161331': 1.8, '171930': 4.2, '172045': 1.8, '215800': 1.6, '231705': 1.9, '231921': 1.6, '223157': 1.9 };
 const NOTES = {
-  '213304': 'held vowels, from the sound rather than the decode: 36 stretches of one steady pitch, 77 s in all, between the distance calls',
+  '213304': 'talking between distance and turn calls; the 77 s once counted as held vowels was room rumble (held_sounds.py fixed 2026-10-24)',
   '231705': 'repeats "there\'s 6 fresh beers in the fridge" as he turns',
   '231921': 'repeats "there\'s 6 fresh beers in the fridge" as he turns',
   '140956': 'reads the same text (the Second Amendment) as he turns',

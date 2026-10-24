@@ -454,9 +454,9 @@
     "tapes/walk-213304/audio-input.json",
     "tapes/walk-213304/walk-213304.raw"
    ],
-   "experiment": "held vowel",
-   "held_voice_s": 76.9,
-   "note": "held vowels, from the sound rather than the decode: 36 stretches of one steady pitch, 77 s in all, between the distance calls"
+   "experiment": "talking",
+   "held_voice_s": 0,
+   "note": "talking between distance and turn calls; the 77 s once counted as held vowels was room rumble (held_sounds.py fixed 2026-10-24)"
   },
   {
    "name": "walk-214241",

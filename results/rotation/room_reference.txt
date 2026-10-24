@@ -1,0 +1,14 @@
+43 stops (16 toward, 27 turned), 10 walks
+| reference | threshold chosen on the other walks | fixed 1.5 dB |
+|---|---|---|
+| labelled: the room's other walks' facing-0 mean (brief A's) | 10/16 toward, 17/27 turned, balanced 63% | 11/16 toward, 17/27 turned, balanced 66% |
+| no labels: the tape's own stops, 50th percentile | 16/16 toward, 18/27 turned, balanced 83% | 16/16 toward, 4/27 turned, balanced 57% |
+| no labels: the room's other walks, 50th percentile | 12/16 toward, 15/27 turned, balanced 65% | 13/16 toward, 8/27 turned, balanced 55% |
+| no labels: the tape's own stops, 75th percentile | 14/16 toward, 24/27 turned, balanced 88% | 15/16 toward, 9/27 turned, balanced 64% |
+| no labels: the room's other walks, 75th percentile | 12/16 toward, 16/27 turned, balanced 67% | 12/16 toward, 16/27 turned, balanced 67% |
+| no labels: the tape's own stops, 90th percentile | 11/16 toward, 25/27 turned, balanced 81% | 13/16 toward, 20/27 turned, balanced 78% |
+| no labels: the room's other walks, 90th percentile | 10/16 toward, 16/27 turned, balanced 61% | 6/16 toward, 20/27 turned, balanced 56% |
+| no labels: the tape's own stops, 100th percentile | 10/16 toward, 25/27 turned, balanced 78% | 12/16 toward, 22/27 turned, balanced 78% |
+| no labels: the room's other walks, 100th percentile | 6/16 toward, 21/27 turned, balanced 58% | 3/16 toward, 23/27 turned, balanced 52% |
+
+Facing-0 stops are 37% of these walks' stops; in a demo, where people mostly face the phone, the top of the spread sits nearer facing.
