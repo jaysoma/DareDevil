@@ -10,7 +10,7 @@ from pathlib import Path
 
 import numpy as np
 
-from facing_pooled import FEATS, REPO, feats, lin
+from facing_pooled import FEATS, HANDLING_S, REPO, feats, lin
 
 LADDERS = {  # walk: [t0, t1, called distance m], all facing the phone
     'walk-213304': [[4, 20, 2], [20, 42, 3], [42, 63, 5], [63, 78, 7]],
@@ -23,7 +23,7 @@ slopes = {k: [] for k in FEATS}
 for walk, steps in LADDERS.items():
     bw = json.loads((REPO / 'tapes' / walk / 'band_windows.json').read_text())
     t0 = np.array(bw['t0']); D, R, P = lin(bw['dir_db']), lin(bw['dif_db']), lin(bw['pow_db'])
-    tot = 10 * np.log10(P[:, 1:].sum(1)); voiced = tot >= np.percentile(tot, 20) + 10
+    tot = 10 * np.log10(P[:, 1:].sum(1)); voiced = (tot >= np.percentile(tot, 20) + 10) & (t0 >= HANDLING_S)
     rows = []
     for a, b, dist in steps:
         m = voiced & (t0 >= a) & (t0 + bw['win_s'] <= b)

@@ -7,7 +7,7 @@ stop's opening announcement (below). Numbers: `blur.txt` and `blur.json` beside 
 ## The answer
 **Time-domain blur loses to the CDR contrast.** On a single mic, the high-minus-low modulation depth doesn't separate
 toward from turned (AUC 0.50, against the CDR's 0.91 on the same stops), and it moves −8.6 dB per decade of distance
-against the CDR's −3.0. Onset colour leans the predicted way (−3.1 dB to the side, −5.3 away), but at AUC 0.66 it is
+against the CDR's −1.9. Onset colour leans the predicted way (−3.1 dB to the side, −5.3 away), but at AUC 0.66 it is
 still behind the CDR's 0.81 on its stops.
 
 ## The stops: announcements dropped
@@ -18,11 +18,12 @@ facing's talk), plus 0.25 s. That drops 2.7 s from each of the 46 stops on avera
 ("Rotated 90 degrees", "I am now facing away"), so most were probably already at the new facing; dropping them costs
 speech, not accuracy.
 
-The CDR barely notices. Its AUC is 0.75 with or without the announcements (as labelled: −2.1 dB to the side, 15 of
-16, and −3.1 away, 9 of 9, as in `facing_pooled.md`; announcements dropped: −1.6, 12 of 14, and −2.2, 7 of 7). Two
-facing-0 stops at one spot now agree to 1.7 dB rms instead of 3.1, so the announcements were adding noise to the
-reference. Without them, 9 stops have too little speech for the CDR, mostly 125621's, 171645's, 215800's and
-122038's short stops, where the repeated callout *was* the speech. That leaves 6 toward cases.
+The CDR barely notices. Its AUC is 0.75 with or without the announcements (as labelled: −1.7 dB to the side, 15 of
+16, and −2.7 away, 9 of 9, as in the rerun `facing_pooled.md`; announcements dropped: −1.6, 12 of 14, and −2.2, 7 of
+7). Without them, 9 stops have too little speech for the CDR, mostly 125621's, 171645's, 215800's and 122038's short
+stops, where the repeated callout *was* the speech. That leaves 6 toward cases. Brief B2 (below) found the callouts
+were all said after the turn and the gain in agreement came mostly from handling noise at the tape start, so the
+callouts belong in the stops. This section's table is kept as brief B scored it.
 
 ## What held
 Every measure is scored the same way. A turned stop (90, 135, 180) is taken against the mean of its spot's facing-0
@@ -32,8 +33,8 @@ scored under the same rule on each measure's own stops, so the comparison is lik
 
 | measure | side (90) vs facing 0 | away (180) | AUC | left-out balanced accuracy | CDR on the same stops: AUC | distance slope, dB/decade (sd, walks) | decades of distance that fake a turn |
 |---|---|---|---|---|---|---|---|
-| **CDR 4-8 minus 0.1-1.1 kHz** (the bar) | −1.6 (12/14 below) | −2.2 (7/7) | 0.75 | 56% (2/6 toward, 18/23 turned) | — | −3.0 (3.7, 4) | 0.6 |
-| CDR range statistic | −1.8 (14/14) | −2.3 (7/7) | 0.88 | 68% (4/6, 16/23) | — | −1.5 (3.5, 4) | 1.4 |
+| **CDR 4-8 minus 0.1-1.1 kHz** (the bar) | −1.6 (12/14 below) | −2.2 (7/7) | 0.75 | 56% (2/6 toward, 18/23 turned) | — | −1.9 (5.0, 4) | 1.0 |
+| CDR range statistic | −1.8 (14/14) | −2.3 (7/7) | 0.88 | 68% (4/6, 16/23) | — | −2.6 (2.0, 4) | 0.8 |
 | **modulation depth 4-8 minus 0.25-1 kHz**, 2-8 Hz, mean of the mics | −0.3 (5/8) | −1.2 (2/4) | 0.50 | 45% (1/4, 9/14) | 0.91 | −8.6 (5.9, 3) | 0.06 |
 | modulation depth 4-8 kHz alone | −1.3 (4/8) | −1.5 (2/4) | 0.64 | 62% (1/4, 14/14) | 0.91 | −6.4 (4.2, 3) | 0.2 |
 | the pair's direct 4-8 kHz, modulation depth | −1.5 (4/8) | −1.3 (3/4) | 0.66 | 62% (1/4, 14/14) | 0.91 | −5.6 (3.7, 3) | 0.3 |
@@ -43,8 +44,8 @@ scored under the same rule on each measure's own stops, so the comparison is lik
 
 The toward cases are few (4-8 from two to four spots), so the balanced accuracies swing by 10-20 points on one stop.
 The AUC uses no threshold and is the number to compare. "Decades that fake a turn" is the turned stops' mean shift
-divided by the distance slope: the CDR's turn is worth 0.6 of a decade of distance, while modulation depth's is worth
-0.06. The distance slopes come from the ladder walks, which have no turns and aren't trimmed.
+divided by the distance slope: the CDR's turn is worth a decade of distance, while modulation depth's is worth 0.06.
+The distance slopes come from the ladder walks, which have no turns and aren't trimmed past the tape's first 2 s.
 
 - **Why modulation depth fails here: the room's floor fills the dips, not the reverb.** Inside speech runs, the
   envelope's lowest 10% sits only 2.6 dB above the room floor at 4-8 kHz, and 3.9 dB above it at 0.25-1 kHz,
@@ -152,69 +153,61 @@ floor fits what talking shows here: even talking dips only 2-3.5 dB above the fl
   one was made there is unknown. A walk holding "aaah" at 2 m would show whether the capture keeps a steady voice.
 
 ## Callout tense (brief B2)
-**From now on, keep the callouts said after the turn, set the bare "Rotate" ones aside, and skip each tape's first
-2 s, which hold the handling of the phone, not speech.**
+**From now on, score the stops as labelled, callouts and all, and skip each tape's first 2 s, which hold the
+handling of the phone, not speech.**
 
 Script: `harness/rotation/blur/tense.py`. Tags: `harness/rotation/blur/callout_tense.json`. Numbers: `tense.txt`,
 `tense.json`.
 
-**Every opening callout was said after the turn, or can't be told from the decode.** Of the 46, 40 are past tense
-or present state ("Rotated 90 degrees", "I am now facing away", "Facing phone again", "Just rotated"). None is future
-or in progress. The other 6 are unclear: five bare "Rotate 90 degrees" (Whisper drops the -d of "Rotated" before
-"ninety", so it could be either) and 213304's garbled "Rout 90 degrees".
+**Every opening callout was said after the turn.** Of the 46, 40 are past tense or present state in the decode
+("Rotated 90 degrees", "I am now facing away", "Facing phone again", "Just rotated"). None is future or in progress.
+The other six were unclear: five bare "Rotate 90 degrees" (Whisper drops the -d of "Rotated" before "ninety") and
+213304's garbled "Rout 90 degrees". Jay settled them as after the turn (2026-10-24: "Rotated means AFTER rotated";
+the 213304 one too). So the tense rule keeps every callout, and it is the same as scoring the stops as labelled.
 
-**The tape-start handling was the larger noise source.** Five tapes (231921, 231705, 171645, 215800, 030615) open with
-1-1.5 s of handling: starting the recording, setting the phone down. It reads 11-31 dB over the tape's speech, is
-nearly fully coherent (4-8 kHz CDR 10-30 dB), and passes the speech mask. It lands in two facing-0 stops that start
-at 0 s: 231705's only one, which is the reference for all four of that spot's turned stops, and 215800's first, which
-reads 9.3 dB whole against its partner's 4.0. Brief B's drop rule removed it without meaning to.
+**The tape-start handling was the larger noise source.** Six tapes (231921, 231705, 171645, 215800, 030615, 221126)
+open with 0.5-1.5 s of handling: starting the recording, setting the phone down. It reads up to 31 dB over the tape's
+speech, is nearly fully coherent (4-8 kHz CDR 10-30 dB), and passes the speech mask. It lands in two facing-0 stops
+that start at 0 s: 231705's only one, which is the reference for all four of that spot's turned stops, and 215800's
+first, which reads 9.3 dB whole against its partner's 4.0. It also lands in 221126's 1 m ladder step. Brief B's drop
+rule removed it from the stops without meaning to. Every script now skips each tape's first 2 s (`HANDLING_S` in
+`harness/rotation/facing_pooled.py`).
 
-The three rules, with each tape's first 2 s skipped:
+The rules, with each tape's first 2 s skipped:
 
 | rule | measure | stops scored | toward cases | side vs facing 0 | away | AUC | left-out balanced | facing-0 agreement, dB rms | on the 6 toward stops every rule keeps |
 |---|---|---|---|---|---|---|---|---|---|
 | all | CDR 4-8 minus 0.1-1.1 kHz | 37 | 10 | −1.7 (15/16 below) | −2.7 (9/9) | 0.75 | 71% (6/10, 22/27) | 2.47 | 2.38 |
 | dropped | CDR 4-8 minus 0.1-1.1 kHz | 29 | 6 | −1.6 (12/14) | −2.2 (7/7) | 0.75 | 56% (2/6, 18/23) | 1.71 | 1.71 |
-| **tense** | CDR 4-8 minus 0.1-1.1 kHz | 37 | 10 | −1.7 (15/16) | −2.7 (9/9) | 0.75 | 71% (6/10, 22/27) | 2.56 | 2.24 |
+| **tense** (= all) | CDR 4-8 minus 0.1-1.1 kHz | 37 | 10 | −1.7 (15/16) | −2.7 (9/9) | 0.75 | 71% (6/10, 22/27) | 2.47 | 2.38 |
 | all | CdrRange's range statistic | 37 | 10 | −1.8 (16/16) | −2.5 (9/9) | 0.91 | 78% (7/10, 23/27) | 1.13 | 0.90 |
 | dropped | CdrRange's range statistic | 29 | 6 | −1.8 (14/14) | −2.3 (7/7) | 0.88 | 68% (4/6, 16/23) | 1.20 | 1.20 |
-| **tense** | CdrRange's range statistic | 37 | 10 | −1.7 (16/16) | −2.5 (9/9) | 0.92 | 83% (7/10, 26/27) | 1.07 | 0.77 |
+| **tense** (= all) | CdrRange's range statistic | 37 | 10 | −1.8 (16/16) | −2.5 (9/9) | 0.91 | 78% (7/10, 23/27) | 1.13 | 0.90 |
 | all | onset's own tilt, first 40 ms | 30 | 10 | −7.0 (12/12) | −8.0 (4/6) | 0.75 | 62% (6/10, 13/20) | 5.69 | 6.00 (8 stops) |
 | dropped | onset's own tilt, first 40 ms | 27 | 8 | −5.5 (12/12) | −5.4 (3/5) | 0.74 | 61% (3/8, 16/19) | 5.70 | 5.70 (8) |
-| **tense** | onset's own tilt, first 40 ms | 30 | 10 | −6.9 (12/12) | −8.0 (4/6) | 0.75 | 62% (6/10, 13/20) | 5.69 | 6.00 (8) |
+| **tense** (= all) | onset's own tilt, first 40 ms | 30 | 10 | −7.0 (12/12) | −8.0 (4/6) | 0.75 | 62% (6/10, 13/20) | 5.69 | 6.00 (8) |
 
 The onset tilt keeps brief B's set-aside of 215800's facing-0 pair, and needs 2 onsets a stop, so it scores 30.
 
-- **The tense rule keeps everything the drop rule threw away, at no cost.** It keeps all 37 stops and all 10 toward
-  cases, against 29 and 6, and its AUCs match or beat the drop rule's (0.75 and 0.92 against 0.75 and 0.88). With 10
-  toward cases instead of 6, its left-out accuracies are the ones to trust (71% and 83%).
+- **Keeping the callouts keeps everything the drop rule threw away, at no cost.** It keeps all 37 stops and all 10
+  toward cases, against 29 and 6, and its AUCs match or beat the drop rule's (0.75 and 0.91 against 0.75 and 0.88).
+  With 10 toward cases instead of 6, its left-out accuracies are the ones to trust (71% and 78%).
 - **Where brief B's 3.1 → 1.7 dB came from:** not from callouts said before the turn, since there are none. On the
   six toward stops every rule keeps, agreement goes 3.32 dB (handling and callouts in) → 2.38 (handling out) → 1.71
   (callouts out too). The handling is most of it. The last 0.7 dB is three spots' worth of scatter, not callouts at
-  the wrong facing. A callout's CDR contrast differs from the rest of its stop by 1.63 dB rms (22 `after` callouts),
-  just as any same-length stretch does (1.52 dB rms, 12 baselines). Its mean offset is +0.03 dB.
+  the wrong facing. A callout's CDR contrast differs from the rest of its stop by 1.57 dB rms (26 callouts), just as
+  any same-length stretch does (1.51 dB rms, 13 baselines). Its mean offset is +0.19 dB.
 - **CdrRange's range statistic was the measure the handling hurt most.** Its facing-0 agreement goes from 5.8 dB rms
-  to 1.1 with the first 2 s skipped. It is now the best facing measure here: AUC 0.91-0.92, and 26 of 27 turned stops
-  caught under the tense rule.
-- **The bar moves:** `results/rotation/facing_pooled.md` scores the stops with the handling in. Without it, the CDR
-  contrast reads −1.7 dB to the side and −2.7 away (bar: −2.1 and −3.1), still 15 of 16 and 9 of 9 below. The range
-  statistic reads −1.8 and −2.5, not 3.5-4 dB lower. That file is outside this brief's folders, so it is unchanged.
-- **Brief B's blur verdict doesn't move:** its scored stops already started after the handling.
+  to 1.1 with the first 2 s skipped. It is now the best facing measure here: AUC 0.91, every turned stop below its
+  spot's facing 0 (16 of 16 to the side, 9 of 9 away).
+- **The bar is rerun** (`results/rotation/facing_pooled.md`, with Jay's go-ahead). The CDR contrast reads −1.7 dB to
+  the side and −2.7 away (first run: −2.1 and −3.1), still 15 of 16 and 9 of 9 below, with tighter spreads (sd 1.5
+  and 1.1, from 2.0 and 1.9). The range statistic reads −1.8 and −2.5, not 3.5-4 dB lower. Distance moves the
+  contrast −1.9 dB per decade, not −3.0, and the single-opener test reaches 67% balanced (from 61%).
+- **Brief B's blur verdict doesn't move:** its scored stops already started after the handling, and the
+  modulation slopes come from ladder steps that don't start at 0 s.
 
 ## Questions for Jay
-1. **Were these said after turning, as "Rotated"?** Whisper's decode, with what follows each:
-
-   | walk | time (s) | callout | next |
-   |---|---|---|---|
-   | 231921 | 28.6-30.2 | "Rotate 90 degrees." | 31.2: "There are six fresh beers in the fridge." |
-   | 171645 | 6.8-13.4 | "Rotate 90 degrees clockwise, same position." | 13.4: "Rotate 90 degrees clockwise, facing away from the phone." |
-   | 171645 | 13.4-19.9 | "Rotate 90 degrees clockwise, facing away from the phone." | 19.9: "Rotate 90 degrees clockwise, same position, about two meters." |
-   | 171645 | 19.9-30.1 | "Rotate 90 degrees clockwise, same position, about two meters." | 30.1: "Darn it, I just faced the phone just now." |
-   | 215800 | 26.3-29.6 | "Rotate clockwise 90 degrees." (the walk's other three say "Rotated") | 29.6: "Same distance now facing the phone." |
-
-   If so, they move to `after`, and the tense rule matches "all" with the handling skipped.
-2. **213304, 337.4-341.3 s:** "Rout 90 degrees." / "Down, face of the phone," / "about 5 meters." Was that "Rotated
-   90 degrees, now facing the phone", said after the turn?
-3. **Two fixes outside this brief's folders:** rerun `facing_pooled.md` with each tape's first 2 s skipped? And make
-   `held_sounds.py` reject 60/120 Hz hum before `held_voice_s` is trusted? Its docstring's thresholds also differ
-   from its code's.
+1. **Should `held_sounds.py` reject 60/120 Hz hum** and require power over the floor above 1.1 kHz before
+   `held_voice_s` is trusted? On walk-213304 it counted 77 s of hum as held vowels. Its docstring's thresholds also
+   differ from its code's. It's outside this brief's folders, so it's untouched.

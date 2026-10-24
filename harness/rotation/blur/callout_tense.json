@@ -29,8 +29,8 @@
     30.18
    ],
    "text": "Rotate 90 degrees.",
-   "tag": "unclear",
-   "why": "bare \"Rotate\"",
+   "tag": "after",
+   "why": "\"Rotate[d]\": Jay, Rotated means after",
    "dropped_to": 30.43
   },
   {
@@ -301,8 +301,8 @@
     13.39
    ],
    "text": "Rotate 90 degrees clockwise, same position.",
-   "tag": "unclear",
-   "why": "bare \"Rotate\"",
+   "tag": "after",
+   "why": "\"Rotate[d]\": Jay, Rotated means after",
    "dropped_to": 10.08
   },
   {
@@ -317,8 +317,8 @@
     19.86
    ],
    "text": "Rotate 90 degrees clockwise, facing away from the phone.",
-   "tag": "unclear",
-   "why": "bare \"Rotate\", then \"facing away from the phone\"",
+   "tag": "after",
+   "why": "\"Rotate[d]\", then \"facing away from the phone\": Jay, Rotated means after",
    "dropped_to": 16.64
   },
   {
@@ -333,8 +333,8 @@
     30.08
    ],
    "text": "Rotate 90 degrees clockwise, same position, about two meters.",
-   "tag": "unclear",
-   "why": "bare \"Rotate\"",
+   "tag": "after",
+   "why": "\"Rotate[d]\": Jay, Rotated means after",
    "dropped_to": 23.11
   },
   {
@@ -429,8 +429,8 @@
     29.58
    ],
    "text": "Rotate clockwise 90 degrees.",
-   "tag": "unclear",
-   "why": "bare \"Rotate\" in a walk that otherwise says \"Rotated\"",
+   "tag": "after",
+   "why": "\"Rotate[d]\", as the walk's other three: Jay, Rotated means after",
    "dropped_to": 29.59
   },
   {
@@ -685,8 +685,8 @@
     338.76
    ],
    "text": "Rout 90 degrees.",
-   "tag": "unclear",
-   "why": "\"Rout 90 degrees\", garbled",
+   "tag": "after",
+   "why": "\"Rout 90 degrees\" = rotated, said after the turn (Jay)",
    "dropped_to": 339.01
   },
   {

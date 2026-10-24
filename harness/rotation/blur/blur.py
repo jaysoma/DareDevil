@@ -38,7 +38,7 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 from envelopes import BANDS, CACHE, DBANDS, HOP, NFFT, SR, load  # noqa: E402
-from facing_pooled import feats, lin  # noqa: E402
+from facing_pooled import HANDLING_S, feats, lin  # noqa: E402
 
 REPO = HERE.parents[2]
 OUT = REPO / 'results/rotation/blur'
@@ -78,7 +78,7 @@ class Tape:
         self.t0, self.win = np.array(bw['t0']), bw['win_s']
         self.D, self.R, self.P = lin(bw['dir_db']), lin(bw['dif_db']), lin(bw['pow_db'])
         tot = 10 * np.log10(self.P[:, 1:].sum(1))
-        self.voiced = tot >= np.percentile(tot, 20) + 10
+        self.voiced = (tot >= np.percentile(tot, 20) + 10) & (self.t0 >= HANDLING_S)   # the tape-start handling
         self.quiet = tot <= np.percentile(tot, 20)
         self.floor1 = np.percentile(self.E, 10, axis=0)                          # (2, bands) per 1 ms bin
         self.floor10 = np.percentile(self.E10, 10, axis=0)

@@ -1,12 +1,12 @@
 set aside: 4 stops from the run-based measures, 2 from the onset ones (SET_ASIDE gives why)
 opening announcements dropped: 46 of 46 stops, 2.7 s on average
-CDR hi - lo, stops as labelled (the bar): 90 -2.1 (15/16 below), 180 -3.1 (9/9), AUC 0.75
+CDR hi - lo, stops as labelled (the bar): 90 -1.7 (15/16 below), 180 -2.7 (9/9), AUC 0.75
 CDR hi - lo, announcements dropped: 90 -1.6 (12/14 below), 180 -2.2 (7/7), AUC 0.75
 46 stops; 28 with >= 2 s of speech in runs; speech per stop 5.1 s in runs; onsets per stop 8.5
 | measure | 90 | 180 | turned mean | toward rms | AUC | LOO signed | LOO unsigned | CDR on these stops: LOO, AUC | slope/decade (sd, walks) | (3, no 213304) | decades to fake a turn |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| CDR hi - lo | -1.6 (12/14 below) | -2.2 (7/7 below) | -1.89 | 1.71 | 0.75 | 56% (2/6, 18/23) | 51% (4/6, 8/23) | 56% (2/6, 18/23), 0.75 | -3.04 (3.7, 4) | -1.86 | 0.62 |
-| CDR range stat | -1.8 (14/14 below) | -2.3 (7/7 below) | -2.00 | 1.20 | 0.88 | 68% (4/6, 16/23) | 62% (4/6, 13/23) | 56% (2/6, 18/23), 0.75 | -1.45 (3.5, 4) | -0.61 | 1.37 |
+| CDR hi - lo | -1.6 (12/14 below) | -2.2 (7/7 below) | -1.89 | 1.71 | 0.75 | 56% (2/6, 18/23) | 51% (4/6, 8/23) | 56% (2/6, 18/23), 0.75 | -1.89 (5.0, 4) | -0.32 | 1.00 |
+| CDR range stat | -1.8 (14/14 below) | -2.3 (7/7 below) | -2.00 | 1.20 | 0.88 | 68% (4/6, 16/23) | 62% (4/6, 13/23) | 56% (2/6, 18/23), 0.75 | -2.55 (2.0, 4) | -2.08 | 0.78 |
 | mod hi - lo | -0.3 (5/8 below) | -1.2 (2/4 below) | -0.48 | 2.69 | 0.50 | 45% (1/4, 9/14) | 39% (2/4, 4/14) | 88% (3/4, 14/14), 0.91 | -8.58 (5.9, 3) | -5.31 | 0.06 |
 | mod hi - lo ch0 | -0.5 (5/8 below) | -0.9 (2/4 below) | -0.51 | 2.37 | 0.55 | 34% (1/4, 6/14) | 43% (2/4, 5/14) | 88% (3/4, 14/14), 0.91 | -9.15 (6.5, 3) | -5.85 | 0.06 |
 | mod hi - lo ch1 | -0.2 (3/8 below) | -1.6 (2/4 below) | -0.46 | 3.16 | 0.50 | 34% (1/4, 6/14) | 46% (2/4, 6/14) | 88% (3/4, 14/14), 0.91 | -8.02 (5.4, 3) | -4.77 | 0.06 |

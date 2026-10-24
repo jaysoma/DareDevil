@@ -6,6 +6,10 @@ Reads harness/rotation/facing_stops.json and each walk's tapes/<walk>/band_windo
 are taken once. Features: CDR 4-8 kHz minus CDR 0.1-1.1 kHz (brief 20's HF - LF), CDR 4-8 minus 1.1-2 kHz, the level's
 own tilt (4-8 minus 1.1-2 kHz), and the range statistic (CdrRange's mean CDR over 1.1-8 kHz). Each is taken against
 the mean of its spot's facing-0 stops. Per-window values give the half-second jitter brief 20 reported.
+
+Each tape's first HANDLING_S is skipped (2026-10-24, brief B2): six tapes open with 0.5-1.5 s of handling (starting
+the recording, setting the phone down), up to 31 dB over the speech and nearly fully coherent, which passes the
+speech mask and lands in the stops and ladder steps that start at 0 s.
 """
 import json
 from pathlib import Path
@@ -13,6 +17,7 @@ from pathlib import Path
 import numpy as np
 
 REPO = Path(__file__).resolve().parents[2]
+HANDLING_S = 2.0
 FEATS = {'CDR hi - lo (4-8 vs 0.1-1.1 kHz)': lambda c, l: c[3] - c[0],
          'CDR hi - mid (4-8 vs 1.1-2 kHz)': lambda c, l: c[3] - c[1],
          'level tilt (4-8 vs 1.1-2 kHz)': lambda c, l: l[3] - l[1],
@@ -34,7 +39,7 @@ def main():
     for walk, spots in lab.items():
         bw = json.loads((REPO / 'tapes' / walk / 'band_windows.json').read_text())
         t0 = np.array(bw['t0']); D, R, P = lin(bw['dir_db']), lin(bw['dif_db']), lin(bw['pow_db'])
-        tot = 10 * np.log10(P[:, 1:].sum(1)); voiced = tot >= np.percentile(tot, 20) + 10
+        tot = 10 * np.log10(P[:, 1:].sum(1)); voiced = (tot >= np.percentile(tot, 20) + 10) & (t0 >= HANDLING_S)
         for spot, stops in spots.items():
             if spot == 'dist_m':
                 continue

@@ -60,7 +60,7 @@
     },
     "toward_rms": 2.466563686744573,
     "toward_n": 10,
-    "same_pairs_rms": 2.3815322450118366,
+    "same_pairs_rms": 2.381532245011836,
     "same_pairs_n": 6
    },
    "CDR range stat": {
@@ -122,7 +122,7 @@
     },
     "toward_rms": 1.1275345436794313,
     "toward_n": 10,
-    "same_pairs_rms": 0.9023454690903739,
+    "same_pairs_rms": 0.9023454690903742,
     "same_pairs_n": 6
    },
    "onset tilt 40": {
@@ -246,7 +246,7 @@
       "auc": 0.7536231884057971
      }
     },
-    "toward_rms": 1.711967812896956,
+    "toward_rms": 1.7119678128969562,
     "toward_n": 6,
     "same_pairs_rms": 1.7119678128969562,
     "same_pairs_n": 6
@@ -383,194 +383,6 @@
      "by_facing": {
       "0": {
        "mean": 0.0,
-       "sd": 2.556553827442989,
-       "n": 10,
-       "below": 5
-      },
-      "90": {
-       "mean": -1.7093740195492204,
-       "sd": 1.4999186773960338,
-       "n": 16,
-       "below": 15
-      },
-      "135": {
-       "mean": -3.239476956541594,
-       "sd": 0.9871924871129443,
-       "n": 2,
-       "below": 2
-      },
-      "180": {
-       "mean": -2.6618311942957504,
-       "sd": 1.1252883035332892,
-       "n": 9,
-       "below": 9
-      }
-     },
-     "turned_mean": -2.140200702760462,
-     "toward_sd": 2.556553827442989,
-     "signed": {
-      "toward_right": 6,
-      "toward_n": 10,
-      "turned_right": 22,
-      "turned_n": 27,
-      "balanced": 0.7074074074074074
-     },
-     "unsigned": {
-      "toward_right": 2,
-      "toward_n": 10,
-      "turned_right": 21,
-      "turned_n": 27,
-      "balanced": 0.48888888888888893
-     },
-     "auc": 0.7481481481481481,
-     "cdr_same_stops": {
-      "signed": {
-       "toward_right": 6,
-       "toward_n": 10,
-       "turned_right": 22,
-       "turned_n": 27,
-       "balanced": 0.7074074074074074
-      },
-      "auc": 0.7481481481481481
-     }
-    },
-    "toward_rms": 2.556553827442989,
-    "toward_n": 10,
-    "same_pairs_rms": 2.2355607509108517,
-    "same_pairs_n": 6
-   },
-   "CDR range stat": {
-    "score": {
-     "n_stops": 37,
-     "by_facing": {
-      "0": {
-       "mean": 0.0,
-       "sd": 1.069789690426551,
-       "n": 10,
-       "below": 5
-      },
-      "90": {
-       "mean": -1.7336432452245334,
-       "sd": 0.8021109539714819,
-       "n": 16,
-       "below": 16
-      },
-      "135": {
-       "mean": -2.285470570407327,
-       "sd": 0.5971669897954438,
-       "n": 2,
-       "below": 2
-      },
-      "180": {
-       "mean": -2.4841076497436325,
-       "sd": 1.076793574535197,
-       "n": 9,
-       "below": 9
-      }
-     },
-     "turned_mean": -2.024674144892588,
-     "toward_sd": 1.069789690426551,
-     "signed": {
-      "toward_right": 7,
-      "toward_n": 10,
-      "turned_right": 26,
-      "turned_n": 27,
-      "balanced": 0.8314814814814815
-     },
-     "unsigned": {
-      "toward_right": 6,
-      "toward_n": 10,
-      "turned_right": 22,
-      "turned_n": 27,
-      "balanced": 0.7074074074074074
-     },
-     "auc": 0.9222222222222223,
-     "cdr_same_stops": {
-      "signed": {
-       "toward_right": 6,
-       "toward_n": 10,
-       "turned_right": 22,
-       "turned_n": 27,
-       "balanced": 0.7074074074074074
-      },
-      "auc": 0.7481481481481481
-     }
-    },
-    "toward_rms": 1.069789690426551,
-    "toward_n": 10,
-    "same_pairs_rms": 0.7655450002837453,
-    "same_pairs_n": 6
-   },
-   "onset tilt 40": {
-    "score": {
-     "n_stops": 30,
-     "by_facing": {
-      "0": {
-       "mean": 0.0,
-       "sd": 5.691148503061139,
-       "n": 10,
-       "below": 5
-      },
-      "90": {
-       "mean": -6.930394063497249,
-       "sd": 7.478228706611294,
-       "n": 12,
-       "below": 12
-      },
-      "135": {
-       "mean": -15.53585981957709,
-       "sd": 10.82380560145692,
-       "n": 2,
-       "below": 2
-      },
-      "180": {
-       "mean": -8.017978274078606,
-       "sd": 12.045539868856808,
-       "n": 6,
-       "below": 4
-      }
-     },
-     "turned_mean": -8.11721590227964,
-     "toward_sd": 5.691148503061139,
-     "signed": {
-      "toward_right": 6,
-      "toward_n": 10,
-      "turned_right": 13,
-      "turned_n": 20,
-      "balanced": 0.625
-     },
-     "unsigned": {
-      "toward_right": 6,
-      "toward_n": 10,
-      "turned_right": 9,
-      "turned_n": 20,
-      "balanced": 0.525
-     },
-     "auc": 0.75,
-     "cdr_same_stops": {
-      "signed": {
-       "toward_right": 5,
-       "toward_n": 8,
-       "turned_right": 16,
-       "turned_n": 19,
-       "balanced": 0.7335526315789473
-      },
-      "auc": 0.8157894736842105
-     }
-    },
-    "toward_rms": 5.691148503061139,
-    "toward_n": 10,
-    "same_pairs_rms": 5.9988318939942005,
-    "same_pairs_n": 8
-   }
-  },
-  "tense, unclear kept": {
-   "CDR hi - lo": {
-    "score": {
-     "n_stops": 37,
-     "by_facing": {
-      "0": {
-       "mean": 0.0,
        "sd": 2.466563686744573,
        "n": 10,
        "below": 5
@@ -624,7 +436,7 @@
     },
     "toward_rms": 2.466563686744573,
     "toward_n": 10,
-    "same_pairs_rms": 2.3815322450118366,
+    "same_pairs_rms": 2.381532245011836,
     "same_pairs_n": 6
    },
    "CDR range stat": {
@@ -686,7 +498,7 @@
     },
     "toward_rms": 1.1275345436794313,
     "toward_n": 10,
-    "same_pairs_rms": 0.9023454690903739,
+    "same_pairs_rms": 0.9023454690903742,
     "same_pairs_n": 6
    },
    "onset tilt 40": {
@@ -753,72 +565,14 @@
    }
   }
  },
- "handling_kept": {
-  "all": {
-   "CDR hi - lo": {
-    "toward_rms": 3.045472733986006,
-    "toward_n": 10
-   },
-   "CDR range stat": {
-    "toward_rms": 5.807472805444869,
-    "toward_n": 10
-   },
-   "onset tilt 40": {
-    "toward_rms": 5.691148503061139,
-    "toward_n": 10
-   }
-  },
-  "dropped": {
-   "CDR hi - lo": {
-    "toward_rms": 1.711967812896956,
-    "toward_n": 6
-   },
-   "CDR range stat": {
-    "toward_rms": 1.2049618305058907,
-    "toward_n": 6
-   },
-   "onset tilt 40": {
-    "toward_rms": 5.700963820206421,
-    "toward_n": 8
-   }
-  },
-  "tense": {
-   "CDR hi - lo": {
-    "toward_rms": 3.287092717343354,
-    "toward_n": 10
-   },
-   "CDR range stat": {
-    "toward_rms": 5.999741881469901,
-    "toward_n": 10
-   },
-   "onset tilt 40": {
-    "toward_rms": 5.691148503061139,
-    "toward_n": 10
-   }
-  },
-  "tense, unclear kept": {
-   "CDR hi - lo": {
-    "toward_rms": 3.045472733986006,
-    "toward_n": 10
-   },
-   "CDR range stat": {
-    "toward_rms": 5.807472805444869,
-    "toward_n": 10
-   },
-   "onset tilt 40": {
-    "toward_rms": 5.691148503061139,
-    "toward_n": 10
-   }
-  }
- },
  "pieces": {
   "CDR hi - lo": {
    "after": {
-    "n": 22,
-    "mean": 0.029337275324524337,
-    "rms": 1.6254539056672237,
-    "base_n": 12,
-    "base_rms": 1.516933865813419
+    "n": 26,
+    "mean": 0.18639698403604285,
+    "rms": 1.5747844516920055,
+    "base_n": 13,
+    "base_rms": 1.5103305893614145
    },
    "before/during": {
     "n": 0,
@@ -828,20 +582,20 @@
     "base_rms": NaN
    },
    "unclear": {
-    "n": 4,
-    "mean": 1.0502253819493947,
-    "rms": 1.2601973073381079,
-    "base_n": 1,
-    "base_rms": 1.4287127493203928
+    "n": 0,
+    "mean": null,
+    "rms": NaN,
+    "base_n": 0,
+    "base_rms": NaN
    }
   },
   "CDR range stat": {
    "after": {
-    "n": 22,
-    "mean": -0.27959708709994185,
-    "rms": 0.7131224934774794,
-    "base_n": 12,
-    "base_rms": 0.9481436037121781
+    "n": 26,
+    "mean": -0.21435740410114587,
+    "rms": 0.7103061143343807,
+    "base_n": 13,
+    "base_rms": 0.9127091961929539
    },
    "before/during": {
     "n": 0,
@@ -851,11 +605,11 @@
     "base_rms": NaN
    },
    "unclear": {
-    "n": 4,
-    "mean": 0.14446085239223175,
-    "rms": 0.6946119388016484,
-    "base_n": 1,
-    "base_rms": 0.20440029225432332
+    "n": 0,
+    "mean": null,
+    "rms": NaN,
+    "base_n": 0,
+    "base_rms": NaN
    }
   },
   "onset tilt 40": {
@@ -908,7 +662,7 @@
    "walk": "walk-231921",
    "a": 29,
    "facing": 90,
-   "tag": "unclear",
+   "tag": "after",
    "callout": {
     "CDR hi - lo": -2.280508999351452,
     "CDR range stat": -1.983868804845607
@@ -1284,7 +1038,7 @@
    "walk": "walk-171645",
    "a": 7,
    "facing": 90,
-   "tag": "unclear",
+   "tag": "after",
    "callout": {},
    "rest": {
     "CDR hi - lo": -1.7971720164528264,
@@ -1300,7 +1054,7 @@
    "walk": "walk-171645",
    "a": 13,
    "facing": 180,
-   "tag": "unclear",
+   "tag": "after",
    "callout": {
     "CDR hi - lo": -1.9365720622960743,
     "CDR range stat": -1.660368048496256
@@ -1319,7 +1073,7 @@
    "walk": "walk-171645",
    "a": 20,
    "facing": 90,
-   "tag": "unclear",
+   "tag": "after",
    "callout": {},
    "rest": {
     "CDR hi - lo": -1.4690996855896343,
@@ -1419,7 +1173,7 @@
    "walk": "walk-215800",
    "a": 26,
    "facing": 0,
-   "tag": "unclear",
+   "tag": "after",
    "callout": {
     "CDR hi - lo": 4.7666530274860905,
     "CDR range stat": 2.7976218537063957
@@ -1741,7 +1495,7 @@
    "walk": "walk-213304",
    "a": 337,
    "facing": 0,
-   "tag": "unclear",
+   "tag": "after",
    "callout": {
     "CDR hi - lo": 0.4008864896709945,
     "CDR range stat": 0.49268141758347045

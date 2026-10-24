@@ -3,7 +3,7 @@
 role), toward (0) against turned (90, 135, 180), with a threshold chosen on the other walks (left out by walk)."""
 import json
 import numpy as np
-from facing_pooled import REPO, feats, lin
+from facing_pooled import HANDLING_S, REPO, feats, lin
 
 K = 'CDR hi - lo (4-8 vs 0.1-1.1 kHz)'
 lab = json.loads((REPO / 'harness/rotation/facing_stops.json').read_text())['stops']
@@ -11,7 +11,7 @@ per = {}
 for walk, spots in lab.items():
     bw = json.loads((REPO / 'tapes' / walk / 'band_windows.json').read_text())
     t0 = np.array(bw['t0']); D, R, P = lin(bw['dir_db']), lin(bw['dif_db']), lin(bw['pow_db'])
-    tot = 10 * np.log10(P[:, 1:].sum(1)); voiced = tot >= np.percentile(tot, 20) + 10
+    tot = 10 * np.log10(P[:, 1:].sum(1)); voiced = (tot >= np.percentile(tot, 20) + 10) & (t0 >= HANDLING_S)
     st = sorted((a, b, fd) for s, v in spots.items() if s != 'dist_m' for a, b, fd in v)
     vals = []
     for a, b, fd in st:

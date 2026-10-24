@@ -8,7 +8,9 @@ starts nearest the stop's start, among those over it) is tagged from its text:
     unclear        garbled, or the bare "Rotate 90 degrees": Whisper drops the -d of "Rotated" before "ninety", so it
                    could be either
 Three rules for a stop's speech: all (as labelled), dropped (brief B: from announcement_end on), tense (keep `after`
-callouts, drop the rest as brief B does; `unclear` ones are counted). Scored brief B's way (blur.score). Writes
+callouts, drop the rest as brief B does; `unclear` ones are counted). Jay settled the six unclear ones as `after`
+(2026-10-24: "Rotated means AFTER rotated"; 213304's "Rout 90 degrees" too), so tense now equals all. Every rule skips
+each tape's first HANDLING_S (facing_pooled.py), the handling of the phone. Scored brief B's way (blur.score). Writes
 harness/rotation/blur/callout_tense.json, results/rotation/blur/tense.txt and tense.json.
 """
 import json
@@ -20,15 +22,13 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE)); sys.path.insert(0, str(HERE.parent))
 from blur import REPO, SET_ASIDE, Tape, announcement_end, cdr_measures, onset_measures, score  # noqa: E402
+from facing_pooled import HANDLING_S  # noqa: E402
 
 OUT = REPO / 'results/rotation/blur'
 KEYS = ('CDR hi - lo', 'CDR range stat', 'onset tilt 40')
-HANDLING_S = 2.0   # five tapes open with 1-1.5 s of handling (starting the recording, setting the phone down), 11-31 dB
-                   # over the speech and nearly fully coherent; it passes the speech mask and lands in 231705's and
-                   # 215800's opening facing-0 stops. Every rule skips each tape's first HANDLING_S.
 TAGS = {  # (walk, stop start): tag, why. Read from tapes/<walk>/transcript.json (Whisper).
     ('walk-231921', 7): ('after', 'present state; the walk opens here'),
-    ('walk-231921', 29): ('unclear', 'bare "Rotate"'),
+    ('walk-231921', 29): ('after', '"Rotate[d]": Jay, Rotated means after'),
     ('walk-231921', 47): ('after', '"Racing away" = facing away, present state'),
     ('walk-231921', 78): ('after', 'past tense'),
     ('walk-231921', 98): ('after', 'past tense'),
@@ -45,15 +45,15 @@ TAGS = {  # (walk, stop start): tag, why. Read from tapes/<walk>/transcript.json
     ('walk-125621', 58): ('after', 'state ("90 degrees, clockwise"), repeated'),
     ('walk-125621', 66): ('after', '"Pacing away" = facing away, present state'),
     ('walk-171645', 3): ('after', 'present state; the walk opens here'),
-    ('walk-171645', 7): ('unclear', 'bare "Rotate"'),
-    ('walk-171645', 13): ('unclear', 'bare "Rotate", then "facing away from the phone"'),
-    ('walk-171645', 20): ('unclear', 'bare "Rotate"'),
+    ('walk-171645', 7): ('after', '"Rotate[d]": Jay, Rotated means after'),
+    ('walk-171645', 13): ('after', '"Rotate[d]", then "facing away from the phone": Jay, Rotated means after'),
+    ('walk-171645', 20): ('after', '"Rotate[d]": Jay, Rotated means after'),
     ('walk-171645', 30): ('after', 'past tense ("I just faced the phone")'),
     ('walk-215800', 0): ('after', 'present state; the walk opens here'),
     ('walk-215800', 10): ('after', 'past tense'),
     ('walk-215800', 16): ('after', 'past tense'),
     ('walk-215800', 22): ('after', 'past tense'),
-    ('walk-215800', 26): ('unclear', 'bare "Rotate" in a walk that otherwise says "Rotated"'),
+    ('walk-215800', 26): ('after', '"Rotate[d]", as the walk\'s other three: Jay, Rotated means after'),
     ('walk-122038', 10): ('after', 'present state'),
     ('walk-122038', 16): ('after', 'present state'),
     ('walk-122038', 23): ('after', 'present state'),
@@ -69,7 +69,7 @@ TAGS = {  # (walk, stop start): tag, why. Read from tapes/<walk>/transcript.json
     ('walk-213304', 269): ('after', 'past tense, and "I called it after I rotated"'),
     ('walk-213304', 291): ('after', '"basing away" = facing away, present state'),
     ('walk-213304', 312): ('after', '"Notated" = rotated, past tense'),
-    ('walk-213304', 337): ('unclear', '"Rout 90 degrees", garbled'),
+    ('walk-213304', 337): ('after', '"Rout 90 degrees" = rotated, said after the turn (Jay)'),
     ('walk-221126', 161): ('after', 'present state'),
     ('walk-221126', 205): ('after', '"I\'m at 9[0] degrees", present state'),
     ('walk-221126', 221): ('after', 'present state'),
@@ -109,8 +109,8 @@ def rms(v):
 
 def main():
     lab = json.loads((REPO / 'harness/rotation/facing_stops.json').read_text())['stops']
-    tapes, tags, rows = {}, [], {'all': [], 'dropped': [], 'tense': [], 'tense, unclear kept': []}
-    pieces, kept = [], {r: [] for r in rows}
+    tapes, tags, rows = {}, [], {'all': [], 'dropped': [], 'tense': []}
+    pieces = []
     for walk, spots in lab.items():
         tp = tapes.setdefault(walk, Tape(walk))
         segs = json.loads((REPO / 'tapes' / walk / 'transcript.json').read_text(encoding='utf-8'))['segments']
@@ -124,12 +124,10 @@ def main():
                 tags.append(dict(walk=walk, stop=[a, b, fd], callout=[g['t0'], g['t1']], text=g['text'].strip(),
                                  tag=tag, why=why, dropped_to=round(cut, 2)))
                 base = dict(walk=walk, spot=spot, facing=fd, a=a, b=b, tag=tag)
-                starts = {'all': a, 'dropped': cut, 'tense': a if tag == 'after' else cut,
-                          'tense, unclear kept': cut if tag == 'before/during' else a}
+                starts = {'all': a, 'dropped': cut, 'tense': a if tag == 'after' else cut}
                 for rule, s in starts.items():
-                    s1 = max(s, HANDLING_S)
+                    s1 = max(s, HANDLING_S)                  # Tape's speech mask skips it too
                     rows[rule].append({**base, 'from_s': s1, **measures(tp, s1, b, walk, a)})
-                    kept[rule].append({**base, 'from_s': s, **measures(tp, s, b, walk, a)})
                 # step 4: the callout against the rest of its stop, and a same-length piece of the rest against
                 # what follows it (the baseline: how much any stretch that long differs from its stop)
                 L = cut - a; a1 = max(a, HANDLING_S)
@@ -167,15 +165,6 @@ def main():
             say(f"| {rule} | {k} | {s['n_stops']} | {len(tw)} | {f(90)} | {f(180)} | {s['auc']:.2f} | "
                 f"{lo['balanced'] * 100:.0f}% ({lo['toward_right']}/{lo['toward_n']}, {lo['turned_right']}/"
                 f"{lo['turned_n']}) | {rms(tw.values()):.2f} | {same:.2f} (n {len(common[k])}) |")
-    say('\nWith the handling at the tape start kept (as brief B scored "all"): facing-0 agreement, dB rms (toward cases)')
-    say('| rule | ' + ' | '.join(KEYS) + ' |')
-    say('|---|' + '---|' * len(KEYS))
-    for rule, rr in kept.items():
-        cells = []
-        for k in KEYS:
-            tw = toward(rr, k); cells.append(f"{rms(tw.values()):.2f} ({len(tw)})")
-            J.setdefault('handling_kept', {}).setdefault(rule, {})[k] = dict(toward_rms=rms(tw.values()), toward_n=len(tw))
-        say(f"| {rule} | " + ' | '.join(cells) + ' |')
     say('\nThe callout against the rest of its stop (dB), and the baseline: a same-length stretch just after the '
         'callout against the rest after it.')
     say('| measure | tag | n | callout minus rest: mean | rms | baseline n | baseline rms |')
