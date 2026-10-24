@@ -1,0 +1,1 @@
+facing +0.0 dB (sd 1.9, n 16), turned -2.3 (sd 1.7, n 27); fixed threshold -1.25 to -1.00 dB: 11/16 facing, 22/27 turned, balanced 75%
