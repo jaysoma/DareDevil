@@ -1,0 +1,741 @@
+{
+ "about": "Each stop's opening callout in facing_stops.json, tagged by tense from the Whisper decode (brief B2, 2026-10-24). after = past tense or present state, so said at the stop's facing; before/during = future or in progress; unclear = garbled, or the bare \"Rotate\". dropped_to = where brief B's rule restarts the stop.",
+ "callouts": [
+  {
+   "walk": "walk-231921",
+   "stop": [
+    7,
+    29,
+    0
+   ],
+   "callout": [
+    7.38,
+    12.62
+   ],
+   "text": "Currently about five meters from the front of the phone.",
+   "tag": "after",
+   "why": "present state; the walk opens here",
+   "dropped_to": 10.63
+  },
+  {
+   "walk": "walk-231921",
+   "stop": [
+    29,
+    47,
+    90
+   ],
+   "callout": [
+    28.6,
+    30.18
+   ],
+   "text": "Rotate 90 degrees.",
+   "tag": "unclear",
+   "why": "bare \"Rotate\"",
+   "dropped_to": 30.43
+  },
+  {
+   "walk": "walk-231921",
+   "stop": [
+    47,
+    78,
+    180
+   ],
+   "callout": [
+    46.96,
+    50.96
+   ],
+   "text": "Racing away, our wall is closer to me than the phone.",
+   "tag": "after",
+   "why": "\"Racing away\" = facing away, present state",
+   "dropped_to": 50.21
+  },
+  {
+   "walk": "walk-231921",
+   "stop": [
+    78,
+    98,
+    135
+   ],
+   "callout": [
+    77.68,
+    80.92
+   ],
+   "text": "Rotated four times degrees from facing away.",
+   "tag": "after",
+   "why": "past tense",
+   "dropped_to": 80.93
+  },
+  {
+   "walk": "walk-231921",
+   "stop": [
+    98,
+    122,
+    90
+   ],
+   "callout": [
+    97.66,
+    102.46
+   ],
+   "text": "Rotated 4.30 degrees, so I'm 90 degrees from the phone.",
+   "tag": "after",
+   "why": "past tense",
+   "dropped_to": 100.91
+  },
+  {
+   "walk": "walk-231921",
+   "stop": [
+    122,
+    137,
+    0
+   ],
+   "callout": [
+    122.48,
+    123.7
+   ],
+   "text": "Facing phone again.",
+   "tag": "after",
+   "why": "present state",
+   "dropped_to": 123.95
+  },
+  {
+   "walk": "walk-231705",
+   "stop": [
+    0,
+    22,
+    0
+   ],
+   "callout": [
+    0,
+    4.66
+   ],
+   "text": "2 meters from the front of the phone.",
+   "tag": "after",
+   "why": "present state; the walk opens here",
+   "dropped_to": 3.25
+  },
+  {
+   "walk": "walk-231705",
+   "stop": [
+    22,
+    36,
+    90
+   ],
+   "callout": [
+    21.76,
+    23.32
+   ],
+   "text": "Rotated 90 degrees.",
+   "tag": "after",
+   "why": "past tense",
+   "dropped_to": 23.57
+  },
+  {
+   "walk": "walk-231705",
+   "stop": [
+    36,
+    63,
+    180
+   ],
+   "callout": [
+    35.58,
+    41.46
+   ],
+   "text": "Facing away.",
+   "tag": "after",
+   "why": "present state",
+   "dropped_to": 38.83
+  },
+  {
+   "walk": "walk-231705",
+   "stop": [
+    63,
+    84,
+    135
+   ],
+   "callout": [
+    62.74,
+    67.22
+   ],
+   "text": "Rotated 45 degrees clockwise from freezing away.",
+   "tag": "after",
+   "why": "past tense",
+   "dropped_to": 65.99
+  },
+  {
+   "walk": "walk-231705",
+   "stop": [
+    84,
+    128,
+    90
+   ],
+   "callout": [
+    84,
+    91.84
+   ],
+   "text": "Rotated 45 degrees, so now facing left 90 degrees from the phone.",
+   "tag": "after",
+   "why": "past tense",
+   "dropped_to": 87.25
+  },
+  {
+   "walk": "walk-125621",
+   "stop": [
+    18,
+    25,
+    180
+   ],
+   "callout": [
+    17.96,
+    24.88
+   ],
+   "text": "180 degrees facing away 180 degrees facing away 180 degrees facing away",
+   "tag": "after",
+   "why": "present state, repeated",
+   "dropped_to": 21.21
+  },
+  {
+   "walk": "walk-125621",
+   "stop": [
+    25,
+    37,
+    90
+   ],
+   "callout": [
+    24.88,
+    29.98
+   ],
+   "text": "two hundred seventy degrees facing the left two hundred seventy degrees",
+   "tag": "after",
+   "why": "present state, repeated",
+   "dropped_to": 28.13
+  },
+  {
+   "walk": "walk-125621",
+   "stop": [
+    37,
+    45,
+    0
+   ],
+   "callout": [
+    37,
+    39
+   ],
+   "text": "Facing the phone, 0 degrees.",
+   "tag": "after",
+   "why": "present state",
+   "dropped_to": 39.25
+  },
+  {
+   "walk": "walk-125621",
+   "stop": [
+    45,
+    58,
+    0
+   ],
+   "callout": [
+    45,
+    51
+   ],
+   "text": "4 meters facing the phone,",
+   "tag": "after",
+   "why": "present state; a walk, not a turn, before it",
+   "dropped_to": 48.25
+  },
+  {
+   "walk": "walk-125621",
+   "stop": [
+    58,
+    66,
+    90
+   ],
+   "callout": [
+    58,
+    59
+   ],
+   "text": "90 degrees, clockwise.",
+   "tag": "after",
+   "why": "state (\"90 degrees, clockwise\"), repeated",
+   "dropped_to": 59.25
+  },
+  {
+   "walk": "walk-125621",
+   "stop": [
+    66,
+    89,
+    180
+   ],
+   "callout": [
+    66,
+    70
+   ],
+   "text": "Pacing away, same position, facing away, 180.",
+   "tag": "after",
+   "why": "\"Pacing away\" = facing away, present state",
+   "dropped_to": 69.25
+  },
+  {
+   "walk": "walk-171645",
+   "stop": [
+    3,
+    7,
+    0
+   ],
+   "callout": [
+    2.83,
+    6.83
+   ],
+   "text": "Right now, I'm about two meters in front of the phone, right in the seventh.",
+   "tag": "after",
+   "why": "present state; the walk opens here",
+   "dropped_to": 6.08
+  },
+  {
+   "walk": "walk-171645",
+   "stop": [
+    7,
+    13,
+    90
+   ],
+   "callout": [
+    6.83,
+    13.39
+   ],
+   "text": "Rotate 90 degrees clockwise, same position.",
+   "tag": "unclear",
+   "why": "bare \"Rotate\"",
+   "dropped_to": 10.08
+  },
+  {
+   "walk": "walk-171645",
+   "stop": [
+    13,
+    20,
+    180
+   ],
+   "callout": [
+    13.39,
+    19.86
+   ],
+   "text": "Rotate 90 degrees clockwise, facing away from the phone.",
+   "tag": "unclear",
+   "why": "bare \"Rotate\", then \"facing away from the phone\"",
+   "dropped_to": 16.64
+  },
+  {
+   "walk": "walk-171645",
+   "stop": [
+    20,
+    30,
+    90
+   ],
+   "callout": [
+    19.86,
+    30.08
+   ],
+   "text": "Rotate 90 degrees clockwise, same position, about two meters.",
+   "tag": "unclear",
+   "why": "bare \"Rotate\"",
+   "dropped_to": 23.11
+  },
+  {
+   "walk": "walk-171645",
+   "stop": [
+    30,
+    38,
+    0
+   ],
+   "callout": [
+    30.08,
+    33.04
+   ],
+   "text": "Darn it, I just faced the phone just now.",
+   "tag": "after",
+   "why": "past tense (\"I just faced the phone\")",
+   "dropped_to": 33.29
+  },
+  {
+   "walk": "walk-215800",
+   "stop": [
+    0,
+    10,
+    0
+   ],
+   "callout": [
+    0,
+    5.42
+   ],
+   "text": "Two meters right in front of the phone facing the phone.",
+   "tag": "after",
+   "why": "present state; the walk opens here",
+   "dropped_to": 3.25
+  },
+  {
+   "walk": "walk-215800",
+   "stop": [
+    10,
+    16,
+    90
+   ],
+   "callout": [
+    9.66,
+    11.94
+   ],
+   "text": "Rotated clockwise 90 degrees.",
+   "tag": "after",
+   "why": "past tense",
+   "dropped_to": 12.19
+  },
+  {
+   "walk": "walk-215800",
+   "stop": [
+    16,
+    22,
+    180
+   ],
+   "callout": [
+    16.2,
+    17.52
+   ],
+   "text": "Rotated clockwise 90 degrees.",
+   "tag": "after",
+   "why": "past tense",
+   "dropped_to": 17.77
+  },
+  {
+   "walk": "walk-215800",
+   "stop": [
+    22,
+    26,
+    90
+   ],
+   "callout": [
+    22.04,
+    23.9
+   ],
+   "text": "Rotated clockwise 90 degrees.",
+   "tag": "after",
+   "why": "past tense",
+   "dropped_to": 24.15
+  },
+  {
+   "walk": "walk-215800",
+   "stop": [
+    26,
+    36,
+    0
+   ],
+   "callout": [
+    26.34,
+    29.58
+   ],
+   "text": "Rotate clockwise 90 degrees.",
+   "tag": "unclear",
+   "why": "bare \"Rotate\" in a walk that otherwise says \"Rotated\"",
+   "dropped_to": 29.59
+  },
+  {
+   "walk": "walk-122038",
+   "stop": [
+    10,
+    16,
+    90
+   ],
+   "callout": [
+    9.72,
+    12.17
+   ],
+   "text": "I am now 90 degrees to the right.",
+   "tag": "after",
+   "why": "present state",
+   "dropped_to": 12.42
+  },
+  {
+   "walk": "walk-122038",
+   "stop": [
+    16,
+    23,
+    180
+   ],
+   "callout": [
+    16.21,
+    18.26
+   ],
+   "text": "I am now facing away from the phone.",
+   "tag": "after",
+   "why": "present state",
+   "dropped_to": 18.51
+  },
+  {
+   "walk": "walk-122038",
+   "stop": [
+    23,
+    27,
+    90
+   ],
+   "callout": [
+    22.52,
+    24.78
+   ],
+   "text": "I have now 90 degrees facing left.",
+   "tag": "after",
+   "why": "present state",
+   "dropped_to": 25.03
+  },
+  {
+   "walk": "walk-122038",
+   "stop": [
+    27,
+    35,
+    0
+   ],
+   "callout": [
+    27.04,
+    28.04
+   ],
+   "text": "Facing the phone again.",
+   "tag": "after",
+   "why": "present state",
+   "dropped_to": 28.29
+  },
+  {
+   "walk": "walk-030615",
+   "stop": [
+    4,
+    17,
+    0
+   ],
+   "callout": [
+    3.66,
+    6.92
+   ],
+   "text": "Hi, right, and I don't know, facing the phone.",
+   "tag": "after",
+   "why": "present state; the walk opens here",
+   "dropped_to": 6.91
+  },
+  {
+   "walk": "walk-030615",
+   "stop": [
+    34,
+    56,
+    90
+   ],
+   "callout": [
+    33.72,
+    39.58
+   ],
+   "text": "I am now 90 degrees clockwise facing the wall.",
+   "tag": "after",
+   "why": "present state",
+   "dropped_to": 36.97
+  },
+  {
+   "walk": "walk-030615",
+   "stop": [
+    73,
+    93,
+    180
+   ],
+   "callout": [
+    73.04,
+    74.82
+   ],
+   "text": "Hi, I'm not rotated 180 degrees.",
+   "tag": "after",
+   "why": "\"I'm not rotated\" = I'm now rotated, past participle",
+   "dropped_to": 75.07
+  },
+  {
+   "walk": "walk-030615",
+   "stop": [
+    106,
+    123,
+    90
+   ],
+   "callout": [
+    106.3,
+    107.76
+   ],
+   "text": "I have now at 270 degrees.",
+   "tag": "after",
+   "why": "present state",
+   "dropped_to": 108.01
+  },
+  {
+   "walk": "walk-030615",
+   "stop": [
+    123,
+    151,
+    0
+   ],
+   "callout": [
+    123.28,
+    126.68
+   ],
+   "text": "So I am now facing the phone.",
+   "tag": "after",
+   "why": "present state",
+   "dropped_to": 126.53
+  },
+  {
+   "walk": "walk-224302",
+   "stop": [
+    35,
+    78,
+    0
+   ],
+   "callout": [
+    35,
+    41
+   ],
+   "text": "I am now at about maybe 6 meters from the phone directly facing it.",
+   "tag": "after",
+   "why": "present state",
+   "dropped_to": 38.25
+  },
+  {
+   "walk": "walk-224302",
+   "stop": [
+    78,
+    97,
+    90
+   ],
+   "callout": [
+    78,
+    87
+   ],
+   "text": "Now I have rotated in place at the exact position.",
+   "tag": "after",
+   "why": "past tense",
+   "dropped_to": 81.25
+  },
+  {
+   "walk": "walk-213304",
+   "stop": [
+    251,
+    269,
+    0
+   ],
+   "callout": [
+    250.84,
+    253.68
+   ],
+   "text": "Walk forward, facing about 6 meters.",
+   "tag": "after",
+   "why": "\"Walk forward, facing\": a walk, facing the phone throughout",
+   "dropped_to": 253.93
+  },
+  {
+   "walk": "walk-213304",
+   "stop": [
+    269,
+    289,
+    90
+   ],
+   "callout": [
+    268.82,
+    269.74
+   ],
+   "text": "Just rotated.",
+   "tag": "after",
+   "why": "past tense, and \"I called it after I rotated\"",
+   "dropped_to": 269.99
+  },
+  {
+   "walk": "walk-213304",
+   "stop": [
+    291,
+    312,
+    180
+   ],
+   "callout": [
+    290.6,
+    291.8
+   ],
+   "text": "Now, basing away from the phone.",
+   "tag": "after",
+   "why": "\"basing away\" = facing away, present state",
+   "dropped_to": 292.05
+  },
+  {
+   "walk": "walk-213304",
+   "stop": [
+    312,
+    337,
+    90
+   ],
+   "callout": [
+    312.3,
+    315.14
+   ],
+   "text": "Notated, 90 degrees, counterparparalyze, down,",
+   "tag": "after",
+   "why": "\"Notated\" = rotated, past tense",
+   "dropped_to": 315.39
+  },
+  {
+   "walk": "walk-213304",
+   "stop": [
+    337,
+    356,
+    0
+   ],
+   "callout": [
+    337.4,
+    338.76
+   ],
+   "text": "Rout 90 degrees.",
+   "tag": "unclear",
+   "why": "\"Rout 90 degrees\", garbled",
+   "dropped_to": 339.01
+  },
+  {
+   "walk": "walk-221126",
+   "stop": [
+    161,
+    200,
+    0
+   ],
+   "callout": [
+    161,
+    164
+   ],
+   "text": "I'm about six meters, meters, a foot.",
+   "tag": "after",
+   "why": "present state",
+   "dropped_to": 164.25
+  },
+  {
+   "walk": "walk-221126",
+   "stop": [
+    205,
+    221,
+    90
+   ],
+   "callout": [
+    205.12,
+    207.12
+   ],
+   "text": "Okay, I'm at 9 degrees, talk, I see.",
+   "tag": "after",
+   "why": "\"I'm at 9[0] degrees\", present state",
+   "dropped_to": 207.37
+  },
+  {
+   "walk": "walk-221126",
+   "stop": [
+    221,
+    228,
+    0
+   ],
+   "callout": [
+    221.12,
+    224.12
+   ],
+   "text": "Now facing the, facing the foot again.",
+   "tag": "after",
+   "why": "present state",
+   "dropped_to": 224.37
+  }
+ ]
+}

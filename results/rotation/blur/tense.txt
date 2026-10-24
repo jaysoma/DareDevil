@@ -1,0 +1,39 @@
+opening callouts: 40 after, 0 before/during, 6 unclear (of 46)
+- unclear: 231921 28.6-30.2 s (stop 29-47, facing 90): "Rotate 90 degrees."
+- unclear: 171645 6.8-13.4 s (stop 7-13, facing 90): "Rotate 90 degrees clockwise, same position."
+- unclear: 171645 13.4-19.9 s (stop 13-20, facing 180): "Rotate 90 degrees clockwise, facing away from the phone."
+- unclear: 171645 19.9-30.1 s (stop 20-30, facing 90): "Rotate 90 degrees clockwise, same position, about two meters."
+- unclear: 215800 26.3-29.6 s (stop 26-36, facing 0): "Rotate clockwise 90 degrees."
+- unclear: 213304 337.4-338.8 s (stop 337-356, facing 0): "Rout 90 degrees."
+
+| rule | measure | stops scored | toward cases | 90 vs facing 0 | 180 | AUC | left-out balanced | facing-0 agreement, dB rms | same on the pairs every rule keeps |
+|---|---|---|---|---|---|---|---|---|---|
+| all | CDR hi - lo | 37 | 10 | -1.7 (15/16) | -2.7 (9/9) | 0.75 | 71% (6/10, 22/27) | 2.47 | 2.38 (n 6) |
+| all | CDR range stat | 37 | 10 | -1.8 (16/16) | -2.5 (9/9) | 0.91 | 78% (7/10, 23/27) | 1.13 | 0.90 (n 6) |
+| all | onset tilt 40 | 30 | 10 | -7.0 (12/12) | -8.0 (4/6) | 0.75 | 62% (6/10, 13/20) | 5.69 | 6.00 (n 8) |
+| dropped | CDR hi - lo | 29 | 6 | -1.6 (12/14) | -2.2 (7/7) | 0.75 | 56% (2/6, 18/23) | 1.71 | 1.71 (n 6) |
+| dropped | CDR range stat | 29 | 6 | -1.8 (14/14) | -2.3 (7/7) | 0.88 | 68% (4/6, 16/23) | 1.20 | 1.20 (n 6) |
+| dropped | onset tilt 40 | 27 | 8 | -5.5 (12/12) | -5.4 (3/5) | 0.74 | 61% (3/8, 16/19) | 5.70 | 5.70 (n 8) |
+| tense | CDR hi - lo | 37 | 10 | -1.7 (15/16) | -2.7 (9/9) | 0.75 | 71% (6/10, 22/27) | 2.56 | 2.24 (n 6) |
+| tense | CDR range stat | 37 | 10 | -1.7 (16/16) | -2.5 (9/9) | 0.92 | 83% (7/10, 26/27) | 1.07 | 0.77 (n 6) |
+| tense | onset tilt 40 | 30 | 10 | -6.9 (12/12) | -8.0 (4/6) | 0.75 | 62% (6/10, 13/20) | 5.69 | 6.00 (n 8) |
+| tense, unclear kept | CDR hi - lo | 37 | 10 | -1.7 (15/16) | -2.7 (9/9) | 0.75 | 71% (6/10, 22/27) | 2.47 | 2.38 (n 6) |
+| tense, unclear kept | CDR range stat | 37 | 10 | -1.8 (16/16) | -2.5 (9/9) | 0.91 | 78% (7/10, 23/27) | 1.13 | 0.90 (n 6) |
+| tense, unclear kept | onset tilt 40 | 30 | 10 | -7.0 (12/12) | -8.0 (4/6) | 0.75 | 62% (6/10, 13/20) | 5.69 | 6.00 (n 8) |
+
+With the handling at the tape start kept (as brief B scored "all"): facing-0 agreement, dB rms (toward cases)
+| rule | CDR hi - lo | CDR range stat | onset tilt 40 |
+|---|---|---|---|
+| all | 3.05 (10) | 5.81 (10) | 5.69 (10) |
+| dropped | 1.71 (6) | 1.20 (6) | 5.70 (8) |
+| tense | 3.29 (10) | 6.00 (10) | 5.69 (10) |
+| tense, unclear kept | 3.05 (10) | 5.81 (10) | 5.69 (10) |
+
+The callout against the rest of its stop (dB), and the baseline: a same-length stretch just after the callout against the rest after it.
+| measure | tag | n | callout minus rest: mean | rms | baseline n | baseline rms |
+|---|---|---|---|---|---|---|
+| CDR hi - lo | after | 22 | +0.03 | 1.63 | 12 | 1.52 |
+| CDR hi - lo | unclear | 4 | +1.05 | 1.26 | 1 | 1.43 |
+| CDR range stat | after | 22 | -0.28 | 0.71 | 12 | 0.95 |
+| CDR range stat | unclear | 4 | +0.14 | 0.69 | 1 | 0.20 |
+| onset tilt 40 | after | 14 | -1.24 | 8.37 | 13 | 13.32 |

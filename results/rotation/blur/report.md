@@ -148,11 +148,73 @@ floor fits what talking shows here: even talking dips only 2-3.5 dB above the fl
   because it weights the direct fraction by instantaneous power rather than smoothed. A constant offset leaves a
   modulation depth unchanged.
 - Same walks, room and self-called facings as the bar.
+- **The held-vowel control needs a fresh tape.** walk-213304 has no voice at 8-20, 23-42 and 47-63 s, and whether
+  one was made there is unknown. A walk holding "aaah" at 2 m would show whether the capture keeps a steady voice.
+
+## Callout tense (brief B2)
+**From now on, keep the callouts said after the turn, set the bare "Rotate" ones aside, and skip each tape's first
+2 s, which hold the handling of the phone, not speech.**
+
+Script: `harness/rotation/blur/tense.py`. Tags: `harness/rotation/blur/callout_tense.json`. Numbers: `tense.txt`,
+`tense.json`.
+
+**Every opening callout was said after the turn, or can't be told from the decode.** Of the 46, 40 are past tense
+or present state ("Rotated 90 degrees", "I am now facing away", "Facing phone again", "Just rotated"). None is future
+or in progress. The other 6 are unclear: five bare "Rotate 90 degrees" (Whisper drops the -d of "Rotated" before
+"ninety", so it could be either) and 213304's garbled "Rout 90 degrees".
+
+**The tape-start handling was the larger noise source.** Five tapes (231921, 231705, 171645, 215800, 030615) open with
+1-1.5 s of handling: starting the recording, setting the phone down. It reads 11-31 dB over the tape's speech, is
+nearly fully coherent (4-8 kHz CDR 10-30 dB), and passes the speech mask. It lands in two facing-0 stops that start
+at 0 s: 231705's only one, which is the reference for all four of that spot's turned stops, and 215800's first, which
+reads 9.3 dB whole against its partner's 4.0. Brief B's drop rule removed it without meaning to.
+
+The three rules, with each tape's first 2 s skipped:
+
+| rule | measure | stops scored | toward cases | side vs facing 0 | away | AUC | left-out balanced | facing-0 agreement, dB rms | on the 6 toward stops every rule keeps |
+|---|---|---|---|---|---|---|---|---|---|
+| all | CDR 4-8 minus 0.1-1.1 kHz | 37 | 10 | −1.7 (15/16 below) | −2.7 (9/9) | 0.75 | 71% (6/10, 22/27) | 2.47 | 2.38 |
+| dropped | CDR 4-8 minus 0.1-1.1 kHz | 29 | 6 | −1.6 (12/14) | −2.2 (7/7) | 0.75 | 56% (2/6, 18/23) | 1.71 | 1.71 |
+| **tense** | CDR 4-8 minus 0.1-1.1 kHz | 37 | 10 | −1.7 (15/16) | −2.7 (9/9) | 0.75 | 71% (6/10, 22/27) | 2.56 | 2.24 |
+| all | CdrRange's range statistic | 37 | 10 | −1.8 (16/16) | −2.5 (9/9) | 0.91 | 78% (7/10, 23/27) | 1.13 | 0.90 |
+| dropped | CdrRange's range statistic | 29 | 6 | −1.8 (14/14) | −2.3 (7/7) | 0.88 | 68% (4/6, 16/23) | 1.20 | 1.20 |
+| **tense** | CdrRange's range statistic | 37 | 10 | −1.7 (16/16) | −2.5 (9/9) | 0.92 | 83% (7/10, 26/27) | 1.07 | 0.77 |
+| all | onset's own tilt, first 40 ms | 30 | 10 | −7.0 (12/12) | −8.0 (4/6) | 0.75 | 62% (6/10, 13/20) | 5.69 | 6.00 (8 stops) |
+| dropped | onset's own tilt, first 40 ms | 27 | 8 | −5.5 (12/12) | −5.4 (3/5) | 0.74 | 61% (3/8, 16/19) | 5.70 | 5.70 (8) |
+| **tense** | onset's own tilt, first 40 ms | 30 | 10 | −6.9 (12/12) | −8.0 (4/6) | 0.75 | 62% (6/10, 13/20) | 5.69 | 6.00 (8) |
+
+The onset tilt keeps brief B's set-aside of 215800's facing-0 pair, and needs 2 onsets a stop, so it scores 30.
+
+- **The tense rule keeps everything the drop rule threw away, at no cost.** It keeps all 37 stops and all 10 toward
+  cases, against 29 and 6, and its AUCs match or beat the drop rule's (0.75 and 0.92 against 0.75 and 0.88). With 10
+  toward cases instead of 6, its left-out accuracies are the ones to trust (71% and 83%).
+- **Where brief B's 3.1 → 1.7 dB came from:** not from callouts said before the turn, since there are none. On the
+  six toward stops every rule keeps, agreement goes 3.32 dB (handling and callouts in) → 2.38 (handling out) → 1.71
+  (callouts out too). The handling is most of it. The last 0.7 dB is three spots' worth of scatter, not callouts at
+  the wrong facing. A callout's CDR contrast differs from the rest of its stop by 1.63 dB rms (22 `after` callouts),
+  just as any same-length stretch does (1.52 dB rms, 12 baselines). Its mean offset is +0.03 dB.
+- **CdrRange's range statistic was the measure the handling hurt most.** Its facing-0 agreement goes from 5.8 dB rms
+  to 1.1 with the first 2 s skipped. It is now the best facing measure here: AUC 0.91-0.92, and 26 of 27 turned stops
+  caught under the tense rule.
+- **The bar moves:** `results/rotation/facing_pooled.md` scores the stops with the handling in. Without it, the CDR
+  contrast reads −1.7 dB to the side and −2.7 away (bar: −2.1 and −3.1), still 15 of 16 and 9 of 9 below. The range
+  statistic reads −1.8 and −2.5, not 3.5-4 dB lower. That file is outside this brief's folders, so it is unchanged.
+- **Brief B's blur verdict doesn't move:** its scored stops already started after the handling.
 
 ## Questions for Jay
-1. **walk-213304, 8-20, 23-42, 47-63 s: no voice on the tape.** It's unknown whether one was made. A fresh walk
-   holding "aaah" at 2 m would show whether the capture keeps a steady voice, and would give the held-vowel control
-   its first real input.
-2. **`held_sounds.py` takes mains hum for a held vowel** (and its docstring's thresholds differ from its code's).
-   Should it reject 60/120 Hz and require the 1.1-8 kHz power over the floor before `held_voice_s` is trusted? That is
-   outside this brief's folders, so it's untouched.
+1. **Were these said after turning, as "Rotated"?** Whisper's decode, with what follows each:
+
+   | walk | time (s) | callout | next |
+   |---|---|---|---|
+   | 231921 | 28.6-30.2 | "Rotate 90 degrees." | 31.2: "There are six fresh beers in the fridge." |
+   | 171645 | 6.8-13.4 | "Rotate 90 degrees clockwise, same position." | 13.4: "Rotate 90 degrees clockwise, facing away from the phone." |
+   | 171645 | 13.4-19.9 | "Rotate 90 degrees clockwise, facing away from the phone." | 19.9: "Rotate 90 degrees clockwise, same position, about two meters." |
+   | 171645 | 19.9-30.1 | "Rotate 90 degrees clockwise, same position, about two meters." | 30.1: "Darn it, I just faced the phone just now." |
+   | 215800 | 26.3-29.6 | "Rotate clockwise 90 degrees." (the walk's other three say "Rotated") | 29.6: "Same distance now facing the phone." |
+
+   If so, they move to `after`, and the tense rule matches "all" with the handling skipped.
+2. **213304, 337.4-341.3 s:** "Rout 90 degrees." / "Down, face of the phone," / "about 5 meters." Was that "Rotated
+   90 degrees, now facing the phone", said after the turn?
+3. **Two fixes outside this brief's folders:** rerun `facing_pooled.md` with each tape's first 2 s skipped? And make
+   `held_sounds.py` reject 60/120 Hz hum before `held_voice_s` is trusted? Its docstring's thresholds also differ
+   from its code's.

@@ -1,0 +1,1815 @@
+{
+ "rules": {
+  "all": {
+   "CDR hi - lo": {
+    "score": {
+     "n_stops": 37,
+     "by_facing": {
+      "0": {
+       "mean": 0.0,
+       "sd": 2.466563686744573,
+       "n": 10,
+       "below": 5
+      },
+      "90": {
+       "mean": -1.7223721322149055,
+       "sd": 1.5125344615410603,
+       "n": 16,
+       "below": 15
+      },
+      "135": {
+       "mean": -3.239476956541594,
+       "sd": 0.9871924871129443,
+       "n": 2,
+       "below": 2
+      },
+      "180": {
+       "mean": -2.7384314195811683,
+       "sd": 1.0970127928961424,
+       "n": 9,
+       "below": 9
+      }
+     },
+     "turned_mean": -2.1734366964723035,
+     "toward_sd": 2.466563686744573,
+     "signed": {
+      "toward_right": 6,
+      "toward_n": 10,
+      "turned_right": 22,
+      "turned_n": 27,
+      "balanced": 0.7074074074074074
+     },
+     "unsigned": {
+      "toward_right": 2,
+      "toward_n": 10,
+      "turned_right": 23,
+      "turned_n": 27,
+      "balanced": 0.5259259259259259
+     },
+     "auc": 0.7518518518518519,
+     "cdr_same_stops": {
+      "signed": {
+       "toward_right": 6,
+       "toward_n": 10,
+       "turned_right": 22,
+       "turned_n": 27,
+       "balanced": 0.7074074074074074
+      },
+      "auc": 0.7518518518518519
+     }
+    },
+    "toward_rms": 2.466563686744573,
+    "toward_n": 10,
+    "same_pairs_rms": 2.3815322450118366,
+    "same_pairs_n": 6
+   },
+   "CDR range stat": {
+    "score": {
+     "n_stops": 37,
+     "by_facing": {
+      "0": {
+       "mean": 0.0,
+       "sd": 1.1275345436794313,
+       "n": 10,
+       "below": 5
+      },
+      "90": {
+       "mean": -1.7838470510196145,
+       "sd": 0.7848618273590211,
+       "n": 16,
+       "below": 16
+      },
+      "135": {
+       "mean": -2.285470570407327,
+       "sd": 0.5971669897954438,
+       "n": 2,
+       "below": 2
+      },
+      "180": {
+       "mean": -2.5092834409834546,
+       "sd": 1.0729138109175544,
+       "n": 9,
+       "below": 9
+      }
+     },
+     "turned_mean": -2.0628164787399843,
+     "toward_sd": 1.1275345436794313,
+     "signed": {
+      "toward_right": 7,
+      "toward_n": 10,
+      "turned_right": 23,
+      "turned_n": 27,
+      "balanced": 0.7759259259259259
+     },
+     "unsigned": {
+      "toward_right": 6,
+      "toward_n": 10,
+      "turned_right": 22,
+      "turned_n": 27,
+      "balanced": 0.7074074074074074
+     },
+     "auc": 0.9148148148148149,
+     "cdr_same_stops": {
+      "signed": {
+       "toward_right": 6,
+       "toward_n": 10,
+       "turned_right": 22,
+       "turned_n": 27,
+       "balanced": 0.7074074074074074
+      },
+      "auc": 0.7518518518518519
+     }
+    },
+    "toward_rms": 1.1275345436794313,
+    "toward_n": 10,
+    "same_pairs_rms": 0.9023454690903739,
+    "same_pairs_n": 6
+   },
+   "onset tilt 40": {
+    "score": {
+     "n_stops": 30,
+     "by_facing": {
+      "0": {
+       "mean": 0.0,
+       "sd": 5.691148503061139,
+       "n": 10,
+       "below": 5
+      },
+      "90": {
+       "mean": -7.008682277752874,
+       "sd": 7.426822527993545,
+       "n": 12,
+       "below": 12
+      },
+      "135": {
+       "mean": -15.53585981957709,
+       "sd": 10.82380560145692,
+       "n": 2,
+       "below": 2
+      },
+      "180": {
+       "mean": -8.017978274078606,
+       "sd": 12.045539868856808,
+       "n": 6,
+       "below": 4
+      }
+     },
+     "turned_mean": -8.164188830833016,
+     "toward_sd": 5.691148503061139,
+     "signed": {
+      "toward_right": 6,
+      "toward_n": 10,
+      "turned_right": 13,
+      "turned_n": 20,
+      "balanced": 0.625
+     },
+     "unsigned": {
+      "toward_right": 6,
+      "toward_n": 10,
+      "turned_right": 9,
+      "turned_n": 20,
+      "balanced": 0.525
+     },
+     "auc": 0.75,
+     "cdr_same_stops": {
+      "signed": {
+       "toward_right": 5,
+       "toward_n": 8,
+       "turned_right": 16,
+       "turned_n": 19,
+       "balanced": 0.7335526315789473
+      },
+      "auc": 0.8223684210526315
+     }
+    },
+    "toward_rms": 5.691148503061139,
+    "toward_n": 10,
+    "same_pairs_rms": 5.9988318939942005,
+    "same_pairs_n": 8
+   }
+  },
+  "dropped": {
+   "CDR hi - lo": {
+    "score": {
+     "n_stops": 29,
+     "by_facing": {
+      "0": {
+       "mean": 0.0,
+       "sd": 1.7119678128969562,
+       "n": 6,
+       "below": 3
+      },
+      "90": {
+       "mean": -1.5690263880089095,
+       "sd": 1.8170281697252257,
+       "n": 14,
+       "below": 12
+      },
+      "135": {
+       "mean": -2.97724729109665,
+       "sd": 0.8157480961767156,
+       "n": 2,
+       "below": 2
+      },
+      "180": {
+       "mean": -2.225618066181259,
+       "sd": 1.8370086134298227,
+       "n": 7,
+       "below": 7
+      }
+     },
+     "turned_mean": -1.8913126294602978,
+     "toward_sd": 1.7119678128969562,
+     "signed": {
+      "toward_right": 2,
+      "toward_n": 6,
+      "turned_right": 18,
+      "turned_n": 23,
+      "balanced": 0.5579710144927537
+     },
+     "unsigned": {
+      "toward_right": 4,
+      "toward_n": 6,
+      "turned_right": 8,
+      "turned_n": 23,
+      "balanced": 0.5072463768115942
+     },
+     "auc": 0.7536231884057971,
+     "cdr_same_stops": {
+      "signed": {
+       "toward_right": 2,
+       "toward_n": 6,
+       "turned_right": 18,
+       "turned_n": 23,
+       "balanced": 0.5579710144927537
+      },
+      "auc": 0.7536231884057971
+     }
+    },
+    "toward_rms": 1.711967812896956,
+    "toward_n": 6,
+    "same_pairs_rms": 1.7119678128969562,
+    "same_pairs_n": 6
+   },
+   "CDR range stat": {
+    "score": {
+     "n_stops": 29,
+     "by_facing": {
+      "0": {
+       "mean": 0.0,
+       "sd": 1.2049618305058907,
+       "n": 6,
+       "below": 3
+      },
+      "90": {
+       "mean": -1.7878560636034622,
+       "sd": 0.7598788354973864,
+       "n": 14,
+       "below": 14
+      },
+      "135": {
+       "mean": -2.4386831299146134,
+       "sd": 0.5550353707423492,
+       "n": 2,
+       "below": 2
+      },
+      "180": {
+       "mean": -2.2878683520979566,
+       "sd": 1.1485751472703618,
+       "n": 7,
+       "below": 7
+      }
+     },
+     "turned_mean": -1.9966273745636263,
+     "toward_sd": 1.2049618305058907,
+     "signed": {
+      "toward_right": 4,
+      "toward_n": 6,
+      "turned_right": 16,
+      "turned_n": 23,
+      "balanced": 0.681159420289855
+     },
+     "unsigned": {
+      "toward_right": 4,
+      "toward_n": 6,
+      "turned_right": 13,
+      "turned_n": 23,
+      "balanced": 0.6159420289855072
+     },
+     "auc": 0.8840579710144928,
+     "cdr_same_stops": {
+      "signed": {
+       "toward_right": 2,
+       "toward_n": 6,
+       "turned_right": 18,
+       "turned_n": 23,
+       "balanced": 0.5579710144927537
+      },
+      "auc": 0.7536231884057971
+     }
+    },
+    "toward_rms": 1.2049618305058907,
+    "toward_n": 6,
+    "same_pairs_rms": 1.2049618305058907,
+    "same_pairs_n": 6
+   },
+   "onset tilt 40": {
+    "score": {
+     "n_stops": 27,
+     "by_facing": {
+      "0": {
+       "mean": 0.0,
+       "sd": 5.700963820206421,
+       "n": 8,
+       "below": 4
+      },
+      "90": {
+       "mean": -5.512719366086073,
+       "sd": 3.2924548797833504,
+       "n": 12,
+       "below": 12
+      },
+      "135": {
+       "mean": -9.751074518729972,
+       "sd": 5.826800123029732,
+       "n": 2,
+       "below": 2
+      },
+      "180": {
+       "mean": -5.361197002141247,
+       "sd": 8.457330067773475,
+       "n": 5,
+       "below": 3
+      }
+     },
+     "turned_mean": -5.918987707431529,
+     "toward_sd": 5.700963820206421,
+     "signed": {
+      "toward_right": 3,
+      "toward_n": 8,
+      "turned_right": 16,
+      "turned_n": 19,
+      "balanced": 0.6085526315789473
+     },
+     "unsigned": {
+      "toward_right": 2,
+      "toward_n": 8,
+      "turned_right": 12,
+      "turned_n": 19,
+      "balanced": 0.4407894736842105
+     },
+     "auc": 0.743421052631579,
+     "cdr_same_stops": {
+      "signed": {
+       "toward_right": 1,
+       "toward_n": 4,
+       "turned_right": 14,
+       "turned_n": 18,
+       "balanced": 0.5138888888888888
+      },
+      "auc": 0.8055555555555556
+     }
+    },
+    "toward_rms": 5.700963820206421,
+    "toward_n": 8,
+    "same_pairs_rms": 5.700963820206421,
+    "same_pairs_n": 8
+   }
+  },
+  "tense": {
+   "CDR hi - lo": {
+    "score": {
+     "n_stops": 37,
+     "by_facing": {
+      "0": {
+       "mean": 0.0,
+       "sd": 2.556553827442989,
+       "n": 10,
+       "below": 5
+      },
+      "90": {
+       "mean": -1.7093740195492204,
+       "sd": 1.4999186773960338,
+       "n": 16,
+       "below": 15
+      },
+      "135": {
+       "mean": -3.239476956541594,
+       "sd": 0.9871924871129443,
+       "n": 2,
+       "below": 2
+      },
+      "180": {
+       "mean": -2.6618311942957504,
+       "sd": 1.1252883035332892,
+       "n": 9,
+       "below": 9
+      }
+     },
+     "turned_mean": -2.140200702760462,
+     "toward_sd": 2.556553827442989,
+     "signed": {
+      "toward_right": 6,
+      "toward_n": 10,
+      "turned_right": 22,
+      "turned_n": 27,
+      "balanced": 0.7074074074074074
+     },
+     "unsigned": {
+      "toward_right": 2,
+      "toward_n": 10,
+      "turned_right": 21,
+      "turned_n": 27,
+      "balanced": 0.48888888888888893
+     },
+     "auc": 0.7481481481481481,
+     "cdr_same_stops": {
+      "signed": {
+       "toward_right": 6,
+       "toward_n": 10,
+       "turned_right": 22,
+       "turned_n": 27,
+       "balanced": 0.7074074074074074
+      },
+      "auc": 0.7481481481481481
+     }
+    },
+    "toward_rms": 2.556553827442989,
+    "toward_n": 10,
+    "same_pairs_rms": 2.2355607509108517,
+    "same_pairs_n": 6
+   },
+   "CDR range stat": {
+    "score": {
+     "n_stops": 37,
+     "by_facing": {
+      "0": {
+       "mean": 0.0,
+       "sd": 1.069789690426551,
+       "n": 10,
+       "below": 5
+      },
+      "90": {
+       "mean": -1.7336432452245334,
+       "sd": 0.8021109539714819,
+       "n": 16,
+       "below": 16
+      },
+      "135": {
+       "mean": -2.285470570407327,
+       "sd": 0.5971669897954438,
+       "n": 2,
+       "below": 2
+      },
+      "180": {
+       "mean": -2.4841076497436325,
+       "sd": 1.076793574535197,
+       "n": 9,
+       "below": 9
+      }
+     },
+     "turned_mean": -2.024674144892588,
+     "toward_sd": 1.069789690426551,
+     "signed": {
+      "toward_right": 7,
+      "toward_n": 10,
+      "turned_right": 26,
+      "turned_n": 27,
+      "balanced": 0.8314814814814815
+     },
+     "unsigned": {
+      "toward_right": 6,
+      "toward_n": 10,
+      "turned_right": 22,
+      "turned_n": 27,
+      "balanced": 0.7074074074074074
+     },
+     "auc": 0.9222222222222223,
+     "cdr_same_stops": {
+      "signed": {
+       "toward_right": 6,
+       "toward_n": 10,
+       "turned_right": 22,
+       "turned_n": 27,
+       "balanced": 0.7074074074074074
+      },
+      "auc": 0.7481481481481481
+     }
+    },
+    "toward_rms": 1.069789690426551,
+    "toward_n": 10,
+    "same_pairs_rms": 0.7655450002837453,
+    "same_pairs_n": 6
+   },
+   "onset tilt 40": {
+    "score": {
+     "n_stops": 30,
+     "by_facing": {
+      "0": {
+       "mean": 0.0,
+       "sd": 5.691148503061139,
+       "n": 10,
+       "below": 5
+      },
+      "90": {
+       "mean": -6.930394063497249,
+       "sd": 7.478228706611294,
+       "n": 12,
+       "below": 12
+      },
+      "135": {
+       "mean": -15.53585981957709,
+       "sd": 10.82380560145692,
+       "n": 2,
+       "below": 2
+      },
+      "180": {
+       "mean": -8.017978274078606,
+       "sd": 12.045539868856808,
+       "n": 6,
+       "below": 4
+      }
+     },
+     "turned_mean": -8.11721590227964,
+     "toward_sd": 5.691148503061139,
+     "signed": {
+      "toward_right": 6,
+      "toward_n": 10,
+      "turned_right": 13,
+      "turned_n": 20,
+      "balanced": 0.625
+     },
+     "unsigned": {
+      "toward_right": 6,
+      "toward_n": 10,
+      "turned_right": 9,
+      "turned_n": 20,
+      "balanced": 0.525
+     },
+     "auc": 0.75,
+     "cdr_same_stops": {
+      "signed": {
+       "toward_right": 5,
+       "toward_n": 8,
+       "turned_right": 16,
+       "turned_n": 19,
+       "balanced": 0.7335526315789473
+      },
+      "auc": 0.8157894736842105
+     }
+    },
+    "toward_rms": 5.691148503061139,
+    "toward_n": 10,
+    "same_pairs_rms": 5.9988318939942005,
+    "same_pairs_n": 8
+   }
+  },
+  "tense, unclear kept": {
+   "CDR hi - lo": {
+    "score": {
+     "n_stops": 37,
+     "by_facing": {
+      "0": {
+       "mean": 0.0,
+       "sd": 2.466563686744573,
+       "n": 10,
+       "below": 5
+      },
+      "90": {
+       "mean": -1.7223721322149055,
+       "sd": 1.5125344615410603,
+       "n": 16,
+       "below": 15
+      },
+      "135": {
+       "mean": -3.239476956541594,
+       "sd": 0.9871924871129443,
+       "n": 2,
+       "below": 2
+      },
+      "180": {
+       "mean": -2.7384314195811683,
+       "sd": 1.0970127928961424,
+       "n": 9,
+       "below": 9
+      }
+     },
+     "turned_mean": -2.1734366964723035,
+     "toward_sd": 2.466563686744573,
+     "signed": {
+      "toward_right": 6,
+      "toward_n": 10,
+      "turned_right": 22,
+      "turned_n": 27,
+      "balanced": 0.7074074074074074
+     },
+     "unsigned": {
+      "toward_right": 2,
+      "toward_n": 10,
+      "turned_right": 23,
+      "turned_n": 27,
+      "balanced": 0.5259259259259259
+     },
+     "auc": 0.7518518518518519,
+     "cdr_same_stops": {
+      "signed": {
+       "toward_right": 6,
+       "toward_n": 10,
+       "turned_right": 22,
+       "turned_n": 27,
+       "balanced": 0.7074074074074074
+      },
+      "auc": 0.7518518518518519
+     }
+    },
+    "toward_rms": 2.466563686744573,
+    "toward_n": 10,
+    "same_pairs_rms": 2.3815322450118366,
+    "same_pairs_n": 6
+   },
+   "CDR range stat": {
+    "score": {
+     "n_stops": 37,
+     "by_facing": {
+      "0": {
+       "mean": 0.0,
+       "sd": 1.1275345436794313,
+       "n": 10,
+       "below": 5
+      },
+      "90": {
+       "mean": -1.7838470510196145,
+       "sd": 0.7848618273590211,
+       "n": 16,
+       "below": 16
+      },
+      "135": {
+       "mean": -2.285470570407327,
+       "sd": 0.5971669897954438,
+       "n": 2,
+       "below": 2
+      },
+      "180": {
+       "mean": -2.5092834409834546,
+       "sd": 1.0729138109175544,
+       "n": 9,
+       "below": 9
+      }
+     },
+     "turned_mean": -2.0628164787399843,
+     "toward_sd": 1.1275345436794313,
+     "signed": {
+      "toward_right": 7,
+      "toward_n": 10,
+      "turned_right": 23,
+      "turned_n": 27,
+      "balanced": 0.7759259259259259
+     },
+     "unsigned": {
+      "toward_right": 6,
+      "toward_n": 10,
+      "turned_right": 22,
+      "turned_n": 27,
+      "balanced": 0.7074074074074074
+     },
+     "auc": 0.9148148148148149,
+     "cdr_same_stops": {
+      "signed": {
+       "toward_right": 6,
+       "toward_n": 10,
+       "turned_right": 22,
+       "turned_n": 27,
+       "balanced": 0.7074074074074074
+      },
+      "auc": 0.7518518518518519
+     }
+    },
+    "toward_rms": 1.1275345436794313,
+    "toward_n": 10,
+    "same_pairs_rms": 0.9023454690903739,
+    "same_pairs_n": 6
+   },
+   "onset tilt 40": {
+    "score": {
+     "n_stops": 30,
+     "by_facing": {
+      "0": {
+       "mean": 0.0,
+       "sd": 5.691148503061139,
+       "n": 10,
+       "below": 5
+      },
+      "90": {
+       "mean": -7.008682277752874,
+       "sd": 7.426822527993545,
+       "n": 12,
+       "below": 12
+      },
+      "135": {
+       "mean": -15.53585981957709,
+       "sd": 10.82380560145692,
+       "n": 2,
+       "below": 2
+      },
+      "180": {
+       "mean": -8.017978274078606,
+       "sd": 12.045539868856808,
+       "n": 6,
+       "below": 4
+      }
+     },
+     "turned_mean": -8.164188830833016,
+     "toward_sd": 5.691148503061139,
+     "signed": {
+      "toward_right": 6,
+      "toward_n": 10,
+      "turned_right": 13,
+      "turned_n": 20,
+      "balanced": 0.625
+     },
+     "unsigned": {
+      "toward_right": 6,
+      "toward_n": 10,
+      "turned_right": 9,
+      "turned_n": 20,
+      "balanced": 0.525
+     },
+     "auc": 0.75,
+     "cdr_same_stops": {
+      "signed": {
+       "toward_right": 5,
+       "toward_n": 8,
+       "turned_right": 16,
+       "turned_n": 19,
+       "balanced": 0.7335526315789473
+      },
+      "auc": 0.8223684210526315
+     }
+    },
+    "toward_rms": 5.691148503061139,
+    "toward_n": 10,
+    "same_pairs_rms": 5.9988318939942005,
+    "same_pairs_n": 8
+   }
+  }
+ },
+ "handling_kept": {
+  "all": {
+   "CDR hi - lo": {
+    "toward_rms": 3.045472733986006,
+    "toward_n": 10
+   },
+   "CDR range stat": {
+    "toward_rms": 5.807472805444869,
+    "toward_n": 10
+   },
+   "onset tilt 40": {
+    "toward_rms": 5.691148503061139,
+    "toward_n": 10
+   }
+  },
+  "dropped": {
+   "CDR hi - lo": {
+    "toward_rms": 1.711967812896956,
+    "toward_n": 6
+   },
+   "CDR range stat": {
+    "toward_rms": 1.2049618305058907,
+    "toward_n": 6
+   },
+   "onset tilt 40": {
+    "toward_rms": 5.700963820206421,
+    "toward_n": 8
+   }
+  },
+  "tense": {
+   "CDR hi - lo": {
+    "toward_rms": 3.287092717343354,
+    "toward_n": 10
+   },
+   "CDR range stat": {
+    "toward_rms": 5.999741881469901,
+    "toward_n": 10
+   },
+   "onset tilt 40": {
+    "toward_rms": 5.691148503061139,
+    "toward_n": 10
+   }
+  },
+  "tense, unclear kept": {
+   "CDR hi - lo": {
+    "toward_rms": 3.045472733986006,
+    "toward_n": 10
+   },
+   "CDR range stat": {
+    "toward_rms": 5.807472805444869,
+    "toward_n": 10
+   },
+   "onset tilt 40": {
+    "toward_rms": 5.691148503061139,
+    "toward_n": 10
+   }
+  }
+ },
+ "pieces": {
+  "CDR hi - lo": {
+   "after": {
+    "n": 22,
+    "mean": 0.029337275324524337,
+    "rms": 1.6254539056672237,
+    "base_n": 12,
+    "base_rms": 1.516933865813419
+   },
+   "before/during": {
+    "n": 0,
+    "mean": null,
+    "rms": NaN,
+    "base_n": 0,
+    "base_rms": NaN
+   },
+   "unclear": {
+    "n": 4,
+    "mean": 1.0502253819493947,
+    "rms": 1.2601973073381079,
+    "base_n": 1,
+    "base_rms": 1.4287127493203928
+   }
+  },
+  "CDR range stat": {
+   "after": {
+    "n": 22,
+    "mean": -0.27959708709994185,
+    "rms": 0.7131224934774794,
+    "base_n": 12,
+    "base_rms": 0.9481436037121781
+   },
+   "before/during": {
+    "n": 0,
+    "mean": null,
+    "rms": NaN,
+    "base_n": 0,
+    "base_rms": NaN
+   },
+   "unclear": {
+    "n": 4,
+    "mean": 0.14446085239223175,
+    "rms": 0.6946119388016484,
+    "base_n": 1,
+    "base_rms": 0.20440029225432332
+   }
+  },
+  "onset tilt 40": {
+   "after": {
+    "n": 14,
+    "mean": -1.2382965785549016,
+    "rms": 8.37014382200282,
+    "base_n": 13,
+    "base_rms": 13.322122300181475
+   },
+   "before/during": {
+    "n": 0,
+    "mean": null,
+    "rms": NaN,
+    "base_n": 0,
+    "base_rms": NaN
+   },
+   "unclear": {
+    "n": 0,
+    "mean": null,
+    "rms": NaN,
+    "base_n": 0,
+    "base_rms": NaN
+   }
+  }
+ },
+ "pieces_per_stop": [
+  {
+   "walk": "walk-231921",
+   "a": 7,
+   "facing": 0,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -0.38179139056547273,
+    "CDR range stat": 0.1564754141160051
+   },
+   "rest": {
+    "CDR hi - lo": -1.4942431554557674,
+    "CDR range stat": 0.8040632280410801,
+    "onset tilt 40": -11.85210653157916
+   },
+   "piece": {},
+   "after_piece": {
+    "CDR hi - lo": -2.3368613434840926,
+    "CDR range stat": 0.8989131663005566,
+    "onset tilt 40": -12.16923222911814
+   }
+  },
+  {
+   "walk": "walk-231921",
+   "a": 29,
+   "facing": 90,
+   "tag": "unclear",
+   "callout": {
+    "CDR hi - lo": -2.280508999351452,
+    "CDR range stat": -1.983868804845607
+   },
+   "rest": {
+    "CDR hi - lo": -3.450474874505976,
+    "CDR range stat": -1.122815249553738,
+    "onset tilt 40": -15.197225465822598
+   },
+   "piece": {},
+   "after_piece": {
+    "CDR hi - lo": -4.275748973274351,
+    "CDR range stat": -1.3207908067086767,
+    "onset tilt 40": -17.04816027126109
+   }
+  },
+  {
+   "walk": "walk-231921",
+   "a": 47,
+   "facing": 180,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -3.81027212581957,
+    "CDR range stat": -0.4802707422855066,
+    "onset tilt 40": -29.53777251576387
+   },
+   "rest": {
+    "CDR hi - lo": -3.8102487653908796,
+    "CDR range stat": -0.6857997022915897,
+    "onset tilt 40": -17.723492638547462
+   },
+   "piece": {},
+   "after_piece": {
+    "CDR hi - lo": -4.053341635006764,
+    "CDR range stat": -0.6459116034466776,
+    "onset tilt 40": -17.723492638547462
+   }
+  },
+  {
+   "walk": "walk-231921",
+   "a": 78,
+   "facing": 135,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -2.572222645415123,
+    "CDR range stat": -1.0125228681550718,
+    "onset tilt 40": -25.54740873375337
+   },
+   "rest": {
+    "CDR hi - lo": -4.520906325932843,
+    "CDR range stat": -1.3564101168011469,
+    "onset tilt 40": -17.393795538685104
+   },
+   "piece": {},
+   "after_piece": {
+    "CDR hi - lo": -4.520906325932843,
+    "CDR range stat": -1.3564101168011469,
+    "onset tilt 40": -17.393795538685104
+   }
+  },
+  {
+   "walk": "walk-231921",
+   "a": 98,
+   "facing": 90,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -2.4228383612029436,
+    "CDR range stat": -0.967214783640508
+   },
+   "rest": {
+    "CDR hi - lo": -3.1509242283619683,
+    "CDR range stat": -0.4225134042114889,
+    "onset tilt 40": -20.698684316419474
+   },
+   "piece": {
+    "onset tilt 40": -20.80545611920749
+   },
+   "after_piece": {
+    "CDR hi - lo": -3.370321291675401,
+    "CDR range stat": -0.3880028732815202,
+    "onset tilt 40": -20.675226877611028
+   }
+  },
+  {
+   "walk": "walk-231921",
+   "a": 122,
+   "facing": 0,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -1.6388660747640877,
+    "CDR range stat": -0.14861019419118637
+   },
+   "rest": {
+    "CDR hi - lo": -3.2245711065700493,
+    "CDR range stat": 0.25041205670115413,
+    "onset tilt 40": -15.086935754390566
+   },
+   "piece": {},
+   "after_piece": {
+    "CDR hi - lo": -3.406334685917306,
+    "CDR range stat": 0.20468977151228143,
+    "onset tilt 40": -15.086935754390566
+   }
+  },
+  {
+   "walk": "walk-231705",
+   "a": 0,
+   "facing": 0,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -1.5898747448601762,
+    "CDR range stat": 1.6228722754187974
+   },
+   "rest": {
+    "CDR hi - lo": 1.8089383209531409,
+    "CDR range stat": 2.3364201462534395,
+    "onset tilt 40": -0.9652839864231642
+   },
+   "piece": {
+    "CDR hi - lo": 2.3028201284800267,
+    "CDR range stat": 2.56376909090108
+   },
+   "after_piece": {
+    "CDR hi - lo": 1.918304353837669,
+    "CDR range stat": 2.333867918826826,
+    "onset tilt 40": -0.9652839864231642
+   }
+  },
+  {
+   "walk": "walk-231705",
+   "a": 22,
+   "facing": 90,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -1.0455203641735553,
+    "CDR range stat": -0.6839523603207756
+   },
+   "rest": {
+    "CDR hi - lo": -1.5567548862830147,
+    "CDR range stat": -0.1553348315217599,
+    "onset tilt 40": -12.984417752871273
+   },
+   "piece": {
+    "CDR hi - lo": -1.120502771877756,
+    "CDR range stat": -0.0015614830971760196
+   },
+   "after_piece": {
+    "CDR hi - lo": -1.9147805086016088,
+    "CDR range stat": -0.6983424248405687,
+    "onset tilt 40": -12.984417752871273
+   }
+  },
+  {
+   "walk": "walk-231705",
+   "a": 36,
+   "facing": 180,
+   "tag": "after",
+   "callout": {
+    "onset tilt 40": -13.761613993931618
+   },
+   "rest": {
+    "CDR hi - lo": -3.0898310983586037,
+    "CDR range stat": -1.6937198842728207,
+    "onset tilt 40": -18.915177918390473
+   },
+   "piece": {
+    "CDR hi - lo": -2.5772620499132795,
+    "CDR range stat": -1.5809722009775786
+   },
+   "after_piece": {
+    "CDR hi - lo": -3.1284171069301427,
+    "CDR range stat": -1.6991598999878874,
+    "onset tilt 40": -18.03891056526952
+   }
+  },
+  {
+   "walk": "walk-231705",
+   "a": 63,
+   "facing": 135,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -4.018355929292867,
+    "CDR range stat": -0.5734564494637954,
+    "onset tilt 40": -14.470995473179512
+   },
+   "rest": {
+    "CDR hi - lo": -1.984057066320225,
+    "CDR range stat": -0.6572983544035228,
+    "onset tilt 40": -16.54315862818287
+   },
+   "piece": {
+    "onset tilt 40": -24.24765258498915
+   },
+   "after_piece": {
+    "CDR hi - lo": -2.053265212391049,
+    "CDR range stat": -0.6497927714224684,
+    "onset tilt 40": -15.645545268105973
+   }
+  },
+  {
+   "walk": "walk-231705",
+   "a": 84,
+   "facing": 90,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -3.1840583452734883,
+    "CDR range stat": 0.15948648196568194,
+    "onset tilt 40": -5.795696708895744
+   },
+   "rest": {
+    "CDR hi - lo": -1.361640710520081,
+    "CDR range stat": 0.7863411687588333,
+    "onset tilt 40": -11.435123546242632
+   },
+   "piece": {
+    "CDR hi - lo": -1.1861202191449016,
+    "CDR range stat": -0.15548059904468986,
+    "onset tilt 40": 1.086437863809234
+   },
+   "after_piece": {
+    "CDR hi - lo": -1.5022450393038824,
+    "CDR range stat": 0.7990716907764502,
+    "onset tilt 40": -12.437088074513028
+   }
+  },
+  {
+   "walk": "walk-125621",
+   "a": 18,
+   "facing": 180,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -2.349738868457651,
+    "CDR range stat": -1.3502358022622711,
+    "onset tilt 40": -26.531036340464617
+   },
+   "rest": {},
+   "piece": {},
+   "after_piece": {}
+  },
+  {
+   "walk": "walk-125621",
+   "a": 25,
+   "facing": 90,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -1.758224485154826,
+    "CDR range stat": -0.2779919013466704,
+    "onset tilt 40": -10.727964355304032
+   },
+   "rest": {
+    "CDR hi - lo": -1.8400450884326904,
+    "CDR range stat": -0.0726357741575699,
+    "onset tilt 40": -13.774605286645642
+   },
+   "piece": {
+    "CDR hi - lo": -2.0068164496155956,
+    "CDR range stat": 0.08126144088328666,
+    "onset tilt 40": -15.382771458559263
+   },
+   "after_piece": {
+    "CDR hi - lo": -2.0607137582180783,
+    "CDR range stat": -0.42264032023147236,
+    "onset tilt 40": -14.506625158282937
+   }
+  },
+  {
+   "walk": "walk-125621",
+   "a": 37,
+   "facing": 0,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": 1.1705833953993103,
+    "CDR range stat": 1.9085437709226667,
+    "onset tilt 40": -10.705270645608035
+   },
+   "rest": {
+    "CDR hi - lo": 1.457241325791883,
+    "CDR range stat": 2.145759409804533,
+    "onset tilt 40": -11.235515745932767
+   },
+   "piece": {
+    "CDR hi - lo": 0.7593936757337341,
+    "CDR range stat": 1.3492177025367666
+   },
+   "after_piece": {
+    "CDR hi - lo": 1.8768479395334194,
+    "CDR range stat": 2.6548049771030757
+   }
+  },
+  {
+   "walk": "walk-125621",
+   "a": 45,
+   "facing": 0,
+   "tag": "after",
+   "callout": {},
+   "rest": {
+    "CDR hi - lo": -1.4480259535447042,
+    "CDR range stat": 1.9859168772543772,
+    "onset tilt 40": -21.813999686078983
+   },
+   "piece": {
+    "CDR hi - lo": -2.3081436941704054,
+    "CDR range stat": 1.783593096250498,
+    "onset tilt 40": -21.98440275031249
+   },
+   "after_piece": {
+    "CDR hi - lo": 0.2061502170462184,
+    "CDR range stat": 1.4361748641942225,
+    "onset tilt 40": -21.274130697990394
+   }
+  },
+  {
+   "walk": "walk-125621",
+   "a": 58,
+   "facing": 90,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": 1.7619599493402174,
+    "CDR range stat": 0.46332676319169447
+   },
+   "rest": {
+    "CDR hi - lo": -0.8916575658238997,
+    "CDR range stat": -0.0070065879119496355,
+    "onset tilt 40": -28.00813177315937
+   },
+   "piece": {},
+   "after_piece": {
+    "CDR hi - lo": -1.1706853197746305,
+    "CDR range stat": -0.14444269697642373,
+    "onset tilt 40": -29.206777749823686
+   }
+  },
+  {
+   "walk": "walk-125621",
+   "a": 66,
+   "facing": 180,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -3.6921885155287875,
+    "CDR range stat": -1.339974389481828,
+    "onset tilt 40": -10.462326026355655
+   },
+   "rest": {
+    "CDR hi - lo": -2.3289177528005194,
+    "CDR range stat": -0.7049816917881554,
+    "onset tilt 40": -20.968527951805356
+   },
+   "piece": {
+    "CDR hi - lo": -1.3744852028779144,
+    "CDR range stat": -1.1051584281735056,
+    "onset tilt 40": -28.534093403303515
+   },
+   "after_piece": {
+    "CDR hi - lo": -2.9011436761520146,
+    "CDR range stat": 0.06861140710915836,
+    "onset tilt 40": -18.195270610222867
+   }
+  },
+  {
+   "walk": "walk-171645",
+   "a": 3,
+   "facing": 0,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -1.6070366923303987,
+    "CDR range stat": 1.8760514558955625
+   },
+   "rest": {},
+   "piece": {},
+   "after_piece": {}
+  },
+  {
+   "walk": "walk-171645",
+   "a": 7,
+   "facing": 90,
+   "tag": "unclear",
+   "callout": {},
+   "rest": {
+    "CDR hi - lo": -1.7971720164528264,
+    "CDR range stat": -0.38731952782565454
+   },
+   "piece": {
+    "CDR hi - lo": -1.314978159215339,
+    "CDR range stat": -0.3037175204987886
+   },
+   "after_piece": {}
+  },
+  {
+   "walk": "walk-171645",
+   "a": 13,
+   "facing": 180,
+   "tag": "unclear",
+   "callout": {
+    "CDR hi - lo": -1.9365720622960743,
+    "CDR range stat": -1.660368048496256
+   },
+   "rest": {
+    "CDR hi - lo": -1.9485229858852957,
+    "CDR range stat": -1.5772261722923993
+   },
+   "piece": {
+    "CDR hi - lo": -1.848667557646224,
+    "CDR range stat": -1.5956438984368166
+   },
+   "after_piece": {}
+  },
+  {
+   "walk": "walk-171645",
+   "a": 20,
+   "facing": 90,
+   "tag": "unclear",
+   "callout": {},
+   "rest": {
+    "CDR hi - lo": -1.4690996855896343,
+    "CDR range stat": -0.6506018175136374
+   },
+   "piece": {
+    "CDR hi - lo": -2.7101017496049997,
+    "CDR range stat": -0.5091895662700402
+   },
+   "after_piece": {
+    "CDR hi - lo": -1.281389000284607,
+    "CDR range stat": -0.7135898585243635
+   }
+  },
+  {
+   "walk": "walk-171645",
+   "a": 30,
+   "facing": 0,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": 1.7687529201890277,
+    "CDR range stat": -0.8091043062474567,
+    "onset tilt 40": -16.869451414379967
+   },
+   "rest": {
+    "CDR hi - lo": -1.28165610983628,
+    "CDR range stat": 1.5323888956891079
+   },
+   "piece": {},
+   "after_piece": {
+    "CDR hi - lo": 0.011571348599525244,
+    "CDR range stat": 0.9506834316872231
+   }
+  },
+  {
+   "walk": "walk-215800",
+   "a": 0,
+   "facing": 0,
+   "tag": "after",
+   "callout": {},
+   "rest": {
+    "CDR hi - lo": 1.3329572216993908,
+    "CDR range stat": 1.1048527722624906
+   },
+   "piece": {
+    "CDR hi - lo": 1.3329572216993908,
+    "CDR range stat": 1.1048527722624906
+   },
+   "after_piece": {}
+  },
+  {
+   "walk": "walk-215800",
+   "a": 10,
+   "facing": 90,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": 0.5714088137807498,
+    "CDR range stat": -0.5251498063798833,
+    "onset tilt 40": -10.233365027943462
+   },
+   "rest": {
+    "onset tilt 40": -7.644230317242354
+   },
+   "piece": {},
+   "after_piece": {
+    "onset tilt 40": -7.585699158841955
+   }
+  },
+  {
+   "walk": "walk-215800",
+   "a": 16,
+   "facing": 180,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -1.1976873173300877,
+    "CDR range stat": -1.2438324675331105,
+    "onset tilt 40": -12.196008388898584
+   },
+   "rest": {},
+   "piece": {},
+   "after_piece": {}
+  },
+  {
+   "walk": "walk-215800",
+   "a": 22,
+   "facing": 90,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": 1.0907166798867514,
+    "CDR range stat": 0.9776731597998575
+   },
+   "rest": {},
+   "piece": {},
+   "after_piece": {}
+  },
+  {
+   "walk": "walk-215800",
+   "a": 26,
+   "facing": 0,
+   "tag": "unclear",
+   "callout": {
+    "CDR hi - lo": 4.7666530274860905,
+    "CDR range stat": 2.7976218537063957
+   },
+   "rest": {
+    "CDR hi - lo": 3.718837846149993,
+    "CDR range stat": 2.144574810634601
+   },
+   "piece": {
+    "CDR hi - lo": 3.718837846149993,
+    "CDR range stat": 2.144574810634601
+   },
+   "after_piece": {}
+  },
+  {
+   "walk": "walk-122038",
+   "a": 10,
+   "facing": 90,
+   "tag": "after",
+   "callout": {},
+   "rest": {
+    "CDR hi - lo": -4.059120160618668,
+    "CDR range stat": -0.6340489307538503
+   },
+   "piece": {
+    "CDR hi - lo": -3.3305257797274477,
+    "CDR range stat": -0.6891154482049154
+   },
+   "after_piece": {}
+  },
+  {
+   "walk": "walk-122038",
+   "a": 16,
+   "facing": 180,
+   "tag": "after",
+   "callout": {},
+   "rest": {
+    "CDR hi - lo": -4.9342342733122235,
+    "CDR range stat": -0.314193455590379
+   },
+   "piece": {},
+   "after_piece": {
+    "CDR hi - lo": -5.857740296639562,
+    "CDR range stat": -0.10431483799569685
+   }
+  },
+  {
+   "walk": "walk-122038",
+   "a": 23,
+   "facing": 90,
+   "tag": "after",
+   "callout": {},
+   "rest": {},
+   "piece": {},
+   "after_piece": {}
+  },
+  {
+   "walk": "walk-122038",
+   "a": 27,
+   "facing": 0,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -1.328541844826348,
+    "CDR range stat": 1.2606292256159044
+   },
+   "rest": {
+    "CDR hi - lo": -2.6495139512016164,
+    "CDR range stat": 0.6299775952784047
+   },
+   "piece": {},
+   "after_piece": {
+    "CDR hi - lo": -2.6495139512016164,
+    "CDR range stat": 0.6299775952784047
+   }
+  },
+  {
+   "walk": "walk-030615",
+   "a": 4,
+   "facing": 0,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -1.877371498565381,
+    "CDR range stat": 4.935032150639973
+   },
+   "rest": {
+    "CDR hi - lo": -0.35335823444335457,
+    "CDR range stat": 3.771866658202619,
+    "onset tilt 40": -3.1153175471159695
+   },
+   "piece": {
+    "CDR hi - lo": -2.971320409924182,
+    "CDR range stat": 2.54926905539891,
+    "onset tilt 40": -3.000158163447608
+   },
+   "after_piece": {
+    "CDR hi - lo": 0.5123678966887812,
+    "CDR range stat": 4.715942020822276,
+    "onset tilt 40": -6.291934836965736
+   }
+  },
+  {
+   "walk": "walk-030615",
+   "a": 34,
+   "facing": 90,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -7.442172353194553,
+    "CDR range stat": 1.467316894962152,
+    "onset tilt 40": -15.829648658378922
+   },
+   "rest": {
+    "CDR hi - lo": -6.311500045732798,
+    "CDR range stat": 1.6830243791627904,
+    "onset tilt 40": -6.085029988707072
+   },
+   "piece": {
+    "onset tilt 40": -28.617076995729988
+   },
+   "after_piece": {
+    "CDR hi - lo": -6.471360280366824,
+    "CDR range stat": 1.651494445625916,
+    "onset tilt 40": -4.722149420202015
+   }
+  },
+  {
+   "walk": "walk-030615",
+   "a": 73,
+   "facing": 180,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -4.466104602984632,
+    "CDR range stat": 1.253426673336104,
+    "onset tilt 40": -30.556296744911027
+   },
+   "rest": {
+    "CDR hi - lo": -5.57987928751043,
+    "CDR range stat": 1.5589951701907554,
+    "onset tilt 40": -10.464367584183435
+   },
+   "piece": {},
+   "after_piece": {
+    "CDR hi - lo": -5.751367427875781,
+    "CDR range stat": 1.5700329543819123,
+    "onset tilt 40": -9.291185074608666
+   }
+  },
+  {
+   "walk": "walk-030615",
+   "a": 106,
+   "facing": 90,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -3.9419538391012185,
+    "CDR range stat": 1.2431317005996827
+   },
+   "rest": {
+    "CDR hi - lo": -3.4827861346109836,
+    "CDR range stat": 1.410961690706482,
+    "onset tilt 40": -4.671161796151724
+   },
+   "piece": {},
+   "after_piece": {
+    "CDR hi - lo": -3.7337210079805967,
+    "CDR range stat": 1.2612995063990002,
+    "onset tilt 40": -7.549743214226835
+   }
+  },
+  {
+   "walk": "walk-030615",
+   "a": 123,
+   "facing": 0,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -1.6464235649015375,
+    "CDR range stat": 4.748949153061605
+   },
+   "rest": {
+    "CDR hi - lo": -0.678996384311298,
+    "CDR range stat": 5.494726925991505,
+    "onset tilt 40": 4.6926854816273575
+   },
+   "piece": {
+    "CDR hi - lo": -1.5167036264568097,
+    "CDR range stat": 5.651579402442581,
+    "onset tilt 40": -26.25066838056054
+   },
+   "after_piece": {
+    "CDR hi - lo": -0.7496967488042605,
+    "CDR range stat": 5.511734352740729,
+    "onset tilt 40": 7.856842103442851
+   }
+  },
+  {
+   "walk": "walk-224302",
+   "a": 35,
+   "facing": 0,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": 0.5510209245266902,
+    "CDR range stat": -0.0585496253268355,
+    "onset tilt 40": -0.3696556681386062
+   },
+   "rest": {
+    "CDR hi - lo": -0.7338524025885509,
+    "CDR range stat": 0.22600003883012265,
+    "onset tilt 40": -8.982620740360717
+   },
+   "piece": {
+    "CDR hi - lo": 1.0101892817817815,
+    "CDR range stat": -0.7040148647679517
+   },
+   "after_piece": {
+    "CDR hi - lo": -0.8408080071690109,
+    "CDR range stat": 0.24181030925442956,
+    "onset tilt 40": -8.554781721933416
+   }
+  },
+  {
+   "walk": "walk-224302",
+   "a": 78,
+   "facing": 90,
+   "tag": "after",
+   "callout": {},
+   "rest": {
+    "CDR hi - lo": -1.467079359909767,
+    "CDR range stat": -0.9716448710448017,
+    "onset tilt 40": -12.298518981633913
+   },
+   "piece": {
+    "CDR hi - lo": -1.8517283426825009,
+    "CDR range stat": -1.3664692604235296,
+    "onset tilt 40": -17.997939036496625
+   },
+   "after_piece": {
+    "CDR hi - lo": -1.2384744907098693,
+    "CDR range stat": -0.8578485020582947,
+    "onset tilt 40": -11.397453842854718
+   }
+  },
+  {
+   "walk": "walk-213304",
+   "a": 251,
+   "facing": 0,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": 2.6466292962794693,
+    "CDR range stat": -0.11813367642435606
+   },
+   "rest": {
+    "onset tilt 40": -10.336782107635276
+   },
+   "piece": {
+    "onset tilt 40": -9.261980572447507
+   },
+   "after_piece": {
+    "onset tilt 40": -11.243673966960039
+   }
+  },
+  {
+   "walk": "walk-213304",
+   "a": 269,
+   "facing": 90,
+   "tag": "after",
+   "callout": {},
+   "rest": {
+    "CDR hi - lo": -1.7926616998760851,
+    "CDR range stat": -1.3168498911900042,
+    "onset tilt 40": -13.192739724516803
+   },
+   "piece": {},
+   "after_piece": {
+    "CDR hi - lo": -2.487659634812647,
+    "CDR range stat": -1.0972286471991937,
+    "onset tilt 40": -13.192739724516803
+   }
+  },
+  {
+   "walk": "walk-213304",
+   "a": 291,
+   "facing": 180,
+   "tag": "after",
+   "callout": {},
+   "rest": {
+    "CDR hi - lo": -1.903817492077298,
+    "CDR range stat": -1.3292251601069873,
+    "onset tilt 40": -4.68131343757311
+   },
+   "piece": {},
+   "after_piece": {
+    "CDR hi - lo": -2.375183594770011,
+    "CDR range stat": -1.2739928605420714,
+    "onset tilt 40": -4.68131343757311
+   }
+  },
+  {
+   "walk": "walk-213304",
+   "a": 312,
+   "facing": 90,
+   "tag": "after",
+   "callout": {
+    "CDR hi - lo": -2.306220533662923,
+    "CDR range stat": -1.3255430292677224
+   },
+   "rest": {
+    "CDR hi - lo": -0.546774531589556,
+    "CDR range stat": -0.8758211302220144,
+    "onset tilt 40": -17.144838876784327
+   },
+   "piece": {
+    "onset tilt 40": -22.41181085838542
+   },
+   "after_piece": {
+    "CDR hi - lo": 0.19142362503753352,
+    "CDR range stat": -0.5181309469848184,
+    "onset tilt 40": -15.426282032806622
+   }
+  },
+  {
+   "walk": "walk-213304",
+   "a": 337,
+   "facing": 0,
+   "tag": "unclear",
+   "callout": {
+    "CDR hi - lo": 0.4008864896709945,
+    "CDR range stat": 0.49268141758347045
+   },
+   "rest": {
+    "CDR hi - lo": -1.5702830580467415,
+    "CDR range stat": -0.37631038040938775,
+    "onset tilt 40": -10.636765235489298
+   },
+   "piece": {
+    "CDR hi - lo": -3.0482329044370093,
+    "CDR range stat": -0.7850028440071148
+   },
+   "after_piece": {
+    "onset tilt 40": -10.636765235489298
+   }
+  },
+  {
+   "walk": "walk-221126",
+   "a": 161,
+   "facing": 0,
+   "tag": "after",
+   "callout": {},
+   "rest": {
+    "CDR hi - lo": 2.9967823920466827,
+    "CDR range stat": 13.454287713891867,
+    "onset tilt 40": -13.390836473837915
+   },
+   "piece": {},
+   "after_piece": {
+    "CDR hi - lo": 2.9967823920466827,
+    "CDR range stat": 13.454287713891867,
+    "onset tilt 40": -13.24637137735483
+   }
+  },
+  {
+   "walk": "walk-221126",
+   "a": 205,
+   "facing": 90,
+   "tag": "after",
+   "callout": {
+    "onset tilt 40": -15.92506967843736
+   },
+   "rest": {
+    "onset tilt 40": -18.174689309212866
+   },
+   "piece": {
+    "onset tilt 40": -27.79294621492662
+   },
+   "after_piece": {
+    "onset tilt 40": -17.755657789829673
+   }
+  },
+  {
+   "walk": "walk-221126",
+   "a": 221,
+   "facing": 0,
+   "tag": "after",
+   "callout": {
+    "onset tilt 40": -23.791783760134457
+   },
+   "rest": {
+    "onset tilt 40": -21.038380696828302
+   },
+   "piece": {
+    "onset tilt 40": -21.038380696828302
+   },
+   "after_piece": {}
+  }
+ ]
+}
