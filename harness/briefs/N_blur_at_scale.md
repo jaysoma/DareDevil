@@ -40,6 +40,21 @@ of which way a talker faces? And can it be told apart from distance? Jay's model
    - **Utterances:** a talker alone, no other talker within 0.3 s.
    - **Reference:** the close-talk mic.
 
+## How to sort the data (Jay's condition: no flattening)
+Pooling everything into one median has flattened every effect this project has chased. Rooms differ: near a wall, in
+a lively room or in a carpeted "sound-sink" room, blur won't divide the same way.
+- **Compare within, then count across.** Every facing effect is first taken inside one recording at one spot: turned
+  takes against that spot's own facing takes. The headline is then how many recordings show blur rising from facing
+  to turned, with the size of the rise in each. Never one pooled number across rooms.
+- **Strata, reported separately:**
+  - **Room:** kitchen, living room, bedroom office (carpeted), LOCATA's lab.
+  - **Distance band:** under 1.5 m, 1.5-3 m, over 3 m.
+  - **Distance to the nearest wall,** where the layout is known: `truth_inputs/landmarks.json` and `poses.json` for
+    Jay's house, the room geometry for LOCATA.
+- **The ones that don't fit:** recordings or spots that go the other way are set aside and studied separately, never
+  averaged in. Name them, and say what's different about them (room, wall, distance, level). They may be the finding.
+- **Means of what's kept, with n,** after obvious outliers are set aside and counted. No medians as headlines.
+
 ## Steps
 1. **The facing curve:** blur and errors against facing (45 deg bins), at fixed distance bands. Give the mean, spread
    and n per bin, and the order test: is it monotonic from 0 to 180? Use a permutation test within recording.
